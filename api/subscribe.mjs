@@ -1,44 +1,10 @@
-/**
- * Kit (ConvertKit) newsletter subscription proxy.
- *
- * Why this exists: Kit's v3 `api_key` is client-side by design, which means
- * anyone who opens DevTools on rsla.io can extract it and spam the subscribe
- * endpoint unlimited times. This proxy keeps the key server-side (never
- * embedded in the client bundle) and adds a honeypot field as light bot
- * protection.
- *
- * Environment variables (set in Vercel → Project → Settings → Env Vars):
- *   KIT_API_KEY   — v3 API key (NO `VITE_` prefix so Vite doesn't embed it)
- *   KIT_FORM_ID   — default form ID to subscribe to (optional; can be passed in request)
- *
- * Client usage:
- *   await fetch('/api/subscribe', {
- *     method: 'POST',
- *     headers: { 'Content-Type': 'application/json' },
- *     body: JSON.stringify({ email, firstName?, tags?, formId })
- *   })
- */
+import { createRateLimiter, checkRateLimit } from './lib/rateLimit.mjs';
 
-// Whitelist of form IDs we're willing to subscribe to.
-// Prevents an attacker from hitting arbitrary forms via our proxy.
+const rateLimiter = createRateLimiter(5, '1 m');
+
 const ALLOWED_FORM_IDS = new Set([
-    '9130465', // main RSL/A Insider form
+    '9130465',
 ]);
-
-const rateMap = new Map();
-const RATE_WINDOW_MS = 60_000;
-const RATE_LIMIT = 5;
-
-function isRateLimited(ip) {
-    const now = Date.now();
-    const entry = rateMap.get(ip);
-    if (!entry || now - entry.start > RATE_WINDOW_MS) {
-        rateMap.set(ip, { start: now, count: 1 });
-        return false;
-    }
-    entry.count++;
-    return entry.count > RATE_LIMIT;
-}
 
 function isValidEmail(email) {
     if (!email || typeof email !== 'string') return false;
@@ -53,9 +19,10 @@ export default async function handler(req, res) {
         return;
     }
 
-    const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || 'unknown';
-    if (isRateLimited(ip)) {
-        res.status(429).json({ error: 'Too many requests. Please try again later.' });
+    const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
+    const { success } = await checkRateLimit(rateLimiter, `subscribe:${ip}`);
+    if (!success) {
+        res.status(429).json({ error: 'Too many requests' });
         return;
     }
 

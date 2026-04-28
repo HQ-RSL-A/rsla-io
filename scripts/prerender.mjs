@@ -769,6 +769,7 @@ function serviceDetailContent(slug) {
     description: s.description,
     canonical: `${SITE}/services/${slug}`,
     keywords: `${s.title.toLowerCase()}, AI services, RSL/A, B2B AI systems`,
+    noIndex: true,
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'Service',

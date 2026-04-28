@@ -40,6 +40,10 @@ const SERVICE_LABELS = {
     'ai-automations': 'AI Automations',
     'ai-operations': 'AI Operations',
     'ai-digital-presence': 'AI Digital Presence',
+    'websites': 'Websites',
+    'search-visibility': 'Search Visibility',
+    'crm-systems': 'CRM Systems',
+    'custom-development': 'Custom Development',
 };
 
 export default function WorkInner() {
@@ -286,7 +290,15 @@ export default function WorkInner() {
                     )}
                 </div>
 
-                {/* Related Cases */}
+                {caseStudy.servicesUsed?.length > 0 && (
+                    <div className="flex flex-wrap gap-3 mt-8 mb-16">
+                        {caseStudy.servicesUsed.map(service => (
+                            <Link key={service} to={`/services/${service}`} className="font-sans text-sm text-accent border border-accent/20 bg-accent/5 px-3 py-1.5 rounded-full hover:bg-accent/10 transition-colors">
+                                {SERVICE_LABELS[service] || service}
+                            </Link>
+                        ))}
+                    </div>
+                )}
                 {relatedCases.length > 0 && (
                     <aside className="mt-20">
                         <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mb-10 text-center">

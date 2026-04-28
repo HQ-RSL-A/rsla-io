@@ -1,6 +1,30 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import Seo from '../components/Seo';
+import Seo from '@/components/Seo';
+
+const RELATED_CASE_STUDIES = {
+    websites: [
+        { href: '/work/fieldshare-seo-website-rebrand', title: 'Page 1 in 6 Months: Fieldshare SEO Case Study' },
+        { href: '/work/adreviveai-saas-build', title: 'Idea to SaaS in 4 Weeks: AdReviveAI' },
+    ],
+    'search-visibility': [
+        { href: '/work/seo-content-marketing-automation', title: 'Saved $18K/Year with AI Content Automation' },
+        { href: '/work/local-seo-reputation-management', title: 'From 14 to 132 Google Reviews in 60 Days' },
+    ],
+    'ai-automations': [
+        { href: '/work/ai-lead-response-autoresponder', title: 'AI Email Auto-Responder in 24 Seconds' },
+        { href: '/work/ai-cold-email-personalization', title: 'How We Personalize 1,200 Cold Emails a Day' },
+        { href: '/work/field-service-operations-automation', title: 'Field Service Operations Rebuild with GHL' },
+    ],
+    'crm-systems': [
+        { href: '/work/nonprofit-crm-volunteer-automation', title: 'Automated Volunteer Onboarding Replaces $40K Role' },
+        { href: '/work/salon-marketing-automation-roi', title: '$600 in Meta Ads Drove $36K in Rental Income' },
+    ],
+    'custom-development': [
+        { href: '/work/adreviveai-saas-build', title: 'Idea to SaaS in 4 Weeks: AdReviveAI' },
+        { href: '/work/notion-productivity-dashboard-anchor-safety', title: '300 Files to One Notion Dashboard' },
+    ],
+};
 
 const services = {
     websites: {
@@ -50,6 +74,7 @@ export default function ServiceDetail() {
                 description={service.description}
                 canonical={`https://rsla.io/services/${slug}`}
                 keywords={`${service.title.toLowerCase()}, AI services, RSL/A, B2B AI systems`}
+                noIndex
                 jsonLd={{
                     '@context': 'https://schema.org',
                     '@type': 'Service',
@@ -82,6 +107,25 @@ export default function ServiceDetail() {
                     Let's Talk
                     <ArrowRight size={16} strokeWidth={2} className="opacity-60" />
                 </Link>
+
+                {RELATED_CASE_STUDIES[slug]?.length > 0 && (
+                    <section className="mt-16">
+                        <h2 className="font-sans text-sm text-textMuted uppercase tracking-widest mb-6">See it in action</h2>
+                        <div className="flex flex-col gap-3">
+                            {RELATED_CASE_STUDIES[slug].map(cs => (
+                                <Link key={cs.href} to={cs.href} className="font-sans text-accent hover:underline">
+                                    {cs.title}
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                <div className="mt-10">
+                    <Link to="/blog" className="font-sans text-sm text-textMuted hover:text-accent transition-colors">
+                        Read our insights
+                    </Link>
+                </div>
             </div>
         </main>
     );
