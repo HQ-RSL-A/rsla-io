@@ -113,11 +113,15 @@ Full SEO/AEO/GEO audit using codebase analysis, live site Lighthouse crawl, SEMR
 - **Pillar page strategy planned.** 3 hub pages: GHL Complete Guide, AI Automation for B2B, Local SEO Playbook. Strategy doc at `docs/superpowers/plans/2026-04-27-pillar-page-strategy.md`.
 - **Rate limiting now requires Upstash.** Code falls back gracefully (no rate limiting) when `UPSTASH_REDIS_REST_URL` env var is not set.
 
-### Still pending (manual)
-- Set up GA4 conversion events in GTM (triggers created, tags need Measurement ID G-KTE0H7FE4S)
-- Create Sentry project and set VITE_SENTRY_DSN in Vercel
-- Rotate Sanity API token (had VITE_ prefix historically)
-- Create Upstash Redis database and add env vars to Vercel
-- Audit/disavow spammy backlinks (need full SEMRush backlink export)
-- Write 3 pillar pages in Sanity
-- Refresh top blog posts for CTR in Sanity
+### Still pending
+See `BRAIN.md > TODO (Next Session)` for the full checklist.
+
+### SEO data audit insights
+- Blog post titles and meta descriptions are already well-optimized in Sanity. CTR problem is position-based (avg pos 6-10), not copy-based.
+- Top keyword opportunity: "gohighlevel pricing" (2,900 monthly volume, position 9, 88K impressions)
+- Content split: 80% of organic clicks from GHL content, 15% from Claude/AI content, 5% from local SEO
+- 46/103 pages had only 1 internal link (addressed with cross-linking code, pillar pages will further improve)
+- Backlink profile: 91% low-authority, 59% Singapore, 15% Moldova. Needs disavow.
+
+### Session summary
+4 commits across security audit, SEO fixes, conversion tracking, and infrastructure. Net result: -406 lines of dead code, +200 lines of SEO/schema/redirect improvements, 33 new 301 redirects, Upstash rate limiting, cross-linked service and case study pages.
