@@ -103,7 +103,7 @@ export default function BookingConfirmed() {
                     Your call has been booked.
                 </p>
 
-                <p className="font-sans text-sm text-textMuted mb-12">
+                <p className="font-sans text-sm text-textMuted mb-10">
                     Check your inbox for a calendar invite with the meeting details.
                 </p>
 

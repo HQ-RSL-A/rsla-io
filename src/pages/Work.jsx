@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { client } from '@/sanity/lib/client';
 import { caseStudiesV2Query } from '@/sanity/lib/queries';
 import { ChevronDown } from "lucide-react";
@@ -8,9 +10,12 @@ import CaseStudyCard from '@/components/CaseStudyCard';
 import CaseStudyCardSkeleton from '@/components/skeletons/CaseStudyCardSkeleton';
 import { TextAnimate } from '@/components/ui/text-animate';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const categories = ["all", "AI Automations", "AI Lead Generation", "AI Operations", "AI Digital Presence"];
 
 export default function Work() {
+    const pageRef = useRef(null);
     const [caseStudies, setCaseStudies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState("all");
@@ -34,6 +39,22 @@ export default function Work() {
         return () => { isMounted = false; };
     }, []);
 
+    useEffect(() => {
+        if (loading) return;
+        const ctx = gsap.context(() => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                gsap.set('.work-card', { opacity: 1, y: 0 });
+                return;
+            }
+            gsap.fromTo('.work-card',
+                { y: 24, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out' }
+            );
+        }, pageRef);
+        return () => ctx.revert();
+    }, [loading, selectedCategory]);
+
     const filteredAndSortedStudies = caseStudies
         .filter((study) => selectedCategory === "all" || study.category === selectedCategory)
         .sort((a, b) => a.priority - b.priority);
@@ -41,7 +62,7 @@ export default function Work() {
     const featuredStudies = filteredAndSortedStudies.filter(study => study.featured);
 
     return (
-        <main className="min-h-screen bg-surface text-text pt-32 pb-24 px-6 md:px-12 relative overflow-hidden">
+        <main ref={pageRef} className="min-h-screen bg-surface text-text pt-36 pb-20 px-6 md:px-12 relative overflow-hidden">
             <Seo
                 title="AI Automation Case Studies: Real Client Results | RSL/A"
                 description="Real results from real clients. See how RSL/A uses AI automation, custom websites, and CRM systems to drive measurable growth for B2B companies."
@@ -66,8 +87,8 @@ export default function Work() {
                 }}
             />
             {/* Hero Section */}
-            <section className="mb-20 text-center max-w-4xl mx-auto relative z-10">
-                <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-6 tracking-tight leading-[1.1]">
+            <section className="mb-14 text-center max-w-4xl mx-auto relative z-10">
+                <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-4 tracking-tight leading-[1.1]">
                     <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                         Our work.
                     </TextAnimate>
@@ -78,7 +99,7 @@ export default function Work() {
             </section>
 
             {/* Filters */}
-            <section className="mb-12 border-b border-accent-border pb-8 relative z-10 max-w-7xl mx-auto">
+            <section className="mb-10 border-b border-accent-border pb-6 relative z-10 max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-4">
                     <div className="relative">
                         <select
@@ -103,9 +124,9 @@ export default function Work() {
             </section>
 
             {/* Grid */}
-            <section className="max-w-7xl mx-auto relative z-10 mb-32">
+            <section className="max-w-7xl mx-auto relative z-10">
                 {loading ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {Array.from({ length: 6 }).map((_, i) => (
                             <CaseStudyCardSkeleton key={i} />
                         ))}
@@ -115,14 +136,14 @@ export default function Work() {
                         No case studies found for this category.
                     </div>
                 ) : (
-                    <div className="space-y-16">
+                    <div className="space-y-12">
                         {/* Featured Row */}
                         {featuredStudies.length > 0 && (
                             <div>
                                 <h2 className="font-sans text-sm text-textMuted uppercase tracking-widest mb-6 px-4">
                                     Featured Intelligence
                                 </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {featuredStudies.map((study) => (
                                         <CaseStudyCard data={study} key={study.slug} />
                                     ))}
@@ -136,7 +157,7 @@ export default function Work() {
                                 <h2 className="font-sans text-sm text-textMuted uppercase tracking-widest mb-6 px-4">
                                     All Case Studies
                                 </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {filteredAndSortedStudies.filter(s => !s.featured).map((study) => (
                                         <CaseStudyCard data={study} key={study.slug} />
                                     ))}

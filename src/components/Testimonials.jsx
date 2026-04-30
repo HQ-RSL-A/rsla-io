@@ -112,12 +112,9 @@ export default function Testimonials() {
     return (
         <section ref={sectionRef} className="py-20 md:py-32 bg-surfaceAlt px-6 md:px-12">
             <div className="max-w-6xl mx-auto space-y-12">
-                <div className="max-w-xl mx-auto text-center space-y-4">
-                    <span className="font-sans text-sm uppercase tracking-wider text-accent">
-                        What clients say
-                    </span>
+                <div className="max-w-xl mx-auto text-center">
                     <h2 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tight text-text">
-                        Real results, real businesses
+                        Don&apos;t take our word for it.
                     </h2>
                 </div>
 

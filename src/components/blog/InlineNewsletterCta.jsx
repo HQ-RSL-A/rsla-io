@@ -31,7 +31,7 @@ export default function InlineNewsletterCta() {
 
     if (status === 'success') {
         return (
-            <div className="my-16 p-8 md:p-10 rounded-[2rem] bg-surfaceAlt border border-accent-border text-center">
+            <div className="my-16 p-8 md:p-10 rounded-2xl bg-surfaceAlt border border-accent-border text-center">
                 <p className="font-sans font-bold text-2xl text-text mb-2">You're in.</p>
                 <p className="font-sans text-sm text-textMuted">Check your inbox for a confirmation.</p>
             </div>
@@ -39,7 +39,7 @@ export default function InlineNewsletterCta() {
     }
 
     return (
-        <div className="my-16 p-8 md:p-10 rounded-[2rem] bg-surfaceAlt border border-accent-border">
+        <div className="my-16 p-8 md:p-10 rounded-2xl bg-surfaceAlt border border-accent-border">
             <div className="max-w-lg mx-auto text-center">
                 <p className="font-sans text-accent text-sm uppercase tracking-widest mb-3">The Insider</p>
                 <p className="font-sans font-bold text-2xl md:text-3xl text-text mb-2 tracking-tight">

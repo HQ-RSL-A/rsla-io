@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowRight } from 'lucide-react';
 import { TextAnimate } from '@/components/ui/text-animate';
 import Seo from '../components/Seo';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
@@ -21,16 +23,16 @@ export default function Services() {
             }
 
             gsap.fromTo('.services-hero-content',
-                { y: 40, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.1 }
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.1 }
             );
 
             gsap.fromTo('.services-bento > *',
-                { y: 40, opacity: 0 },
+                { y: 30, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 0.8,
+                    duration: 0.7,
                     stagger: 0.1,
                     ease: 'power3.out',
                     scrollTrigger: {
@@ -78,7 +80,7 @@ export default function Services() {
             />
 
             {/* Hero */}
-            <section className="bg-surface pt-32 pb-16 md:pb-20 px-6 md:px-12">
+            <section className="bg-surface pt-36 pb-12 md:pb-16 px-6 md:px-12">
                 <div className="services-hero-content opacity-0 max-w-4xl mx-auto text-center">
                     <h1 className="font-sans font-bold text-3xl md:text-5xl text-text tracking-tight mb-6 leading-[1.1]">
                         <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
@@ -92,13 +94,31 @@ export default function Services() {
             </section>
 
             {/* Bento grid */}
-            <section className="bg-accent-light pb-20 md:pb-32 pt-4 md:pt-8 px-6 md:px-12">
+            <section className="bg-accent-light pb-20 md:pb-28 pt-6 md:pt-10 px-6 md:px-12">
                 <div className="max-w-6xl mx-auto">
                     <BentoGrid className="services-bento">
                         {features.map((feature) => (
                             <BentoCard key={feature.name} {...feature} />
                         ))}
                     </BentoGrid>
+                </div>
+            </section>
+
+            <section className="bg-surface py-16 md:py-24 px-6 md:px-12 border-t border-accent-border">
+                <div className="max-w-2xl mx-auto text-center">
+                    <h2 className="font-sans font-extrabold text-2xl md:text-3xl tracking-tight text-text mb-4">
+                        Not sure where to start?
+                    </h2>
+                    <p className="font-sans text-lg text-textMuted leading-relaxed mb-8">
+                        Book a free 30-minute call and we will map out exactly what your business needs.
+                    </p>
+                    <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-sans font-bold text-base text-white shadow-sm transition-colors hover:bg-accent/90"
+                    >
+                        Book a free call
+                        <ArrowRight size={16} strokeWidth={2} className="opacity-60" />
+                    </Link>
                 </div>
             </section>
         </div>

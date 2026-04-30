@@ -3,7 +3,7 @@ import Seo from '../components/Seo';
 
 export default function Terms() {
     return (
-        <main className="min-h-screen bg-surface pt-32 pb-24 px-6 md:px-12">
+        <main className="min-h-screen bg-surface pt-36 pb-20 px-6 md:px-12">
             <Seo
                 title="Terms & Conditions | RSL/A"
                 description="RSL/A terms and conditions for services and website usage."

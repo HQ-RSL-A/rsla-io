@@ -3,7 +3,7 @@ import Seo from '../components/Seo';
 
 export default function Privacy() {
     return (
-        <main className="min-h-screen bg-surface pt-32 pb-24 px-6 md:px-12">
+        <main className="min-h-screen bg-surface pt-36 pb-20 px-6 md:px-12">
             <Seo
                 title="Privacy Policy | RSL/A"
                 description="RSL/A privacy policy. How we collect, use, and protect your information."

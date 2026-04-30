@@ -327,7 +327,11 @@ export default function NavbarV3() {
                             type="button"
                             onClick={() => setMobileOpen(!mobileOpen)}
                             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-accent-border bg-surface text-text hover:bg-surfaceAlt transition-colors"
+                            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl text-text transition-colors ${
+                                scrolled || mobileOpen
+                                    ? 'bg-surface border border-accent-border'
+                                    : 'bg-white/60 backdrop-blur-sm'
+                            }`}
                         >
                             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                         </button>
@@ -337,81 +341,79 @@ export default function NavbarV3() {
 
             {/* Mobile sheet */}
             {mobileOpen && (
-                <div className="lg:hidden fixed inset-0 top-[64px] z-40 bg-background">
-                    <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-8 h-full overflow-y-auto">
-                        <ul className="flex flex-col">
+                <div className="lg:hidden fixed inset-0 top-[72px] z-40 bg-background">
+                    <div className="flex flex-col justify-between h-full px-6 pb-8 pt-6 overflow-y-auto">
+                        <nav className="flex flex-col gap-1">
                             {menu.map((item) => {
                                 if (item.children) {
                                     return (
-                                        <li key={item.url}>
+                                        <div key={item.url}>
                                             <button
                                                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                                                className={`w-full flex items-center justify-between py-4 font-sans font-semibold text-xl border-b border-accent-border ${
+                                                className={`w-full flex items-center justify-between py-3.5 px-2 rounded-xl font-sans font-semibold text-2xl tracking-tight transition-colors ${
                                                     isActive(item.url) ? 'text-accent' : 'text-text'
-                                                }`}
+                                                } ${mobileServicesOpen ? 'bg-accent-light' : ''}`}
                                             >
                                                 {item.title}
-                                                <ChevronDown size={18} strokeWidth={2} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                                                <ChevronDown size={20} strokeWidth={2.5} className={`text-textMuted transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                                             </button>
-                                            {mobileServicesOpen && (
-                                                <ul className="pl-4 border-b border-accent-border">
-                                                    {item.children.map((child) => {
-                                                        const isCurrent = location.pathname === child.url;
-                                                        return (
-                                                            <li key={child.url} className="border-b border-accent-border/50 last:border-b-0">
+                                            <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${mobileServicesOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                                                <div className="overflow-hidden">
+                                                    <div className="grid grid-cols-2 gap-2 px-1 pt-2 pb-3">
+                                                        {item.children.map((child) => {
+                                                            const isCurrent = location.pathname === child.url;
+                                                            return (
                                                                 <Link
+                                                                    key={child.url}
                                                                     to={child.url}
-                                                                    className={`block py-3 ${
-                                                                        isCurrent ? 'text-accent' : 'text-text hover:text-accent'
+                                                                    className={`flex flex-col gap-1 rounded-xl border px-3.5 py-3 transition-colors ${
+                                                                        isCurrent
+                                                                            ? 'border-accent/30 bg-accent-light'
+                                                                            : 'border-accent-border bg-surface active:bg-accent-light'
                                                                     }`}
                                                                 >
-                                                                    <div className="font-sans font-semibold text-base">
+                                                                    <span className={`font-sans font-semibold text-sm ${isCurrent ? 'text-accent' : 'text-text'}`}>
                                                                         {child.title}
-                                                                    </div>
-                                                                    <p className="font-sans text-sm text-textMuted mt-0.5 leading-snug">
+                                                                    </span>
+                                                                    <span className="font-sans text-xs text-textMuted leading-snug">
                                                                         {child.description}
-                                                                    </p>
+                                                                    </span>
                                                                 </Link>
-                                                            </li>
-                                                        );
-                                                    })}
-                                                    <li className="border-t border-accent-border/50 mt-1">
+                                                            );
+                                                        })}
                                                         <Link
                                                             to={item.url}
-                                                            className="flex items-center justify-between py-3 font-sans font-semibold text-sm text-accent hover:opacity-80 transition-opacity"
+                                                            className="flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-accent/30 px-3.5 py-3 transition-colors active:bg-accent-light"
                                                         >
-                                                            See all services
-                                                            <ArrowRight size={14} strokeWidth={2} />
+                                                            <span className="font-sans font-semibold text-sm text-accent">All services</span>
+                                                            <ArrowRight size={14} strokeWidth={2.5} className="text-accent" />
                                                         </Link>
-                                                    </li>
-                                                </ul>
-                                            )}
-                                        </li>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     );
                                 }
                                 return (
-                                    <li key={item.url}>
-                                        <Link
-                                            to={item.url}
-                                            className={`block py-4 font-sans font-semibold text-xl border-b border-accent-border ${
-                                                isActive(item.url) ? 'text-accent' : 'text-text'
-                                            }`}
-                                        >
-                                            {item.title}
-                                        </Link>
-                                    </li>
+                                    <Link
+                                        key={item.url}
+                                        to={item.url}
+                                        className={`block py-3.5 px-2 rounded-xl font-sans font-semibold text-2xl tracking-tight transition-colors ${
+                                            isActive(item.url) ? 'text-accent' : 'text-text active:bg-accent-light'
+                                        }`}
+                                    >
+                                        {item.title}
+                                    </Link>
                                 );
                             })}
-                        </ul>
-                        <div className="flex flex-col gap-3">
-                            <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'mobile_menu' })}>
-                                <InteractiveHoverButton
-                                    className="w-full font-sans font-bold text-base px-6 py-4"
-                                >
-                                    Let&apos;s Talk
-                                </InteractiveHoverButton>
-                            </Link>
-                        </div>
+                        </nav>
+                        <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'mobile_menu' })}>
+                            <InteractiveHoverButton
+                                className="w-full font-sans font-bold text-base px-6 py-4"
+                            >
+                                Let&apos;s Talk
+                            </InteractiveHoverButton>
+                        </Link>
                     </div>
                 </div>
             )}

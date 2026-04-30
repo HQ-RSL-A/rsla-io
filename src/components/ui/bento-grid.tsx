@@ -1,4 +1,4 @@
-import { type ComponentPropsWithoutRef, type ReactNode } from "react"
+import { type ComponentPropsWithoutRef, type ReactNode, useRef, useState, useEffect, useCallback, Children } from "react"
 import { ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
 
@@ -19,15 +19,58 @@ interface BentoCardProps {
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const count = Children.count(children)
+
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const scrollLeft = el.scrollLeft
+    const cardWidth = el.firstElementChild?.getBoundingClientRect().width ?? 1
+    const gap = 16
+    const index = Math.round(scrollLeft / (cardWidth + gap))
+    setActiveIndex(Math.min(index, count - 1))
+  }, [count])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    el.addEventListener("scroll", handleScroll, { passive: true })
+    return () => el.removeEventListener("scroll", handleScroll)
+  }, [handleScroll])
+
   return (
-    <div
-      className={cn(
-        "grid w-full auto-rows-[22rem] grid-cols-3 gap-4",
-        className
-      )}
-      {...props}
-    >
-      {children}
+    <div>
+      <div
+        ref={scrollRef}
+        className={cn(
+          "flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide",
+          "lg:grid lg:w-full lg:auto-rows-[22rem] lg:grid-cols-3 lg:overflow-visible lg:snap-none lg:pb-0 lg:mx-0 lg:px-0",
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+      <div className="flex justify-center gap-2 mt-4 lg:hidden">
+        {Array.from({ length: count }).map((_, i) => (
+          <button
+            key={i}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => {
+              const el = scrollRef.current
+              if (!el) return
+              const card = el.children[i] as HTMLElement
+              if (card) card.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" })
+            }}
+            className={cn(
+              "h-2 rounded-full transition-all duration-300",
+              i === activeIndex ? "w-6 bg-accent" : "w-2 bg-accent/25"
+            )}
+          />
+        ))}
+      </div>
     </div>
   )
 }
@@ -43,7 +86,9 @@ const BentoCard = ({
   <Link
     to={href}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl cursor-pointer",
+      "group relative flex flex-col justify-between overflow-hidden rounded-xl cursor-pointer",
+      "w-[calc(100vw-3rem)] min-w-[calc(100vw-3rem)] h-[22rem] snap-center",
+      "lg:w-auto lg:min-w-0 lg:h-auto lg:snap-align-none lg:col-span-3",
       "bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
       "dark:bg-background transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]",
       className

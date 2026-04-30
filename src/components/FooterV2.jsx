@@ -55,9 +55,6 @@ export default function FooterV2() {
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-14 lg:gap-20">
                     {/* Left — CTA */}
                     <div className="max-w-lg">
-                        <p className="font-sans text-sm text-white/50 mb-3">
-                            Work with us
-                        </p>
                         <h2 className="font-sans font-extrabold text-2xl md:text-3xl text-white leading-snug mb-8">
                             Start with a free, 30-minute growth mapping call.
                         </h2>

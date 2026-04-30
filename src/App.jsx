@@ -76,14 +76,14 @@ const DiscoveryCall = lazyRetry(() => import('./pages/DiscoveryCall'));
 const BookCall = lazyRetry(() => import('./pages/BookCall'));
 const BookingConfirmed = lazyRetry(() => import('./pages/BookingConfirmed'));
 const Rahul = lazyRetry(() => import('./pages/Rahul'));
-const Sid = lazyRetry(() => import('./pages/Sid'));
+
 const Disclaimer = lazyRetry(() => import('./pages/Disclaimer'));
 const Accessibility = lazyRetry(() => import('./pages/Accessibility'));
 const Insider = lazyRetry(() => import('./pages/Insider'));
 const LeadMagnet = lazyRetry(() => import('./pages/LeadMagnet'));
 const NotFound = lazyRetry(() => import('./pages/NotFound'));
 
-const chromelessRoutes = ['/rahul', '/sid', '/booking-confirmed'];
+const chromelessRoutes = ['/rahul', '/booking-confirmed'];
 
 function App() {
   const location = useLocation();
@@ -131,7 +131,7 @@ function App() {
             <Route path="/book-a-call" element={<BookCall />} />
             <Route path="/booking-confirmed" element={<BookingConfirmed />} />
             <Route path="/rahul" element={<Rahul />} />
-            <Route path="/sid" element={<Sid />} />
+
             <Route path="/insider" element={<Insider />} />
 
             {/* Lead Magnets — Gated Resource Pages */}

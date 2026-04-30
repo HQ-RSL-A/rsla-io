@@ -18,7 +18,7 @@ export default function CaseStudyCard({ data, showImage = true }) {
     return (
         <Link
             to={`/work/${data.slug}`}
-            className="group flex flex-col h-full bg-surfaceAlt rounded-[2rem] border border-accent-border overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-md ease-out-smooth"
+            className="work-card opacity-0 group flex flex-col h-full bg-surfaceAlt rounded-2xl border border-accent-border overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] md:hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] md:hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-md ease-out-smooth"
         >
             {imageUrl && (
                 <div className="relative aspect-[16/10] overflow-hidden bg-surface border-b border-accent-border">

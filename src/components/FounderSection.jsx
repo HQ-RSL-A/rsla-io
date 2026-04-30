@@ -15,9 +15,9 @@ export default function FounderSection() {
                 return;
             }
             gsap.fromTo('.founder-text',
-                { y: 40, opacity: 0 },
+                { y: 30, opacity: 0 },
                 {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                    y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out',
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: 'top 65%',
@@ -30,21 +30,21 @@ export default function FounderSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full bg-surface py-24 md:py-32">
+        <section ref={sectionRef} className="w-full bg-surface pt-20 pb-24 md:pt-28 md:pb-32">
             <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-12 md:gap-16 items-start">
                 {/* Photo */}
                 <div className="md:sticky md:top-32 w-full md:w-2/5 flex-shrink-0">
-                    <div className="w-full aspect-[3/4] rounded-[2rem] bg-accent-light overflow-hidden transition-transform duration-photo-hover ease-out-smooth hover:scale-[1.02]">
+                    <div className="w-full aspect-[3/4] rounded-3xl bg-accent-light overflow-hidden transition-transform duration-photo-hover ease-out-smooth md:hover:scale-[1.02]">
                         <img src="/images/rahul.webp" alt="Rahul Lalia" className="w-full h-full object-cover" loading="lazy" width="600" height="800" />
                     </div>
                 </div>
 
                 {/* Text */}
                 <div className="flex-1">
-                    <h2 className="founder-text opacity-0 font-sans font-extrabold text-2xl md:text-4xl text-text tracking-tight mb-8">
+                    <h2 className="founder-text opacity-0 font-sans font-extrabold text-2xl md:text-4xl text-text tracking-tight mb-6">
                         Hi. I'm Rahul.
                     </h2>
-                    <div className="space-y-6 font-sans text-textMuted text-lg leading-relaxed">
+                    <div className="space-y-5 font-sans text-textMuted text-lg leading-relaxed">
                         <p className="founder-text opacity-0">
                             I have spent the better part of five years in the trenches of marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched founders with real talent suffocate under work that never should have touched their hands.
                         </p>

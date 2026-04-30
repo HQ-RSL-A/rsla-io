@@ -26,7 +26,7 @@ export default function PersonCard({ seo, photo, name, title, subtitle, email, c
             />
 
             {/* Card */}
-            <div className="relative z-10 w-full max-w-sm bg-surfaceAlt border border-accent-border rounded-[2rem] px-8 py-10 flex flex-col items-center shadow-sm overflow-hidden">
+            <div className="relative z-10 w-full max-w-sm bg-surfaceAlt border border-accent-border rounded-3xl px-8 py-10 flex flex-col items-center shadow-sm overflow-hidden">
                 <ShineBorder shineColor={['#0070F3', '#00C2FF']} borderWidth={1} duration={10} />
                 {/* Profile photo */}
                 <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-accent/30 shadow-lg shadow-accent/10 mb-6">

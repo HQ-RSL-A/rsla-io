@@ -19,12 +19,12 @@ export default function About() {
 
             gsap.fromTo('.about-hero-content',
                 { y: 40, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.1 }
+                { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.1 }
             );
 
             gsap.fromTo('.about-section',
                 { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: 'power3.out', delay: 0.4 }
+                { y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out', delay: 0.25 }
             );
 
             gsap.fromTo('.words-section blockquote p',
@@ -65,7 +65,7 @@ export default function About() {
                     ],
                 }}
             />
-            <section className="bg-surface pt-32 pb-24 md:pb-32 px-6 md:px-12">
+            <section className="bg-surface pt-36 pb-16 md:pt-44 md:pb-20 px-6 md:px-12">
                 <div className="about-hero-content opacity-0 max-w-4xl mx-auto text-center">
                     <h1 className="font-cormorant italic font-medium text-3xl md:text-5xl text-text tracking-tight mb-6 leading-[1.15]">
                         <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
@@ -76,32 +76,32 @@ export default function About() {
             </section>
 
             {/* Body Content */}
-            <section className="about-body bg-surfaceAlt py-24 md:py-32 px-6 md:px-12">
+            <section className="about-body bg-surfaceAlt pt-16 pb-20 md:pt-24 md:pb-28 px-6 md:px-12 border-t border-accent-border">
                 <div className="max-w-3xl mx-auto">
                     {/* Origin Story */}
-                    <div className="about-section opacity-0 mb-20 md:mb-24">
-                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-8">
+                    <div className="about-section opacity-0 mb-16 md:mb-20">
+                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-6">
                             How it started
                         </h2>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             I started my career in marketing analytics. Numbers, dashboards, attribution models. I was the guy staring at spreadsheets while everyone else was making the creative decisions.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             Then I got laid off.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             And honestly? It was the best thing that happened to me. Because it forced me to build something on my own.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             I started an agency. The classic social media marketing agency thing. Posting content, running accounts, doing the hustle. But I kept noticing the same pattern with every client I worked with.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             They were not struggling because they lacked talent. They were drowning in manual work.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             Following up with leads at midnight. Copy-pasting between three different tools. Losing deals because they forgot to reply. Running ads with zero tracking. Paying for five different software subscriptions that did not talk to each other.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             And you know what? Most of the "solutions" out there made it worse. More tools, more complexity, more things to manage.
                         </p>
                         <p className="font-sans font-normal text-lg text-textMuted leading-relaxed">
@@ -110,14 +110,14 @@ export default function About() {
                     </div>
 
                     {/* What I Actually Do */}
-                    <div className="about-section opacity-0 mb-20 md:mb-24">
-                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-8">
+                    <div className="about-section opacity-0 mb-16 md:mb-20">
+                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-6">
                             What I actually do
                         </h2>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             I show founders how to put AI to work in their business. Then I build it for them.
                         </p>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             The teaching part is free. I post the workflows, the tools, the exact systems. No gatekeeping. If you can build it yourself after watching my content, I genuinely want that for you.
                         </p>
                         <p className="font-sans font-normal text-lg text-textMuted leading-relaxed">
@@ -126,11 +126,11 @@ export default function About() {
                     </div>
 
                     {/* Why I Am Different */}
-                    <div className="about-section opacity-0 mb-20 md:mb-24">
-                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-8">
+                    <div className="about-section opacity-0 mb-16 md:mb-20">
+                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-6">
                             Why I am different
                         </h2>
-                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-5">
+                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed mb-4">
                             I came from analytics. That matters.
                         </p>
                         <p className="font-sans font-normal text-lg text-textMuted leading-relaxed">
@@ -149,13 +149,12 @@ export default function About() {
             </section>
 
             {/* Words I Like */}
-            <section className="words-section bg-surface py-24 md:py-32 px-6 md:px-12 border-t border-accent-border">
+            <section className="words-section bg-surface py-20 md:py-28 px-6 md:px-12 border-t border-accent-border">
                 <div className="max-w-3xl mx-auto text-center">
-                    <p className="font-sans font-bold text-lg uppercase tracking-[0.2em] text-accent mb-8 md:mb-10">
+                    <p className="font-sans font-bold text-sm uppercase tracking-[0.25em] text-accent mb-8 md:mb-10">
                         Words I Like
                     </p>
                     <div className="relative">
-                        <span className="font-cormorant text-accent/15 text-[5rem] md:text-[12rem] leading-none absolute -top-6 md:-top-16 left-0 select-none pointer-events-none">"</span>
                         <blockquote className="relative z-10">
                             <p className="font-cormorant italic font-medium text-xl md:text-3xl text-text leading-[1.4] md:leading-[1.45]">What a privilege to be tired from work you once begged the universe for. What a privilege to feel overwhelmed by growth you used to dream about. What a privilege to be challenged by a life you created on purpose. What a privilege to outgrow things you used to settle for.</p>
                         </blockquote>

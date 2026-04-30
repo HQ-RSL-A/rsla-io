@@ -18,14 +18,14 @@ export default function BookCall() {
     }, []);
 
     return (
-        <main className="min-h-screen bg-surface pt-32 pb-24 px-6 md:px-12">
+        <main className="min-h-screen bg-surface pt-36 pb-20 px-6 md:px-12">
             <Seo
                 title="Book a Call | RSL/A"
                 description="Schedule a call with RSL/A. Existing clients can book onboarding, strategy, and support sessions."
                 canonical="https://rsla.io/book-a-call"
                 noIndex
             />
-            <div className="max-w-4xl mx-auto bg-surfaceAlt border border-accent-border rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 text-center shadow-sm relative overflow-hidden">
+            <div className="max-w-4xl mx-auto bg-surfaceAlt border border-accent-border rounded-2xl md:rounded-3xl p-6 md:p-16 text-center shadow-sm relative overflow-hidden">
                 <ShineBorder shineColor={['#0070F3', '#00C2FF']} borderWidth={1} duration={12} />
 
                 <h1 className="text-3xl md:text-5xl font-sans font-bold mb-4 tracking-tight text-text leading-[1.1]">

@@ -35,8 +35,8 @@ export default function CtaWithGlow({
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.12,
+                    duration: 0.7,
+                    stagger: 0.1,
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: sectionRef.current,

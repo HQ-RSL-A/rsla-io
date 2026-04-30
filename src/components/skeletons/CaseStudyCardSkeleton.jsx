@@ -1,6 +1,6 @@
 export default function CaseStudyCardSkeleton() {
     return (
-        <div className="flex flex-col h-full bg-surfaceAlt rounded-[2rem] border border-accent-border overflow-hidden animate-pulse">
+        <div className="flex flex-col h-full bg-surfaceAlt rounded-2xl border border-accent-border overflow-hidden animate-pulse">
             <div className="p-8 flex flex-col flex-grow">
                 <div className="mb-6 flex justify-between items-start">
                     <div className="h-5 w-24 bg-accent-border/40 rounded-sm" />

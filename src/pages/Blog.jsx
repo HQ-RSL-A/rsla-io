@@ -145,7 +145,7 @@ export default function Blog() {
     const activeCategoryName = categories.find((c) => c.slug?.current === activeCategory)?.name;
 
     return (
-        <div className="min-h-screen bg-surface text-text pt-32 pb-24 px-6 md:px-12 relative overflow-hidden">
+        <div className="min-h-screen bg-surface text-text pt-36 pb-20 px-6 md:px-12 relative overflow-hidden">
             <Seo
                 title="Blog: AI Marketing, Automation & Growth Insights | RSL/A"
                 description="Practical guides on GoHighLevel, Claude AI, marketing automation, local SEO, and AI-powered growth strategies. Written by practitioners, not theorists."
@@ -170,8 +170,8 @@ export default function Blog() {
                 }}
             />
             <div className="max-w-7xl mx-auto relative z-10">
-                <header className="mb-12 text-center">
-                    <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-6 tracking-tight leading-[1.1]">
+                <header className="mb-10 text-center">
+                    <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-4 tracking-tight leading-[1.1]">
                         <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                             Our blog.
                         </TextAnimate>
@@ -182,7 +182,7 @@ export default function Blog() {
                 </header>
 
                 {/* Filter bar */}
-                <div className="mb-12 flex flex-col gap-4">
+                <div className="mb-10 flex flex-col gap-4">
                     {/* Search + Category row */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 max-w-2xl mx-auto w-full">
                         {/* Search */}
@@ -238,7 +238,7 @@ export default function Blog() {
                 </div>
 
                 {loading ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                         {Array.from({ length: 6 }).map((_, i) => (
                             <BlogCardSkeleton key={i} />
                         ))}
@@ -264,7 +264,7 @@ export default function Blog() {
                     </div>
                 ) : (
                     <>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                             {posts.filter(p => p.slug?.current).map((post) => {
                                 const imageUrl = post.featuredImage?.asset ? urlForImage(post.featuredImage)?.width(600).height(400).url() : '';
 
@@ -272,7 +272,7 @@ export default function Blog() {
                                     <Link
                                         key={post._id}
                                         to={`/blog/${post.slug.current}`}
-                                        className="group flex flex-col h-full bg-surfaceAlt rounded-[2rem] border border-accent-border overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-md ease-out-smooth"
+                                        className="group flex flex-col h-full bg-surfaceAlt rounded-2xl border border-accent-border overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] md:hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] md:hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-md ease-out-smooth"
                                     >
                                         {imageUrl && (
                                             <div className="relative aspect-[3/2] overflow-hidden bg-surfaceAlt">
@@ -280,7 +280,7 @@ export default function Blog() {
                                                     src={imageUrl}
                                                     alt={post.featuredImage?.alt || post.title}
                                                     loading="lazy"
-                                                    className="w-full h-full object-cover transition-transform duration-image-zoom ease-out-smooth scale-100 group-hover:scale-105"
+                                                    className="w-full h-full object-cover transition-transform duration-image-zoom ease-out-smooth scale-100 group-hover:scale-[1.03]"
                                                 />
                                             </div>
                                         )}

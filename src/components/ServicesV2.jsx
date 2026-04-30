@@ -11,16 +11,25 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 function usePauseOffscreen(containerRef, tlRef) {
     useEffect(() => {
         const el = containerRef.current;
-        if (!el || !tlRef.current) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) tlRef.current?.play();
-                else tlRef.current?.pause();
-            },
-            { threshold: 0 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
+        if (!el) return;
+
+        let observer;
+        const id = setTimeout(() => {
+            if (!tlRef.current) return;
+            observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) tlRef.current?.play();
+                    else tlRef.current?.pause();
+                },
+                { threshold: 0 }
+            );
+            observer.observe(el);
+        }, 0);
+
+        return () => {
+            clearTimeout(id);
+            observer?.disconnect();
+        };
     }, [containerRef, tlRef]);
 }
 import {

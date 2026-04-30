@@ -1,6 +1,6 @@
 export default function BlogCardSkeleton() {
     return (
-        <div className="flex flex-col h-full bg-surfaceAlt rounded-[2rem] border border-accent-border overflow-hidden animate-pulse">
+        <div className="flex flex-col h-full bg-surfaceAlt rounded-2xl border border-accent-border overflow-hidden animate-pulse">
             <div className="aspect-[3/2] bg-accent-border/40" />
             <div className="p-8 flex flex-col flex-grow">
                 <div className="flex gap-2 mb-4">

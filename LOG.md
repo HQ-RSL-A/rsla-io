@@ -1,5 +1,27 @@
 # LOG.md - rslaWebsite
 
+## 2026-04-30 - GTM Conversion Tracking Complete
+
+### What happened
+Completed the GTM conversion tracking setup that was started on 2026-04-23. Fixed incorrect firing triggers on event tags (were set to "Initialization - All Pages" instead of matching custom event triggers). Added `dataLayer.push({ event: 'cta_click' })` to all 6 contact CTA links in code because React Router Link clicks don't produce a Click URL for GTM's click-based triggers.
+
+### Changes
+- Fixed CE - Booking Confirmed tag trigger (was firing on every page load)
+- Fixed CE - Newsletter Subscribe tag trigger (same issue)
+- Added `source` event parameter to newsletter tag (distinguishes insider vs lead magnet signups)
+- Created `dlv - source` and `dlv - cta_location` Data Layer Variables in GTM
+- Changed CTA trigger from "All Elements / Click URL contains /contact" to Custom Event `cta_click`
+- Added `dataLayer.push` with `cta_location` to: HeroV2, FooterV2, NavbarV3 (desktop + mobile), Home.jsx, ServiceDetail.jsx
+- Published GTM container Version 5
+
+### Commits
+- `db09d04` feat(tracking): add cta_click dataLayer events to all contact CTAs
+
+### Still pending
+- Mark `booking_confirmed`, `newsletter_subscribe`, `cta_click` as Key Events in GA4 once they appear in Admin > Events (24-48 hours)
+
+---
+
 ## 2026-04-22 - Code Audit & Fixes
 
 ### What happened

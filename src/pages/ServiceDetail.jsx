@@ -60,7 +60,7 @@ export default function ServiceDetail() {
 
     if (!service) {
         return (
-            <main className="min-h-screen bg-surface text-text pt-32 pb-24 px-6 md:px-12 flex flex-col items-center justify-center">
+            <main className="min-h-screen bg-surface text-text pt-36 pb-20 px-6 md:px-12 flex flex-col items-center justify-center">
                 <h1 className="text-3xl md:text-5xl font-sans font-bold mb-4">Service not found</h1>
                 <Link to="/services" className="text-accent hover:text-accent/80 font-sans font-semibold">Back to Services</Link>
             </main>
@@ -68,7 +68,7 @@ export default function ServiceDetail() {
     }
 
     return (
-        <main className="min-h-screen bg-surface text-text pt-32 pb-24 px-6 md:px-12">
+        <main className="min-h-screen bg-surface text-text pt-36 pb-20 px-6 md:px-12">
             <Seo
                 title={`${service.title} | RSL/A`}
                 description={service.description}

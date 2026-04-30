@@ -162,13 +162,13 @@ export default function Home() {
                 <LogoMarquee />
 
                 {/* SECTION 3 — HEADLINE + INTRO */}
-                <section className="w-full bg-surface py-24 md:py-32">
+                <section className="w-full bg-surface pt-20 pb-16 md:pt-28 md:pb-24">
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
                         <div className="max-w-4xl">
                             <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
                                 Hundreds of thousands generated (and honestly, even more saved).
                             </h2>
-                            <p className="hr-reveal opacity-0 mt-8 md:mt-10 font-sans font-normal text-lg text-textMuted leading-relaxed">
+                            <p className="hr-reveal opacity-0 mt-6 md:mt-8 font-sans font-normal text-lg text-textMuted leading-relaxed">
                                 Rahul and his team build intelligent marketing systems for both SMB and enterprise. We use a proprietary AI-driven consulting stack and a framework that digs into how your business actually runs so we can fix real, practical problems. Not the theoretical ones that look good on paper, but the actual things that are stopping you from scaling your business.
                             </p>
                         </div>
@@ -176,9 +176,9 @@ export default function Home() {
                 </section>
 
                 {/* SECTION 4 — CASE STUDIES (3-col grid, text-only) */}
-                <section className="w-full bg-background py-24 md:py-32">
+                <section className="w-full bg-background pt-20 pb-24 md:pt-28 md:pb-32">
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                        <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                             <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
                                 Some of our work.
                             </h2>
@@ -223,13 +223,22 @@ export default function Home() {
                                     </article>
                                 );
                                 return cs.slug ? (
-                                    <Link key={cs.slug || i} to={`/work/${cs.slug}`} className="hr-reveal opacity-0 block h-full">
+                                    <Link key={cs.slug || i} to={`/work/${cs.slug}`} className={`hr-reveal opacity-0 block h-full ${i > 0 ? 'hidden md:block' : ''}`}>
                                         {card}
                                     </Link>
                                 ) : (
-                                    <div key={i} className="hr-reveal opacity-0 h-full">{card}</div>
+                                    <div key={i} className={`hr-reveal opacity-0 h-full ${i > 0 ? 'hidden md:block' : ''}`}>{card}</div>
                                 );
                             })}
+                        </div>
+                        <div className="mt-8 md:hidden">
+                            <Link
+                                to="/work"
+                                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border border-accent-border bg-surface font-sans font-semibold text-base text-accent active:bg-accent-light transition-colors"
+                            >
+                                View all case studies
+                                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -241,9 +250,9 @@ export default function Home() {
                 <ServicesV2 />
 
                 {/* SECTION 7 — HOW WE WORK (timeline layout) */}
-                <section className="w-full bg-surface px-6 md:px-12 py-24 md:py-32 border-t border-accent-border">
+                <section className="w-full bg-surface px-6 md:px-12 pt-20 pb-24 md:pt-28 md:pb-32 border-t border-accent-border">
                     <div className="max-w-4xl mx-auto">
-                        <div className="mb-12 md:mb-16 max-w-3xl">
+                        <div className="mb-10 md:mb-14 max-w-3xl">
                             <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
                                 How we work
                             </p>
