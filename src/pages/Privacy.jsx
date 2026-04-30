@@ -254,17 +254,17 @@ export default function Privacy() {
                     <p className="mb-4">We use the following categories of cookies:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Strictly Necessary Cookies:</strong> Required for the Site to function properly. These cannot be disabled. They include cookies for security, load balancing, and session management.</li>
-                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors interact with our Site by collecting anonymous usage data (e.g., Google Analytics). These are only set with your consent.</li>
-                        <li><strong className="text-text">Functional Cookies:</strong> Remember your preferences and settings (e.g., language, region). These are only set with your consent.</li>
-                        <li><strong className="text-text">Marketing and Advertising Cookies:</strong> Used to deliver relevant ads and track campaign performance across platforms (e.g., Google Ads, Meta Pixel). These are only set with your consent.</li>
+                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors interact with our Site by collecting anonymous usage data (e.g., Google Analytics). These cookies are loaded when you visit our Site to help us understand usage patterns and improve your experience.</li>
+                        <li><strong className="text-text">Functional Cookies:</strong> Remember your preferences and settings (e.g., language, region, cookie banner preference).</li>
+                        <li><strong className="text-text">Marketing and Advertising Cookies:</strong> Used to measure campaign performance across platforms (e.g., Meta Pixel). These cookies are loaded when you visit our Site to help us understand which marketing channels are effective.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Consent</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Notice</h3>
                     <p className="mb-6">
-                        When you first visit our Site, you will be presented with a cookie consent banner that allows you to accept or decline non-essential cookies. You can change your cookie preferences at any time by clicking the "Cookie Settings" link in our website footer.
+                        When you first visit our Site, a cookie notice informs you about the cookies we use. As a US-based business serving primarily US and Canadian clients, we do not require opt-in consent for analytics and marketing cookies under applicable law. We provide this notice for transparency so you understand what data is collected during your visit.
                     </p>
                     <p className="mb-6">
-                        Strictly necessary cookies are always active because the Site cannot function without them. All other cookies require your affirmative consent before they are placed on your device.
+                        You may adjust cookie behavior at any time through your browser settings or by clicking the "Cookie Settings" link in our website footer. Disabling cookies in your browser may affect your experience on our Site but will not prevent you from accessing our content.
                     </p>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
