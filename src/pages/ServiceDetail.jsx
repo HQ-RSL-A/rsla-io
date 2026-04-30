@@ -102,6 +102,7 @@ export default function ServiceDetail() {
 
                 <Link
                     to="/contact"
+                    onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'service_detail' })}
                     className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-sans font-bold text-base text-white shadow-sm transition-colors hover:bg-accent/90"
                 >
                     Let's Talk

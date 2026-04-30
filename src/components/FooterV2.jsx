@@ -63,6 +63,7 @@ export default function FooterV2() {
                         </h2>
                         <Link
                             to="/contact"
+                            onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'footer' })}
                             className="inline-flex items-center gap-2 rounded-xl bg-white text-[#0A0A0A] px-6 py-3 font-sans font-bold text-sm hover:bg-white/90 transition-colors"
                         >
                             Let's Talk

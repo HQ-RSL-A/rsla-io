@@ -299,6 +299,7 @@ export default function Home() {
                                 <div className="flex flex-1 pl-4 md:pl-6 lg:pl-9">
                                     <Link
                                         to="/contact"
+                                        onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'how_it_works' })}
                                         className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors group"
                                     >
                                         Start with a free audit

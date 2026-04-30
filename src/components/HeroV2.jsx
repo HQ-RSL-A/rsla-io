@@ -40,7 +40,7 @@ export default function HeroV2() {
 
                     {/* CTAs — primary goal is the discovery call, so "Let's Talk" is solid */}
                     <div className="flex flex-wrap gap-3 sm:gap-4">
-                        <Link to="/contact">
+                        <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'hero' })}>
                             <InteractiveHoverButton className="font-sans font-bold text-base px-8 py-3">
                                 Let&apos;s Talk
                             </InteractiveHoverButton>

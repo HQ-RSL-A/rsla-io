@@ -302,7 +302,7 @@ export default function NavbarV3() {
                             })}
                         </ul>
                         <div className="flex items-center gap-2 shrink-0 justify-self-end">
-                            <Link to="/contact">
+                            <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'navbar' })}>
                                 <InteractiveHoverButton
                                     className="font-sans font-bold text-sm px-5 py-2.5"
                                 >
@@ -404,7 +404,7 @@ export default function NavbarV3() {
                             })}
                         </ul>
                         <div className="flex flex-col gap-3">
-                            <Link to="/contact">
+                            <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'mobile_menu' })}>
                                 <InteractiveHoverButton
                                     className="w-full font-sans font-bold text-base px-6 py-4"
                                 >
