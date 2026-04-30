@@ -224,3 +224,70 @@ These pages have impressions and decent positions but zero clicks. Title/meta re
 | linkedin / bio_personal | April 18 | 3 | 67% |
 
 All UTM traffic lands on the homepage. Instagram dropped off after April 7.
+
+---
+
+## Google Search Console Coverage (April 30, 2026)
+
+### Indexing Trend
+
+| Date | Indexed | Not Indexed | Daily Impressions |
+|------|---------|-------------|-------------------|
+| Jan 30 | 38 | 213 | ~1,200 |
+| Feb 24 | 60 | 200 | ~2,000 |
+| Mar 10 | 69 | 161 | 7,681 |
+| Mar 16 | 69 | 158 | **10,492** (peak) |
+| Apr 4 | 66 | 179 | 2,767 |
+| Apr 13 | 66 | 174 | 5,544 |
+| Apr 20 | **53** | 188 | 3,569 |
+| Apr 26 | **52** | 179 | 2,773 |
+
+**Index count dropped from 69 to 52 in April.** 17 pages that were previously indexed are no longer. This needs investigation - check GSC to identify which specific pages were de-indexed and why.
+
+**Impressions peaked mid-March at 10,492/day** then declined to ~2,700/day by late April. The decline correlates with the index count drop.
+
+### Coverage Breakdown
+
+| Status | Count | Action |
+|--------|-------|--------|
+| **Crawled - currently not indexed** | **131** | Critical. Google crawled these pages but chose not to index them. Likely thin content, duplicate content, or low perceived value. Investigate which pages and why. |
+| Discovered - currently not indexed | 13 | Google found URLs but hasn't crawled them yet. These will resolve on their own or need internal links to signal importance. |
+| Soft 404 | 12 | Pages returning 200 but Google interprets as error pages. Likely industry pages (/ai-for/*) or old URLs with minimal content. Fix by adding substantial content or properly 404/redirecting. |
+| Page with redirect | 11 | Expected. Legacy 301 redirects we added. No action needed. |
+| Excluded by noindex | 9 | Expected. Service detail pages + legal pages. No action needed. |
+| Alternate page with canonical | 2 | Expected. www vs non-www. No action needed. |
+| Blocked by robots.txt | 1 | Investigate which page and whether it should be blocked. |
+
+### Critical Issue: 131 Crawled But Not Indexed
+
+This is the single biggest indexing problem. Google visited 131 pages and decided they weren't worth indexing. Common causes:
+
+1. **Thin content** - pages with very little unique text (industry pages, service detail pages)
+2. **Duplicate/near-duplicate content** - multiple pages targeting the same topic
+3. **Low internal link equity** - pages with only 1 internal link don't signal importance
+4. **Crawl budget waste** - Google is spending budget crawling pages it won't index
+
+**Action plan:**
+- Pull the full list of "Crawled - currently not indexed" URLs from GSC
+- Categorize them: which are blog posts, industry pages, case studies, or junk URLs?
+- For valuable content: add internal links, expand thin content, improve titles
+- For junk URLs: noindex or 404 them so Google stops wasting crawl budget
+- For industry pages (/ai-for/*): expand from template pages to 800+ word unique content
+
+### Soft 404 Investigation Needed
+
+12 pages are being treated as soft 404s. These are likely:
+- Industry pages (/ai-for/*) with boilerplate template content
+- Old legacy URLs that return the SPA shell but no real content
+- Pages where the React hydration fails and Google sees an empty shell
+
+**Action:** Pull the list from GSC, fix each one by either adding real content or returning a proper 404 status code.
+
+### Key Takeaway
+
+The site went from 38 indexed pages in January to 69 in March (great progress from sitemap and technical fixes), but has since dropped back to 52. The 131 crawled-but-not-indexed pages suggest Google is evaluating the site's content quality more critically. The priority is:
+
+1. Fix the 12 soft 404s (these actively hurt the site's quality signals)
+2. Investigate the 17 de-indexed pages (what changed?)
+3. Address the 131 crawled-not-indexed pages by improving content quality and internal linking
+4. Stop the impressions decline by improving CTR on existing rankings
