@@ -24,7 +24,7 @@ Inherits from `~/lalia/CLAUDE.md`. Everything here is trusted.
 | Icons | Lucide React |
 | SEO | Custom Seo.jsx + JSON-LD on all indexed pages |
 | Error Monitoring | Sentry (deferred via requestIdleCallback) |
-| Fonts | Self-hosted WOFF2: Satoshi, Inter, Space Grotesk, Playfair Display, Caveat |
+| Fonts | Self-hosted WOFF2: Satoshi (primary), Cormorant (decorative italic only) |
 | Pre-rendering | Build-time HTML injection (scripts/prerender.mjs + marked) |
 | Newsletter | Kit API (`api.convertkit.com/v3/forms/9130465/subscribe`) |
 
@@ -44,7 +44,7 @@ npm run build      # Production build (includes sitemap + RSS + llms.txt + Index
 - **GSAP first-paint flash:** Any element starting at `opacity: 0` needs the `opacity-0` CSS class to prevent flash before useEffect runs.
 - **ScrollTrigger cleanup:** Each page cleans up its own GSAP context via `ctx.revert()`. Never kill all triggers globally on route change.
 - **`transition-colors` not `transition-all`** on any element GSAP animates (CSS transitions fight GSAP opacity).
-- **Pre-rendered HTML** wrapped in `<div id="prerender">`, removed by inline script before first paint. No `display:none`.
+- **Pre-rendered HTML** wrapped in `<div id="prerender">` inside `#root`. Do NOT manually remove it with an inline script - React's `createRoot().render()` replaces the root's children on first render, automatically cleaning up the prerender div. Manual pre-wipe previously caused "empty shell" failures when the React bundle was slow or failed: the prerender content was gone before React could replace it, leaving a blank page. Leaving it in place means crawlers, slow networks, and bundle failures all see meaningful semantic content as graceful fallback.
 - **Import paths:** Always use `@/` alias for component imports. Relative imports break Vite HMR.
 - **Sanity client config:** projectId/dataset hardcoded in `src/sanity/lib/client.ts` (env vars don't resolve during Vercel build).
 - **Sanity long content:** `create_documents_from_markdown` truncates at 50+ blocks. Use HTTP mutation API with Portable Text JSON instead.
