@@ -65,6 +65,7 @@ export const blogPostBySlugV2Query = groq`
     status,
     showTableOfContents,
     featured,
+    keyTakeaways,
     featuredImage {
       asset->,
       alt
@@ -116,6 +117,48 @@ export const blogPostBySlugV2Query = groq`
         slug
       }
     }
+  }
+`;
+
+// Featured/latest posts for blog hero section (fetched once, separate from pagination)
+export const blogHeroPostsQuery = groq`
+  *[_type == "blogPostV2" && status == "published" && defined(publishedAt) && publishedAt <= now()] | order(featured desc, publishedAt desc) [0...4] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    readingTime,
+    publishedAt,
+    featured,
+    featuredImage { asset->, alt },
+    author->{ name, image { asset-> } },
+    categories[]->{ name, slug }
+  }
+`;
+
+// Posts for "Most popular" section (skip hero posts, fetch next 6)
+export const blogPopularPostsQuery = groq`
+  *[_type == "blogPostV2" && status == "published" && defined(publishedAt) && publishedAt <= now()] | order(featured desc, publishedAt desc) [4...10] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    readingTime,
+    publishedAt,
+    featured,
+    featuredImage { asset->, alt },
+    author->{ name, image { asset-> } },
+    categories[]->{ name, slug }
+  }
+`;
+
+// Categories with post counts (for "Explore topics" section)
+export const blogCategoriesWithCountQuery = groq`
+  *[_type == "category" && count(*[_type == "blogPostV2" && status == "published" && defined(publishedAt) && publishedAt <= now() && references(^._id)]) > 0] {
+    _id,
+    name,
+    slug,
+    "postCount": count(*[_type == "blogPostV2" && status == "published" && defined(publishedAt) && publishedAt <= now() && references(^._id)])
   }
 `;
 

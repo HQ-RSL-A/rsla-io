@@ -1,34 +1,68 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import { client } from '../sanity/lib/client';
-import { blogPostBySlugV2Query, relatedCaseStudyForBlogQuery, featuredCaseStudyFallbackQuery, relatedBlogPostsByCategoryQuery } from '../sanity/lib/queries';
+import { blogPostBySlugV2Query, relatedBlogPostsByCategoryQuery } from '../sanity/lib/queries';
 import { urlForImage } from '../sanity/lib/image';
 import { PortableTextComponents, slugify } from '../components/blog/PortableTextRenderer';
 import Seo from '../components/Seo';
 import InlineNewsletterCta from '../components/blog/InlineNewsletterCta';
 import ShareBar from '../components/ShareBar';
 
+function ReadingProgressBar() {
+    const barRef = useRef(null);
+
+    useEffect(() => {
+        let raf = 0;
+        const handleScroll = () => {
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                const article = document.querySelector('article');
+                if (!article || !barRef.current) return;
+                const { top, height } = article.getBoundingClientRect();
+                const scrollable = height - window.innerHeight;
+                if (scrollable <= 0) return;
+                const pct = Math.min(Math.max(-top / scrollable, 0), 1) * 100;
+                barRef.current.style.width = `${pct}%`;
+                barRef.current.parentElement.style.opacity = pct > 0 ? '1' : '0';
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => { window.removeEventListener('scroll', handleScroll); cancelAnimationFrame(raf); };
+    }, []);
+
+    return (
+        <div className="fixed top-0 left-0 right-0 h-[3px] z-[60] pointer-events-none opacity-0">
+            <div ref={barRef} className="h-full bg-accent" style={{ width: '0%' }} />
+        </div>
+    );
+}
+
 function useActiveHeading(headingIds) {
     const [activeId, setActiveId] = useState('');
 
     useEffect(() => {
         if (!headingIds.length) return;
+        let raf = 0;
 
         const handleScroll = () => {
-            let current = headingIds[0];
-            for (const id of headingIds) {
-                const el = document.getElementById(id);
-                if (el && el.getBoundingClientRect().top <= 140) {
-                    current = id;
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                let current = headingIds[0];
+                for (const id of headingIds) {
+                    const el = document.getElementById(id);
+                    if (el && el.getBoundingClientRect().top <= 140) {
+                        current = id;
+                    }
                 }
-            }
-            setActiveId(current);
+                setActiveId((prev) => prev === current ? prev : current);
+            });
         };
 
         handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => { window.removeEventListener('scroll', handleScroll); cancelAnimationFrame(raf); };
     }, [headingIds]);
 
     return activeId;
@@ -37,7 +71,6 @@ function useActiveHeading(headingIds) {
 export default function BlogInner() {
     const { slug } = useParams();
     const [post, setPost] = useState(null);
-    const [relatedCaseStudy, setRelatedCaseStudy] = useState(null);
     const [loading, setLoading] = useState(true);
     const [headings, setHeadings] = useState([]);
     useEffect(() => {
@@ -57,7 +90,6 @@ export default function BlogInner() {
                 if (isMounted) {
                     setPost(fetchedPost);
 
-                    // Extract headings for ToC
                     if (fetchedPost.showTableOfContents && fetchedPost.body) {
                         const h2s = fetchedPost.body
                             .filter((block) => block._type === 'block' && block.style === 'h2')
@@ -70,50 +102,6 @@ export default function BlogInner() {
                     }
                 }
 
-                // Fetch related case study (same logic as before)
-                let caseStudy = fetchedPost.relatedCaseStudies?.[0] || null;
-
-                if (!caseStudy) {
-                    const categorySlugs = fetchedPost.categories?.map((c) => c.slug?.current).filter(Boolean) || [];
-                    const BLOG_SLUG_TO_CASE_CATEGORY = {
-                        'ai-automation': ['AI Automation'],
-                        'marketing-automation': ['Marketing', 'AI Automation'],
-                        'lead-nurture': ['AI Automation', 'Marketing'],
-                        'crm': ['CRM & Operations'],
-                        'go-high-level': ['CRM & Operations'],
-                        'business-tools': ['CRM & Operations', 'Development'],
-                        'google-reviews': ['Marketing'],
-                        'reputation-management': ['Marketing'],
-                        'sms-marketing': ['Marketing'],
-                        'salons': ['Marketing'],
-                        'restaurant': ['Marketing'],
-                        'real-estate': ['Marketing'],
-                        'home-services': ['CRM & Operations'],
-                        'hvac': ['CRM & Operations'],
-                        'contractors': ['AI Operations'],
-                        'small-business': ['AI Lead Generation', 'AI Automations'],
-                        'hair-stylists': ['AI Lead Generation'],
-                        'ai-lead-generation': ['AI Lead Generation'],
-                        'ai-automations': ['AI Automations'],
-                        'ai-operations': ['AI Operations'],
-                        'tools-and-tech': ['AI Automations', 'AI Operations'],
-                        'founder-diaries': ['AI Lead Generation'],
-                    };
-
-                    const categoryNames = [...new Set(categorySlugs.flatMap((s) => BLOG_SLUG_TO_CASE_CATEGORY[s] || []))];
-
-                    if (categoryNames.length > 0) {
-                        caseStudy = await client.fetch(relatedCaseStudyForBlogQuery, { categoryNames });
-                    }
-                }
-
-                if (!caseStudy) {
-                    caseStudy = await client.fetch(featuredCaseStudyFallbackQuery);
-                }
-
-                if (isMounted) setRelatedCaseStudy(caseStudy);
-
-                // Fetch category-based related posts if none were manually curated
                 if ((!fetchedPost.relatedPosts || fetchedPost.relatedPosts.length === 0) && isMounted) {
                     const categorySlugsForRelated = fetchedPost.categories?.map((c) => c.slug?.current).filter(Boolean) || [];
                     if (categorySlugsForRelated.length > 0) {
@@ -145,7 +133,7 @@ export default function BlogInner() {
     if (loading) {
         return (
             <div className="min-h-screen bg-surface pt-32 pb-24 flex items-center justify-center">
-                <div className="font-sans text-accent animate-pulse">[FETCHING_ARTICLE...]</div>
+                <div className="font-sans text-lg text-accent animate-pulse">Loading...</div>
             </div>
         );
     }
@@ -154,12 +142,12 @@ export default function BlogInner() {
         return (
             <div className="min-h-screen bg-surface pt-32 pb-24 flex flex-col items-center justify-center">
                 <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-4">404 - Article Not Found</h1>
-                <Link to="/blog" className="text-accent hover:underline font-sans">← Back to Blog</Link>
+                <Link to="/blog" className="text-lg text-accent underline decoration-transparent hover:decoration-accent underline-offset-4 transition-[text-decoration-color] duration-sm ease-out-smooth font-sans">Back to Blog</Link>
             </div>
         );
     }
 
-    const imageUrl = post.featuredImage?.asset ? urlForImage(post.featuredImage.asset)?.width(1600).height(900).url() : null;
+    const imageUrl = post.featuredImage?.asset ? urlForImage(post.featuredImage.asset)?.width(1200).height(630).url() : null;
     const seoDescription = post.seo?.metaDescription || post.excerpt || (post.body?.[0]?.children?.[0]?.text || '').slice(0, 160);
     const seoTitle = post.seo?.metaTitle ? `${post.seo.metaTitle} | RSL/A` : `${post.title} | RSL/A`;
     const seoImage = post.seo?.socialImage?.asset?.url || imageUrl || 'https://rsla.io/og-image.png';
@@ -208,7 +196,6 @@ export default function BlogInner() {
         })),
     } : null;
 
-    // SoftwareApplication schema for GHL pricing/review posts
     const softwareAppSchema = slug === 'go-high-level-pricing' ? {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
@@ -226,7 +213,8 @@ export default function BlogInner() {
     const jsonLdSchemas = [blogPostingSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(softwareAppSchema ? [softwareAppSchema] : [])];
 
     return (
-        <article className="min-h-screen bg-surface text-text pt-32 pb-24 relative">
+        <article className="min-h-screen bg-surface text-text pt-20 pb-24 relative">
+            <ReadingProgressBar />
             <Seo
                 title={seoTitle}
                 description={seoDescription}
@@ -238,99 +226,86 @@ export default function BlogInner() {
                 noIndex={post?.status === 'archived'}
             />
 
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="px-6 md:px-8 py-4 border-b border-accent-border">
-                <div className="max-w-5xl mx-auto flex items-center gap-2">
-                    <Link to="/blog" className="font-sans text-sm uppercase tracking-wider text-textMuted hover:text-accent transition-colors">
-                        Blog
-                    </Link>
-                    {firstCategory && (
-                        <>
-                            <span className="text-textLight text-xs">/</span>
-                            <span className="font-sans text-sm uppercase tracking-wider text-textLight">
-                                {firstCategory.name}
-                            </span>
-                        </>
-                    )}
-                </div>
-            </nav>
+            {/* Dark hero header */}
+            <div className="bg-black pt-6 pb-16 px-6 md:px-8">
+                <div className="max-w-[1160px] mx-auto">
+                    {/* Breadcrumb */}
+                    <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2">
+                        <Link to="/blog" className="font-sans text-sm text-white/70 hover:text-white transition-colors">
+                            Blog
+                        </Link>
+                        <span className="text-white/50 text-xs">&gt;</span>
+                        <span className="font-sans text-sm text-white/60 truncate max-w-[200px]">
+                            {post.title.length > 30 ? post.title.substring(0, 30) + '...' : post.title}
+                        </span>
+                    </nav>
 
-            {/* Article Header — centered, narrow */}
-            <header className="max-w-[720px] mx-auto px-6 pt-16">
-                {firstCategory && (
-                    <span className="inline-block font-sans text-sm uppercase tracking-widest text-accent bg-accent-light border border-accent-border-strong px-3 py-1 rounded-full mb-5">
-                        {firstCategory.name}
-                    </span>
-                )}
-
-                <h1 className="text-3xl md:text-5xl font-sans font-bold leading-tight tracking-tight text-text mb-6">
-                    {post.title}
-                </h1>
-
-                {/* Author line */}
-                <div className="flex items-center gap-3 mb-6">
-                    {post.author?.image?.asset && (
-                        <img
-                            src={urlForImage(post.author.image.asset)?.width(100).height(100).url()}
-                            alt={post.author.name}
-                            className="w-9 h-9 rounded-full object-cover flex-shrink-0"
-                            width="36"
-                            height="36"
-                        />
-                    )}
-                    <div>
-                        <div className="font-sans font-semibold text-sm text-text">{post.author?.name || 'Rahul Lalia'}</div>
-                        <div className="font-sans text-sm text-textMuted flex items-center gap-2">
-                            <time dateTime={post.publishedAt}>
-                                {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                                    month: 'short', day: 'numeric', year: 'numeric'
-                                })}
-                            </time>
-                            {post.readingTime && (
-                                <>
-                                    <span className="text-textLight">&middot;</span>
-                                    <span>{post.readingTime} min read</span>
-                                </>
+                    {/* Title + image side by side */}
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center">
+                        {/* Left: text content */}
+                        <div className="lg:w-[60%] shrink-0">
+                            <h1 className="text-3xl md:text-[40px] font-sans font-extrabold leading-[1.2] tracking-tight text-white mb-5">
+                                {post.title}
+                            </h1>
+                            {post.excerpt && (
+                                <p className="font-sans text-base md:text-lg text-white/80 mb-6 leading-relaxed max-w-xl">{post.excerpt}</p>
                             )}
+                            <div className="flex items-center gap-3 mb-3">
+                                {post.author?.image?.asset && (
+                                    <img
+                                        src={urlForImage(post.author.image.asset)?.width(100).height(100).url()}
+                                        alt={post.author.name}
+                                        className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                                        width="40"
+                                        height="40"
+                                    />
+                                )}
+                                <div>
+                                    <span className="font-sans font-semibold text-base text-white">{post.author?.name || 'Rahul Lalia'}</span>
+                                    {post.author?.role && <span className="font-sans text-sm text-white/70 ml-2">{post.author.role}</span>}
+                                </div>
+                            </div>
+                            <div className="font-sans text-sm text-white/70 flex items-center gap-2">
+                                <span>Last Updated:</span>
+                                <time dateTime={post.updatedAt || post.publishedAt}>
+                                    {new Date(post.updatedAt || post.publishedAt).toLocaleDateString('en-US', {
+                                        month: 'long', day: 'numeric', year: 'numeric'
+                                    })}
+                                </time>
+                                {post.readingTime && (
+                                    <><span className="text-white/50">&middot;</span><span>{post.readingTime} min</span></>
+                                )}
+                            </div>
                         </div>
+
+                        {/* Right: featured image */}
+                        {imageUrl && (
+                            <div className="lg:w-[40%] w-full">
+                                <div className="aspect-[1200/630] rounded-xl overflow-hidden">
+                                    <img
+                                        src={imageUrl}
+                                        alt={post.featuredImage?.alt || post.title}
+                                        className="w-full h-full object-cover"
+                                        width="1200"
+                                        height="630"
+                                    />
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
-
-                {/* TL;DR */}
-                {post.pullQuote && (
-                    <div className="mb-8">
-                        <span className="block font-sans text-sm font-semibold uppercase tracking-wider text-accent mb-2">TL;DR</span>
-                        <p className="text-base text-textMuted leading-relaxed font-sans">{post.pullQuote}</p>
-                    </div>
-                )}
-            </header>
-
-            {/* Featured Image — spans full grid width to bridge header and body */}
-            {imageUrl && (
-                <div className="max-w-5xl mx-auto px-6 mb-12">
-                    <div className="w-full aspect-video rounded-2xl overflow-hidden bg-surfaceAlt border border-accent-border">
-                        <img
-                            src={imageUrl}
-                            alt={post.featuredImage?.alt || post.title}
-                            className="w-full h-full object-cover"
-                            width="1600"
-                            height="900"
-                        />
-                    </div>
-                </div>
-            )}
+            </div>
 
             {/* Mobile ToC (visible < xl only) */}
             {headings.length > 0 && (
-                <div className="xl:hidden max-w-[720px] mx-auto px-6 mb-8">
-                    <nav aria-label="Table of contents" className="bg-surfaceAlt border border-accent-border rounded-xl p-4">
-                        <span className="block font-sans text-sm font-semibold uppercase tracking-wider text-accent mb-3">In this article</span>
+                <div className="xl:hidden max-w-[720px] mx-auto px-6 mb-8 mt-12">
+                    <nav aria-label="Table of contents" className="bg-black rounded-xl p-4">
                         <ul className="space-y-1">
                             {headings.map((h) => (
                                 <li key={h.id}>
                                     <a
                                         href={`#${h.id}`}
-                                        className="block text-sm text-textMuted hover:text-accent transition-colors py-1 pl-3 border-l-2 border-transparent hover:border-accent"
+                                        className="block text-base text-white/90 hover:text-white transition-[color] duration-sm ease-out-smooth py-1 pl-3"
                                     >
                                         {h.text}
                                     </a>
@@ -341,25 +316,24 @@ export default function BlogInner() {
                 </div>
             )}
 
-            {/* Body section — grid with sticky ToC on desktop, single column on mobile */}
-            <div className="max-w-5xl mx-auto px-6 xl:grid xl:grid-cols-[200px_minmax(0,720px)] xl:gap-12 xl:justify-center">
+            {/* Body section with sidebar */}
+            <div className="max-w-5xl mx-auto px-6 mt-12 xl:grid xl:grid-cols-[220px_minmax(0,720px)] xl:gap-10 xl:justify-center">
 
-                {/* Sidebar — sticky within this grid row, stops when grid ends */}
+                {/* Sidebar - sticky ToC in a dark card */}
                 <aside className="hidden xl:block">
-                    <div className="sticky top-28">
+                    <div className="sticky top-24 bg-black rounded-xl p-5">
                         {headings.length > 0 && (
                             <nav aria-label="Table of contents">
-                                <span className="block font-sans text-sm font-semibold uppercase tracking-wider text-textLight mb-4">In this article</span>
                                 <ul className="space-y-1">
                                     {headings.map((h) => (
                                         <li key={h.id}>
                                             <a
                                                 href={`#${h.id}`}
                                                 aria-current={activeId === h.id ? 'true' : undefined}
-                                                className={`block text-[15px] leading-snug py-1.5 pl-3 border-l-2 transition-[color,border-color] duration-sm ease-out-smooth ${
+                                                className={`block text-[14px] leading-snug py-1.5 pl-3 border-l-2 transition-[color,border-color,text-decoration-color] duration-sm ease-out-smooth ${
                                                     activeId === h.id
-                                                        ? 'border-accent text-accent font-medium'
-                                                        : 'border-transparent text-textMuted hover:text-accent hover:border-accent'
+                                                        ? 'border-transparent text-white font-medium underline decoration-accent decoration-2 underline-offset-4'
+                                                        : 'border-transparent text-white/90 hover:text-white'
                                                 }`}
                                             >
                                                 {h.text}
@@ -369,16 +343,30 @@ export default function BlogInner() {
                                 </ul>
                             </nav>
                         )}
-
-                        <div className={headings.length > 0 ? 'mt-8 pt-6 border-t border-accent-border' : ''}>
-                            <span className="block font-sans text-sm font-semibold uppercase tracking-wider text-textLight mb-3">Share</span>
-                            <ShareBar title={post.title} url={`https://rsla.io/blog/${slug}`} showLabel={false} />
-                        </div>
                     </div>
                 </aside>
 
-                {/* Article Body — same 720px max as header/image above */}
+                {/* Main content column */}
                 <div className="max-w-[720px]">
+                    {/* TL;DR */}
+                    {post.pullQuote && (
+                        <div className="mb-10">
+                            <span className="block font-sans text-sm font-semibold uppercase tracking-[0.15em] text-accent mb-2">TL;DR</span>
+                            <p className="text-xl text-text leading-[1.6] font-sans">{post.pullQuote}</p>
+                        </div>
+                    )}
+
+                    {/* Key Takeaways (renders when Sanity field exists) */}
+                    {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+                        <div className="mb-12">
+                            <h2 className="text-2xl md:text-4xl font-sans font-extrabold text-text mb-6 tracking-tight leading-[1.1]">Key takeaways</h2>
+                            <div className="prose-container max-w-none">
+                                <PortableText value={post.keyTakeaways} components={PortableTextComponents} />
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Article body */}
                     <div className="prose-container max-w-none">
                         <PortableText value={post.body} components={PortableTextComponents} />
                     </div>
@@ -386,57 +374,83 @@ export default function BlogInner() {
                     {/* Newsletter CTA */}
                     <InlineNewsletterCta />
 
-                    {/* Mobile share (visible < xl only, after content) */}
-                    <div className="xl:hidden mt-8 pt-6 border-t border-accent-border">
-                        <ShareBar title={post.title} url={`https://rsla.io/blog/${slug}`} />
-                    </div>
+                    {/* Author bio + share links */}
+                    {post.author && (
+                        <div className="mt-12 pt-8 border-t border-accent-border">
+                            <div className="flex gap-5 items-start mb-6">
+                                {post.author.image?.asset && (
+                                    <img
+                                        src={urlForImage(post.author.image.asset)?.width(120).height(120).url()}
+                                        alt={post.author.name}
+                                        className="w-14 h-14 rounded-full object-cover shrink-0"
+                                        width="56"
+                                        height="56"
+                                    />
+                                )}
+                                <div>
+                                    <p className="font-sans text-sm uppercase tracking-[0.15em] text-textLight mb-1">Written by</p>
+                                    <p className="font-sans font-bold text-text text-xl">{post.author.name}</p>
+                                    {post.author.role && (
+                                        <p className="font-sans text-base text-textMuted">{post.author.role}</p>
+                                    )}
+                                    {post.author.bio && (
+                                        <p className="font-sans text-base text-textMuted mt-2 leading-relaxed">{post.author.bio}</p>
+                                    )}
+                                </div>
+                            </div>
+                            <ShareBar title={post.title} url={`https://rsla.io/blog/${slug}`} />
+                        </div>
+                    )}
                 </div>
             </div>
 
-            {/* Related Posts */}
+            {/* Keep reading */}
             {post.relatedPosts && post.relatedPosts.length > 0 && (
                 <div className="max-w-5xl mx-auto px-6 mt-20 mb-16">
-                    <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mb-8">Read Next</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                        {post.relatedPosts.filter(r => r.slug?.current).map((related) => {
+                    <div className="flex items-center justify-between mb-8">
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text">Keep reading</h3>
+                        <Link to="/blog" className="font-sans text-base text-accent underline decoration-transparent hover:decoration-accent underline-offset-4 transition-[text-decoration-color] duration-sm ease-out-smooth hidden sm:inline">
+                            View all articles
+                        </Link>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {post.relatedPosts.filter(r => r.slug?.current).map((related, i) => {
                             const relatedImg = related.featuredImage?.asset
-                                ? urlForImage(related.featuredImage.asset)?.width(400).height(260).url()
+                                ? urlForImage(related.featuredImage.asset)?.width(600).height(315).url()
                                 : null;
                             return (
                                 <Link
                                     key={related._id}
                                     to={`/blog/${related.slug.current}`}
-                                    className="group flex flex-col bg-surface rounded-xl border border-accent-border overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-[transform,box-shadow,border-color] duration-md ease-out-smooth"
+                                    style={{ animationDelay: `${i * 60}ms` }}
+                                    className="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] hover:-translate-y-1 active:scale-[0.98] transition-[transform,box-shadow] duration-md ease-out-smooth"
                                 >
                                     {relatedImg && (
-                                        <div className="aspect-[3/2] overflow-hidden bg-surfaceAlt">
+                                        <div className="aspect-[1200/630] overflow-hidden bg-surfaceAlt">
                                             <img
                                                 src={relatedImg}
                                                 alt={related.featuredImage?.alt || related.title}
                                                 loading="lazy"
                                                 width="600"
-                                                height="400"
-                                                className="w-full h-full object-cover"
+                                                height="315"
+                                                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-image-zoom ease-out-smooth"
                                             />
                                         </div>
                                     )}
-                                    <div className="p-4">
-                                        <h4 className="font-sans font-semibold text-[15px] tracking-tight mb-2 group-hover:text-accent transition-colors line-clamp-2">
+                                    <div className="p-5">
+                                        {related.categories?.[0] && (
+                                            <span className="font-sans text-sm uppercase tracking-[0.15em] text-accent font-semibold mb-2 block">
+                                                {related.categories[0].name}
+                                            </span>
+                                        )}
+                                        <h4 className="font-sans font-semibold text-lg tracking-tight mb-3 group-hover:text-accent transition-colors line-clamp-2 leading-snug">
                                             {related.title}
                                         </h4>
-                                        <div className="font-sans text-sm text-textMuted flex items-center gap-2">
-                                            <time dateTime={related.publishedAt}>
-                                                {new Date(related.publishedAt).toLocaleDateString('en-US', {
-                                                    month: 'short', day: 'numeric', year: 'numeric'
-                                                })}
-                                            </time>
-                                            {related.readingTime && (
-                                                <>
-                                                    <span className="text-textLight">&middot;</span>
-                                                    <span>{related.readingTime} min</span>
-                                                </>
-                                            )}
-                                        </div>
+                                        <time className="font-sans text-base text-textLight" dateTime={related.publishedAt}>
+                                            {new Date(related.publishedAt).toLocaleDateString('en-US', {
+                                                month: 'short', day: 'numeric',
+                                            })}
+                                        </time>
                                     </div>
                                 </Link>
                             );
@@ -445,36 +459,6 @@ export default function BlogInner() {
                 </div>
             )}
 
-            {/* Related Case Study */}
-            {relatedCaseStudy && (
-                <div className="max-w-5xl mx-auto px-6 mb-16">
-                    <div className="bg-surfaceAlt border border-accent-border rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
-                        <div className="max-w-xl">
-                            <span className="block font-sans text-sm font-semibold uppercase tracking-wider text-accent mb-2">See It In Action</span>
-                            <h4 className="text-xl font-sans font-bold text-text mb-2">{relatedCaseStudy.title}</h4>
-                            <p className="text-sm text-textMuted font-sans leading-relaxed mb-6">{relatedCaseStudy.description}</p>
-
-                            {relatedCaseStudy.metrics && relatedCaseStudy.metrics.length > 0 && (
-                                <div className="flex gap-6 mb-6 border-l-2 border-accent pl-6">
-                                    {relatedCaseStudy.metrics.slice(0, 2).map((metric, idx) => (
-                                        <div key={idx}>
-                                            <strong className="block text-2xl font-bold text-text">{metric.value}</strong>
-                                            <span className="text-sm font-sans text-accent uppercase tracking-wider">{metric.label}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-
-                            <Link
-                                to={`/work/${relatedCaseStudy.slug}`}
-                                className="inline-flex items-center gap-3 px-6 py-3 bg-accent text-white font-sans font-bold rounded-full hover:scale-105 transition-transform"
-                            >
-                                Read Case Study <span>→</span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            )}
         </article>
     );
 }
