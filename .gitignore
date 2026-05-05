@@ -8,6 +8,7 @@
 .idea
 .sanity/
 .superpowers/
+.worktrees/
 .vercel
 .vscode/*
 *.local
