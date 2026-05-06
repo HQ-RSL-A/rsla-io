@@ -17,75 +17,10 @@ import {
 import { urlForImage } from '../sanity/lib/image';
 import Seo from '../components/Seo';
 import BlogCardSkeleton from '../components/skeletons/BlogCardSkeleton';
-import { MagicCard } from '@/components/ui/magic-card';
+import NewsletterGridCard from '../components/blog/NewsletterGridCard';
 
 const POSTS_PER_PAGE_ONE = 8;
 const POSTS_PER_PAGE = 9;
-
-/* ─── Newsletter card (grid slot) ─── */
-
-function NewsletterCard() {
-    const [email, setEmail] = useState('');
-    const [status, setStatus] = useState('idle');
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!email || status === 'submitting') return;
-        setStatus('submitting');
-        try {
-            const res = await fetch('/api/subscribe', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, formId: '9130465' }),
-            });
-            if (res.ok) { setStatus('success'); setEmail(''); }
-            else { setStatus('error'); setTimeout(() => setStatus('idle'), 4000); }
-        } catch { setStatus('error'); setTimeout(() => setStatus('idle'), 4000); }
-    };
-
-    if (status === 'success') {
-        return (
-            <MagicCard className="rounded-xl h-full" gradientColor="#0066E0" gradientOpacity={0.08} gradientFrom="#0066E0" gradientTo="#818cf8" gradientSize={250}>
-                <div className="flex flex-col items-center justify-center p-8 text-center h-full">
-                    <p className="font-sans font-bold text-xl text-text mb-1">You're in.</p>
-                    <p className="font-sans text-base text-textMuted">Check your inbox.</p>
-                </div>
-            </MagicCard>
-        );
-    }
-
-    return (
-        <MagicCard className="rounded-xl h-full border border-accent/25" gradientColor="#0066E0" gradientOpacity={0.08} gradientFrom="#0066E0" gradientTo="#818cf8" gradientSize={250}>
-            <div className="flex flex-col justify-center p-7 h-full">
-                <p className="font-sans font-extrabold text-[24px] text-text tracking-tight leading-[1.2] mb-2">
-                    Never miss<br />another article
-                </p>
-                <p className="font-sans text-sm text-textMuted mb-5 leading-relaxed">
-                    Highly curated content, case studies, and updates.
-                </p>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="email"
-                        placeholder="you@company.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        disabled={status === 'submitting'}
-                        required
-                        className="w-full px-4 min-h-[44px] rounded-lg bg-surfaceAlt border border-accent-border text-text font-sans text-base placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth mb-2"
-                    />
-                    <button
-                        type="submit"
-                        disabled={status === 'submitting'}
-                        className="w-full min-h-[44px] rounded-lg bg-accent text-white font-sans font-bold text-base hover:bg-accent/90 active:scale-[0.97] transition-[background-color,transform] duration-sm ease-out-smooth disabled:opacity-50 cursor-pointer"
-                    >
-                        {status === 'submitting' ? '...' : 'Subscribe'}
-                    </button>
-                </form>
-                {status === 'error' && <p className="font-sans text-sm text-coral mt-2">Something went wrong.</p>}
-            </div>
-        </MagicCard>
-    );
-}
 
 /* ─── Post card (used in Most Popular + All Articles grids) ─── */
 
@@ -427,7 +362,7 @@ export default function Blog() {
                                 {gridPosts.flatMap((post, i) => {
                                     const items = [];
                                     if (i === 1 && currentPage === 1 && !searchQuery && !activeCategory) {
-                                        items.push(<NewsletterCard key="newsletter" />);
+                                        items.push(<NewsletterGridCard key="newsletter" />);
                                     }
                                     items.push(<PostCard key={post._id} post={post} />);
                                     return items;
