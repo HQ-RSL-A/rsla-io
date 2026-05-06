@@ -81,6 +81,8 @@
     }
   ],
   "redirects": [
+    { "source": "/services/websites", "destination": "/services/web-design", "statusCode": 301 },
+    { "source": "/services/search-visibility", "destination": "/services/seo", "statusCode": 301 },
     { "source": "/blog/gohighlevel-pricing-2026-cost-breakdown", "destination": "/blog/go-high-level-pricing", "statusCode": 301 },
     { "source": "/blog/gohighlevel-for-real-estate", "destination": "/blog/what-is-go-high-level", "statusCode": 301 },
     { "source": "/blog/best-crm-solo-real-estate-agent", "destination": "/blog/what-is-go-high-level", "statusCode": 301 },

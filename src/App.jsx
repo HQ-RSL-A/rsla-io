@@ -67,7 +67,12 @@ function PageLoader() {
 }
 
 // Rarely-visited pages stay lazy (not reachable from hamburger menu)
-const ServiceDetail = lazyRetry(() => import('./pages/ServiceDetail'));
+const WebDesign = lazyRetry(() => import('./pages/services/WebDesign'));
+const SeoService = lazyRetry(() => import('./pages/services/SeoService'));
+const AiAutomations = lazyRetry(() => import('./pages/services/AiAutomations'));
+const CrmSystems = lazyRetry(() => import('./pages/services/CrmSystems'));
+const CustomDevelopment = lazyRetry(() => import('./pages/services/CustomDevelopment'));
+const CityHub = lazyRetry(() => import('./pages/CityHub'));
 const WorkInner = lazyRetry(() => import('./pages/WorkInner'));
 const BlogInner = lazyRetry(() => import('./pages/BlogInner'));
 const Privacy = lazyRetry(() => import('./pages/Privacy'));
@@ -114,7 +119,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/services/web-design" element={<WebDesign />} />
+            <Route path="/services/seo" element={<SeoService />} />
+            <Route path="/services/ai-automations" element={<AiAutomations />} />
+            <Route path="/services/crm-systems" element={<CrmSystems />} />
+            <Route path="/services/custom-development" element={<CustomDevelopment />} />
+            <Route path="/services/:citySlug" element={<CityHub />} />
 
             {/* Ported Routes */}
             <Route path="/blog" element={<Blog />} />
