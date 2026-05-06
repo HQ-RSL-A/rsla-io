@@ -1,23 +1,12 @@
 export default function BlogCardSkeleton() {
     return (
-        <div className="flex flex-col h-full bg-surfaceAlt rounded-2xl border border-accent-border overflow-hidden animate-pulse">
-            <div className="aspect-[3/2] bg-accent-border/40" />
-            <div className="p-8 flex flex-col flex-grow">
-                <div className="flex gap-2 mb-4">
-                    <div className="h-5 w-16 bg-accent-border/40 rounded-sm" />
-                    <div className="h-5 w-20 bg-accent-border/40 rounded-sm" />
-                </div>
-                <div className="h-7 w-3/4 bg-accent-border/40 rounded mb-2" />
-                <div className="h-7 w-1/2 bg-accent-border/40 rounded mb-4" />
-                <div className="space-y-2 mb-6 flex-grow">
-                    <div className="h-4 w-full bg-accent-border/40 rounded" />
-                    <div className="h-4 w-5/6 bg-accent-border/40 rounded" />
-                    <div className="h-4 w-2/3 bg-accent-border/40 rounded" />
-                </div>
-                <div className="flex items-center justify-between pt-4 border-t border-accent-border">
-                    <div className="h-3 w-20 bg-accent-border/40 rounded" />
-                    <div className="h-3 w-16 bg-accent-border/40 rounded" />
-                </div>
+        <div className="flex flex-row md:flex-col gap-3 md:gap-0 bg-white rounded-xl border border-gray-100 shadow-sm shadow-gray-900/5 p-3 md:p-0 overflow-hidden animate-pulse">
+            <div className="w-[110px] h-[74px] md:w-auto md:h-auto md:aspect-[374/237] rounded-lg md:rounded-none bg-gray-200 shrink-0" />
+            <div className="flex-1 min-w-0 md:px-5 md:pt-4 md:pb-5 flex flex-col justify-center md:block">
+                <div className="h-5 md:h-6 w-3/4 bg-gray-200 rounded mb-2" />
+                <div className="h-5 md:h-6 w-1/2 bg-gray-200 rounded mb-2 hidden md:block" />
+                <div className="h-4 w-20 bg-gray-200 rounded mb-1.5" />
+                <div className="h-4 w-28 bg-gray-200 rounded" />
             </div>
         </div>
     );
