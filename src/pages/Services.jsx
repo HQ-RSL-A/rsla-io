@@ -50,9 +50,9 @@ export default function Services() {
     return (
         <div ref={pageRef}>
             <Seo
-                title="AI Marketing & Automation Services for B2B | RSL/A"
-                description="Custom websites, SEO, AI automations, CRM systems, and software development. End-to-end AI systems that generate leads, close deals, and scale operations."
-                keywords="AI services, custom websites, AI automation, CRM systems, search visibility, custom development, AI lead generation, B2B AI systems"
+                title="Local SEO Services & AI Marketing for Small Business | RSL/A"
+                description="Local SEO services, custom web design, AI automation, and CRM systems for small businesses. End-to-end systems that get you found and keep you growing."
+                keywords="local seo services, local seo for small business, web design agency, AI automation, CRM setup, marketing agency, local seo packages"
                 canonical="https://rsla.io/services"
                 jsonLd={{
                     '@context': 'https://schema.org',
@@ -101,6 +101,15 @@ export default function Services() {
                             <BentoCard key={feature.name} {...feature} />
                         ))}
                     </BentoGrid>
+                </div>
+            </section>
+
+            <section className="bg-surface py-12 px-6 md:px-12">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="font-sans font-bold text-lg text-text mb-4">Local services</h2>
+                    <Link to="/services/bakersfield" className="font-sans text-accent hover:underline">
+                        Bakersfield, CA
+                    </Link>
                 </div>
             </section>
 
