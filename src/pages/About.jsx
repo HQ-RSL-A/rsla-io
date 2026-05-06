@@ -67,7 +67,7 @@ export default function About() {
             />
             <section className="bg-surface pt-36 pb-16 md:pt-44 md:pb-20 px-6 md:px-12">
                 <div className="about-hero-content opacity-0 max-w-4xl mx-auto text-center">
-                    <h1 className="font-cormorant italic font-medium text-3xl md:text-5xl text-text tracking-tight mb-6 leading-[1.15]">
+                    <h1 className="font-caveat font-medium text-4xl md:text-6xl text-text tracking-tight mb-6 leading-[1.15]">
                         <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                             "What a privilege to be tired from work you once begged the universe for..."
                         </TextAnimate>
@@ -148,15 +148,11 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Words I Like */}
             <section className="words-section bg-surface py-20 md:py-28 px-6 md:px-12 border-t border-accent-border">
                 <div className="max-w-3xl mx-auto text-center">
-                    <p className="font-sans font-bold text-sm uppercase tracking-[0.25em] text-accent mb-8 md:mb-10">
-                        Words I Like
-                    </p>
                     <div className="relative">
                         <blockquote className="relative z-10">
-                            <p className="font-cormorant italic font-medium text-xl md:text-3xl text-text leading-[1.4] md:leading-[1.45]">What a privilege to be tired from work you once begged the universe for. What a privilege to feel overwhelmed by growth you used to dream about. What a privilege to be challenged by a life you created on purpose. What a privilege to outgrow things you used to settle for.</p>
+                            <p className="font-caveat font-medium text-2xl md:text-4xl text-text leading-[1.4] md:leading-[1.45]">What a privilege to be tired from work you once begged the universe for. What a privilege to feel overwhelmed by growth you used to dream about. What a privilege to be challenged by a life you created on purpose. What a privilege to outgrow things you used to settle for.</p>
                         </blockquote>
                     </div>
                     <cite className="block mt-8 md:mt-10 font-sans font-normal text-lg text-textMuted not-italic">

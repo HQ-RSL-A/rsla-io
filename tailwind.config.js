@@ -106,6 +106,7 @@ export default {
       fontFamily: {
         sans: ["Satoshi", "sans-serif"],
         cormorant: ["Cormorant", '"Cormorant Garamond"', "serif"],
+        caveat: ["Caveat", "cursive"],
         // System monospace stack — code blocks only
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
       },

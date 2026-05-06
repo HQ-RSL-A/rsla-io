@@ -1,22 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import { FlickeringGrid } from '../components/ui/flickering-grid';
-import { TextAnimate } from '@/components/ui/text-animate';
 
 const KIT_FORM_ID = import.meta.env.VITE_KIT_FORM_ID;
-
-const benefits = [
-    'Case studies saving clients $20K to $136K annually',
-    'Actionable automation tips you can use today',
-    'Tool recommendations from real implementations',
-];
 
 export default function Insider() {
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [focused, setFocused] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,91 +34,107 @@ export default function Insider() {
     };
 
     return (
-        <main className="min-h-screen bg-surface relative overflow-hidden flex items-center justify-center px-6">
+        <main className="min-h-screen bg-surface flex flex-col items-center justify-center px-4 py-20 md:py-24">
             <Seo
-                title="Insider Newsletter | RSL/A"
-                description="Get weekly automation insights delivered to your inbox."
+                title="The Insider - Weekly Growth Systems | RSL/A"
+                description="The Insider delivers one tested growth system every week you can apply to your business and see results."
                 canonical="https://rsla.io/insider"
                 noIndex
             />
 
-            {/* Flickering grid background */}
-            <FlickeringGrid
-                className="absolute inset-0 z-0"
-                squareSize={4}
-                gridGap={6}
-                color="rgb(0, 112, 243)"
-                maxOpacity={0.06}
-                flickerChance={0.1}
-            />
+            {/* Headline */}
+            <h1 className="font-caveat text-slate-900 text-3xl md:text-5xl text-center max-w-xl mb-4 leading-[1.15]">
+                Every Tuesday, I send one thing you can use that day to make your business more money.
+            </h1>
 
-            <div className="relative z-10 max-w-lg w-full text-center">
-                <h1 className="font-sans font-bold text-3xl md:text-5xl tracking-tight mb-4 leading-[1.1] text-text">
-                    <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
-                        Automate smarter every week.
-                    </TextAnimate>
-                </h1>
+            {/* Descriptor */}
+            <p className="font-sans text-base md:text-lg text-slate-800 text-center max-w-lg mb-10 md:mb-12 leading-relaxed">
+                The Insider delivers one tested growth system every week you can apply to your business and see results.
+            </p>
 
-                {/* Subhead */}
-                <p className="font-sans text-textMuted text-lg mb-10 max-w-md mx-auto">
-                    Real automation strategies, case studies, and AI tools delivered straight to your inbox every week.
+            {/* Polaroid card */}
+            <div className="w-full max-w-[400px] bg-surface border border-accent-border rounded-xl px-6 py-5 relative flex flex-col shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
+                {/* Polaroid + masthead row */}
+                <div className="flex items-center gap-3.5 mb-4">
+                    {/* Polaroid */}
+                    <div className="relative p-1.5 bg-white shrink-0 shadow-[0_4px_12px_rgba(15,23,42,0.12),0_1px_2px_rgba(15,23,42,0.08)] -rotate-[4deg]">
+                        {/* Tape */}
+                        <img
+                            src="/images/tape.png"
+                            alt=""
+                            className="absolute -top-1.5 left-1/2 -translate-x-1/2 rotate-[3deg] w-[48px] pointer-events-none"
+                            style={{ filter: 'brightness(1.6) saturate(0.2) sepia(0.25)' }}
+                        />
+                        <img
+                            src="/images/rahul.webp"
+                            alt="Rahul Lalia"
+                            className="w-[70px] h-[70px] object-cover"
+                        />
+                    </div>
+
+                    <div className="font-caveat text-[34px] text-slate-900 leading-none tracking-tight">
+                        A Weekly Note
+                    </div>
+                </div>
+
+                {/* Body */}
+                <p className="text-[15.5px] leading-relaxed text-slate-800 mb-2.5" style={{ textWrap: 'pretty' }}>
+                    One thing you can apply to your{' '}
+                    <span className="relative inline-block">
+                        business
+                        <svg className="absolute -bottom-0.5 left-0 w-full" height="8" viewBox="0 0 120 8" fill="none" preserveAspectRatio="none">
+                            <path d="M2 5c15-4 30 2 50-2s35 4 55-1" stroke="#0070F3" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                        </svg>
+                    </span>{' '}
+                    that day and see results.
                 </p>
 
-                {/* Benefits */}
-                <div className="text-left max-w-md mx-auto mb-10 space-y-3">
-                    {benefits.map((benefit) => (
-                        <div key={benefit} className="flex items-start gap-3">
-                            <div className="w-2 h-2 rounded-full bg-accent mt-2.5 shrink-0" />
-                            <p className="font-sans text-base text-textMuted leading-relaxed">{benefit}</p>
-                        </div>
-                    ))}
+                {/* Signature */}
+                <div className="font-caveat text-2xl text-accent leading-none mt-4 mb-5">
+                    - Rahul
                 </div>
 
                 {submitted ? (
-                    <div className="bg-surfaceAlt border border-emerald-400/20 rounded-2xl p-8">
-                        <div className="w-12 h-12 mx-auto mb-4 rounded-full border-2 border-emerald-400/40 flex items-center justify-center">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <p className="font-sans font-extrabold text-2xl text-text mb-2">You're in.</p>
-                        <p className="font-sans text-base text-textMuted">Check your inbox to confirm your subscription.</p>
+                    <div className="p-3 rounded-lg bg-accent-light border border-accent-border text-center">
+                        <span className="font-caveat text-xl text-accent">
+                            &#10003; talk Tuesday!
+                        </span>
                     </div>
                 ) : (
-                    <>
-                        {/* Signup form */}
-                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
-                            <input
-                                type="email"
-                                required
-                                placeholder="your@email.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="flex-1 px-5 py-3 rounded-xl bg-surfaceAlt border border-accent-border text-text font-sans text-base placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/50 transition-colors"
-                            />
-                            <button
-                                type="submit"
-                                disabled={loading}
-                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-white px-6 py-3 font-sans font-bold text-base hover:bg-accent/90 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {loading ? 'Subscribing...' : 'Subscribe'}
-                            </button>
-                        </form>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+                        <input
+                            type="email"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            onFocus={() => setFocused(true)}
+                            onBlur={() => setFocused(false)}
+                            placeholder="you@company.com"
+                            className="h-[44px] px-4 rounded-xl border bg-background text-sm font-sans outline-none transition-colors"
+                            style={{ borderColor: focused ? '#0070F3' : '#CBD5E1' }}
+                        />
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="h-[44px] rounded-xl bg-accent text-white text-sm font-semibold font-sans cursor-pointer hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            {loading ? 'Subscribing...' : 'Get The Insider'}
+                        </button>
+                    </form>
+                )}
 
-                        {error && (
-                            <p className="font-sans text-sm text-coral mb-2">{error}</p>
-                        )}
-
-                        {/* Trust line */}
-                        <p className="font-sans text-sm text-textMuted">
-                            No spam, unsubscribe anytime.{' '}
-                            <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-textMuted transition-colors">
-                                Privacy Policy
-                            </Link>
-                        </p>
-                    </>
+                {error && (
+                    <p className="text-sm text-coral text-center mt-1.5">{error}</p>
                 )}
             </div>
+
+            {/* Footnote */}
+            <p className="mt-5 text-sm text-textMuted text-center">
+                No spam, unsubscribe anytime.{' '}
+                <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-text transition-colors">
+                    Privacy Policy
+                </Link>
+            </p>
         </main>
     );
 }

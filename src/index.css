@@ -51,6 +51,23 @@
   font-display: swap;
 }
 
+/* Caveat @font-face declarations (handwritten — newsletter, signatures) */
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Cormorant @font-face declarations (decorative — pull quotes, captions only) */
 @font-face {
   font-family: 'Cormorant';
