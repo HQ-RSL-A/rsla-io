@@ -1,5 +1,56 @@
 # LOG.md - rslaWebsite
 
+## 2026-05-06 - Blog Inner + Listing Page Redesign (Riverside-matched)
+
+### What happened
+Full redesign of the blog inner page and listing page, matching Riverside's editorial blog layout and typography. Both pages reviewed with Emil Kowalski's design engineering skill for animation/interaction polish.
+
+### Blog Inner Page
+- **Header**: dark bg (#0A0A0A), secondary text (#CBD5E1), WCAG AAA contrast on all elements
+- **Typography**: Riverside-matched sizing (18px body/30px lh, 28px h2/34px lh, 22px h3/28px lh), Satoshi throughout (Cormorant tested and rejected)
+- **Featured image**: 1.6:1 aspect ratio (was 1.9:1), srcset with 500w/800w/1080w/1260w via Sanity CDN
+- **ToC sidebar**: Chameleon-style white card (layered shadow, progress bar with % complete, active blue indicator, "Back to Blog" link, post title)
+- **Summarize this article**: ChatGPT, Claude, Perplexity, Gemini links with brand SVG icons, centered in ToC card on desktop, inline after TL;DR on mobile
+- **Mobile layout**: removed ToC, reordered to title > excerpt > author > image > date > reading time
+- **Bottom Line**: removed box/card, now separated by top border divider
+- **Author section**: subtle "wrote this" attribution, smaller image (48px), compact layout, share bar below
+- **Removed**: top reading progress bar (replaced by sidebar progress), mobile ToC
+- **Cleaned**: unused firstCategory var, stale height attribute, duplicated aiLinks arrays, no-op animationDelay
+
+### Blog Listing Page
+- **Mobile featured post**: Riverside layout (title > category > date > excerpt > author + role > image), no card wrapper
+- **Desktop featured post**: card wrapper (white bg, border, shadow), image flush top, padded content
+- **Post cards**: card wrappers everywhere (bg-white, rounded-xl, border-gray-100, shadow-sm), horizontal on mobile (thumbnail left, title/category/date right)
+- **Trending sidebar**: card wrapper on desktop for visual division from featured post
+- **H1 SEO fix**: added visible "BLOG" H1 on first page (uppercase, small, muted)
+- **Mobile grid gap**: reduced from 50px to 16px between cards
+- **Hero query**: added author `role` field (was missing, role not rendering)
+- **Cleaned**: dead "Scrollable filter tabs" comment, orphan md:order-none class
+
+### Consistency pass
+- Category pills: unified to `bg-accent/8 border-accent/15 rounded font-medium text-xs uppercase` everywhere
+- Author images: `rounded-lg` (square) everywhere (header, bio, listing cards, featured)
+- Card style: `bg-white rounded-xl border border-gray-100 shadow-sm` on all cards (post cards, related posts, trending sidebar)
+- Related posts (BlogInner): matched card style, consistent category pills
+- Dividers: gray-100 inside cards, gray-200 at page level
+
+### Emil design polish
+- All `transition-colors` given explicit `duration-150 ease-out`
+- AI icon hover: `scale-105` (was 110), added `active:scale-95` press feedback
+- ToC active indicator: added `ease-out` easing
+- Featured image hover: `duration-md` (was `duration-lg`, felt slow)
+- Pagination buttons: explicit timing
+- Trending sidebar links: `active:opacity-80` press feedback
+
+### Files changed
+- `src/pages/BlogInner.jsx` - inner page redesign
+- `src/pages/Blog.jsx` - listing page redesign
+- `src/components/blog/PortableTextRenderer.jsx` - Riverside typography (18px body, 28px h2, 22px h3)
+- `src/sanity/lib/queries.ts` - added author role to hero query
+- `public/images/ai/` - ChatGPT, Claude, Perplexity, Gemini SVG icons (new)
+
+---
+
 ## 2026-05-06 - Fix GSC "Page with redirect" Indexing Issues
 
 ### Problem
