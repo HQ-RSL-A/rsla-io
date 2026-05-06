@@ -13,35 +13,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 const service = services['web-design'];
 
+const portfolioSites = [
+  { src: '/images/portfolio/caplanCommunications.jpg', alt: 'Caplan Communications website' },
+  { src: '/images/portfolio/solCantina.jpg', alt: 'Sol Cantina restaurant website' },
+  { src: '/images/portfolio/owlOutreach.jpg', alt: 'Owl Outreach website' },
+  { src: '/images/portfolio/46goat.jpg', alt: '46GOAT e-commerce website' },
+  { src: '/images/portfolio/nexusRoasters.jpg', alt: 'Nexus Roasters website' },
+  { src: '/images/portfolio/freedomDrivers.jpg', alt: 'Freedom Drivers website' },
+];
+
 const painCards = [
   {
-    title: 'Looks like every other site',
-    body: "Your POS provider's free website, your page builder template - they all follow the same 10 layouts across hundreds of businesses. Nothing about it is you.",
+    title: 'Pretty but invisible',
+    body: 'AI tools can build a modern-looking site in minutes. But if it is not built to rank and not structured for search engines, nobody finds it.',
   },
   {
-    title: 'Pretty but invisible',
-    body: 'AI tools can build a modern-looking site in minutes. But if it is not optimized to rank, not structured for search engines, and not built around your keywords - nobody finds it.',
+    title: 'Looks like every other site',
+    body: "Your provider's free website follows the same 10 layouts used by hundreds of businesses. Nothing about it is you.",
   },
   {
     title: 'The messaging is wrong',
-    body: "If Google cannot understand what your business does, your customers will not either. Vague copy and missing structure kill your chances before you even compete.",
+    body: 'If search engines cannot understand what your business does, your customers will not either. Vague copy and missing structure kill your chances before you even compete.',
   },
 ];
 
 const deliverables = [
   { icon: Globe, title: 'Custom design', body: 'Built around your brand personality, voice, and story. Not a template with your logo swapped in.' },
-  { icon: Search, title: 'SEO foundation', body: 'Site structure, meta tags, keyword alignment, and speed - all set up correctly from day one so search engines can find and trust you.' },
-  { icon: Bot, title: 'AEO and GEO ready', body: 'Structured so your business shows up in ChatGPT, Claude, Gemini, and Perplexity - not just Google.' },
-  { icon: MapPin, title: 'Local SEO', body: 'If you serve a local area, we build your site to rank in Google Maps and local search results.' },
-  { icon: Zap, title: 'Fast delivery', body: 'As fast as one week for focused builds. Larger scopes up to two months. We give you a real timeline and hit it.' },
-  { icon: Shield, title: 'You own everything', body: 'Your code, your content, your domain. No vendor lock-in. Full CMS access so you can update content yourself.' },
+  { icon: Search, title: 'SEO foundation', body: 'Site structure, page titles, speed, and content - all optimized so search engines can find and trust you from day one.' },
+  { icon: Bot, title: 'Found by AI search, not just Google', body: 'Structured so your business shows up when people ask ChatGPT, Gemini, or Perplexity for recommendations.' },
+  { icon: MapPin, title: 'Local search ready', body: 'If you serve a local area, we connect your site to your Google Business Profile and build it to rank in your service area.' },
+  { icon: Zap, title: 'Fast delivery', body: 'As fast as one week for focused builds. Larger scopes up to two months. Real timeline, no guessing.' },
+  { icon: Shield, title: 'You own everything', body: 'Your code, your content, your domain. No vendor lock-in. Full CMS access to update content yourself.' },
 ];
 
 const processSteps = [
-  { num: '01', title: 'Deep-dive onboarding', body: 'We learn your business, your services, your audience, and your brand voice. If you have a brand pack, we work with it. If you do not, we will guide you through what we need.' },
-  { num: '02', title: 'Design and copy', body: 'We design your homepage first and write the content that goes on it. You see a real mockup with real messaging - not a wireframe or a slide deck.' },
-  { num: '03', title: 'Build and optimize', body: 'Development, SEO setup, speed optimization, and testing across devices. We build it once and build it right.' },
-  { num: '04', title: 'Launch and ongoing', body: 'We go live, train you on the CMS, and hand everything over. For clients who want it, we offer ongoing management - because a website is a living product.' },
+  { num: '01', title: 'Deep-dive onboarding', body: 'We learn your business, brand, audience, and goals before we touch a single design.' },
+  { num: '02', title: 'Design and copy', body: 'You see a real mockup with real messaging - not a wireframe or a slide deck.' },
+  { num: '03', title: 'Build and optimize', body: 'Development, SEO setup, speed optimization, and testing across every device.' },
+  { num: '04', title: 'Launch and ongoing', body: 'We go live, train you on the CMS, and hand everything over. Ongoing management available.' },
 ];
 
 export default function WebDesign() {
@@ -119,11 +128,39 @@ export default function WebDesign() {
             Get a free homepage mockup
             <ArrowRight size={16} strokeWidth={2} className="opacity-60" />
           </Link>
-          <div className="mt-4 flex items-center justify-center gap-6">
+          <div className="mt-4">
             <Link to="/work" className="font-sans text-sm text-accent hover:underline">
               See our work
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── PORTFOLIO STRIP ── */}
+      <section className="bg-surface pb-16 md:pb-24 px-6 md:px-12 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="hr-reveal opacity-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {portfolioSites.map((site) => (
+              <div
+                key={site.src}
+                className="group rounded-xl overflow-hidden border border-accent-border bg-white shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300"
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={site.src}
+                    alt={site.alt}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center font-sans text-sm text-textMuted">
+            Every site is different. Because every business is different.
+          </p>
         </div>
       </section>
 
@@ -223,26 +260,46 @@ export default function WebDesign() {
 
       {/* ── 5. TRANSFORMATION ── */}
       <section className="bg-background py-20 md:py-28 px-6 md:px-12">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
             Results
           </p>
-          <div className="hr-reveal opacity-0 rounded-2xl border border-accent-border bg-surface p-8 md:p-10">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="font-sans text-sm font-bold uppercase tracking-widest text-textMuted mb-3">Before</p>
-                <p className="font-sans text-base text-textMuted leading-relaxed">
-                  An outdated website that was not ranking, was not generating leads, and did not communicate what the business actually does.
+          <div className="hr-reveal opacity-0 rounded-2xl border border-accent-border bg-surface overflow-hidden">
+            <div className="grid md:grid-cols-2">
+              <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-accent-border">
+                <p className="font-sans text-sm font-bold uppercase tracking-widest text-textMuted mb-4">Before</p>
+                <div className="rounded-xl overflow-hidden border border-accent-border mb-4">
+                  <img
+                    src="/images/portfolio/fieldshare-before.jpg"
+                    alt="Fieldshare website before RSL/A redesign"
+                    className="w-full h-auto"
+                    loading="lazy"
+                    width="640"
+                    height="400"
+                  />
+                </div>
+                <p className="font-sans text-sm text-textMuted leading-relaxed">
+                  An outdated site that was not ranking, was not generating leads, and did not communicate what the business does.
                 </p>
               </div>
-              <div>
-                <p className="font-sans text-sm font-bold uppercase tracking-widest text-accent mb-3">After</p>
-                <p className="font-sans text-base text-text leading-relaxed">
-                  Page 1 on Google within 6 months. A complete rebrand, SEO overhaul, and content strategy that turned the website into the business's top lead source.
+              <div className="p-6 md:p-8">
+                <p className="font-sans text-sm font-bold uppercase tracking-widest text-accent mb-4">After</p>
+                <div className="rounded-xl overflow-hidden border-2 border-accent mb-4">
+                  <img
+                    src="/images/portfolio/fieldshare-after.jpg"
+                    alt="Fieldshare website after RSL/A redesign"
+                    className="w-full h-auto"
+                    loading="lazy"
+                    width="640"
+                    height="400"
+                  />
+                </div>
+                <p className="font-sans text-sm text-text leading-relaxed">
+                  Page 1 on Google within 6 months. Complete rebrand and SEO overhaul that turned the website into the top lead source.
                 </p>
               </div>
             </div>
-            <div className="mt-8 pt-6 border-t border-accent-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="px-6 md:px-8 py-5 border-t border-accent-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-accent-light/50">
               <p className="font-sans font-bold text-base text-text">Fieldshare</p>
               <Link
                 to="/work/fieldshare-seo-website-rebrand"
@@ -265,19 +322,35 @@ export default function WebDesign() {
           </div>
           <div className="hr-reveal opacity-0">
             <p className="font-sans text-lg text-textMuted leading-relaxed">
-              You can. And it might even look good. But the questions that actually matter are: Is it conversion-optimized? Is it structured to rank? Is the on-page SEO strong enough for Google to even index it?
-            </p>
-            <p className="font-sans text-lg text-textMuted leading-relaxed mt-5">
-              A website without keyword strategy, content structure, and technical SEO is a brochure nobody sees. We build what AI cannot: a site engineered around your specific business, your market, and the search terms your customers actually use.
+              You can. And it might look good. But a website without keyword strategy, content structure, and technical SEO is a brochure nobody sees. We build what AI cannot: a site engineered around your specific business, your market, and the search terms your customers actually use.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── 7. FAQ ── */}
+      {/* ── 7. FOUNDER ── */}
+      <section className="bg-surface py-16 md:py-20 px-6 md:px-12 border-t border-accent-border">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+          <div className="shrink-0">
+            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-accent/20">
+              <img src="/images/rahul.webp" alt="Rahul Lalia" className="w-full h-full object-cover" loading="lazy" width="80" height="80" />
+            </div>
+          </div>
+          <div className="hr-reveal opacity-0 text-center md:text-left">
+            <p className="font-caveat text-xl text-text leading-snug mb-2">
+              "A website is your business's digital business card. If it does not communicate what you do, you are setting yourself up for failure."
+            </p>
+            <p className="font-sans text-sm text-textMuted">
+              Rahul Lalia, Founder of RSL/A
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. FAQ ── */}
       <ServiceFaq faqs={service.faqs} serviceName={service.title} />
 
-      {/* ── 8. CTA ── */}
+      {/* ── 9. CTA ── */}
       <CtaWithGlow
         title="Get a free homepage mockup in 72 hours."
         subtitle="No commitment, no pitch. We will design your homepage so you can see the difference before you decide."
