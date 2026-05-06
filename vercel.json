@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
@@ -98,21 +99,15 @@
     { "source": "/blog/complete-seo-audit-guide-16-essential-steps-to-boost-your-rankings", "destination": "/blog/google-business-profile-optimization-guide-2026", "statusCode": 301 },
     { "source": "/blog/answer-engine-optimization-aeo-guide", "destination": "/blog/aeo-for-local-businesses", "statusCode": 301 },
     { "source": "/resources", "destination": "/blog", "statusCode": 301 },
-    { "source": "/resources/", "destination": "/blog", "statusCode": 301 },
     { "source": "/contact-us", "destination": "/contact", "statusCode": 301 },
-    { "source": "/contact-us/", "destination": "/contact", "statusCode": 301 },
     { "source": "/about-us", "destination": "/about", "statusCode": 301 },
-    { "source": "/about-us/", "destination": "/about", "statusCode": 301 },
     { "source": "/crm-for-small-business", "destination": "/blog/what-is-go-high-level", "statusCode": 301 },
-    { "source": "/crm-for-small-business/", "destination": "/blog/what-is-go-high-level", "statusCode": 301 },
     { "source": "/case-studies/:slug*", "destination": "/work/:slug*", "statusCode": 301 },
     { "source": "/tag/:slug*", "destination": "/blog", "statusCode": 301 },
     { "source": "/category/:slug*", "destination": "/blog", "statusCode": 301 },
     { "source": "/blogs/:slug*", "destination": "/blog", "statusCode": 301 },
     { "source": "/terms-and-conditions", "destination": "/terms", "statusCode": 301 },
-    { "source": "/terms-and-conditions/", "destination": "/terms", "statusCode": 301 },
     { "source": "/lead-gen-casagrande-salon-nyc", "destination": "/work/salon-marketing-automation-roi", "statusCode": 301 },
-    { "source": "/lead-gen-casagrande-salon-nyc/", "destination": "/work/salon-marketing-automation-roi", "statusCode": 301 },
     { "source": "/local-seo-101-guide", "destination": "/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide", "statusCode": 301 },
     { "source": "/local-seo-playbook-google-maps", "destination": "/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide", "statusCode": 301 },
     { "source": "/our-recents", "destination": "/work", "statusCode": 301 },
@@ -173,7 +168,12 @@
     { "source": "/blog/ai-lead-follow-up-system", "destination": "/blog/gohighlevel-lead-follow-up-automation", "statusCode": 301 },
     { "source": "/blog/best-crm-hair-stylists-salon-owners", "destination": "/blog/gohighlevel-for-restaurants-fill-tables", "statusCode": 301 },
     { "source": "/blog/get-more-restaurant-reviews-google-yelp", "destination": "/blog/gohighlevel-for-restaurants-fill-tables", "statusCode": 301 },
-    { "source": "/blog/boost-support-with-conversational-ai-a-complete-guide", "destination": "/", "statusCode": 301 }
+    { "source": "/blog/boost-support-with-conversational-ai-a-complete-guide", "destination": "/", "statusCode": 301 },
+    { "source": "/work/cleaning-company-automation", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/facebook-ads-reporting-automation", "destination": "/work", "statusCode": 301 },
+    { "source": "/blog/gohighlevel-sms-marketing-setup", "destination": "/blog/gohighlevel-workflow-automations-guide", "statusCode": 301 },
+    { "source": "/product/:slug*", "destination": "/", "statusCode": 301 },
+    { "source": "/product-category/:slug*", "destination": "/", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }

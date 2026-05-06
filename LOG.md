@@ -1,5 +1,41 @@
 # LOG.md - rslaWebsite
 
+## 2026-05-06 - Fix GSC "Page with redirect" Indexing Issues
+
+### Problem
+Google Search Console emailed that validation failed for "Page with redirect" on rsla.io. GSC report showed 180 not-indexed pages across 7 categories: 12 "Page with redirect", 11 "Soft 404", 132 "Crawled - currently not indexed", and others.
+
+### Root cause
+Trailing-slash versions of redirect source URLs (e.g. `/blog/old-slug/`) bypassed the 301 redirects in vercel.json and fell through to the SPA catch-all rewrite, returning 200 with the empty React shell instead of redirecting. Google crawled both `/blog/old-slug` (got 301, correct) and `/blog/old-slug/` (got 200, broken).
+
+Additionally, 5 URLs flagged by GSC had no redirect rules at all: `/work/cleaning-company-automation`, `/work/facebook-ads-reporting-automation`, `/blog/gohighlevel-sms-marketing-setup`, and old WordPress `/product/` and `/product-category/` URLs.
+
+### Investigation steps
+1. Checked vercel.json redirects for chain redirects (none found)
+2. Verified sitemap only contains canonical destination URLs (clean)
+3. Searched source code for internal links to redirect source URLs (none)
+4. Confirmed all redirect destinations return HTTP 200
+5. Tested trailing-slash variants of redirect sources and discovered they return 200 instead of 301
+6. Downloaded and analyzed all three GSC drilldown CSVs (Page with redirect, Soft 404, Crawled - currently not indexed)
+7. Cross-referenced GSC-flagged URLs against vercel.json redirect rules to find gaps
+
+### Changes (vercel.json)
+- Added `"trailingSlash": false` so Vercel auto-strips trailing slashes with 308 before evaluating redirect rules
+- Removed 5 now-redundant trailing-slash redirect duplicates (`/resources/`, `/contact-us/`, `/about-us/`, `/crm-for-small-business/`, `/terms-and-conditions/`, `/lead-gen-casagrande-salon-nyc/`)
+- Added 5 missing redirects: `/work/cleaning-company-automation` -> `/work`, `/work/facebook-ads-reporting-automation` -> `/work`, `/blog/gohighlevel-sms-marketing-setup` -> `/blog/gohighlevel-workflow-automations-guide`, `/product/:slug*` -> `/`, `/product-category/:slug*` -> `/`
+
+### Other GSC categories (no code changes needed)
+- **Soft 404 (11):** All have proper 301 redirects already, Google just needs to re-crawl
+- **Crawled - not indexed (132):** Mostly ~80 old `_next/static/chunks/` URLs from the Next.js era, blocked by robots.txt `Disallow: /_next/`, will age out
+- **Blog pagination (`?page=N`):** Already canonicalizes to `/blog`, working correctly
+- **`http://` and `http://www.` variants:** Handled by Vercel's automatic HTTPS/www redirects
+
+### Post-deploy
+- Re-request "Validate Fix" in GSC for "Page with redirect" after deployment
+- Monitor Soft 404 and Crawled - not indexed over the next 2-4 weeks
+
+---
+
 ## 2026-05-04 - Evergreen Blog Format + Repo Cleanup
 
 ### What happened
