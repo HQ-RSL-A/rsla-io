@@ -36,6 +36,107 @@ Additionally, 5 URLs flagged by GSC had no redirect rules at all: `/work/cleanin
 
 ---
 
+## 2026-05-04 - Blog Content Cleanup & Local SEO Repositioning
+
+### What happened
+Major content cleanup to reposition rsla.io from a developer blog to a local marketing agency site targeting California (Bakersfield primary) and New York. Analyzed SEO audit data (213K+ impressions, 0.18% CTR), verified 34 live posts, identified 16 zombie V1 URLs serving wrong content, and executed a full prune-and-focus strategy.
+
+### Decisions made
+- Keep 17 posts aligned with 4 services: GoHighLevel, SEO, Websites, AI Automations
+- Remove 18 posts (developer tutorials, generic AI content) that attracted wrong audience
+- Delete 30 legacy V1 blogPost documents (invisible to frontend but polluting CMS)
+- Keep Claude Code content that demonstrates agency capability (not dev education)
+- Future content strategy: local-first (Bakersfield, California, NYC) after SEMrush validation
+- Content topics will be decided AFTER keyword research (not guessed)
+
+### What was removed
+- 18 blogPostV2 posts deleted from Sanity (developer tutorials, generic AI, off-topic)
+- 30 blogPost V1 zombie documents deleted (old schema, never visible on frontend)
+- Total: 48 documents removed from Sanity
+
+### What was added/improved
+- 21 new 301 redirects in vercel.json for archived post slugs
+- 9 existing redirects updated (targets pointed to now-removed posts, fixed to point to keepers)
+- Title/meta rewritten on top 3 performers: GHL pricing (88K imp), GHL features (55K imp), Claude comparison (70K imp)
+- keyTakeaways (3-7 bullet items) added to all 17 keeper posts (featured snippet bait)
+- bottomLine added to all 17 keeper posts (AEO extraction target)
+- Categories assigned to all 17 posts (Go High Level, Local SEO, AI Automation, etc.)
+- relatedPosts set on all 17 posts (internal linking - fixes "46 pages with 1 link" problem)
+- relatedCaseStudies linked on 8 posts to relevant case studies
+
+### Posts remaining (17 published)
+1. go-high-level-pricing (GHL)
+2. go-high-level-new-features-2025 (GHL)
+3. what-is-go-high-level (GHL)
+4. gohighlevel-workflow-automations-guide (GHL)
+5. gohighlevel-funnel-tutorial-high-converting (GHL)
+6. gohighlevel-lead-follow-up-automation (GHL)
+7. gohighlevel-vs-jobber-home-service-crm (GHL)
+8. gohighlevel-vs-hubspot-comparison (GHL - needs full rewrite for depth)
+9. gohighlevel-for-restaurants-fill-tables (GHL + Industry)
+10. how-to-rank-higher-on-google-maps (Local SEO)
+11. google-business-profile-optimization-guide-2026 (Local SEO)
+12. aeo-for-local-businesses (Local SEO + AI)
+13. claude-code-marketing-agency-workflow (AI Capability)
+14. ai-marketing-stack-what-we-use (AI Capability)
+15. anthropic-claude-products-guide (AI Capability)
+16. claude-code-vs-cowork-vs-claude-app (AI Capability - 70K impressions authority)
+17. automate-client-intake-ai (AI Automation)
+
+### Next steps
+- [x] Pull SEMrush keyword data for local + service queries (California, Bakersfield, NYC)
+- [x] Validate which location + industry + service queries have actual search volume
+- [x] Post 1: Med Spa SEO (published 2026-05-04, slug: med-spa-seo-what-actually-works)
+- [ ] Write remaining 11 new posts (prioritized by ROI, see content plan below)
+- [ ] Rewrite gohighlevel-vs-hubspot-comparison (position 33, needs depth for page 1)
+- [ ] Light refresh 4 keepers with location signals (pricing, restaurants, maps, GBP)
+- [ ] Monitor CTR improvement on rewritten title/meta posts (2-3 weeks)
+- [ ] Check GSC + GA4 after 1-2 weeks, optimize based on real data
+
+### SEMrush Research Completed (2026-05-04)
+Data saved in `docs/seo/semrush/`. Key findings:
+- Bakersfield local: low volume (40-320/mo) but KD 4-27 (guaranteed rankings)
+- Medspa marketing: 880-1,000/mo at KD 9-14 with $20-40 CPCs (goldmine)
+- Contractor lead gen: 320-720/mo at KD 6-25 with $13-18 CPCs
+- Local SEO services: 22,200/mo at KD 37 (crown jewel)
+- NYC digital marketing: 1,600/mo at KD 38
+- Industry + location combos (salon+bakersfield, restaurant+california): ZERO volume - eliminated
+- Marketing automation + california: ZERO volume - eliminated
+
+### Content Plan (12 posts, prioritized by ROI)
+Phase 1 (quick wins, KD under 15):
+1. Med Spa SEO (880/mo, KD 14, $27 CPC) - uses medspa case study
+2. Home Services Lead Generation (320/mo, KD 6, $13 CPC) - uses contractor cases
+3. Web Design Bakersfield (320/mo, KD 13-27, $8 CPC) - local dominance
+
+Phase 2 (high value):
+4. Local SEO Services (22,200/mo, KD 37) - massive volume pillar
+5. Best Local SEO Company (2,900/mo, KD 23) - BOFU
+6. Contractor Lead Generation (720/mo, KD 25, $18 CPC)
+
+Phase 3 (expansion):
+7. Digital Marketing Agency NYC (1,600/mo, KD 38)
+8. Marketing Agency California (320/mo, KD 19)
+9. SEO Bakersfield (170+210/mo, KD 18-19)
+
+Phase 4 (vertical depth):
+10. Medical Spa Marketing full strategy (880+1,000/mo, KD 24-35)
+11. Best CRM for Marketing Agencies (210+880/mo, KD 13-33)
+12. Affordable Local SEO for Small Business (2,400+2,900/mo, KD 27-39)
+
+### Writing Strategy
+- BOFU formula: Answer → Proof (case study) → Method → CTA
+- Every post references real client results with numbers
+- Location signals woven naturally (not stuffed)
+- V2 schema fully populated (pullQuote, keyTakeaways, bottomLine, faqSchema)
+- Voice DNA + humanizer + experience injection via /blogEngine
+- Quality bar: genuinely impressive writing, not SEO content that reads like SEO content
+
+### Spec
+Full design spec at: `docs/superpowers/specs/2026-05-04-blog-content-cleanup-design.md`
+
+---
+
 ## 2026-05-04 - Evergreen Blog Format + Repo Cleanup
 
 ### What happened
@@ -73,8 +174,8 @@ Implemented an evergreen blog format optimized for SEO/AEO/GEO. Added structured
 - rslaStudio `f5c7176` chore: clean up stale scripts, content strategy docs, and add project docs
 
 ### Still pending
-- Populate `keyTakeaways` and `bottomLine` on existing posts via Sanity Studio
-- Content rewrites in `content/rewrites/` need to be published through Sanity
+- ~~Populate `keyTakeaways` and `bottomLine` on existing posts via Sanity Studio~~ (DONE - 2026-05-04 cleanup)
+- Content rewrites in `content/rewrites/` are vestigial - new content goes directly to Sanity V2
 
 ---
 

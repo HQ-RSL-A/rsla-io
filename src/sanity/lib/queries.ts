@@ -132,7 +132,7 @@ export const blogHeroPostsQuery = groq`
     publishedAt,
     featured,
     featuredImage { asset->, alt },
-    author->{ name, image { asset-> } },
+    author->{ name, role, image { asset-> } },
     categories[]->{ name, slug }
   }
 `;

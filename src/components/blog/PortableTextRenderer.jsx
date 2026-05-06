@@ -353,7 +353,7 @@ export const PortableTextComponents = {
             const text = (value?.children || []).map(c => c.text || '').join('');
             const id = slugify(text);
             return (
-                <h2 id={id} className="text-[28px] md:text-[32px] font-sans font-extrabold text-text mt-14 mb-5 scroll-mt-32 tracking-tight leading-[1.2]">
+                <h2 id={id} className="text-[28px] font-sans font-extrabold text-text mt-14 mb-5 scroll-mt-32 tracking-tight leading-[34px]">
                     {children}
                 </h2>
             );
@@ -361,10 +361,10 @@ export const PortableTextComponents = {
         h3: ({ children, value }) => {
             const text = (value?.children || []).map(c => c.text || '').join('');
             const id = slugify(text);
-            return <h3 id={id} className="text-[22px] md:text-[24px] text-text mt-10 mb-4 font-sans font-bold scroll-mt-32 tracking-tight">{children}</h3>;
+            return <h3 id={id} className="text-[22px] text-text mt-10 mb-4 font-sans font-bold scroll-mt-32 tracking-tight leading-[28px]">{children}</h3>;
         },
         h4: ({ children }) => <h4 className="text-xl text-text mt-8 mb-3 font-sans font-semibold">{children}</h4>,
-        normal: ({ children }) => <p className="text-xl leading-[1.6] text-text mb-6 font-sans">{children}</p>,
+        normal: ({ children }) => <p className="text-lg leading-[30px] text-text mb-6 font-sans">{children}</p>,
         blockquote: ({ children }) => (
             <blockquote className="border-l-[3px] border-accent pl-6 my-10 font-cormorant italic text-2xl lg:text-[28px] text-text leading-[1.4]">
                 {children}
@@ -372,8 +372,8 @@ export const PortableTextComponents = {
         ),
     },
     list: {
-        bullet: ({ children }) => <ul className="list-disc pl-6 mb-6 text-xl leading-[1.6] text-text space-y-2 marker:text-accent/40">{children}</ul>,
-        number: ({ children }) => <ol className="list-decimal pl-6 mb-6 text-xl leading-[1.6] text-text space-y-2 marker:text-accent/60 font-sans">{children}</ol>,
+        bullet: ({ children }) => <ul className="list-disc pl-6 mb-6 text-lg leading-[30px] text-text space-y-2 marker:text-accent/40 font-sans">{children}</ul>,
+        number: ({ children }) => <ol className="list-decimal pl-6 mb-6 text-lg leading-[30px] text-text space-y-2 marker:text-accent/60 font-sans">{children}</ol>,
     },
     listItem: {
         bullet: ({ children }) => <li>{children}</li>,
