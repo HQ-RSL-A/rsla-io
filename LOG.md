@@ -1,5 +1,82 @@
 # LOG.md - rslaWebsite
 
+## 2026-05-06 - Newsletter Signup Redesign (The Insider)
+
+### What happened
+Complete redesign of all newsletter signup placements across the site. New "The Insider" branding with Caveat handwritten font, consistent messaging, and cohesive visual identity across three placements.
+
+### Fonts added
+- **Caveat** (Regular + Bold): self-hosted WOFF2, downloaded from Google Fonts, converted via fontTools. Added `@font-face` in `index.css` and `font-caveat` to Tailwind config. Used for newsletter headings, signatures, and branding.
+
+### Assets added
+- `public/fonts/Caveat-Regular.woff2`, `public/fonts/Caveat-Bold.woff2`
+- `public/images/tape.png` (26KB): rasterized from vector tape asset, color-shifted via CSS filter to warm beige
+- `public/images/envelope.svg`: envelope icon for blog grid card
+- `public/images/rahul.webp`: existing headshot, now used in Insider page polaroid
+- Original tape SVG saved to `myBusiness/uiComponents/assets/tornTape.svg` for future use
+
+### Assets removed
+- `public/images/paperclip.svg`: tested and rejected in favor of tape
+
+### Messaging (finalized)
+- **Headline**: "Every Tuesday, I send one thing you can use that day to make your business more money."
+- **Descriptor**: "The Insider delivers one tested growth system every week you can apply to your business and see results."
+- **Card body (Insider page)**: "One thing you can apply to your business that day and see results."
+- **Card body (blog inner)**: "Liked this? Every Tuesday I send one growth system you can apply to your business that day and see results."
+
+### Placement 1: Insider page (`/insider`)
+- Full landing page with headline (Caveat) + descriptor (Satoshi) above card
+- Polaroid photo of Rahul with realistic torn-edge tape, -4deg rotation
+- "A Weekly Note" heading in Caveat 34px
+- Blue wavy SVG underline on "business"
+- "- Rahul" signature in brand blue
+- Email form + "Get The Insider" button (rounded-xl, bg-accent)
+- "No spam, unsubscribe anytime. Privacy Policy" footnote below card
+- Background: `bg-surface` (seamless with navbar)
+- Removed: FlickeringGrid background, benefits list, TextAnimate
+
+### Placement 2: Blog inner CTA (`InlineNewsletterCta.jsx`)
+- Sits between "The Bottom Line" and author bio on every blog post
+- "A Weekly Note" + "THE INSIDER" label (no photo, since author bio is directly below)
+- Blue wavy underline on "growth system"
+- Horizontal form (input + button side by side)
+- Card shadow/border matched to sticky ToC sidebar: `border-gray-200/60`, `shadow-[0_4px_12px_rgba(0,0,0,0.06),0_20px_40px_rgba(0,0,0,0.08)]`
+
+### Placement 3: Blog listing grid card (`NewsletterGridCard.jsx`)
+- New component extracted from Blog.jsx (old inline NewsletterCard removed)
+- Based on v5t-tweakable design: Caveat heading, envelope illustration with RL badge, blue gradient background
+- All accent colors updated from `#0046FF` to `#0070F3` (brand blue)
+- Input/button changed from pill-shaped to rounded-xl matching site patterns
+- Envelope has radial glow, drop shadow, and flap fill for depth
+
+### Placements skipped
+- **Lead magnet page** (`/resources/:slug`): different intent (gating downloads), left as-is
+- **Portable text embed** (Sanity CMS): optional per-post block, redundant with bottom CTA
+
+### Design engineering polish (Emil Kowalski review)
+- Replaced JS `focused` state with CSS `focus:` selectors on Insider + Inline (grid card already correct)
+- Added `active:scale-[0.97]` press feedback to all submit buttons
+- Specified exact transition properties: `transition-[border-color,box-shadow]` on inputs, `transition-[background-color,transform]` on buttons
+- Consistent `duration-150 ease-out` timing across all components
+- Removed unused style properties (`btn`, `inputBg`) from grid card
+
+### Audit results
+- No dead code remaining across all three placements
+- No stale references (MagicCard import removed, old NewsletterCard function deleted)
+- All accent colors consistent at `#0070F3`
+- All form IDs reference `VITE_KIT_FORM_ID` env var with `9130465` fallback
+- All placements fire `newsletter_subscribe` GTM event with unique source tags
+
+### Files changed
+- `src/pages/Insider.jsx` - full redesign
+- `src/components/blog/InlineNewsletterCta.jsx` - redesigned
+- `src/components/blog/NewsletterGridCard.jsx` - new component
+- `src/pages/Blog.jsx` - swapped to NewsletterGridCard, removed old function + MagicCard import
+- `src/index.css` - Caveat @font-face declarations
+- `tailwind.config.js` - added `font-caveat`
+
+---
+
 ## 2026-05-06 - Blog Inner + Listing Page Redesign (Riverside-matched)
 
 ### What happened
