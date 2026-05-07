@@ -6,7 +6,7 @@ import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button
 const serviceSubLinks = [
     {
         title: 'Websites',
-        url: '/services/websites',
+        url: '/services/web-design',
         description: 'Fast, SEO-ready builds that ship in weeks.',
     },
     {
