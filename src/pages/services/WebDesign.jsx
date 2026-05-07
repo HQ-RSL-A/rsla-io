@@ -531,7 +531,7 @@ export default function WebDesign() {
           </div>
           <div className="hr-reveal opacity-0 text-center md:text-left">
             <p className="font-caveat text-3xl md:text-4xl text-text leading-snug mb-2">
-              "A website is your business's digital business card. If it does not communicate what you do, you are setting yourself up for failure."
+              "Build it once and expect to build it again. A website is a living product. It needs to be fed, optimized, and taken care of."
             </p>
             <p className="font-sans text-base text-textMuted">
               Rahul Lalia, Founder of RSL/A
