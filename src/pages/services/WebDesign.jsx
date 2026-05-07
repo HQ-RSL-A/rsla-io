@@ -15,16 +15,16 @@ gsap.registerPlugin(ScrollTrigger);
 const service = services['web-design'];
 
 const portfolioSites = [
-  { src: '/images/portfolio/downtownFineline.jpg', alt: 'Iron Petal tattoo studio website', name: 'Iron Petal', desc: 'Premium tattoo studio in Beacon, NY' },
-  { src: '/images/portfolio/tlcDetailing.jpg', alt: 'Apex mobile detailing website', name: 'Apex Detailing', desc: 'Mobile ceramic coating and detailing' },
-  { src: '/images/portfolio/ranchoGrande.jpg', alt: 'Rancho Grande restaurant website', name: 'Sol Cantina', desc: 'Authentic Mexican restaurant' },
-  { src: '/images/portfolio/society9Tattoo.jpg', alt: 'Blackbird Ink tattoo studio website', name: 'Blackbird Ink', desc: 'Award-winning tattoo and salon studio' },
-  { src: '/images/portfolio/scorpionJunkRemoval.jpg', alt: 'Scorpion Junk Removal website', name: 'Scorpion Junk Removal', desc: 'Local junk hauling and cleanouts' },
-  { src: '/images/portfolio/unitedSikhs.jpg', alt: 'United Sikhs nonprofit website', name: 'United Sikhs', desc: 'Global humanitarian nonprofit' },
-  { src: '/images/portfolio/caplanCommunications.jpg', alt: 'Caplan Communications website', name: 'Caplan Communications', desc: 'Strategic PR and communications' },
+  { src: '/images/portfolio/apexDetailing.jpg', alt: 'Apex Detailing website', name: 'Apex Detailing', desc: 'Mobile auto detailing and ceramic coating' },
+  { src: '/images/portfolio/solCantina.jpg', alt: 'Sol Cantina restaurant website', name: 'Sol Cantina', desc: 'Authentic Mexican restaurant' },
+  { src: '/images/portfolio/blackbirdInk.jpg', alt: 'Blackbird Ink website', name: 'Blackbird Ink', desc: 'Tattoo and salon studio' },
+  { src: '/images/portfolio/caplanCommunications.jpg', alt: 'Caplan Communications website', name: 'Caplan Communications', desc: 'Strategic PR and communications firm' },
+  { src: '/images/portfolio/coldSpringJunkRemoval.jpg', alt: 'Cold Spring Junk Removal website', name: 'Cold Spring Junk Removal', desc: 'Local junk removal service' },
+  { src: '/images/portfolio/ironPetal.jpg', alt: 'Iron Petal website', name: 'Iron Petal', desc: 'Modern tattoo studio in New York' },
   { src: '/images/portfolio/owlOutreach.jpg', alt: 'Owl Outreach website', name: 'Owl Outreach', desc: 'B2B cold email outbound studio' },
-  { src: '/images/portfolio/46goat.jpg', alt: '46GOAT e-commerce website', name: '46GOAT', desc: 'Urban fashion e-commerce' },
+  { src: '/images/portfolio/46goat.jpg', alt: '46GOAT e-commerce website', name: '46GOAT', desc: 'Urban fashion e-commerce brand' },
   { src: '/images/portfolio/nexusRoasters.jpg', alt: 'Nexus Roasters website', name: 'Nexus Roasters', desc: 'Artisan coffee roasters' },
+  { src: '/images/portfolio/unitedSikhs.jpg', alt: 'United Sikhs website', name: 'United Sikhs', desc: 'Global humanitarian nonprofit' },
   { src: '/images/portfolio/freedomDrivers.jpg', alt: 'Freedom Drivers website', name: 'Freedom Drivers', desc: 'Commercial driver advocacy nonprofit' },
 ];
 
