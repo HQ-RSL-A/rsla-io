@@ -12,6 +12,7 @@ export default function ImageComparisonSlider({
 }) {
   const [position, setPosition] = useState(initialPosition);
   const [isDragging, setIsDragging] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const containerRef = useRef(null);
 
   const handleMove = useCallback((clientX) => {
@@ -53,12 +54,48 @@ export default function ImageComparisonSlider({
     };
   }, [isDragging, handleMouseMove, handleTouchMove, stopDragging]);
 
+  useEffect(() => {
+    if (hasInteracted) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const timeout = setTimeout(() => {
+          let frame = 0;
+          const totalFrames = 40;
+          const animate = () => {
+            frame++;
+            const progress = frame / totalFrames;
+            const eased = 1 - Math.pow(1 - progress, 3);
+            if (frame <= totalFrames / 2) {
+              setPosition(50 - eased * 20);
+            } else {
+              setPosition(30 + (eased - 0.5) * 2 * 20);
+            }
+            if (frame < totalFrames) requestAnimationFrame(animate);
+            else setPosition(50);
+          };
+          requestAnimationFrame(animate);
+        }, 600);
+        return () => clearTimeout(timeout);
+      },
+      { threshold: 0.5 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [hasInteracted]);
+
+  const startInteraction = () => {
+    setIsDragging(true);
+    setHasInteracted(true);
+  };
+
   return (
     <div
       ref={containerRef}
       className={cn('relative w-full overflow-hidden select-none group rounded-2xl', className)}
-      onMouseDown={() => setIsDragging(true)}
-      onTouchStart={() => setIsDragging(true)}
+      onMouseDown={startInteraction}
+      onTouchStart={startInteraction}
     >
       <img
         src={beforeImage}

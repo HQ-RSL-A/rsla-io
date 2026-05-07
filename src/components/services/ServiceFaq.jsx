@@ -18,7 +18,7 @@ export default function ServiceFaq({ faqs, serviceName }) {
     if (!faqs || faqs.length === 0) return null;
 
     return (
-        <section className="bg-accent-light border-t border-accent-border py-20 md:py-28 px-6 md:px-12">
+        <section className="bg-background border-t border-accent-border py-20 md:py-28 px-6 md:px-12">
             <div className="max-w-3xl mx-auto">
                 <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-10">
                     Frequently asked questions

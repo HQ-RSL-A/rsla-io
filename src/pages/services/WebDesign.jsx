@@ -258,11 +258,11 @@ export default function WebDesign() {
             onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'web_design_hero' })}
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-10 py-4 font-sans font-bold text-lg text-white shadow-[0_0_20px_rgba(0,112,243,0.3)] transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(0,112,243,0.4)] animate-[subtlePulse_3s_ease-in-out_infinite]"
           >
-            Get a free homepage mockup
+            Get a FREE homepage mockup
             <ArrowRight size={18} strokeWidth={2} className="opacity-70" />
           </Link>
           <p className="mt-4 font-caveat text-xl text-textMuted">
-            Free. 72 hours. No strings.
+            Delivered to your inbox in 72 hours.
           </p>
         </div>
       </section>
@@ -270,9 +270,6 @@ export default function WebDesign() {
       {/* ── PORTFOLIO SHOWCASE ── */}
       <section className="bg-background py-16 md:py-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
-          <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
-            Our work
-          </p>
           <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-4">
             Every site is different. Because every business is.
           </h2>
@@ -359,9 +356,6 @@ export default function WebDesign() {
       {/* ── 2. PAIN / PROBLEM ── */}
       <section className="bg-surface py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
-          <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
-            The problem
-          </p>
           <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-12">
             Most websites fail before they launch.
           </h2>
@@ -382,9 +376,6 @@ export default function WebDesign() {
       {/* ── 3. WHAT YOU GET ── */}
       <section className="bg-background py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
-          <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
-            What you get
-          </p>
           <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-12">
             A website built to be found, trusted, and acted on.
           </h2>
@@ -453,9 +444,6 @@ export default function WebDesign() {
       {/* ── 5. BEFORE / AFTER SLIDER ── */}
       <section className="bg-background py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
-          <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
-            Results
-          </p>
           <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-4">
             The difference a real website makes.
           </h2>
@@ -538,12 +526,7 @@ export default function WebDesign() {
             <p className="font-sans text-lg text-textMuted leading-relaxed mb-6">
               Fill out this form and we will design a mockup of your homepage. Delivered in 72 hours. No commitment, no pitch.
             </p>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-full overflow-hidden border border-accent/20">
-                <img src="/images/rahul.webp" alt="Rahul Lalia" className="w-full h-full object-cover" loading="lazy" width="40" height="40" />
-              </div>
-              <p className="font-caveat text-xl text-textMuted">We will personally review every request.</p>
-            </div>
+            <p className="font-caveat text-xl text-textMuted">We personally review every request.</p>
           </div>
           <div className="hr-reveal opacity-0">
             <MockupRequestForm />
