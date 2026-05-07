@@ -101,6 +101,15 @@
   font-display: swap;
 }
 
+/* Caveat variable font (handwritten) */
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-Variable.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @layer base {
   /* overflow-x: clip prevents horizontal scroll from animations WITHOUT creating
@@ -376,4 +385,22 @@
     opacity: 0;
     }
   }
+}
+
+.highlight-mark {
+  background: linear-gradient(transparent 60%, rgba(0, 112, 243, 0.12) 60%);
+  padding: 0 2px;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 112, 243, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(0, 112, 243, 0.5); }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
