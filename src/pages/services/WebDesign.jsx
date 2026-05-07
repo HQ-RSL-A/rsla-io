@@ -17,16 +17,18 @@ const service = services['web-design'];
 const portfolioSites = [
   { src: '/images/portfolio/apexDetailing.jpg', alt: 'Apex Detailing website', name: 'Apex Detailing', desc: 'Mobile auto detailing and ceramic coating' },
   { src: '/images/portfolio/solCantina.jpg', alt: 'Sol Cantina restaurant website', name: 'Sol Cantina', desc: 'Authentic Mexican restaurant' },
-  { src: '/images/portfolio/blackbirdInk.jpg', alt: 'Blackbird Ink website', name: 'Blackbird Ink', desc: 'Tattoo and salon studio' },
+  { src: '/images/portfolio/ironPetal.jpg', alt: 'Iron Petal website', name: 'Iron Petal', desc: 'Modern tattoo studio in New York' },
   { src: '/images/portfolio/caplanCommunications.jpg', alt: 'Caplan Communications website', name: 'Caplan Communications', desc: 'Strategic PR and communications firm' },
   { src: '/images/portfolio/coldSpringJunkRemoval.jpg', alt: 'Cold Spring Junk Removal website', name: 'Cold Spring Junk Removal', desc: 'Local junk removal service' },
-  { src: '/images/portfolio/ironPetal.jpg', alt: 'Iron Petal website', name: 'Iron Petal', desc: 'Modern tattoo studio in New York' },
-  { src: '/images/portfolio/owlOutreach.jpg', alt: 'Owl Outreach website', name: 'Owl Outreach', desc: 'B2B cold email outbound studio' },
   { src: '/images/portfolio/46goat.jpg', alt: '46GOAT e-commerce website', name: '46GOAT', desc: 'Urban fashion e-commerce brand' },
+  { src: '/images/portfolio/blackbirdInk.jpg', alt: 'Blackbird Ink website', name: 'Blackbird Ink', desc: 'Tattoo and salon studio' },
+  { src: '/images/portfolio/owlOutreach.jpg', alt: 'Owl Outreach website', name: 'Owl Outreach', desc: 'B2B cold email outbound studio' },
   { src: '/images/portfolio/nexusRoasters.jpg', alt: 'Nexus Roasters website', name: 'Nexus Roasters', desc: 'Artisan coffee roasters' },
   { src: '/images/portfolio/unitedSikhs.jpg', alt: 'United Sikhs website', name: 'United Sikhs', desc: 'Global humanitarian nonprofit' },
   { src: '/images/portfolio/freedomDrivers.jpg', alt: 'Freedom Drivers website', name: 'Freedom Drivers', desc: 'Commercial driver advocacy nonprofit' },
 ];
+
+const PORTFOLIO_INITIAL_COUNT = 6;
 
 const painCards = [
   { title: 'Pretty but invisible', body: 'AI tools can build a modern-looking site in minutes. But if it is not built to rank and not structured for search engines, nobody finds it.' },
@@ -282,9 +284,9 @@ export default function WebDesign() {
             No templates, no recycled layouts. Each project is built from scratch around the brand it represents.
           </p>
 
-          {/* Desktop: 2-col grid */}
+          {/* Desktop: 2-col grid, show first 6 */}
           <div className="hidden md:grid md:grid-cols-2 gap-6">
-            {portfolioSites.map((site, i) => (
+            {portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT).map((site, i) => (
               <div
                 key={site.src}
                 className="hr-reveal opacity-0 group cursor-pointer"
@@ -315,10 +317,10 @@ export default function WebDesign() {
             ))}
           </div>
 
-          {/* Mobile: horizontal scroll */}
+          {/* Mobile: horizontal scroll, all sites */}
           <div className="md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
             <div className="flex gap-4" style={{ width: 'max-content' }}>
-              {portfolioSites.map((site, i) => (
+              {portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT).map((site, i) => (
                 <div
                   key={site.src}
                   className="w-[300px] shrink-0 cursor-pointer"
@@ -348,6 +350,16 @@ export default function WebDesign() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors group"
+            >
+              See all work
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>

@@ -131,10 +131,16 @@ export default function ImageComparisonSlider({
         </div>
       </div>
 
-      <div className="absolute top-4 left-4 rounded-md bg-black/60 backdrop-blur-sm px-3 py-1 pointer-events-none">
+      <div
+        className="absolute top-4 left-4 rounded-md bg-black/60 backdrop-blur-sm px-3 py-1 pointer-events-none transition-opacity duration-200"
+        style={{ opacity: position > 15 ? 1 : 0 }}
+      >
         <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Before</span>
       </div>
-      <div className="absolute top-4 right-4 rounded-md bg-accent/90 backdrop-blur-sm px-3 py-1 pointer-events-none">
+      <div
+        className="absolute top-4 right-4 rounded-md bg-accent/90 backdrop-blur-sm px-3 py-1 pointer-events-none transition-opacity duration-200"
+        style={{ opacity: position < 85 ? 1 : 0 }}
+      >
         <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">After</span>
       </div>
     </div>
