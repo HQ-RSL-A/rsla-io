@@ -290,7 +290,7 @@ export default function WebDesign() {
             {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
               <div
                 key={site.src}
-                className="hr-reveal opacity-0 group cursor-pointer"
+                className={`group cursor-pointer ${i < PORTFOLIO_INITIAL_COUNT ? 'hr-reveal opacity-0' : ''}`}
                 onClick={() => setLightboxIndex(i)}
               >
                 <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm hover:shadow-lg hover:border-accent/30 transition-all duration-300">
@@ -319,36 +319,43 @@ export default function WebDesign() {
           </div>
 
           {/* Mobile: horizontal scroll */}
-          <div className="md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
-            <div className="flex gap-4" style={{ width: 'max-content' }}>
-              {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
-                <div
-                  key={site.src}
-                  className="w-[300px] shrink-0 cursor-pointer"
-                  onClick={() => setLightboxIndex(i)}
-                >
-                  <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm">
-                    <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2 bg-background">
-                      <span className="h-2 w-2 rounded-full bg-red-400/70" />
-                      <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
-                      <span className="h-2 w-2 rounded-full bg-green-400/70" />
+          <div className="md:hidden">
+            <div className="-mx-6 px-6 overflow-x-auto scrollbar-hide">
+              <div className="flex gap-4" style={{ width: 'max-content' }}>
+                {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
+                  <div
+                    key={site.src}
+                    className="w-[300px] shrink-0 cursor-pointer"
+                    onClick={() => setLightboxIndex(i)}
+                  >
+                    <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm">
+                      <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2 bg-background">
+                        <span className="h-2 w-2 rounded-full bg-red-400/70" />
+                        <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
+                        <span className="h-2 w-2 rounded-full bg-green-400/70" />
+                      </div>
+                      <div className="aspect-[16/10] overflow-hidden">
+                        <img
+                          src={site.src}
+                          alt={site.alt}
+                          className="w-full h-full object-cover object-top"
+                          loading="lazy"
+                          width="300"
+                          height="188"
+                        />
+                      </div>
                     </div>
-                    <div className="aspect-[16/10] overflow-hidden">
-                      <img
-                        src={site.src}
-                        alt={site.alt}
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width="300"
-                        height="188"
-                      />
+                    <div className="mt-3">
+                      <p className="font-sans font-bold text-base text-text">{site.name}</p>
+                      <p className="font-sans text-base text-textMuted">{site.desc}</p>
                     </div>
                   </div>
-                  <div className="mt-3">
-                    <p className="font-sans font-bold text-base text-text">{site.name}</p>
-                    <p className="font-sans text-base text-textMuted">{site.desc}</p>
-                  </div>
-                </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center gap-1.5 mt-5">
+              {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((_, i) => (
+                <span key={i} className="h-1.5 w-1.5 rounded-full bg-textMuted/30" />
               ))}
             </div>
           </div>
@@ -359,7 +366,7 @@ export default function WebDesign() {
                 onClick={() => setShowAllPortfolio(true)}
                 className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors"
               >
-                See more projects ({portfolioSites.length - PORTFOLIO_INITIAL_COUNT} more)
+                See more projects
                 <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2} />
               </button>
             </div>
@@ -523,7 +530,7 @@ export default function WebDesign() {
             </div>
           </div>
           <div className="hr-reveal opacity-0 text-center md:text-left">
-            <p className="font-caveat text-2xl text-text leading-snug mb-2">
+            <p className="font-caveat text-3xl md:text-4xl text-text leading-snug mb-2">
               "A website is your business's digital business card. If it does not communicate what you do, you are setting yourself up for failure."
             </p>
             <p className="font-sans text-base text-textMuted">
@@ -546,7 +553,7 @@ export default function WebDesign() {
             <p className="font-sans text-lg text-textMuted leading-relaxed mb-6">
               Fill out this form and we will design a mockup of your homepage. Delivered in 72 hours. No commitment, no pitch.
             </p>
-            <p className="font-caveat text-xl text-textMuted">We personally review every request.</p>
+            <p className="font-sans text-lg text-textMuted">We personally review every request.</p>
           </div>
           <div className="hr-reveal opacity-0">
             <MockupRequestForm />
