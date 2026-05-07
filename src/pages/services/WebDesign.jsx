@@ -201,6 +201,7 @@ function MockupRequestForm() {
 export default function WebDesign() {
   const pageRef = useRef(null);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [showAllPortfolio, setShowAllPortfolio] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -260,15 +261,15 @@ export default function WebDesign() {
           <p className="font-sans text-lg md:text-xl text-textMuted leading-relaxed max-w-2xl mx-auto mb-10">
             {service.description}
           </p>
-          <Link
-            to="/contact"
+          <a
+            href="#mockup-form"
             onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'web_design_hero' })}
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-10 py-4 font-sans font-bold text-lg text-white shadow-[0_0_20px_rgba(0,112,243,0.3)] transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(0,112,243,0.4)] animate-[subtlePulse_3s_ease-in-out_infinite]"
           >
             Get a FREE homepage mockup
             <ArrowRight size={18} strokeWidth={2} className="opacity-70" />
-          </Link>
-          <p className="mt-4 font-caveat text-xl text-textMuted">
+          </a>
+          <p className="mt-4 font-sans text-base text-textMuted">
             Delivered to your inbox in 72 hours.
           </p>
         </div>
@@ -284,9 +285,9 @@ export default function WebDesign() {
             No templates, no recycled layouts. Each project is built from scratch around the brand it represents.
           </p>
 
-          {/* Desktop: 2-col grid, show first 6 */}
+          {/* Desktop: 2-col grid */}
           <div className="hidden md:grid md:grid-cols-2 gap-6">
-            {portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT).map((site, i) => (
+            {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
               <div
                 key={site.src}
                 className="hr-reveal opacity-0 group cursor-pointer"
@@ -317,10 +318,10 @@ export default function WebDesign() {
             ))}
           </div>
 
-          {/* Mobile: horizontal scroll, all sites */}
+          {/* Mobile: horizontal scroll */}
           <div className="md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
             <div className="flex gap-4" style={{ width: 'max-content' }}>
-              {portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT).map((site, i) => (
+              {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
                 <div
                   key={site.src}
                   className="w-[300px] shrink-0 cursor-pointer"
@@ -352,15 +353,17 @@ export default function WebDesign() {
             </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Link
-              to="/work"
-              className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors group"
-            >
-              See all work
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
-            </Link>
-          </div>
+          {!showAllPortfolio && portfolioSites.length > PORTFOLIO_INITIAL_COUNT && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setShowAllPortfolio(true)}
+                className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors"
+              >
+                See more projects ({portfolioSites.length - PORTFOLIO_INITIAL_COUNT} more)
+                <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2} />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -534,7 +537,7 @@ export default function WebDesign() {
       <ServiceFaq faqs={service.faqs} serviceName={service.title} />
 
       {/* ── 9. MOCKUP REQUEST FORM ── */}
-      <section className="bg-surface py-20 md:py-28 px-6 md:px-12 border-t border-accent-border">
+      <section id="mockup-form" className="bg-surface py-20 md:py-28 px-6 md:px-12 border-t border-accent-border scroll-mt-24">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div className="hr-reveal opacity-0">
             <h2 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-4">

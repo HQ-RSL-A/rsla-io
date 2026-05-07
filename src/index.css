@@ -84,19 +84,11 @@
   font-display: swap;
 }
 
-/* Caveat @font-face declarations (handwritten — newsletter, signatures) */
+/* Caveat variable font (handwritten) */
 @font-face {
   font-family: 'Caveat';
-  src: url('/fonts/Caveat-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Caveat';
-  src: url('/fonts/Caveat-Bold.woff2') format('woff2');
-  font-weight: 700;
+  src: url('/fonts/Caveat-Variable.ttf') format('truetype');
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
