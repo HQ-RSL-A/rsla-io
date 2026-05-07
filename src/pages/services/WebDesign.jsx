@@ -32,14 +32,14 @@ const PORTFOLIO_INITIAL_COUNT = 6;
 
 const painCards = [
   { title: 'Pretty but invisible', body: 'AI tools can build a modern-looking site in minutes. But if it is not built to rank and not structured for search engines, nobody finds it.' },
-  { title: 'Looks like every other site', body: "Your provider's free website follows the same layouts used by hundreds of businesses. Nothing about it says you." },
+  { title: 'Looks like every other site', body: 'Template builders like Wix and Squarespace use the same layouts for hundreds of businesses. Nothing about the result says you.' },
   { title: 'The messaging is wrong', body: 'If search engines cannot understand what your business does, your customers will not either. Vague copy kills your chances before you compete.' },
 ];
 
 const deliverables = [
   { icon: Globe, title: 'Custom design', body: 'Built around your brand personality, voice, and story. Not a template with your logo swapped in.' },
   { icon: Search, title: 'SEO foundation', body: 'Site structure, page titles, speed, and content optimized so search engines find and trust you from day one.' },
-  { icon: Bot, title: 'Found by AI search, not just Google', body: 'Structured so your business shows up when people ask ChatGPT, Gemini, or Perplexity for recommendations.' },
+  { icon: Bot, title: 'Found by AI search, not just Google', body: 'Structured so your business shows up when people ask AI assistants for recommendations, not just when they type into Google.' },
   { icon: MapPin, title: 'Local search ready', body: 'Connected to your Google Business Profile and built to rank in your service area, Maps, and local results.' },
   { icon: Zap, title: 'Fast delivery', body: 'As fast as one week for focused builds. Larger scopes up to two months. Real timeline, no guessing.' },
   { icon: Shield, title: 'You own everything', body: 'Your code, your content, your domain. No vendor lock-in. Full CMS access to update content yourself.' },
@@ -53,10 +53,10 @@ const processSteps = [
 ];
 
 function PortfolioLightbox({ sites, selectedIndex, onClose }) {
-  if (selectedIndex === null) return null;
   const site = sites[selectedIndex];
 
   useEffect(() => {
+    if (selectedIndex === null) return;
     const handleKey = (e) => {
       if (e.key === 'Escape') onClose();
     };
@@ -66,7 +66,9 @@ function PortfolioLightbox({ sites, selectedIndex, onClose }) {
       document.removeEventListener('keydown', handleKey);
       document.body.style.overflow = '';
     };
-  }, [onClose]);
+  }, [selectedIndex, onClose]);
+
+  if (selectedIndex === null) return null;
 
   return (
     <div
@@ -75,7 +77,7 @@ function PortfolioLightbox({ sites, selectedIndex, onClose }) {
     >
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+        className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 active:scale-[0.9] transition-[transform,background-color] duration-150 ease-out"
         aria-label="Close"
       >
         <XIcon size={20} strokeWidth={2} />
@@ -128,7 +130,7 @@ function MockupRequestForm() {
             name="name"
             type="text"
             required
-            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-[border-color,box-shadow] duration-150 ease-out"
             placeholder="John Smith"
           />
         </div>
@@ -139,7 +141,7 @@ function MockupRequestForm() {
             name="email"
             type="email"
             required
-            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-[border-color,box-shadow] duration-150 ease-out"
             placeholder="john@company.com"
           />
         </div>
@@ -150,7 +152,7 @@ function MockupRequestForm() {
             name="currentWebsite"
             type="url"
             required
-            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-[border-color,box-shadow] duration-150 ease-out"
             placeholder="https://yoursite.com"
           />
         </div>
@@ -161,7 +163,7 @@ function MockupRequestForm() {
             name="goal"
             required
             rows={3}
-            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent resize-none"
+            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text placeholder:text-textMuted/50 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-[border-color,box-shadow] duration-150 ease-out resize-none"
             placeholder="Generate leads, book appointments, sell products..."
           />
         </div>
@@ -171,7 +173,7 @@ function MockupRequestForm() {
             id="mockup-timeline"
             name="timeline"
             required
-            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+            className="w-full rounded-xl border border-accent-border bg-background px-4 py-3 font-sans text-base text-text focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-[border-color,box-shadow] duration-150 ease-out"
           >
             <option value="">Select a timeline</option>
             <option value="immediately">Immediately</option>
@@ -188,7 +190,7 @@ function MockupRequestForm() {
 
         <button
           type="submit"
-          className="w-full rounded-xl bg-accent px-8 py-4 font-sans font-bold text-lg text-white shadow-sm transition-colors hover:bg-accent/90 mt-2"
+          className="w-full rounded-xl bg-accent px-8 py-4 font-sans font-bold text-lg text-white shadow-sm transition-[transform,background-color] duration-150 ease-out hover:bg-accent/90 active:scale-[0.97] mt-2"
         >
           Send my mockup request
         </button>
@@ -212,14 +214,27 @@ export default function WebDesign() {
         return;
       }
 
+      const ease = 'expo.out';
+
       gsap.fromTo('.wd-hero-content',
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.1 }
+        { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease, delay: 0.1 }
       );
 
-      gsap.utils.toArray('.hr-reveal').forEach((el) => {
-        gsap.fromTo(el, { y: 30, opacity: 0 }, {
-          y: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
+      const staggerGroups = ['.pain-grid .hr-reveal', '.deliverables-grid .hr-reveal', '.portfolio-grid .hr-reveal'];
+      staggerGroups.forEach((selector) => {
+        const els = gsap.utils.toArray(selector);
+        if (!els.length) return;
+        gsap.fromTo(els, { y: 24, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.6, ease,
+          stagger: 0.06,
+          scrollTrigger: { trigger: els[0].parentElement, start: 'top 80%', once: true },
+        });
+      });
+
+      gsap.utils.toArray('.hr-reveal:not(.pain-grid .hr-reveal):not(.deliverables-grid .hr-reveal):not(.portfolio-grid .hr-reveal)').forEach((el) => {
+        gsap.fromTo(el, { y: 24, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.6, ease,
           scrollTrigger: { trigger: el, start: 'top 85%', once: true },
         });
       });
@@ -264,13 +279,13 @@ export default function WebDesign() {
           <a
             href="#mockup-form"
             onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'web_design_hero' })}
-            className="inline-flex items-center gap-2 rounded-xl bg-accent px-10 py-4 font-sans font-bold text-lg text-white shadow-[0_0_20px_rgba(0,112,243,0.3)] transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(0,112,243,0.4)] animate-[subtlePulse_3s_ease-in-out_infinite]"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-10 py-4 font-sans font-bold text-lg text-white shadow-[0_0_20px_rgba(0,112,243,0.3)] transition-[transform,box-shadow,background-color] duration-200 ease-out hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(0,112,243,0.4)] active:scale-[0.97] animate-[subtlePulse_3s_ease-in-out_infinite]"
           >
-            Get a FREE homepage mockup
+            Get a free homepage mockup
             <ArrowRight size={18} strokeWidth={2} className="opacity-70" />
           </a>
           <p className="mt-4 font-sans text-base text-textMuted">
-            Delivered to your inbox in 72 hours.
+            Your custom homepage mockup, delivered in 72 hours.
           </p>
         </div>
       </section>
@@ -286,14 +301,14 @@ export default function WebDesign() {
           </p>
 
           {/* Desktop: 2-col grid */}
-          <div className="hidden md:grid md:grid-cols-2 gap-6">
+          <div className="portfolio-grid hidden md:grid md:grid-cols-2 gap-6">
             {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
               <div
                 key={site.src}
-                className={`group cursor-pointer ${i < PORTFOLIO_INITIAL_COUNT ? 'hr-reveal opacity-0' : ''}`}
+                className={`group cursor-pointer transition-transform duration-200 ease-out active:scale-[0.98] ${i < PORTFOLIO_INITIAL_COUNT ? 'hr-reveal opacity-0' : ''}`}
                 onClick={() => setLightboxIndex(i)}
               >
-                <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm hover:shadow-lg hover:border-accent/30 transition-all duration-300">
+                <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm transition-[box-shadow,border-color] duration-200 ease-out group-hover:shadow-lg group-hover:border-accent/30">
                   <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2 bg-background">
                     <span className="h-2 w-2 rounded-full bg-red-400/70" />
                     <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
@@ -303,7 +318,7 @@ export default function WebDesign() {
                     <img
                       src={site.src}
                       alt={site.alt}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                       loading="lazy"
                       width="640"
                       height="400"
@@ -318,14 +333,14 @@ export default function WebDesign() {
             ))}
           </div>
 
-          {/* Mobile: horizontal scroll */}
+          {/* Mobile: horizontal scroll with snap */}
           <div className="md:hidden">
-            <div className="-mx-6 px-6 overflow-x-auto scrollbar-hide">
-              <div className="flex gap-4" style={{ width: 'max-content' }}>
+            <div className="-mx-6 px-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory overscroll-x-contain">
+              <div className="flex gap-4 pb-2" style={{ width: 'max-content' }}>
                 {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
                   <div
                     key={site.src}
-                    className="w-[300px] shrink-0 cursor-pointer"
+                    className="w-[280px] shrink-0 cursor-pointer snap-start active:scale-[0.98] transition-transform duration-150 ease-out"
                     onClick={() => setLightboxIndex(i)}
                   >
                     <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm">
@@ -340,31 +355,27 @@ export default function WebDesign() {
                           alt={site.alt}
                           className="w-full h-full object-cover object-top"
                           loading="lazy"
-                          width="300"
-                          height="188"
+                          width="280"
+                          height="175"
                         />
                       </div>
                     </div>
                     <div className="mt-3">
                       <p className="font-sans font-bold text-base text-text">{site.name}</p>
-                      <p className="font-sans text-base text-textMuted">{site.desc}</p>
+                      <p className="font-sans text-sm text-textMuted">{site.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex justify-center gap-1.5 mt-5">
-              {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((_, i) => (
-                <span key={i} className="h-1.5 w-1.5 rounded-full bg-textMuted/30" />
-              ))}
-            </div>
+            <p className="text-center text-sm text-textMuted/60 mt-4">Swipe to see more</p>
           </div>
 
           {!showAllPortfolio && portfolioSites.length > PORTFOLIO_INITIAL_COUNT && (
             <div className="mt-8 text-center">
               <button
                 onClick={() => setShowAllPortfolio(true)}
-                className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors"
+                className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 active:scale-[0.97] transition-[transform,color] duration-150 ease-out"
               >
                 See more projects
                 <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2} />
@@ -386,7 +397,7 @@ export default function WebDesign() {
           <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-12">
             Most websites fail before they launch.
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="pain-grid grid md:grid-cols-3 gap-6">
             {painCards.map((card) => (
               <div
                 key={card.title}
@@ -406,7 +417,7 @@ export default function WebDesign() {
           <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-12">
             A website built to be found, trusted, and acted on.
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="deliverables-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {deliverables.map((item) => {
               const Icon = item.icon;
               return (
@@ -522,7 +533,7 @@ export default function WebDesign() {
       </section>
 
       {/* ── 7. FOUNDER + TESTIMONIAL ── */}
-      <section className="bg-background py-16 md:py-20 px-6 md:px-12">
+      <section className="bg-background py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="shrink-0">
             <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-accent/20 shadow-sm">
@@ -531,7 +542,7 @@ export default function WebDesign() {
           </div>
           <div className="hr-reveal opacity-0 text-center md:text-left">
             <p className="font-caveat text-3xl md:text-4xl text-text leading-snug mb-2">
-              "Build it once and expect to build it again. A website is a living product. It needs to be fed, optimized, and taken care of."
+              "Build it once and expect to build it again. A website is a living product. It needs to be fed, optimized, and taken care of. If you think you can build it and forget it, it is going to fall behind."
             </p>
             <p className="font-sans text-base text-textMuted">
               Rahul Lalia, Founder of RSL/A
