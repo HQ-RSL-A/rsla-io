@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Globe, Search, Bot, MapPin, Zap, Shield, X as XIcon } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, ChevronUp, Globe, Search, Bot, MapPin, Zap, Shield, X as XIcon } from 'lucide-react';
 import { services } from '@/data/serviceData';
 import Seo from '@/components/Seo';
 import ServiceFaq, { generateFaqSchema } from '@/components/services/ServiceFaq';
@@ -52,13 +52,15 @@ const processSteps = [
   { num: '04', title: 'Launch and ongoing', body: 'We go live, train you on the CMS, and hand everything over. Ongoing management available.' },
 ];
 
-function PortfolioLightbox({ sites, selectedIndex, onClose }) {
+function PortfolioLightbox({ sites, selectedIndex, onClose, onPrev, onNext }) {
   const site = sites[selectedIndex];
 
   useEffect(() => {
     if (selectedIndex === null) return;
     const handleKey = (e) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'ArrowRight') onNext();
     };
     document.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
@@ -66,7 +68,7 @@ function PortfolioLightbox({ sites, selectedIndex, onClose }) {
       document.removeEventListener('keydown', handleKey);
       document.body.style.overflow = '';
     };
-  }, [selectedIndex, onClose]);
+  }, [selectedIndex, onClose, onPrev, onNext]);
 
   if (selectedIndex === null) return null;
 
@@ -82,6 +84,23 @@ function PortfolioLightbox({ sites, selectedIndex, onClose }) {
       >
         <XIcon size={20} strokeWidth={2} />
       </button>
+
+      <button
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 active:scale-[0.9] transition-[transform,background-color] duration-150 ease-out"
+        aria-label="Previous"
+      >
+        <ChevronLeft size={22} strokeWidth={2} />
+      </button>
+
+      <button
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 active:scale-[0.9] transition-[transform,background-color] duration-150 ease-out"
+        aria-label="Next"
+      >
+        <ChevronRight size={22} strokeWidth={2} />
+      </button>
+
       <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
         <img
           src={site.src}
@@ -90,7 +109,7 @@ function PortfolioLightbox({ sites, selectedIndex, onClose }) {
         />
         <div className="mt-4 text-center">
           <p className="font-sans font-bold text-lg text-white">{site.name}</p>
-          <p className="font-sans text-base text-white/60">{site.desc}</p>
+          <p className="font-sans text-base text-white/60">{site.desc} &middot; {selectedIndex + 1}/{sites.length}</p>
         </div>
       </div>
     </div>
@@ -202,8 +221,32 @@ function MockupRequestForm() {
 
 export default function WebDesign() {
   const pageRef = useRef(null);
+  const mobileScrollRef = useRef(null);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [showAllPortfolio, setShowAllPortfolio] = useState(false);
+  const [portfolioExpanded, setPortfolioExpanded] = useState(true);
+  const [activeMobileDot, setActiveMobileDot] = useState(0);
+
+  const visibleSites = showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT);
+
+  const handleLightboxPrev = () => {
+    setLightboxIndex((prev) => (prev <= 0 ? portfolioSites.length - 1 : prev - 1));
+  };
+  const handleLightboxNext = () => {
+    setLightboxIndex((prev) => (prev >= portfolioSites.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const scrollEl = mobileScrollRef.current;
+    if (!scrollEl) return;
+    const handleScroll = () => {
+      const cardWidth = 280 + 16;
+      const index = Math.round(scrollEl.scrollLeft / cardWidth);
+      setActiveMobileDot(Math.min(index, visibleSites.length - 1));
+    };
+    scrollEl.addEventListener('scroll', handleScroll, { passive: true });
+    return () => scrollEl.removeEventListener('scroll', handleScroll);
+  }, [visibleSites.length]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -293,57 +336,38 @@ export default function WebDesign() {
       {/* ── PORTFOLIO SHOWCASE ── */}
       <section className="bg-background py-16 md:py-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
-          <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-4">
-            Every site is different. Because every business is.
-          </h2>
-          <p className="hr-reveal opacity-0 font-sans text-lg text-textMuted leading-relaxed mb-10 max-w-2xl">
-            No templates, no recycled layouts. Each project is built from scratch around the brand it represents.
-          </p>
+          <button
+            onClick={() => setPortfolioExpanded((v) => !v)}
+            className="w-full flex items-center justify-between gap-4 text-left group"
+          >
+            <div>
+              <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text mb-4">
+                Every site is different. Because every business is.
+              </h2>
+              <p className="hr-reveal opacity-0 font-sans text-lg text-textMuted leading-relaxed max-w-2xl">
+                No templates, no recycled layouts. Each project is built from scratch around the brand it represents.
+              </p>
+            </div>
+            <ChevronUp
+              size={24}
+              strokeWidth={2}
+              className={`shrink-0 text-textMuted transition-transform duration-200 ease-out ${portfolioExpanded ? '' : 'rotate-180'}`}
+            />
+          </button>
 
-          {/* Desktop: 2-col grid */}
-          <div className="portfolio-grid hidden md:grid md:grid-cols-2 gap-6">
-            {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
-              <div
-                key={site.src}
-                className={`group cursor-pointer transition-transform duration-200 ease-out active:scale-[0.98] ${i < PORTFOLIO_INITIAL_COUNT ? 'hr-reveal opacity-0' : ''}`}
-                onClick={() => setLightboxIndex(i)}
-              >
-                <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm transition-[box-shadow,border-color] duration-200 ease-out group-hover:shadow-lg group-hover:border-accent/30">
-                  <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2 bg-background">
-                    <span className="h-2 w-2 rounded-full bg-red-400/70" />
-                    <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
-                    <span className="h-2 w-2 rounded-full bg-green-400/70" />
-                  </div>
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src={site.src}
-                      alt={site.alt}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                      loading="lazy"
-                      width="640"
-                      height="400"
-                    />
-                  </div>
-                </div>
-                <div className="mt-3 px-1">
-                  <p className="font-sans font-bold text-base text-text">{site.name}</p>
-                  <p className="font-sans text-base text-textMuted">{site.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {portfolioExpanded && (
+            <>
+              <div className="mt-10" />
 
-          {/* Mobile: horizontal scroll with snap */}
-          <div className="md:hidden">
-            <div className="-mx-6 px-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory overscroll-x-contain">
-              <div className="flex gap-4 pb-2" style={{ width: 'max-content' }}>
-                {(showAllPortfolio ? portfolioSites : portfolioSites.slice(0, PORTFOLIO_INITIAL_COUNT)).map((site, i) => (
+              {/* Desktop: 2-col grid */}
+              <div className="portfolio-grid hidden md:grid md:grid-cols-2 gap-6">
+                {visibleSites.map((site, i) => (
                   <div
                     key={site.src}
-                    className="w-[280px] shrink-0 cursor-pointer snap-start active:scale-[0.98] transition-transform duration-150 ease-out"
+                    className={`group cursor-pointer transition-transform duration-200 ease-out active:scale-[0.98] ${i < PORTFOLIO_INITIAL_COUNT ? 'hr-reveal opacity-0' : ''}`}
                     onClick={() => setLightboxIndex(i)}
                   >
-                    <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm">
+                    <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm transition-[box-shadow,border-color] duration-200 ease-out group-hover:shadow-lg group-hover:border-accent/30">
                       <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2 bg-background">
                         <span className="h-2 w-2 rounded-full bg-red-400/70" />
                         <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
@@ -353,34 +377,83 @@ export default function WebDesign() {
                         <img
                           src={site.src}
                           alt={site.alt}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                           loading="lazy"
-                          width="280"
-                          height="175"
+                          width="640"
+                          height="400"
                         />
                       </div>
                     </div>
-                    <div className="mt-3">
+                    <div className="mt-3 px-1">
                       <p className="font-sans font-bold text-base text-text">{site.name}</p>
-                      <p className="font-sans text-sm text-textMuted">{site.desc}</p>
+                      <p className="font-sans text-base text-textMuted">{site.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-            <p className="text-center text-sm text-textMuted/60 mt-4">Swipe to see more</p>
-          </div>
 
-          {!showAllPortfolio && portfolioSites.length > PORTFOLIO_INITIAL_COUNT && (
-            <div className="mt-8 text-center">
-              <button
-                onClick={() => setShowAllPortfolio(true)}
-                className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 active:scale-[0.97] transition-[transform,color] duration-150 ease-out"
-              >
-                See more projects
-                <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2} />
-              </button>
-            </div>
+              {/* Mobile: horizontal scroll with snap */}
+              <div className="md:hidden">
+                <div ref={mobileScrollRef} className="-mx-6 px-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory overscroll-x-contain">
+                  <div className="flex gap-4 pb-2" style={{ width: 'max-content' }}>
+                    {visibleSites.map((site, i) => (
+                      <div
+                        key={site.src}
+                        className="w-[280px] shrink-0 cursor-pointer snap-start active:scale-[0.98] transition-transform duration-150 ease-out"
+                        onClick={() => setLightboxIndex(i)}
+                      >
+                        <div className="rounded-xl overflow-hidden border border-accent-border bg-surface shadow-sm">
+                          <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2 bg-background">
+                            <span className="h-2 w-2 rounded-full bg-red-400/70" />
+                            <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
+                            <span className="h-2 w-2 rounded-full bg-green-400/70" />
+                          </div>
+                          <div className="aspect-[16/10] overflow-hidden">
+                            <img
+                              src={site.src}
+                              alt={site.alt}
+                              className="w-full h-full object-cover object-top"
+                              loading="lazy"
+                              width="280"
+                              height="175"
+                            />
+                          </div>
+                        </div>
+                        <div className="mt-3">
+                          <p className="font-sans font-bold text-base text-text">{site.name}</p>
+                          <p className="font-sans text-sm text-textMuted">{site.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-center gap-2 mt-4">
+                  {visibleSites.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        const cardWidth = 280 + 16;
+                        mobileScrollRef.current?.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+                      }}
+                      className={`h-2 rounded-full transition-[width,background-color] duration-200 ease-out ${i === activeMobileDot ? 'w-6 bg-accent' : 'w-2 bg-textMuted/30'}`}
+                      aria-label={`Go to project ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {!showAllPortfolio && portfolioSites.length > PORTFOLIO_INITIAL_COUNT && (
+                <div className="mt-8 text-center">
+                  <button
+                    onClick={() => setShowAllPortfolio(true)}
+                    className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 active:scale-[0.97] transition-[transform,color] duration-150 ease-out"
+                  >
+                    See more projects
+                    <ArrowRight className="w-4 h-4 rotate-90" strokeWidth={2} />
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>
@@ -389,6 +462,8 @@ export default function WebDesign() {
         sites={portfolioSites}
         selectedIndex={lightboxIndex}
         onClose={() => setLightboxIndex(null)}
+        onPrev={handleLightboxPrev}
+        onNext={handleLightboxNext}
       />
 
       {/* ── 2. PAIN / PROBLEM ── */}
