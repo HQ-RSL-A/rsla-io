@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.mjs && node scripts/generateSitemap.mjs && node scripts/generateRssFeed.mjs && node scripts/generateLlmsTxt.mjs && node scripts/pingIndexNow.mjs",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/generateSitemap.mjs && node scripts/validateBuild.mjs && node scripts/generateRssFeed.mjs && node scripts/generateLlmsTxt.mjs && node scripts/pingIndexNow.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

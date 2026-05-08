@@ -1474,6 +1474,9 @@ async function main() {
     count++;
   }
 
+  // 404.html at dist root for Vercel's catch-all rewrite and native 404 handling
+  writeFileSync(resolve(DIST, '404.html'), inject(template, notFoundContent()), 'utf-8');
+
   // Service detail pages (one per service slug)
   for (const slug of ['web-design', 'seo', 'ai-automations', 'crm-systems', 'custom-development']) {
     const page = serviceDetailContent(slug);

@@ -178,6 +178,6 @@
     { "source": "/product-category/:slug*", "destination": "/", "statusCode": 301 }
   ],
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|_next/).*)", "destination": "/404.html" }
   ]
 }
