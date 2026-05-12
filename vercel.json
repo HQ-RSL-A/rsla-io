@@ -83,6 +83,7 @@
   ],
   "redirects": [
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.rsla.io" }], "destination": "https://rsla.io/:path", "statusCode": 301 },
+    { "source": "/blog/go-high-level-new-features-2025", "destination": "/blog/gohighlevel-updates-2026", "statusCode": 301 },
     { "source": "/services/websites", "destination": "/services/web-design", "statusCode": 301 },
     { "source": "/services/search-visibility", "destination": "/services/seo", "statusCode": 301 },
     { "source": "/blog/gohighlevel-pricing-2026-cost-breakdown", "destination": "/blog/go-high-level-pricing", "statusCode": 301 },
