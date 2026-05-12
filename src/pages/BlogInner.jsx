@@ -167,6 +167,8 @@ export default function BlogInner() {
         return count;
     }, 0) || 0;
 
+    const firstCategory = post.categories?.[0]?.name || null;
+
     const blogPostingSchema = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -176,20 +178,34 @@ export default function BlogInner() {
         datePublished: post.publishedAt,
         ...(post.updatedAt && { dateModified: post.updatedAt }),
         ...(wordCount > 0 && { wordCount }),
+        ...(post.seo?.targetKeyphrase && { keywords: post.seo.targetKeyphrase }),
+        ...(firstCategory && { articleSection: firstCategory }),
         author: {
             '@type': 'Person',
             name: post.author?.name || 'Rahul Lalia',
+            jobTitle: post.author?.role || 'Founder/CEO',
+            url: 'https://rsla.io/about',
+            ...(post.author?.linkedin && { sameAs: post.author.linkedin }),
         },
         publisher: {
             '@type': 'Organization',
             name: 'RSL/A',
-            logo: { '@type': 'ImageObject', url: 'https://rsla.io/images/logo/lockup-nobg.webp' },
+            url: 'https://rsla.io',
+            logo: { '@type': 'ImageObject', url: 'https://rsla.io/images/logo/lockup-nobg.webp', width: 400, height: 100 },
         },
-        mainEntityOfPage: `https://rsla.io/blog/${slug}`,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://rsla.io/blog/${slug}` },
+        isPartOf: { '@type': 'Blog', '@id': 'https://rsla.io/blog', name: 'RSL/A Blog' },
         speakable: {
             '@type': 'SpeakableSpecification',
             cssSelector: ['.tldr', '.key-takeaways'],
         },
+        ...(post.relatedCapability && {
+            mentions: {
+                '@type': 'Service',
+                name: post.relatedCapability.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                url: `https://rsla.io/services/${post.relatedCapability}`,
+            },
+        }),
     };
 
     const breadcrumbSchema = {
@@ -214,6 +230,19 @@ export default function BlogInner() {
         })),
     } : null;
 
+    const howToSchema = post.steps?.length > 0 ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: post.title,
+        description: seoDescription,
+        step: post.steps.map((s, i) => ({
+            '@type': 'HowToStep',
+            position: i + 1,
+            name: s.name,
+            text: s.text,
+        })),
+    } : null;
+
     const softwareAppSchema = slug === 'go-high-level-pricing' ? {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
@@ -228,7 +257,7 @@ export default function BlogInner() {
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', bestRating: '5', ratingCount: '4200', reviewCount: '2100' },
     } : null;
 
-    const jsonLdSchemas = [blogPostingSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(softwareAppSchema ? [softwareAppSchema] : [])];
+    const jsonLdSchemas = [blogPostingSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(howToSchema ? [howToSchema] : []), ...(softwareAppSchema ? [softwareAppSchema] : [])];
 
     return (
         <article className="min-h-screen bg-surface text-text pt-20 pb-24 relative">

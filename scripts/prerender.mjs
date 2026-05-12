@@ -30,6 +30,51 @@ const client = createClient({
   useCdn: true,
 });
 
+// ── Global Structured Data (included on every page) ──────────────────────────
+
+const globalSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
+    '@id': `${SITE}/#business`,
+    name: 'RSL/A',
+    alternateName: ['RSLA', 'RSL/A', 'RSL A', 'RSL/A Agency'],
+    url: SITE,
+    logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp`, width: 400, height: 100 },
+    image: `${SITE}/images/logo/lockup-nobg.webp`,
+    description: "The trusted AI growth partner for fast-moving B2B companies. We build your website, get it found on Google and ChatGPT, and automate what's slowing you down.",
+    email: 'hello@rsla.io',
+    founder: { '@type': 'Person', name: 'Rahul Lalia', jobTitle: 'Founder & CEO', url: `${SITE}/about`, sameAs: 'https://www.linkedin.com/in/rahullalia/' },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Bakersfield',
+      addressRegion: 'CA',
+      postalCode: '93301',
+      addressCountry: 'US',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 35.3733, longitude: -119.0187 },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'Canada' },
+    ],
+    knowsAbout: ['AI Automation', 'Web Development', 'Search Engine Optimization', 'Answer Engine Optimization', 'GoHighLevel CRM', 'Marketing Automation', 'Local SEO', 'Content Marketing'],
+    sameAs: [
+      'https://www.instagram.com/rahul.lalia/',
+      'https://www.linkedin.com/in/rahullalia/',
+      'https://www.youtube.com/@rahul_lalia',
+      'https://www.tiktok.com/@rahul_lalia',
+      'https://x.com/rahul_lalia',
+    ],
+  },
+  {
+    '@context': 'https://schema.org', '@type': 'WebSite',
+    '@id': `${SITE}/#website`,
+    name: 'RSL/A', alternateName: ['RSLA', 'RSL/A', 'RSL A'],
+    url: SITE,
+    publisher: { '@id': `${SITE}/#business` },
+  },
+];
+
 // ── Utilities ─────────────────────────────────────────────────────────────────
 
 function esc(str) {
@@ -101,9 +146,12 @@ function inject(tmpl, { title, description, canonical, jsonLd, html, ogImage, ke
     p = p.replace(/<meta name="robots"[^>]*\/>\s*/g, '');
   }
 
-  if (jsonLd) {
-    const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
-    const scripts = schemas.map(s => `<script type="application/ld+json" data-seo-jsonld>${escapeJsonLd(s)}</script>`).join('\n');
+  const allSchemas = [
+    ...(noIndex ? [] : globalSchemas),
+    ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []),
+  ];
+  if (allSchemas.length) {
+    const scripts = allSchemas.map(s => `<script type="application/ld+json" data-seo-jsonld>${escapeJsonLd(s)}</script>`).join('\n');
     p = p.replace('</head>', `${scripts}\n</head>`);
   }
 
@@ -142,21 +190,6 @@ function homeContent() {
     canonical: SITE,
     keywords: 'AI growth partner, custom B2B website, AI website agency, SEO for B2B, AI automation, ChatGPT visibility',
     jsonLd: [
-      {
-        '@context': 'https://schema.org', '@type': 'Organization',
-        name: 'RSL/A', alternateName: ['RSLA', 'RSL/A', 'RSL A', 'RSL/A Agency'],
-        url: SITE, logo: `${SITE}/images/logo/lockup-nobg.webp`,
-        description: "The trusted AI growth partner for fast-moving B2B companies. We build your website, get it found on Google and ChatGPT, and automate what's slowing you down.",
-        founder: { '@type': 'Person', name: 'Rahul Lalia', jobTitle: 'Founder & CEO' },
-        sameAs: [
-          'https://www.instagram.com/rahul.lalia/',
-          'https://www.linkedin.com/in/rahullalia/',
-          'https://www.youtube.com/@rahul_lalia',
-          'https://www.tiktok.com/@rahul_lalia',
-          'https://x.com/rahul_lalia',
-        ],
-      },
-      { '@context': 'https://schema.org', '@type': 'WebSite', name: 'RSL/A', alternateName: ['RSLA', 'RSL/A', 'RSL A'], url: SITE },
       {
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
@@ -1238,19 +1271,37 @@ function blogPostContent(post) {
     return count;
   }, 0);
 
+  const firstCategoryName = (post.categories || [])[0]?.name || null;
+
   const jsonLd = [
     {
       '@context': 'https://schema.org', '@type': 'BlogPosting',
-      headline: post.title,
+      headline: post.seo?.metaTitle || post.title,
       description,
       datePublished: post.publishedAt,
       ...(dateModified && { dateModified }),
       ...(wordCount > 0 && { wordCount }),
       ...(ogImage && { image: ogImage }),
-      author: { '@type': 'Person', name: post.author?.name || 'Rahul Lalia' },
-      publisher: { '@type': 'Organization', name: 'RSL/A', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp` } },
+      ...(post.seo?.targetKeyphrase && { keywords: post.seo.targetKeyphrase }),
+      ...(firstCategoryName && { articleSection: firstCategoryName }),
+      author: {
+        '@type': 'Person',
+        name: post.author?.name || 'Rahul Lalia',
+        jobTitle: post.author?.role || 'Founder/CEO',
+        url: `${SITE}/about`,
+        ...(post.author?.linkedin && { sameAs: post.author.linkedin }),
+      },
+      publisher: { '@type': 'Organization', name: 'RSL/A', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp`, width: 400, height: 100 } },
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+      isPartOf: { '@type': 'Blog', '@id': `${SITE}/blog`, name: 'RSL/A Blog' },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.tldr', '.key-takeaways'] },
+      ...(post.relatedCapability && {
+        mentions: {
+          '@type': 'Service',
+          name: post.relatedCapability.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+          url: `${SITE}/services/${post.relatedCapability}`,
+        },
+      }),
     },
     {
       '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -1267,6 +1318,17 @@ function blogPostContent(post) {
       mainEntity: post.faqSchema.map(f => ({
         '@type': 'Question', name: f.question,
         acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    });
+  }
+
+  if (post.steps?.length) {
+    jsonLd.push({
+      '@context': 'https://schema.org', '@type': 'HowTo',
+      name: post.title,
+      description,
+      step: post.steps.map((s, i) => ({
+        '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text,
       })),
     });
   }
@@ -1405,10 +1467,12 @@ async function main() {
         "updatedAtFallback": _updatedAt,
         body,
         featuredImage { asset-> },
-        author->{ name },
+        author->{ name, role, linkedin },
         categories[]->{ name, "slug": slug.current },
-        seo { metaTitle, metaDescription, keywords, socialImage { asset-> } },
-        faqSchema
+        seo { metaTitle, metaDescription, keywords, targetKeyphrase, socialImage { asset-> } },
+        faqSchema,
+        steps,
+        relatedCapability
       }
     `),
     client.fetch(`

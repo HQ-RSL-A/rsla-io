@@ -82,6 +82,7 @@
     }
   ],
   "redirects": [
+    { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.rsla.io" }], "destination": "https://rsla.io/:path", "statusCode": 301 },
     { "source": "/services/websites", "destination": "/services/web-design", "statusCode": 301 },
     { "source": "/services/search-visibility", "destination": "/services/seo", "statusCode": 301 },
     { "source": "/blog/gohighlevel-pricing-2026-cost-breakdown", "destination": "/blog/go-high-level-pricing", "statusCode": 301 },
@@ -176,8 +177,5 @@
     { "source": "/blog/gohighlevel-sms-marketing-setup", "destination": "/blog/gohighlevel-workflow-automations-guide", "statusCode": 301 },
     { "source": "/product/:slug*", "destination": "/", "statusCode": 301 },
     { "source": "/product-category/:slug*", "destination": "/", "statusCode": 301 }
-  ],
-  "rewrites": [
-    { "source": "/((?!api/|_next/).*)", "destination": "/404.html" }
   ]
 }

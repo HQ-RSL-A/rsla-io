@@ -75,6 +75,7 @@ export const blogPostBySlugV2Query = groq`
       name,
       slug,
       role,
+      linkedin,
       image {
         asset->,
         alt
@@ -90,11 +91,14 @@ export const blogPostBySlugV2Query = groq`
       metaTitle,
       metaDescription,
       keywords,
+      targetKeyphrase,
       socialImage {
         asset->
       }
     },
     faqSchema,
+    steps,
+    relatedCapability,
     relatedCaseStudies[]->{
       title,
       "slug": slug.current,
