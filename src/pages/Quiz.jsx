@@ -732,7 +732,7 @@ export default function Quiz() {
             {step !== STEPS.OFFER && (
                 <a
                     href="https://rsla.io"
-                    className="relative z-10 mt-20 text-[11px] tracking-wide text-textLight/60 hover:text-textMuted transition-colors"
+                    className="relative z-10 mt-20 text-[11px] tracking-wide text-textMuted hover:text-text transition-colors"
                 >
                     Powered by RSL/A
                 </a>
