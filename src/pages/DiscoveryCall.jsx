@@ -66,9 +66,6 @@ export default function DiscoveryCall() {
                     <h1 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-[1.1] text-text mb-4">
                         Book a free growth mapping call.
                     </h1>
-                    <p className="font-sans text-lg text-textMuted leading-relaxed max-w-xl mx-auto">
-                        30 minutes. We audit your funnel, find the bottlenecks, and show you exactly where AI moves the needle. No pitch, just answers.
-                    </p>
                 </div>
 
                 <div className="contact-reveal opacity-0 bg-surfaceAlt border border-accent-border rounded-2xl p-3 md:p-6">
