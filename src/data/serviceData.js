@@ -3,7 +3,7 @@ export const services = {
     title: "Web Design",
     displayName: "Websites",
     headline: "Your website should work as hard as you do.",
-    description: "We build custom websites with SEO, brand strategy, and conversion baked in from day one. Not templates. Not generic AI output. A website built around your business, your brand, and your goals.",
+    description: "We hand-build custom-coded websites with on-page SEO, answer engine optimization, and conversion strategy baked in from day one. Not templates. Not drag-and-drop. A website meticulously designed around your business, your brand, and your goals.",
     metaTitle: "Custom Website Design and Development | RSL/A",
     metaDescription: "Custom-built websites with SEO, brand strategy, and conversion optimization from day one. Free homepage mockup in 72 hours.",
     keywords: "custom web design, website design, web design agency, SEO website, AEO website, conversion-focused web design, website redesign, local business website",
@@ -22,24 +22,52 @@ export const services = {
     ],
     faqs: [
       {
-        q: "How long does a website project take?",
-        a: "As fast as one week for a focused single-page build, up to two months for larger multi-page projects. It depends on scope, number of pages, and whether it is a new build or a redesign. We give you a real timeline upfront."
+        q: "How long does it take to build a website?",
+        a: "Most projects take four to six weeks from kickoff to launch. Focused single-page builds can ship faster, and larger multi-page sites with custom functionality may take up to eight weeks. We scope every project upfront so you know the timeline before we start."
+      },
+      {
+        q: "Do I own my website?",
+        a: "Yes. Once your project is complete, you own your website, your domain name, your code, and your content. There is no vendor lock-in. If you ever want to move to a different provider, you take everything with you. We also give you full CMS access so you can update content yourself."
+      },
+      {
+        q: "What happens after my website launches?",
+        a: "We hand everything over, train you on the CMS, and make sure you are set up to manage your own content. For clients who want ongoing support, we offer a maintenance plan that includes hosting, security updates, performance monitoring, and regular site upkeep so nothing falls out of date."
+      },
+      {
+        q: "Do you handle website updates and maintenance?",
+        a: "Yes. During the build phase, updates and revisions are included. After launch, we offer ongoing maintenance packages that cover content updates, plugin and security patches, uptime monitoring, and performance optimization. If you prefer to handle updates yourself, we train you on the CMS and hand off everything."
+      },
+      {
+        q: "What makes your websites different from Wix or Squarespace?",
+        a: "We build custom-coded websites from scratch, aligned with your brand and optimized for search from the ground up. Template builders use the same layouts for hundreds of businesses and give you limited control over site structure, page speed, and SEO. A custom-coded site loads faster, ranks better, and gives you full ownership of your code and content."
+      },
+      {
+        q: "Can I just build my website with AI?",
+        a: "You can, and it might look modern. But without a keyword strategy, content structure, on-page SEO, and technical foundation behind it, the result is a brochure nobody finds. We build what AI tools cannot: a site engineered around your specific business, your market, and the search terms your customers actually use."
       },
       {
         q: "Do you guarantee first-page rankings?",
-        a: "No, and anyone who does is either lying or does not understand how search works. What we guarantee is that your website's foundation will be built correctly - site structure, keyword alignment, and proper markup. If you do the right things in the right order, you are positioned to rank. We have brought websites to the first page and into the top three, but it takes consistent effort over months."
-      },
-      {
-        q: "Can't I just build my website with AI?",
-        a: "You can build a site with AI, and it might look modern. But looks are not what drive results. What matters is the content strategy, keyword alignment, conversion optimization, and technical foundation. Most AI-built sites we have seen are missing all four. If you do not know what to tell the AI, it cannot build what you need."
+        a: "No, and anyone who does is either lying or does not understand how search works. What we guarantee is that your site will be built with the right technical foundation: proper site structure, keyword-aligned content, schema markup, and Core Web Vitals optimization. If you do the right things in the right order, you are positioned to rank. We have brought websites to page one and into the top three, but it takes consistent effort."
       },
       {
         q: "What if I already have a website that is not working?",
-        a: "That is most of our clients. They come to us after someone else built their site, tried SEO, and could not rank or generate leads. We audit what you have, identify what is broken, and either fix it or rebuild it - whichever makes more sense for your situation."
+        a: "That is most of our clients. They come to us after someone else built their site, tried SEO, and could not rank or generate leads. We run a full audit of your existing site, identify what is broken structurally and technically, and either fix it or rebuild it depending on which path gets you results faster."
       },
       {
-        q: "What happens after launch?",
-        a: "You own everything - code, content, domain. We hand over CMS access and train you on how to use it. For clients who want ongoing management, we offer a retainer to keep things running, optimized, and improving. A website is a living product. Build it once, expect to keep building on it."
+        q: "Do you offer SEO and AEO after the website is built?",
+        a: "Yes. Every website we build ships with on-page SEO and answer engine optimization baked in. For clients who want ongoing visibility, we offer monthly SEO and AEO retainers that include keyword tracking, content optimization, technical audits, and generative engine optimization so your business shows up in both traditional search results and AI-generated answers."
+      },
+      {
+        q: "Can I upgrade my package later?",
+        a: "Yes. If your business grows and you need additional pages, new functionality, or a full redesign, we can expand your project at any time. Most clients come back for ongoing work because their website is a living product that evolves with their business."
+      },
+      {
+        q: "Do you offer web hosting?",
+        a: "Yes. Our hosting plan includes daily maintenance, security monitoring, SSL management, and performance upkeep. Your site stays fast, secure, and up to date without you having to think about it."
+      },
+      {
+        q: "Why do I need ongoing website updates?",
+        a: "As your business grows, your website needs to grow with it. New services, new team members, new locations, updated pricing, fresh content for search engines. A website that stays static falls behind in rankings and stops converting. Regular updates keep your site relevant, secure, and working for you."
       }
     ]
   },
