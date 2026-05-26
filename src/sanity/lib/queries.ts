@@ -7,8 +7,8 @@ export const relatedCaseStudiesQuery = groq`
   *[_type == "caseStudyV2" && slug.current != $slug && category == $category] | order(priority asc) [0...3] {
     title,
     "slug": slug.current,
-    tag,
-    description,
+    tldr,
+    clientName,
     metrics
   }
 `;
@@ -19,8 +19,8 @@ export const relatedCaseStudyForBlogQuery = groq`
   *[_type == "caseStudyV2" && category in $categoryNames] | order(featured desc, priority asc) [0] {
     title,
     "slug": slug.current,
-    tag,
-    description,
+    tldr,
+    clientName,
     metrics
   }
 `;
@@ -30,8 +30,8 @@ export const featuredCaseStudyFallbackQuery = groq`
   *[_type == "caseStudyV2" && featured == true] | order(priority asc) [0] {
     title,
     "slug": slug.current,
-    tag,
-    description,
+    tldr,
+    clientName,
     metrics
   }
 `;
@@ -102,8 +102,8 @@ export const blogPostBySlugV2Query = groq`
     relatedCaseStudies[]->{
       title,
       "slug": slug.current,
-      tag,
-      description,
+      tldr,
+      clientName,
       metrics
     },
     relatedPosts[]->{
@@ -325,18 +325,32 @@ export const caseStudiesV2Query = groq`
   *[_type == "caseStudyV2" && status == "published"] | order(priority asc) {
     title,
     "slug": slug.current,
-    tag,
-    description,
+    tldr,
+    clientName,
     metrics,
     featured,
     category,
     priority,
     annualSavings,
     publishedAt,
+    servicesUsed,
+    industry,
     featuredImage {
       asset->,
       alt
-    }
+    },
+    thumbnailBackground {
+      asset->
+    },
+    thumbnailLogo {
+      asset->
+    },
+    thumbnailText,
+    thumbnailTextColor,
+    thumbnailTextSize,
+    thumbnailOverlayColor,
+    thumbnailOverlayOpacity,
+    thumbnailGradientDirection
   }
 `;
 
@@ -345,8 +359,8 @@ export const caseStudyBySlugV2Query = groq`
   *[_type == "caseStudyV2" && slug.current == $slug][0] {
     title,
     "slug": slug.current,
-    tag,
-    description,
+    tldr,
+    clientName,
     metrics,
     featured,
     category,
@@ -381,11 +395,19 @@ export const caseStudyBySlugV2Query = groq`
       before,
       after
     },
+    videoTestimonial {
+      url,
+      orientation,
+      caption,
+      thumbnail {
+        asset->
+      }
+    },
     relatedCases[]->{
       title,
       "slug": slug.current,
-      tag,
-      description,
+      tldr,
+      clientName,
       metrics
     },
     relatedBlogPosts[]->{
@@ -411,8 +433,8 @@ export const featuredCaseStudiesV2Query = groq`
   *[_type == "caseStudyV2" && featured == true] | order(priority asc) [0...3] {
     title,
     "slug": slug.current,
-    tag,
-    description,
+    tldr,
+    clientName,
     metrics,
     featured,
     priority,

@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { client } from '@/sanity/lib/client';
 import { caseStudyBySlugV2Query, relatedCaseStudiesQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
@@ -9,6 +11,8 @@ import Seo from '@/components/Seo';
 import { TextAnimate } from '@/components/ui/text-animate';
 import ShareBar from '@/components/ShareBar';
 import CaseStudyCard from '@/components/CaseStudyCard';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const INDUSTRY_LABELS = {
     'salon-spa': 'Salon/Spa',
@@ -44,13 +48,21 @@ const SERVICE_LABELS = {
     'search-visibility': 'Search Visibility',
     'crm-systems': 'CRM Systems',
     'custom-development': 'Custom Development',
+    'geo-aeo': 'GEO/AEO',
 };
+
+function getYouTubeEmbedUrl(url) {
+    if (!url) return null;
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?/]+)/);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
 
 export default function WorkInner() {
     const { slug } = useParams();
     const [caseStudy, setCaseStudy] = useState(null);
     const [relatedCases, setRelatedCases] = useState([]);
     const [loading, setLoading] = useState(true);
+    const articleRef = useRef(null);
 
     useEffect(() => {
         let isMounted = true;
@@ -92,6 +104,29 @@ export default function WorkInner() {
         return () => { isMounted = false; };
     }, [slug]);
 
+    useEffect(() => {
+        if (loading || !caseStudy) return;
+        const ctx = gsap.context(() => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                gsap.set('.sidebar-metric', { opacity: 1, y: 0 });
+                gsap.set('.cs-section', { opacity: 1, y: 0 });
+                return;
+            }
+            gsap.fromTo('.sidebar-metric',
+                { y: 16, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' }
+            );
+            gsap.fromTo('.cs-section',
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.06, ease: 'power3.out',
+                    scrollTrigger: { trigger: '.cs-body', start: 'top 85%', once: true }
+                }
+            );
+        }, articleRef);
+        return () => ctx.revert();
+    }, [loading, caseStudy]);
+
     if (loading) {
         return (
             <div className="min-h-screen bg-surface pt-32 pb-24 flex items-center justify-center">
@@ -109,20 +144,13 @@ export default function WorkInner() {
         );
     }
 
-    // Build meta items inline
-    const metaItems = [];
-    if (caseStudy.industry) metaItems.push(INDUSTRY_LABELS[caseStudy.industry] || caseStudy.industry);
-    if (caseStudy.timeframe) metaItems.push(`${caseStudy.timeframe} days`);
-    if (caseStudy.servicesUsed?.length > 0) {
-        caseStudy.servicesUsed.forEach(s => metaItems.push(SERVICE_LABELS[s] || s));
-    }
-
     const seoTitle = caseStudy.seo?.metaTitle ? `${caseStudy.seo.metaTitle} | RSL/A` : `${caseStudy.title} | RSL/A`;
     const seoDescription = caseStudy.seo?.metaDescription || caseStudy.tldr || caseStudy.description || '';
     const seoImage = caseStudy.seo?.socialImage?.asset?.url || 'https://rsla.io/og-image.png';
+    const videoEmbedUrl = getYouTubeEmbedUrl(caseStudy.videoTestimonial?.url);
 
     return (
-        <article className="min-h-screen bg-surface text-text pt-32 pb-24 px-6 md:px-12 relative overflow-hidden">
+        <article ref={articleRef} className="min-h-screen bg-surface text-text pb-28 lg:pb-24 relative">
             <Seo
                 title={seoTitle}
                 description={seoDescription}
@@ -135,10 +163,7 @@ export default function WorkInner() {
                     headline: caseStudy.title,
                     description: caseStudy.tldr || caseStudy.description || '',
                     datePublished: caseStudy.publishedAt || undefined,
-                    author: {
-                        '@type': 'Person',
-                        name: 'Rahul Lalia',
-                    },
+                    author: { '@type': 'Person', name: 'Rahul Lalia' },
                     publisher: {
                         '@type': 'Organization',
                         name: 'RSL/A',
@@ -147,60 +172,38 @@ export default function WorkInner() {
                     mainEntityOfPage: `https://rsla.io/work/${slug}`,
                 }}
             />
-            <div className="max-w-3xl mx-auto relative z-10">
 
-                {/* Back link */}
-                <Link to="/work" className="inline-flex items-center gap-2 min-h-[44px] text-textMuted hover:text-accent font-sans text-sm transition-colors uppercase tracking-wider mb-12">
-                    Back to Case Studies
-                </Link>
+            <div className="max-w-6xl mx-auto relative z-10 px-6 md:px-12 pt-32">
+                {/* Breadcrumb */}
+                <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10">
+                    <Link to="/work" className="font-sans text-[15px] font-medium text-accent hover:text-text transition-colors duration-150 ease-out">
+                        Case Studies
+                    </Link>
+                    <span className="text-gray-300 text-[15px]">/</span>
+                    <span className="font-sans text-[15px] font-medium text-text">
+                        {caseStudy.clientName || caseStudy.title}
+                    </span>
+                </nav>
 
-                {/* Header */}
-                <header className="mb-16">
-                    {/* Tag + meta inline */}
-                    <div className="flex flex-wrap items-center gap-3 mb-6">
-                        <span className="font-sans text-sm uppercase tracking-wider text-accent border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
-                            {caseStudy.tag}
-                        </span>
-                        {metaItems.length > 0 && (
-                            <span className="font-sans text-sm text-textMuted">
-                                {metaItems.join(' / ')}
-                            </span>
-                        )}
-                    </div>
+                {/* Heading + intro - spans full width of both columns */}
+                <h1 className="cs-section opacity-0 text-[32px] md:text-[56px] font-sans font-bold leading-[1.2] tracking-[-0.02em] text-text mb-6">
+                    <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
+                        {caseStudy.title}
+                    </TextAnimate>
+                </h1>
 
-                    <h1 className="text-3xl md:text-5xl font-sans font-bold leading-tight tracking-tight text-text mb-6">
-                        <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
-                            {caseStudy.title}
-                        </TextAnimate>
-                    </h1>
-                    <p className="text-lg text-textMuted font-sans font-medium mb-6">
-                        {caseStudy.description}
-                    </p>
-                    <ShareBar title={caseStudy.title} url={`https://rsla.io/work/${slug}`} />
-                </header>
-
-                {/* Featured Image (V2) */}
-                {caseStudy.featuredImage?.asset && (
-                    <div className="w-full aspect-video rounded-[2rem] overflow-hidden mb-16 shadow-lg border border-accent-border">
-                        <img
-                            src={urlForImage(caseStudy.featuredImage.asset)?.width(1600).height(900).url()}
-                            alt={caseStudy.featuredImage?.alt || caseStudy.title}
-                            className="w-full h-full object-cover"
-                            width="1600"
-                            height="900"
-                        />
-                    </div>
-                )}
-
-                {/* Metrics — flat row, no box */}
-                {caseStudy.metrics && caseStudy.metrics.length > 0 && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-y border-accent-border mb-16">
+                <p className="cs-section opacity-0 text-[18px] text-text/80 font-sans font-normal leading-[28px] max-w-2xl mb-12">
+                    {caseStudy.tldr || caseStudy.description}
+                </p>
+                {/* Mobile metrics - horizontal scroll */}
+                {caseStudy.metrics?.length > 0 && (
+                    <div className="lg:hidden flex gap-5 overflow-x-auto scrollbar-hide pb-6 mb-8 -mx-6 px-6 border-b border-gray-200">
                         {caseStudy.metrics.map((metric, idx) => (
-                            <div key={idx}>
-                                <strong className="text-4xl md:text-5xl font-sans font-bold text-accent block mb-1">
+                            <div key={idx} className="shrink-0 pr-5 border-r border-gray-200 last:border-r-0 last:pr-0">
+                                <strong className="text-2xl font-sans font-bold text-accent block mb-0.5">
                                     {metric.value}
                                 </strong>
-                                <span className="font-sans text-sm text-textMuted uppercase tracking-widest">
+                                <span className="font-sans text-[13px] text-gray-600 whitespace-nowrap">
                                     {metric.label}
                                 </span>
                             </div>
@@ -208,114 +211,185 @@ export default function WorkInner() {
                     </div>
                 )}
 
-                {/* TL;DR — left border accent, no box */}
-                {caseStudy.tldr && (
-                    <div className="border-l-2 border-accent pl-6 mb-16">
-                        <p className="font-sans text-sm text-accent uppercase tracking-widest mb-3">TL;DR</p>
-                        <p className="text-lg text-textMuted leading-relaxed font-sans">
-                            {caseStudy.tldr}
-                        </p>
-                    </div>
-                )}
+                {/* Two-column layout with structural lines */}
+                <div className="flex flex-col lg:flex-row lg:gap-0 border-t border-dashed border-gray-200 pt-10">
 
-                {/* Problem / Solution / Results — editorial flow */}
-                {caseStudy.problemStatement && (
-                    <section className="mb-12">
-                        <h2 className="font-sans text-sm text-text uppercase tracking-widest mb-4">The Problem</h2>
-                        <p className="text-lg text-text leading-relaxed font-sans">
-                            {caseStudy.problemStatement}
-                        </p>
-                    </section>
-                )}
+                    {/* ===== STICKY SIDEBAR ===== */}
+                    <aside className="hidden lg:block lg:w-[260px] xl:w-[280px] shrink-0 border-r border-dashed border-gray-200 pr-10 xl:pr-12">
+                        <div className="sticky top-24">
+                            {/* Metrics */}
+                            {caseStudy.metrics?.length > 0 && (
+                                <div className="space-y-5 mb-8">
+                                    {caseStudy.metrics.map((metric, idx) => (
+                                        <div key={idx} className="sidebar-metric opacity-0 pl-3 border-l border-accent">
+                                            <strong className="text-[24px] font-sans font-medium text-text block leading-[32px] tracking-tight">
+                                                {metric.value}
+                                            </strong>
+                                            <span className="font-sans text-[15px] font-normal text-[#425466] leading-snug block mt-0.5">
+                                                {metric.label}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
 
-                {caseStudy.solutionApproach && (
-                    <section className="mb-12">
-                        <h2 className="font-sans text-sm text-text uppercase tracking-widest mb-4">The Solution</h2>
-                        <p className="text-lg text-text leading-relaxed font-sans">
-                            {caseStudy.solutionApproach}
-                        </p>
-                    </section>
-                )}
+                            {/* Meta info */}
+                            {caseStudy.industry && (
+                                <div className="border-t border-dashed border-gray-200 pt-6 mb-8 font-sans">
+                                    <span className="text-[15px] font-normal text-[#727F96] block mb-0.5">Industry</span>
+                                    <span className="text-[15px] font-medium text-text">{caseStudy.industry}</span>
+                                </div>
+                            )}
 
-                {caseStudy.resultsOutcome && (
-                    <section className="mb-16">
-                        <h2 className="font-sans text-sm text-text uppercase tracking-widest mb-4">The Results</h2>
-                        <p className="text-lg text-text leading-relaxed font-sans">
-                            {caseStudy.resultsOutcome}
-                        </p>
-                    </section>
-                )}
-
-                {/* Before / After — kept as cards (contrast is the point) */}
-                {caseStudy.beforeAfter && (caseStudy.beforeAfter.before || caseStudy.beforeAfter.after) && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                        {caseStudy.beforeAfter.before && (
-                            <div className="p-6 rounded-xl border border-red-200 bg-red-50/50">
-                                <h3 className="text-sm font-bold font-sans text-red-500 uppercase tracking-widest mb-3">Before</h3>
-                                <p className="text-base text-textMuted leading-relaxed font-sans">{caseStudy.beforeAfter.before}</p>
-                            </div>
-                        )}
-                        {caseStudy.beforeAfter.after && (
-                            <div className="p-6 rounded-xl border border-green-200 bg-green-50/50">
-                                <h3 className="text-sm font-bold font-sans text-green-600 uppercase tracking-widest mb-3">After</h3>
-                                <p className="text-base text-textMuted leading-relaxed font-sans">{caseStudy.beforeAfter.after}</p>
-                            </div>
-                        )}
-                    </div>
-                )}
-
-                {/* Key Takeaways — simple numbered list, no box */}
-                {caseStudy.keyTakeaways && caseStudy.keyTakeaways.length > 0 && (
-                    <section className="mb-16">
-                        <h2 className="font-sans text-sm text-text uppercase tracking-widest mb-6">Key Takeaways</h2>
-                        <ol className="space-y-4">
-                            {caseStudy.keyTakeaways.map((takeaway, idx) => (
-                                <li key={idx} className="flex items-start gap-4 text-text text-base leading-relaxed font-sans">
-                                    <span className="text-accent font-bold font-sans text-sm leading-none pt-1 shrink-0">{String(idx + 1).padStart(2, '0')}</span>
-                                    <span>{takeaway}</span>
-                                </li>
-                            ))}
-                        </ol>
-                    </section>
-                )}
-
-                {/* Body Content */}
-                <div className="prose-container max-w-none pb-20 border-b border-accent-border case-study-prose">
-                    {caseStudy.content ? (
-                        <PortableText value={caseStudy.content} components={PortableTextComponents} />
-                    ) : (
-                        <p className="text-textMuted font-sans italic text-center py-10">
-                            [Content formatting required in CMS]
-                        </p>
-                    )}
-                </div>
-
-                {caseStudy.servicesUsed?.length > 0 && (
-                    <div className="flex flex-wrap gap-3 mt-8 mb-16">
-                        {caseStudy.servicesUsed.map(service => (
-                            <Link key={service} to={`/services/${service}`} className="font-sans text-sm text-accent border border-accent/20 bg-accent/5 px-3 py-1.5 rounded-full hover:bg-accent/10 transition-colors">
-                                {SERVICE_LABELS[service] || service}
+                            {/* CTA */}
+                            <Link
+                                to="/contact"
+                                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-accent text-white font-sans font-medium text-[15px] rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 ease-out shadow-[0_0_20px_rgba(0,112,243,0.25)] mb-6"
+                            >
+                                Book a Call <span className="text-white/60">→</span>
                             </Link>
-                        ))}
-                    </div>
-                )}
-                {relatedCases.length > 0 && (
-                    <aside className="mt-20">
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mb-10 text-center">
-                            Similar Profiles
-                        </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {relatedCases.slice(0, 2).map((related) => (
-                                <CaseStudyCard
-                                    key={related.slug}
-                                    data={related}
-                                    showImage={false}
-                                />
-                            ))}
+
+                            {/* Share */}
+                            <div className="flex items-center justify-center">
+                                <ShareBar title={caseStudy.title} url={`https://rsla.io/work/${slug}`} />
+                            </div>
                         </div>
                     </aside>
-                )}
 
+                    {/* ===== BODY ===== */}
+                    <div className="cs-body flex-1 min-w-0 max-w-[720px] lg:pl-10 xl:pl-12">
+
+                        {/* Challenge */}
+                        {caseStudy.problemStatement && (
+                            <section className="cs-section opacity-0 mb-12">
+                                <h2 className="text-[34px] font-sans font-bold text-text mb-4 leading-[44px]">The Challenge</h2>
+                                <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
+                                    {caseStudy.problemStatement}
+                                </p>
+                            </section>
+                        )}
+
+                        {/* Solution */}
+                        {caseStudy.solutionApproach && (
+                            <section className="cs-section opacity-0 mb-12">
+                                <h2 className="text-[34px] font-sans font-bold text-text mb-4 leading-[44px]">The Solution</h2>
+                                <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
+                                    {caseStudy.solutionApproach}
+                                </p>
+                            </section>
+                        )}
+
+                        {/* Results */}
+                        {caseStudy.resultsOutcome && (
+                            <section className="cs-section opacity-0 mb-14">
+                                <h2 className="text-[34px] font-sans font-bold text-text mb-4 leading-[44px]">The Results</h2>
+                                <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
+                                    {caseStudy.resultsOutcome}
+                                </p>
+                            </section>
+                        )}
+
+                        {/* Before / After */}
+                        {caseStudy.beforeAfter && (caseStudy.beforeAfter.before || caseStudy.beforeAfter.after) && (
+                            <div className="cs-section opacity-0 grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+                                {caseStudy.beforeAfter.before && (
+                                    <div className="p-6 rounded-xl border border-red-200 bg-red-50/60">
+                                        <h3 className="text-[12px] font-bold font-sans text-red-700 uppercase tracking-widest mb-3">Before</h3>
+                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.before}</p>
+                                    </div>
+                                )}
+                                {caseStudy.beforeAfter.after && (
+                                    <div className="p-6 rounded-xl border border-green-200 bg-green-50/60">
+                                        <h3 className="text-[12px] font-bold font-sans text-green-800 uppercase tracking-widest mb-3">After</h3>
+                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.after}</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* Key Takeaways */}
+                        {caseStudy.keyTakeaways?.length > 0 && (
+                            <section className="cs-section opacity-0 mb-14">
+                                <h2 className="text-[34px] font-sans font-bold text-text mb-5 leading-[44px]">Key Takeaways</h2>
+                                <ol className="space-y-4">
+                                    {caseStudy.keyTakeaways.map((takeaway, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-[18px] font-medium text-text leading-[28px] font-sans">
+                                            <span className="text-text font-medium font-sans text-[18px] leading-none pt-1 shrink-0">-</span>
+                                            <span>{takeaway}</span>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </section>
+                        )}
+
+                        {/* Body content (PortableText) */}
+                        {caseStudy.content && (
+                            <div className="cs-section opacity-0 prose-container max-w-none mb-14 case-study-prose">
+                                <PortableText value={caseStudy.content} components={PortableTextComponents} />
+                            </div>
+                        )}
+
+                        {/* Pull quote */}
+                        {caseStudy.pullQuote && (
+                            <blockquote className="cs-section opacity-0 border-l border-gray-300 pl-6 py-4 mb-14">
+                                <p className="text-[18px] md:text-[20px] font-sans font-normal text-text leading-[30px] italic">
+                                    "{caseStudy.pullQuote}"
+                                </p>
+                                {caseStudy.clientName && (
+                                    <cite className="font-sans text-[15px] font-medium text-text mt-3 block not-italic">
+                                        {caseStudy.clientName}
+                                    </cite>
+                                )}
+                            </blockquote>
+                        )}
+
+                        {/* Video testimonial */}
+                        {videoEmbedUrl && (
+                            <section className="cs-section opacity-0 mb-14">
+                                <div className={`relative overflow-hidden rounded-2xl border border-accent-border shadow-lg ${caseStudy.videoTestimonial?.orientation === 'vertical' ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'}`}>
+                                    <iframe
+                                        src={videoEmbedUrl}
+                                        title={caseStudy.videoTestimonial?.caption || 'Video testimonial'}
+                                        className="absolute inset-0 w-full h-full"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        loading="lazy"
+                                    />
+                                </div>
+                                {caseStudy.videoTestimonial?.caption && (
+                                    <p className="font-sans text-[15px] font-light text-[#727F96] text-center mt-3">{caseStudy.videoTestimonial.caption}</p>
+                                )}
+                            </section>
+                        )}
+
+                        {/* Related case studies */}
+                        {relatedCases.length > 0 && (
+                            <aside className="mt-14">
+                                <h3 className="text-[24px] font-sans font-semibold text-text mb-8">
+                                    More results
+                                </h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    {relatedCases.slice(0, 2).map((related) => (
+                                        <CaseStudyCard
+                                            key={related.slug}
+                                            data={related}
+                                        />
+                                    ))}
+                                </div>
+                            </aside>
+                        )}
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile sticky CTA */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-accent-border px-6 py-3 safe-area-pb">
+                <Link
+                    to="/contact"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-sans font-bold text-sm rounded-full shadow-[0_0_20px_rgba(0,112,243,0.3)]"
+                >
+                    Book a Call <span className="text-white/70">→</span>
+                </Link>
             </div>
         </article>
     );

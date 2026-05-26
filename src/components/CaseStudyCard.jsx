@@ -1,70 +1,100 @@
 import { Link } from 'react-router-dom';
 import { urlForImage } from '@/sanity/lib/image';
 
-/**
- * Shared case-study card used on /work (with image) and inside
- * WorkInner related-cases section (text-only).
- *
- * Props:
- *   data       - Sanity case-study document (or plain object with slug, tag, title, etc.)
- *   showImage  - whether to render the featured image (default true)
- */
-export default function CaseStudyCard({ data, showImage = true }) {
-    const imageUrl =
-        showImage && data.featuredImage?.asset
-            ? urlForImage(data.featuredImage.asset)?.width(960).height(600).url()
+const TEXT_SIZES = {
+    small: 'text-[18px] leading-[24px]',
+    medium: 'text-[22px] leading-[28px]',
+    large: 'text-[26px] leading-[34px]',
+    xl: 'text-[32px] leading-[40px]',
+};
+
+function getGradientCss(color, opacity, direction) {
+    const hex = color || '#000000';
+    const alpha = Math.round(((opacity ?? 50) / 100) * 255).toString(16).padStart(2, '0');
+    const solid = `${hex}${alpha}`;
+    const transparent = `${hex}00`;
+
+    if (!direction || direction === 'none') {
+        return { backgroundColor: solid };
+    }
+
+    const dirs = { 'to-b': 'to bottom', 'to-t': 'to top', 'to-r': 'to right', 'to-l': 'to left' };
+    const cssDir = dirs[direction] || 'to bottom';
+    return { backgroundImage: `linear-gradient(${cssDir}, ${transparent} 0%, ${solid} 100%)` };
+}
+
+export default function CaseStudyCard({ data }) {
+    const bgImage = data.thumbnailBackground?.asset
+        ? urlForImage(data.thumbnailBackground.asset)?.width(1200).height(700).url()
+        : data.featuredImage?.asset
+            ? urlForImage(data.featuredImage.asset)?.width(1200).height(700).url()
             : null;
+
+    const logoUrl = data.thumbnailLogo?.asset
+        ? urlForImage(data.thumbnailLogo.asset)?.height(40).url()
+        : null;
+
+    const displayText = data.thumbnailText || data.title;
+    const textColor = data.thumbnailTextColor || '#FFFFFF';
+    const textSizeClass = TEXT_SIZES[data.thumbnailTextSize] || TEXT_SIZES.large;
+    const overlayStyle = getGradientCss(
+        data.thumbnailOverlayColor,
+        data.thumbnailOverlayOpacity,
+        data.thumbnailGradientDirection
+    );
 
     return (
         <Link
             to={`/work/${data.slug}`}
-            className="work-card opacity-0 group flex flex-col h-full bg-surfaceAlt rounded-2xl border border-accent-border overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] md:hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] md:hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-md ease-out-smooth"
+            className="work-card opacity-0 group relative block aspect-[16/9] rounded-lg overflow-hidden"
         >
-            {imageUrl && (
-                <div className="relative aspect-[16/10] overflow-hidden bg-surface border-b border-accent-border">
-                    <img
-                        src={imageUrl}
-                        alt={data.featuredImage?.alt || data.title}
-                        className="w-full h-full object-cover transition-transform duration-image-zoom ease-out-smooth group-hover:scale-[1.03]"
-                        loading="lazy"
-                        width="800"
-                        height="500"
-                    />
-                    {data.featured && (
-                        <span className="absolute top-4 right-4 font-sans text-sm uppercase tracking-wider text-white bg-accent px-2 py-1 rounded-sm shadow-md">
-                            Featured
-                        </span>
-                    )}
-                </div>
+            {/* Background image */}
+            {bgImage && (
+                <img
+                    src={bgImage}
+                    alt={data.featuredImage?.alt || data.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    loading="lazy"
+                    width="1200"
+                    height="700"
+                />
             )}
-            <div className="p-8 flex flex-col flex-grow">
-                <div className="mb-6 flex justify-between items-start">
-                    <span className="font-sans text-sm uppercase tracking-wider text-accent border border-accent/20 bg-accent/5 px-2 py-1 rounded-sm">
-                        {data.tag}
-                    </span>
-                    {data.featured && !imageUrl && (
-                        <span className="font-sans text-sm uppercase tracking-wider text-white bg-accent px-2 py-1 rounded-sm">
-                            Featured
-                        </span>
-                    )}
-                </div>
-                <h3 className="font-sans font-semibold text-xl md:text-2xl tracking-tight mb-3 group-hover:text-accent transition-colors">
-                    {data.title}
-                </h3>
-                <p className="font-sans text-sm text-textMuted mb-8 flex-grow leading-relaxed">
-                    {data.description}
-                </p>
 
-                {data.metrics && data.metrics.length > 0 && (
-                    <div className="mt-auto grid grid-cols-2 gap-4 pt-6 border-t border-accent-border">
-                        {data.metrics.slice(0, 2).map((metric, idx) => (
-                            <div key={idx}>
-                                <strong className="block text-xl font-bold font-sans text-text">{metric.value}</strong>
-                                <span className="font-sans text-sm uppercase tracking-wider text-accent">{metric.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                )}
+            {/* Overlay */}
+            <div className="absolute inset-0 transition-opacity duration-300" style={overlayStyle} />
+
+            {/* Hover gradient expansion */}
+            <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ backgroundImage: `linear-gradient(to bottom, transparent 30%, ${data.thumbnailOverlayColor || '#000000'}cc 100%)` }}
+            />
+
+            {/* Client logo - top left */}
+            {logoUrl && (
+                <img
+                    src={logoUrl}
+                    alt={`${data.clientName || ''} logo`}
+                    className="absolute top-5 left-5 h-8 w-auto object-contain z-10"
+                    loading="lazy"
+                />
+            )}
+
+            {/* Text - bottom left */}
+            <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                <h3
+                    className={`font-sans font-semibold ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300`}
+                    style={{ color: textColor }}
+                >
+                    {displayText}
+                </h3>
+
+                {/* Read story - appears on hover */}
+                <span
+                    className="inline-flex items-center gap-1.5 font-sans text-[15px] font-medium absolute bottom-5 left-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                    style={{ color: textColor }}
+                >
+                    Read story <span className="text-lg">→</span>
+                </span>
             </div>
         </Link>
     );

@@ -13,12 +13,22 @@ import { TextAnimate } from '@/components/ui/text-animate';
 gsap.registerPlugin(ScrollTrigger);
 
 const categories = ["all", "AI Automations", "AI Lead Generation", "AI Operations", "AI Digital Presence"];
+const services = [
+    { value: "all", label: "All Services" },
+    { value: "ai-lead-generation", label: "AI Lead Generation" },
+    { value: "ai-automations", label: "AI Automations" },
+    { value: "ai-operations", label: "AI Operations" },
+    { value: "ai-digital-presence", label: "AI Digital Presence" },
+    { value: "search-visibility", label: "Search Visibility" },
+    { value: "geo-aeo", label: "GEO/AEO" },
+];
 
 export default function Work() {
     const pageRef = useRef(null);
     const [caseStudies, setCaseStudies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState("all");
+    const [selectedService, setSelectedService] = useState("all");
 
     useEffect(() => {
         let isMounted = true;
@@ -53,13 +63,12 @@ export default function Work() {
             );
         }, pageRef);
         return () => ctx.revert();
-    }, [loading, selectedCategory]);
+    }, [loading, selectedCategory, selectedService]);
 
     const filteredAndSortedStudies = caseStudies
         .filter((study) => selectedCategory === "all" || study.category === selectedCategory)
+        .filter((study) => selectedService === "all" || study.servicesUsed?.includes(selectedService))
         .sort((a, b) => a.priority - b.priority);
-
-    const featuredStudies = filteredAndSortedStudies.filter(study => study.featured);
 
     return (
         <main ref={pageRef} className="min-h-screen bg-surface text-text pt-36 pb-20 px-6 md:px-12 relative overflow-hidden">
@@ -101,19 +110,35 @@ export default function Work() {
             {/* Filters */}
             <section className="mb-10 border-b border-accent-border pb-6 relative z-10 max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-4">
-                    <div className="relative">
-                        <select
-                            value={selectedCategory}
-                            onChange={(e) => setSelectedCategory(e.target.value)}
-                            className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-accent-border text-text font-sans text-sm uppercase tracking-wider cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
-                        >
-                            {categories.map((category) => (
-                                <option key={category} value={category}>
-                                    {category === "all" ? "All Categories" : category}
-                                </option>
-                            ))}
-                        </select>
-                        <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none" />
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                        <div className="relative">
+                            <select
+                                value={selectedCategory}
+                                onChange={(e) => setSelectedCategory(e.target.value)}
+                                className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-accent-border text-text font-sans text-sm uppercase tracking-wider cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                            >
+                                {categories.map((category) => (
+                                    <option key={category} value={category}>
+                                        {category === "all" ? "All Categories" : category}
+                                    </option>
+                                ))}
+                            </select>
+                            <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none" />
+                        </div>
+                        <div className="relative">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-accent-border text-text font-sans text-sm uppercase tracking-wider cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                            >
+                                {services.map((service) => (
+                                    <option key={service.value} value={service.value}>
+                                        {service.label}
+                                    </option>
+                                ))}
+                            </select>
+                            <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none" />
+                        </div>
                     </div>
                     {!loading && (
                         <div className="font-sans text-sm text-textMuted">
@@ -126,7 +151,7 @@ export default function Work() {
             {/* Grid */}
             <section className="max-w-7xl mx-auto relative z-10">
                 {loading ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {Array.from({ length: 6 }).map((_, i) => (
                             <CaseStudyCardSkeleton key={i} />
                         ))}
@@ -136,34 +161,10 @@ export default function Work() {
                         No case studies found for this category.
                     </div>
                 ) : (
-                    <div className="space-y-12">
-                        {/* Featured Row */}
-                        {featuredStudies.length > 0 && (
-                            <div>
-                                <h2 className="font-sans text-sm text-textMuted uppercase tracking-widest mb-6 px-4">
-                                    Featured Intelligence
-                                </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {featuredStudies.map((study) => (
-                                        <CaseStudyCard data={study} key={study.slug} />
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* All Other Cases */}
-                        {filteredAndSortedStudies.filter(s => !s.featured).length > 0 && (
-                            <div>
-                                <h2 className="font-sans text-sm text-textMuted uppercase tracking-widest mb-6 px-4">
-                                    All Case Studies
-                                </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {filteredAndSortedStudies.filter(s => !s.featured).map((study) => (
-                                        <CaseStudyCard data={study} key={study.slug} />
-                                    ))}
-                                </div>
-                            </div>
-                        )}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {filteredAndSortedStudies.map((study) => (
+                            <CaseStudyCard data={study} key={study.slug} />
+                        ))}
                     </div>
                 )}
             </section>
