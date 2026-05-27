@@ -64,7 +64,7 @@ export default function Work() {
         .sort((a, b) => a.priority - b.priority);
 
     return (
-        <main ref={pageRef} className="min-h-screen bg-surface text-text pt-36 pb-20 px-6 md:px-12 relative overflow-hidden">
+        <main ref={pageRef} className="min-h-screen bg-surface text-text pt-28 md:pt-36 pb-20 px-5 md:px-12 relative overflow-hidden">
             <Seo
                 title="AI Automation Case Studies: Real Client Results | RSL/A"
                 description="Real results from real clients. See how RSL/A uses AI automation, custom websites, and CRM systems to drive measurable growth for B2B companies."

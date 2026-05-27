@@ -84,11 +84,13 @@ export default function WorkInner() {
                 { y: 16, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' }
             );
+            gsap.fromTo('.cs-hero',
+                { y: 16, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out' }
+            );
             gsap.fromTo('.cs-section',
                 { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.5, stagger: 0.06, ease: 'power3.out',
-                    scrollTrigger: { trigger: '.cs-body', start: 'top 85%', once: true }
-                }
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.06, ease: 'power3.out', delay: 0.2 }
             );
         }, articleRef);
         return () => ctx.revert();
@@ -141,9 +143,9 @@ export default function WorkInner() {
                 }}
             />
 
-            <div className="max-w-6xl mx-auto relative z-10 px-6 md:px-12 pt-32">
+            <div className="max-w-6xl mx-auto relative z-10 px-5 md:px-12 pt-28 md:pt-32">
                 {/* Breadcrumb */}
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10">
+                <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 md:mb-10">
                     <Link to="/work" className="font-sans text-[15px] font-medium text-accent hover:text-text transition-colors duration-150 ease-out">
                         Case Studies
                     </Link>
@@ -154,24 +156,24 @@ export default function WorkInner() {
                 </nav>
 
                 {/* Heading + intro - spans full width of both columns */}
-                <h1 className="cs-section opacity-0 text-[32px] md:text-[56px] font-sans font-bold leading-[1.2] tracking-[-0.02em] text-text mb-6">
+                <h1 className="cs-hero opacity-0 text-[28px] md:text-[56px] font-sans font-bold leading-[1.15] tracking-[-0.02em] text-text mb-5">
                     <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                         {caseStudy.title}
                     </TextAnimate>
                 </h1>
 
-                <p className="cs-section opacity-0 text-[18px] text-text/80 font-sans font-normal leading-[28px] max-w-2xl mb-12">
+                <p className="cs-hero opacity-0 text-[16px] md:text-[18px] text-text/80 font-sans font-normal leading-[26px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
                     {caseStudy.tldr || caseStudy.description}
                 </p>
                 {/* Mobile metrics - horizontal scroll */}
                 {caseStudy.metrics?.length > 0 && (
-                    <div className="lg:hidden flex gap-5 overflow-x-auto scrollbar-hide pb-6 mb-8 -mx-6 px-6 border-b border-gray-200">
+                    <div className="cs-hero opacity-0 lg:hidden flex gap-5 overflow-x-auto scrollbar-hide pb-5 mb-6 -mx-5 px-5 border-b border-gray-200">
                         {caseStudy.metrics.map((metric, idx) => (
                             <div key={idx} className="shrink-0 pr-5 border-r border-gray-200 last:border-r-0 last:pr-0">
-                                <strong className="text-2xl font-sans font-bold text-accent block mb-0.5">
+                                <strong className="text-[22px] font-sans font-bold text-accent block mb-0.5">
                                     {metric.value}
                                 </strong>
-                                <span className="font-sans text-[13px] text-gray-600 whitespace-nowrap">
+                                <span className="font-sans text-[12px] text-gray-500 whitespace-nowrap">
                                     {metric.label}
                                 </span>
                             </div>
@@ -179,8 +181,8 @@ export default function WorkInner() {
                     </div>
                 )}
 
-                {/* Two-column layout with structural lines */}
-                <div className="flex flex-col lg:flex-row lg:gap-0 border-t border-dashed border-gray-200 pt-10">
+                {/* Two-column layout */}
+                <div className="flex flex-col lg:flex-row lg:gap-0 lg:border-t lg:border-dashed lg:border-gray-200 lg:pt-10">
 
                     {/* ===== STICKY SIDEBAR ===== */}
                     <aside className="hidden lg:block lg:w-[260px] xl:w-[280px] shrink-0 border-r border-dashed border-gray-200 pr-10 xl:pr-12">
@@ -367,12 +369,12 @@ export default function WorkInner() {
             </div>
 
             {/* Mobile sticky CTA */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-accent-border px-6 py-3 safe-area-pb">
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-gray-200 px-5 py-2.5 safe-area-pb">
                 <Link
                     to="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-sans font-bold text-sm rounded-full shadow-[0_0_20px_rgba(0,112,243,0.3)]"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white font-sans font-medium text-[14px] rounded-xl shadow-[0_0_16px_rgba(0,112,243,0.25)]"
                 >
-                    Book a Call <span className="text-white/70">→</span>
+                    Book a Call <span className="text-white/60">→</span>
                 </Link>
             </div>
         </article>
