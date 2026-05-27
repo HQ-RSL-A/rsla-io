@@ -162,7 +162,7 @@ export default function WorkInner() {
                     </TextAnimate>
                 </h1>
 
-                <p className="cs-hero opacity-0 text-[15px] md:text-[18px] text-text/80 font-sans font-normal leading-[24px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
+                <p className="cs-hero opacity-0 text-[16px] md:text-[18px] text-text/80 font-sans font-normal leading-[26px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
                     {caseStudy.tldr}
                 </p>
                 {/* Mobile metrics - vertical stack */}
@@ -253,11 +253,11 @@ export default function WorkInner() {
                         {/* Testimonial */}
                         {caseStudy.testimonialText && (
                             <blockquote className="cs-section opacity-0 border-l border-gray-300 pl-6 py-4 mb-14">
-                                <p className="text-[15px] md:text-[18px] font-sans font-normal text-text leading-[24px] md:leading-[28px] italic">
+                                <p className="text-[16px] md:text-[18px] font-sans font-normal text-text leading-[26px] md:leading-[28px] italic">
                                     "{caseStudy.testimonialText}"
                                 </p>
                                 {caseStudy.testimonialAuthor && (
-                                    <cite className="font-sans text-[14px] font-medium text-text mt-3 block not-italic">
+                                    <cite className="font-sans text-[15px] md:text-[16px] font-medium text-text mt-3 block not-italic">
                                         {caseStudy.testimonialAuthor}
                                     </cite>
                                 )}
@@ -333,11 +333,11 @@ export default function WorkInner() {
                                                 />
                                             )}
                                             <div>
-                                                <h4 className="font-sans text-[16px] font-medium text-text group-hover:text-accent transition-colors duration-150 leading-snug">
+                                                <h4 className="font-sans text-[16px] font-medium text-text group-hover:text-accent transition-colors duration-200 leading-snug">
                                                     {post.title}
                                                 </h4>
                                                 {post.excerpt && (
-                                                    <p className="font-sans text-[14px] font-normal text-[#727F96] mt-1 line-clamp-2 leading-relaxed">
+                                                    <p className="font-sans text-[15px] font-normal text-[#727F96] mt-1 line-clamp-2 leading-relaxed">
                                                         {post.excerpt}
                                                     </p>
                                                 )}

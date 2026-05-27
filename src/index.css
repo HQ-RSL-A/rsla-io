@@ -411,8 +411,8 @@
 
 /* Case study prose — Stripe-matched typography */
 .case-study-prose p {
-  font-size: 15px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 26px;
 }
 .case-study-prose h2 {
   font-size: 34px;
@@ -426,13 +426,18 @@
 }
 .case-study-prose ul,
 .case-study-prose ol {
-  font-size: 15px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 26px;
+}
+.case-study-prose blockquote {
+  font-size: 16px;
+  line-height: 26px;
 }
 @media (min-width: 768px) {
   .case-study-prose p,
   .case-study-prose ul,
-  .case-study-prose ol {
+  .case-study-prose ol,
+  .case-study-prose blockquote {
     font-size: 18px;
     line-height: 28px;
   }
