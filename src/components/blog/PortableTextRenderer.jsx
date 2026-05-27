@@ -53,7 +53,7 @@ function GatedResourceBlock({ title, description, downloadUrl, buttonText }) {
                 <a
                     href={downloadUrl}
                     download
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-sans font-bold rounded-full hover:scale-105 transition-transform shadow-[0_0_20px_rgba(0,112,243,0.3)]"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-sans font-bold rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 shadow-[0_0_20px_rgba(0,112,243,0.25)]"
                 >
                     Download Again
                 </a>
@@ -76,12 +76,12 @@ function GatedResourceBlock({ title, description, downloadUrl, buttonText }) {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === 'submitting'}
                     required
-                    className="flex-1 px-4 min-h-[44px] rounded-full bg-surface border border-accent-border text-text font-sans text-sm placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                    className="flex-1 px-4 min-h-[44px] rounded-xl bg-surface border border-accent-border text-text font-sans text-sm placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
                 />
                 <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="px-5 min-h-[44px] rounded-full bg-accent text-white font-sans font-bold text-sm hover:bg-accent/90 active:scale-[0.97] transition-[background-color,transform] duration-sm ease-out-smooth disabled:opacity-50 cursor-pointer"
+                    className="px-5 min-h-[44px] rounded-xl bg-accent text-white font-sans font-bold text-sm hover:bg-accent/90 active:scale-[0.97] transition-[background-color,transform] duration-sm ease-out-smooth disabled:opacity-50 cursor-pointer"
                 >
                     {status === 'submitting' ? '...' : (buttonText || 'Download')}
                 </button>
@@ -241,7 +241,7 @@ export const PortableTextComponents = {
                     {stats.map((stat, idx) => (
                         <div key={idx} className="bg-surfaceAlt border border-accent-border rounded-2xl p-6 text-center shadow-sm">
                             <div className="text-4xl font-bold font-sans text-accent mb-2">{stat.value}</div>
-                            <div className="text-xs font-sans text-textMuted uppercase tracking-widest">{stat.label}</div>
+                            <div className="text-[14px] font-sans text-textMuted uppercase tracking-wider">{stat.label}</div>
                         </div>
                     ))}
                 </div>
@@ -276,9 +276,9 @@ export const PortableTextComponents = {
                 <div className="my-10 flex justify-center">
                     <Tag
                         {...linkProps}
-                        className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-sans font-bold text-base transition-[transform,background-color,border-color,box-shadow] duration-md ease-out-smooth hover:scale-105 active:scale-[0.97] ${
+                        className={`inline-flex items-center gap-2 px-8 py-4 rounded-xl font-sans font-bold text-base transition-[transform,background-color,border-color,box-shadow] duration-md ease-out-smooth hover:scale-[1.02] active:scale-[0.97] ${
                             isPrimary
-                                ? 'bg-accent text-white shadow-[0_0_20px_rgba(0,112,243,0.3)]'
+                                ? 'bg-accent text-white shadow-[0_0_20px_rgba(0,112,243,0.25)]'
                                 : 'bg-transparent text-text border-2 border-accent-border hover:border-accent/40'
                         }`}
                     >
@@ -306,8 +306,8 @@ export const PortableTextComponents = {
                     {(author || role) && (
                         <div className="mt-6 pl-8 flex items-center gap-3">
                             <div className="w-8 h-[2px] bg-accent/40" />
-                            <div className="font-sans text-sm text-textMuted">
-                                {author && <span className="font-bold text-text">{author}</span>}
+                            <div className="font-sans text-[15px] text-textMuted">
+                                {author && <span className="font-medium text-text">{author}</span>}
                                 {author && role && <span className="mx-1">·</span>}
                                 {role && <span>{role}</span>}
                             </div>
