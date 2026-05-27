@@ -9,7 +9,15 @@ export const relatedCaseStudiesQuery = groq`
     "slug": slug.current,
     tldr,
     clientName,
-    metrics
+    metrics,
+    thumbnailBackground { asset-> },
+    thumbnailLogo { asset-> },
+    thumbnailText,
+    thumbnailTextColor,
+    thumbnailTextSize,
+    thumbnailOverlayColor,
+    thumbnailOverlayOpacity,
+    thumbnailGradientDirection
   }
 `;
 
@@ -389,7 +397,15 @@ export const caseStudyBySlugV2Query = groq`
       "slug": slug.current,
       tldr,
       clientName,
-      metrics
+      metrics,
+      thumbnailBackground { asset-> },
+      thumbnailLogo { asset-> },
+      thumbnailText,
+      thumbnailTextColor,
+      thumbnailTextSize,
+      thumbnailOverlayColor,
+      thumbnailOverlayOpacity,
+      thumbnailGradientDirection
     },
     relatedBlogPosts[]->{
       _id,

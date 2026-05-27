@@ -80,7 +80,7 @@ export default function CaseStudyCard({ data }) {
             {/* Text - bottom left */}
             <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
                 <h3
-                    className={`font-sans font-semibold ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300`}
+                    className={`font-sans font-medium ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300`}
                     style={{ color: textColor }}
                 >
                     {displayText}
@@ -88,7 +88,7 @@ export default function CaseStudyCard({ data }) {
 
                 {/* Read story - appears on hover */}
                 <span
-                    className="inline-flex items-center gap-1.5 font-sans text-[15px] font-medium absolute bottom-5 left-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                    className="inline-flex items-center gap-1.5 font-sans text-[15px] font-medium absolute bottom-5 left-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,transform] duration-300"
                     style={{ color: textColor }}
                 >
                     Read more <span className="text-lg">→</span>

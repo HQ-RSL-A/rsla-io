@@ -131,7 +131,7 @@ export default function WorkInner() {
                     '@context': 'https://schema.org',
                     '@type': 'Article',
                     headline: caseStudy.title,
-                    description: caseStudy.tldr || caseStudy.description || '',
+                    description: caseStudy.tldr || '',
                     datePublished: caseStudy.publishedAt || undefined,
                     author: { '@type': 'Person', name: 'Rahul Lalia' },
                     publisher: {
@@ -150,7 +150,7 @@ export default function WorkInner() {
                         Case Studies
                     </Link>
                     <span className="text-gray-300 text-[14px]">/</span>
-                    <span className="font-sans text-[14px] font-normal text-text">
+                    <span className="font-sans text-[14px] font-normal text-text" aria-current="page">
                         {caseStudy.clientName || caseStudy.title}
                     </span>
                 </nav>
@@ -163,7 +163,7 @@ export default function WorkInner() {
                 </h1>
 
                 <p className="cs-hero opacity-0 text-[15px] md:text-[18px] text-text/80 font-sans font-normal leading-[24px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
-                    {caseStudy.tldr || caseStudy.description}
+                    {caseStudy.tldr}
                 </p>
                 {/* Mobile metrics - vertical stack */}
                 {caseStudy.metrics?.length > 0 && (
@@ -350,7 +350,7 @@ export default function WorkInner() {
 
                         {/* Related case studies */}
                         {relatedCases.length > 0 && (
-                            <aside className="mt-14">
+                            <aside className="cs-section opacity-0 mt-14">
                                 <h3 className="text-[24px] font-sans font-medium text-text mb-8">
                                     More results
                                 </h3>
