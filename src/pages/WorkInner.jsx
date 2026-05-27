@@ -16,6 +16,15 @@ import MediaLightbox from '@/components/MediaLightbox';
 
 gsap.registerPlugin(ScrollTrigger);
 
+function getVideoEmbedUrl(url) {
+    if (!url) return null;
+    const yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?/]+)/);
+    if (yt) return `https://www.youtube.com/embed/${yt[1]}`;
+    const wistia = url.match(/wistia\.com\/medias\/([^&?/]+)/);
+    if (wistia) return `https://fast.wistia.net/embed/iframe/${wistia[1]}`;
+    return null;
+}
+
 export default function WorkInner() {
     const { slug } = useParams();
     const [caseStudy, setCaseStudy] = useState(null);
@@ -205,10 +214,26 @@ export default function WorkInner() {
                             )}
 
                             {/* Meta info */}
-                            {caseStudy.industry && (
-                                <div className="border-t border-dashed border-gray-200 pt-6 mb-8 font-sans">
-                                    <span className="text-[15px] font-normal text-[#727F96] block mb-0.5">Industry</span>
-                                    <span className="text-[15px] font-medium text-text">{caseStudy.industry}</span>
+                            {(caseStudy.industry || caseStudy.categories?.length > 0) && (
+                                <div className="border-t border-dashed border-gray-200 pt-6 mb-8 font-sans space-y-4">
+                                    {caseStudy.industry && (
+                                        <div>
+                                            <span className="text-[15px] font-normal text-[#727F96] block mb-0.5">Industry</span>
+                                            <span className="text-[15px] font-medium text-text">{caseStudy.industry}</span>
+                                        </div>
+                                    )}
+                                    {caseStudy.categories?.length > 0 && (
+                                        <div>
+                                            <span className="text-[15px] font-normal text-[#727F96] block mb-1.5">Services</span>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {caseStudy.categories.map((cat) => (
+                                                    <span key={cat._id} className="text-[13px] font-medium text-accent bg-accent/8 px-2.5 py-1 rounded-md">
+                                                        {cat.name}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             )}
 
@@ -313,6 +338,53 @@ export default function WorkInner() {
                             </blockquote>
                         )}
 
+                        {/* Testimonial Media */}
+                        {caseStudy.testimonialMedia?.length > 0 && (
+                            <div className="cs-section opacity-0 mb-14 space-y-6">
+                                {caseStudy.testimonialMedia.map((item) => {
+                                    if (item._type === 'testimonialVideo') {
+                                        const embedUrl = getVideoEmbedUrl(item.url);
+                                        if (!embedUrl) return null;
+                                        return (
+                                            <div key={item._key}>
+                                                <div className={`relative overflow-hidden rounded-2xl border border-gray-200 shadow-sm ${item.orientation === 'vertical' ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'}`}>
+                                                    <iframe
+                                                        src={embedUrl}
+                                                        title={item.caption || 'Video'}
+                                                        className="absolute inset-0 w-full h-full"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowFullScreen
+                                                        loading="lazy"
+                                                    />
+                                                </div>
+                                                {item.caption && (
+                                                    <p className="font-sans text-[14px] font-normal text-[#727F96] text-center mt-3">{item.caption}</p>
+                                                )}
+                                            </div>
+                                        );
+                                    }
+                                    if (item._type === 'testimonialPhoto' && item.asset?.asset) {
+                                        const photoUrl = urlForImage(item.asset.asset)?.width(1200).url();
+                                        if (!photoUrl) return null;
+                                        return (
+                                            <div key={item._key}>
+                                                <img
+                                                    src={photoUrl}
+                                                    alt={item.alt || ''}
+                                                    className="w-full rounded-2xl border border-gray-200 shadow-sm"
+                                                    loading="lazy"
+                                                />
+                                                {item.caption && (
+                                                    <p className="font-sans text-[14px] font-normal text-[#727F96] text-center mt-3">{item.caption}</p>
+                                                )}
+                                            </div>
+                                        );
+                                    }
+                                    return null;
+                                })}
+                            </div>
+                        )}
+
                         {/* Body content (PortableText) */}
                         {caseStudy.content && (
                             <div className="cs-section opacity-0 prose-container max-w-none mb-14 case-study-prose">
@@ -320,10 +392,47 @@ export default function WorkInner() {
                             </div>
                         )}
 
+                        {/* Related blog posts */}
+                        {caseStudy.relatedBlogPosts?.length > 0 && (
+                            <aside className="cs-section opacity-0 mt-14 border-t border-dashed border-gray-200 pt-10">
+                                <h3 className="text-[24px] font-sans font-bold text-text mb-6">
+                                    Related articles
+                                </h3>
+                                <div className="space-y-4">
+                                    {caseStudy.relatedBlogPosts.map((post) => (
+                                        <Link
+                                            key={post._id}
+                                            to={`/blog/${post.slug?.current || post.slug}`}
+                                            className="flex gap-4 items-start group"
+                                        >
+                                            {post.featuredImage?.asset && (
+                                                <img
+                                                    src={urlForImage(post.featuredImage.asset)?.width(160).height(100).url()}
+                                                    alt={post.featuredImage.alt || post.title}
+                                                    className="w-[120px] h-[75px] object-cover rounded-lg shrink-0"
+                                                    loading="lazy"
+                                                />
+                                            )}
+                                            <div>
+                                                <h4 className="font-sans text-[16px] font-medium text-text group-hover:text-accent transition-colors duration-150 leading-snug">
+                                                    {post.title}
+                                                </h4>
+                                                {post.excerpt && (
+                                                    <p className="font-sans text-[14px] font-normal text-[#727F96] mt-1 line-clamp-2 leading-relaxed">
+                                                        {post.excerpt}
+                                                    </p>
+                                                )}
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </aside>
+                        )}
+
                         {/* Related case studies */}
                         {relatedCases.length > 0 && (
                             <aside className="mt-14">
-                                <h3 className="text-[24px] font-sans font-semibold text-text mb-8">
+                                <h3 className="text-[24px] font-sans font-bold text-text mb-8">
                                     More results
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

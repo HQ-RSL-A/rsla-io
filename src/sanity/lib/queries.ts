@@ -387,6 +387,15 @@ export const caseStudyBySlugV2Query = groq`
     },
     testimonialText,
     testimonialAuthor,
+    testimonialMedia[] {
+      _type,
+      _key,
+      url,
+      orientation,
+      caption,
+      alt,
+      asset { asset-> }
+    },
     relatedCases[]->{
       title,
       "slug": slug.current,
