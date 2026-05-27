@@ -165,15 +165,15 @@ export default function WorkInner() {
                 <p className="cs-hero opacity-0 text-[16px] md:text-[18px] text-text/80 font-sans font-normal leading-[26px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
                     {caseStudy.tldr || caseStudy.description}
                 </p>
-                {/* Mobile metrics - horizontal scroll */}
+                {/* Mobile metrics - vertical stack */}
                 {caseStudy.metrics?.length > 0 && (
-                    <div className="cs-hero opacity-0 lg:hidden flex gap-5 overflow-x-auto scrollbar-hide pb-5 mb-6 -mx-5 px-5 border-b border-gray-200">
+                    <div className="cs-hero opacity-0 lg:hidden space-y-4 pb-6 mb-6 border-b border-gray-200">
                         {caseStudy.metrics.map((metric, idx) => (
-                            <div key={idx} className="shrink-0 pr-5 border-r border-gray-200 last:border-r-0 last:pr-0">
-                                <strong className="text-[22px] font-sans font-bold text-accent block mb-0.5">
+                            <div key={idx} className="pl-3 border-l-2 border-accent">
+                                <strong className="text-[22px] font-sans font-bold text-text block leading-[28px]">
                                     {metric.value}
                                 </strong>
-                                <span className="font-sans text-[12px] text-gray-500 whitespace-nowrap">
+                                <span className="font-sans text-[13px] text-gray-500">
                                     {metric.label}
                                 </span>
                             </div>
