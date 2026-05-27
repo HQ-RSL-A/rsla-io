@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ZoomIn } from 'lucide-react';
 import { client } from '@/sanity/lib/client';
 import { caseStudyBySlugV2Query, relatedCaseStudiesQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
@@ -12,7 +11,6 @@ import Seo from '@/components/Seo';
 import { TextAnimate } from '@/components/ui/text-animate';
 import ShareBar from '@/components/ShareBar';
 import CaseStudyCard from '@/components/CaseStudyCard';
-import MediaLightbox from '@/components/MediaLightbox';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +28,6 @@ export default function WorkInner() {
     const [caseStudy, setCaseStudy] = useState(null);
     const [relatedCases, setRelatedCases] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [lightboxIndex, setLightboxIndex] = useState(null);
     const articleRef = useRef(null);
 
     useEffect(() => {
@@ -119,15 +116,6 @@ export default function WorkInner() {
     const seoImage = caseStudy.seo?.socialImage?.asset?.url
         || (caseStudy.thumbnailBackground?.asset ? urlForImage(caseStudy.thumbnailBackground.asset)?.width(1200).height(630).url() : null)
         || 'https://rsla.io/og-image.png';
-
-    const resultsMediaImages = (caseStudy.resultsMedia || [])
-        .filter(img => img?.asset)
-        .map(img => ({
-            url: urlForImage(img.asset)?.width(1600).url(),
-            thumbUrl: urlForImage(img.asset)?.width(400).height(300).url(),
-            alt: img.alt || '',
-            caption: img.caption || '',
-        }));
 
     return (
         <article ref={articleRef} className="min-h-screen bg-surface text-text pb-28 lg:pb-24 relative">
@@ -224,14 +212,12 @@ export default function WorkInner() {
                                     )}
                                     {caseStudy.categories?.length > 0 && (
                                         <div>
-                                            <span className="text-[15px] font-normal text-[#727F96] block mb-1.5">Services</span>
-                                            <div className="flex flex-wrap gap-1.5">
-                                                {caseStudy.categories.map((cat) => (
-                                                    <span key={cat._id} className="text-[13px] font-medium text-accent bg-accent/8 px-2.5 py-1 rounded-md">
-                                                        {cat.name}
-                                                    </span>
-                                                ))}
-                                            </div>
+                                            <span className="text-[15px] font-normal text-[#727F96] block mb-1">Services Used</span>
+                                            {caseStudy.categories.map((cat) => (
+                                                <span key={cat._id} className="text-[15px] font-medium text-text block leading-relaxed">
+                                                    {cat.name}
+                                                </span>
+                                            ))}
                                         </div>
                                     )}
                                 </div>
@@ -240,14 +226,14 @@ export default function WorkInner() {
                             {/* CTA */}
                             <Link
                                 to="/contact"
-                                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-accent text-white font-sans font-medium text-[15px] rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 ease-out shadow-[0_0_20px_rgba(0,112,243,0.25)] mb-6"
+                                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-accent text-white font-sans font-medium text-[15px] rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 ease-out shadow-[0_0_20px_rgba(0,112,243,0.25)] mb-4"
                             >
                                 Book a Call <span className="text-white/60">→</span>
                             </Link>
 
                             {/* Share */}
                             <div className="flex items-center justify-center">
-                                <ShareBar title={caseStudy.title} url={`https://rsla.io/work/${slug}`} />
+                                <ShareBar title={caseStudy.title} url={`https://rsla.io/work/${slug}`} showLabel={false} />
                             </div>
                         </div>
                     </aside>
@@ -255,73 +241,11 @@ export default function WorkInner() {
                     {/* ===== BODY ===== */}
                     <div className="cs-body flex-1 min-w-0 max-w-[720px] lg:pl-10 xl:pl-12">
 
-                        {/* Before / After */}
-                        {caseStudy.beforeAfter && (caseStudy.beforeAfter.before || caseStudy.beforeAfter.after) && (
-                            <div className="cs-section opacity-0 grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-                                {caseStudy.beforeAfter.before && (
-                                    <div className="p-6 rounded-xl border border-red-200 bg-red-50/60">
-                                        <h3 className="text-[12px] font-bold font-sans text-red-700 uppercase tracking-widest mb-3">Before</h3>
-                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.before}</p>
-                                    </div>
-                                )}
-                                {caseStudy.beforeAfter.after && (
-                                    <div className="p-6 rounded-xl border border-green-200 bg-green-50/60">
-                                        <h3 className="text-[12px] font-bold font-sans text-green-800 uppercase tracking-widest mb-3">After</h3>
-                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.after}</p>
-                                    </div>
-                                )}
+                        {/* Body content (PortableText) */}
+                        {caseStudy.content && (
+                            <div className="cs-section opacity-0 prose-container max-w-none mb-14 case-study-prose">
+                                <PortableText value={caseStudy.content} components={PortableTextComponents} />
                             </div>
-                        )}
-
-                        {/* Challenge */}
-                        {caseStudy.problemStatement && (
-                            <section className="cs-section opacity-0 mb-12">
-                                <h2 className="text-[34px] font-sans font-bold text-text mb-4 leading-[44px]">The Challenge</h2>
-                                <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
-                                    {caseStudy.problemStatement}
-                                </p>
-                            </section>
-                        )}
-
-                        {/* Solution */}
-                        {caseStudy.solutionApproach && (
-                            <section className="cs-section opacity-0 mb-12">
-                                <h2 className="text-[34px] font-sans font-bold text-text mb-4 leading-[44px]">The Solution</h2>
-                                <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
-                                    {caseStudy.solutionApproach}
-                                </p>
-                            </section>
-                        )}
-
-                        {/* Results */}
-                        {caseStudy.resultsOutcome && (
-                            <section className="cs-section opacity-0 mb-14">
-                                <h2 className="text-[34px] font-sans font-bold text-text mb-4 leading-[44px]">The Results</h2>
-                                <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
-                                    {caseStudy.resultsOutcome}
-                                </p>
-                                {resultsMediaImages.length > 0 && (
-                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-8">
-                                        {resultsMediaImages.map((img, idx) => (
-                                            <button
-                                                key={idx}
-                                                onClick={() => setLightboxIndex(idx)}
-                                                className="relative aspect-[4/3] rounded-lg overflow-hidden group"
-                                            >
-                                                <img
-                                                    src={img.thumbUrl}
-                                                    alt={img.alt}
-                                                    className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-                                                    loading="lazy"
-                                                />
-                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200 flex items-center justify-center">
-                                                    <ZoomIn size={20} className="text-white drop-shadow-md opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
-                                                </div>
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </section>
                         )}
 
                         {/* Testimonial */}
@@ -385,13 +309,6 @@ export default function WorkInner() {
                             </div>
                         )}
 
-                        {/* Body content (PortableText) */}
-                        {caseStudy.content && (
-                            <div className="cs-section opacity-0 prose-container max-w-none mb-14 case-study-prose">
-                                <PortableText value={caseStudy.content} components={PortableTextComponents} />
-                            </div>
-                        )}
-
                         {/* Related blog posts */}
                         {caseStudy.relatedBlogPosts?.length > 0 && (
                             <aside className="cs-section opacity-0 mt-14 border-t border-dashed border-gray-200 pt-10">
@@ -448,15 +365,6 @@ export default function WorkInner() {
                     </div>
                 </div>
             </div>
-
-            {/* Media lightbox */}
-            {lightboxIndex !== null && (
-                <MediaLightbox
-                    images={resultsMediaImages}
-                    activeIndex={lightboxIndex}
-                    onClose={() => setLightboxIndex(null)}
-                />
-            )}
 
             {/* Mobile sticky CTA */}
             <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-accent-border px-6 py-3 safe-area-pb">

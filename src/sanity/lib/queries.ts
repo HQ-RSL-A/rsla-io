@@ -370,20 +370,8 @@ export const caseStudyBySlugV2Query = groq`
       }
     },
     industry,
-    problemStatement,
-    solutionApproach,
-    resultsOutcome,
-    resultsMedia[] {
-      asset->,
-      alt,
-      caption
-    },
     thumbnailBackground {
       asset->
-    },
-    beforeAfter {
-      before,
-      after
     },
     testimonialText,
     testimonialAuthor,
