@@ -51,7 +51,7 @@ export default function CaseStudyCard({ data }) {
                 <img
                     src={bgImage}
                     alt={data.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.03]"
                     loading="lazy"
                     width="1200"
                     height="700"
@@ -59,7 +59,7 @@ export default function CaseStudyCard({ data }) {
             )}
 
             {/* Overlay */}
-            <div className="absolute inset-0 transition-opacity duration-300" style={overlayStyle} />
+            <div className="absolute inset-0 transition-opacity duration-500" style={overlayStyle} />
 
             {/* Hover gradient expansion */}
             <div
@@ -80,7 +80,7 @@ export default function CaseStudyCard({ data }) {
             {/* Text - bottom left */}
             <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
                 <h3
-                    className={`font-sans font-medium ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300`}
+                    className={`font-sans font-medium ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]`}
                     style={{ color: textColor }}
                 >
                     {displayText}

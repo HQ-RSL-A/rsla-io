@@ -81,16 +81,16 @@ export default function WorkInner() {
                 return;
             }
             gsap.fromTo('.sidebar-metric',
-                { y: 16, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' }
+                { y: 10, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.45, stagger: 0.06, ease: 'power3.out' }
             );
             gsap.fromTo('.cs-hero',
-                { y: 16, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out' }
+                { y: 10, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.45, stagger: 0.08, ease: 'power3.out' }
             );
             gsap.fromTo('.cs-section',
-                { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.5, stagger: 0.06, ease: 'power3.out', delay: 0.2 }
+                { y: 12, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.45, stagger: 0.04, ease: 'power3.out', delay: 0.15 }
             );
         }, articleRef);
         return () => ctx.revert();
@@ -146,7 +146,7 @@ export default function WorkInner() {
             <div className="max-w-6xl mx-auto relative z-10 px-5 md:px-12 pt-28 md:pt-32">
                 {/* Breadcrumb */}
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 md:mb-10">
-                    <Link to="/work" className="font-sans text-[14px] font-normal text-accent hover:text-text transition-colors duration-150 ease-out">
+                    <Link to="/work" className="font-sans text-[14px] font-normal text-accent hover:text-text transition-colors duration-200">
                         Case Studies
                     </Link>
                     <span className="text-gray-300 text-[14px]">/</span>
@@ -228,7 +228,7 @@ export default function WorkInner() {
                             {/* CTA */}
                             <Link
                                 to="/contact"
-                                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-accent text-white font-sans font-medium text-[15px] rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 ease-out shadow-[0_0_20px_rgba(0,112,243,0.25)] mb-4"
+                                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-accent text-white font-sans font-medium text-[15px] rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_0_20px_rgba(0,112,243,0.25)] mb-4"
                             >
                                 Book a Call <span className="text-white/60">→</span>
                             </Link>
@@ -372,7 +372,7 @@ export default function WorkInner() {
             <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-gray-200 px-5 py-2.5 safe-area-pb">
                 <Link
                     to="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white font-sans font-medium text-[14px] rounded-xl shadow-[0_0_16px_rgba(0,112,243,0.25)]"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white font-sans font-medium text-[14px] rounded-xl active:scale-[0.97] transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_0_16px_rgba(0,112,243,0.25)]"
                 >
                     Book a Call <span className="text-white/60">→</span>
                 </Link>
