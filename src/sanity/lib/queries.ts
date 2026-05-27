@@ -333,10 +333,6 @@ export const caseStudiesV2Query = groq`
     priority,
     publishedAt,
     industry,
-    featuredImage {
-      asset->,
-      alt
-    },
     thumbnailBackground {
       asset->
     },
@@ -382,9 +378,8 @@ export const caseStudyBySlugV2Query = groq`
       alt,
       caption
     },
-    featuredImage {
-      asset->,
-      alt
+    thumbnailBackground {
+      asset->
     },
     beforeAfter {
       before,
@@ -427,10 +422,18 @@ export const featuredCaseStudiesV2Query = groq`
     metrics,
     featured,
     priority,
-    featuredImage {
-      asset->,
-      alt
-    }
+    thumbnailBackground {
+      asset->
+    },
+    thumbnailLogo {
+      asset->
+    },
+    thumbnailText,
+    thumbnailTextColor,
+    thumbnailTextSize,
+    thumbnailOverlayColor,
+    thumbnailOverlayOpacity,
+    thumbnailGradientDirection
   }
 `;
 

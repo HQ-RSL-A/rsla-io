@@ -26,9 +26,7 @@ function getGradientCss(color, opacity, direction) {
 export default function CaseStudyCard({ data }) {
     const bgImage = data.thumbnailBackground?.asset
         ? urlForImage(data.thumbnailBackground.asset)?.width(1200).height(700).url()
-        : data.featuredImage?.asset
-            ? urlForImage(data.featuredImage.asset)?.width(1200).height(700).url()
-            : null;
+        : null;
 
     const logoUrl = data.thumbnailLogo?.asset
         ? urlForImage(data.thumbnailLogo.asset)?.height(40).url()
@@ -52,7 +50,7 @@ export default function CaseStudyCard({ data }) {
             {bgImage && (
                 <img
                     src={bgImage}
-                    alt={data.featuredImage?.alt || data.title}
+                    alt={data.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     loading="lazy"
                     width="1200"
@@ -93,7 +91,7 @@ export default function CaseStudyCard({ data }) {
                     className="inline-flex items-center gap-1.5 font-sans text-[15px] font-medium absolute bottom-5 left-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                     style={{ color: textColor }}
                 >
-                    Read story <span className="text-lg">→</span>
+                    Read more <span className="text-lg">→</span>
                 </span>
             </div>
         </Link>

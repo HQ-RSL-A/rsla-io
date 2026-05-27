@@ -107,7 +107,9 @@ export default function WorkInner() {
 
     const seoTitle = caseStudy.seo?.metaTitle ? `${caseStudy.seo.metaTitle} | RSL/A` : `${caseStudy.title} | RSL/A`;
     const seoDescription = caseStudy.seo?.metaDescription || caseStudy.tldr || '';
-    const seoImage = caseStudy.seo?.socialImage?.asset?.url || 'https://rsla.io/og-image.png';
+    const seoImage = caseStudy.seo?.socialImage?.asset?.url
+        || (caseStudy.thumbnailBackground?.asset ? urlForImage(caseStudy.thumbnailBackground.asset)?.width(1200).height(630).url() : null)
+        || 'https://rsla.io/og-image.png';
 
     const resultsMediaImages = (caseStudy.resultsMedia || [])
         .filter(img => img?.asset)
