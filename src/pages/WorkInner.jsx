@@ -369,10 +369,10 @@ export default function WorkInner() {
             </div>
 
             {/* Mobile sticky CTA */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-gray-200 px-5 py-2.5 safe-area-pb">
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-gray-200 px-5 pt-3" style={{ paddingBottom: 'calc(16px + env(safe-area-inset-bottom, 0px))' }}>
                 <Link
                     to="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white font-sans font-medium text-[14px] rounded-xl active:scale-[0.97] transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_0_16px_rgba(0,112,243,0.25)]"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-accent text-white font-sans font-medium text-[15px] rounded-xl active:scale-[0.97] transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_0_16px_rgba(0,112,243,0.25)]"
                 >
                     Book a Call <span className="text-white/60">→</span>
                 </Link>
