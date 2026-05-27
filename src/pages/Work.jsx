@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,23 +12,17 @@ import { TextAnimate } from '@/components/ui/text-animate';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const categories = ["all", "AI Automations", "AI Lead Generation", "AI Operations", "AI Digital Presence"];
-const services = [
-    { value: "all", label: "All Services" },
-    { value: "ai-lead-generation", label: "AI Lead Generation" },
-    { value: "ai-automations", label: "AI Automations" },
-    { value: "ai-operations", label: "AI Operations" },
-    { value: "ai-digital-presence", label: "AI Digital Presence" },
-    { value: "search-visibility", label: "Search Visibility" },
-    { value: "geo-aeo", label: "GEO/AEO" },
-];
-
 export default function Work() {
     const pageRef = useRef(null);
     const [caseStudies, setCaseStudies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState("all");
-    const [selectedService, setSelectedService] = useState("all");
+
+    const categoryOptions = useMemo(() => {
+        const names = caseStudies.flatMap(s => s.categories?.map(c => c.name) || []);
+        return [...new Set(names)].sort();
+    }, [caseStudies]);
+
 
     useEffect(() => {
         let isMounted = true;
@@ -63,11 +57,10 @@ export default function Work() {
             );
         }, pageRef);
         return () => ctx.revert();
-    }, [loading, selectedCategory, selectedService]);
+    }, [loading, selectedCategory]);
 
     const filteredAndSortedStudies = caseStudies
-        .filter((study) => selectedCategory === "all" || study.category === selectedCategory)
-        .filter((study) => selectedService === "all" || study.servicesUsed?.includes(selectedService))
+        .filter((study) => selectedCategory === "all" || study.categories?.some(c => c.name === selectedCategory))
         .sort((a, b) => a.priority - b.priority);
 
     return (
@@ -117,24 +110,9 @@ export default function Work() {
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                                 className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-accent-border text-text font-sans text-sm uppercase tracking-wider cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
                             >
-                                {categories.map((category) => (
-                                    <option key={category} value={category}>
-                                        {category === "all" ? "All Categories" : category}
-                                    </option>
-                                ))}
-                            </select>
-                            <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none" />
-                        </div>
-                        <div className="relative">
-                            <select
-                                value={selectedService}
-                                onChange={(e) => setSelectedService(e.target.value)}
-                                className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-accent-border text-text font-sans text-sm uppercase tracking-wider cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
-                            >
-                                {services.map((service) => (
-                                    <option key={service.value} value={service.value}>
-                                        {service.label}
-                                    </option>
+                                <option value="all">All Categories</option>
+                                {categoryOptions.map((name) => (
+                                    <option key={name} value={name}>{name}</option>
                                 ))}
                             </select>
                             <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none" />

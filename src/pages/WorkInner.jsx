@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ZoomIn } from 'lucide-react';
 import { client } from '@/sanity/lib/client';
 import { caseStudyBySlugV2Query, relatedCaseStudiesQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
@@ -11,57 +12,16 @@ import Seo from '@/components/Seo';
 import { TextAnimate } from '@/components/ui/text-animate';
 import ShareBar from '@/components/ShareBar';
 import CaseStudyCard from '@/components/CaseStudyCard';
+import MediaLightbox from '@/components/MediaLightbox';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const INDUSTRY_LABELS = {
-    'salon-spa': 'Salon/Spa',
-    'restaurant': 'Restaurant',
-    'auto-detailing': 'Auto Detailing',
-    'real-estate': 'Real Estate',
-    'contractor': 'Contractor/Home Services',
-    'medical': 'Medical/Dental',
-    'legal': 'Legal',
-    'fitness': 'Fitness/Gym',
-    'ecommerce': 'E-commerce',
-    'saas': 'SaaS',
-    'agency': 'Agency',
-    'nonprofit': 'Non-Profit',
-    'media': 'Media/Content',
-    'manufacturing': 'Manufacturing',
-    'professional-services': 'Professional Services',
-    'education': 'Education',
-};
-
-const SERVICE_LABELS = {
-    'ai-automation': 'AI Automation',
-    'paid-acquisition': 'Paid Acquisition',
-    'crm-infrastructure': 'CRM Infrastructure',
-    'smart-websites': 'Smart Websites',
-    'local-seo': 'Local SEO',
-    'content-marketing': 'Content Marketing',
-    'ai-lead-generation': 'AI Lead Generation',
-    'ai-automations': 'AI Automations',
-    'ai-operations': 'AI Operations',
-    'ai-digital-presence': 'AI Digital Presence',
-    'websites': 'Websites',
-    'search-visibility': 'Search Visibility',
-    'crm-systems': 'CRM Systems',
-    'custom-development': 'Custom Development',
-    'geo-aeo': 'GEO/AEO',
-};
-
-function getYouTubeEmbedUrl(url) {
-    if (!url) return null;
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?/]+)/);
-    return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-}
 
 export default function WorkInner() {
     const { slug } = useParams();
     const [caseStudy, setCaseStudy] = useState(null);
     const [relatedCases, setRelatedCases] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [lightboxIndex, setLightboxIndex] = useState(null);
     const articleRef = useRef(null);
 
     useEffect(() => {
@@ -84,9 +44,10 @@ export default function WorkInner() {
 
                 let cases = fetchedStudy.relatedCases;
                 if (!cases || cases.length === 0) {
+                    const categorySlugs = (fetchedStudy.categories || []).map(c => c.slug);
                     cases = await client.fetch(relatedCaseStudiesQuery, {
                         slug,
-                        category: fetchedStudy.category,
+                        categorySlugs,
                     });
                 }
 
@@ -145,9 +106,17 @@ export default function WorkInner() {
     }
 
     const seoTitle = caseStudy.seo?.metaTitle ? `${caseStudy.seo.metaTitle} | RSL/A` : `${caseStudy.title} | RSL/A`;
-    const seoDescription = caseStudy.seo?.metaDescription || caseStudy.tldr || caseStudy.description || '';
+    const seoDescription = caseStudy.seo?.metaDescription || caseStudy.tldr || '';
     const seoImage = caseStudy.seo?.socialImage?.asset?.url || 'https://rsla.io/og-image.png';
-    const videoEmbedUrl = getYouTubeEmbedUrl(caseStudy.videoTestimonial?.url);
+
+    const resultsMediaImages = (caseStudy.resultsMedia || [])
+        .filter(img => img?.asset)
+        .map(img => ({
+            url: urlForImage(img.asset)?.width(1600).url(),
+            thumbUrl: urlForImage(img.asset)?.width(400).height(300).url(),
+            alt: img.alt || '',
+            caption: img.caption || '',
+        }));
 
     return (
         <article ref={articleRef} className="min-h-screen bg-surface text-text pb-28 lg:pb-24 relative">
@@ -259,6 +228,24 @@ export default function WorkInner() {
                     {/* ===== BODY ===== */}
                     <div className="cs-body flex-1 min-w-0 max-w-[720px] lg:pl-10 xl:pl-12">
 
+                        {/* Before / After */}
+                        {caseStudy.beforeAfter && (caseStudy.beforeAfter.before || caseStudy.beforeAfter.after) && (
+                            <div className="cs-section opacity-0 grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+                                {caseStudy.beforeAfter.before && (
+                                    <div className="p-6 rounded-xl border border-red-200 bg-red-50/60">
+                                        <h3 className="text-[12px] font-bold font-sans text-red-700 uppercase tracking-widest mb-3">Before</h3>
+                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.before}</p>
+                                    </div>
+                                )}
+                                {caseStudy.beforeAfter.after && (
+                                    <div className="p-6 rounded-xl border border-green-200 bg-green-50/60">
+                                        <h3 className="text-[12px] font-bold font-sans text-green-800 uppercase tracking-widest mb-3">After</h3>
+                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.after}</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
                         {/* Challenge */}
                         {caseStudy.problemStatement && (
                             <section className="cs-section opacity-0 mb-12">
@@ -286,40 +273,42 @@ export default function WorkInner() {
                                 <p className="text-[18px] font-medium text-text leading-[28px] font-sans">
                                     {caseStudy.resultsOutcome}
                                 </p>
+                                {resultsMediaImages.length > 0 && (
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-8">
+                                        {resultsMediaImages.map((img, idx) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => setLightboxIndex(idx)}
+                                                className="relative aspect-[4/3] rounded-lg overflow-hidden group"
+                                            >
+                                                <img
+                                                    src={img.thumbUrl}
+                                                    alt={img.alt}
+                                                    className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                                                    loading="lazy"
+                                                />
+                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200 flex items-center justify-center">
+                                                    <ZoomIn size={20} className="text-white drop-shadow-md opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
+                                                </div>
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </section>
                         )}
 
-                        {/* Before / After */}
-                        {caseStudy.beforeAfter && (caseStudy.beforeAfter.before || caseStudy.beforeAfter.after) && (
-                            <div className="cs-section opacity-0 grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-                                {caseStudy.beforeAfter.before && (
-                                    <div className="p-6 rounded-xl border border-red-200 bg-red-50/60">
-                                        <h3 className="text-[12px] font-bold font-sans text-red-700 uppercase tracking-widest mb-3">Before</h3>
-                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.before}</p>
-                                    </div>
+                        {/* Testimonial */}
+                        {caseStudy.testimonialText && (
+                            <blockquote className="cs-section opacity-0 border-l border-gray-300 pl-6 py-4 mb-14">
+                                <p className="text-[18px] md:text-[20px] font-sans font-normal text-text leading-[30px] italic">
+                                    "{caseStudy.testimonialText}"
+                                </p>
+                                {caseStudy.testimonialAuthor && (
+                                    <cite className="font-sans text-[15px] font-medium text-text mt-3 block not-italic">
+                                        {caseStudy.testimonialAuthor}
+                                    </cite>
                                 )}
-                                {caseStudy.beforeAfter.after && (
-                                    <div className="p-6 rounded-xl border border-green-200 bg-green-50/60">
-                                        <h3 className="text-[12px] font-bold font-sans text-green-800 uppercase tracking-widest mb-3">After</h3>
-                                        <p className="text-[16px] font-normal text-text leading-[26px] font-sans">{caseStudy.beforeAfter.after}</p>
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
-                        {/* Key Takeaways */}
-                        {caseStudy.keyTakeaways?.length > 0 && (
-                            <section className="cs-section opacity-0 mb-14">
-                                <h2 className="text-[34px] font-sans font-bold text-text mb-5 leading-[44px]">Key Takeaways</h2>
-                                <ol className="space-y-4">
-                                    {caseStudy.keyTakeaways.map((takeaway, idx) => (
-                                        <li key={idx} className="flex items-start gap-3 text-[18px] font-medium text-text leading-[28px] font-sans">
-                                            <span className="text-text font-medium font-sans text-[18px] leading-none pt-1 shrink-0">-</span>
-                                            <span>{takeaway}</span>
-                                        </li>
-                                    ))}
-                                </ol>
-                            </section>
+                            </blockquote>
                         )}
 
                         {/* Body content (PortableText) */}
@@ -327,39 +316,6 @@ export default function WorkInner() {
                             <div className="cs-section opacity-0 prose-container max-w-none mb-14 case-study-prose">
                                 <PortableText value={caseStudy.content} components={PortableTextComponents} />
                             </div>
-                        )}
-
-                        {/* Pull quote */}
-                        {caseStudy.pullQuote && (
-                            <blockquote className="cs-section opacity-0 border-l border-gray-300 pl-6 py-4 mb-14">
-                                <p className="text-[18px] md:text-[20px] font-sans font-normal text-text leading-[30px] italic">
-                                    "{caseStudy.pullQuote}"
-                                </p>
-                                {caseStudy.clientName && (
-                                    <cite className="font-sans text-[15px] font-medium text-text mt-3 block not-italic">
-                                        {caseStudy.clientName}
-                                    </cite>
-                                )}
-                            </blockquote>
-                        )}
-
-                        {/* Video testimonial */}
-                        {videoEmbedUrl && (
-                            <section className="cs-section opacity-0 mb-14">
-                                <div className={`relative overflow-hidden rounded-2xl border border-accent-border shadow-lg ${caseStudy.videoTestimonial?.orientation === 'vertical' ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'}`}>
-                                    <iframe
-                                        src={videoEmbedUrl}
-                                        title={caseStudy.videoTestimonial?.caption || 'Video testimonial'}
-                                        className="absolute inset-0 w-full h-full"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                        loading="lazy"
-                                    />
-                                </div>
-                                {caseStudy.videoTestimonial?.caption && (
-                                    <p className="font-sans text-[15px] font-light text-[#727F96] text-center mt-3">{caseStudy.videoTestimonial.caption}</p>
-                                )}
-                            </section>
                         )}
 
                         {/* Related case studies */}
@@ -381,6 +337,15 @@ export default function WorkInner() {
                     </div>
                 </div>
             </div>
+
+            {/* Media lightbox */}
+            {lightboxIndex !== null && (
+                <MediaLightbox
+                    images={resultsMediaImages}
+                    activeIndex={lightboxIndex}
+                    onClose={() => setLightboxIndex(null)}
+                />
+            )}
 
             {/* Mobile sticky CTA */}
             <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-t border-accent-border px-6 py-3 safe-area-pb">

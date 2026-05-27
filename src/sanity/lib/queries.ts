@@ -4,7 +4,7 @@ const groq = (strings: TemplateStringsArray, ...values: unknown[]): string =>
 
 // Get related case studies by category (fallback when relatedCases is empty)
 export const relatedCaseStudiesQuery = groq`
-  *[_type == "caseStudyV2" && slug.current != $slug && category == $category] | order(priority asc) [0...3] {
+  *[_type == "caseStudyV2" && slug.current != $slug && count((categories[]->slug.current)[@ in $categorySlugs]) > 0] | order(priority asc) [0...3] {
     title,
     "slug": slug.current,
     tldr,
@@ -16,7 +16,7 @@ export const relatedCaseStudiesQuery = groq`
 // Get a related case study for a blog post (match by mapped category names)
 // Pass $categoryNames (array of case study category display names mapped from blog slugs)
 export const relatedCaseStudyForBlogQuery = groq`
-  *[_type == "caseStudyV2" && category in $categoryNames] | order(featured desc, priority asc) [0] {
+  *[_type == "caseStudyV2" && count((categories[]->name)[@ in $categoryNames]) > 0] | order(featured desc, priority asc) [0] {
     title,
     "slug": slug.current,
     tldr,
@@ -329,11 +329,9 @@ export const caseStudiesV2Query = groq`
     clientName,
     metrics,
     featured,
-    category,
+    categories[]->{ name, "slug": slug.current },
     priority,
-    annualSavings,
     publishedAt,
-    servicesUsed,
     industry,
     featuredImage {
       asset->,
@@ -363,9 +361,8 @@ export const caseStudyBySlugV2Query = groq`
     clientName,
     metrics,
     featured,
-    category,
+    categories[]->{ _id, name, "slug": slug.current },
     priority,
-    annualSavings,
     publishedAt,
     content,
     seo {
@@ -376,17 +373,15 @@ export const caseStudyBySlugV2Query = groq`
         asset->
       }
     },
-    clientName,
     industry,
-    timeframe,
-    faqSchema,
-    tldr,
-    pullQuote,
-    keyTakeaways,
     problemStatement,
     solutionApproach,
     resultsOutcome,
-    servicesUsed,
+    resultsMedia[] {
+      asset->,
+      alt,
+      caption
+    },
     featuredImage {
       asset->,
       alt
@@ -395,14 +390,8 @@ export const caseStudyBySlugV2Query = groq`
       before,
       after
     },
-    videoTestimonial {
-      url,
-      orientation,
-      caption,
-      thumbnail {
-        asset->
-      }
-    },
+    testimonialText,
+    testimonialAuthor,
     relatedCases[]->{
       title,
       "slug": slug.current,
