@@ -146,23 +146,23 @@ export default function WorkInner() {
             <div className="max-w-6xl mx-auto relative z-10 px-5 md:px-12 pt-28 md:pt-32">
                 {/* Breadcrumb */}
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 md:mb-10">
-                    <Link to="/work" className="font-sans text-[15px] font-medium text-accent hover:text-text transition-colors duration-150 ease-out">
+                    <Link to="/work" className="font-sans text-[14px] font-normal text-accent hover:text-text transition-colors duration-150 ease-out">
                         Case Studies
                     </Link>
-                    <span className="text-gray-300 text-[15px]">/</span>
-                    <span className="font-sans text-[15px] font-medium text-text">
+                    <span className="text-gray-300 text-[14px]">/</span>
+                    <span className="font-sans text-[14px] font-normal text-text">
                         {caseStudy.clientName || caseStudy.title}
                     </span>
                 </nav>
 
-                {/* Heading + intro - spans full width of both columns */}
-                <h1 className="cs-hero opacity-0 text-[28px] md:text-[56px] font-sans font-bold leading-[1.15] tracking-[-0.02em] text-text mb-5">
+                {/* Heading + intro */}
+                <h1 className="cs-hero opacity-0 text-[48px] md:text-[56px] font-sans font-medium leading-[56px] md:leading-[68px] tracking-[-0.02em] text-text mb-6">
                     <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                         {caseStudy.title}
                     </TextAnimate>
                 </h1>
 
-                <p className="cs-hero opacity-0 text-[16px] md:text-[18px] text-text/80 font-sans font-normal leading-[26px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
+                <p className="cs-hero opacity-0 text-[15px] md:text-[18px] text-text/80 font-sans font-normal leading-[24px] md:leading-[28px] max-w-2xl mb-8 md:mb-12">
                     {caseStudy.tldr || caseStudy.description}
                 </p>
                 {/* Mobile metrics - vertical stack */}
@@ -170,10 +170,10 @@ export default function WorkInner() {
                     <div className="cs-hero opacity-0 lg:hidden space-y-4 pb-6 mb-6 border-b border-gray-200">
                         {caseStudy.metrics.map((metric, idx) => (
                             <div key={idx} className="pl-3 border-l-2 border-accent">
-                                <strong className="text-[22px] font-sans font-bold text-text block leading-[28px]">
+                                <strong className="text-[24px] font-sans font-medium text-text block leading-[32px]">
                                     {metric.value}
                                 </strong>
-                                <span className="font-sans text-[13px] text-gray-500">
+                                <span className="font-sans text-[14px] font-normal text-gray-500">
                                     {metric.label}
                                 </span>
                             </div>
@@ -192,10 +192,10 @@ export default function WorkInner() {
                                 <div className="space-y-5 mb-8">
                                     {caseStudy.metrics.map((metric, idx) => (
                                         <div key={idx} className="sidebar-metric opacity-0 pl-3 border-l border-accent">
-                                            <strong className="text-[24px] font-sans font-medium text-text block leading-[32px] tracking-tight">
+                                            <strong className="text-[24px] font-sans font-medium text-text block leading-[32px]">
                                                 {metric.value}
                                             </strong>
-                                            <span className="font-sans text-[15px] font-normal text-[#425466] leading-snug block mt-0.5">
+                                            <span className="font-sans text-[14px] font-normal text-[#425466] leading-snug block mt-0.5">
                                                 {metric.label}
                                             </span>
                                         </div>
@@ -208,15 +208,15 @@ export default function WorkInner() {
                                 <div className="border-t border-dashed border-gray-200 pt-6 mb-8 font-sans space-y-4">
                                     {caseStudy.industry && (
                                         <div>
-                                            <span className="text-[15px] font-normal text-[#727F96] block mb-0.5">Industry</span>
-                                            <span className="text-[15px] font-medium text-text">{caseStudy.industry}</span>
+                                            <span className="text-[14px] font-normal text-[#727F96] block mb-0.5">Industry</span>
+                                            <span className="text-[14px] font-medium text-text">{caseStudy.industry}</span>
                                         </div>
                                     )}
                                     {caseStudy.categories?.length > 0 && (
                                         <div>
-                                            <span className="text-[15px] font-normal text-[#727F96] block mb-1">Services Used</span>
+                                            <span className="text-[14px] font-normal text-[#727F96] block mb-1">Services Used</span>
                                             {caseStudy.categories.map((cat) => (
-                                                <span key={cat._id} className="text-[15px] font-medium text-text block leading-relaxed">
+                                                <span key={cat._id} className="text-[14px] font-medium text-text block leading-relaxed">
                                                     {cat.name}
                                                 </span>
                                             ))}
@@ -253,11 +253,11 @@ export default function WorkInner() {
                         {/* Testimonial */}
                         {caseStudy.testimonialText && (
                             <blockquote className="cs-section opacity-0 border-l border-gray-300 pl-6 py-4 mb-14">
-                                <p className="text-[18px] md:text-[20px] font-sans font-normal text-text leading-[30px] italic">
+                                <p className="text-[15px] md:text-[18px] font-sans font-normal text-text leading-[24px] md:leading-[28px] italic">
                                     "{caseStudy.testimonialText}"
                                 </p>
                                 {caseStudy.testimonialAuthor && (
-                                    <cite className="font-sans text-[15px] font-medium text-text mt-3 block not-italic">
+                                    <cite className="font-sans text-[14px] font-medium text-text mt-3 block not-italic">
                                         {caseStudy.testimonialAuthor}
                                     </cite>
                                 )}
@@ -314,7 +314,7 @@ export default function WorkInner() {
                         {/* Related blog posts */}
                         {caseStudy.relatedBlogPosts?.length > 0 && (
                             <aside className="cs-section opacity-0 mt-14 border-t border-dashed border-gray-200 pt-10">
-                                <h3 className="text-[24px] font-sans font-bold text-text mb-6">
+                                <h3 className="text-[24px] font-sans font-medium text-text mb-6">
                                     Related articles
                                 </h3>
                                 <div className="space-y-4">
@@ -351,7 +351,7 @@ export default function WorkInner() {
                         {/* Related case studies */}
                         {relatedCases.length > 0 && (
                             <aside className="mt-14">
-                                <h3 className="text-[24px] font-sans font-bold text-text mb-8">
+                                <h3 className="text-[24px] font-sans font-medium text-text mb-8">
                                     More results
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -408,3 +408,32 @@
 .safe-area-pb {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* Case study prose — Stripe-matched typography */
+.case-study-prose p {
+  font-size: 15px;
+  line-height: 24px;
+}
+.case-study-prose h2 {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 44px;
+}
+.case-study-prose h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+.case-study-prose ul,
+.case-study-prose ol {
+  font-size: 15px;
+  line-height: 24px;
+}
+@media (min-width: 768px) {
+  .case-study-prose p,
+  .case-study-prose ul,
+  .case-study-prose ol {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
