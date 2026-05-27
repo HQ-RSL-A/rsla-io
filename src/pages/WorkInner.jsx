@@ -146,11 +146,11 @@ export default function WorkInner() {
             <div className="max-w-6xl mx-auto relative z-10 px-5 md:px-12 pt-28 md:pt-32">
                 {/* Breadcrumb */}
                 <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 md:mb-10">
-                    <Link to="/work" className="font-sans text-[14px] font-normal text-accent hover:text-text transition-colors duration-200">
+                    <Link to="/work" className="font-sans text-[14px] md:text-[16px] font-normal text-accent hover:text-text transition-colors duration-200">
                         Case Studies
                     </Link>
-                    <span className="text-gray-300 text-[14px]">/</span>
-                    <span className="font-sans text-[14px] font-normal text-text" aria-current="page">
+                    <span className="text-gray-300 text-[14px] md:text-[16px]">/</span>
+                    <span className="font-sans text-[14px] md:text-[16px] font-normal text-text" aria-current="page">
                         {caseStudy.clientName || caseStudy.title}
                     </span>
                 </nav>
@@ -173,7 +173,7 @@ export default function WorkInner() {
                                 <strong className="text-[24px] font-sans font-medium text-text block leading-[32px]">
                                     {metric.value}
                                 </strong>
-                                <span className="font-sans text-[14px] font-normal text-gray-500">
+                                <span className="font-sans text-[14px] md:text-[15px] font-normal text-gray-500">
                                     {metric.label}
                                 </span>
                             </div>
@@ -195,7 +195,7 @@ export default function WorkInner() {
                                             <strong className="text-[24px] font-sans font-medium text-text block leading-[32px]">
                                                 {metric.value}
                                             </strong>
-                                            <span className="font-sans text-[14px] font-normal text-[#425466] leading-snug block mt-0.5">
+                                            <span className="font-sans text-[15px] font-normal text-[#425466] leading-snug block mt-0.5">
                                                 {metric.label}
                                             </span>
                                         </div>
@@ -208,15 +208,15 @@ export default function WorkInner() {
                                 <div className="border-t border-dashed border-gray-200 pt-6 mb-8 font-sans space-y-4">
                                     {caseStudy.industry && (
                                         <div>
-                                            <span className="text-[14px] font-normal text-[#727F96] block mb-0.5">Industry</span>
-                                            <span className="text-[14px] font-medium text-text">{caseStudy.industry}</span>
+                                            <span className="text-[15px] font-normal text-[#727F96] block mb-0.5">Industry</span>
+                                            <span className="text-[15px] font-medium text-text">{caseStudy.industry}</span>
                                         </div>
                                     )}
                                     {caseStudy.categories?.length > 0 && (
                                         <div>
-                                            <span className="text-[14px] font-normal text-[#727F96] block mb-1">Services Used</span>
+                                            <span className="text-[15px] font-normal text-[#727F96] block mb-1">Services Used</span>
                                             {caseStudy.categories.map((cat) => (
-                                                <span key={cat._id} className="text-[14px] font-medium text-text block leading-relaxed">
+                                                <span key={cat._id} className="text-[15px] font-medium text-text block leading-relaxed">
                                                     {cat.name}
                                                 </span>
                                             ))}
