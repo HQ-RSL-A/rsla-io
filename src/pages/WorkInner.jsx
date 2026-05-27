@@ -156,7 +156,7 @@ export default function WorkInner() {
                 </nav>
 
                 {/* Heading + intro */}
-                <h1 className="cs-hero opacity-0 text-[48px] md:text-[56px] font-sans font-medium leading-[56px] md:leading-[68px] tracking-[-0.02em] text-text mb-6">
+                <h1 className="cs-hero opacity-0 text-[48px] md:text-[56px] font-sans font-bold leading-[56px] md:leading-[68px] tracking-[-0.02em] text-text mb-6">
                     <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                         {caseStudy.title}
                     </TextAnimate>
@@ -314,7 +314,7 @@ export default function WorkInner() {
                         {/* Related blog posts */}
                         {caseStudy.relatedBlogPosts?.length > 0 && (
                             <aside className="cs-section opacity-0 mt-14 border-t border-dashed border-gray-200 pt-10">
-                                <h3 className="text-[24px] font-sans font-medium text-text mb-6">
+                                <h3 className="text-[24px] font-sans font-bold text-text mb-6">
                                     Related articles
                                 </h3>
                                 <div className="space-y-4">
@@ -351,7 +351,7 @@ export default function WorkInner() {
                         {/* Related case studies */}
                         {relatedCases.length > 0 && (
                             <aside className="cs-section opacity-0 mt-14">
-                                <h3 className="text-[24px] font-sans font-medium text-text mb-8">
+                                <h3 className="text-[24px] font-sans font-bold text-text mb-8">
                                     More results
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
