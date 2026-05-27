@@ -96,7 +96,7 @@ export default function Work() {
                     </TextAnimate>
                 </h1>
                 <p className="font-sans text-textMuted max-w-2xl mx-auto text-lg leading-relaxed">
-                    We don't sell promises. We sell engineered outcomes. Here is the proof.
+                    We help customers achieve measurable results
                 </p>
             </section>
 
