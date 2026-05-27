@@ -49,7 +49,7 @@ export default function WorkInner() {
                 if (isMounted) setCaseStudy(fetchedStudy);
 
                 let cases = fetchedStudy.relatedCases;
-                if (!cases || cases.length === 0) {
+                if (cases == null) {
                     const categorySlugs = (fetchedStudy.categories || []).map(c => c.slug);
                     cases = await client.fetch(relatedCaseStudiesQuery, {
                         slug,
