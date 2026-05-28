@@ -67,6 +67,14 @@ export default function CaseStudyCard({ data }) {
                 style={{ backgroundImage: `linear-gradient(to bottom, transparent 30%, ${data.thumbnailOverlayColor || '#000000'}cc 100%)` }}
             />
 
+            {/* Text readability scrim - heavy bottom gradient, adapts to any heading length */}
+            <div
+                className="absolute inset-x-0 bottom-0 h-4/5 pointer-events-none z-[3]"
+                style={{
+                    background: `linear-gradient(to bottom, transparent 0%, ${data.thumbnailOverlayColor || '#000000'} 100%)`
+                }}
+            />
+
             {/* Client logo - top left */}
             {logoUrl && (
                 <img
