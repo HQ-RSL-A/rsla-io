@@ -27,7 +27,7 @@ Investigated the "rsla.io" SERP site-name question. Code was already correct (We
 - **Auto-deploy did NOT fire** — the GitHub→Vercel webhook didn't trigger a build (almost certainly the repo's move from the `rahullalia` user to the `HQ-RSL-A` org broke the Git integration). Deployed manually via `vercel --prod` (`dpl_9CVYwgxYKgxYKdSm8Fu4jNEEH5t4`, READY, production, aliased to rsla.io). Verified live via Vercel authenticated fetch: telephone, priceRange `$$$`, Person `#rahul`, and the full `@id` graph are serving.
 
 ### Needs Rahul
-- **Reconnect Vercel ↔ GitHub** (Project Settings → Git) so pushes to `main` auto-deploy again. Until then, ship with `vercel --prod`.
+- **Git auto-deploy was broken** (two pushes, `722632e` and `7ef8fea`, never built, despite the Vercel link, GitHub App, and `createDeployments` all reading as correct). Reconnected via CLI on 2026-06-03 (`vercel git disconnect --yes` then `vercel git connect https://github.com/HQ-RSL-A/rsla-io.git`); the link re-bound with a fresh credential. This LOG commit is the verification push.
 - **Bot challenge** (`x-vercel-mitigated: challenge`) started returning 403 to non-browser clients on rsla.io after the deploy-verification traffic (real browsers unaffected). Likely auto-triggered by ~50 rapid checks and should relax; if it persists, check Firewall / Attack Challenge Mode in the Vercel dashboard (matters for non-JS AI crawlers).
 
 ### Low-value schemas left as-is (noted, not removed)
