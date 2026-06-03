@@ -180,19 +180,10 @@ export default function BlogInner() {
         ...(wordCount > 0 && { wordCount }),
         ...(post.seo?.targetKeyphrase && { keywords: post.seo.targetKeyphrase }),
         ...(firstCategory && { articleSection: firstCategory }),
-        author: {
-            '@type': 'Person',
-            name: post.author?.name || 'Rahul Lalia',
-            jobTitle: post.author?.role || 'Founder/CEO',
-            url: 'https://rsla.io/about',
-            ...(post.author?.linkedin && { sameAs: post.author.linkedin }),
-        },
-        publisher: {
-            '@type': 'Organization',
-            name: 'RSL/A',
-            url: 'https://rsla.io',
-            logo: { '@type': 'ImageObject', url: 'https://rsla.io/images/logo/lockup-nobg.webp', width: 400, height: 100 },
-        },
+        author: post.author?.name && post.author.name !== 'Rahul Lalia'
+            ? { '@type': 'Person', name: post.author.name, ...(post.author.role && { jobTitle: post.author.role }), ...(post.author.linkedin && { sameAs: post.author.linkedin }) }
+            : { '@id': 'https://rsla.io/#rahul' },
+        publisher: { '@id': 'https://rsla.io/#business' },
         mainEntityOfPage: { '@type': 'WebPage', '@id': `https://rsla.io/blog/${slug}` },
         isPartOf: { '@type': 'Blog', '@id': 'https://rsla.io/blog', name: 'RSL/A Blog' },
         speakable: {
@@ -243,21 +234,10 @@ export default function BlogInner() {
         })),
     } : null;
 
-    const softwareAppSchema = slug === 'go-high-level-pricing' ? {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'GoHighLevel',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web',
-        offers: [
-            { '@type': 'Offer', name: 'Starter', price: '97', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: '97', priceCurrency: 'USD', billingDuration: 'P1M' } },
-            { '@type': 'Offer', name: 'Unlimited', price: '297', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: '297', priceCurrency: 'USD', billingDuration: 'P1M' } },
-            { '@type': 'Offer', name: 'SaaS Pro', price: '497', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: '497', priceCurrency: 'USD', billingDuration: 'P1M' } },
-        ],
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', bestRating: '5', ratingCount: '4200', reviewCount: '2100' },
-    } : null;
+    // GoHighLevel SoftwareApplication schema intentionally removed: it described a third-party
+    // product (not ours) and carried unsourced review ratings, a Google review-snippet liability.
 
-    const jsonLdSchemas = [blogPostingSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(howToSchema ? [howToSchema] : []), ...(softwareAppSchema ? [softwareAppSchema] : [])];
+    const jsonLdSchemas = [blogPostingSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(howToSchema ? [howToSchema] : [])];
 
     return (
         <article className="min-h-screen bg-surface text-text pt-20 pb-24 relative">

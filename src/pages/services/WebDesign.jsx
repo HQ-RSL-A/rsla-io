@@ -114,7 +114,7 @@ export default function WebDesign2() {
     '@type': 'Service',
     name: service.title,
     description: service.metaDescription,
-    provider: { '@type': 'Organization', name: 'RSL/A', url: 'https://rsla.io' },
+    provider: { '@id': 'https://rsla.io/#business' },
     url: 'https://rsla.io/services/web-design',
     areaServed: { '@type': 'Country', name: 'US' },
   };

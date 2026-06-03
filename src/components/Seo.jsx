@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { globalSchemas } from '@/lib/structuredData.mjs';
 
 function setOrCreateMeta(attr, attrValue, content) {
     let el = document.querySelector(`meta[${attr}="${attrValue}"]`);
@@ -75,17 +76,20 @@ export default function Seo({ title, description, canonical, noIndex, ogImage, o
             removeMeta('name', 'robots');
         }
 
-        if (jsonLd) {
-            const schemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
-            document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
-            schemas.forEach((schema) => {
-                const script = document.createElement('script');
-                script.setAttribute('data-seo-jsonld', '');
-                script.type = 'application/ld+json';
-                script.textContent = JSON.stringify(schema).replace(/</g, '\\u003c');
-                document.head.appendChild(script);
-            });
-        }
+        // Always emit the global entity graph (Organization + WebSite) so the hydrated
+        // DOM matches the prerendered HTML. Indexed pages get the globals; noIndex pages
+        // get none, mirroring scripts/prerender.mjs inject().
+        const pageSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+        const globalNodes = noIndex ? [] : globalSchemas;
+        const schemas = [...globalNodes, ...pageSchemas];
+        document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
+        schemas.forEach((schema) => {
+            const script = document.createElement('script');
+            script.setAttribute('data-seo-jsonld', '');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(schema).replace(/</g, '\\u003c');
+            document.head.appendChild(script);
+        });
 
         return () => {
             removeMeta('name', 'description');

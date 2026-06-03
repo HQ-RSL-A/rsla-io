@@ -177,7 +177,7 @@ export default function Blog() {
                 jsonLd={{
                     '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Blog', url: 'https://rsla.io/blog',
                     description: 'Insights on marketing automation, AI systems, local SEO, and business growth strategies from RSL/A.',
-                    isPartOf: { '@type': 'WebSite', name: 'RSL/A', url: 'https://rsla.io' },
+                    isPartOf: { '@id': 'https://rsla.io/#website' },
                     mainEntity: { '@type': 'ItemList', itemListElement: posts.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://rsla.io/blog/${p.slug?.current || p.slug}`, name: p.title })) },
                 }}
             />

@@ -127,20 +127,26 @@ export default function WorkInner() {
                 canonical={`https://rsla.io/work/${slug}`}
                 ogImage={seoImage}
                 ogType="article"
-                jsonLd={{
-                    '@context': 'https://schema.org',
-                    '@type': 'Article',
-                    headline: caseStudy.title,
-                    description: caseStudy.tldr || '',
-                    datePublished: caseStudy.publishedAt || undefined,
-                    author: { '@type': 'Person', name: 'Rahul Lalia' },
-                    publisher: {
-                        '@type': 'Organization',
-                        name: 'RSL/A',
-                        logo: { '@type': 'ImageObject', url: 'https://rsla.io/images/logo/lockup-nobg.webp' },
+                jsonLd={[
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'Article',
+                        headline: caseStudy.title,
+                        description: caseStudy.tldr || '',
+                        datePublished: caseStudy.publishedAt || undefined,
+                        author: { '@id': 'https://rsla.io/#rahul' },
+                        publisher: { '@id': 'https://rsla.io/#business' },
+                        mainEntityOfPage: `https://rsla.io/work/${slug}`,
                     },
-                    mainEntityOfPage: `https://rsla.io/work/${slug}`,
-                }}
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            { '@type': 'ListItem', position: 1, name: 'Case Studies', item: 'https://rsla.io/work' },
+                            { '@type': 'ListItem', position: 2, name: caseStudy.title },
+                        ],
+                    },
+                ]}
             />
 
             <div className="max-w-6xl mx-auto relative z-10 px-5 md:px-12 pt-28 md:pt-32">

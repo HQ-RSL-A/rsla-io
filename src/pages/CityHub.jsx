@@ -73,7 +73,7 @@ export default function CityHub() {
     const professionalServiceSchema = {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
-        name: `RSL/A - ${city.name}`,
+        name: 'RSL/A',
         description: city.metaDescription,
         url: city.canonical,
         areaServed: {
@@ -84,12 +84,7 @@ export default function CityHub() {
                 name: city.areaServed.containedIn,
             },
         },
-        provider: {
-            '@type': 'Organization',
-            name: 'RSL/A',
-            url: 'https://rsla.io',
-            logo: 'https://rsla.io/images/logo/lockup-nobg.webp',
-        },
+        provider: { '@id': 'https://rsla.io/#business' },
     };
 
     const faqSchema = generateFaqSchema(city.faqs);

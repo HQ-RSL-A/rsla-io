@@ -45,20 +45,12 @@ export default function DiscoveryCall() {
                 jsonLd={{
                     '@context': 'https://schema.org',
                     '@type': 'ContactPage',
-                    name: 'Book a Growth Mapping Call',
+                    '@id': 'https://rsla.io/contact',
+                    name: 'Contact RSL/A',
                     url: 'https://rsla.io/contact',
                     description: 'Book a free 30-minute growth mapping call with RSL/A.',
-                    mainEntity: {
-                        '@type': 'Organization',
-                        name: 'RSL/A',
-                        url: 'https://rsla.io',
-                        contactPoint: {
-                            '@type': 'ContactPoint',
-                            contactType: 'sales',
-                            url: 'https://rsla.io/contact',
-                            availableLanguage: 'English',
-                        },
-                    },
+                    isPartOf: { '@id': 'https://rsla.io/#website' },
+                    about: { '@id': 'https://rsla.io/#business' },
                 }}
             />
             <div className="max-w-4xl mx-auto">

@@ -27,16 +27,22 @@ export default function ServiceLayout({ service, children, ctaOverride }) {
         return () => ctx.revert();
     }, []);
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rsla.io/' },
+            { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://rsla.io/services' },
+            { '@type': 'ListItem', position: 3, name: service.title, item: service.canonical },
+        ],
+    };
+
     const serviceSchema = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: service.title,
         description: service.metaDescription,
-        provider: {
-            '@type': 'Organization',
-            name: 'RSL/A',
-            url: 'https://rsla.io',
-        },
+        provider: { '@id': 'https://rsla.io/#business' },
         url: service.canonical,
         areaServed: {
             '@type': 'Country',
@@ -45,7 +51,7 @@ export default function ServiceLayout({ service, children, ctaOverride }) {
     };
 
     const faqSchema = generateFaqSchema(service.faqs);
-    const jsonLd = faqSchema ? [serviceSchema, faqSchema] : serviceSchema;
+    const jsonLd = [breadcrumbSchema, serviceSchema, ...(faqSchema ? [faqSchema] : [])];
 
     return (
         <main ref={pageRef} className="min-h-screen">

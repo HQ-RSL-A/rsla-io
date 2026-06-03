@@ -18,6 +18,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
 import { portableTextToMarkdown } from '../api/lib/portableTextToMarkdown.mjs';
+import { globalSchemas, businessRef, websiteRef, founderRef } from '../src/lib/structuredData.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(__dirname, '../dist');
@@ -32,48 +33,9 @@ const client = createClient({
 
 // ── Global Structured Data (included on every page) ──────────────────────────
 
-const globalSchemas = [
-  {
-    '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'ProfessionalService'],
-    '@id': `${SITE}/#business`,
-    name: 'RSL/A',
-    alternateName: ['RSLA', 'RSL/A', 'RSL A', 'RSL/A Agency'],
-    url: SITE,
-    logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp`, width: 400, height: 100 },
-    image: `${SITE}/images/logo/lockup-nobg.webp`,
-    description: "The trusted AI growth partner for fast-moving B2B companies. We build your website, get it found on Google and ChatGPT, and automate what's slowing you down.",
-    email: 'hello@rsla.io',
-    founder: { '@type': 'Person', name: 'Rahul Lalia', jobTitle: 'Founder & CEO', url: `${SITE}/about`, sameAs: 'https://www.linkedin.com/in/rahullalia/' },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Bakersfield',
-      addressRegion: 'CA',
-      postalCode: '93301',
-      addressCountry: 'US',
-    },
-    geo: { '@type': 'GeoCoordinates', latitude: 35.3733, longitude: -119.0187 },
-    areaServed: [
-      { '@type': 'Country', name: 'United States' },
-      { '@type': 'Country', name: 'Canada' },
-    ],
-    knowsAbout: ['AI Automation', 'Web Development', 'Search Engine Optimization', 'Answer Engine Optimization', 'GoHighLevel CRM', 'Marketing Automation', 'Local SEO', 'Content Marketing'],
-    sameAs: [
-      'https://www.instagram.com/rahul.lalia/',
-      'https://www.linkedin.com/in/rahullalia/',
-      'https://www.youtube.com/@rahul_lalia',
-      'https://www.tiktok.com/@rahul_lalia',
-      'https://x.com/rahul_lalia',
-    ],
-  },
-  {
-    '@context': 'https://schema.org', '@type': 'WebSite',
-    '@id': `${SITE}/#website`,
-    name: 'RSL/A', alternateName: ['RSLA', 'RSL/A', 'RSL A'],
-    url: SITE,
-    publisher: { '@id': `${SITE}/#business` },
-  },
-];
+// Global entity graph (Organization #business, WebSite #website, Person #rahul) is imported
+// from src/lib/structuredData.mjs and shared with the client (src/components/Seo.jsx), so the
+// prerendered HTML and the hydrated DOM can never drift.
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
 
@@ -152,10 +114,14 @@ function inject(tmpl, { title, description, canonical, jsonLd, html, ogImage, ke
   ];
   if (allSchemas.length) {
     const scripts = allSchemas.map(s => `<script type="application/ld+json" data-seo-jsonld>${escapeJsonLd(s)}</script>`).join('\n');
-    p = p.replace('</head>', `${scripts}\n</head>`);
+    // Function replacement so `$` sequences in JSON-LD (e.g. priceRange "$$$") are inserted
+    // literally. A string replacement would treat `$$`, `$&`, etc. as special and corrupt them.
+    p = p.replace('</head>', () => `${scripts}\n</head>`);
   }
 
-  p = p.replace('<div id="root"></div>', `<div id="root"><div id="prerender">${siteNav}${html}</div></div>`);
+  // Function replacement so dollar amounts in prerendered body copy (e.g. "$2,500", "save $$$")
+  // are inserted literally rather than interpreted as replacement-pattern tokens.
+  p = p.replace('<div id="root"></div>', () => `<div id="root"><div id="prerender">${siteNav}${html}</div></div>`);
 
   return p;
 }
@@ -263,18 +229,10 @@ function aboutContent() {
     canonical: `${SITE}/about`,
     keywords: 'Rahul Lalia, RSL/A founder, AI automation expert, marketing automation consultant, business systems builder',
     jsonLd: {
-      '@context': 'https://schema.org', '@type': 'Person',
-      name: 'Rahul Lalia', jobTitle: 'Founder & CEO',
-      url: `${SITE}/about`, image: `${SITE}/images/rahul.webp`,
-      description: 'Founder of RSL/A. Builds AI growth systems for B2B companies. Five years in marketing, automation, and business infrastructure.',
-      worksFor: { '@type': 'Organization', name: 'RSL/A', url: SITE },
-      sameAs: [
-        'https://www.linkedin.com/in/rahullalia/',
-        'https://www.instagram.com/rahul.lalia/',
-        'https://www.youtube.com/@rahul_lalia',
-        'https://www.tiktok.com/@rahul_lalia',
-        'https://github.com/rahullalia',
-      ],
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      '@id': `${SITE}/about`,
+      mainEntity: founderRef,
     },
     html: `<main>
 <h1>"What a privilege to be tired from work you once begged the universe for..."</h1>
@@ -317,10 +275,8 @@ function servicesContent() {
     canonical: `${SITE}/services`,
     keywords: 'local seo services, local seo for small business, web design agency, AI automation, CRM setup, marketing agency, local seo packages',
     jsonLd: {
-      '@context': 'https://schema.org', '@type': 'ProfessionalService',
-      name: 'RSL/A', url: `${SITE}/services`,
-      description: 'End-to-end AI systems that generate leads, close deals, and scale operations. Built and managed by a team that has done it across SMBs and enterprise.',
-      provider: { '@type': 'Organization', name: 'RSL/A', url: SITE },
+      '@context': 'https://schema.org',
+      '@id': `${SITE}/#business`,
       hasOfferCatalog: {
         '@type': 'OfferCatalog', name: 'AI Services',
         itemListElement: [
@@ -755,10 +711,12 @@ function contactContent() {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
+      '@id': `${SITE}/contact`,
       name: 'Contact RSL/A',
       url: `${SITE}/contact`,
       description: 'Book a free 30-minute growth mapping call with RSL/A.',
-      isPartOf: { '@type': 'WebSite', name: 'RSL/A', url: SITE },
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: { '@id': `${SITE}/#business` },
     },
     html: `<main>
 <h1>Book a free growth mapping call.</h1>
@@ -920,10 +878,19 @@ function serviceDetailContent(slug) {
     jsonLd: [
       {
         '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
+          { '@type': 'ListItem', position: 3, name: s.title, item: `${SITE}/services/${slug}` },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'Service',
         name: s.title,
         description: s.metaDescription,
-        provider: { '@type': 'Organization', name: 'RSL/A', url: SITE },
+        provider: businessRef,
         url: `${SITE}/services/${slug}`,
         areaServed: { '@type': 'Country', name: 'US' },
       },
@@ -1026,7 +993,7 @@ function cityHubContent(slug) {
         name: 'RSL/A',
         url: c.canonical,
         description: c.metaDescription,
-        provider: { '@type': 'Organization', name: 'RSL/A', url: SITE },
+        provider: businessRef,
         areaServed: {
           '@type': 'City',
           name: 'Bakersfield',
@@ -1200,7 +1167,7 @@ function blogListingContent(posts) {
     jsonLd: {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
       name: 'Blog', url: `${SITE}/blog`,
-      isPartOf: { '@type': 'WebSite', name: 'RSL/A', url: SITE },
+      isPartOf: websiteRef,
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: posts.map((p, i) => ({
@@ -1237,7 +1204,7 @@ function workListingContent(caseStudies) {
     jsonLd: {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
       name: 'Case Studies', url: `${SITE}/work`,
-      isPartOf: { '@type': 'WebSite', name: 'RSL/A', url: SITE },
+      isPartOf: websiteRef,
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: caseStudies.map((cs, i) => ({
@@ -1284,14 +1251,10 @@ function blogPostContent(post) {
       ...(ogImage && { image: ogImage }),
       ...(post.seo?.targetKeyphrase && { keywords: post.seo.targetKeyphrase }),
       ...(firstCategoryName && { articleSection: firstCategoryName }),
-      author: {
-        '@type': 'Person',
-        name: post.author?.name || 'Rahul Lalia',
-        jobTitle: post.author?.role || 'Founder/CEO',
-        url: `${SITE}/about`,
-        ...(post.author?.linkedin && { sameAs: post.author.linkedin }),
-      },
-      publisher: { '@type': 'Organization', name: 'RSL/A', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp`, width: 400, height: 100 } },
+      author: post.author?.name && post.author.name !== 'Rahul Lalia'
+        ? { '@type': 'Person', name: post.author.name, ...(post.author.role && { jobTitle: post.author.role }), ...(post.author.linkedin && { sameAs: post.author.linkedin }) }
+        : founderRef,
+      publisher: businessRef,
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
       isPartOf: { '@type': 'Blog', '@id': `${SITE}/blog`, name: 'RSL/A Blog' },
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.tldr', '.key-takeaways'] },
@@ -1380,8 +1343,8 @@ function caseStudyContent(cs) {
       datePublished: cs.publishedAt,
       ...(cs.updatedAt && { dateModified: cs.updatedAt }),
       ...(ogImage && { image: ogImage }),
-      author: { '@type': 'Person', name: 'Rahul Lalia' },
-      publisher: { '@type': 'Organization', name: 'RSL/A', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp` } },
+      author: founderRef,
+      publisher: businessRef,
     },
     {
       '@context': 'https://schema.org', '@type': 'BreadcrumbList',

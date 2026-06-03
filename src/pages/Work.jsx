@@ -76,7 +76,7 @@ export default function Work() {
                     name: 'Case Studies',
                     url: 'https://rsla.io/work',
                     description: 'Real results from real clients. See how RSL/A uses AI automation, paid ads, and CRM systems to drive measurable growth.',
-                    isPartOf: { '@type': 'WebSite', name: 'RSL/A', url: 'https://rsla.io' },
+                    isPartOf: { '@id': 'https://rsla.io/#website' },
                     mainEntity: {
                         '@type': 'ItemList',
                         itemListElement: caseStudies.map((cs, i) => ({

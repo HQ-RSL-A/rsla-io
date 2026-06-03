@@ -1,5 +1,111 @@
 # LOG.md - rslaWebsite
 
+## 2026-06-03 - Structured-data graph tidy + full schema audit
+
+### What happened
+Investigated the "rsla.io" SERP site-name question. Code was already correct (WebSite `name`, `og:site_name`, and `<title>` all say "RSL/A", crawled clean Jun 2). Google defaults to the bare domain because the de-slashed brand equals the domain, and GBP already shows "RSL/A". Then tidied the structured-data graph and audited every schema on the site.
+
+### Changes
+- **New `src/lib/structuredData.mjs`**: single source of truth for the global entity graph (Organization/LocalBusiness `#business` + WebSite `#website`). Both `scripts/prerender.mjs` and `src/components/Seo.jsx` import it, so prerendered and hydrated DOM can never drift.
+- **`Seo.jsx` now always injects the global nodes** (gated on `!noIndex`). Before, it stripped the prerendered globals on hydration and inner pages never re-added them, so every non-home page silently lost Organization/WebSite after JS loaded.
+- **`Home.jsx`**: removed duplicate inline Organization + WebSite (the client `Organization` also disagreed with the prerender `LocalBusiness`).
+- **Founder Person now has a stable `@id` (`#rahul`)** for cumulative E-E-A-T and future ProfilePage linking.
+- **Removed a fabricated `aggregateRating`** (4.5, 4,200 ratings) from the GoHighLevel `SoftwareApplication` on the go-high-level-pricing post. Client-only, unsourced, third-party product: a review-snippet guidelines liability.
+- Verified: `vite build` + prerender (48 pages) + build validator all pass.
+
+### Then implemented (full graph connect + drift kill + NAP)
+- **Promoted Rahul to a canonical Person node** (`#rahul`) in structuredData.mjs, global on every indexed page. Org `founder` and all blog/case-study authors reference it by `@id`; `/about` is now a `ProfilePage` whose `mainEntity` points at it. Cumulative E-E-A-T.
+- **Added `telephone` (+1-661-466-5919) and `priceRange` ($$$)** to the LocalBusiness node for GBP/citation NAP corroboration.
+- **Connected the entity graph via `@id`**: blog/work listings `isPartOf` → `#website`; service/case-study/blog `provider`/`publisher`/`author` → `#business`/`#rahul`; `/services` folded into `#business` + offer catalog (removed the duplicate ProfessionalService node).
+- **Killed per-page drift**: added breadcrumb to case studies (client) and all 5 service pages (client + prerender); reconciled the contact page schema so client + prerender are identical (ContactPage → about `#business`, isPartOf `#website`); fixed the Bakersfield node name.
+- **Removed the GoHighLevel SoftwareApplication** entirely.
+- **Fixed a prerender bug**: `inject()` used `String.replace(str, str)`, which treats `$$`/`$&` as special replacement tokens and corrupted dollar sequences (priceRange "$$$" rendered as "$$"; latent risk to all `$` body copy). Switched the JSON-LD and body injections to function-form replacements.
+- Every change applied on BOTH layers (prerender static HTML + client hydrated DOM). Verified: vite build + prerender (48 pages) + validator pass; rendered `dist` spot-checked across home/about/services/service-detail/blog-listing/contact/blog-post/case-study.
+
+### Needs Rahul
+- Confirm **661-466-5919** is the canonical phone (the 2026-06-01 entry had it as switched-to but pending GBP verification). One-line change in `src/lib/structuredData.mjs` if not.
+- Changes are NOT committed or deployed yet.
+
+### Low-value schemas left as-is (noted, not removed)
+- HowTo (Google deprecated the rich result; semantic/AEO value only), FAQPage (AEO-only since the 2025 rich-result removal, still worth keeping). Both fine to keep.
+
+## 2026-06-01 - Google Business Profile Optimization (local SEO foundation)
+
+### What happened
+Optimized RSL/A's GBP end to end as the local SEO foundation (own Bakersfield, then expand via pSEO). Web-verified the home-based service-area-business approach against Google guidelines + Sterling Sky, audited the live profile, and finalized name, categories, description, phone, and service-area strategy. Next step is turning on LeadSnap citations.
+
+### Decisions
+- **Service-area business, address hidden.** Home-based, no walk-ins. The account is on the "no stored address" variant (GBP only lets you add an address if you show it publicly, so it's left off by design). Legitimate and Google-endorsed for home-based businesses.
+- **Primary category Marketing agency.** Secondaries: Internet marketing service, Website designer, Advertising agency. Drop Software company + Business management consultant (dilute relevance).
+- **Service areas Bakersfield + Kern County only.** Removed the over-broad US / NY / CA / LA / SF list. Big-city reach comes from pSEO pages, not GBP service areas. GBP ranks by proximity to the verified location, not the area list.
+- **Phone switched to local 661-466-5919** (from the NY 516 number) for local trust + signal, locked before citations cement it.
+- **Citations + reviews are now the top ranking levers.** With no stored address, citations (carrying the real hidden home address) become Google's main location-corroboration signal.
+
+### Final description (pasted; goes live once verification clears)
+> RSL/A is a marketing and AI automation agency in Bakersfield. The idea is simple. We build the systems that run your marketing, so you can get back to running your business.
+>
+> In practice that means websites that turn visitors into customers, local SEO that gets you found on Google, and showing up inside AI tools like ChatGPT too. We also handle your GoHighLevel and CRM, plus the AI agents and automations that work your leads, follow up, and clear the busywork.
+>
+> What makes us different is the analytics background. You get to see what's actually working, with real numbers on a dashboard.
+>
+> We work with founders and local businesses around Bakersfield and Kern County. If that's you, let's talk.
+
+### Incomplete / next steps
+- [ ] **Provide home address** to build the canonical NAP record (citations submit it, hidden via each directory's SAB setting).
+- [ ] **Confirm GBP verification cleared + edits live** (profile showed a pending "verify you manage this business" notice, likely re-triggered by the phone change).
+- [ ] **Confirm 661 is primary, 516 removed**, and 516 never enters a citation.
+- [ ] Trim service areas if not already done; drop the 2 weak categories.
+- [ ] Add to profile: 10 services, photos, 5 Q&As, first Google Post.
+- [ ] **Turn on LeadSnap citations** with the canonical NAP once address + verification are confirmed.
+- [ ] Add **LocalBusiness JSON-LD** to rsla.io matching the NAP (ties site + GBP + citations to one entity).
+- [ ] Reviews: get the first 5 fast, then a steady drip.
+- [ ] Then: Bakersfield pSEO; finish remaining case studies in the new format.
+
+Config reference: BRAIN.md (Local SEO / Google Business Profile) + auto-memory `project_gbp_setup.md`.
+
+---
+
+## 2026-05-27 - Case Study Overhaul (5 of 12 complete)
+
+### What happened
+Rewrote 5 case studies with voice DNA + humanizer treatment, consistent framework, and new data. Created 1 new case study (RSL/A organic growth) from raw analytics data. Two code changes pushed to main.
+
+### Case studies completed
+1. **RSL/A organic growth** (NEW) - created from GA4/GSC/SEMrush data, SEO+AEO self-case-study
+2. **Fieldshare** - full rewrite with ChatGPT citation screenshot, homepage screenshot, GSC chart, video embed
+3. **Anchor Safety** - rewrite with new Notion dark mode screenshots, testimonial drafted
+4. **Casagrande Salon** - rewrite with testimonial moved to proper fields, video testimonial to testimonialMedia
+5. **Cold Email Personalization** - headings standardized, bold:colon bullets fixed, kept blueprint download
+
+### Case study framework established
+- First-person "We..." titles
+- TLDR = company intro (not summary)
+- Body: The Problem → The Solution → The Results (Title Case headings)
+- Stats card in Results section
+- No dividers, no bold:colon bullet patterns, no tech stack (removed from newer ones)
+- Voice DNA + humanizer pass on all content
+- Testimonial text + media in dedicated Sanity fields (not inline blockquotes)
+- relatedCases: [] on all (prevents "More results" fallback)
+- CTA URLs: /contact (not absolute)
+- Meta titles without " | RSL/A" (component adds it)
+- Backdated publishedAt for natural appearance
+
+### Code changes
+- `WorkInner.jsx`: Fixed relatedCases fallback - empty array now means "show nothing", only null/undefined triggers category-based fallback. Commit: `8298f33`
+- `Work.jsx`: Updated subtitle to "We help customers achieve measurable results". Commit: `b3fa015`
+
+### Images uploaded to Sanity
+- RSL/A: SEMrush domain overview, GSC chart (testimonial media)
+- Fieldshare: SEMrush overview, homepage screenshot, GSC chart, ChatGPT citation screenshot
+- Anchor Safety: 2 new Notion dark mode screenshots (task dashboard, expense tracker)
+
+### Still pending
+- 7 case studies need rewriting: Proposal Generator, AdReviveAI SaaS Build, Spice on a Slice, AI Auto-Responder, Field Service Operations, Content Pipeline, Nonprofit Volunteer Automation
+- Fieldshare: ChatGPT screenshot needs reordering in Sanity Studio (appended to end, should be in AI Search Visibility section)
+- Other unpublished case studies (9 total) have status: draft and need the same treatment
+
+---
+
 ## 2026-05-08 - Fix "Crawled - Currently Not Indexed" (GSC Permanent Fix)
 
 ### What happened

@@ -110,35 +110,7 @@ export default function Home() {
                 keywords="AI growth partner, custom B2B website, AI website agency, SEO for B2B, AI automation, ChatGPT visibility"
                 canonical="https://rsla.io"
                 jsonLd={[
-                    {
-                        '@context': 'https://schema.org',
-                        '@type': 'Organization',
-                        name: 'RSL/A',
-                        alternateName: ['RSLA', 'RSL/A', 'RSL A', 'RSL/A Agency'],
-                        url: 'https://rsla.io',
-                        logo: 'https://rsla.io/images/logo/lockup-nobg.webp',
-                        description:
-                            "The trusted AI growth partner for fast-moving B2B companies. We build your website, get it found on Google and ChatGPT, and automate what's slowing you down.",
-                        founder: {
-                            '@type': 'Person',
-                            name: 'Rahul Lalia',
-                            jobTitle: 'Founder & CEO',
-                        },
-                        sameAs: [
-                            'https://www.instagram.com/rahul.lalia/',
-                            'https://www.linkedin.com/in/rahullalia/',
-                            'https://www.youtube.com/@rahul_lalia',
-                            'https://www.tiktok.com/@rahul_lalia',
-                            'https://x.com/rahul_lalia',
-                        ],
-                    },
-                    {
-                        '@context': 'https://schema.org',
-                        '@type': 'WebSite',
-                        name: 'RSL/A',
-                        alternateName: ['RSLA', 'RSL/A', 'RSL A'],
-                        url: 'https://rsla.io',
-                    },
+                    /* Organization + WebSite are injected globally via Seo.jsx (src/lib/structuredData.mjs) */
                     {
                         '@context': 'https://schema.org',
                         '@type': 'FAQPage',

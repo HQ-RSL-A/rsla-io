@@ -56,15 +56,7 @@ export default function Services() {
                 canonical="https://rsla.io/services"
                 jsonLd={{
                     '@context': 'https://schema.org',
-                    '@type': 'ProfessionalService',
-                    name: 'RSL/A',
-                    url: 'https://rsla.io/services',
-                    description: 'End-to-end AI systems that generate leads, close deals, and scale operations. Built and managed by a team that has done it across SMBs and enterprise.',
-                    provider: {
-                        '@type': 'Organization',
-                        name: 'RSL/A',
-                        url: 'https://rsla.io',
-                    },
+                    '@id': 'https://rsla.io/#business',
                     hasOfferCatalog: {
                         '@type': 'OfferCatalog',
                         name: 'AI Services',
