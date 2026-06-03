@@ -22,9 +22,13 @@ Investigated the "rsla.io" SERP site-name question. Code was already correct (We
 - **Fixed a prerender bug**: `inject()` used `String.replace(str, str)`, which treats `$$`/`$&` as special replacement tokens and corrupted dollar sequences (priceRange "$$$" rendered as "$$"; latent risk to all `$` body copy). Switched the JSON-LD and body injections to function-form replacements.
 - Every change applied on BOTH layers (prerender static HTML + client hydrated DOM). Verified: vite build + prerender (48 pages) + validator pass; rendered `dist` spot-checked across home/about/services/service-detail/blog-listing/contact/blog-post/case-study.
 
+### Deployed (live on rsla.io)
+- Phone 661-466-5919 confirmed canonical. Committed `722632e`, pushed to `HQ-RSL-A/rsla-io` main.
+- **Auto-deploy did NOT fire** — the GitHub→Vercel webhook didn't trigger a build (almost certainly the repo's move from the `rahullalia` user to the `HQ-RSL-A` org broke the Git integration). Deployed manually via `vercel --prod` (`dpl_9CVYwgxYKgxYKdSm8Fu4jNEEH5t4`, READY, production, aliased to rsla.io). Verified live via Vercel authenticated fetch: telephone, priceRange `$$$`, Person `#rahul`, and the full `@id` graph are serving.
+
 ### Needs Rahul
-- Confirm **661-466-5919** is the canonical phone (the 2026-06-01 entry had it as switched-to but pending GBP verification). One-line change in `src/lib/structuredData.mjs` if not.
-- Changes are NOT committed or deployed yet.
+- **Reconnect Vercel ↔ GitHub** (Project Settings → Git) so pushes to `main` auto-deploy again. Until then, ship with `vercel --prod`.
+- **Bot challenge** (`x-vercel-mitigated: challenge`) started returning 403 to non-browser clients on rsla.io after the deploy-verification traffic (real browsers unaffected). Likely auto-triggered by ~50 rapid checks and should relax; if it persists, check Firewall / Attack Challenge Mode in the Vercel dashboard (matters for non-JS AI crawlers).
 
 ### Low-value schemas left as-is (noted, not removed)
 - HowTo (Google deprecated the rich result; semantic/AEO value only), FAQPage (AEO-only since the 2025 rich-result removal, still worth keeping). Both fine to keep.
