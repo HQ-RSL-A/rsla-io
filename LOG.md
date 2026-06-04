@@ -28,6 +28,18 @@ Investigated the "rsla.io" SERP site-name question. Code was already correct (We
 
 ### Needs Rahul
 - **Git auto-deploy was broken** (two pushes, `722632e` and `7ef8fea`, never built, despite the Vercel link, GitHub App, and `createDeployments` all reading as correct). FIXED via CLI on 2026-06-03 (`vercel git disconnect --yes` then `vercel git connect https://github.com/HQ-RSL-A/rsla-io.git`), which re-bound the link to a fresh credential. The plain reconnect was a no-op (non-interactive disconnect defaults to "no"); the `--yes` force was required. Verified: the next push (`3eb5bbd`) auto-built within ~15s. Pushes to `main` deploy automatically again.
+
+### Repo housekeeping (commit 530fb43)
+- Committed `BRAIN.md` (GBP reference section) + `content/posts/gohighlevel-updates-2026-rewrite.md` (Phase-B rewrite draft, joins the other 38).
+- Gitignored `caseStudyData/` (local SEMrush/GSC research behind the fieldshare + rsla case studies; kept on disk, out of the repo).
+- Removed `scripts/fixRelatedPostKeys.mjs` (one-off; verified done, 0 duplicate `relatedPosts` keys across all 18 published posts).
+- Docs updated: `CLAUDE.md`/`GEMINI.md` (fixed stale GitHub ref → `HQ-RSL-A/rsla-io`; added gotchas for structured-data single source, prerender `$`-replacement, git auto-deploy reconnect, Vercel bot challenge); `BRAIN.md` (rewrote the SEO entity-graph section, added `structuredData.mjs` to Key Files).
+
+### Next steps (cold pickup)
+- The "rsla.io" SERP site name is Google's call (brand ≈ domain + the slash), NOT a code bug. All signals are correct; the only lever is brand authority over time. Nothing to fix in code.
+- Optional: relocate `caseStudyData/` into a dedicated research/archive folder (organization preference only).
+- Publish the GHL rewrite draft to Sanity when ready (part of the Phase-B blog overhaul).
+- Standing TODO list lives in `BRAIN.md > TODO (Next Session)`.
 - **Bot challenge** (`x-vercel-mitigated: challenge`) started returning 403 to non-browser clients on rsla.io after the deploy-verification traffic (real browsers unaffected). Likely auto-triggered by ~50 rapid checks and should relax; if it persists, check Firewall / Attack Challenge Mode in the Vercel dashboard (matters for non-JS AI crawlers).
 
 ### Low-value schemas left as-is (noted, not removed)

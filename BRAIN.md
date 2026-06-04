@@ -26,6 +26,8 @@ src/
     WorkInner.jsx          # /work/:slug (service page cross-links via servicesUsed)
     ServiceDetail.jsx      # /services/:slug (noIndexed, links to related case studies)
     IndustryPage.jsx       # /ai-for/:slug (Hormozi-inspired pSEO template)
+  lib/
+    structuredData.mjs     # Global JSON-LD entity graph (#business/#website/#rahul); imported by prerender + Seo
 api/
   llm/[slug].mjs           # Vercel serverless: returns markdown for any blog/case study
   subscribe.mjs            # Newsletter subscription proxy (Upstash rate limiting)
@@ -84,10 +86,11 @@ docs/
 
 ## SEO / AEO / GEO
 
-- `Seo.jsx` uses `useEffect` to set `document.title`, meta tags, og:locale, and JSON-LD
-- JSON-LD on all indexed pages: Organization, WebSite, FAQPage (home), Person (about), ProfessionalService (services), BlogPosting + BreadcrumbList + SpeakableSpecification (blog posts), Article + BreadcrumbList (case studies), ContactPage (contact), CollectionPage (blog/work listings)
-- BlogPosting schema includes: `wordCount`, `speakable` (targets `.tldr` + `.key-takeaways`), `dateModified` (editorial `updatedAt` with `_updatedAt` fallback)
-- All prerender schemas sync with React component schemas (FAQ, BlogPosting dateModified/image, publisher.logo, speakable)
+- `Seo.jsx` (`useEffect`) sets `document.title`, meta tags, og:locale, and JSON-LD per page
+- **Global entity graph** in `src/lib/structuredData.mjs` (single source of truth; imported by both `prerender.mjs` and `Seo.jsx`, so static HTML and hydrated DOM match): `#business` (LocalBusiness/ProfessionalService, with telephone + priceRange NAP), `#website` (WebSite), `#rahul` (Person: founder + canonical author). Emitted on every indexed page; `Seo.jsx` re-injects them on `!noIndex` routes
+- **Page nodes reference the graph by `@id`** (no inline duplicates): FAQPage (home); ProfilePage→`#rahul` (about); `#business` + OfferCatalog (services); Service + BreadcrumbList (service details); CollectionPage `isPartOf`→`#website` (blog/work listings); BlogPosting (`author`→`#rahul`, `publisher`→`#business`) + BreadcrumbList + Speakable (blog posts); Article + BreadcrumbList (case studies); ContactPage `about`→`#business` (contact)
+- BlogPosting schema includes: `wordCount`, `speakable` (`.tldr` + `.key-takeaways`), `dateModified` (editorial `updatedAt`, `_updatedAt` fallback)
+- No fabricated review markup (a bogus GoHighLevel `aggregateRating` + third-party SoftwareApplication were removed 2026-06-03)
 - Pre-rendered nav on all pages for internal link discovery
 - Related posts fallback: category-matched posts when `relatedPosts` is empty
 - IndexNow key: `42f4e2d222a8441d91b82a1d06d0db72`
