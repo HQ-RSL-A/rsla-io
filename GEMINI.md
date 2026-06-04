@@ -5,7 +5,7 @@
 RSL/A agency website at rsla.io. React 19 + Vite SPA with GSAP animations, Sanity CMS for blogs and case studies. Blue-gray light theme. This is also the content production hub for all blog writing, case study drafting, and SEO work.
 
 **Live:** rsla.io (Vercel, auto-deploys from `main`)
-**GitHub:** `rahullalia/new-rslaWebsite`
+**GitHub:** `HQ-RSL-A/rsla-io` (moved from `rahullalia/new-rslaWebsite`)
 **Studio:** studio.rsla.io (separate repo in `../rslaStudio/`)
 
 ## Permissions
@@ -57,6 +57,10 @@ npm run build      # Production build (includes sitemap + RSS + llms.txt + Index
 - **Blog writing skill:** `/blogEngine` (lives in `~/lalia/myBusiness/skills/blogEngine/`).
 - **Blog pipeline:** Interview -> outline -> draft -> voice audit -> Sanity creation -> image generation -> upload -> publish -> post-publish (cross-links, GSC indexing, tracker update).
 - **Build chain:** `vite build -> prerender -> sitemap -> rss -> llms.txt -> IndexNow ping`
+- **Structured data = one source of truth.** `src/lib/structuredData.mjs` holds the global entity graph (`#business` LocalBusiness/ProfessionalService with telephone + priceRange NAP, `#website` WebSite, `#rahul` Person/founder/author). Both `scripts/prerender.mjs` and `src/components/Seo.jsx` import it, so static HTML and hydrated DOM never drift. `Seo.jsx` always injects these globals on indexed pages (gated on `!noIndex`). Page schemas reference them by `@id` (`provider`/`publisher`/`author`/`isPartOf`), never re-declared inline. No fabricated review markup.
+- **Prerender `$` injection.** In `inject()`, insert dynamic content with function-form replacements (`str.replace(target, () => value)`). String replacements treat `$$`/`$&`/`$n` as special tokens and corrupt dollar sequences (e.g. `priceRange "$$$"` rendered `"$$"`, and any dollar amount in body copy).
+- **Git auto-deploy + reconnect.** Pushes to `main` on `HQ-RSL-A/rsla-io` auto-deploy via Vercel. If auto-deploy silently stops (e.g. after a repo/org transfer, even while the Vercel link, GitHub App, and `createDeployments` all read healthy), reconnect: `vercel git disconnect --yes` then `vercel git connect https://github.com/HQ-RSL-A/rsla-io.git` (plain `disconnect` is a no-op non-interactively; `--yes` is required). Manual deploy any time: `vercel --prod`.
+- **Vercel bot challenge.** Rapid automated/`curl` hits on rsla.io return `403 x-vercel-mitigated: challenge` (real browsers solve it transparently). To read live HTML programmatically, use the Vercel MCP `web_fetch_vercel_url` (authenticated, bypasses it); don't hammer the domain.
 - **Brand reference:** All brand docs live in `../brandGuidelines/`.
 
 ## Documentation Convention
