@@ -1,4 +1,4 @@
-# GEMINI.md — rslaWebsite
+# GEMINI.md - rslaWebsite
 
 ## What This Is
 

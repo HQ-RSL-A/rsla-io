@@ -24,7 +24,7 @@ Investigated the "rsla.io" SERP site-name question. Code was already correct (We
 
 ### Deployed (live on rsla.io)
 - Phone 661-466-5919 confirmed canonical. Committed `722632e`, pushed to `HQ-RSL-A/rsla-io` main.
-- **Auto-deploy did NOT fire** — the GitHub→Vercel webhook didn't trigger a build (almost certainly the repo's move from the `rahullalia` user to the `HQ-RSL-A` org broke the Git integration). Deployed manually via `vercel --prod` (`dpl_9CVYwgxYKgxYKdSm8Fu4jNEEH5t4`, READY, production, aliased to rsla.io). Verified live via Vercel authenticated fetch: telephone, priceRange `$$$`, Person `#rahul`, and the full `@id` graph are serving.
+- **Auto-deploy did NOT fire**: the GitHub→Vercel webhook didn't trigger a build (almost certainly the repo's move from the `rahullalia` user to the `HQ-RSL-A` org broke the Git integration). Deployed manually via `vercel --prod` (`dpl_9CVYwgxYKgxYKdSm8Fu4jNEEH5t4`, READY, production, aliased to rsla.io). Verified live via Vercel authenticated fetch: telephone, priceRange `$$$`, Person `#rahul`, and the full `@id` graph are serving.
 
 ### Needs Rahul
 - **Git auto-deploy was broken** (two pushes, `722632e` and `7ef8fea`, never built, despite the Vercel link, GitHub App, and `createDeployments` all reading as correct). FIXED via CLI on 2026-06-03 (`vercel git disconnect --yes` then `vercel git connect https://github.com/HQ-RSL-A/rsla-io.git`), which re-bound the link to a fresh credential. The plain reconnect was a no-op (non-interactive disconnect defaults to "no"); the `--yes` force was required. Verified: the next push (`3eb5bbd`) auto-built within ~15s. Pushes to `main` deploy automatically again.
