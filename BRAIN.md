@@ -108,6 +108,19 @@ docs/
 - **CTR:** <0.1% on top pages (position-based, titles are well-optimized)
 - **Content split:** 80% organic from GHL content, 15% from Claude/AI content, 5% from local SEO
 
+## Local SEO / Google Business Profile
+
+- **Model:** Service-area business, address hidden (home-based, no walk-ins). Account is on the "no stored address" variant, so no public or back-end street address. Profile is verified.
+- **Canonical NAP** (must match exactly across GBP, LeadSnap citations, and the site's LocalBusiness schema):
+  - Name: `RSL/A`
+  - Address: home address, hidden (pending capture for the NAP record)
+  - Phone: `(661) 466-5919` (local Bakersfield; replaced the old NY 516 number)
+  - Website: `https://rsla.io` (clean URL on citations; the UTM-tagged version is GBP-only)
+- **Categories:** Primary `Marketing agency`. Secondaries: Internet marketing service, Website designer, Advertising agency.
+- **Service areas:** Bakersfield + Kern County only. Big-city reach comes from pSEO, not GBP (GBP ranks by proximity to the verified location, not the service-area list).
+- **Strategy:** No stored address means citations + reviews carry the location and prominence signal. Keep Name + Phone + Website identical everywhere. Eligibility requires some genuine in-person local client contact.
+- Full config + rationale: auto-memory `project_gbp_setup.md`.
+
 ## Typography
 
 | Font | CSS Class | Role |
