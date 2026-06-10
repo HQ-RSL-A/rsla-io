@@ -51,9 +51,9 @@ export const organizationNode = {
   ],
   knowsAbout: ['AI Automation', 'Web Development', 'Search Engine Optimization', 'Answer Engine Optimization', 'GoHighLevel CRM', 'Marketing Automation', 'Local SEO', 'Content Marketing'],
   sameAs: [
+    'https://www.linkedin.com/company/rsl-a/',
+    'https://www.facebook.com/rsla.io/',
     'https://www.instagram.com/rahul.lalia/',
-    'https://www.linkedin.com/in/rahullalia/',
-    'https://www.youtube.com/@rahul_lalia',
     'https://www.tiktok.com/@rahul_lalia',
     'https://x.com/rahul_lalia',
   ],
