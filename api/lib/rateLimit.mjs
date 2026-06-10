@@ -8,6 +8,15 @@ const redis = process.env.UPSTASH_REDIS_REST_URL
     })
     : null;
 
+if (!redis) {
+    // Fail-open is intentional (a Redis outage must not take down the forms), but a
+    // permanently missing config silently removes all rate limiting. Make that visible.
+    console.warn(
+        '[rateLimit] UPSTASH_REDIS_REST_URL is not set - rate limiting is DISABLED (fail-open). ' +
+        'Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN to enable it.'
+    );
+}
+
 export function createRateLimiter(limit, window) {
     if (!redis) return null;
     return new Ratelimit({

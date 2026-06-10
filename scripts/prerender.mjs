@@ -17,6 +17,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
+import sanitizeHtml from 'sanitize-html';
 import { portableTextToMarkdown } from '../api/lib/portableTextToMarkdown.mjs';
 import { globalSchemas, businessRef, websiteRef, founderRef } from '../src/lib/structuredData.mjs';
 
@@ -69,40 +70,43 @@ function escapeJsonLd(schema) {
 function inject(tmpl, { title, description, canonical, jsonLd, html, ogImage, keywords, noIndex }) {
   let p = tmpl;
 
-  p = p.replace(/<title>.*?<\/title>/, `<title>${esc(title)}</title>`);
+  // All content replacements use function-form (() => value) so `$` sequences in the
+  // injected value (e.g. "Save $$$", "$2,500", a stray "$&") are inserted literally.
+  // A plain string replacement treats `$$`, `$&`, `` $` ``, `$'` as special and corrupts output.
+  p = p.replace(/<title>.*?<\/title>/, () => `<title>${esc(title)}</title>`);
   p = p.replace(
     /<meta name="description" content="[^"]*" \/>/,
-    `<meta name="description" content="${esc(description)}" />`
+    () => `<meta name="description" content="${esc(description)}" />`
   );
 
   if (keywords) {
     if (p.includes('<meta name="keywords"')) {
-      p = p.replace(/<meta name="keywords" content="[^"]*" \/>/, `<meta name="keywords" content="${esc(keywords)}" />`);
+      p = p.replace(/<meta name="keywords" content="[^"]*" \/>/, () => `<meta name="keywords" content="${esc(keywords)}" />`);
     } else {
-      p = p.replace('</head>', `<meta name="keywords" content="${esc(keywords)}" />\n</head>`);
+      p = p.replace('</head>', () => `<meta name="keywords" content="${esc(keywords)}" />\n</head>`);
     }
   }
 
-  p = p.replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${esc(title)}" />`);
-  p = p.replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${esc(description)}" />`);
-  p = p.replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${esc(canonical)}" />`);
+  p = p.replace(/<meta property="og:title" content="[^"]*" \/>/, () => `<meta property="og:title" content="${esc(title)}" />`);
+  p = p.replace(/<meta property="og:description" content="[^"]*" \/>/, () => `<meta property="og:description" content="${esc(description)}" />`);
+  p = p.replace(/<meta property="og:url" content="[^"]*" \/>/, () => `<meta property="og:url" content="${esc(canonical)}" />`);
 
   if (ogImage) {
-    p = p.replace(/<meta property="og:image" content="[^"]*" \/>/, `<meta property="og:image" content="${esc(ogImage)}" />`);
-    p = p.replace(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${esc(ogImage)}" />`);
+    p = p.replace(/<meta property="og:image" content="[^"]*" \/>/, () => `<meta property="og:image" content="${esc(ogImage)}" />`);
+    p = p.replace(/<meta name="twitter:image" content="[^"]*" \/>/, () => `<meta name="twitter:image" content="${esc(ogImage)}" />`);
   }
 
-  p = p.replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${esc(title)}" />`);
-  p = p.replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${esc(description)}" />`);
+  p = p.replace(/<meta name="twitter:title" content="[^"]*" \/>/, () => `<meta name="twitter:title" content="${esc(title)}" />`);
+  p = p.replace(/<meta name="twitter:description" content="[^"]*" \/>/, () => `<meta name="twitter:description" content="${esc(description)}" />`);
 
-  p = p.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${esc(canonical)}" />`);
+  p = p.replace(/<link rel="canonical" href="[^"]*" \/>/, () => `<link rel="canonical" href="${esc(canonical)}" />`);
 
   // Robots meta — emit noindex for pages flagged noIndex, remove any existing robots meta otherwise
   if (noIndex) {
     if (p.match(/<meta name="robots"[^>]*\/>/)) {
-      p = p.replace(/<meta name="robots"[^>]*\/>/, `<meta name="robots" content="noindex, follow" />`);
+      p = p.replace(/<meta name="robots"[^>]*\/>/, () => `<meta name="robots" content="noindex, follow" />`);
     } else {
-      p = p.replace('</head>', `<meta name="robots" content="noindex, follow" />\n</head>`);
+      p = p.replace('</head>', () => `<meta name="robots" content="noindex, follow" />\n</head>`);
     }
   } else {
     p = p.replace(/<meta name="robots"[^>]*\/>\s*/g, '');
@@ -144,7 +148,19 @@ function ptToHtml(blocks) {
   if (!blocks) return '';
   const md = portableTextToMarkdown(blocks);
   if (!md) return '';
-  return marked.parse(md);
+  // Sanitize before this HTML is injected into the prerendered <div id="prerender">.
+  // marked does NOT strip inline HTML, and the site CSP allows script-src 'unsafe-inline',
+  // so a Portable Text body containing literal <script>/<img onerror=...> would otherwise
+  // execute in the browser (it runs during initial HTML parse, before React replaces the div).
+  // Allow only the formatting tags marked emits; default schemes drop javascript:/data: URLs.
+  return sanitizeHtml(marked.parse(md), {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+    allowedAttributes: {
+      ...sanitizeHtml.defaults.allowedAttributes,
+      a: ['href', 'name', 'target', 'rel'],
+      img: ['src', 'alt', 'title'],
+    },
+  });
 }
 
 // ── Static Pages ──────────────────────────────────────────────────────────────
