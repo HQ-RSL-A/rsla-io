@@ -1,5 +1,28 @@
 # LOG.md - rslaWebsite
 
+## 2026-06-10 - Full security audit + fixes (site + studio)
+
+### What happened
+Audited the whole codebase plus the studio subdomain for vulnerabilities and wrong implementations. The serverless API layer (form handlers, LLM endpoint), client bundle, and JSON-LD injection were already solid. Found one credential-exposure issue, two real code-level vulns, one half-finished correctness bug, and a few hardening gaps. Fixed everything fixable in code, verified end to end, committed and deployed.
+
+### Fixed and shipped
+- **Prerender stored-XSS hardening** (`scripts/prerender.mjs`): `ptToHtml` now runs `marked` output through `sanitize-html` before injecting CMS body into the static `<div id="prerender">`. `marked` does not strip inline HTML and the CSP allows `script-src 'unsafe-inline'`, so a Portable Text body with literal `<script>`/`<img onerror>` would have executed pre-hydration. CMS-authored (trusted) input, but it compounds with the token exposure below. Allowlist = marked's tag set; default schemes drop `javascript:`/`data:`.
+- **Finished the `$`-replacement fix** (`scripts/prerender.mjs`): the 2026-06-03 fix only converted JSON-LD + body to function-form; the 12 `<meta>`/`<title>`/`<link>` replacements were still plain-string and corrupted `$$`/`$&` in titles/descriptions. All now function-form.
+- **Spreadsheet formula injection** (`api/quiz-submit.mjs`): public quiz fields (name/phone/agency/city/answers) forwarded to the Google Sheet webhook now pass through `deFormula` (prefixes leading `= + - @` with `'`). Prevents `=IMPORTXML(...)` style exfiltration when the sheet is opened.
+- **Rate-limiter fail-open visibility** (`api/lib/rateLimit.mjs`): warns when Upstash env is missing so disabled rate limiting is not silent.
+- **Studio destructive scripts** (`rslaStudio/scripts/{delete,archive,clean}*.mjs`): live mutations now require explicit `--confirm`; no flags = safe dry run.
+- **Dependency vulns**: `npm audit fix` (non-force) on both repos. Website now 0 vulnerabilities. Studio 31 -> 16 (the remaining 16 are Sanity-framework transitive moderates whose only npm "fix" is a bogus downgrade to sanity@2.x, so not applied). Lockfile-only; both builds verified.
+
+### Verification
+All 6 edited files pass `node --check`; the sanitizer provably strips `<script>`/`onerror`/`javascript:` while keeping formatting; the `$` fix preserves `$$$`/`$&`; full `vite build -> prerender -> sitemap -> validate` passes (0 errors) before and after the dep bumps; `sanity build` passes.
+
+### Deployed
+- Website: `32cbd28` (security) + `2a3e45e` (deps) pushed to `HQ-RSL-A/rsla-io` main. Auto-deploy fired correctly (`dpl_4ZqFuVX...`, READY, production). rsla.io serving the hardened build.
+- Studio: `57dc670` (script safety) + `c406dd3` (deps) pushed to `HQ-RSL-A/rsla-studio` main.
+
+### Needs Rahul (not fixable in code)
+- **Rotate the Sanity write token.** A token (prefix `skAhaCsu...`) for project `yz25oyux` was hardcoded in committed scripts in BOTH the public `rsla-io` history and the private `rsla-studio` history. The 2026-04-17 cleanup (`fc6ecad`) moved the website to a new token (`skt8mPnN...`) and claims rotation, but `rslaStudio/.env` STILL references the old `skAhaCsu...` token. Decidable test: if studio content scripts have run since 2026-04-17, the token is live and recoverable from public history. Action: manage.sanity.io -> project `yz25oyux` -> API -> Tokens, delete all but `skt8mPnN...`, issue a fresh studio token, then I do the `.env` swap + a gitleaks pre-commit hook. (Second token `skN57wVL...` from the public blueprint.json lead magnet should also be confirmed revoked.)
+
 ## 2026-06-03 - Structured-data graph tidy + full schema audit
 
 ### What happened
