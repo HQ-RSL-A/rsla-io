@@ -23,6 +23,12 @@ All 6 edited files pass `node --check`; the sanitizer provably strips `<script>`
 ### Needs Rahul (not fixable in code)
 - **Rotate the Sanity write token.** A token (prefix `skAhaCsu...`) for project `yz25oyux` was hardcoded in committed scripts in BOTH the public `rsla-io` history and the private `rsla-studio` history. The 2026-04-17 cleanup (`fc6ecad`) moved the website to a new token (`skt8mPnN...`) and claims rotation, but `rslaStudio/.env` STILL references the old `skAhaCsu...` token. Decidable test: if studio content scripts have run since 2026-04-17, the token is live and recoverable from public history. Action: manage.sanity.io -> project `yz25oyux` -> API -> Tokens, delete all but `skt8mPnN...`, issue a fresh studio token, then I do the `.env` swap + a gitleaks pre-commit hook. (Second token `skN57wVL...` from the public blueprint.json lead magnet should also be confirmed revoked.)
 
+### Follow-up shipped same day
+- **structuredData.mjs**: committed the pending Organization `sameAs` update (company LinkedIn + Facebook in, personal LinkedIn + YouTube out). `1602367`, pushed.
+- **gitleaks pre-commit hook** installed in BOTH repos (`.git/hooks/pre-commit`, local) after installing gitleaks 8.30 via brew. Scans staged changes, blocks commits that contain secrets, bypass with `git commit --no-verify`, degrades gracefully if gitleaks is absent. Functional-tested (planted a fake token, commit blocked; clean commits pass). Local hooks only, not shared via the repo.
+- **Studio js-yaml**: added `overrides: { "js-yaml": "3.14.2" }` (a single transitive js-yaml@3.13.1 was pinned below the patched 3.14.2 and not bumpable in-range). Cleared 2 advisories (16 -> 14 moderate). `sanity build` verified. `3095b09`, pushed.
+- **Studio uuid (residual, intentional)**: the remaining 14 moderate all trace to `uuid <11.1.1`. The tree has 4 uuid majors (8.3.2 / 10.0.0 / 11.1.1 / 13.0.2); a force-pin would break consumers of the other majors, and the advisory (buffer bounds in v3/v5/v6 with a `buf` arg) is not reachable by Sanity tooling. Left for an upstream Sanity bump or Dependabot. Website stays at 0 vulnerabilities.
+
 ## 2026-06-03 - Structured-data graph tidy + full schema audit
 
 ### What happened
