@@ -11,13 +11,13 @@ export const services = {
     caseStudies: [
       {
         href: "/work/fieldshare-seo-website-rebrand",
-        title: "Fieldshare: Page 1 Rankings in 6 Months",
-        metric: "Page 1 rankings in 6 months"
+        title: "Fieldshare: Cited by ChatGPT, Gemini and Google AI",
+        metric: "146 referring domains, 29K impressions"
       },
       {
-        href: "/work/adreviveai-saas-build",
-        title: "AdReviveAI: Idea to Live SaaS in 4 Weeks",
-        metric: "Idea to production in 4 weeks"
+        href: "/work/rsla-organic-growth",
+        title: "Blank Domain to 265K Impressions in 6 Months",
+        metric: "204 keywords ranked, $0 ad spend"
       }
     ],
     faqs: [
@@ -83,19 +83,14 @@ export const services = {
     canonical: "https://rsla.io/services/seo",
     caseStudies: [
       {
-        href: "/work/seo-content-marketing-automation",
-        title: "SEO and Content Marketing Automation",
-        metric: "220% increase in organic sessions"
-      },
-      {
-        href: "/work/local-seo-reputation-management",
-        title: "Local SEO and Reputation Management",
-        metric: "Top 3 map pack in 60 days"
+        href: "/work/rsla-organic-growth",
+        title: "0 to 204 Keywords in 6 Months",
+        metric: "265K+ impressions, 39 AI citations"
       },
       {
         href: "/work/fieldshare-seo-website-rebrand",
-        title: "FieldShare SEO and Website Rebrand",
-        metric: "3x organic traffic in 90 days"
+        title: "Fieldshare: Cited by ChatGPT, Gemini and Google AI",
+        metric: "146 referring domains, 29K impressions"
       }
     ],
     faqs: [
@@ -129,19 +124,14 @@ export const services = {
     canonical: "https://rsla.io/services/ai-automations",
     caseStudies: [
       {
-        href: "/work/ai-lead-response-autoresponder",
-        title: "AI Lead Response Autoresponder",
-        metric: "Response time from 4 hours to 90 seconds"
-      },
-      {
         href: "/work/ai-cold-email-personalization",
-        title: "AI Cold Email Personalization",
-        metric: "3x reply rate on outbound sequences"
+        title: "1,200 Personalized Cold Emails a Day",
+        metric: "3-step automation, ~$0 per email"
       },
       {
-        href: "/work/field-service-operations-automation",
-        title: "Field Service Operations Automation",
-        metric: "12 hours of weekly admin eliminated"
+        href: "/work/notion-productivity-dashboard-anchor-safety",
+        title: "A Voice-to-Task Bot and 3 Dashboards",
+        metric: "160 daily tasks organized"
       }
     ],
     faqs: [
@@ -175,14 +165,14 @@ export const services = {
     canonical: "https://rsla.io/services/crm-systems",
     caseStudies: [
       {
-        href: "/work/nonprofit-crm-volunteer-automation",
-        title: "Nonprofit CRM and Volunteer Automation",
-        metric: "60% reduction in admin time"
+        href: "/work/salon-marketing-automation-roi",
+        title: "$600 in Ads to $36K in Rental Income",
+        metric: "60X return on ad spend"
       },
       {
-        href: "/work/salon-marketing-automation-roi",
-        title: "Salon Marketing Automation ROI",
-        metric: "2.4x revenue from existing client base"
+        href: "/work/ai-cold-email-personalization",
+        title: "1,200 Personalized Cold Emails a Day",
+        metric: "3-step automation, ~$0 per email"
       }
     ],
     faqs: [
@@ -216,14 +206,14 @@ export const services = {
     canonical: "https://rsla.io/services/custom-development",
     caseStudies: [
       {
-        href: "/work/adreviveai-saas-build",
-        title: "AdRevive AI SaaS Build",
-        metric: "0 to production in 6 weeks"
+        href: "/work/notion-productivity-dashboard-anchor-safety",
+        title: "300 Files Replaced With 3 Notion Dashboards",
+        metric: "160 daily tasks organized"
       },
       {
-        href: "/work/notion-productivity-dashboard-anchor-safety",
-        title: "Notion Productivity Dashboard for Anchor Safety",
-        metric: "100% ops visibility in one dashboard"
+        href: "/work/ai-cold-email-personalization",
+        title: "1,200 Personalized Cold Emails a Day",
+        metric: "3-step automation, ~$0 per email"
       }
     ],
     faqs: [

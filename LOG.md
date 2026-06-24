@@ -689,3 +689,58 @@ See `BRAIN.md > TODO (Next Session)` for the full checklist.
 
 ### Session summary
 4 commits across security audit, SEO fixes, conversion tracking, and infrastructure. Net result: -406 lines of dead code, +200 lines of SEO/schema/redirect improvements, 33 new 301 redirects, Upstash rate limiting, cross-linked service and case study pages.
+
+---
+
+## 2026-06-23/24 — GSC indexing audit + SEMrush/GA4 deep dive (diagnosis + staged fixes, NOT yet deployed)
+
+### Trigger
+GSC emails (May 14 dup-canonical, May 25 404, Jun 12 "fix failed"; Fieldshare 5xx ignored — separate site). User then supplied full GSC + SEMrush site-audit exports and asked for a data-grounded growth strategy.
+
+### Diagnosis
+- **GSC connection healthy** (sc-domain:rsla.io, siteOwner; sitemap Valid, 35 URLs, 0 errors). A legacy `http://rsla.io/sitemap.xml` is also registered — remove it.
+- **Duplicate-canonical: 0 URLs now** — self-resolved via consolidation redirects. All 8 inspected keeper pages = "Submitted and indexed / PASS".
+- **Not found (404): 6 URLs**, root-caused to (a) old URLs never redirected and (b) **redirects pointing to case-study pages that were never published** (broken redirect chains). Live tests confirmed `/work/local-seo-reputation-management`, `/work/seo-content-marketing-automation`, `/work/nonprofit-crm-volunteer-automation`, `/work/ai-proposal-generator-sales-workflow` all 404; several are hardcoded internal links in `src/data/serviceData.js` (7 dead case-study links across all 5 service pages).
+- **"Fix failed" email**: GSC Validate Fix clicked on the 404 issue while redirects still pointed at 404s. "Page with redirect"/"noindex" issues were also being pointlessly validated.
+- **Structured data invalid** on `/services/bakersfield`: `@type ProfessionalService` (a LocalBusiness, needs `address`) with invalid `provider` prop.
+- **Orphaned/under-linked services**: prerendered HTML (no-JS crawlers) only linked `/services/bakersfield`; React nav links the other 5 but SEMrush crawls static HTML.
+
+### Staged code changes (local only — nothing committed or deployed)
+- `vercel.json`: repointed 5 broken redirect destinations to live pages; added redirects (111 total). NOTE: needs rework per indexing policy — pull redirects for the "coming-back" case-study slugs so they 404 (a redirect would block republishing).
+- `scripts/prerender.mjs` + `src/pages/CityHub.jsx`: Bakersfield schema `ProfessionalService` → `Service` (provider valid, no address required); kept `provider: #business` ref.
+- `scripts/prerender.mjs`: expanded prerendered `siteNav` to link all 5 service pages.
+
+### Data findings (GA4 516387648 + GSC + SEMrush, 28d/90d)
+- Traffic is **global + informational**: ~90% Claude product queries ("claude products" pos 3.2 = 53 clicks; dozens of "claude code vs cowork vs chat" variants) + GoHighLevel. Low-CTR pages are all position 8-13 (AI Overviews eat clicks); at pos 3 CTR is a healthy 2.8%.
+- **Converts to ~0 leads.** Key events concentrate on /, /services/web-design, /work, go-high-level-pricing. Informational blog posts drive views, ~0 key events.
+- **No commercial/local footprint** except leftover "salon CRM" (hair salon crm pos 4, salon crm pos 9) — an accidental but real foothold.
+- **GA4 Bakersfield (265 sessions, 22 key events) ≈ Rahul's own traffic.** Data-center cities (Boardman, Council Bluffs, Ashburn…) are bots. Needs internal-traffic filter.
+- **Backlinks: very low DA (best AS 2-5).** Real editorial links come from the AI/GHL content (agntcms, agenticdesign.school, klipy.ai, mola-solutions). Bulk "new backlinks" are old-brand (rslmediahub.*) PBN spam. SEMrush auto-disavow includes legit DesignRush listings — do NOT submit wholesale.
+
+### Decisions
+- **Indexing policy:** only ~35 live sitemap pages indexed; let dead URLs 404 and drop. 301 only URLs with backlinks/traffic. Leave coming-back case-study slugs as 404 (no redirect). No GSC Removals tool. (Memory: rsla-indexing-policy.)
+- **Case studies:** don't fake/repoint; remove dead links now, publish the ~5 real case studies, re-add cards as each ships.
+- **Strategy:** two-engine model (authority content vs commercial/local leads), bridged by internal links. (Memory: rsla-growth-strategy.)
+
+### Pending (next)
+- Rework `vercel.json` to indexing policy; remove the 7 dead case-study links from `serviceData.js`; build + deploy.
+- GSC: remove http sitemap; after deploy run Validate Fix once; resubmit sitemap.
+- GA4 internal-traffic filter. Curate (don't bulk-submit) disavow.
+- CTR/AEO on pos 3-8 pages; write 5 case studies; commercial service-page SEO; Bakersfield pSEO (done right, not templated) + GBP; DA/linkable-asset plan.
+
+### UPDATE (2026-06-24, overnight) — Phase 0 IMPLEMENTED + QA PASSED on branch `seoGrowthPhase0` (local only, not pushed/deployed)
+Per Rahul's go-ahead ("Plan A/B/C, implement one by one, QA each step, clean code, no fabrication; I'm asleep, continue"). GBP for Bakersfield confirmed live with citations on.
+
+**Done + verified:**
+- `vercel.json`: reworked to indexing policy. 103 redirects. Coming-back case-study slugs + `/ai-for/*` removed (left to 404 so republishing isn't blocked). Kept only equity redirects (backlink-bearing) + fixed legacy chains. JSON valid; validateBuild confirms 101 redirect destinations resolve (no redirect → 404).
+- `src/data/serviceData.js` + `scripts/prerender.mjs`: removed all 7 dead case-study links from the 5 service pages (both duplicate copies), replaced with the 5 REAL published case studies (titles/metrics pulled from Sanity — no fabrication). Both copies in sync.
+- Bakersfield structured data: `ProfessionalService` (missing address + invalid `provider`) → `Service` (provider valid, areaServed kept) in both `CityHub.jsx` and `prerender.mjs`. Verified in dist: 1 `#business` node WITH address + 1 city `Service` node, all JSON-LD parses.
+- Prerendered `siteNav` now links all 5 service pages (fixes orphaned/under-linked for no-JS crawlers).
+
+**QA:** `vite build` + prerender + sitemap + validateBuild + rss + llms = exit 0, 0 errors / 0 warnings. ESLint on changed files clean. Zero dead case-study slugs anywhere in `src/`, `scripts/`, or `dist/`. 48 pages prerendered, 35/35 sitemap parity.
+
+**Known redundancy flagged (not fixed — needs review):** `prerender.mjs` keeps a hand-maintained duplicate of `serviceData.js` (service objects). Should be deduped by importing the shared data. Also a pre-existing empty `react-vendor` manualChunk.
+
+**Deploy:** NOT deployed (Rahul asleep; pushing to prod unattended is the one thing held back). Branch `seoGrowthPhase0` is deploy-ready. After deploy: remove the legacy `http://` sitemap in GSC, run Validate Fix once on the 404 issue, resubmit sitemap.
+
+**A/B/C plan:** see `docs/superpowers/plans/2026-06-24-abc-growth-plan.md`. Curated disavow analysis in `~/Downloads` (review-before-submit).

@@ -70,10 +70,11 @@ export default function CityHub() {
         .map(slug => ({ slug, ...services[slug] }))
         .filter(Boolean);
 
-    const professionalServiceSchema = {
+    const localServiceSchema = {
         '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        name: 'RSL/A',
+        '@type': 'Service',
+        name: `Digital Marketing, Web Design & SEO in ${city.name}, ${city.state}`,
+        serviceType: 'Digital marketing agency',
         description: city.metaDescription,
         url: city.canonical,
         areaServed: {
@@ -88,7 +89,7 @@ export default function CityHub() {
     };
 
     const faqSchema = generateFaqSchema(city.faqs);
-    const jsonLd = [professionalServiceSchema, faqSchema].filter(Boolean);
+    const jsonLd = [localServiceSchema, faqSchema].filter(Boolean);
 
     return (
         <main ref={pageRef} className="min-h-screen">

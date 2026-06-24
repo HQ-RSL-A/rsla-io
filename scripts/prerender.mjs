@@ -51,7 +51,15 @@ function esc(str) {
 const siteNav = `<nav aria-label="Main navigation"><ul>
 <li><a href="/">Home</a></li>
 <li><a href="/about">About</a></li>
-<li><a href="/services">Services</a></li>
+<li><a href="/services">Services</a>
+<ul>
+<li><a href="/services/web-design">Web Design</a></li>
+<li><a href="/services/seo">SEO</a></li>
+<li><a href="/services/ai-automations">AI Automations</a></li>
+<li><a href="/services/crm-systems">CRM Systems</a></li>
+<li><a href="/services/custom-development">Custom Development</a></li>
+</ul>
+</li>
 <li><a href="/work">Case Studies</a></li>
 <li><a href="/blog">Blog</a></li>
 </ul></nav>`;
@@ -759,8 +767,8 @@ const SERVICE_DETAILS = {
       'Full redesigns that identify and fix conversion blockers',
     ],
     caseStudies: [
-      { href: '/work/fieldshare-seo-website-rebrand', title: 'FieldShare SEO and Website Rebrand', metric: '3x organic traffic in 90 days' },
-      { href: '/work/adreviveai-saas-build', title: 'AdRevive AI SaaS Build', metric: '0 to production in 6 weeks' },
+      { href: '/work/fieldshare-seo-website-rebrand', title: 'Fieldshare: Cited by ChatGPT, Gemini and Google AI', metric: '146 referring domains, 29K impressions' },
+      { href: '/work/rsla-organic-growth', title: 'Blank Domain to 265K Impressions in 6 Months', metric: '204 keywords ranked, $0 ad spend' },
     ],
     faqs: [
       { q: 'What platforms do you build on?', a: 'We build primarily in React and Next.js. Most client sites ship on Vercel with a Sanity or headless CMS backend. If you have an existing stack we can work within it.' },
@@ -784,9 +792,8 @@ const SERVICE_DETAILS = {
       'Citation building and review strategy',
     ],
     caseStudies: [
-      { href: '/work/seo-content-marketing-automation', title: 'SEO and Content Marketing Automation', metric: '220% increase in organic sessions' },
-      { href: '/work/local-seo-reputation-management', title: 'Local SEO and Reputation Management', metric: 'Top 3 map pack in 60 days' },
-      { href: '/work/fieldshare-seo-website-rebrand', title: 'FieldShare SEO and Website Rebrand', metric: '3x organic traffic in 90 days' },
+      { href: '/work/rsla-organic-growth', title: '0 to 204 Keywords in 6 Months', metric: '265K+ impressions, 39 AI citations' },
+      { href: '/work/fieldshare-seo-website-rebrand', title: 'Fieldshare: Cited by ChatGPT, Gemini and Google AI', metric: '146 referring domains, 29K impressions' },
     ],
     faqs: [
       { q: 'What is answer engine optimization and why does it matter?', a: 'AEO is the practice of structuring your content so AI tools like ChatGPT, Perplexity, and Google\'s AI Overviews cite you as a source. As more searches end without a click, showing up in AI answers is how you stay visible. We optimize both traditional search and AI-generated answers.' },
@@ -810,9 +817,8 @@ const SERVICE_DETAILS = {
       'Full documentation and optional maintenance retainers',
     ],
     caseStudies: [
-      { href: '/work/ai-lead-response-autoresponder', title: 'AI Lead Response Autoresponder', metric: 'Response time from 4 hours to 90 seconds' },
-      { href: '/work/ai-cold-email-personalization', title: 'AI Cold Email Personalization', metric: '3x reply rate on outbound sequences' },
-      { href: '/work/field-service-operations-automation', title: 'Field Service Operations Automation', metric: '12 hours of weekly admin eliminated' },
+      { href: '/work/ai-cold-email-personalization', title: '1,200 Personalized Cold Emails a Day', metric: '3-step automation, ~$0 per email' },
+      { href: '/work/notion-productivity-dashboard-anchor-safety', title: 'A Voice-to-Task Bot and 3 Dashboards', metric: '160 daily tasks organized' },
     ],
     faqs: [
       { q: 'What tools do you use to build automations?', a: 'We build primarily in n8n and Make (Integromat) for workflow automation. For AI-native agents we use LangChain, OpenAI function calling, and Anthropic Claude depending on the use case. The right tool depends on what you\'re trying to automate.' },
@@ -836,8 +842,8 @@ const SERVICE_DETAILS = {
       'Team training and optional ongoing management retainer',
     ],
     caseStudies: [
-      { href: '/work/nonprofit-crm-volunteer-automation', title: 'Nonprofit CRM and Volunteer Automation', metric: '60% reduction in admin time' },
-      { href: '/work/salon-marketing-automation-roi', title: 'Salon Marketing Automation ROI', metric: '2.4x revenue from existing client base' },
+      { href: '/work/salon-marketing-automation-roi', title: '$600 in Ads to $36K in Rental Income', metric: '60X return on ad spend' },
+      { href: '/work/ai-cold-email-personalization', title: '1,200 Personalized Cold Emails a Day', metric: '3-step automation, ~$0 per email' },
     ],
     faqs: [
       { q: 'Why GoHighLevel and not HubSpot or Salesforce?', a: 'GoHighLevel is purpose-built for service businesses and agencies. It combines CRM, email, SMS, pipelines, booking, websites, and reporting in one platform at a fraction of the cost of enterprise tools. For most of our clients it replaces 4 or 5 separate subscriptions.' },
@@ -861,8 +867,8 @@ const SERVICE_DETAILS = {
       'Post-launch support retainers and feature additions',
     ],
     caseStudies: [
-      { href: '/work/adreviveai-saas-build', title: 'AdRevive AI SaaS Build', metric: '0 to production in 6 weeks' },
-      { href: '/work/notion-productivity-dashboard-anchor-safety', title: 'Notion Productivity Dashboard for Anchor Safety', metric: '100% ops visibility in one dashboard' },
+      { href: '/work/notion-productivity-dashboard-anchor-safety', title: '300 Files Replaced With 3 Notion Dashboards', metric: '160 daily tasks organized' },
+      { href: '/work/ai-cold-email-personalization', title: '1,200 Personalized Cold Emails a Day', metric: '3-step automation, ~$0 per email' },
     ],
     faqs: [
       { q: 'What kind of projects do you take on?', a: 'SaaS MVPs, client-facing portals, internal ops tools, API integrations, data dashboards, and workflow applications. We\'re best suited for projects where you need to move fast and ship something production-ready, not a prototype.' },
@@ -1005,8 +1011,9 @@ function cityHubContent(slug) {
     jsonLd: [
       {
         '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        name: 'RSL/A',
+        '@type': 'Service',
+        name: 'Digital Marketing, Web Design & SEO in Bakersfield, CA',
+        serviceType: 'Digital marketing agency',
         url: c.canonical,
         description: c.metaDescription,
         provider: businessRef,
