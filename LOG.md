@@ -1,5 +1,15 @@
 # LOG.md - rslaWebsite
 
+## 2026-07-20 - GSC email triage (Phase 0 aftermath) - no action needed
+
+Two GSC emails investigated via URL Inspection API (~50 URLs checked):
+- **Jul 3 "issues fixed"**: the Phase 0 "Blocked by robots.txt" fix validated. Closed.
+- **Jul 18 "Duplicate, Google chose different canonical than user"**: expected fallout from the Phase 0 redirect block, two flavors, both harmless:
+  1. `/services/websites`: last-crawled HTML still self-canonicals; Google now picks `/services/web-design` (the live page). It is agreeing with our migration. Flips to "Page with redirect" on next crawl (sibling `/services/search-visibility` already did).
+  2. `/blog/best-crm-solo-real-estate-agent`: Google rejected the many-to-one 301 to `what-is-go-high-level` (content not equivalent) and kept the old URL as its own canonical. Means no equity transfer (negligible anyway: ~367 imp, 0 clicks), URL stays deindexed regardless. Left as-is per indexing policy.
+- All 35 sitemap URLs verified clean: 33 indexed, 0 canonical/robots/fetch issues. The 2 exceptions are "Crawled - currently not indexed" (`/blog/med-spa-seo-what-actually-works`, `/work/ai-cold-email-personalization`) - content-quality wait, Phase B material, not errors.
+- Side observation: archived-in-Sanity keeper posts (`best-crm-hair-stylists-salon-owners`, `claude-code-remote-control-guide`, `what-is-claude-code-guide`, `lead-response-time-how-fast`, `openclaw-ai-assistant-security-lessons`) report "Page with redirect" (client-side bounce to /blog). Consistent with Phase B pending; they re-enter the sitemap when rewritten.
+
 ## 2026-06-10 - Full security audit + fixes (site + studio)
 
 ### What happened
@@ -744,3 +754,16 @@ Per Rahul's go-ahead ("Plan A/B/C, implement one by one, QA each step, clean cod
 **Deploy:** NOT deployed (Rahul asleep; pushing to prod unattended is the one thing held back). Branch `seoGrowthPhase0` is deploy-ready. After deploy: remove the legacy `http://` sitemap in GSC, run Validate Fix once on the 404 issue, resubmit sitemap.
 
 **A/B/C plan:** see `docs/superpowers/plans/2026-06-24-abc-growth-plan.md`. Curated disavow analysis in `~/Downloads` (review-before-submit).
+
+## 2026-07-20 — Local SEO research + Bakersfield-first playbook
+
+Rahul asked for a research-backed plan for local rankings (Bakersfield + Kern), programmatic SEO, and question-answering blogs, before touching design/content.
+
+**Research done:**
+- GSC: 6 months of "bakersfield" queries = 5 impressions, 0 clicks; zero "kern" queries. `/services/bakersfield` IS indexed (crawled 7/5, clean canonical) — the problem is competitiveness, not indexation.
+- Live SERP recon on the 3 money queries + Delano probe; dissected 3 ranking competitor pages (Mantera, ThrillX, Chavez). Winners all use dedicated service-x-city URLs; localization bar is keyword-swap low; Delano has zero real local providers.
+- Deep-research workflow (104 agents, 22 sources, 25 claims adversarially verified): AIO on only 8% commercial / 5% transactional queries (vs 86% question-format) → money pages fight traditional SERPs, blogs fight for AI citation. Whitespark 2026: #1 local organic factor = dedicated page per service + geo relevance (≈ offsets weak links at DA 7). Hidden-address SAB = replicated map-pack handicap (don't fake address; win organic). Reviews: 47% won't use <20 reviews, 74% weight last-3-months only, velocity > volume ("magic 10"). AI visibility: #1 = expert-curated lists; citations are the new link; refuted 0-3: "ChatGPT local = Bing data".
+
+**Deliverable:** `docs/seo/localSeoPlaybook2026.md` — strategy + phases L0-L6 (L0 merge Phase 0; L1 review engine to 10→20+; L2 `/web-design-bakersfield` + `/seo-bakersfield` MoneyPage template + hub upgrade; L3 4 AIO-targeted question posts; L4 directories/lists; L5 gated Kern towns; L6 LA/SF later). Open items for Rahul in doc §6.
+
+**Pending:** Phase 0 STILL unmerged (since 6/24) — first action. Then L1 review-ask list + L2 build.
