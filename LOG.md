@@ -1,5 +1,13 @@
 # LOG.md - rslaWebsite
 
+## 2026-07-21 - GSC fix execution: keeper posts turn out DELETED, sitemap hygiene done
+
+Rahul approved the 2-item fix list from the 7-20 triage. Execution findings:
+- **The 5 "archived" keeper posts are not archived - they were permanently deleted from Sanity** (`deleteArchivedPosts.mjs` in rslaStudio, ran ~April). Dataset holds exactly the 18 published posts in the sitemap; nothing with status archived exists. My 7-20 "republish old versions" option is impossible as stated. All 5 URLs have Wayback snapshots (Feb-Apr 2026): claude-code-remote-control-guide (12,283 imp, pos 7.3 in April data), what-is-claude-code-guide, openclaw-ai-assistant-security-lessons, best-crm-hair-stylists-salon-owners, lead-response-time-how-fast. Decision pending with Rahul: fresh rewrite at same slugs (fits A/B/C plan) vs interim Wayback restore.
+- **GSC sitemap hygiene (Phase 0 deploy checklist):** resubmitted `https://rsla.io/sitemap.xml` (2026-07-21, pending processing). Legacy `http://rsla.io/sitemap.xml` removal blocked by the GSC MCP's `GSC_ALLOW_DESTRUCTIVE` safety flag - needs 5-sec manual removal in GSC UI (Sitemaps page).
+- Confirmed production runs the Phase 0 branch build (deployed via `vercel --prod`; `main` is still at a0e49ba, pre-Phase-0). Redeploy not needed for this work.
+- Med-spa post + ai-cold-email case study content fixes: blocked on Rahul interview (per A/B/C plan autonomy blockers).
+
 ## 2026-07-20 - GSC email triage (Phase 0 aftermath) - no action needed
 
 Two GSC emails investigated via URL Inspection API (~50 URLs checked):
@@ -9,6 +17,7 @@ Two GSC emails investigated via URL Inspection API (~50 URLs checked):
   2. `/blog/best-crm-solo-real-estate-agent`: Google rejected the many-to-one 301 to `what-is-go-high-level` (content not equivalent) and kept the old URL as its own canonical. Means no equity transfer (negligible anyway: ~367 imp, 0 clicks), URL stays deindexed regardless. Left as-is per indexing policy.
 - All 35 sitemap URLs verified clean: 33 indexed, 0 canonical/robots/fetch issues. The 2 exceptions are "Crawled - currently not indexed" (`/blog/med-spa-seo-what-actually-works`, `/work/ai-cold-email-personalization`) - content-quality wait, Phase B material, not errors.
 - Side observation: archived-in-Sanity keeper posts (`best-crm-hair-stylists-salon-owners`, `claude-code-remote-control-guide`, `what-is-claude-code-guide`, `lead-response-time-how-fast`, `openclaw-ai-assistant-security-lessons`) report "Page with redirect" (client-side bounce to /blog). Consistent with Phase B pending; they re-enter the sitemap when rewritten.
+- **Full-report confirmation (same day, from Rahul's UI export):** all 9 buckets enumerated. Crawled-not-indexed = 58, but only the same 2 live pages matter; the rest is old `_next/static` chunks (pre-Vite Next.js build), archived posts, and feed files (rss.xml, sitemap.xml, llms.txt, robots.txt - normal there). Not found (7) and Page with redirect (30) all intentional. "Validation Failed" on those three buckets is expected (validation only passes if URLs get indexed; these are dead by design) - do not re-validate. `/blog/automate-client-intake-ai` shows "Discovered - currently not indexed" in the export but live inspection says indexed = stale report entry. Fix list unchanged: 2 live pages need content depth, 5 keeper posts need Phase B priority.
 
 ## 2026-06-10 - Full security audit + fixes (site + studio)
 
@@ -767,3 +776,9 @@ Rahul asked for a research-backed plan for local rankings (Bakersfield + Kern), 
 **Deliverable:** `docs/seo/localSeoPlaybook2026.md` — strategy + phases L0-L6 (L0 merge Phase 0; L1 review engine to 10→20+; L2 `/web-design-bakersfield` + `/seo-bakersfield` MoneyPage template + hub upgrade; L3 4 AIO-targeted question posts; L4 directories/lists; L5 gated Kern towns; L6 LA/SF later). Open items for Rahul in doc §6.
 
 **Pending:** Phase 0 STILL unmerged (since 6/24) — first action. Then L1 review-ask list + L2 build.
+
+## 2026-07-21 — URL convention + freshness pass (inline, agent-capped)
+
+- **URL convention approved by Rahul:** `/{city}/{service}` money pages (`/bakersfield/websites`, `/bakersfield/seo`), `/{city}` hubs, plain-noun slugs everywhere. Slug renames planned while noIndexed: `web-design`→`websites` (flip existing 301), `ai-automations`→`automations`, `crm-systems`→`crm`, `custom-development`→`custom-builds`. Playbook §4.2.
+- **Freshness research:** first re-run died on session limit (all 75 verifiers); Rahul capped agents (50, then ≤5/none) — workflows stopped, finished inline with 2 WebFetches against primaries. Verified: May 2026 core update (5/21) + June 2026 spam update (6/24, 2d rollout — spam enforcement active; city-page quality bar non-negotiable); ChatGPT May 7 sources change (+157.7% WoW referrals, ~60% now landing on HOMEPAGES → brand/entity + hub quality appreciating); Seer CTR-recovery trend (AIO-present CTR 1.3%→2.4%, gap ~37% at endpoint, not 58%). All prior load-bearing figures re-confirmed with data windows. Playbook §3 freshness section. No strategy changes; hub/brand weight up.
+- **Standing preference recorded:** max ~5 well-briefed agents per task, prefer inline (memory: agent-budget).
