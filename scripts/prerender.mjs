@@ -883,76 +883,16 @@ function serviceDetailContent(slug) {
   const s = SERVICE_DETAILS[slug];
   if (!s) return null;
 
-  const featuresHtml = s.features.map(f => `<li>${esc(f)}</li>`).join('\n');
-  const caseStudiesHtml = s.caseStudies.map(cs =>
-    `<li><a href="${esc(cs.href)}">${esc(cs.title)}</a> — ${esc(cs.metric)}</li>`
-  ).join('\n');
-  const faqHtml = s.faqs.map(f =>
-    `<dt>${esc(f.q)}</dt><dd>${esc(f.a)}</dd>`
-  ).join('\n');
-
+  // Page intentionally blank (content cleared 2026-07-22). Route + SEO meta preserved; rebuild content here.
   return {
     route: `/services/${slug}`,
     title: s.metaTitle,
     description: s.metaDescription,
     canonical: `${SITE}/services/${slug}`,
     keywords: s.keywords,
-    jsonLd: [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
-          { '@type': 'ListItem', position: 3, name: s.title, item: `${SITE}/services/${slug}` },
-        ],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: s.title,
-        description: s.metaDescription,
-        provider: businessRef,
-        url: `${SITE}/services/${slug}`,
-        areaServed: { '@type': 'Country', name: 'US' },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: s.faqs.map(f => ({
-          '@type': 'Question',
-          name: f.q,
-          acceptedAnswer: { '@type': 'Answer', text: f.a },
-        })),
-      },
-    ],
+    jsonLd: [],
     html: `<main>
-<nav aria-label="Breadcrumb"><a href="/services">Services</a> / ${esc(s.title)}</nav>
-<h1>${esc(s.headline)}</h1>
-<p>${esc(s.description)}</p>
-
-<section>
-<h2>What we offer</h2>
-<ul>
-${featuresHtml}
-</ul>
-</section>
-
-<section>
-<h2>Related case studies</h2>
-<ul>
-${caseStudiesHtml}
-</ul>
-</section>
-
-<section>
-<h2>Frequently asked questions</h2>
-<dl>
-${faqHtml}
-</dl>
-</section>
-
-<p><a href="/contact">Start a project</a> | <a href="/services">All Services</a></p>
+<h1>${esc(s.title)}</h1>
 </main>`,
   };
 }
