@@ -5,13 +5,13 @@
   "framework": "vite",
   "functions": {
     "api/llm/[slug].mjs": {
-      "runtime": "@vercel/node@5.6.9"
+      "runtime": "@vercel/node@5.8.26"
     },
     "api/subscribe.mjs": {
-      "runtime": "@vercel/node@5.6.9"
+      "runtime": "@vercel/node@5.8.26"
     },
     "api/quiz-submit.mjs": {
-      "runtime": "@vercel/node@5.6.9"
+      "runtime": "@vercel/node@5.8.26"
     }
   },
   "headers": [
