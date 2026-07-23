@@ -216,7 +216,7 @@ The site ranks for "what is GHL" but not for "I need someone to set up GHL for m
 | AI Automation Agency vs Doing It Yourself | "ai automation agency", "ai marketing agency" | ~500+ combined | Comparison content with commercial intent. Positions RSL/A as the answer. |
 | When to Hire a Marketing Automation Consultant | "marketing automation consultant" | ~300+ | Buying guide. Captures people ready to pay. |
 
-### 4B: Claude/Anthropic Content Plan (from contentPlan.md)
+### 4B: Claude/Anthropic Content Plan (from content-plan.md)
 
 29 posts planned with full keyword research. Publishing order by tier:
 
@@ -250,7 +250,7 @@ The site ranks for "what is GHL" but not for "I need someone to set up GHL for m
 | Post 13: Ditched Cursor for Claude Code | claude code vs cursor | 1,170 combined | 25 |
 | Post 14: Claude Code vs Copilot vs Codex vs Gemini CLI | claude code vs copilot | ATP | -- |
 
-**Months 4-6:** Posts 6, 11, 12, 15-21, 23, 26-28 (see contentPlan.md for details)
+**Months 4-6:** Posts 6, 11, 12, 15-21, 23, 26-28 (see content-plan.md for details)
 
 ### 4C: SEO/AEO/GEO Content (New)
 

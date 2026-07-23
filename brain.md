@@ -40,12 +40,12 @@ scripts/
   pingIndexNow.mjs         # Build-time IndexNow ping (Bing, Yandex, Naver, Seznam)
 content/
   posts/                   # Blog post markdown source files
-  blogImages/              # Featured + inline images per post slug
+  blog-images/              # Featured + inline images per post slug
   scripts/                 # Content generation and patching scripts
 docs/
   seo/                     # Keyword research, content plan, triage data
   superpowers/plans/       # Implementation plans (SEO audit, pillar strategy, etc.)
-  conversionResearch/      # Completed brand positioning + homepage wireframe research
+  conversion-research/      # Completed brand positioning + homepage wireframe research
 .claude/
   agents/                  # Blog agents (researcher, writer, reviewer, seo)
 ```
@@ -186,7 +186,7 @@ API endpoints use Upstash Redis for rate limiting (`api/lib/rateLimit.mjs`).
 - [x] **GTM conversion tags**: Created 3 GA4 Event tags + triggers + 2 DLVs (source, cta_location) in GTM. Published as Version 5. CTA click required code-side dataLayer push (React SPA doesn't produce Click URLs). Deployed 2026-04-30.
 - [ ] **GA4 Key Events**: Mark `booking_confirmed`, `newsletter_subscribe`, `cta_click` as key events in GA4 once they appear in Admin > Events (can take 24-48 hours).
 - [ ] **Sentry**: Create React project at sentry.io, copy DSN, add `VITE_SENTRY_DSN` to Vercel env vars
-- [ ] **Sanity token**: Current token's robot user not in project yz25oyux. Create new token inside project settings (API > Tokens > Add API token > Editor permissions). Update `.env.local` and Vercel env var `SANITY_API_TOKEN`. Also update `~/lalia/myBusiness/mcp/sanity.env`.
+- [ ] **Sanity token**: Current token's robot user not in project yz25oyux. Create new token inside project settings (API > Tokens > Add API token > Editor permissions). Update `.env.local` and Vercel env var `SANITY_API_TOKEN`. Also update `../../mcp/sanity.env` (that folder has not migrated yet, so it currently lives at `~/lalia/myBusiness/mcp/sanity.env`).
 - [ ] **Upstash**: Create free Redis DB at upstash.com. Add `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` to Vercel env vars.
 - [ ] **Backlink disavow**: In SEMRush > Backlink Audit, review Singapore/Moldova spam domains. Export disavow list. Upload to GSC Disavow Tool.
 

@@ -52,7 +52,7 @@ Winners: **almost all out-of-town templated city pages** (Thrive, 1Digital, Acut
 | FAQs | None | 9 (incl. "$5,000+" price anchor) | Separate page |
 | Real localization | Local phone only | Keyword + 4 neighborhood names | Multi-city footer |
 | Pricing | None | Anchor in FAQ | Separate page |
-**The localization bar is embarrassingly low.** Nobody uses local case studies, embedded reviews, local data, or founder visibility (matches May's `competitiveAnalysis-webDesignPage.md`).
+**The localization bar is embarrassingly low.** Nobody uses local case studies, embedded reviews, local data, or founder visibility (matches May's `competitive-analysis-web-design-page.md`).
 
 ### Map pack benchmark
 Citryn: 5.0 stars, 45-65 reviews, physical Rosedale Hwy address, 100% response rate. RSL/A: 3 reviews, hidden address.

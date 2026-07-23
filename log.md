@@ -38,7 +38,7 @@ Rahul asked for a research-backed plan for local rankings (Bakersfield + Kern), 
 - Live SERP recon on the 3 money queries + Delano probe; dissected 3 ranking competitor pages (Mantera, ThrillX, Chavez). Winners all use dedicated service-x-city URLs; localization bar is keyword-swap low; Delano has zero real local providers.
 - Deep-research workflow (104 agents, 22 sources, 25 claims adversarially verified): AIO on only 8% commercial / 5% transactional queries (vs 86% question-format) → money pages fight traditional SERPs, blogs fight for AI citation. Whitespark 2026: #1 local organic factor = dedicated page per service + geo relevance (≈ offsets weak links at DA 7). Hidden-address SAB = replicated map-pack handicap (don't fake address; win organic). Reviews: 47% won't use <20 reviews, 74% weight last-3-months only, velocity > volume ("magic 10"). AI visibility: #1 = expert-curated lists; citations are the new link; refuted 0-3: "ChatGPT local = Bing data".
 
-**Deliverable:** `docs/seo/localSeoPlaybook2026.md` - strategy + phases L0-L6 (L0 merge Phase 0; L1 review engine to 10→20+; L2 `/web-design-bakersfield` + `/seo-bakersfield` MoneyPage template + hub upgrade; L3 4 AIO-targeted question posts; L4 directories/lists; L5 gated Kern towns; L6 LA/SF later). Open items for Rahul in doc §6.
+**Deliverable:** `docs/seo/local-seo-playbook-2026.md` - strategy + phases L0-L6 (L0 merge Phase 0; L1 review engine to 10→20+; L2 `/web-design-bakersfield` + `/seo-bakersfield` MoneyPage template + hub upgrade; L3 4 AIO-targeted question posts; L4 directories/lists; L5 gated Kern towns; L6 LA/SF later). Open items for Rahul in doc §6.
 
 **Pending:** Phase 0 STILL unmerged (since 6/24) - first action. Then L1 review-ask list + L2 build.
 
@@ -155,13 +155,13 @@ Investigated the "rsla.io" SERP site-name question. Code was already correct (We
 
 ### Repo housekeeping (commit 530fb43)
 - Committed `BRAIN.md` (GBP reference section) + `content/posts/gohighlevel-updates-2026-rewrite.md` (Phase-B rewrite draft, joins the other 38).
-- Gitignored `caseStudyData/` (local SEMrush/GSC research behind the fieldshare + rsla case studies; kept on disk, out of the repo).
+- Gitignored `case-study-data/` (local SEMrush/GSC research behind the fieldshare + rsla case studies; kept on disk, out of the repo).
 - Removed `scripts/fixRelatedPostKeys.mjs` (one-off; verified done, 0 duplicate `relatedPosts` keys across all 18 published posts).
 - Docs updated: `CLAUDE.md`/`GEMINI.md` (fixed stale GitHub ref → `HQ-RSL-A/rsla-io`; added gotchas for structured-data single source, prerender `$`-replacement, git auto-deploy reconnect, Vercel bot challenge); `BRAIN.md` (rewrote the SEO entity-graph section, added `structuredData.mjs` to Key Files).
 
 ### Next steps (cold pickup)
 - The "rsla.io" SERP site name is Google's call (brand ≈ domain + the slash), NOT a code bug. All signals are correct; the only lever is brand authority over time. Nothing to fix in code.
-- Optional: relocate `caseStudyData/` into a dedicated research/archive folder (organization preference only).
+- Optional: relocate `case-study-data/` into a dedicated research/archive folder (organization preference only).
 - Publish the GHL rewrite draft to Sanity when ready (part of the Phase-B blog overhaul).
 - Standing TODO list lives in `BRAIN.md > TODO (Next Session)`.
 - **Bot challenge** (`x-vercel-mitigated: challenge`) started returning 403 to non-browser clients on rsla.io after the deploy-verification traffic (real browsers unaffected). Likely auto-triggered by ~50 rapid checks and should relax; if it persists, check Firewall / Attack Challenge Mode in the Vercel dashboard (matters for non-JS AI crawlers).
@@ -572,7 +572,7 @@ Implemented an evergreen blog format optimized for SEO/AEO/GEO. Added structured
 - JSON-LD includes `speakable`, `wordCount`, `dateModified`
 
 ### Repo cleanup
-- rslaStudio: removed stale contentStrategy docs (archived), one-off scripts, post markdown files, executed plan docs. Added BRAIN.md, GEMINI.md, TODO.md.
+- rslaStudio: removed stale contentStrategy docs (archived), one-off scripts, post markdown files, executed plan docs. Added BRAIN.md, GEMINI.md, todo.md.
 - rslaWebsite: removed `content/posts/post11-22.md`, `content/scripts/` (57 files), `docs/conversionResearch/`, `docs/plan.md`, `docs/sessionHistory.md`, `docs/uiComponents.md`, stale superpowers plans, unused `Button` and `NumberTicker` UI components.
 - Total removed: ~18,000 lines across both repos.
 

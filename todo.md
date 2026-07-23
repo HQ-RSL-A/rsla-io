@@ -2,7 +2,7 @@
 
 ## P0: Claude/Anthropic Blog Content Plan (29 posts, ~53K monthly volume)
 
-Full plan: `docs/seo/contentPlan.md` | Tracker: [Google Sheet](https://docs.google.com/spreadsheets/d/1BffZHKJRirOrj-fUPBh56l9KjIlh2Wo-5fyHY-Kd-Xw/edit)
+Full plan: `docs/seo/content-plan.md` | Tracker: [Google Sheet](https://docs.google.com/spreadsheets/d/1BffZHKJRirOrj-fUPBh56l9KjIlh2Wo-5fyHY-Kd-Xw/edit)
 
 - [x] **Post 0 (Anchor):** Anthropic has 5 different Claude products. Most people are using the wrong one. — PUBLISHED 2026-03-25, slug: `anthropic-claude-products-guide`
 - [x] **Drop Post:** Claude has been shipping nonstop. These are the features that actually changed how I work. — PUBLISHED 2026-03-26, slug: `claude-new-features-actually-worth-it` (combined rows 31-36)

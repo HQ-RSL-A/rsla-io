@@ -41,7 +41,7 @@ export const organizationNode = {
     '@type': 'PostalAddress',
     addressLocality: 'Bakersfield',
     addressRegion: 'CA',
-    postalCode: '93301',
+    postalCode: '93311',
     addressCountry: 'US',
   },
   geo: { '@type': 'GeoCoordinates', latitude: 35.3733, longitude: -119.0187 },

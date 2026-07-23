@@ -26,7 +26,7 @@ Last updated: 2026-05-11
 | 1 | 2026-03-02 | Claude Code vs Cowork vs Chat | claude code vs cowork | Live - meta updated |
 | 2 | 2026-03-09 | Claude Code Agency Workflow | claude code for marketing | Live |
 | 3 | 2026-03-25 | 5 Claude Products Guide | claude ai vs claude code | Live - meta updated |
-| 4-32 | TBD | See docs/seo/contentPlan.md | Various | Not started (29 posts planned) |
+| 4-32 | TBD | See docs/seo/content-plan.md | Various | Not started (29 posts planned) |
 
 ### Cluster 3: Local SEO (2 posts published)
 
@@ -54,8 +54,8 @@ Last updated: 2026-05-11
 ### Phase B: Rewrite Backlog (38 drafts in content/posts/)
 Priority order by impression volume. Each needs: interview, draft, humanizer pass, Sanity publish.
 
-### Phase C: New Claude Content Plan (29 posts in docs/seo/contentPlan.md)
-Post 0 (anchor) first, then Tier 1 quick wins. See contentPlan.md for full details.
+### Phase C: New Claude Content Plan (29 posts in docs/seo/content-plan.md)
+Post 0 (anchor) first, then Tier 1 quick wins. See content-plan.md for full details.
 
 ## Cadence
 - Target: 2 posts/month

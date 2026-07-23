@@ -1,7 +1,7 @@
 # rsla.io SEO Audit - April 30, 2026
 
 **Data sources:** SEMRush Domain Overview, SEMRush Site Audit, SEMRush Backlinks Overview, GA4 (GSC integration), Google Analytics MCP
-**Previous audit:** March 25, 2026 (see seoActionPlan.md)
+**Previous audit:** March 25, 2026 (see seo-action-plan.md)
 
 ---
 

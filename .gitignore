@@ -35,4 +35,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local research/source data (case study SEMrush + GSC exports, not site content)
-caseStudyData/
+case-study-data/
