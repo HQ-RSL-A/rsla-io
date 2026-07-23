@@ -1,5 +1,23 @@
 # log.md - RSL/A website
 
+## 2026-07-22 23:34 PT - Dependency security sweep, schema ZIP, kebab rename pass
+
+Three shipped changes, all build-verified before push.
+
+**Dependencies: 5 alerts to 0** (`4e92d26`). vite 7.3.1 -> 7.3.5, sharp 0.34.5 -> 0.35.0, plus overrides for esbuild, js-yaml, @babel/core. `brace-expansion` pinned per major (`@1` -> ^1.1.16, `@5` -> ^5.0.7) because the tree carries both and a blanket pin would force minimatch@3 onto the 5.x API. All 5 were dev/build-scope, so production was never exposed.
+
+**Schema ZIP 93301 -> 93311** (`f1d1d16`). `src/lib/structuredData.mjs` now matches the locked LeadSnap citation address. Checked first that `PostalAddress` carries no `streetAddress` (SAB) and `geo` stays Bakersfield city center, so this publishes the ZIP only, not a home address. Verified in live production HTML.
+
+**Kebab rename pass** (`f1d1d16`, `bea3897`). 18 docs + 11 directories. Notables:
+- `caseStudyData/` -> `case-study-data/` **with `.gitignore` updated in the same commit.** Without that, 1.1M of client GSC and SEMrush data would have flipped from ignored to tracked.
+- `content/blogImages/<slug>/` -> `content/blog-images/<slug>/`, and the slug folders now match their real URL slugs.
+- Parent folder `myBusiness` -> `my-business` workspace-wide.
+- Left camelCase on purpose: `src/**` React components and JS modules (language convention, renaming breaks imports).
+
+**Also fixed:** `log.md` itself had four recent entries (06-23/24 through 07-21 evening) appended to the BOTTOM in ascending order, burying the newest work under months of history. Restored to strict reverse-chronological; content byte-identical. `docs/seo/README.md` had two dead PARA cross-refs (`~/lalia/4-Resources/...`). `CLAUDE.md` title said `rslaWebsite`, a pre-migration folder name.
+
+**Known non-blocking:** GitHub's Dependabot counter still reads 5. The fixes are real, confirmed via the repo's dependency-graph SBOM. Not dismissing them, that would record a false reason.
+
 ## 2026-07-21 (evening) - Phase 0 DEPLOYED
 
 Rahul gave the go. Pre-checks: build green (35/35 parity, 101 redirects verified, 0 errors); source lint only pre-existing cosmetic debt (9 errors in untouched files; the 1129-error scare = ESLint scanning `.worktrees/quizFunnel/dist` build output - add to ignores someday). Merged `seoGrowthPhase0` → `main` (ff, a0e49ba..74e2f74), pushed; Vercel auto-deploy triggered and went READY (~34s build, dpl_FFxMdUjHjN7QuCb8yyLMAyYoxUdp), aliased to rsla.io. Live verification: legacy `/services/websites` 301s, dead case-study slug 404s (indexing policy), prerendered nav links all 5 services. GSC: https sitemap resubmitted 21:12 UTC (pending). Left for Rahul in GSC UI (API-gated): remove legacy `http://` sitemap, run Validate Fix on the 404 issue. Noted: GitHub reports 5 Dependabot vulns (2 high) on the repo - triage next session.
