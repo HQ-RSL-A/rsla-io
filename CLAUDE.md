@@ -6,11 +6,11 @@ RSL/A agency website at rsla.io. React 19 + Vite SPA with GSAP animations, Sanit
 
 **Live:** rsla.io (Vercel, auto-deploys from `main`)
 **GitHub:** `HQ-RSL-A/rsla-io` (moved from `rahullalia/new-rslaWebsite`)
-**Studio:** studio.rsla.io (separate repo in `../rslaStudio/`)
+**Studio:** studio.rsla.io (separate repo in `../studio/`)
 
 ## Permissions
 
-Inherits from `~/lalia/CLAUDE.md`. Everything here is trusted.
+Inherits from `~/Developer/CLAUDE.md`. Everything here is trusted.
 
 ## Stack
 
@@ -54,19 +54,19 @@ npm run build      # Production build (includes sitemap + RSS + llms.txt + Index
 - **Serverless functions** need an explicit `functions` block in vercel.json with a `"runtime": "@vercel/node@X"` pin (currently `5.8.26`). Keep it matched to Vercel's current builder: a stale pin fails the prod build with "Failed to load Builders ... peer-version-mismatch" (`5.6.9` went stale 2026-07-22). The build log names the version to bump to: "Installing Builder: @vercel/node@...".
 - **GTM** (GTM-MVJQSMF8) loaded unconditionally in `<head>`. Manages GA4 and Meta Pixel (no standalone scripts). Cookie banner is transparency-only, does not gate tag loading.
 - **Blog images:** Styles rotate across posts to avoid repetition. Track which styles were used.
-- **Blog writing skill:** `/blogEngine` (lives in `~/lalia/myBusiness/skills/blogEngine/`).
+- **Blog writing skill:** `/blogEngine`.
 - **Blog pipeline:** Interview -> outline -> draft -> voice audit -> Sanity creation -> image generation -> upload -> publish -> post-publish (cross-links, GSC indexing, tracker update).
 - **Build chain:** `vite build -> prerender -> sitemap -> rss -> llms.txt -> IndexNow ping`
 - **Structured data = one source of truth.** `src/lib/structuredData.mjs` holds the global entity graph (`#business` LocalBusiness/ProfessionalService with telephone + priceRange NAP, `#website` WebSite, `#rahul` Person/founder/author). Both `scripts/prerender.mjs` and `src/components/Seo.jsx` import it, so static HTML and hydrated DOM never drift. `Seo.jsx` always injects these globals on indexed pages (gated on `!noIndex`). Page schemas reference them by `@id` (`provider`/`publisher`/`author`/`isPartOf`), never re-declared inline. No fabricated review markup.
 - **Prerender `$` injection.** In `inject()`, insert dynamic content with function-form replacements (`str.replace(target, () => value)`). String replacements treat `$$`/`$&`/`$n` as special tokens and corrupt dollar sequences (e.g. `priceRange "$$$"` rendered `"$$"`, and any dollar amount in body copy).
 - **Git auto-deploy + reconnect.** Pushes to `main` on `HQ-RSL-A/rsla-io` auto-deploy via Vercel. If auto-deploy silently stops (e.g. after a repo/org transfer, even while the Vercel link, GitHub App, and `createDeployments` all read healthy), reconnect: `vercel git disconnect --yes` then `vercel git connect https://github.com/HQ-RSL-A/rsla-io.git` (plain `disconnect` is a no-op non-interactively; `--yes` is required). Manual deploy any time: `vercel --prod`.
 - **Vercel bot challenge.** Rapid automated/`curl` hits on rsla.io return `403 x-vercel-mitigated: challenge` (real browsers solve it transparently). To read live HTML programmatically, use the Vercel MCP `web_fetch_vercel_url` (authenticated, bypasses it); don't hammer the domain.
-- **Brand reference:** All brand docs live in `../brandGuidelines/`.
+- **Brand reference:** All brand docs live in `../../brandGuidelines/`.
 
 ## Documentation Convention
 
 | File | Purpose |
 |---|---|
-| `CLAUDE.md` | Rules, permissions, stack, gotchas |
-| `GEMINI.md` | Mirror of CLAUDE.md for Gemini |
-| `BRAIN.md` | Reference material: routes, colors, typography, file map, SEO details |
+| `CLAUDE.md` | Rules, permissions, stack, gotchas (obey) |
+| `brain.md` | Reference: routes, colors, typography, file map, SEO details (look up) |
+| `log.md` | Running record, newest entry on top |

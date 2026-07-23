@@ -1,4 +1,4 @@
-# BRAIN.md - rslaWebsite
+# brain.md - RSL/A website
 
 Reference material for the RSL/A website. Rules and behavior live in CLAUDE.md.
 

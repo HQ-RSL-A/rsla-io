@@ -1,4 +1,4 @@
-# LOG.md - rslaWebsite
+# log.md - RSL/A website
 
 ## 2026-07-21 - GSC fix execution: keeper posts turn out DELETED, sitemap hygiene done
 
