@@ -1,4 +1,4 @@
-# SEO Blog Content Pipeline — Claude / Anthropic
+# SEO Blog Content Pipeline - Claude / Anthropic
 
 This folder contains everything needed to research, write, publish, and track blog posts targeting Claude, Claude Code, and Anthropic keywords on rsla.io.
 
@@ -21,13 +21,13 @@ This is the live tracker. Update it every time you work on a blog post. Columns 
 ## How to Write a Blog Post
 
 1. **Pick a post** from `contentPlan.md` (follow the publishing schedule)
-2. **Interview Rahul first** — ask the 6 questions in the "Interview Rahul First" section of contentPlan.md. Do not skip this. His personal experience is what makes each post rank.
+2. **Interview Rahul first** - ask the 6 questions in the "Interview Rahul First" section of contentPlan.md. Do not skip this. His personal experience is what makes each post rank.
 3. **Draft the post** using `/blogEngine` skill. Follow the product tag (which Claude product the post covers), internal linking rules, and keyword targets listed for that post.
 4. **Generate a featured image** using the Gemini API instructions in contentPlan.md. Blue-gray palette, 1200x630, no text on image.
 5. **Publish to Sanity** as a blogPostV2 document. Set SEO fields (meta title, description, slug).
 6. **Pre-render** by running `npm run build` (triggers prerender.mjs).
-7. **Update the Google Sheet** — change status to Published, check all completed boxes, add published date and URL slug.
-8. **Submit to GSC** — request indexing in Google Search Console for the new URL.
+7. **Update the Google Sheet** - change status to Published, check all completed boxes, add published date and URL slug.
+8. **Submit to GSC** - request indexing in Google Search Console for the new URL.
 
 ## Key Rules
 
@@ -38,7 +38,7 @@ This is the live tracker. Update it every time you work on a blog post. Columns 
 
 ## Brand References
 
-- Voice DNA: `~/lalia/4-Resources/brandGuidelines/voiceDna.md`
-- Website CLAUDE.md: `~/lalia/1-Projects/rsl-a/rslaWebsite/CLAUDE.md`
+- Voice DNA: `../../../../brandGuidelines/voiceDna.md` (still at `~/lalia/myBusiness/brandGuidelines/` until that folder migrates)
+- Website CLAUDE.md: `../../CLAUDE.md`
 - Sanity Project ID: `yz25oyux` (dataset: `production`)
 - Blog schema: `blogPostV2` (V1 is legacy, do not use)

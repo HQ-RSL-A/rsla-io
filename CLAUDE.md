@@ -1,4 +1,4 @@
-# CLAUDE.md - rslaWebsite
+# CLAUDE.md - RSL/A website
 
 ## What This Is
 
