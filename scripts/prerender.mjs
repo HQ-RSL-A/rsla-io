@@ -1457,17 +1457,6 @@ async function main() {
     { route: '/rahul', ...rahulContent() },
     { route: '/sid', ...sidContent() },
     { route: '/404', ...notFoundContent() },
-    {
-      route: '/geo-quiz',
-      title: 'Is Your Business Invisible to AI? | RSL/A',
-      description: 'ChatGPT, Perplexity, and Google are recommending businesses to millions of people every day. Most businesses have no idea where they stand. Take 60 seconds to find out.',
-      canonical: `${SITE}/geo-quiz`,
-      noIndex: true,
-      html: `<main>
-<h1>Is Your Business Invisible to AI?</h1>
-<p>ChatGPT, Perplexity, and Google are now recommending businesses to millions of people every day. Most businesses have no idea where they stand. Take 60 seconds to find out.</p>
-</main>`,
-    },
   ];
 
   for (const page of staticPages) {

@@ -86,10 +86,9 @@ const Disclaimer = lazyRetry(() => import('./pages/Disclaimer'));
 const Accessibility = lazyRetry(() => import('./pages/Accessibility'));
 const Insider = lazyRetry(() => import('./pages/Insider'));
 const LeadMagnet = lazyRetry(() => import('./pages/LeadMagnet'));
-const Quiz = lazyRetry(() => import('./pages/Quiz'));
 const NotFound = lazyRetry(() => import('./pages/NotFound'));
 
-const chromelessRoutes = ['/rahul', '/booking-confirmed', '/geo-quiz'];
+const chromelessRoutes = ['/rahul', '/booking-confirmed'];
 
 function App() {
   const location = useLocation();
@@ -144,7 +143,6 @@ function App() {
             <Route path="/rahul" element={<Rahul />} />
 
             <Route path="/insider" element={<Insider />} />
-            <Route path="/geo-quiz" element={<Quiz />} />
 
             {/* Lead Magnets — Gated Resource Pages */}
             <Route path="/r/:slug" element={<LeadMagnet />} />
