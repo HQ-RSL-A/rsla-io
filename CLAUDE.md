@@ -51,7 +51,7 @@ npm run build      # Production build (includes sitemap + RSS + llms.txt + Index
 - **Sanity CORS:** Only `localhost:5173` whitelisted. Other ports will fail.
 - **PortableText:** Extract text from `value.children` (raw Sanity data), not React `children` props.
 - **Vercel SPA rewrite** excludes `/api/`: `/((?!api/).*) -> /index.html`
-- **Serverless functions** need explicit `functions` block in vercel.json with `"runtime": "@vercel/node@5.6.9"`.
+- **Serverless functions** need an explicit `functions` block in vercel.json with a `"runtime": "@vercel/node@X"` pin (currently `5.8.26`). Keep it matched to Vercel's current builder: a stale pin fails the prod build with "Failed to load Builders ... peer-version-mismatch" (`5.6.9` went stale 2026-07-22). The build log names the version to bump to: "Installing Builder: @vercel/node@...".
 - **GTM** (GTM-MVJQSMF8) loaded unconditionally in `<head>`. Manages GA4 and Meta Pixel (no standalone scripts). Cookie banner is transparency-only, does not gate tag loading.
 - **Blog images:** Styles rotate across posts to avoid repetition. Track which styles were used.
 - **Blog writing skill:** `/blogEngine` (lives in `~/lalia/myBusiness/skills/blogEngine/`).
