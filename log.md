@@ -711,30 +711,30 @@ See `BRAIN.md > TODO (Next Session)` for the full checklist.
 
 ---
 
-## 2026-06-23/24 — GSC indexing audit + SEMrush/GA4 deep dive (diagnosis + staged fixes, NOT yet deployed)
+## 2026-06-23/24 - GSC indexing audit + SEMrush/GA4 deep dive (diagnosis + staged fixes, NOT yet deployed)
 
 ### Trigger
-GSC emails (May 14 dup-canonical, May 25 404, Jun 12 "fix failed"; Fieldshare 5xx ignored — separate site). User then supplied full GSC + SEMrush site-audit exports and asked for a data-grounded growth strategy.
+GSC emails (May 14 dup-canonical, May 25 404, Jun 12 "fix failed"; Fieldshare 5xx ignored - separate site). User then supplied full GSC + SEMrush site-audit exports and asked for a data-grounded growth strategy.
 
 ### Diagnosis
-- **GSC connection healthy** (sc-domain:rsla.io, siteOwner; sitemap Valid, 35 URLs, 0 errors). A legacy `http://rsla.io/sitemap.xml` is also registered — remove it.
-- **Duplicate-canonical: 0 URLs now** — self-resolved via consolidation redirects. All 8 inspected keeper pages = "Submitted and indexed / PASS".
+- **GSC connection healthy** (sc-domain:rsla.io, siteOwner; sitemap Valid, 35 URLs, 0 errors). A legacy `http://rsla.io/sitemap.xml` is also registered - remove it.
+- **Duplicate-canonical: 0 URLs now** - self-resolved via consolidation redirects. All 8 inspected keeper pages = "Submitted and indexed / PASS".
 - **Not found (404): 6 URLs**, root-caused to (a) old URLs never redirected and (b) **redirects pointing to case-study pages that were never published** (broken redirect chains). Live tests confirmed `/work/local-seo-reputation-management`, `/work/seo-content-marketing-automation`, `/work/nonprofit-crm-volunteer-automation`, `/work/ai-proposal-generator-sales-workflow` all 404; several are hardcoded internal links in `src/data/serviceData.js` (7 dead case-study links across all 5 service pages).
 - **"Fix failed" email**: GSC Validate Fix clicked on the 404 issue while redirects still pointed at 404s. "Page with redirect"/"noindex" issues were also being pointlessly validated.
 - **Structured data invalid** on `/services/bakersfield`: `@type ProfessionalService` (a LocalBusiness, needs `address`) with invalid `provider` prop.
 - **Orphaned/under-linked services**: prerendered HTML (no-JS crawlers) only linked `/services/bakersfield`; React nav links the other 5 but SEMrush crawls static HTML.
 
-### Staged code changes (local only — nothing committed or deployed)
-- `vercel.json`: repointed 5 broken redirect destinations to live pages; added redirects (111 total). NOTE: needs rework per indexing policy — pull redirects for the "coming-back" case-study slugs so they 404 (a redirect would block republishing).
+### Staged code changes (local only - nothing committed or deployed)
+- `vercel.json`: repointed 5 broken redirect destinations to live pages; added redirects (111 total). NOTE: needs rework per indexing policy - pull redirects for the "coming-back" case-study slugs so they 404 (a redirect would block republishing).
 - `scripts/prerender.mjs` + `src/pages/CityHub.jsx`: Bakersfield schema `ProfessionalService` → `Service` (provider valid, no address required); kept `provider: #business` ref.
 - `scripts/prerender.mjs`: expanded prerendered `siteNav` to link all 5 service pages.
 
 ### Data findings (GA4 516387648 + GSC + SEMrush, 28d/90d)
 - Traffic is **global + informational**: ~90% Claude product queries ("claude products" pos 3.2 = 53 clicks; dozens of "claude code vs cowork vs chat" variants) + GoHighLevel. Low-CTR pages are all position 8-13 (AI Overviews eat clicks); at pos 3 CTR is a healthy 2.8%.
 - **Converts to ~0 leads.** Key events concentrate on /, /services/web-design, /work, go-high-level-pricing. Informational blog posts drive views, ~0 key events.
-- **No commercial/local footprint** except leftover "salon CRM" (hair salon crm pos 4, salon crm pos 9) — an accidental but real foothold.
+- **No commercial/local footprint** except leftover "salon CRM" (hair salon crm pos 4, salon crm pos 9) - an accidental but real foothold.
 - **GA4 Bakersfield (265 sessions, 22 key events) ≈ Rahul's own traffic.** Data-center cities (Boardman, Council Bluffs, Ashburn…) are bots. Needs internal-traffic filter.
-- **Backlinks: very low DA (best AS 2-5).** Real editorial links come from the AI/GHL content (agntcms, agenticdesign.school, klipy.ai, mola-solutions). Bulk "new backlinks" are old-brand (rslmediahub.*) PBN spam. SEMrush auto-disavow includes legit DesignRush listings — do NOT submit wholesale.
+- **Backlinks: very low DA (best AS 2-5).** Real editorial links come from the AI/GHL content (agntcms, agenticdesign.school, klipy.ai, mola-solutions). Bulk "new backlinks" are old-brand (rslmediahub.*) PBN spam. SEMrush auto-disavow includes legit DesignRush listings - do NOT submit wholesale.
 
 ### Decisions
 - **Indexing policy:** only ~35 live sitemap pages indexed; let dead URLs 404 and drop. 301 only URLs with backlinks/traffic. Leave coming-back case-study slugs as 404 (no redirect). No GSC Removals tool. (Memory: rsla-indexing-policy.)
@@ -747,42 +747,42 @@ GSC emails (May 14 dup-canonical, May 25 404, Jun 12 "fix failed"; Fieldshare 5x
 - GA4 internal-traffic filter. Curate (don't bulk-submit) disavow.
 - CTR/AEO on pos 3-8 pages; write 5 case studies; commercial service-page SEO; Bakersfield pSEO (done right, not templated) + GBP; DA/linkable-asset plan.
 
-### UPDATE (2026-06-24, overnight) — Phase 0 IMPLEMENTED + QA PASSED on branch `seoGrowthPhase0` (local only, not pushed/deployed)
+### UPDATE (2026-06-24, overnight) - Phase 0 IMPLEMENTED + QA PASSED on branch `seoGrowthPhase0` (local only, not pushed/deployed)
 Per Rahul's go-ahead ("Plan A/B/C, implement one by one, QA each step, clean code, no fabrication; I'm asleep, continue"). GBP for Bakersfield confirmed live with citations on.
 
 **Done + verified:**
 - `vercel.json`: reworked to indexing policy. 103 redirects. Coming-back case-study slugs + `/ai-for/*` removed (left to 404 so republishing isn't blocked). Kept only equity redirects (backlink-bearing) + fixed legacy chains. JSON valid; validateBuild confirms 101 redirect destinations resolve (no redirect → 404).
-- `src/data/serviceData.js` + `scripts/prerender.mjs`: removed all 7 dead case-study links from the 5 service pages (both duplicate copies), replaced with the 5 REAL published case studies (titles/metrics pulled from Sanity — no fabrication). Both copies in sync.
+- `src/data/serviceData.js` + `scripts/prerender.mjs`: removed all 7 dead case-study links from the 5 service pages (both duplicate copies), replaced with the 5 REAL published case studies (titles/metrics pulled from Sanity - no fabrication). Both copies in sync.
 - Bakersfield structured data: `ProfessionalService` (missing address + invalid `provider`) → `Service` (provider valid, areaServed kept) in both `CityHub.jsx` and `prerender.mjs`. Verified in dist: 1 `#business` node WITH address + 1 city `Service` node, all JSON-LD parses.
 - Prerendered `siteNav` now links all 5 service pages (fixes orphaned/under-linked for no-JS crawlers).
 
 **QA:** `vite build` + prerender + sitemap + validateBuild + rss + llms = exit 0, 0 errors / 0 warnings. ESLint on changed files clean. Zero dead case-study slugs anywhere in `src/`, `scripts/`, or `dist/`. 48 pages prerendered, 35/35 sitemap parity.
 
-**Known redundancy flagged (not fixed — needs review):** `prerender.mjs` keeps a hand-maintained duplicate of `serviceData.js` (service objects). Should be deduped by importing the shared data. Also a pre-existing empty `react-vendor` manualChunk.
+**Known redundancy flagged (not fixed - needs review):** `prerender.mjs` keeps a hand-maintained duplicate of `serviceData.js` (service objects). Should be deduped by importing the shared data. Also a pre-existing empty `react-vendor` manualChunk.
 
 **Deploy:** NOT deployed (Rahul asleep; pushing to prod unattended is the one thing held back). Branch `seoGrowthPhase0` is deploy-ready. After deploy: remove the legacy `http://` sitemap in GSC, run Validate Fix once on the 404 issue, resubmit sitemap.
 
 **A/B/C plan:** see `docs/superpowers/plans/2026-06-24-abc-growth-plan.md`. Curated disavow analysis in `~/Downloads` (review-before-submit).
 
-## 2026-07-20 — Local SEO research + Bakersfield-first playbook
+## 2026-07-20 - Local SEO research + Bakersfield-first playbook
 
 Rahul asked for a research-backed plan for local rankings (Bakersfield + Kern), programmatic SEO, and question-answering blogs, before touching design/content.
 
 **Research done:**
-- GSC: 6 months of "bakersfield" queries = 5 impressions, 0 clicks; zero "kern" queries. `/services/bakersfield` IS indexed (crawled 7/5, clean canonical) — the problem is competitiveness, not indexation.
+- GSC: 6 months of "bakersfield" queries = 5 impressions, 0 clicks; zero "kern" queries. `/services/bakersfield` IS indexed (crawled 7/5, clean canonical) - the problem is competitiveness, not indexation.
 - Live SERP recon on the 3 money queries + Delano probe; dissected 3 ranking competitor pages (Mantera, ThrillX, Chavez). Winners all use dedicated service-x-city URLs; localization bar is keyword-swap low; Delano has zero real local providers.
 - Deep-research workflow (104 agents, 22 sources, 25 claims adversarially verified): AIO on only 8% commercial / 5% transactional queries (vs 86% question-format) → money pages fight traditional SERPs, blogs fight for AI citation. Whitespark 2026: #1 local organic factor = dedicated page per service + geo relevance (≈ offsets weak links at DA 7). Hidden-address SAB = replicated map-pack handicap (don't fake address; win organic). Reviews: 47% won't use <20 reviews, 74% weight last-3-months only, velocity > volume ("magic 10"). AI visibility: #1 = expert-curated lists; citations are the new link; refuted 0-3: "ChatGPT local = Bing data".
 
-**Deliverable:** `docs/seo/localSeoPlaybook2026.md` — strategy + phases L0-L6 (L0 merge Phase 0; L1 review engine to 10→20+; L2 `/web-design-bakersfield` + `/seo-bakersfield` MoneyPage template + hub upgrade; L3 4 AIO-targeted question posts; L4 directories/lists; L5 gated Kern towns; L6 LA/SF later). Open items for Rahul in doc §6.
+**Deliverable:** `docs/seo/localSeoPlaybook2026.md` - strategy + phases L0-L6 (L0 merge Phase 0; L1 review engine to 10→20+; L2 `/web-design-bakersfield` + `/seo-bakersfield` MoneyPage template + hub upgrade; L3 4 AIO-targeted question posts; L4 directories/lists; L5 gated Kern towns; L6 LA/SF later). Open items for Rahul in doc §6.
 
-**Pending:** Phase 0 STILL unmerged (since 6/24) — first action. Then L1 review-ask list + L2 build.
+**Pending:** Phase 0 STILL unmerged (since 6/24) - first action. Then L1 review-ask list + L2 build.
 
-## 2026-07-21 — URL convention + freshness pass (inline, agent-capped)
+## 2026-07-21 - URL convention + freshness pass (inline, agent-capped)
 
 - **URL convention approved by Rahul:** `/{city}/{service}` money pages (`/bakersfield/websites`, `/bakersfield/seo`), `/{city}` hubs, plain-noun slugs everywhere. Slug renames planned while noIndexed: `web-design`→`websites` (flip existing 301), `ai-automations`→`automations`, `crm-systems`→`crm`, `custom-development`→`custom-builds`. Playbook §4.2.
-- **Freshness research:** first re-run died on session limit (all 75 verifiers); Rahul capped agents (50, then ≤5/none) — workflows stopped, finished inline with 2 WebFetches against primaries. Verified: May 2026 core update (5/21) + June 2026 spam update (6/24, 2d rollout — spam enforcement active; city-page quality bar non-negotiable); ChatGPT May 7 sources change (+157.7% WoW referrals, ~60% now landing on HOMEPAGES → brand/entity + hub quality appreciating); Seer CTR-recovery trend (AIO-present CTR 1.3%→2.4%, gap ~37% at endpoint, not 58%). All prior load-bearing figures re-confirmed with data windows. Playbook §3 freshness section. No strategy changes; hub/brand weight up.
+- **Freshness research:** first re-run died on session limit (all 75 verifiers); Rahul capped agents (50, then ≤5/none) - workflows stopped, finished inline with 2 WebFetches against primaries. Verified: May 2026 core update (5/21) + June 2026 spam update (6/24, 2d rollout - spam enforcement active; city-page quality bar non-negotiable); ChatGPT May 7 sources change (+157.7% WoW referrals, ~60% now landing on HOMEPAGES → brand/entity + hub quality appreciating); Seer CTR-recovery trend (AIO-present CTR 1.3%→2.4%, gap ~37% at endpoint, not 58%). All prior load-bearing figures re-confirmed with data windows. Playbook §3 freshness section. No strategy changes; hub/brand weight up.
 - **Standing preference recorded:** max ~5 well-briefed agents per task, prefer inline (memory: agent-budget).
 
-## 2026-07-21 (evening) — Phase 0 DEPLOYED
+## 2026-07-21 (evening) - Phase 0 DEPLOYED
 
-Rahul gave the go. Pre-checks: build green (35/35 parity, 101 redirects verified, 0 errors); source lint only pre-existing cosmetic debt (9 errors in untouched files; the 1129-error scare = ESLint scanning `.worktrees/quizFunnel/dist` build output — add to ignores someday). Merged `seoGrowthPhase0` → `main` (ff, a0e49ba..74e2f74), pushed; Vercel auto-deploy triggered and went READY (~34s build, dpl_FFxMdUjHjN7QuCb8yyLMAyYoxUdp), aliased to rsla.io. Live verification: legacy `/services/websites` 301s, dead case-study slug 404s (indexing policy), prerendered nav links all 5 services. GSC: https sitemap resubmitted 21:12 UTC (pending). Left for Rahul in GSC UI (API-gated): remove legacy `http://` sitemap, run Validate Fix on the 404 issue. Noted: GitHub reports 5 Dependabot vulns (2 high) on the repo — triage next session.
+Rahul gave the go. Pre-checks: build green (35/35 parity, 101 redirects verified, 0 errors); source lint only pre-existing cosmetic debt (9 errors in untouched files; the 1129-error scare = ESLint scanning `.worktrees/quizFunnel/dist` build output - add to ignores someday). Merged `seoGrowthPhase0` → `main` (ff, a0e49ba..74e2f74), pushed; Vercel auto-deploy triggered and went READY (~34s build, dpl_FFxMdUjHjN7QuCb8yyLMAyYoxUdp), aliased to rsla.io. Live verification: legacy `/services/websites` 301s, dead case-study slug 404s (indexing policy), prerendered nav links all 5 services. GSC: https sitemap resubmitted 21:12 UTC (pending). Left for Rahul in GSC UI (API-gated): remove legacy `http://` sitemap, run Validate Fix on the 404 issue. Noted: GitHub reports 5 Dependabot vulns (2 high) on the repo - triage next session.
