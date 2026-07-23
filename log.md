@@ -296,7 +296,7 @@ Complete redesign of all newsletter signup placements across the site. New "The 
 - `public/images/tape.png` (26KB): rasterized from vector tape asset, color-shifted via CSS filter to warm beige
 - `public/images/envelope.svg`: envelope icon for blog grid card
 - `public/images/rahul.webp`: existing headshot, now used in Insider page polaroid
-- Original tape SVG saved to `myBusiness/uiComponents/assets/tornTape.svg` for future use
+- Original tape SVG saved to `my-business/uiComponents/assets/tornTape.svg` for future use
 
 ### Assets removed
 - `public/images/paperclip.svg`: tested and rejected in favor of tape
