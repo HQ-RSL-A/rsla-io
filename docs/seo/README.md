@@ -38,7 +38,7 @@ This is the live tracker. Update it every time you work on a blog post. Columns 
 
 ## Brand References
 
-- Voice DNA: `../../../../brandGuidelines/voiceDna.md` (still at `~/lalia/myBusiness/brandGuidelines/` until that folder migrates)
+- Voice DNA: `../../../../brand-guidelines/voice-dna.md`
 - Website CLAUDE.md: `../../CLAUDE.md`
 - Sanity Project ID: `yz25oyux` (dataset: `production`)
 - Blog schema: `blogPostV2` (V1 is legacy, do not use)
