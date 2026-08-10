@@ -103,7 +103,9 @@ docs/
 - `prefers-reduced-motion` respected across all 11 GSAP components
 - Lighthouse: SEO 100, Best Practices 100, Accessibility 93
 
-### SEO Performance (as of April 2026)
+### SEO Performance (April 2026 snapshot, SUPERSEDED)
+
+> Superseded by the June/July 2026 GSC/GA4/SEMrush diagnosis recorded in log.md: ~90% of organic traffic is Claude-product queries with near-zero local/agency conversion. The April figures below stay as the baseline record.
 - **Organic traffic:** 15/mo (SEMRush), ~100 clicks/mo (GSC)
 - **Impressions:** 350K+/mo (top 3 posts: GHL pricing 88K, Claude Code vs Cowork 70K, GHL updates 55K)
 - **Keywords:** 151 ranking (2 in top 3, 21 in 4-10, 55 in 51-100)
