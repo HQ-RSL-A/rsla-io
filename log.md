@@ -1,5 +1,10 @@
 # log.md - RSL/A website
 
+## 2026-08-11 14:03 PT - Email signature assets self-hosted + deploy pipeline unstuck
+
+- `public/signature/`: seven assets (profile GIF, logo, verified badge, three social icons, Talk to Rahul CTA button) now served from rsla.io/signature/ (`38eb176`). They back the new email signature, whose source of truth lives at `my-business/brand-guidelines/email-signature/email-signature.html`; this removes every customesignature.com trial-CDN dependency before that trial dies.
+- Production deploys had been silently failing since 2026-08-10: the vercel.json `@vercel/node@5.8.26` pin went stale against Vercel's 5.9.0 builder, the exact failure class from 2026-07-22. Bumped to 5.9.0 (`c220f32`); deploy went green in ~40s and all seven signature URLs verified 200. CLAUDE.md's pin note updated to match.
+
 ## 2026-07-22 23:34 PT - Dependency security sweep, schema ZIP, kebab rename pass
 
 Three shipped changes, all build-verified before push.
