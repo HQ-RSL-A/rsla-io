@@ -101,10 +101,7 @@ export default function FooterV2() {
                         </Link>
                     ))}
                     <button
-                        onClick={() => {
-                            localStorage.removeItem('rsla_cookie_consent');
-                            window.location.reload();
-                        }}
+                        onClick={() => window.CookieScript?.instance?.show()}
                         className="font-sans text-sm text-white/30 hover:text-white transition-colors"
                     >
                         Cookie Settings

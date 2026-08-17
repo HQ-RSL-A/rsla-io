@@ -52,7 +52,8 @@ npm run build      # Production build (includes sitemap + RSS + llms.txt + Index
 - **PortableText:** Extract text from `value.children` (raw Sanity data), not React `children` props.
 - **Vercel SPA rewrite** excludes `/api/`: `/((?!api/).*) -> /index.html`
 - **Serverless functions** need an explicit `functions` block in vercel.json with a `"runtime": "@vercel/node@X"` pin (currently `5.9.0`). Keep it matched to Vercel's current builder: a stale pin fails the prod build with "Failed to load Builders ... peer-version-mismatch" (`5.6.9` went stale 2026-07-22, `5.8.26` went stale 2026-08-10). The build log names the version to bump to: "Installing Builder: @vercel/node@...".
-- **GTM** (GTM-MVJQSMF8) loaded unconditionally in `<head>`. Manages GA4 and Meta Pixel (no standalone scripts). Cookie banner is transparency-only, does not gate tag loading.
+- **GTM** (GTM-MVJQSMF8) loaded unconditionally in `<head>`. Manages GA4, Meta Pixel, Microsoft Clarity, and the CookieScript CMP (no standalone scripts). Consent is CookieScript's official GTM template: Consent Mode v2 defaults denied, banner grants. The old React `CookieConsent` banner is deleted; the footer "Cookie Settings" button calls `window.CookieScript.instance.show()`.
+- **CSP must whitelist every script host GTM injects.** A missing host fails silently: the `<script>` tag lands in the DOM but transfers zero bytes, and no error surfaces anywhere obvious (resource-timing entry shows `status: 0, size: 0`). CookieScript and Clarity both shipped blocked this way until 2026-08-17. When adding a tag in GTM, add its domains to the CSP in vercel.json in the same change.
 - **Blog images:** Styles rotate across posts to avoid repetition. Track which styles were used.
 - **Blog writing skill:** `/blogEngine`.
 - **Blog pipeline:** Interview -> outline -> draft -> voice audit -> Sanity creation -> image generation -> upload -> publish -> post-publish (cross-links, GSC indexing, tracker update).

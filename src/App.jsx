@@ -2,7 +2,6 @@ import { lazy, Suspense, useEffect, useState, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import NavbarV3 from './components/NavbarV3';
 import FooterV2 from './components/FooterV2';
-import CookieConsent from './components/CookieConsent';
 import ScrollToTop from './components/ScrollToTop';
 
 // Main navigation pages loaded eagerly — eliminates Safari dynamic import
@@ -155,7 +154,6 @@ function App() {
 
       {!hideChrome && <FooterV2 />}
       {!hideChrome && <ScrollToTop />}
-      <CookieConsent />
     </main>
   );
 }

@@ -16,7 +16,6 @@ src/
     Seo.jsx               # Per-page SEO (title, description, OG, Twitter, canonical, robots, og:locale)
     NavbarV3.jsx           # Grid navbar with services mega-menu, Link-wrapped CTA
     FooterV2.jsx           # Light theme 5-col footer with Kit newsletter + Solutions column
-    CookieConsent.jsx      # Cookie transparency banner (does not gate tracking)
     CaseStudyCard.jsx      # Shared card component used by Work.jsx and WorkInner.jsx
     PersonCard.jsx         # Shared digital business card used by Rahul.jsx and Sid.jsx
     blog/PortableTextRenderer.jsx  # Sanity rich text renderer
