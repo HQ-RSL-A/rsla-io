@@ -95,31 +95,31 @@ export default function Work() {
                         Our work.
                     </TextAnimate>
                 </h1>
-                <p className="font-sans text-textMuted max-w-2xl mx-auto text-lg leading-relaxed">
+                <p className="font-sans text-text max-w-2xl mx-auto text-lg leading-relaxed">
                     We help customers achieve measurable results
                 </p>
             </section>
 
             {/* Filters */}
-            <section className="mb-10 border-b border-accent-border pb-6 relative z-10 max-w-7xl mx-auto">
+            <section className="mb-10 border-b border-hairline pb-6 relative z-10 max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex flex-wrap items-center justify-center gap-3">
                         <div className="relative">
                             <select
                                 value={selectedCategory}
                                 onChange={(e) => setSelectedCategory(e.target.value)}
-                                className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-accent-border text-text font-sans text-sm uppercase tracking-wider cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                                className="appearance-none min-h-[44px] pl-4 pr-10 rounded-full bg-surfaceAlt border border-hairline text-text font-sans text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
                             >
-                                <option value="all">All Categories</option>
+                                <option value="all">All categories</option>
                                 {categoryOptions.map((name) => (
                                     <option key={name} value={name}>{name}</option>
                                 ))}
                             </select>
-                            <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none" />
+                            <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-text pointer-events-none" />
                         </div>
                     </div>
                     {!loading && (
-                        <div className="font-sans text-sm text-textMuted">
+                        <div className="font-sans text-sm text-text">
                             Showing [{filteredAndSortedStudies.length}] result{filteredAndSortedStudies.length !== 1 ? 's' : ''}
                         </div>
                     )}
@@ -135,7 +135,7 @@ export default function Work() {
                         ))}
                     </div>
                 ) : filteredAndSortedStudies.length === 0 ? (
-                    <div className="text-center py-20 font-sans text-textMuted">
+                    <div className="text-center py-20 font-sans text-text">
                         No case studies found for this category.
                     </div>
                 ) : (

@@ -59,22 +59,24 @@ export default {
         },
       },
       colors: {
-        // === Blue-gray theme (new) ===
-        background: "#F8FAFC",       // slate-50 — page background
-        surface: "#FFFFFF",           // white — cards, containers
-        surfaceAlt: "#F1F5F9",       // slate-100 — alternating sections
-        text: "#0F172A",              // slate-900 — primary text
-        textMuted: "#475569",         // slate-600 — secondary text (bumped from slate-500 for WCAG AAA on all surfaces)
-        textLight: "#94A3B8",         // slate-400 — tertiary text
-        accent: "#0066E0",            // brand blue (darkened from #0070F3 for WCAG AA contrast)
-        cyan: "#00C2FF",              // electric cyan
-        coral: "#FF6B6B",             // soft coral (errors only)
+        // === RSL/A brand tokens (brand-guidelines/design-tokens.css, 2026-08-10) ===
+        // Light-first, one ink, one accent. Never retype hexes elsewhere.
+        background: "#FFFFFF",        // Paper — default background, every medium
+        surface: "#FFFFFF",           // Paper — cards sit on Hairline borders + shadows, not tint
+        surfaceAlt: "#F5F5F7",        // Mist — alternate sections, cards
+        mist: "#F5F5F7",              // Mist by name — the text color on black (footer)
+        text: "#1d1d1f",              // Ink — ALL text on light; solid, never transparent
+        accent: "#0070F3",            // Anchor Blue — links, CTAs, highlights
+        accentDeep: "#0059C2",        // Anchor Deep — hover states on Anchor Blue
+        frost: "#EFF6FF",             // Frost — blue-tinted surface: callouts, active states
+        hairline: "#D2D2D7",          // Hairline — borders, dividers, table rules
+        error: "#DC2626",             // semantic: states only, never decoration
+        success: "#047857",
+        warning: "#B45309",
 
-        // Accent opacity variants
+        // Accent opacity variants (surfaces only: hover tints, washes)
         "accent-light": "rgba(0,112,243,0.05)",
         "accent-medium": "rgba(0,112,243,0.10)",
-        "accent-border": "rgba(0,112,243,0.08)",
-        "accent-border-strong": "rgba(0,112,243,0.15)",
 
 
         // shadcn CSS variable tokens (for Magic UI components)
@@ -104,9 +106,8 @@ export default {
         ring: "hsl(var(--ring))",
       },
       fontFamily: {
-        sans: ["Satoshi", "sans-serif"],
-        cormorant: ["Cormorant", '"Cormorant Garamond"', "serif"],
-        caveat: ["Caveat", "cursive"],
+        // Satoshi ONLY (brand rule): Medium 500 = reading, Bold 700 = headings/emphasis.
+        sans: ["Satoshi", "-apple-system", "sans-serif"],
         // System monospace stack — code blocks only
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
       },
@@ -114,6 +115,8 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        button: "10px",   // brand --radius-button
+        callout: "12px",  // brand --radius-callout
       },
     },
   },

@@ -41,10 +41,10 @@ export default function FounderSection() {
 
                 {/* Text */}
                 <div className="flex-1">
-                    <h2 className="founder-text opacity-0 font-sans font-extrabold text-2xl md:text-4xl text-text tracking-tight mb-6">
+                    <h2 className="founder-text opacity-0 font-sans font-bold text-2xl md:text-4xl text-text tracking-tight mb-6">
                         Hi. I'm Rahul.
                     </h2>
-                    <div className="space-y-5 font-sans text-textMuted text-lg leading-relaxed">
+                    <div className="space-y-5 font-sans text-text text-lg leading-relaxed">
                         <p className="founder-text opacity-0">
                             I have spent the better part of five years in the trenches of marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched founders with real talent suffocate under work that never should have touched their hands.
                         </p>
@@ -56,9 +56,9 @@ export default function FounderSection() {
                         </p>
                     </div>
 
-                    <div className="founder-text opacity-0 mt-10 border-t border-accent-border pt-8">
+                    <div className="founder-text opacity-0 mt-10 border-t border-hairline pt-8">
                         <p className="font-sans font-bold text-xl text-text mb-1">Rahul Lalia</p>
-                        <p className="font-sans text-sm uppercase tracking-widest text-textMuted">Founder, RSL/A</p>
+                        <p className="font-sans text-[15px] text-text">Founder, RSL/A</p>
                     </div>
                 </div>
             </div>

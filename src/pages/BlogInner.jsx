@@ -137,8 +137,8 @@ export default function BlogInner() {
     if (!post) {
         return (
             <div className="min-h-screen bg-surface pt-32 pb-24 flex flex-col items-center justify-center">
-                <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-4">404 - Article Not Found</h1>
-                <Link to="/blog" className="text-lg text-accent underline decoration-transparent hover:decoration-accent underline-offset-4 transition-[text-decoration-color] duration-sm ease-out-smooth font-sans">Back to Blog</Link>
+                <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-4">Article not found</h1>
+                <Link to="/blog" className="text-lg text-accent underline decoration-transparent hover:decoration-accent underline-offset-4 transition-[text-decoration-color] duration-sm ease-out-smooth font-sans">Back to blog</Link>
             </div>
         );
     }
@@ -253,15 +253,15 @@ export default function BlogInner() {
             />
 
             {/* Dark hero header */}
-            <div className="bg-[#0A0A0A] pt-6 pb-16 px-6 md:px-8">
+            <div className="bg-surfaceAlt border-b border-hairline pt-6 pb-16 px-6 md:px-8">
                 <div className="max-w-[1160px] mx-auto">
                     {/* Breadcrumb */}
                     <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2">
-                        <Link to="/blog" className="font-sans text-[11px] font-semibold text-[#CBD5E1] hover:text-white transition-colors duration-150 ease-out">
+                        <Link to="/blog" className="font-sans text-[13px] font-medium text-accent hover:text-accentDeep transition-colors duration-150 ease-out">
                             Blog
                         </Link>
-                        <span className="text-[#CBD5E1]/50 text-[10px] font-semibold">&gt;</span>
-                        <span className="font-sans text-[11px] font-medium text-[#CBD5E1]/80 truncate max-w-[200px]">
+                        <span className="text-text text-[11px]">&gt;</span>
+                        <span className="font-sans text-[13px] font-medium text-text truncate max-w-[200px]">
                             {post.title.length > 30 ? post.title.substring(0, 30) + '...' : post.title}
                         </span>
                     </nav>
@@ -270,11 +270,11 @@ export default function BlogInner() {
                     <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 lg:items-center">
                         {/* Left: text content */}
                         <div className="lg:w-[60%] shrink-0">
-                            <h1 className="text-3xl md:text-[40px] font-sans font-extrabold leading-[1.25] tracking-tight text-white mb-5">
+                            <h1 className="text-3xl md:text-[40px] font-sans font-bold leading-[1.25] tracking-tight text-text mb-5">
                                 {post.title}
                             </h1>
                             {post.excerpt && (
-                                <p className="font-sans text-base text-[#CBD5E1] mb-6 leading-[26px] max-w-xl">{post.excerpt}</p>
+                                <p className="font-sans text-base text-text mb-6 leading-[26px] max-w-xl">{post.excerpt}</p>
                             )}
                             <div className="flex items-center gap-3 mb-3">
                                 {post.author?.image?.asset && (
@@ -287,19 +287,19 @@ export default function BlogInner() {
                                     />
                                 )}
                                 <div className="flex items-baseline gap-2">
-                                    <span className="font-sans font-bold text-sm text-white">{post.author?.name || 'Rahul Lalia'}</span>
-                                    {post.author?.role && <span className="font-sans text-sm font-medium text-[#CBD5E1]">{post.author.role}</span>}
+                                    <span className="font-sans font-bold text-sm text-text">{post.author?.name || 'Rahul Lalia'}</span>
+                                    {post.author?.role && <span className="font-sans text-sm font-medium text-text">{post.author.role}</span>}
                                 </div>
                             </div>
-                            <div className="font-sans text-sm text-[#CBD5E1] hidden lg:flex items-center gap-2">
-                                <span>Last Updated:</span>
+                            <div className="font-sans text-sm text-text hidden lg:flex items-center gap-2">
+                                <span>Last updated:</span>
                                 <time dateTime={post.updatedAt || post.publishedAt}>
                                     {new Date(post.updatedAt || post.publishedAt).toLocaleDateString('en-US', {
                                         month: 'long', day: 'numeric', year: 'numeric'
                                     })}
                                 </time>
                                 {post.readingTime && (
-                                    <><span className="text-[#CBD5E1]/50">&middot;</span><span>{post.readingTime} min</span></>
+                                    <><span className="text-text">&middot;</span><span>{post.readingTime} min</span></>
                                 )}
                             </div>
                         </div>
@@ -323,8 +323,8 @@ export default function BlogInner() {
 
                         {/* Date + reading time - mobile only, after image */}
                         <div className="flex lg:hidden flex-col gap-1 w-full">
-                            <div className="font-sans text-sm text-[#CBD5E1]">
-                                <span>Last Updated: </span>
+                            <div className="font-sans text-sm text-text">
+                                <span>Last updated: </span>
                                 <time dateTime={post.updatedAt || post.publishedAt}>
                                     {new Date(post.updatedAt || post.publishedAt).toLocaleDateString('en-US', {
                                         month: 'long', day: 'numeric', year: 'numeric'
@@ -332,7 +332,7 @@ export default function BlogInner() {
                                 </time>
                             </div>
                             {post.readingTime && (
-                                <span className="font-sans text-sm text-[#CBD5E1]">{post.readingTime} min read</span>
+                                <span className="font-sans text-sm text-text">{post.readingTime} min read</span>
                             )}
                         </div>
                     </div>
@@ -345,20 +345,20 @@ export default function BlogInner() {
                 {/* Sidebar - Chameleon-style ToC */}
                 <aside className="hidden xl:block">
                     <div className="sticky top-24 flex flex-col gap-6">
-                        <section className="bg-white rounded-xl border border-gray-200/60 shadow-[0_4px_12px_rgba(0,0,0,0.06),0_20px_40px_rgba(0,0,0,0.08)] overflow-hidden">
+                        <section className="bg-white rounded-xl border border-hairline shadow-[0_4px_12px_rgba(0,0,0,0.06),0_20px_40px_rgba(0,0,0,0.08)] overflow-hidden">
                             <div className="p-6 flex flex-col gap-5">
-                                <Link to="/blog" className="inline-flex items-center gap-2 text-[11px] font-semibold text-gray-500 uppercase tracking-widest hover:text-text transition-colors duration-150 ease-out">
+                                <Link to="/blog" className="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:text-accentDeep transition-colors duration-150 ease-out">
                                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>
-                                    <span>Back to Blog</span>
+                                    <span>Back to blog</span>
                                 </Link>
                                 <div className="text-lg font-bold tracking-tight leading-tight text-text font-sans">
                                     {post.title}
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                    <div className="w-full h-1.5 bg-surfaceAlt rounded-full overflow-hidden">
                                         <div className="h-full bg-accent rounded-full transition-[width] duration-200 ease-out" style={{ width: `${readingProgress}%` }} />
                                     </div>
-                                    <span className="text-[10px] font-semibold tracking-widest text-gray-500 uppercase font-sans">
+                                    <span className="text-[13px] font-medium text-text font-sans">
                                         {readingProgress}% complete
                                     </span>
                                 </div>
@@ -367,11 +367,11 @@ export default function BlogInner() {
                                 <nav aria-label="Table of contents">
                                     <ul>
                                         {headings.map((h) => (
-                                            <li key={h.id} className="relative border-t border-gray-100">
+                                            <li key={h.id} className="relative border-t border-hairline">
                                                 <a
                                                     href={`#${h.id}`}
                                                     aria-current={activeId === h.id ? 'true' : undefined}
-                                                    className="block text-[14px] font-semibold leading-5 p-4 text-stone-600 hover:text-stone-900 transition-colors duration-150 ease-out font-sans"
+                                                    className="block text-[14px] font-medium leading-5 p-4 text-text hover:text-accentDeep transition-colors duration-150 ease-out font-sans"
                                                 >
                                                     {h.text}
                                                 </a>
@@ -384,8 +384,8 @@ export default function BlogInner() {
                                 </nav>
                             )}
 
-                            <div className="border-t border-gray-100 p-6 flex flex-col gap-3 items-center">
-                                <h3 className="text-[12px] font-medium tracking-widest text-gray-500 uppercase font-sans text-center">
+                            <div className="border-t border-hairline p-6 flex flex-col gap-3 items-center">
+                                <h3 className="text-[13px] font-medium text-text font-sans text-center">
                                     Summarize this article
                                 </h3>
                                 <div className="flex items-center justify-center gap-1.5">
@@ -396,7 +396,7 @@ export default function BlogInner() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             title={name}
-                                            className="p-1.5 rounded-full border border-gray-300 hover:border-gray-400 hover:scale-105 active:scale-95 transition-[transform,border-color] duration-150 ease-out"
+                                            className="p-1.5 rounded-full border border-hairline hover:border-accent hover:scale-105 active:scale-95 transition-[transform,border-color] duration-150 ease-out"
                                         >
                                             <img src={icon} alt={name} className="w-[22px] h-[22px]" width="22" height="22" />
                                         </a>
@@ -418,8 +418,8 @@ export default function BlogInner() {
                     )}
 
                     {/* Summarize - mobile only, after TL;DR */}
-                    <div className="xl:hidden flex items-center gap-3 mb-10 pb-10 border-b border-gray-200">
-                        <span className="text-[12px] font-medium tracking-widest text-gray-500 uppercase font-sans shrink-0">Summarize this article</span>
+                    <div className="xl:hidden flex items-center gap-3 mb-10 pb-10 border-b border-hairline">
+                        <span className="text-[13px] font-medium text-text font-sans shrink-0">Summarize this article</span>
                         <div className="flex items-center gap-1.5">
                             {aiLinks.map(({ name, href, icon }) => (
                                 <a
@@ -428,7 +428,7 @@ export default function BlogInner() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     title={name}
-                                    className="p-1.5 rounded-full border border-gray-300 hover:border-gray-400 hover:scale-105 active:scale-95 transition-[transform,border-color] duration-150 ease-out"
+                                    className="p-1.5 rounded-full border border-hairline hover:border-accent hover:scale-105 active:scale-95 transition-[transform,border-color] duration-150 ease-out"
                                 >
                                     <img src={icon} alt={name} className="w-[22px] h-[22px]" width="22" height="22" />
                                 </a>
@@ -439,7 +439,7 @@ export default function BlogInner() {
                     {/* Key Takeaways */}
                     {post.keyTakeaways && post.keyTakeaways.length > 0 && (
                         <div className="key-takeaways mb-12">
-                            <h2 className="text-[22px] font-sans font-bold text-text mb-4 tracking-tight leading-[28px]">Key Takeaways</h2>
+                            <h2 className="text-[22px] font-sans font-bold text-text mb-4 tracking-tight leading-[28px]">Key takeaways</h2>
                             <ul className="space-y-2">
                                 {post.keyTakeaways.map((item, i) => (
                                     <li key={i} className="flex items-start gap-3 font-sans text-lg text-text leading-[30px]">
@@ -458,8 +458,8 @@ export default function BlogInner() {
 
                     {/* The Bottom Line */}
                     {post.bottomLine && (
-                        <div className="bottom-line mt-14 mb-10 pt-8 border-t border-gray-200">
-                            <h2 className="text-[22px] font-sans font-bold text-text mb-3 tracking-tight leading-[28px]">The Bottom Line</h2>
+                        <div className="bottom-line mt-14 mb-10 pt-8 border-t border-hairline">
+                            <h2 className="text-[22px] font-sans font-bold text-text mb-3 tracking-tight leading-[28px]">The bottom line</h2>
                             <p className="font-sans text-lg text-text leading-[30px]">{post.bottomLine}</p>
                         </div>
                     )}
@@ -469,7 +469,7 @@ export default function BlogInner() {
 
                     {/* Author bio + share links */}
                     {post.author && (
-                        <div className="mt-12 pt-8 border-t border-gray-200">
+                        <div className="mt-12 pt-8 border-t border-hairline">
                             <div className="flex gap-4 items-start">
                                 {post.author.image?.asset && (
                                     <img
@@ -483,13 +483,13 @@ export default function BlogInner() {
                                 <div className="flex-1">
                                     <div className="flex items-baseline gap-2 mb-0.5">
                                         <p className="font-sans font-bold text-text text-base">{post.author.name}</p>
-                                        <span className="font-sans text-xs text-textMuted">wrote this</span>
+                                        <span className="font-sans text-xs text-text">wrote this</span>
                                     </div>
                                     {post.author.role && (
-                                        <p className="font-sans text-sm text-textMuted">{post.author.role}</p>
+                                        <p className="font-sans text-sm text-text">{post.author.role}</p>
                                     )}
                                     {post.author.bio && (
-                                        <p className="font-sans text-sm text-textMuted mt-1.5 leading-relaxed">{post.author.bio}</p>
+                                        <p className="font-sans text-sm text-text mt-1.5 leading-relaxed">{post.author.bio}</p>
                                     )}
                                 </div>
                             </div>
@@ -519,7 +519,7 @@ export default function BlogInner() {
                                 <Link
                                     key={related._id}
                                     to={`/blog/${related.slug.current}`}
-                                    className="group flex flex-col bg-white rounded-xl border border-gray-100 shadow-sm shadow-gray-900/5 overflow-hidden hover:shadow-lg hover:-translate-y-1 active:scale-[0.98] transition-[transform,box-shadow] duration-md ease-out-smooth"
+                                    className="group flex flex-col bg-white rounded-xl border border-hairline shadow-sm shadow-gray-900/5 overflow-hidden hover:shadow-lg hover:-translate-y-1 active:scale-[0.98] transition-[transform,box-shadow] duration-md ease-out-smooth"
                                 >
                                     {relatedImg && (
                                         <div className="aspect-[1200/750] overflow-hidden bg-surfaceAlt">
@@ -535,14 +535,14 @@ export default function BlogInner() {
                                     )}
                                     <div className="p-5">
                                         {related.categories?.[0] && (
-                                            <span className="inline-block w-fit text-accent bg-accent/8 border border-accent/15 px-2 py-0.5 rounded font-sans font-medium text-xs uppercase tracking-wide mb-2">
+                                            <span className="inline-block w-fit text-accent bg-frost border border-hairline px-2 py-0.5 rounded font-sans font-medium text-xs mb-2">
                                                 {related.categories[0].name}
                                             </span>
                                         )}
-                                        <h4 className="font-sans font-semibold text-lg tracking-tight mb-3 group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+                                        <h4 className="font-sans font-bold text-lg tracking-tight mb-3 group-hover:text-accent transition-colors line-clamp-2 leading-snug">
                                             {related.title}
                                         </h4>
-                                        <time className="font-sans text-base text-textLight" dateTime={related.publishedAt}>
+                                        <time className="font-sans text-base text-text" dateTime={related.publishedAt}>
                                             {new Date(related.publishedAt).toLocaleDateString('en-US', {
                                                 month: 'short', day: 'numeric',
                                             })}

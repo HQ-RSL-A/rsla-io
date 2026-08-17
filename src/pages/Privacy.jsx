@@ -10,7 +10,7 @@ export default function Privacy() {
                 noIndex
             />
             <div className="max-w-4xl mx-auto relative z-10">
-                <Link to="/" className="inline-flex items-center gap-2 min-h-[44px] text-textMuted hover:text-accent font-sans text-sm transition-colors uppercase tracking-wider mb-12">
+                <Link to="/" className="inline-flex items-center gap-2 min-h-[44px] text-text hover:text-accent font-sans text-sm transition-colors mb-12">
                     ← Back to Home
                 </Link>
 
@@ -18,7 +18,7 @@ export default function Privacy() {
                     Privacy Policy
                 </h1>
 
-                <div className="prose-container max-w-none font-sans text-lg leading-relaxed text-textMuted">
+                <div className="prose-container max-w-none font-sans text-lg leading-relaxed text-text">
                     <p className="mb-8">
                         <strong className="text-text">Effective Date:</strong> February 2026
                     </p>
@@ -36,9 +36,9 @@ export default function Privacy() {
                     </p>
 
                     {/* ── 1. INFORMATION WE COLLECT ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">1. Information We Collect</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">1. Information We Collect</h2>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">1.1 Information You Provide Directly</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">1.1 Information You Provide Directly</h3>
                     <p className="mb-4">
                         When you use our Site, submit inquiries, book a call, subscribe to our newsletter, engage our services, or communicate with us, you may voluntarily provide:
                     </p>
@@ -51,7 +51,7 @@ export default function Privacy() {
                         <li><strong className="text-text">User-Generated Content:</strong> Testimonials, reviews, feedback, or other content you submit to us or authorize us to use.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">1.2 Information Collected Automatically</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">1.2 Information Collected Automatically</h3>
                     <p className="mb-4">
                         When you visit our Site, certain information is collected automatically through cookies, pixels, and similar tracking technologies:
                     </p>
@@ -62,7 +62,7 @@ export default function Privacy() {
                         <li><strong className="text-text">Cookies and Tracking Technologies:</strong> We use first-party and third-party cookies, web beacons, and pixels. See Section 10 (Cookie Policy) for full details.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">1.3 Information from Third Parties</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">1.3 Information from Third Parties</h3>
                     <p className="mb-4">
                         We may receive information about you from third-party sources, including:
                     </p>
@@ -75,7 +75,7 @@ export default function Privacy() {
                     </ul>
 
                     {/* ── 2. HOW WE USE YOUR INFORMATION ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">2. How We Use Your Information</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">2. How We Use Your Information</h2>
                     <p className="mb-4">We use the information we collect for the following purposes:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Service Delivery:</strong> To provide, manage, and deliver the services you engage us for, including marketing campaigns, website development, CRM implementation, local SEO, paid advertising, and AI automation.</li>
@@ -90,8 +90,8 @@ export default function Privacy() {
                     </ul>
 
                     {/* ── 3. HOW WE SHARE YOUR INFORMATION ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">3. How We Share Your Information</h2>
-                    <p className="mb-6 font-sans font-semibold text-text">
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">3. How We Share Your Information</h2>
+                    <p className="mb-6 font-sans font-bold text-text">
                         We do not sell, rent, or trade your personal information to third parties for their own marketing purposes.
                     </p>
                     <p className="mb-4">We may share your information in the following circumstances:</p>
@@ -106,7 +106,7 @@ export default function Privacy() {
                     </ul>
 
                     {/* ── 4. AI AND AUTOMATION ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">4. Artificial Intelligence and Automation</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">4. Artificial Intelligence and Automation</h2>
                     <div className="mb-8 space-y-4">
                         <p>
                             We use artificial intelligence ("AI") and machine learning tools as a core part of how we deliver services. This includes content generation, data analysis, workflow automation, chatbot interactions, and campaign optimization.
@@ -123,19 +123,19 @@ export default function Privacy() {
                     </div>
 
                     {/* ── 5. THIRD-PARTY SERVICES ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">5. Third-Party Services and Platforms</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">5. Third-Party Services and Platforms</h2>
                     <p className="mb-4">
                         We use the following third-party services to operate our business and deliver services. Each has its own privacy policy governing how it handles your data:
                     </p>
                     <div className="mb-8 overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-accent-border">
-                                    <th className="py-3 pr-4 font-sans font-semibold text-text text-sm">Provider</th>
-                                    <th className="py-3 pr-4 font-sans font-semibold text-text text-sm">Purpose</th>
+                                <tr className="border-b border-hairline">
+                                    <th className="py-3 pr-4 font-sans font-bold text-text text-sm">Provider</th>
+                                    <th className="py-3 pr-4 font-sans font-bold text-text text-sm">Purpose</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-accent-border">
+                            <tbody className="divide-y divide-hairline">
                                 <tr><td className="py-3 pr-4 text-text">Stripe</td><td className="py-3">Payment processing and billing</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">GoHighLevel</td><td className="py-3">CRM, SMS messaging, email marketing, booking, and automation</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Kit (ConvertKit)</td><td className="py-3">Email newsletter and subscriber management</td></tr>
@@ -154,7 +154,7 @@ export default function Privacy() {
                             </tbody>
                         </table>
                     </div>
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">Instagram DM Automation</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">Instagram DM Automation</h3>
                     <p className="mb-8">
                         We operate an automated messaging system that sends direct messages to Instagram users who interact with our content (such as commenting a keyword on a post or replying to a story). When you interact with our Instagram account in this way, we may collect your Instagram user ID, username, message content, and any information you voluntarily provide in the DM conversation (such as your email address). This data is stored securely and used solely to deliver the requested resource and track engagement with our content. You can request deletion of your data at any time by contacting{' '}
                         <a href="mailto:team@rsla.io" className="text-accent hover:underline decoration-accent/50 underline-offset-4">team@rsla.io</a>.
@@ -165,14 +165,14 @@ export default function Privacy() {
                     </p>
 
                     {/* ── 6. SMS / TEXT MESSAGING ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">6. SMS and Text Messaging</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">6. SMS and Text Messaging</h2>
                     <div className="mb-8 space-y-4">
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text">6.1 Consent and Opt-In</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text">6.1 Consent and Opt-In</h3>
                         <p>
                             By providing your phone number and opting in to receive text messages from RSL/A, you expressly consent to receive recurring SMS and MMS messages from us at the phone number you provide. Consent is not a condition of purchasing any goods or services. You can opt in by submitting a form on our Site, verbally during a phone call, or by texting a designated keyword.
                         </p>
 
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mt-6">6.2 Types of Messages</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text mt-6">6.2 Types of Messages</h3>
                         <p>Messages may include:</p>
                         <ul className="list-disc pl-8 space-y-2">
                             <li>Appointment confirmations and reminders</li>
@@ -181,30 +181,30 @@ export default function Privacy() {
                             <li>Follow-ups and customer support communications</li>
                         </ul>
 
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mt-6">6.3 Message Frequency and Costs</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text mt-6">6.3 Message Frequency and Costs</h3>
                         <p>
                             Message frequency varies based on your engagement with our services. Standard message and data rates may apply depending on your mobile carrier and plan. We are not responsible for any charges from your carrier.
                         </p>
 
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mt-6">6.4 Opt-Out</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text mt-6">6.4 Opt-Out</h3>
                         <p>
                             You may opt out of receiving text messages at any time by replying <strong className="text-text">STOP</strong> to any message you receive from us. After opting out, you will receive a single confirmation message. You will no longer receive SMS messages from us unless you re-subscribe.
                         </p>
 
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mt-6">6.5 Help</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text mt-6">6.5 Help</h3>
                         <p>
                             For assistance with our SMS program, reply <strong className="text-text">HELP</strong> to any message or contact us at{' '}
                             <a href="mailto:team@rsla.io" className="text-accent hover:underline decoration-accent/50 underline-offset-4">team@rsla.io</a>.
                         </p>
 
-                        <h3 className="text-xl md:text-2xl font-sans font-semibold text-text mt-6">6.6 No Sharing of SMS Consent Data</h3>
-                        <p className="font-semibold text-text">
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-text mt-6">6.6 No Sharing of SMS Consent Data</h3>
+                        <p className="font-bold text-text">
                             Your mobile phone number and SMS consent data will not be shared with or sold to third parties or affiliates for marketing or promotional purposes. SMS consent information is only shared with our SMS service provider (GoHighLevel) strictly for the purpose of delivering text messages on our behalf.
                         </p>
                     </div>
 
                     {/* ── 7. DATA RETENTION ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">7. Data Retention</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">7. Data Retention</h2>
                     <p className="mb-4">
                         We retain your personal information for as long as necessary to fulfill the purposes described in this Policy, unless a longer retention period is required or permitted by law. Specifically:
                     </p>
@@ -220,7 +220,7 @@ export default function Privacy() {
                     </p>
 
                     {/* ── 8. DATA SECURITY ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">8. Data Security</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">8. Data Security</h2>
                     <p className="mb-4">
                         We implement reasonable administrative, technical, and physical safeguards to protect your personal information, including:
                     </p>
@@ -235,7 +235,7 @@ export default function Privacy() {
                     </p>
 
                     {/* ── 9. CHILDREN'S PRIVACY ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">9. Children's Privacy</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">9. Children's Privacy</h2>
                     <p className="mb-8">
                         Our Site and services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at{' '}
                         <a href="mailto:team@rsla.io" className="text-accent hover:underline decoration-accent/50 underline-offset-4">team@rsla.io</a>{' '}
@@ -243,14 +243,14 @@ export default function Privacy() {
                     </p>
 
                     {/* ── 10. COOKIE POLICY ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">10. Cookie Policy</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">10. Cookie Policy</h2>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.1 What Are Cookies</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">10.1 What Are Cookies</h3>
                     <p className="mb-6">
                         Cookies are small text files stored on your device when you visit a website. They help the website recognize your device and remember information about your visit, such as your preferences and browsing activity.
                     </p>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.2 How We Use Cookies</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">10.2 How We Use Cookies</h3>
                     <p className="mb-4">We use the following categories of cookies:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Strictly Necessary Cookies:</strong> Required for the Site to function properly. These cannot be disabled. They include cookies for security, load balancing, and session management.</li>
@@ -259,7 +259,7 @@ export default function Privacy() {
                         <li><strong className="text-text">Marketing and Advertising Cookies:</strong> Used to measure campaign performance across platforms (e.g., Meta Pixel). These cookies are loaded when you visit our Site to help us understand which marketing channels are effective.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Notice</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">10.3 Cookie Notice</h3>
                     <p className="mb-6">
                         When you first visit our Site, a cookie notice informs you about the cookies we use. As a US-based business serving primarily US and Canadian clients, we do not require opt-in consent for analytics and marketing cookies under applicable law. We provide this notice for transparency so you understand what data is collected during your visit.
                     </p>
@@ -267,18 +267,18 @@ export default function Privacy() {
                         You may adjust cookie behavior at any time through your browser settings or by clicking the "Cookie Settings" link in our website footer. Disabling cookies in your browser may affect your experience on our Site but will not prevent you from accessing our content.
                     </p>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">10.4 Managing Cookies</h3>
                     <p className="mb-8">
                         You can also manage cookies through your browser settings. Most browsers allow you to block or delete cookies. Please note that disabling cookies may affect the functionality of our Site.
                     </p>
 
                     {/* ── 11. YOUR PRIVACY RIGHTS ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">11. Your Privacy Rights</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">11. Your Privacy Rights</h2>
                     <p className="mb-6">
                         Depending on where you are located, you may have certain rights regarding your personal information. We honor the following rights to the extent required by applicable law:
                     </p>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">11.1 Rights for All Users</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">11.1 Rights for All Users</h3>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Access:</strong> Request a copy of the personal information we hold about you.</li>
                         <li><strong className="text-text">Correction:</strong> Request that we correct inaccurate or incomplete information.</li>
@@ -287,7 +287,7 @@ export default function Privacy() {
                         <li><strong className="text-text">Withdraw Consent:</strong> Where processing is based on consent, you may withdraw that consent at any time.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">11.2 California Residents (CCPA/CPRA)</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">11.2 California Residents (CCPA/CPRA)</h3>
                     <p className="mb-4">If you are a California resident, you have additional rights under the California Consumer Privacy Act and California Privacy Rights Act:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Right to Know:</strong> You can request details about the categories and specific pieces of personal information we have collected, the sources of collection, the business purposes for collection, and the categories of third parties with whom we share it.</li>
@@ -303,7 +303,7 @@ export default function Privacy() {
                         We will verify your identity before processing your request and respond within 45 days as required by law.
                     </p>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">11.3 Canadian Residents (PIPEDA)</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">11.3 Canadian Residents (PIPEDA)</h3>
                     <p className="mb-4">If you are a Canadian resident, you have the following rights under PIPEDA:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li>The right to know what personal information we hold about you and how it is used.</li>
@@ -313,7 +313,7 @@ export default function Privacy() {
                         <li>The right to file a complaint with the Office of the Privacy Commissioner of Canada if you believe your privacy rights have been violated.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">11.4 European Economic Area, UK, and Other International Users</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-bold text-text">11.4 European Economic Area, UK, and Other International Users</h3>
                     <p className="mb-4">
                         If you are located in the EEA, United Kingdom, or another jurisdiction with applicable data protection laws, you may have additional rights including:
                     </p>
@@ -328,25 +328,25 @@ export default function Privacy() {
                     </p>
 
                     {/* ── 12. DO NOT TRACK ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">12. Do Not Track Signals</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">12. Do Not Track Signals</h2>
                     <p className="mb-8">
                         Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want your online activity tracked. There is currently no uniform standard for interpreting DNT signals. Our Site does not currently respond to DNT browser signals, but we respect your cookie preferences as set through our cookie consent banner.
                     </p>
 
                     {/* ── 13. THIRD-PARTY LINKS ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">13. Third-Party Links</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">13. Third-Party Links</h2>
                     <p className="mb-8">
                         Our Site may contain links to third-party websites, platforms, or services that are not operated by us. We are not responsible for the privacy practices or content of those third-party sites. We encourage you to review the privacy policies of any third-party site you visit.
                     </p>
 
                     {/* ── 14. CHANGES ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">14. Changes to This Policy</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">14. Changes to This Policy</h2>
                     <p className="mb-8">
                         We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. When we make material changes, we will update the "Effective Date" at the top of this page. We encourage you to review this Policy periodically. Your continued use of the Site or our services after changes are posted constitutes your acceptance of the updated Policy.
                     </p>
 
                     {/* ── 15. CONTACT ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">15. Contact Us</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">15. Contact Us</h2>
                     <p className="mb-4">
                         If you have any questions about this Privacy Policy, want to exercise your privacy rights, or have concerns about how we handle your data, contact us:
                     </p>
@@ -358,7 +358,7 @@ export default function Privacy() {
                         We will respond to all privacy-related requests within 30 days (or sooner if required by applicable law). If you are not satisfied with our response, you have the right to lodge a complaint with the applicable data protection authority in your jurisdiction.
                     </p>
 
-                    <p className="mt-16 pt-6 text-sm text-textMuted">
+                    <p className="mt-16 pt-6 text-sm text-text">
                         Last updated: February 2026
                     </p>
                 </div>

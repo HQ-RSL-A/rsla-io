@@ -1,6 +1,7 @@
 /**
- * CTA Section — Dark background with FlickeringGrid and InteractiveHoverButton.
- * Creates visual contrast before the dark footer.
+ * CTA Section — light band per brand rules (dark surfaces live only in the
+ * footer). Mist ground, Ink text, FlickeringGrid kept as a subtle accent
+ * texture; the old radial glow and dark scrim are retired with gradients.
  */
 
 import { useEffect, useRef } from 'react';
@@ -16,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function CtaWithGlow({
     title = 'Book a free 30-minute growth mapping call.',
     subtitle = "We'll audit your funnel, find the bottlenecks, and show you exactly where AI moves the needle.",
-    buttonText = "Let's Talk",
+    buttonText = "Let's talk",
     buttonTo = '/contact',
     className,
 }) {
@@ -53,9 +54,7 @@ export default function CtaWithGlow({
         <section
             ref={sectionRef}
             className={cn(
-                'relative overflow-hidden py-24 sm:py-32 bg-[#121212]',
-                'border-b border-white/10',
-                'before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:h-24 before:bg-gradient-to-b before:from-transparent before:to-black/40 before:z-[2]',
+                'relative overflow-hidden py-24 sm:py-32 bg-surfaceAlt border-y border-hairline',
                 className
             )}
         >
@@ -65,20 +64,15 @@ export default function CtaWithGlow({
                 squareSize={4}
                 gridGap={6}
                 color="#0070F3"
-                maxOpacity={0.15}
+                maxOpacity={0.1}
                 flickerChance={0.08}
             />
 
-            {/* Subtle radial glow behind content */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]">
-                <div className="w-[600px] h-[400px] rounded-full bg-accent/8 blur-[120px]" />
-            </div>
-
-            <div className="cta-glow-content [&>*]:opacity-0 relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 text-center px-6 sm:gap-8">
-                <h2 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tight text-white">
+            <div className="cta-glow-content [&>*]:opacity-0 relative z-10 mx-auto flex max-w-3xl flex-col items-start gap-6 px-6 sm:gap-8 md:px-12">
+                <h2 className="font-sans font-bold text-2xl md:text-4xl tracking-tight text-text">
                     {title}
                 </h2>
-                <p className="font-sans text-lg text-white/60 max-w-xl">
+                <p className="font-sans text-lg text-text max-w-xl">
                     {subtitle}
                 </p>
                 <Link to={buttonTo}>

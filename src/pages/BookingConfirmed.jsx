@@ -9,7 +9,7 @@ export default function BookingConfirmed() {
     useEffect(() => {
         window.dataLayer?.push({ event: 'booking_confirmed' });
 
-        const colors = ['#0070F3', '#00C2FF', '#34d399', '#818CF8', '#F59E0B'];
+        const colors = ['#0070F3', '#00C2FF', '#059669', '#7C3AED', '#F59E0B'];
         const timers = [];
 
         const timer = setTimeout(() => {
@@ -85,9 +85,9 @@ export default function BookingConfirmed() {
             <div className="relative z-10 text-center max-w-xl">
                 {/* Animated checkmark with pulse ring */}
                 <div className="relative w-20 h-20 mx-auto mb-8">
-                    <div className="absolute inset-0 rounded-full bg-emerald-400/20 animate-ping" style={{ animationDuration: '2s' }} />
-                    <div className="relative w-20 h-20 rounded-full border-2 border-emerald-400 bg-emerald-50 flex items-center justify-center shadow-lg shadow-emerald-400/20">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="absolute inset-0 rounded-full bg-success/20 animate-ping" style={{ animationDuration: '2s' }} />
+                    <div className="relative w-20 h-20 rounded-full border-2 border-success bg-frost flex items-center justify-center shadow-lg shadow-success/20">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#047857" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                         </svg>
                     </div>
@@ -99,19 +99,19 @@ export default function BookingConfirmed() {
                     </TextAnimate>
                 </h1>
 
-                <p className="font-sans text-lg text-textMuted mb-3">
+                <p className="font-sans text-lg text-text mb-3">
                     Your call has been booked.
                 </p>
 
-                <p className="font-sans text-sm text-textMuted mb-10">
+                <p className="font-sans text-sm text-text mb-10">
                     Check your inbox for a calendar invite with the meeting details.
                 </p>
 
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 rounded-xl bg-accent text-white px-8 py-3 font-sans font-bold text-base hover:bg-accent/90 transition-colors"
+                    className="inline-flex items-center gap-2 rounded-button bg-accent text-white px-8 py-3 font-sans font-medium text-base hover:bg-accentDeep transition-colors"
                 >
-                    Back to Home
+                    Back to home
                 </Link>
             </div>
         </main>

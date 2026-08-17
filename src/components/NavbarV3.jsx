@@ -10,22 +10,22 @@ const serviceSubLinks = [
         description: 'Fast, SEO-ready builds that ship in weeks.',
     },
     {
-        title: 'Search Visibility',
-        url: '/services/search-visibility',
+        title: 'Search visibility',
+        url: '/services/seo',
         description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.',
     },
     {
-        title: 'AI Automations',
+        title: 'AI automations',
         url: '/services/ai-automations',
         description: 'n8n, Make, and custom scripts that replace manual work.',
     },
     {
-        title: 'CRM Systems',
+        title: 'CRM systems',
         url: '/services/crm-systems',
         description: 'GoHighLevel pipelines, workflows, and integrations.',
     },
     {
-        title: 'Custom Development',
+        title: 'Custom development',
         url: '/services/custom-development',
         description: 'SaaS products, MVPs, internal tools, APIs.',
     },
@@ -170,7 +170,7 @@ export default function NavbarV3() {
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
                     scrolled || mobileOpen
-                        ? 'bg-background/85 backdrop-blur-md border-b border-accent-border'
+                        ? 'bg-background/85 backdrop-blur-md border-b border-hairline'
                         : 'bg-transparent'
                 }`}
             >
@@ -213,15 +213,15 @@ export default function NavbarV3() {
                                                 aria-haspopup="menu"
                                                 aria-expanded={desktopServicesOpen}
                                                 onKeyDown={handleServicesTriggerKeyDown}
-                                                className={`inline-flex h-11 items-center gap-1 px-5 font-sans font-medium text-base transition-colors ${
-                                                    active ? 'text-accent' : 'text-text/70 hover:text-text'
+                                                className={`inline-flex h-11 items-center gap-1 px-5 font-sans font-medium text-[15px] transition-colors ${
+                                                    active ? 'text-accent' : 'text-text hover:text-accentDeep'
                                                 }`}
                                             >
                                                 {item.title}
                                                 <ChevronDown
                                                     size={14}
                                                     strokeWidth={2}
-                                                    className={`opacity-50 transition-transform ${desktopServicesOpen ? 'rotate-180' : ''}`}
+                                                    className={`transition-transform ${desktopServicesOpen ? 'rotate-180' : ''}`}
                                                 />
                                             </Link>
                                             <div
@@ -236,9 +236,9 @@ export default function NavbarV3() {
                                                     ref={servicesMenuRef}
                                                     role="menu"
                                                     aria-label="Services menu"
-                                                    className="bg-surface border border-accent-border rounded-2xl shadow-[0_12px_40px_-8px_rgba(15,23,42,0.15)] overflow-hidden w-[560px]"
+                                                    className="bg-surface border border-hairline rounded-2xl shadow-[0_12px_40px_-8px_rgba(15,23,42,0.15)] overflow-hidden w-[560px]"
                                                 >
-                                                    <div className="grid grid-cols-2 gap-px bg-accent-border">
+                                                    <div className="grid grid-cols-2 gap-px bg-hairline">
                                                         {item.children.map((child) => {
                                                             const isCurrent = location.pathname === child.url;
                                                             return (
@@ -248,17 +248,17 @@ export default function NavbarV3() {
                                                                     role="menuitem"
                                                                     tabIndex={desktopServicesOpen ? 0 : -1}
                                                                     className={`group/tile block px-5 py-4 bg-surface transition-colors ${
-                                                                        isCurrent ? 'bg-accent-light' : 'hover:bg-accent-light focus-visible:bg-accent-light'
+                                                                        isCurrent ? 'bg-frost' : 'hover:bg-frost focus-visible:bg-frost'
                                                                     }`}
                                                                 >
                                                                     <div
-                                                                        className={`font-sans font-semibold text-base mb-1 transition-colors ${
+                                                                        className={`font-sans font-bold text-base mb-1 transition-colors ${
                                                                             isCurrent ? 'text-accent' : 'text-text group-hover/tile:text-accent'
                                                                         }`}
                                                                     >
                                                                         {child.title}
                                                                     </div>
-                                                                    <p className="font-sans text-sm text-textMuted leading-snug">
+                                                                    <p className="font-sans text-sm text-text leading-snug">
                                                                         {child.description}
                                                                     </p>
                                                                 </Link>
@@ -269,9 +269,9 @@ export default function NavbarV3() {
                                                             to={item.url}
                                                             role="menuitem"
                                                             tabIndex={desktopServicesOpen ? 0 : -1}
-                                                            className="group/tile flex items-center justify-between px-5 py-4 bg-accent-light hover:bg-accent/10 focus-visible:bg-accent/10 transition-colors"
+                                                            className="group/tile flex items-center justify-between px-5 py-4 bg-frost hover:bg-accent-medium focus-visible:bg-accent-medium transition-colors"
                                                         >
-                                                            <span className="font-sans font-semibold text-base text-accent">
+                                                            <span className="font-sans font-medium text-base text-accent">
                                                                 See all services
                                                             </span>
                                                             <ArrowRight
@@ -291,8 +291,8 @@ export default function NavbarV3() {
                                     <li key={item.url}>
                                         <Link
                                             to={item.url}
-                                            className={`inline-flex h-11 items-center px-5 font-sans font-medium text-base transition-colors ${
-                                                active ? 'text-accent' : 'text-text/70 hover:text-text'
+                                            className={`inline-flex h-11 items-center px-5 font-sans font-medium text-[15px] transition-colors ${
+                                                active ? 'text-accent' : 'text-text hover:text-accentDeep'
                                             }`}
                                         >
                                             {item.title}
@@ -304,9 +304,9 @@ export default function NavbarV3() {
                         <div className="flex items-center gap-2 shrink-0 justify-self-end">
                             <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'navbar' })}>
                                 <InteractiveHoverButton
-                                    className="font-sans font-bold text-sm px-5 py-2.5"
+                                    className="font-sans text-sm px-5 py-2.5"
                                 >
-                                    Let&apos;s Talk
+                                    Let&apos;s talk
                                 </InteractiveHoverButton>
                             </Link>
                         </div>
@@ -329,7 +329,7 @@ export default function NavbarV3() {
                             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                             className={`inline-flex h-10 w-10 items-center justify-center rounded-xl text-text transition-colors ${
                                 scrolled || mobileOpen
-                                    ? 'bg-surface border border-accent-border'
+                                    ? 'bg-surface border border-hairline'
                                     : 'bg-white/60 backdrop-blur-sm'
                             }`}
                         >
@@ -350,12 +350,12 @@ export default function NavbarV3() {
                                         <div key={item.url}>
                                             <button
                                                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                                                className={`w-full flex items-center justify-between py-3.5 px-2 rounded-xl font-sans font-semibold text-2xl tracking-tight transition-colors ${
+                                                className={`w-full flex items-center justify-between py-3.5 px-2 rounded-xl font-sans font-medium text-2xl tracking-tight transition-colors ${
                                                     isActive(item.url) ? 'text-accent' : 'text-text'
                                                 } ${mobileServicesOpen ? 'bg-accent-light' : ''}`}
                                             >
                                                 {item.title}
-                                                <ChevronDown size={20} strokeWidth={2.5} className={`text-textMuted transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                                                <ChevronDown size={20} strokeWidth={2.5} className={`text-text transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
                                             </button>
                                             <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${mobileServicesOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                                                 <div className="overflow-hidden">
@@ -369,13 +369,13 @@ export default function NavbarV3() {
                                                                     className={`flex flex-col gap-1 rounded-xl border px-3.5 py-3 transition-colors ${
                                                                         isCurrent
                                                                             ? 'border-accent/30 bg-accent-light'
-                                                                            : 'border-accent-border bg-surface active:bg-accent-light'
+                                                                            : 'border-hairline bg-surface active:bg-accent-light'
                                                                     }`}
                                                                 >
-                                                                    <span className={`font-sans font-semibold text-sm ${isCurrent ? 'text-accent' : 'text-text'}`}>
+                                                                    <span className={`font-sans font-medium text-sm ${isCurrent ? 'text-accent' : 'text-text'}`}>
                                                                         {child.title}
                                                                     </span>
-                                                                    <span className="font-sans text-xs text-textMuted leading-snug">
+                                                                    <span className="font-sans text-xs text-text leading-snug">
                                                                         {child.description}
                                                                     </span>
                                                                 </Link>
@@ -385,7 +385,7 @@ export default function NavbarV3() {
                                                             to={item.url}
                                                             className="flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-accent/30 px-3.5 py-3 transition-colors active:bg-accent-light"
                                                         >
-                                                            <span className="font-sans font-semibold text-sm text-accent">All services</span>
+                                                            <span className="font-sans font-medium text-sm text-accent">All services</span>
                                                             <ArrowRight size={14} strokeWidth={2.5} className="text-accent" />
                                                         </Link>
                                                     </div>
@@ -398,7 +398,7 @@ export default function NavbarV3() {
                                     <Link
                                         key={item.url}
                                         to={item.url}
-                                        className={`block py-3.5 px-2 rounded-xl font-sans font-semibold text-2xl tracking-tight transition-colors ${
+                                        className={`block py-3.5 px-2 rounded-xl font-sans font-medium text-2xl tracking-tight transition-colors ${
                                             isActive(item.url) ? 'text-accent' : 'text-text active:bg-accent-light'
                                         }`}
                                     >
@@ -409,9 +409,9 @@ export default function NavbarV3() {
                         </nav>
                         <Link to="/contact" onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'mobile_menu' })}>
                             <InteractiveHoverButton
-                                className="w-full font-sans font-bold text-base px-6 py-4"
+                                className="w-full font-sans text-base px-6 py-4"
                             >
-                                Let&apos;s Talk
+                                Let&apos;s talk
                             </InteractiveHoverButton>
                         </Link>
                     </div>

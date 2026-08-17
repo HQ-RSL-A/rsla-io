@@ -35,28 +35,22 @@ export default function InlineNewsletterCta() {
 
     if (status === 'success') {
         return (
-            <div className="my-16 p-8 rounded-xl bg-white border border-gray-200/60 text-center shadow-[0_4px_12px_rgba(0,0,0,0.06),0_20px_40px_rgba(0,0,0,0.08)]">
-                <p className="font-caveat text-2xl text-accent mb-1">&#10003; talk Tuesday!</p>
-                <p className="font-sans text-sm text-textMuted">Check your inbox for a confirmation.</p>
+            <div className="my-16 p-8 rounded-callout bg-frost border border-hairline">
+                <p className="font-sans font-bold text-lg text-text mb-1">Talk Tuesday.</p>
+                <p className="font-sans text-sm text-text">Check your inbox for a confirmation.</p>
             </div>
         );
     }
 
     return (
-        <div className="my-16 p-6 md:p-8 rounded-xl bg-white border border-gray-200/60 shadow-[0_4px_12px_rgba(0,0,0,0.06),0_20px_40px_rgba(0,0,0,0.08)]">
+        <div className="my-16 p-6 md:p-8 rounded-callout bg-frost border border-hairline">
             {/* Branding */}
-            <div className="font-caveat text-[26px] text-slate-900 leading-none mb-1">A Weekly Note</div>
-            <div className="text-[10px] text-slate-400 tracking-[0.06em] uppercase font-semibold mb-5">The Insider</div>
+            <h4 className="font-sans font-bold text-xl text-text leading-tight mb-3">The Insider</h4>
 
             {/* Copy */}
-            <p className="font-sans text-[15px] text-slate-800 leading-relaxed mb-4">
+            <p className="font-sans text-[15px] text-text leading-relaxed mb-4">
                 Liked this? Every Tuesday I send one{' '}
-                <span className="relative inline-block">
-                    growth system
-                    <svg className="absolute -bottom-0.5 left-0 w-full" height="6" viewBox="0 0 120 6" fill="none" preserveAspectRatio="none">
-                        <path d="M2 4c15-3 30 1 50-1s35 2 55-1" stroke="#0070F3" strokeWidth="2" strokeLinecap="round" fill="none" />
-                    </svg>
-                </span>{' '}
+                <span className="font-bold">growth system</span>{' '}
                 you can apply to your business that day and see results.
             </p>
 
@@ -69,20 +63,20 @@ export default function InlineNewsletterCta() {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === 'submitting'}
                     required
-                    className="flex-1 h-[42px] px-3.5 rounded-xl border border-slate-200 bg-background text-sm font-sans outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-150 ease-out"
+                    className="flex-1 h-[44px] px-3.5 rounded-button border border-hairline bg-surface text-base font-sans text-text outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-150 ease-out"
                 />
                 <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="h-[42px] px-5 rounded-xl bg-accent text-white font-sans font-semibold text-sm hover:bg-accent/90 active:scale-[0.97] transition-[background-color,transform] duration-150 ease-out disabled:opacity-50 cursor-pointer whitespace-nowrap"
+                    className="h-[44px] px-5 rounded-button bg-accent text-white font-sans font-medium text-base hover:bg-accentDeep active:scale-[0.97] transition-[background-color,transform] duration-150 ease-out disabled:opacity-50 cursor-pointer whitespace-nowrap"
                 >
                     {status === 'submitting' ? '...' : 'Get The Insider'}
                 </button>
             </form>
             {status === 'error' && (
-                <p className="font-sans text-sm text-coral mt-2">Something went wrong. Try again.</p>
+                <p className="font-sans text-sm text-error mt-2">Something went wrong. Try again.</p>
             )}
-            <p className="mt-2.5 text-xs text-textMuted">
+            <p className="mt-2.5 text-[13px] font-sans text-text">
                 No spam, unsubscribe anytime.
             </p>
         </div>

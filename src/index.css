@@ -2,36 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Satoshi @font-face declarations (Light 300 and Black 900 removed — unused) */
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
+/* Satoshi @font-face declarations — brand rule: Medium 500 + Bold 700 only.
+   Regular 400, all italics, Caveat, and Cormorant are retired (2026-08-17
+   brand application; see brand-guidelines/design-tokens.css). */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-MediumItalic.woff2') format('woff2');
-  font-weight: 500;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -43,74 +21,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Caveat @font-face declarations (handwritten — newsletter, signatures) */
-@font-face {
-  font-family: 'Caveat';
-  src: url('/fonts/Caveat-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Caveat';
-  src: url('/fonts/Caveat-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Cormorant @font-face declarations (decorative — pull quotes, captions only) */
-@font-face {
-  font-family: 'Cormorant';
-  src: url('/fonts/Cormorant-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant';
-  src: url('/fonts/Cormorant-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant';
-  src: url('/fonts/Cormorant-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant';
-  src: url('/fonts/Cormorant-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Caveat variable font (handwritten) */
-@font-face {
-  font-family: 'Caveat';
-  src: url('/fonts/Caveat-Variable.ttf') format('truetype');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-
 @layer base {
   /* overflow-x: clip prevents horizontal scroll from animations WITHOUT creating
      a scroll container — which is what breaks pinch-zoom on iOS Safari when
@@ -121,30 +31,32 @@
     overflow-x: clip;
   }
   body {
-    @apply bg-background text-text font-sans antialiased;
+    /* font-medium: nothing in the system renders lighter than Satoshi 500 */
+    @apply bg-background text-text font-sans font-medium antialiased;
   }
   :root {
-    /* Blue-gray palette mapped to shadcn CSS variables */
-    --background: 210 40% 98%;        /* #F8FAFC slate-50 */
-    --foreground: 222 47% 11%;        /* #0F172A slate-900 */
-    --card: 0 0% 100%;                /* #FFFFFF white */
-    --card-foreground: 222 47% 11%;   /* #0F172A */
+    /* RSL/A brand palette mapped to shadcn CSS variables
+       (source of truth: brand-guidelines/design-tokens.css) */
+    --background: 0 0% 100%;          /* #FFFFFF Paper */
+    --foreground: 240 3% 12%;         /* #1d1d1f Ink */
+    --card: 0 0% 100%;                /* #FFFFFF Paper */
+    --card-foreground: 240 3% 12%;    /* #1d1d1f Ink */
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 211 100% 48%;          /* #0070F3 brand blue */
+    --popover-foreground: 240 3% 12%;
+    --primary: 211 100% 48%;          /* #0070F3 Anchor Blue */
     --primary-foreground: 0 0% 100%;  /* white text on blue */
-    --secondary: 210 40% 96%;         /* #F1F5F9 slate-100 */
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;             /* #F1F5F9 slate-100 */
-    --muted-foreground: 215 16% 47%;  /* #64748B slate-500 */
-    --accent: 211 100% 48%;           /* #0070F3 brand blue */
+    --secondary: 240 11% 96%;         /* #F5F5F7 Mist */
+    --secondary-foreground: 240 3% 12%;
+    --muted: 240 11% 96%;             /* #F5F5F7 Mist */
+    --muted-foreground: 240 3% 12%;   /* Ink — no gray text tier */
+    --accent: 211 100% 48%;           /* #0070F3 Anchor Blue */
     --accent-foreground: 0 0% 100%;   /* white text on blue */
-    --destructive: 0 72% 51%;         /* coral-ish */
+    --destructive: 0 72% 51%;         /* #DC2626 Error */
     --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;            /* #E2E8F0 slate-200 */
-    --input: 214 32% 91%;
-    --ring: 211 100% 48%;             /* brand blue ring */
-    --radius: 0.5rem;
+    --border: 240 6% 83%;             /* #D2D2D7 Hairline */
+    --input: 240 6% 83%;
+    --ring: 211 100% 48%;             /* Anchor Blue ring */
+    --radius: 0.625rem;               /* 10px — brand --radius-button */
 
     /* Brand custom properties (for CTA glow, etc.) */
     --brand: 211 100% 48%;
@@ -210,66 +122,6 @@
   transform: scale(1);
 }
 
-/* Card Beam — rotating gradient border for service cards */
-.card-beam {
-  position: relative;
-  overflow: hidden;
-  padding: 1px;
-  background: hsl(214 32% 91%);
-}
-.card-beam::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 200%;
-  min-height: 200%;
-  aspect-ratio: 1;
-  background: conic-gradient(from 0deg, transparent 20%, #0070F3 40%, #00C2FF 50%, #0070F3 60%, transparent 80%);
-  pointer-events: none;
-  z-index: 0;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .card-beam::before {
-    animation: beamRotate 4s linear infinite;
-  }
-}
-
-/* Border Beam effect — rotating conic-gradient border */
-.border-beam {
-  position: relative;
-  overflow: hidden;
-}
-.border-beam::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(from 0deg, transparent 30%, #0070F3 45%, #00C2FF 55%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .border-beam::before {
-    animation: beamRotate 4s linear infinite;
-  }
-}
-.border-beam::after {
-  content: '';
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  background: var(--beam-bg, #FFFFFF);
-  pointer-events: none;
-  z-index: 2;
-}
-@keyframes beamRotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
 /* Link underline animation */
 .link-underline {
   position: relative;
@@ -288,51 +140,6 @@
 }
 .link-underline:hover::after {
   transform: scaleX(1);
-}
-
-/* Neon glow for primary CTAs */
-.btn-neon {
-  box-shadow: 0 0 20px rgba(0, 112, 243, 0.3), 0 0 60px rgba(0, 112, 243, 0.1);
-}
-.btn-neon:hover {
-  box-shadow: 0 0 25px rgba(0, 112, 243, 0.5), 0 0 80px rgba(0, 194, 255, 0.2);
-}
-@media (prefers-reduced-motion: no-preference) {
-  .btn-neon {
-    animation: neonPulse 3s ease-in-out infinite;
-  }
-}
-@keyframes neonPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(0, 112, 243, 0.3), 0 0 60px rgba(0, 112, 243, 0.1); }
-  50% { box-shadow: 0 0 30px rgba(0, 112, 243, 0.45), 0 0 80px rgba(0, 194, 255, 0.15); }
-}
-
-/* Gradient border for secondary/ghost CTAs */
-.btn-gradient-border {
-  position: relative;
-  background: transparent;
-  border: none;
-}
-.btn-gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: linear-gradient(135deg, #0070F3, #00C2FF);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.btn-gradient-border:hover::before {
-  opacity: 1;
-  background: linear-gradient(135deg, #3090FF, #40D4FF);
-}
-.btn-gradient-border:hover {
-  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Respect user motion preference — shorten transitions and neutralize
@@ -387,16 +194,6 @@
   }
 }
 
-.highlight-mark {
-  background: linear-gradient(transparent 60%, rgba(0, 112, 243, 0.12) 60%);
-  padding: 0 2px;
-}
-
-@keyframes subtlePulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(0, 112, 243, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(0, 112, 243, 0.5); }
-}
-
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -409,10 +206,10 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Case study prose — Stripe-matched typography */
+/* Case study prose — brand floor: main reading text never below 17px */
 .case-study-prose p {
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 17px;
+  line-height: 27px;
 }
 .case-study-prose h2 {
   font-size: 34px;
@@ -426,12 +223,12 @@
 }
 .case-study-prose ul,
 .case-study-prose ol {
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 17px;
+  line-height: 27px;
 }
 .case-study-prose blockquote {
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 17px;
+  line-height: 27px;
 }
 @media (min-width: 768px) {
   .case-study-prose p,

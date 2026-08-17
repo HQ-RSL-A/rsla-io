@@ -14,7 +14,7 @@ export default function NotFound() {
                 gsap.set('.nf-number', { opacity: 1, y: 0 });
                 gsap.set('.nf-broke', { opacity: 1, y: 0 });
                 gsap.set(strikeRef.current, { scaleX: 1 });
-                gsap.set('.nf-broke-text', { color: '#94A3B8' });
+                gsap.set('.nf-broke-text', { color: '#D2D2D7' });
                 gsap.set('.nf-kidding', { opacity: 1, y: 0 });
                 gsap.set('.nf-desc', { opacity: 1, y: 0 });
                 gsap.set('.nf-links', { opacity: 1, y: 0 });
@@ -40,7 +40,7 @@ export default function NotFound() {
                 '+=0.8'
             );
 
-            tl.to('.nf-broke-text', { color: '#94A3B8', duration: 0.3 }, '<+=0.2');
+            tl.to('.nf-broke-text', { color: '#D2D2D7', duration: 0.3 }, '<+=0.2');
 
             tl.fromTo('.nf-kidding',
                 { opacity: 0, y: 8 },
@@ -70,7 +70,7 @@ export default function NotFound() {
 
             <section className="w-full max-w-lg mx-auto">
                 {/* 404 */}
-                <p className="nf-number opacity-0 font-sans font-extrabold text-[8rem] md:text-[10rem] leading-none tracking-tighter text-accent/15 select-none">
+                <p className="nf-number opacity-0 font-sans font-bold text-[8rem] md:text-[10rem] leading-none tracking-tighter text-frost select-none">
                     404
                 </p>
 
@@ -87,12 +87,12 @@ export default function NotFound() {
                 </div>
 
                 {/* Just kidding */}
-                <h2 className="nf-kidding opacity-0 font-sans font-extrabold text-2xl md:text-4xl tracking-tight text-text mt-1">
+                <h2 className="nf-kidding opacity-0 font-sans font-bold text-2xl md:text-4xl tracking-tight text-text mt-1">
                     Just kidding. This page doesn't exist.
                 </h2>
 
                 {/* Description */}
-                <p className="nf-desc opacity-0 font-sans text-lg text-textMuted leading-relaxed mt-6 mb-10">
+                <p className="nf-desc opacity-0 font-sans text-lg text-text leading-relaxed mt-6 mb-10">
                     Whatever you were looking for isn't here. But here's where the good stuff actually lives.
                 </p>
 
@@ -100,9 +100,9 @@ export default function NotFound() {
                 <div className="nf-links opacity-0">
                     <Link
                         to="/"
-                        className="inline-flex items-center px-6 py-2.5 rounded-xl font-sans font-bold text-sm text-text border border-accent-border hover:border-accent/30 hover:bg-accent-light transition-colors"
+                        className="inline-flex items-center px-6 py-2.5 rounded-button font-sans font-medium text-sm text-text border border-hairline hover:border-accent/30 hover:bg-accent-light transition-colors"
                     >
-                        Back to Home
+                        Back to home
                     </Link>
                 </div>
             </section>

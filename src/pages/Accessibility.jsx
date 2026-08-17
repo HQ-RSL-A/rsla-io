@@ -10,7 +10,7 @@ export default function Accessibility() {
                 noIndex
             />
             <div className="max-w-4xl mx-auto relative z-10">
-                <Link to="/" className="inline-flex items-center gap-2 min-h-[44px] text-textMuted hover:text-accent font-sans text-sm transition-colors uppercase tracking-wider mb-12">
+                <Link to="/" className="inline-flex items-center gap-2 min-h-[44px] text-text hover:text-accent font-sans text-sm transition-colors mb-12">
                     ← Back to Home
                 </Link>
 
@@ -18,7 +18,7 @@ export default function Accessibility() {
                     Accessibility Statement
                 </h1>
 
-                <div className="prose-container max-w-none font-sans text-lg leading-relaxed text-textMuted">
+                <div className="prose-container max-w-none font-sans text-lg leading-relaxed text-text">
                     <p className="mb-8">
                         <strong className="text-text">Effective Date:</strong> February 2026
                     </p>
@@ -28,7 +28,7 @@ export default function Accessibility() {
                     </p>
 
                     {/* ── 1. OUR COMMITMENT ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">1. Our Commitment</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">1. Our Commitment</h2>
                     <p className="mb-4">
                         We are committed to providing a website that is accessible to the widest possible audience. We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, as published by the World Wide Web Consortium (W3C).
                     </p>
@@ -37,7 +37,7 @@ export default function Accessibility() {
                     </p>
 
                     {/* ── 2. MEASURES TAKEN ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">2. Accessibility Measures</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">2. Accessibility Measures</h2>
                     <p className="mb-4">We take the following measures to support accessibility on our Site:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Semantic HTML:</strong> We use proper heading structures, landmarks, and semantic elements to support screen readers and assistive technologies.</li>
@@ -50,7 +50,7 @@ export default function Accessibility() {
                     </ul>
 
                     {/* ── 3. KNOWN LIMITATIONS ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">3. Known Limitations</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">3. Known Limitations</h2>
                     <p className="mb-4">
                         Despite our best efforts, some areas of the Site may not yet be fully accessible. Known limitations include:
                     </p>
@@ -62,13 +62,13 @@ export default function Accessibility() {
                     </ul>
 
                     {/* ── 4. THIRD-PARTY CONTENT ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">4. Third-Party Content</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">4. Third-Party Content</h2>
                     <p className="mb-8">
                         Our Site may include content, tools, or widgets provided by third parties that are not under our control. While we select third-party tools with accessibility in mind, we cannot guarantee that all third-party content meets WCAG 2.1 AA standards. If you encounter accessibility issues with third-party content on our Site, we encourage you to contact the third-party provider directly and to let us know so we can evaluate alternatives.
                     </p>
 
                     {/* ── 5. FEEDBACK ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">5. Feedback and Contact</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">5. Feedback and Contact</h2>
                     <p className="mb-4">
                         We welcome your feedback on the accessibility of our Site. If you encounter any accessibility barriers, have difficulty accessing any content, or have suggestions for improvement, please contact us:
                     </p>
@@ -81,18 +81,18 @@ export default function Accessibility() {
                     </p>
 
                     {/* ── 6. CONTINUOUS IMPROVEMENT ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">6. Continuous Improvement</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">6. Continuous Improvement</h2>
                     <p className="mb-8">
                         Accessibility is an ongoing effort. We are committed to regularly reviewing our Site, addressing known issues, and improving the experience for all users. As web technologies and accessibility standards evolve, we will update our practices accordingly.
                     </p>
 
                     {/* ── 7. LEGAL ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">7. Conformance Status</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-bold text-text">7. Conformance Status</h2>
                     <p className="mb-8">
                         We aim to conform to WCAG 2.1 Level AA. This statement was prepared based on a self-assessment of the Site. We plan to conduct periodic reviews and, when appropriate, engage third-party accessibility auditors to evaluate conformance.
                     </p>
 
-                    <p className="mt-16 pt-6 text-sm text-textMuted">
+                    <p className="mt-16 pt-6 text-sm text-text">
                         Last updated: February 2026
                     </p>
                 </div>

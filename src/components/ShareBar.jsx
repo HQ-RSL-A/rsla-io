@@ -75,7 +75,7 @@ export default function ShareBar({ title, url, showLabel = true }) {
 
     return (
         <div className="flex items-center gap-1">
-            {showLabel && <span className="font-sans text-sm uppercase tracking-widest text-textLight mr-2">Share</span>}
+            {showLabel && <span className="font-sans text-sm text-text mr-2">Share</span>}
             {links.map(({ label, icon, href }) => (
                 <a
                     key={label}
@@ -83,7 +83,7 @@ export default function ShareBar({ title, url, showLabel = true }) {
                     target={label === 'Email' ? '_self' : '_blank'}
                     rel="noopener noreferrer"
                     aria-label={`Share on ${label}`}
-                    className="inline-flex items-center justify-center w-8 h-8 rounded-full text-textMuted hover:text-accent hover:bg-accent/5 transition-colors duration-150"
+                    className="inline-flex items-center justify-center w-8 h-8 rounded-full text-text hover:text-accent hover:bg-accent/5 transition-colors duration-150"
                 >
                     {icon}
                 </a>
@@ -94,7 +94,7 @@ export default function ShareBar({ title, url, showLabel = true }) {
                 className={`inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors ${
                     copied
                         ? 'text-green-600 bg-green-50'
-                        : 'text-textMuted hover:text-accent hover:bg-accent/5'
+                        : 'text-text hover:text-accent hover:bg-accent/5'
                 }`}
             >
                 {copied ? ICONS.check : ICONS.link}

@@ -67,16 +67,16 @@ export default function ServiceLayout({ service, children, ctaOverride }) {
                 <div className="service-hero-content opacity-0 max-w-4xl mx-auto">
                     <Link
                         to="/services"
-                        className="inline-flex items-center gap-2 font-sans text-sm text-textMuted hover:text-accent transition-colors mb-10"
+                        className="inline-flex items-center gap-2 font-sans text-sm text-text hover:text-accent transition-colors mb-10"
                     >
-                        All Services
+                        All services
                     </Link>
-                    <h1 className="font-sans font-extrabold text-3xl md:text-5xl tracking-tight leading-[1.1] text-text mb-6">
+                    <h1 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-[1.1] text-text mb-6">
                         <TextAnimate animation="blurInUp" by="word" delay={0.06} startOnView={false} as="span">
                             {service.headline}
                         </TextAnimate>
                     </h1>
-                    <p className="font-sans text-lg text-textMuted leading-relaxed max-w-2xl">
+                    <p className="font-sans text-lg text-text leading-relaxed max-w-2xl">
                         {service.description}
                     </p>
                 </div>
@@ -89,18 +89,18 @@ export default function ServiceLayout({ service, children, ctaOverride }) {
             <ServiceFaq faqs={service.faqs} serviceName={service.title} />
 
             {ctaOverride || (
-                <section className="bg-accent-light border-t border-accent-border py-20 md:py-28 px-6 md:px-12">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-4">
+                <section className="bg-frost border-t border-hairline py-20 md:py-28 px-6 md:px-12">
+                    <div className="max-w-3xl mx-auto">
+                        <h2 className="font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-4">
                             Ready to get started?
                         </h2>
-                        <p className="font-sans text-lg text-textMuted leading-relaxed mb-8">
+                        <p className="font-sans text-lg text-text leading-relaxed mb-8">
                             Book a free strategy call. No pitch, no pressure. We will look at your situation and tell you exactly what we would do.
                         </p>
                         <Link
                             to="/contact"
                             onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'service_detail_bottom' })}
-                            className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-sans font-bold text-base text-white shadow-sm transition-colors hover:bg-accent/90"
+                            className="inline-flex items-center gap-2 rounded-button bg-accent px-8 py-3 font-sans font-medium text-base text-white shadow-sm transition-colors hover:bg-accentDeep"
                         >
                             Book a call
                         </Link>

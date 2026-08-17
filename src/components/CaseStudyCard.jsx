@@ -33,7 +33,7 @@ export default function CaseStudyCard({ data }) {
         : null;
 
     const displayText = data.thumbnailText || data.title;
-    const textColor = data.thumbnailTextColor || '#FFFFFF';
+    const textColor = data.thumbnailTextColor || '#F5F5F7';
     const textSizeClass = TEXT_SIZES[data.thumbnailTextSize] || TEXT_SIZES.large;
     const overlayStyle = getGradientCss(
         data.thumbnailOverlayColor,
@@ -88,7 +88,7 @@ export default function CaseStudyCard({ data }) {
             {/* Text - bottom left */}
             <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
                 <h3
-                    className={`font-sans font-medium ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]`}
+                    className={`font-sans font-bold ${textSizeClass} mb-0 group-hover:mb-8 transition-[margin] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]`}
                     style={{ color: textColor }}
                 >
                     {displayText}

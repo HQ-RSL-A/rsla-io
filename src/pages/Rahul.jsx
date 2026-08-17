@@ -3,23 +3,23 @@ import PersonCard from '@/components/PersonCard';
 
 const contactActions = [
     {
-        label: 'Save My Info',
+        label: 'Save my info',
         icon: UserPlus,
         href: '/rahul.vcf',
         highlight: true,
     },
     {
-        label: "Let's Talk",
+        label: "Let's talk",
         icon: Phone,
         href: 'tel:+16466413173',
     },
     {
-        label: 'Text Me',
+        label: 'Text me',
         icon: MessageCircle,
         href: "sms:+16466413173?body=Hi%20Rahul%2C%20I'd%20like%20to%20connect%20with%20you.",
     },
     {
-        label: 'Visit Website',
+        label: 'Visit website',
         icon: Globe,
         href: 'https://rsla.io',
         external: true,

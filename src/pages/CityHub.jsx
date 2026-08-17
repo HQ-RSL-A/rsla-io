@@ -58,8 +58,8 @@ export default function CityHub() {
     if (!city) {
         return (
             <main className="min-h-screen bg-surface text-text flex flex-col items-center justify-center px-6">
-                <p className="font-sans text-lg text-textMuted mb-6">Location not found</p>
-                <Link to="/services" className="font-sans font-semibold text-accent hover:text-accent/80 transition-colors">
+                <p className="font-sans text-lg text-text mb-6">Location not found</p>
+                <Link to="/services" className="font-sans font-medium text-accent hover:text-accentDeep transition-colors">
                     Back to Services
                 </Link>
             </main>
@@ -103,27 +103,27 @@ export default function CityHub() {
 
             <section className="bg-surface pt-36 pb-12 px-6 md:px-12">
                 <div className="city-hero-content opacity-0 max-w-4xl mx-auto">
-                    <span className="inline-flex items-center gap-1.5 text-sm text-accent font-semibold mb-5">
+                    <span className="inline-flex items-center gap-1.5 text-[15px] text-accent font-medium mb-5">
                         <MapPin size={14} />
                         {city.name}, {city.state}
                     </span>
-                    <h1 className="font-sans font-extrabold text-3xl md:text-5xl tracking-tight leading-[1.1] text-text mb-6">
+                    <h1 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-[1.1] text-text mb-6">
                         <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                             {city.headline}
                         </TextAnimate>
                     </h1>
-                    <p className="font-sans text-lg text-textMuted leading-relaxed max-w-2xl">
+                    <p className="font-sans text-lg text-text leading-relaxed max-w-2xl">
                         {city.subheadline}
                     </p>
                 </div>
             </section>
 
-            <section className="city-section bg-accent-light py-16 md:py-24 px-6 md:px-12 border-t border-accent-border">
+            <section className="city-section bg-accent-light py-16 md:py-24 px-6 md:px-12 border-t border-hairline">
                 <div className="max-w-4xl mx-auto">
                     <p className="font-sans text-lg text-text leading-relaxed mb-5">
                         {city.localContent.intro}
                     </p>
-                    <p className="font-sans text-base text-textMuted leading-relaxed">
+                    <p className="font-sans text-base text-text leading-relaxed">
                         {city.localContent.whyLocal}
                     </p>
                 </div>
@@ -131,7 +131,7 @@ export default function CityHub() {
 
             <section className="city-section bg-surface py-16 md:py-24 px-6 md:px-12">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="font-sans font-extrabold text-2xl md:text-3xl tracking-tight text-text mb-8">
+                    <h2 className="font-sans font-bold text-2xl md:text-3xl tracking-tight text-text mb-8">
                         What we do in {city.name}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -139,15 +139,15 @@ export default function CityHub() {
                             <Link
                                 key={service.slug}
                                 to={`/services/${service.slug}`}
-                                className="group rounded-xl border border-accent-border bg-surface p-6 transition-colors hover:border-accent/40"
+                                className="group rounded-xl border border-hairline bg-surface p-6 transition-colors hover:border-accent/40"
                             >
                                 <p className="font-sans font-bold text-base text-text mb-2 group-hover:text-accent transition-colors">
                                     {service.displayName}
                                 </p>
-                                <p className="font-sans text-sm text-textMuted leading-relaxed mb-4">
+                                <p className="font-sans text-sm text-text leading-relaxed mb-4">
                                     {service.description}
                                 </p>
-                                <span className="inline-flex items-center gap-1 font-sans text-sm font-semibold text-accent">
+                                <span className="inline-flex items-center gap-1 font-sans text-sm font-medium text-accent">
                                     Learn more
                                     <ArrowRight size={14} strokeWidth={2} />
                                 </span>
@@ -157,16 +157,16 @@ export default function CityHub() {
                 </div>
             </section>
 
-            <section className="city-section bg-accent-light py-16 md:py-24 px-6 md:px-12 border-t border-accent-border">
+            <section className="city-section bg-accent-light py-16 md:py-24 px-6 md:px-12 border-t border-hairline">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="font-sans font-extrabold text-2xl md:text-3xl tracking-tight text-text mb-8">
+                    <h2 className="font-sans font-bold text-2xl md:text-3xl tracking-tight text-text mb-8">
                         Industries we serve in {city.name}
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {city.localContent.industries.map((industry) => (
                             <div key={industry} className="flex items-start gap-2">
                                 <span className="mt-1.5 flex-shrink-0 h-2 w-2 rounded-full bg-accent" />
-                                <p className="font-sans text-base text-textMuted">{industry}</p>
+                                <p className="font-sans text-base text-text">{industry}</p>
                             </div>
                         ))}
                     </div>
@@ -176,7 +176,7 @@ export default function CityHub() {
             {city.nearbyAreas && city.nearbyAreas.length > 0 && (
                 <section className="city-section bg-surface py-12 px-6 md:px-12">
                     <div className="max-w-4xl mx-auto">
-                        <p className="font-sans text-sm text-textMuted">
+                        <p className="font-sans text-sm text-text">
                             Also serving: {city.nearbyAreas.join(', ')}
                         </p>
                     </div>
@@ -185,18 +185,18 @@ export default function CityHub() {
 
             <ServiceFaq faqs={city.faqs} />
 
-            <section className="city-section bg-surface py-16 md:py-24 px-6 md:px-12 border-t border-accent-border">
+            <section className="city-section bg-surface py-16 md:py-24 px-6 md:px-12 border-t border-hairline">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-4">
+                    <h2 className="font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-4">
                         Ready to grow your {city.name} business?
                     </h2>
-                    <p className="font-sans text-lg text-textMuted leading-relaxed mb-8">
+                    <p className="font-sans text-lg text-text leading-relaxed mb-8">
                         Book a call and we'll talk through what you need. No pitch, no pressure.
                     </p>
                     <Link
                         to="/contact"
                         onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: `city_${citySlug}` })}
-                        className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-sans font-bold text-base text-white shadow-sm transition-colors hover:bg-accent/90"
+                        className="inline-flex items-center gap-2 rounded-button bg-accent px-8 py-3 font-sans font-medium text-base text-white shadow-sm transition-colors hover:bg-accentDeep"
                     >
                         Book a call
                         <ArrowRight size={16} strokeWidth={2} className="opacity-60" />

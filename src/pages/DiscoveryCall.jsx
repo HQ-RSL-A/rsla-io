@@ -60,7 +60,7 @@ export default function DiscoveryCall() {
                     </h1>
                 </div>
 
-                <div className="contact-reveal opacity-0 bg-surfaceAlt border border-accent-border rounded-2xl p-3 md:p-6">
+                <div className="contact-reveal opacity-0 bg-surfaceAlt border border-hairline rounded-2xl p-3 md:p-6">
                     <iframe
                         src="https://api.leadconnectorhq.com/widget/booking/nKrQmOaliDo1haSUwgRS"
                         style={{ width: '100%', border: 'none', overflow: 'hidden' }}
@@ -74,7 +74,7 @@ export default function DiscoveryCall() {
                 </div>
 
                 <div className="contact-reveal opacity-0 mt-8 text-center">
-                    <p className="font-sans text-sm text-textMuted">
+                    <p className="font-sans text-sm text-text">
                         Not ready for a call?{' '}
                         <Link to="/work" className="text-accent hover:underline inline-flex items-center gap-1">
                             See our case studies

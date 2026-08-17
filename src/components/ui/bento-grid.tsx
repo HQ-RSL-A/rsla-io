@@ -97,14 +97,14 @@ const BentoCard = ({
     <div>{background}</div>
     <div className="p-4">
       <div className="z-10 flex transform-gpu flex-col gap-1 transition-transform duration-lg ease-out-smooth lg:group-hover:-translate-y-10">
-        <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-transform duration-lg ease-out-smooth group-hover:scale-75" />
-        <h3 className="font-sans text-xl md:text-2xl font-semibold text-text">
+        <Icon className="h-12 w-12 origin-left transform-gpu text-text transition-transform duration-lg ease-out-smooth group-hover:scale-75" />
+        <h3 className="font-sans text-xl md:text-2xl font-bold text-text">
           {name}
         </h3>
       </div>
 
       <div className="flex w-full transform-gpu flex-row items-center transition-transform duration-lg ease-out-smooth lg:hidden">
-        <span className="inline-flex items-center font-sans text-sm font-semibold text-accent p-0">
+        <span className="inline-flex items-center font-sans text-sm font-medium text-accent p-0">
           {cta}
           <ArrowRight className="ms-2 h-4 w-4 rtl:rotate-180" />
         </span>
@@ -112,7 +112,7 @@ const BentoCard = ({
     </div>
 
     <div className="absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-[transform,opacity] duration-lg ease-out-smooth group-hover:translate-y-0 group-hover:opacity-100 lg:flex">
-      <span className="inline-flex items-center font-sans text-sm font-semibold text-accent p-0">
+      <span className="inline-flex items-center font-sans text-sm font-medium text-accent p-0">
         {cta}
         <ArrowRight className="ms-2 h-4 w-4 rtl:rotate-180" />
       </span>

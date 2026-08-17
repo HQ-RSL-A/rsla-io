@@ -54,7 +54,7 @@ function Avatar({ name }) {
 function TestimonialCard({ name, role, body, featured = false, isHiddenOnMobile = false }) {
     return (
         <div
-            className={`testimonial-card opacity-0 bg-surface rounded-2xl p-6 sm:p-8 border border-accent-border shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow ${featured ? 'lg:row-span-2' : ''
+            className={`testimonial-card opacity-0 bg-surface rounded-2xl p-6 sm:p-8 border border-hairline shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow ${featured ? 'lg:row-span-2' : ''
                 } ${isHiddenOnMobile ? 'hidden sm:block' : ''}`}
         >
             <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
@@ -65,7 +65,7 @@ function TestimonialCard({ name, role, body, featured = false, isHiddenOnMobile 
                     <Avatar name={name} />
                     <div>
                         <cite className="font-sans font-medium text-sm text-text not-italic">{name}</cite>
-                        <span className="block font-sans text-sm text-textMuted">{role}</span>
+                        <span className="block font-sans text-sm text-text">{role}</span>
                     </div>
                 </div>
             </blockquote>
@@ -112,8 +112,8 @@ export default function Testimonials() {
     return (
         <section ref={sectionRef} className="py-20 md:py-32 bg-surfaceAlt px-6 md:px-12">
             <div className="max-w-6xl mx-auto space-y-12">
-                <div className="max-w-xl mx-auto text-center">
-                    <h2 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tight text-text">
+                <div className="max-w-xl">
+                    <h2 className="font-sans font-bold text-2xl md:text-4xl tracking-tight text-text">
                         Don&apos;t take our word for it.
                     </h2>
                 </div>
@@ -132,9 +132,9 @@ export default function Testimonials() {
                     <div className="flex justify-center sm:hidden mt-8">
                         <button
                             onClick={() => setIsExpanded(true)}
-                            className="text-sm font-sans font-medium text-accent hover:text-accent-hover transition-colors px-6 py-2 rounded-full border border-accent-border bg-surface shadow-sm"
+                            className="text-sm font-sans font-medium text-accent hover:text-accentDeep transition-colors px-6 py-2 rounded-button border border-hairline bg-surface shadow-sm"
                         >
-                            Read More Testimonials
+                            Read more testimonials
                         </button>
                     </div>
                 )}
@@ -142,9 +142,9 @@ export default function Testimonials() {
                     <div className="flex justify-center sm:hidden mt-8">
                         <button
                             onClick={() => setIsExpanded(false)}
-                            className="text-sm font-sans font-medium text-accent hover:text-accent-hover transition-colors px-6 py-2 rounded-full border border-accent-border bg-surface shadow-sm"
+                            className="text-sm font-sans font-medium text-accent hover:text-accentDeep transition-colors px-6 py-2 rounded-button border border-hairline bg-surface shadow-sm"
                         >
-                            Show Less
+                            Show less
                         </button>
                     </div>
                 )}

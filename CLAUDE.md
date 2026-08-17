@@ -2,7 +2,7 @@
 
 ## What This Is
 
-RSL/A agency website at rsla.io. React 19 + Vite SPA with GSAP animations, Sanity CMS for blogs and case studies. Blue-gray light theme. This is also the content production hub for all blog writing, case study drafting, and SEO work.
+RSL/A agency website at rsla.io. React 19 + Vite SPA with GSAP animations, Sanity CMS for blogs and case studies. Brand light theme (Paper/Ink/Anchor Blue per `../../brand-guidelines/design-tokens.css`; dark = footer only). This is also the content production hub for all blog writing, case study drafting, and SEO work.
 
 **Live:** rsla.io (Vercel, auto-deploys from `main`)
 **GitHub:** `HQ-RSL-A/rsla-io` (moved from `rahullalia/new-rslaWebsite`)
@@ -24,7 +24,7 @@ Inherits from `~/Developer/CLAUDE.md`. Everything here is trusted.
 | Icons | Lucide React |
 | SEO | Custom Seo.jsx + JSON-LD on all indexed pages |
 | Error Monitoring | Sentry (deferred via requestIdleCallback) |
-| Fonts | Self-hosted WOFF2: Satoshi (primary), Cormorant (decorative italic only) |
+| Fonts | Self-hosted WOFF2: Satoshi Medium 500 + Bold 700 ONLY (brand set; no Regular, no italics, no other families) |
 | Pre-rendering | Build-time HTML injection (scripts/prerender.mjs + marked) |
 | Newsletter | Kit API (`api.convertkit.com/v3/forms/9130465/subscribe`) |
 

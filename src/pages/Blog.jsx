@@ -32,7 +32,7 @@ function PostCard({ post, showAuthor = false }) {
         ? urlForImage(post.author.image)?.width(56).height(56).url() : null;
 
     return (
-        <Link to={`/blog/${post.slug.current}`} className="group flex flex-row md:flex-col gap-3 md:gap-0 bg-white rounded-xl border border-gray-100 shadow-sm shadow-gray-900/5 p-3 md:p-0 overflow-hidden">
+        <Link to={`/blog/${post.slug.current}`} className="group flex flex-row md:flex-col gap-3 md:gap-0 bg-white rounded-xl border border-hairline shadow-sm shadow-gray-900/5 p-3 md:p-0 overflow-hidden">
             {imageUrl && (
                 <div className="w-[110px] h-[74px] md:w-auto md:h-auto md:aspect-[374/237] rounded-lg md:rounded-none overflow-hidden bg-surfaceAlt shrink-0">
                     <img
@@ -48,20 +48,20 @@ function PostCard({ post, showAuthor = false }) {
                     {post.title}
                 </h3>
                 {firstCategory && (
-                    <span className="inline-block w-fit text-accent bg-accent/8 border border-accent/15 px-2 py-0.5 md:px-3 md:py-1 rounded font-sans font-medium text-xs md:text-sm uppercase tracking-wide mb-1.5 md:mb-3">
+                    <span className="inline-block w-fit text-accent bg-frost border border-hairline px-2 py-0.5 md:px-3 md:py-1 rounded font-sans font-medium text-xs md:text-sm mb-1.5 md:mb-3">
                         {firstCategory.name}
                     </span>
                 )}
-                <div className="flex items-center gap-2 text-sm text-textMuted font-sans mb-0 md:mb-3">
+                <div className="flex items-center gap-2 text-sm text-text font-sans mb-0 md:mb-3">
                     <time>
                         {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </time>
                     {post.readingTime && (
-                        <><span className="text-textLight">&middot;</span><span>{post.readingTime} min read</span></>
+                        <><span className="text-text">&middot;</span><span>{post.readingTime} min read</span></>
                     )}
                 </div>
                 {post.excerpt && (
-                    <p className="font-sans text-base text-textMuted line-clamp-2 mb-4 leading-relaxed flex-grow hidden md:block">
+                    <p className="font-sans text-base text-text line-clamp-2 mb-4 leading-relaxed flex-grow hidden md:block">
                         {post.excerpt}
                     </p>
                 )}
@@ -69,8 +69,8 @@ function PostCard({ post, showAuthor = false }) {
                     <div className="items-center gap-2 mt-auto hidden md:flex">
                         {authorImg && <img src={authorImg} alt={post.author.name} className="w-7 h-7 rounded-lg object-cover" />}
                         <div className="font-sans text-sm">
-                            <span className="font-semibold text-text">{post.author.name}</span>
-                            {post.author.role && <span className="text-textMuted ml-1">{post.author.role}</span>}
+                            <span className="font-bold text-text">{post.author.name}</span>
+                            {post.author.role && <span className="text-text ml-1">{post.author.role}</span>}
                         </div>
                     </div>
                 )}
@@ -185,15 +185,15 @@ export default function Blog() {
             {/* ════════════ SECTION 1: HERO ════════════ */}
             {isFirstPage && heroData && (
                 <section className="max-w-[1160px] mx-auto px-6 md:px-8 pt-4 mb-16">
-                    <h1 className="font-sans text-sm font-semibold uppercase tracking-widest text-textMuted mb-8">Blog</h1>
+                    <h1 className="font-sans text-2xl md:text-3xl font-bold tracking-brand-tight text-text mb-8">Blog</h1>
                     <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:gap-8">
                         {/* Featured post — left column (58%) */}
-                        <Link to={`/blog/${heroData.featured.slug.current}`} className="group flex flex-col lg:block lg:w-[58%] shrink-0 lg:bg-white lg:rounded-xl lg:border lg:border-gray-100 lg:shadow-sm lg:shadow-gray-900/5 lg:overflow-hidden">
+                        <Link to={`/blog/${heroData.featured.slug.current}`} className="group flex flex-col lg:block lg:w-[58%] shrink-0 lg:bg-white lg:rounded-xl lg:border lg:border-hairline lg:shadow-sm lg:shadow-gray-900/5 lg:overflow-hidden">
                             {/* Date + reading time - mobile: between title and excerpt */}
-                            <div className="order-3 lg:hidden font-sans text-sm text-textMuted mb-4">
+                            <div className="order-3 lg:hidden font-sans text-sm text-text mb-4">
                                 <time>{new Date(heroData.featured.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                                 {heroData.featured.readingTime && (
-                                    <><span className="text-textLight"> &middot; </span><span>{heroData.featured.readingTime} min</span></>
+                                    <><span className="text-text"> &middot; </span><span>{heroData.featured.readingTime} min</span></>
                                 )}
                             </div>
 
@@ -208,40 +208,40 @@ export default function Blog() {
                                 </div>
                             )}
 
-                            <h2 className="order-1 lg:order-none text-[28px] md:text-[36px] font-sans font-extrabold text-text mb-2 tracking-tight leading-[1.15] group-hover:text-accent transition-colors lg:px-6 lg:pt-5">
+                            <h2 className="order-1 lg:order-none text-[28px] md:text-[36px] font-sans font-bold text-text mb-2 tracking-tight leading-[1.15] group-hover:text-accent transition-colors lg:px-6 lg:pt-5">
                                 {heroData.featured.title}
                             </h2>
                             {heroData.featured.categories?.[0] && (
-                                <span className="order-2 lg:order-none inline-block w-fit text-accent bg-accent/8 border border-accent/15 px-2 py-0.5 lg:px-3 lg:py-1 rounded font-sans font-medium text-xs lg:text-sm uppercase tracking-wide mb-3 lg:mx-6">
+                                <span className="order-2 lg:order-none inline-block w-fit text-accent bg-frost border border-hairline px-2 py-0.5 lg:px-3 lg:py-1 rounded font-sans font-medium text-xs lg:text-sm mb-3 lg:mx-6">
                                     {heroData.featured.categories[0].name}
                                 </span>
                             )}
                             {heroData.featured.excerpt && (
-                                <p className="order-4 lg:order-none font-sans text-base text-textMuted lg:line-clamp-2 mb-4 leading-relaxed lg:px-6">{heroData.featured.excerpt}</p>
+                                <p className="order-4 lg:order-none font-sans text-base text-text lg:line-clamp-2 mb-4 leading-relaxed lg:px-6">{heroData.featured.excerpt}</p>
                             )}
-                            <div className="order-5 lg:order-none flex items-center gap-2 font-sans text-sm text-textMuted flex-wrap lg:px-6 lg:pb-6">
+                            <div className="order-5 lg:order-none flex items-center gap-2 font-sans text-sm text-text flex-wrap lg:px-6 lg:pb-6">
                                 {heroData.featured.author?.image?.asset && (
                                     <img src={urlForImage(heroData.featured.author.image)?.width(48).height(48).url()} alt={heroData.featured.author.name} className="w-7 h-7 rounded-lg object-cover" />
                                 )}
-                                <span className="font-semibold text-text">{heroData.featured.author?.name}</span>
-                                {heroData.featured.author?.role && <span className="text-textMuted">{heroData.featured.author.role}</span>}
-                                <span className="text-textLight hidden lg:inline">&middot;</span>
+                                <span className="font-bold text-text">{heroData.featured.author?.name}</span>
+                                {heroData.featured.author?.role && <span className="text-text">{heroData.featured.author.role}</span>}
+                                <span className="text-text hidden lg:inline">&middot;</span>
                                 <time className="hidden lg:inline">{new Date(heroData.featured.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                                 {heroData.featured.readingTime && (
-                                    <span className="hidden lg:inline"><span className="text-textLight">&middot;</span> {heroData.featured.readingTime} min</span>
+                                    <span className="hidden lg:inline"><span className="text-text">&middot;</span> {heroData.featured.readingTime} min</span>
                                 )}
                             </div>
                         </Link>
 
                         {/* Right column (42%) — trending banner + sidebar posts */}
-                        <div className="lg:w-[42%] flex flex-col gap-0 lg:bg-white lg:rounded-xl lg:border lg:border-gray-100 lg:shadow-lg lg:shadow-gray-900/5 lg:p-5 lg:overflow-hidden">
+                        <div className="lg:w-[42%] flex flex-col gap-0 lg:bg-white lg:rounded-xl lg:border lg:border-hairline lg:shadow-lg lg:shadow-gray-900/5 lg:p-5 lg:overflow-hidden">
                             {/* Trending banner */}
-                            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg px-5 py-4 mb-[17px] flex items-center gap-3">
+                            <div className="bg-frost border border-hairline rounded-lg px-5 py-4 mb-[17px] flex items-center gap-3">
                                 <div>
-                                    <p className="font-sans font-extrabold text-white text-xl leading-[1.1] tracking-tight">Trending</p>
-                                    <p className="font-sans font-extrabold text-white/70 text-xl leading-[1.1] tracking-tight">topics to read</p>
+                                    <p className="font-sans font-bold text-text text-xl leading-[1.1] tracking-tight">Trending</p>
+                                    <p className="font-sans font-bold text-accent text-xl leading-[1.1] tracking-tight">topics to read</p>
                                 </div>
-                                <img src="/images/icons/arrow-up-right.svg" alt="" className="w-7 h-7 ml-auto brightness-0 invert opacity-60" />
+                                <img src="/images/icons/arrow-up-right.svg" alt="" className="w-7 h-7 ml-auto" />
                             </div>
 
                             {/* Sidebar posts */}
@@ -254,7 +254,7 @@ export default function Blog() {
                                         <Link
                                             key={post._id}
                                             to={`/blog/${post.slug.current}`}
-                                            className={`group flex gap-[18px] pb-[17px] active:opacity-80 transition-opacity duration-150 ease-out ${!isLast ? 'border-b border-black/10 mb-[17px]' : ''}`}
+                                            className={`group flex gap-[18px] pb-[17px] active:opacity-80 transition-opacity duration-150 ease-out ${!isLast ? 'border-b border-hairline mb-[17px]' : ''}`}
                                         >
                                             {thumbUrl && (
                                                 <img src={thumbUrl} alt={post.featuredImage?.alt || post.title}
@@ -265,16 +265,16 @@ export default function Blog() {
                                                     {post.title}
                                                 </h4>
                                                 {post.categories?.[0] && (
-                                                    <span className="inline-block w-fit text-accent bg-accent/8 border border-accent/15 px-2 py-0.5 rounded font-sans font-medium text-xs uppercase tracking-wide mb-1.5">
+                                                    <span className="inline-block w-fit text-accent bg-frost border border-hairline px-2 py-0.5 rounded font-sans font-medium text-xs mb-1.5">
                                                         {post.categories[0].name}
                                                     </span>
                                                 )}
-                                                <div className="flex items-center gap-2 text-sm text-textMuted font-sans">
+                                                <div className="flex items-center gap-2 text-sm text-text font-sans">
                                                     <time>
                                                         {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                                                     </time>
                                                     {post.readingTime && (
-                                                        <><span className="text-textLight">&middot;</span><span>{post.readingTime} min read</span></>
+                                                        <><span className="text-text">&middot;</span><span>{post.readingTime} min read</span></>
                                                     )}
                                                 </div>
                                             </div>
@@ -291,13 +291,13 @@ export default function Blog() {
             <section className="pt-[35px] pb-[30px]">
                 <div className="max-w-[1160px] mx-auto px-6 md:px-8">
                     {isFirstPage && (
-                        <h2 className="font-sans font-extrabold text-[22px] text-text tracking-tight mb-4">All Articles</h2>
+                        <h2 className="font-sans font-bold text-[22px] text-text tracking-tight mb-4">All articles</h2>
                     )}
 
                     {!isFirstPage && (
                         <header className="mb-8 text-center pt-6">
                             <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-3 tracking-tight leading-[1.1]">Blog</h1>
-                            <p className="font-sans text-lg text-textMuted max-w-2xl mx-auto leading-relaxed">
+                            <p className="font-sans text-lg text-text max-w-2xl mx-auto leading-relaxed">
                                 Insights on marketing automation, AI systems, local SEO, and strategies to scale your operations.
                             </p>
                         </header>
@@ -306,15 +306,15 @@ export default function Blog() {
                     {/* Search + category dropdown row */}
                     <div className="mb-8 flex flex-col sm:flex-row items-stretch gap-3">
                         <div className="relative flex-1">
-                            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-textMuted" />
+                            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-text" />
                             <input
                                 ref={searchInputRef} type="text" value={searchInput}
                                 onChange={(e) => handleSearchInput(e.target.value)}
                                 placeholder="Search articles..."
-                                className="w-full pl-10 pr-9 min-h-[44px] rounded-lg bg-surfaceAlt border border-accent-border text-text font-sans text-base placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                                className="w-full pl-10 pr-9 min-h-[44px] rounded-lg bg-surfaceAlt border border-hairline text-text font-sans text-base placeholder:text-text focus:outline-none focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
                             />
                             {searchInput && (
-                                <button onClick={clearSearch} className="absolute right-1 top-1/2 -translate-y-1/2 min-h-[44px] min-w-[44px] flex items-center justify-center text-textMuted hover:text-text transition-colors" aria-label="Clear search">
+                                <button onClick={clearSearch} className="absolute right-1 top-1/2 -translate-y-1/2 min-h-[44px] min-w-[44px] flex items-center justify-center text-text hover:text-text transition-colors" aria-label="Clear search">
                                     <X size={14} />
                                 </button>
                             )}
@@ -324,18 +324,18 @@ export default function Blog() {
                                 <select
                                     value={activeCategory}
                                     onChange={(e) => handleCategoryClick(e.target.value)}
-                                    className="appearance-none w-full sm:w-auto min-h-[44px] pl-4 pr-10 rounded-lg bg-surfaceAlt border border-accent-border text-text font-sans text-base cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                                    className="appearance-none w-full sm:w-auto min-h-[44px] pl-4 pr-10 rounded-lg bg-surfaceAlt border border-hairline text-text font-sans text-base cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
                                 >
-                                    <option value="">All Topics</option>
+                                    <option value="">All topics</option>
                                     {categories.map((cat) => (
                                         <option key={cat._id} value={cat.slug?.current}>{cat.name}</option>
                                     ))}
                                 </select>
-                                <ChevronRight size={14} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-textMuted pointer-events-none rotate-90" />
+                                <ChevronRight size={14} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-text pointer-events-none rotate-90" />
                             </div>
                         )}
                         {(activeCategory || searchQuery) && !loading && (
-                            <div className="font-sans text-sm text-textMuted">
+                            <div className="font-sans text-sm text-text">
                                 {posts.length} result{posts.length !== 1 ? 's' : ''}
                                 {activeCategoryName && <> in <span className="text-accent font-medium">{activeCategoryName}</span></>}
                                 {searchQuery && <> for "<span className="text-accent font-medium">{searchQuery}</span>"</>}
@@ -351,7 +351,7 @@ export default function Blog() {
                         </div>
                     ) : gridPosts.length === 0 ? (
                         <div className="text-center py-20">
-                            <p className="font-sans text-lg text-textMuted mb-4">{searchQuery || activeCategory ? 'No posts match your filters.' : 'No articles yet.'}</p>
+                            <p className="font-sans text-lg text-text mb-4">{searchQuery || activeCategory ? 'No posts match your filters.' : 'No articles yet.'}</p>
                             {(searchQuery || activeCategory) && (
                                 <button onClick={() => { setSearchInput(''); setSearchParams({}, { replace: true }); }} className="font-sans text-base text-accent hover:underline cursor-pointer">Clear filters</button>
                             )}
@@ -369,10 +369,10 @@ export default function Blog() {
                                 })}
                             </div>
                             {totalPages > 1 && (
-                                <div className="flex justify-center items-center gap-6 font-sans text-base py-4 border-t border-accent-border">
+                                <div className="flex justify-center items-center gap-6 font-sans text-base py-4 border-t border-hairline">
                                     <button onClick={() => updateParams({ page: currentPage > 2 ? String(currentPage - 1) : '' })} disabled={currentPage === 1}
                                         className="px-3 py-2 hover:text-accent disabled:opacity-30 transition-colors duration-150 ease-out cursor-pointer disabled:cursor-default">&larr; Prev</button>
-                                    <span className="text-textMuted tabular-nums">{currentPage} / {totalPages}</span>
+                                    <span className="text-text tabular-nums">{currentPage} / {totalPages}</span>
                                     <button onClick={() => updateParams({ page: String(currentPage + 1) })} disabled={currentPage === totalPages}
                                         className="px-3 py-2 hover:text-accent disabled:opacity-30 transition-colors duration-150 ease-out cursor-pointer disabled:cursor-default">Next &rarr;</button>
                                 </div>

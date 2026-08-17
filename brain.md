@@ -15,7 +15,7 @@ src/
   components/
     Seo.jsx               # Per-page SEO (title, description, OG, Twitter, canonical, robots, og:locale)
     NavbarV3.jsx           # Grid navbar with services mega-menu, Link-wrapped CTA
-    FooterV2.jsx           # Light theme 5-col footer with Kit newsletter + Solutions column
+    FooterV2.jsx           # Black footer (the site's ONE dark surface; solid Mist text)
     CaseStudyCard.jsx      # Shared card component used by Work.jsx and WorkInner.jsx
     PersonCard.jsx         # Shared digital business card used by Rahul.jsx and Sid.jsx
     blog/PortableTextRenderer.jsx  # Sanity rich text renderer
@@ -56,7 +56,7 @@ docs/
 | / | Home | Yes | Full |
 | /about | About | Yes | Full |
 | /services | Services | Yes | Full |
-| /services/:slug | ServiceDetail | **No** (thin content) | Full |
+| /services/:slug | 5 service pages (blank shells) + CityHub catch-all | **No** (thin content) | Full |
 | /work | Work | Yes | Full |
 | /work/:slug | WorkInner | Yes | Full |
 | /blog | Blog | Yes | Full |
@@ -65,7 +65,6 @@ docs/
 | /book-a-call | BookCall | No | Full |
 | /booking-confirmed | BookingConfirmed | No | Full |
 | /rahul | Rahul | No | Chromeless |
-| /sid | Sid | No | Chromeless |
 | /insider | Insider | No | Full |
 | /r/:slug | LeadMagnet | No | Full |
 | /privacy | Privacy | No | Full |
@@ -127,25 +126,25 @@ docs/
 
 ## Typography
 
-| Font | CSS Class | Role |
+Satoshi ONLY (brand rule, applied 2026-08-17). Two files ship: Satoshi-Medium.woff2 (500, all reading text; body default) and Satoshi-Bold.woff2 (700, all headings + emphasis). Regular 400, all italics, Caveat, and Cormorant are deleted from `public/fonts/`. No `font-semibold`/`font-extrabold` anywhere (unloaded weights render synthetic). Sentence case everywhere; no eyebrow text, no ALL CAPS, no italics (the PortableText `em` mark renders bold).
+
+## Color Palette (RSL/A brand tokens, applied 2026-08-17)
+
+Source of truth: `brand-guidelines/design-tokens.css`. Tailwind tokens in `tailwind.config.js`:
+
+| Name | Hex | Tailwind |
 |---|---|---|
-| Satoshi | `.font-sans` | All UI text, headlines, body copy |
-| Cormorant | `.font-cormorant` | Decorative italic only (pull quotes, captions) |
+| Paper | `#FFFFFF` | `background`, `surface` |
+| Mist | `#F5F5F7` | `surfaceAlt`, `mist` (text on black) |
+| Ink | `#1d1d1f` | `text` (the ONLY text color on light; no gray tiers, no alpha text) |
+| Anchor Blue | `#0070F3` | `accent` |
+| Anchor Deep | `#0059C2` | `accentDeep` (all hovers on accent) |
+| Frost | `#EFF6FF` | `frost` (callouts, active states, bento band) |
+| Hairline | `#D2D2D7` | `hairline` (all borders/dividers) |
+| Semantic | `#047857` / `#B45309` / `#DC2626` | `success` / `warning` / `error` |
+| Hover tints | `rgba(0,112,243,.05/.10)` | `accent-light` / `accent-medium` (surfaces only) |
 
-## Color Palette (Blue-Gray Theme)
-
-| Name | Hex / Value | Tailwind |
-|---|---|---|
-| Background | `#F8FAFC` (slate-50) | `background` |
-| Surface | `#FFFFFF` (white cards) | `surface` |
-| Surface Alt | `#F1F5F9` (slate-100) | `surfaceAlt` |
-| Text | `#0F172A` (slate-900) | `text` |
-| Text Muted | `#64748B` (slate-500) | `textMuted` |
-| Text Light | `#94A3B8` (slate-400) | `textLight` |
-| Accent | `#0070F3` (brand blue) | `accent` |
-| Blue Wash | `rgba(0,112,243,0.05)` | `accent-light` |
-
-**Section alternation pattern:** surface (white) -> accent-light (blue wash) -> surfaceAlt (slate-100)
+`textMuted`/`textLight`/`accent-border`/`cyan`/`coral` tokens are deleted. Radii: `rounded-button` 10px (all buttons), `rounded-callout` 12px. Gradients retired except the aurora hero (kept until a replacement is chosen). Dark surfaces: footer only (pure `#000000`, solid Mist text). Logo files are the untouched `#3b82f6` masters from `brand-guidelines/rsla-logo/`; favicon set regenerated from them (never recolor).
 
 ## Error Handling
 

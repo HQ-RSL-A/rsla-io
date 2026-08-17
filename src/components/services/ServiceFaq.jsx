@@ -18,16 +18,16 @@ export default function ServiceFaq({ faqs, serviceName }) {
     if (!faqs || faqs.length === 0) return null;
 
     return (
-        <section className="bg-background border-t border-accent-border py-20 md:py-28 px-6 md:px-12">
+        <section className="bg-background border-t border-hairline py-20 md:py-28 px-6 md:px-12">
             <div className="max-w-3xl mx-auto">
-                <h2 className="font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-10">
+                <h2 className="font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-10">
                     Frequently asked questions
                 </h2>
                 <div className="flex flex-col gap-3">
                     {faqs.map((faq, i) => (
                         <details
                             key={i}
-                            className="group rounded-xl border border-accent-border bg-surface p-5 open:border-accent/30"
+                            className="group rounded-xl border border-hairline bg-surface p-5 open:border-accent/30"
                         >
                             <summary className="flex items-center justify-between gap-4 font-sans font-bold text-base text-text cursor-pointer list-none">
                                 {faq.q}
@@ -35,7 +35,7 @@ export default function ServiceFaq({ faqs, serviceName }) {
                                     +
                                 </span>
                             </summary>
-                            <p className="mt-4 font-sans text-base text-textMuted leading-relaxed">
+                            <p className="mt-4 font-sans text-base text-text leading-relaxed">
                                 {faq.a}
                             </p>
                         </details>

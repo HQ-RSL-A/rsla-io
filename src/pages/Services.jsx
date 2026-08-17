@@ -62,10 +62,10 @@ export default function Services() {
                         name: 'AI Services',
                         itemListElement: [
                             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Websites', description: 'New builds and full rebuilds. Fast, custom-designed, SEO-ready.' } },
-                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Search Visibility', description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.' } },
-                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Automations', description: 'n8n, Make, and custom scripts that replace manual work.' } },
-                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM Systems', description: 'GoHighLevel pipelines, workflows, and integrations.' } },
-                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Development', description: 'SaaS products, MVPs, internal tools, APIs.' } },
+                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Search visibility', description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.' } },
+                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI automations', description: 'n8n, Make, and custom scripts that replace manual work.' } },
+                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM systems', description: 'GoHighLevel pipelines, workflows, and integrations.' } },
+                            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom development', description: 'SaaS products, MVPs, internal tools, APIs.' } },
                         ],
                     },
                 }}
@@ -79,14 +79,14 @@ export default function Services() {
                             What we build for B2B companies.
                         </TextAnimate>
                     </h1>
-                    <p className="font-sans text-lg text-textMuted leading-relaxed max-w-2xl mx-auto">
+                    <p className="font-sans text-lg text-text leading-relaxed max-w-2xl mx-auto">
                         End-to-end AI systems that generate leads, close deals, and scale operations. Built and managed by a team that's done it across SMBs and enterprise.
                     </p>
                 </div>
             </section>
 
             {/* Bento grid */}
-            <section className="bg-accent-light pb-20 md:pb-28 pt-6 md:pt-10 px-6 md:px-12">
+            <section className="bg-frost pb-20 md:pb-28 pt-6 md:pt-10 px-6 md:px-12">
                 <div className="max-w-6xl mx-auto">
                     <BentoGrid className="services-bento">
                         {features.map((feature) => (
@@ -105,20 +105,20 @@ export default function Services() {
                 </div>
             </section>
 
-            <section className="bg-surface py-16 md:py-24 px-6 md:px-12 border-t border-accent-border">
-                <div className="max-w-2xl mx-auto text-center">
-                    <h2 className="font-sans font-extrabold text-2xl md:text-3xl tracking-tight text-text mb-4">
+            <section className="bg-surface py-16 md:py-24 px-6 md:px-12 border-t border-hairline">
+                <div className="max-w-2xl mx-auto">
+                    <h2 className="font-sans font-bold text-2xl md:text-3xl tracking-tight text-text mb-4">
                         Not sure where to start?
                     </h2>
-                    <p className="font-sans text-lg text-textMuted leading-relaxed mb-8">
+                    <p className="font-sans text-lg text-text leading-relaxed mb-8">
                         Book a free 30-minute call and we will map out exactly what your business needs.
                     </p>
                     <Link
                         to="/contact"
-                        className="inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-sans font-bold text-base text-white shadow-sm transition-colors hover:bg-accent/90"
+                        className="inline-flex items-center gap-2 rounded-button bg-accent px-8 py-3 font-sans font-medium text-base text-white shadow-sm transition-colors hover:bg-accentDeep"
                     >
                         Book a free call
-                        <ArrowRight size={16} strokeWidth={2} className="opacity-60" />
+                        <ArrowRight size={16} strokeWidth={2} />
                     </Link>
                 </div>
             </section>

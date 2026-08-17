@@ -96,7 +96,7 @@ export default function LeadMagnet() {
       <main className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
         <Seo title="Not Found | RSL/A" description="This resource could not be found." noIndex />
         <h1 className="font-sans font-bold text-3xl md:text-5xl text-text mb-4">Resource not found</h1>
-        <p className="font-sans text-textMuted mb-6">This link may have expired or been removed.</p>
+        <p className="font-sans text-text mb-6">This link may have expired or been removed.</p>
         <Link to="/" className="font-sans font-bold text-sm text-accent hover:underline">
           Back to home
         </Link>
@@ -132,7 +132,7 @@ export default function LeadMagnet() {
         </h1>
 
         {/* Description */}
-        <p className="font-sans text-textMuted text-lg mb-8 max-w-md mx-auto">
+        <p className="font-sans text-text text-lg mb-8 max-w-md mx-auto">
           {magnet.description}
         </p>
 
@@ -142,7 +142,7 @@ export default function LeadMagnet() {
             {magnet.benefits.map((benefit) => (
               <div key={benefit} className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                <p className="font-sans text-sm text-textMuted">{benefit}</p>
+                <p className="font-sans text-sm text-text">{benefit}</p>
               </div>
             ))}
           </div>
@@ -157,7 +157,7 @@ export default function LeadMagnet() {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             disabled={submitting}
-            className="w-full px-5 py-3 rounded-xl bg-surfaceAlt border border-accent-border text-text font-sans text-base placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/50 transition-colors"
+            className="w-full px-5 py-3 rounded-xl bg-surfaceAlt border border-hairline text-text font-sans text-base placeholder:text-text focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/50 transition-colors"
           />
           <input
             type="email"
@@ -166,25 +166,25 @@ export default function LeadMagnet() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={submitting}
-            className="w-full px-5 py-3 rounded-xl bg-surfaceAlt border border-accent-border text-text font-sans text-base placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/50 transition-colors"
+            className="w-full px-5 py-3 rounded-xl bg-surfaceAlt border border-hairline text-text font-sans text-base placeholder:text-text focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/50 transition-colors"
           />
           <button
             type="submit"
             disabled={submitting}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-white px-6 py-3 font-sans font-bold text-base hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-button bg-accent text-white px-6 py-3 font-sans font-medium text-base hover:bg-accentDeep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? 'Sending...' : magnet.ctaButtonText || 'Get instant access'}
           </button>
         </form>
 
         {error && (
-          <p className="font-sans text-sm text-coral mb-2">{error}</p>
+          <p className="font-sans text-sm text-error mb-2">{error}</p>
         )}
 
         {/* Trust line */}
-        <p className="font-sans text-sm text-textMuted">
+        <p className="font-sans text-sm text-text">
           No spam, unsubscribe anytime.{' '}
-          <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-textMuted transition-colors">
+          <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-text transition-colors">
             Privacy Policy
           </Link>
         </p>

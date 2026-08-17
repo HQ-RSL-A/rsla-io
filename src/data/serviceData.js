@@ -1,6 +1,6 @@
 export const services = {
   "web-design": {
-    title: "Web Design",
+    title: "Web design",
     displayName: "Websites",
     headline: "Your website should work as hard as you do.",
     description: "We hand-build custom-coded websites with on-page SEO, answer engine optimization, and conversion strategy baked in from day one. Not templates. Not drag-and-drop. A website meticulously designed around your business, your brand, and your goals.",
@@ -75,7 +75,7 @@ export const services = {
   "seo": {
     title: "SEO",
     displayName: "SEO",
-    headline: "Get Found. Get Chosen.",
+    headline: "Get found. Get chosen.",
     description: "Local SEO, technical SEO, and answer engine optimization that puts you in front of buyers at the moment they're searching.",
     metaTitle: "Local SEO Services for Small Business | RSL/A",
     metaDescription: "Local SEO services and answer engine optimization for small businesses. We rank you in search and AI answers so the right customers find you first.",
@@ -114,9 +114,9 @@ export const services = {
   },
 
   "ai-automations": {
-    title: "AI Automations",
-    displayName: "AI Automations",
-    headline: "Automate the Work. Keep the Margin.",
+    title: "AI automations",
+    displayName: "AI automations",
+    headline: "Automate the work. Keep the margin.",
     description: "n8n, Make, and custom AI agents that eliminate manual work across sales, ops, and marketing.",
     metaTitle: "AI Automation Agency | n8n and Make Workflows | RSL/A",
     metaDescription: "AI automation agency specializing in n8n, Make, and custom AI agents. Automate lead response, onboarding, ops, and marketing workflows without adding staff.",
@@ -155,9 +155,9 @@ export const services = {
   },
 
   "crm-systems": {
-    title: "CRM Systems",
-    displayName: "CRM Systems",
-    headline: "One System. Every Lead, Every Client.",
+    title: "CRM systems",
+    displayName: "CRM systems",
+    headline: "One system. Every lead, every client.",
     description: "GoHighLevel setup, configuration, and management so you never lose a lead or drop a client again.",
     metaTitle: "GoHighLevel Setup and CRM Service | RSL/A",
     metaDescription: "GoHighLevel setup, CRM configuration, and ongoing management by a certified GHL consultant. Stop losing leads to slow follow-up and disconnected systems.",
@@ -196,9 +196,9 @@ export const services = {
   },
 
   "custom-development": {
-    title: "Custom Development",
-    displayName: "Custom Dev",
-    headline: "Build What Doesn't Exist Yet.",
+    title: "Custom development",
+    displayName: "Custom dev",
+    headline: "Build what doesn't exist yet.",
     description: "SaaS products, MVPs, internal tools, and APIs built to spec and shipped fast.",
     metaTitle: "Custom Software and SaaS Development | RSL/A",
     metaDescription: "Custom software development for SaaS, MVPs, and internal tools. Ship your first version in weeks, not months. Full-stack React, Node.js, and API builds.",

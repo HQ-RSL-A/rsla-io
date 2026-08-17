@@ -195,24 +195,24 @@ function homeContent() {
 <h1>The trusted AI growth partner for fast-moving B2B companies.</h1>
 <p><a href="/contact">Book a Free Call</a> | <a href="/work">See Our Work</a></p>
 
-<section><h2>What We Build</h2>
+<section><h2>What we build</h2>
 <article><h3>Websites</h3>
 <p>New builds and full rebuilds. Fast, custom-designed, SEO-ready websites built on React and Next.js.</p></article>
-<article><h3>Search Visibility</h3>
+<article><h3>Search visibility</h3>
 <p>Rankings on Google, ChatGPT, Perplexity, and Claude. SEO, AEO, and content systems that compound over time.</p></article>
-<article><h3>AI Automations</h3>
+<article><h3>AI automations</h3>
 <p>n8n, Make, and custom AI agents that replace manual work. Lead follow-up, proposals, content, and reporting on autopilot.</p></article>
-<article><h3>CRM Systems</h3>
+<article><h3>CRM systems</h3>
 <p>GoHighLevel pipelines, workflows, and integrations. One system managing leads, bookings, and communication.</p></article>
-<article><h3>Custom Development</h3>
+<article><h3>Custom development</h3>
 <p>SaaS products, MVPs, internal tools, and APIs. Full-stack builds from prototype to production.</p></article>
 </section>
 
-<section><h2>By the Numbers</h2>
+<section><h2>By the numbers</h2>
 <ul><li>40+ clients served</li><li>$2.1M+ revenue generated</li><li>11 case studies</li><li>98% client retention</li></ul>
 </section>
 
-<section><h2>What Clients Say</h2>
+<section><h2>What clients say</h2>
 <blockquote><p>I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results! Their expertise and dedication transformed my site by restructuring it, fixing critical errors, and significantly boosting its performance. Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.</p><cite>Sid S., Account Executive, SBC</cite></blockquote>
 <blockquote><p>Working with Rahul on my GoHighLevel setup was an excellent experience. He was extremely knowledgeable, responsive, and efficient from start to finish. Rahul quickly understood what I needed and structured my GHL account properly. Pipelines, automations, workflows, integrations, and overall system flow.</p><cite>Curtis H., CEO/Founder, AdReviveAI</cite></blockquote>
 <blockquote><p>Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule. Highly recommend.</p><cite>Chris K., CEO/Co-Founder, Fieldshare</cite></blockquote>
@@ -220,14 +220,14 @@ function homeContent() {
 <blockquote><p>Rahul does a stellar job on setting up GHL accounts. He is an expert and gave me immense knowledge about the platform. Would love to work with him again. Highly recommend anyone who wants an expert on Go High Level.</p><cite>Parminder S., CEO/Founder, Chauffeur on Demand</cite></blockquote>
 </section>
 
-<section><h2>About the Founder</h2>
+<section><h2>About the founder</h2>
 <p>I have spent the better part of five years in the trenches of marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched founders with real talent suffocate under work that never should have touched their hands.</p>
 <p>That became the only question worth answering: how do you build systems that actually run a business, not just look good in a demo?</p>
 <p>I put everything out there. The strategies, the tools, the exact workflows. You can learn all of it from my content. But knowing how it works and actually building it so it holds under pressure and scales without breaking? That demands precision. That is what RSL/A exists to do.</p>
 <p>— Rahul Lalia, Founder, RSL/A</p>
 </section>
 
-<section><h2>Frequently Asked Questions</h2>
+<section><h2>Frequently asked questions</h2>
 <dl>
 <dt>What types of businesses do you work with?</dt><dd>We work with B2B companies and service businesses doing $500K+ in revenue who want to systematize their marketing and operations with AI. If you rely on leads, appointments, or repeat customers to grow, we can help.</dd>
 <dt>How long does it take to see results?</dt><dd>Most clients see measurable results within 30 to 60 days. Websites launch in 2 to 4 weeks. Search visibility campaigns start generating impressions within the first month. AI automation systems go live in 2 to 3 weeks.</dd>
@@ -285,7 +285,7 @@ function aboutContent() {
 
 <p><a href="/work">See what we have built</a></p>
 
-<section><h2>Words I Like</h2>
+<section><h2>Words I like</h2>
 <blockquote><p>What a privilege to be tired from work you once begged the universe for. What a privilege to feel overwhelmed by growth you used to dream about. What a privilege to be challenged by a life you created on purpose. What a privilege to outgrow things you used to settle for.</p><cite>Aryan Sachdeva, via Medium</cite></blockquote>
 </section>
 </main>`,
@@ -305,10 +305,10 @@ function servicesContent() {
         '@type': 'OfferCatalog', name: 'AI Services',
         itemListElement: [
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Websites', description: 'New builds and full rebuilds. Fast, custom-designed, SEO-ready.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Search Visibility', description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Automations', description: 'n8n, Make, and custom scripts that replace manual work.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM Systems', description: 'GoHighLevel pipelines, workflows, and integrations.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Development', description: 'SaaS products, MVPs, internal tools, APIs.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Search visibility', description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI automations', description: 'n8n, Make, and custom scripts that replace manual work.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM systems', description: 'GoHighLevel pipelines, workflows, and integrations.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom development', description: 'SaaS products, MVPs, internal tools, APIs.' } },
         ],
       },
     },
@@ -316,10 +316,10 @@ function servicesContent() {
 <h1>What we build for B2B companies.</h1>
 <p>We do not do "marketing." We build AI infrastructure for founders. Here is what that actually means.</p>
 
-<section id="lead-generation"><h2>Lead Gen: Stop paying for clicks. Start paying for customers.</h2>
-<h3>The Problem</h3>
+<section id="lead-generation"><h2>Lead gen: Stop paying for clicks. Start paying for customers.</h2>
+<h3>The problem</h3>
 <p>Most founders either boost posts and hope for the best, or they hire an agency that shows them impressions and reach numbers. Neither gets you customers.</p>
-<h3>What We Build</h3>
+<h3>What we build</h3>
 <ul>
 <li><strong>Targeting that learns:</strong> Your campaigns learn which audiences convert and shift budget toward them automatically. No manual bid adjustments.</li>
 <li><strong>Creative testing at scale:</strong> We test dozens of ad variations simultaneously. AI identifies the winners and kills the losers before they waste your money.</li>
@@ -329,10 +329,10 @@ function servicesContent() {
 <p><em>$600 in ad spend turned into $36,000 in closed revenue in 45 days. That is a 60x return. Not because of magic creative. Because the AI system optimized faster than any human could.</em></p>
 </section>
 
-<section id="automations"><h2>Zero Manual Work: Your business should not stop working when you do.</h2>
-<h3>The Problem</h3>
+<section id="automations"><h2>Zero manual work: Your business should not stop working when you do.</h2>
+<h3>The problem</h3>
 <p>A lead messages you at 11 PM. You see it at 8 AM. By then they have already talked to two of your competitors. You lost the deal because you were sleeping. That is not a business problem. That is an infrastructure problem.</p>
-<h3>What We Build</h3>
+<h3>What we build</h3>
 <ul>
 <li><strong>Conversational bots:</strong> Not the robotic "please select an option" kind. Actual AI that understands context, qualifies leads, answers questions, and books meetings. At 2 AM. At 2 PM. Whenever.</li>
 <li><strong>Workflow automations:</strong> Lead comes in, gets tagged, gets the right follow-up sequence, gets routed to the right person. Automatically. You do not touch it.</li>
@@ -343,9 +343,9 @@ function servicesContent() {
 </section>
 
 <section id="operations"><h2>Operations: Stop managing tools. Let AI manage your business.</h2>
-<h3>The Problem</h3>
+<h3>The problem</h3>
 <p>You are paying for Calendly. And Mailchimp. And some CRM you barely use. And a website builder. And a texting platform. And maybe two more things you forgot about. None of them talk to each other. You are the integration layer. That is expensive. Not just the subscriptions. Your time.</p>
-<h3>What We Build</h3>
+<h3>What we build</h3>
 <ul>
 <li><strong>Unified pipeline:</strong> Every lead, every deal, every customer in one place. AI tells you what needs attention today, not a spreadsheet you forgot to update.</li>
 <li><strong>Intelligent follow ups:</strong> The system knows when someone has not responded and sends the right nudge at the right time. Not a generic "just checking in" email. Something contextual.</li>
@@ -355,10 +355,10 @@ function servicesContent() {
 <p><em>We reactivated a dead database of 13,000 cold contacts and booked 42 qualified appointments in one week. Not by emailing everyone the same thing. By using AI to personalize outreach based on what we knew about each contact.</em></p>
 </section>
 
-<section id="digital-presence"><h2>Digital Presence: Your website should work as hard as you do.</h2>
-<h3>The Problem</h3>
+<section id="digital-presence"><h2>Digital presence: Your website should work as hard as you do.</h2>
+<h3>The problem</h3>
 <p>You have a website. It looks okay. But it is basically a digital business card that does not do anything. No one finds it on Google. The few people who do visit do not convert. And you have no idea why because there is no data.</p>
-<h3>What We Build</h3>
+<h3>What we build</h3>
 <ul>
 <li><strong>Conversion-focused design:</strong> Every page built around one goal: getting the visitor to take the next step. Tested layouts and copy that improve over time.</li>
 <li><strong>SEO infrastructure:</strong> Content strategy informed by AI research. We target the searches your ideal clients are actually making, not vanity keywords.</li>
@@ -367,7 +367,7 @@ function servicesContent() {
 </ul>
 </section>
 
-<section><h2>Local Services</h2>
+<section><h2>Local services</h2>
 <ul><li><a href="/services/bakersfield">Bakersfield, CA</a></li></ul>
 </section>
 </main>`,

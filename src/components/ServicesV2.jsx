@@ -238,21 +238,21 @@ function WebsitesBackground() {
             ref={containerRef}
             className="absolute inset-x-0 top-6 flex justify-center px-6 [mask-image:linear-gradient(to_bottom,#000_70%,transparent_100%)]"
         >
-            <div className="w-full max-w-[440px] overflow-hidden rounded-xl border border-accent-border bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
+            <div className="w-full max-w-[440px] overflow-hidden rounded-xl border border-hairline bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
                 {/* Browser chrome */}
-                <div className="flex items-center gap-1.5 border-b border-accent-border px-3 py-2">
+                <div className="flex items-center gap-1.5 border-b border-hairline px-3 py-2">
                     <span className="h-2 w-2 rounded-full bg-red-400" />
                     <span className="h-2 w-2 rounded-full bg-yellow-400" />
                     <span className="h-2 w-2 rounded-full bg-green-400" />
                     <div className="ml-2 flex items-center gap-1 rounded-md bg-slate-100 px-2 py-0.5">
-                        <span className="font-sans text-[9px] text-textMuted">rsla.io</span>
+                        <span className="font-sans text-[9px] text-text">rsla.io</span>
                     </div>
                 </div>
 
                 {/* Site canvas */}
                 <div className="relative h-[220px] overflow-hidden bg-slate-50/60 p-3.5">
                     {/* Scanner line */}
-                    <div className="scanner pointer-events-none absolute inset-x-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent shadow-[0_0_14px_2px_rgba(0,102,224,0.55)]" />
+                    <div className="scanner pointer-events-none absolute inset-x-0 z-10 h-[2px] bg-accent" />
 
                     {/* Click pulse */}
                     <div
@@ -275,7 +275,7 @@ function WebsitesBackground() {
                                 <div className="h-2.5 w-2.5 rounded-sm bg-accent" />
                                 <span className="font-sans text-[9px] font-bold text-text">rsla.io</span>
                             </div>
-                            <div className="ml-auto flex items-center gap-2 font-sans text-[8px] font-semibold text-textMuted">
+                            <div className="ml-auto flex items-center gap-2 font-sans text-[8px] font-medium text-text">
                                 <span>Work</span>
                                 <span>About</span>
                                 <span>Contact</span>
@@ -292,14 +292,14 @@ function WebsitesBackground() {
                             <div className="mt-2 h-4 w-16 rounded-sm bg-slate-200" />
                         </div>
                         <div className="live-el absolute inset-0">
-                            <p className="font-sans text-[12px] font-extrabold leading-[1.15] tracking-tight text-text">
+                            <p className="font-sans text-[12px] font-bold leading-[1.15] tracking-tight text-text">
                                 Launches that{' '}
                                 <span className="font-sans font-bold text-accent">ship</span> in weeks.
                             </p>
-                            <p className="mt-1 font-sans text-[8px] leading-snug text-textMuted">
+                            <p className="mt-1 font-sans text-[8px] leading-snug text-text">
                                 Custom-designed, SEO-ready, built to convert.
                             </p>
-                            <div className="mt-1.5 inline-flex h-[18px] items-center gap-1 rounded-md bg-accent px-2 font-sans text-[8px] font-semibold text-white shadow-sm">
+                            <div className="mt-1.5 inline-flex h-[18px] items-center gap-1 rounded-md bg-accent px-2 font-sans text-[8px] font-medium text-white shadow-sm">
                                 Get started
                                 <span className="text-[10px] leading-none">→</span>
                             </div>
@@ -317,10 +317,10 @@ function WebsitesBackground() {
                             {['Fast', 'SEO', 'Custom'].map((label) => (
                                 <div
                                     key={label}
-                                    className="flex flex-col items-center justify-center gap-1 rounded-sm border border-accent-border bg-white py-1"
+                                    className="flex flex-col items-center justify-center gap-1 rounded-sm border border-hairline bg-white py-1"
                                 >
                                     <div className="h-2 w-2 rounded-full bg-accent/80" />
-                                    <span className="font-sans text-[7px] font-semibold text-textMuted">
+                                    <span className="font-sans text-[7px] font-medium text-text">
                                         {label}
                                     </span>
                                 </div>
@@ -348,7 +348,7 @@ function WebsitesBackground() {
                     {/* Shipped toast */}
                     <div className="toast absolute bottom-3 right-3 z-20 flex items-center gap-1 rounded-md bg-text px-2 py-1 shadow-[0_4px_14px_rgba(0,0,0,0.18)]">
                         <Check className="h-2.5 w-2.5 text-green-400" strokeWidth={3} />
-                        <span className="font-sans text-[8px] font-semibold text-white">
+                        <span className="font-sans text-[8px] font-medium text-white">
                             Shipped to rsla.io
                         </span>
                     </div>
@@ -505,12 +505,12 @@ function SearchVisibilityBackground() {
             ref={containerRef}
             className="absolute inset-x-0 top-3 flex justify-center px-3 [mask-image:linear-gradient(to_bottom,#000_92%,transparent_100%)]"
         >
-            <div className="w-full max-w-[280px] overflow-hidden rounded-xl border border-accent-border bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
+            <div className="w-full max-w-[280px] overflow-hidden rounded-xl border border-hairline bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
                 {/* Search bar */}
-                <div className="flex items-center gap-1.5 border-b border-accent-border bg-slate-50 px-3 py-2">
-                    <Search className="h-3 w-3 text-textMuted" strokeWidth={2.4} />
+                <div className="flex items-center gap-1.5 border-b border-hairline bg-slate-50 px-3 py-2">
+                    <Search className="h-3 w-3 text-text" strokeWidth={2.4} />
                     <span className="font-sans text-[9px] text-text">ai marketing agency</span>
-                    <span className="ml-auto font-sans text-[7px] text-textMuted">487M</span>
+                    <span className="ml-auto font-sans text-[7px] text-text">487M</span>
                 </div>
 
                 {/* SERP canvas */}
@@ -519,7 +519,7 @@ function SearchVisibilityBackground() {
                     {serpCompetitors.map((c, i) => (
                         <div
                             key={c.domain}
-                            className="serp-row absolute inset-x-2.5 flex items-center gap-2 rounded-md border border-accent-border bg-white px-2"
+                            className="serp-row absolute inset-x-2.5 flex items-center gap-2 rounded-md border border-hairline bg-white px-2"
                             style={{ top: `${10 + i * 28}px`, height: '24px' }}
                         >
                             <div
@@ -527,7 +527,7 @@ function SearchVisibilityBackground() {
                                 style={{ background: c.color }}
                             />
                             <div className="min-w-0 flex-1">
-                                <div className="font-sans text-[9px] font-semibold text-text leading-tight truncate">
+                                <div className="font-sans text-[9px] font-medium text-text leading-tight truncate">
                                     {c.domain}
                                 </div>
                                 <div className="mt-0.5 h-[2px] w-2/3 rounded-full bg-slate-200" />
@@ -541,21 +541,21 @@ function SearchVisibilityBackground() {
                         className="absolute inset-x-2.5 flex items-center gap-1.5"
                         style={{ top: '124px' }}
                     >
-                        <div className="h-px flex-1 bg-accent-border" />
-                        <span className="font-sans text-[7px] font-semibold uppercase tracking-wide text-textMuted">
+                        <div className="h-px flex-1 bg-hairline" />
+                        <span className="font-sans text-[7px] font-medium text-text">
                             Page 47
                         </span>
-                        <div className="h-px flex-1 bg-accent-border" />
+                        <div className="h-px flex-1 bg-hairline" />
                     </div>
 
                     {/* Buried rsla.io card */}
                     <div
                         ref={cardRef}
-                        className="absolute inset-x-2.5 z-20 flex items-center gap-2 rounded-md border-2 border-accent bg-white px-2 shadow-[0_4px_14px_rgba(0,102,224,0.18)]"
+                        className="absolute inset-x-2.5 z-20 flex items-center gap-2 rounded-md border-2 border-accent bg-white px-2 shadow-[0_4px_14px_rgba(0,112,243,0.18)]"
                         style={{ top: '132px', height: '24px' }}
                     >
                         <span
-                            className="rank-badge flex h-5 min-w-[28px] items-center justify-center rounded border font-sans text-[9px] font-extrabold tabular-nums"
+                            className="rank-badge flex h-5 min-w-[28px] items-center justify-center rounded border font-sans text-[9px] font-bold tabular-nums"
                         >
                             #47
                         </span>
@@ -644,9 +644,9 @@ function AutomationsBackground() {
                     ease: 'power1.inOut',
                 });
                 tl.to(`.auto-node-${i}`, {
-                    borderColor: '#0066E0',
-                    backgroundColor: 'rgba(0, 102, 224, 0.06)',
-                    boxShadow: '0 0 0 2px rgba(0, 102, 224, 0.15)',
+                    borderColor: '#0070F3',
+                    backgroundColor: 'rgba(0, 112, 243, 0.06)',
+                    boxShadow: '0 0 0 2px rgba(0, 112, 243, 0.15)',
                     duration: 0.18,
                 });
                 tl.to(`.auto-icon-${i}`, {
@@ -696,7 +696,7 @@ function AutomationsBackground() {
                         <div key={n.name}>
                             {/* Node card */}
                             <div
-                                className={`auto-node auto-node-${i} relative flex h-9 items-center gap-2 rounded-md border border-accent-border bg-white px-2 shadow-[0_1px_2px_rgba(0,0,0,0.04)]`}
+                                className={`auto-node auto-node-${i} relative flex h-9 items-center gap-2 rounded-md border border-hairline bg-white px-2 shadow-[0_1px_2px_rgba(0,0,0,0.04)]`}
                             >
                                 <div
                                     className={`auto-icon auto-icon-${i} flex h-6 w-6 shrink-0 items-center justify-center rounded`}
@@ -708,7 +708,7 @@ function AutomationsBackground() {
                                     <div className="font-sans text-[10px] font-bold text-text leading-tight truncate">
                                         {n.name}
                                     </div>
-                                    <div className="font-sans text-[8px] text-textMuted leading-tight">
+                                    <div className="font-sans text-[8px] text-text leading-tight">
                                         {n.meta}
                                     </div>
                                 </div>
@@ -722,7 +722,7 @@ function AutomationsBackground() {
                             {/* Wire between nodes */}
                             {i < automationNodes.length - 1 && (
                                 <div className="flex h-3 justify-center">
-                                    <div className="w-[2px] bg-accent-border" />
+                                    <div className="w-[2px] bg-hairline" />
                                 </div>
                             )}
                         </div>
@@ -732,7 +732,7 @@ function AutomationsBackground() {
                 {/* Traveling data packet */}
                 <div
                     ref={packetRef}
-                    className="pointer-events-none absolute left-1/2 top-0 z-20 h-2 w-2 rounded-full bg-accent shadow-[0_0_10px_3px_rgba(0,102,224,0.55)]"
+                    className="pointer-events-none absolute left-1/2 top-0 z-20 h-2 w-2 rounded-full bg-accent shadow-[0_0_10px_3px_rgba(0,112,243,0.55)]"
                 />
             </div>
         </div>
@@ -870,15 +870,15 @@ function CRMBackground() {
             ref={containerRef}
             className="absolute inset-x-0 top-3 flex justify-center px-3 [mask-image:linear-gradient(to_bottom,#000_92%,transparent_100%)]"
         >
-            <div className="w-full max-w-[280px] overflow-hidden rounded-xl border border-accent-border bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
+            <div className="w-full max-w-[280px] overflow-hidden rounded-xl border border-hairline bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
                 {/* Header with revenue counter */}
-                <div className="flex items-center justify-between border-b border-accent-border bg-slate-50 px-3 py-2">
-                    <span className="font-sans text-[8px] font-bold uppercase tracking-wide text-textMuted">
+                <div className="flex items-center justify-between border-b border-hairline bg-slate-50 px-3 py-2">
+                    <span className="font-sans text-[8px] font-bold text-text">
                         Closed today
                     </span>
                     <span
                         ref={revenueRef}
-                        className="font-sans text-[14px] font-extrabold text-text tabular-nums leading-none"
+                        className="font-sans text-[14px] font-bold text-text tabular-nums leading-none"
                     >
                         $0.0k
                     </span>
@@ -888,28 +888,28 @@ function CRMBackground() {
                 <div className="relative h-[120px] p-3">
                     {/* Stage labels */}
                     <div className="absolute inset-x-3 top-3 flex justify-between">
-                        <span className="w-[64px] text-center font-sans text-[8px] font-bold uppercase tracking-wide text-textMuted">
+                        <span className="w-[64px] text-center font-sans text-[8px] font-bold text-text">
                             Lead
                         </span>
-                        <span className="w-[64px] text-center font-sans text-[8px] font-bold uppercase tracking-wide text-textMuted">
+                        <span className="w-[64px] text-center font-sans text-[8px] font-bold text-text">
                             Proposal
                         </span>
-                        <span className="w-[64px] text-center font-sans text-[8px] font-bold uppercase tracking-wide text-textMuted">
+                        <span className="w-[64px] text-center font-sans text-[8px] font-bold text-text">
                             Won
                         </span>
                     </div>
 
                     {/* Slot indicators */}
                     <div className="absolute inset-x-3 top-7 flex justify-between">
-                        <div className="h-[78px] w-[64px] rounded-md border border-dashed border-accent-border" />
-                        <div className="h-[78px] w-[64px] rounded-md border border-dashed border-accent-border" />
-                        <div className="h-[78px] w-[64px] rounded-md border border-dashed border-accent-border" />
+                        <div className="h-[78px] w-[64px] rounded-md border border-dashed border-hairline" />
+                        <div className="h-[78px] w-[64px] rounded-md border border-dashed border-hairline" />
+                        <div className="h-[78px] w-[64px] rounded-md border border-dashed border-hairline" />
                     </div>
 
                     {/* Moving deal card */}
                     <div
                         ref={cardRef}
-                        className="absolute left-3 top-7 z-10 h-[78px] w-[64px] rounded-md border-2 border-accent bg-white p-1.5 shadow-[0_2px_8px_rgba(0,102,224,0.18)]"
+                        className="absolute left-3 top-7 z-10 h-[78px] w-[64px] rounded-md border-2 border-accent bg-white p-1.5 shadow-[0_2px_8px_rgba(0,112,243,0.18)]"
                     >
                         <div
                             className="deal-avatar flex h-5 w-5 items-center justify-center rounded-full font-sans text-[8px] font-bold text-white"
@@ -920,10 +920,10 @@ function CRMBackground() {
                         <div className="deal-name mt-1 font-sans text-[8px] font-bold text-text leading-tight truncate">
                             Apex Fitness
                         </div>
-                        <div className="deal-value mt-0.5 font-sans text-[11px] font-extrabold text-accent tabular-nums leading-none">
+                        <div className="deal-value mt-0.5 font-sans text-[11px] font-bold text-accent tabular-nums leading-none">
                             $4.2k
                         </div>
-                        <div className="deal-rep mt-1 font-sans text-[7px] text-textMuted truncate">
+                        <div className="deal-rep mt-1 font-sans text-[7px] text-text truncate">
                             Sarah M.
                         </div>
                     </div>
@@ -1022,14 +1022,14 @@ function CustomDevBackground() {
             ref={containerRef}
             className="absolute inset-x-0 top-3 flex justify-center px-3 [mask-image:linear-gradient(to_bottom,#000_92%,transparent_100%)]"
         >
-            <div className="w-full max-w-[280px] overflow-hidden rounded-xl border border-accent-border bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
+            <div className="w-full max-w-[280px] overflow-hidden rounded-xl border border-hairline bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_14px_36px_rgba(0,0,0,0.08)]">
                 {/* Editor chrome */}
-                <div className="flex items-center gap-1.5 border-b border-accent-border bg-slate-50 px-3 py-2">
+                <div className="flex items-center gap-1.5 border-b border-hairline bg-slate-50 px-3 py-2">
                     <span className="h-2 w-2 rounded-full bg-red-400" />
                     <span className="h-2 w-2 rounded-full bg-yellow-400" />
                     <span className="h-2 w-2 rounded-full bg-green-400" />
-                    <span className="ml-2 font-sans text-[9px] font-semibold text-text">api.ts</span>
-                    <span className="ml-auto font-sans text-[7px] uppercase tracking-wide text-textMuted">
+                    <span className="ml-2 font-sans text-[9px] font-medium text-text">api.ts</span>
+                    <span className="ml-auto font-sans text-[7px] text-text">
                         dev
                     </span>
                 </div>
@@ -1037,21 +1037,21 @@ function CustomDevBackground() {
                 {/* Code area */}
                 <div className="bg-white px-3 py-2.5 font-sans text-[8px] leading-[1.55]">
                     <div className="code-line flex">
-                        <span className="w-3 shrink-0 text-textMuted">1</span>
+                        <span className="w-3 shrink-0 text-text">1</span>
                         <span className="text-slate-700">
                             <span className="text-purple-600">export</span>{' '}
                             <span className="text-purple-600">async function</span>
                         </span>
                     </div>
                     <div className="code-line flex">
-                        <span className="w-3 shrink-0 text-textMuted">2</span>
+                        <span className="w-3 shrink-0 text-text">2</span>
                         <span className="text-slate-700">
                             {'  '}
                             <span className="text-amber-600">handler</span>(req) {'{'}
                         </span>
                     </div>
                     <div className="code-line flex">
-                        <span className="w-3 shrink-0 text-textMuted">3</span>
+                        <span className="w-3 shrink-0 text-text">3</span>
                         <span className="text-slate-700">
                             {'    '}
                             <span className="text-purple-600">const</span> data ={' '}
@@ -1059,7 +1059,7 @@ function CustomDevBackground() {
                         </span>
                     </div>
                     <div className="code-line flex">
-                        <span className="w-3 shrink-0 text-textMuted">4</span>
+                        <span className="w-3 shrink-0 text-text">4</span>
                         <span className="text-slate-700">
                             {'    '}
                             <span className="text-purple-600">return</span>{' '}
@@ -1067,7 +1067,7 @@ function CustomDevBackground() {
                         </span>
                     </div>
                     <div className="code-line flex">
-                        <span className="w-3 shrink-0 text-textMuted">5</span>
+                        <span className="w-3 shrink-0 text-text">5</span>
                         <span className="text-slate-700">
                             {'  '}
                             {'}'}
@@ -1076,16 +1076,16 @@ function CustomDevBackground() {
                 </div>
 
                 {/* Build status footer */}
-                <div className="flex items-center gap-2 border-t border-accent-border bg-slate-900 px-3 py-2">
+                <div className="flex items-center gap-2 border-t border-hairline bg-slate-900 px-3 py-2">
                     <div className="h-1 flex-1 overflow-hidden rounded-full bg-slate-700">
                         <div
                             ref={barRef}
-                            className="h-full w-full rounded-full bg-gradient-to-r from-accent to-emerald-400"
+                            className="h-full w-full rounded-full bg-accent"
                         />
                     </div>
                     <span
                         ref={statusRef}
-                        className="w-[52px] text-right font-sans text-[7px] font-semibold text-emerald-300"
+                        className="w-[52px] text-right font-sans text-[7px] font-medium text-emerald-300"
                     >
                         init...
                     </span>
@@ -1111,7 +1111,7 @@ export const features = [
     },
     {
         Icon: SeoIcon,
-        name: 'Search Visibility',
+        name: 'Search visibility',
         description: 'Rankings on Google, ChatGPT, Perplexity, and Claude. One system that shows up everywhere buyers look.',
         href: '/services/seo',
         cta: 'How it works',
@@ -1120,7 +1120,7 @@ export const features = [
     },
     {
         Icon: AutomationsIcon,
-        name: 'AI Automations',
+        name: 'AI automations',
         description: 'n8n, Make, and custom scripts that replace manual work. Leads qualified and tasks routed while you sleep.',
         href: '/services/ai-automations',
         cta: 'See automations',
@@ -1129,7 +1129,7 @@ export const features = [
     },
     {
         Icon: CrmIcon,
-        name: 'CRM Systems',
+        name: 'CRM systems',
         description: 'GoHighLevel pipelines, workflows, and integrations. One dashboard for leads, deals, and bookings.',
         href: '/services/crm-systems',
         cta: 'Explore CRM',
@@ -1138,7 +1138,7 @@ export const features = [
     },
     {
         Icon: CustomDevIcon,
-        name: 'Custom Development',
+        name: 'Custom development',
         description: 'SaaS products, MVPs, internal tools, APIs. When off-the-shelf is not enough.',
         href: '/services/custom-development',
         cta: 'Start a build',
@@ -1183,13 +1183,13 @@ export default function ServicesV2() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-20 md:py-32 bg-accent-light px-6 md:px-12">
+        <section ref={sectionRef} className="py-20 md:py-32 bg-frost px-6 md:px-12">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-12 max-w-3xl">
-                    <h2 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text">
+                    <h2 className="font-sans font-bold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text">
                         What we can help you with.
                     </h2>
-                    <p className="mt-6 font-sans font-normal text-lg text-textMuted leading-relaxed">
+                    <p className="mt-6 font-sans font-medium text-lg text-text leading-relaxed">
                         End-to-end AI systems that generate leads, close deals, and scale operations. Built and managed by a team that's done it across SMBs and enterprise.
                     </p>
                 </div>

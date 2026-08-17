@@ -13,8 +13,8 @@
  *
  * Footer comes from App.jsx chrome.
  *
- * Font hierarchy: Satoshi primary (font-sans). Cormorant italic
- * (font-cormorant) reserved site-wide for pull quotes and captions only.
+ * Font hierarchy: Satoshi only (font-sans): Medium 500 reading, Bold 700
+ * headings, per brand-guidelines/design-tokens.css.
  */
 
 import { useEffect, useRef, useState } from 'react';
@@ -137,10 +137,10 @@ export default function Home() {
                 <section className="w-full bg-surface pt-20 pb-16 md:pt-28 md:pb-24">
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
                         <div className="max-w-4xl">
-                            <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
+                            <h2 className="hr-reveal opacity-0 font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
                                 Hundreds of thousands generated (and honestly, even more saved).
                             </h2>
-                            <p className="hr-reveal opacity-0 mt-6 md:mt-8 font-sans font-normal text-lg text-textMuted leading-relaxed">
+                            <p className="hr-reveal opacity-0 mt-6 md:mt-8 font-sans font-medium text-lg text-text leading-relaxed">
                                 Rahul and his team build intelligent marketing systems for both SMB and enterprise. We use a proprietary AI-driven consulting stack and a framework that digs into how your business actually runs so we can fix real, practical problems. Not the theoretical ones that look good on paper, but the actual things that are stopping you from scaling your business.
                             </p>
                         </div>
@@ -151,12 +151,12 @@ export default function Home() {
                 <section className="w-full bg-background pt-20 pb-24 md:pt-28 md:pb-32">
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
                         <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                            <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
+                            <h2 className="hr-reveal opacity-0 font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
                                 Some of our work.
                             </h2>
                             <Link
                                 to="/work"
-                                className="hr-reveal opacity-0 inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors group shrink-0"
+                                className="hr-reveal opacity-0 inline-flex items-center gap-2 font-sans font-medium text-lg text-accent hover:text-accentDeep transition-colors group shrink-0"
                             >
                                 View all case studies
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
@@ -169,7 +169,7 @@ export default function Home() {
                                     ? urlForImage(cs.featuredImage.asset)?.width(960).height(600).url()
                                     : null;
                                 const card = (
-                                    <article className="group h-full flex flex-col rounded-2xl border border-accent-border bg-surface overflow-hidden hover:border-accent/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow] duration-md ease-out-smooth">
+                                    <article className="group h-full flex flex-col rounded-2xl border border-hairline bg-surface overflow-hidden hover:border-accent/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow] duration-md ease-out-smooth">
                                         {imageUrl && (
                                             <div className="aspect-[16/10] overflow-hidden bg-surfaceAlt">
                                                 <img
@@ -181,13 +181,13 @@ export default function Home() {
                                             </div>
                                         )}
                                         <div className="flex flex-col flex-1 p-8 md:p-9">
-                                            <h3 className="mb-5 font-sans font-semibold text-xl md:text-2xl text-text leading-[1.2] tracking-tight">
+                                            <h3 className="mb-5 font-sans font-bold text-xl md:text-2xl text-text leading-[1.2] tracking-tight">
                                                 {cs.title}
                                             </h3>
-                                            <p className="font-sans font-normal text-lg text-textMuted leading-relaxed flex-1">
+                                            <p className="font-sans font-medium text-lg text-text leading-relaxed flex-1">
                                                 {cs.description}
                                             </p>
-                                            <div className="mt-6 flex items-center font-sans font-semibold text-lg text-accent">
+                                            <div className="mt-6 flex items-center font-sans font-medium text-lg text-accent">
                                                 Read the case study
                                                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
                                             </div>
@@ -206,7 +206,7 @@ export default function Home() {
                         <div className="mt-8 md:hidden">
                             <Link
                                 to="/work"
-                                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border border-accent-border bg-surface font-sans font-semibold text-base text-accent active:bg-accent-light transition-colors"
+                                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-button border border-hairline bg-surface font-sans font-medium text-base text-accent active:bg-accent-light transition-colors"
                             >
                                 View all case studies
                                 <ArrowRight className="w-4 h-4" strokeWidth={2} />
@@ -222,13 +222,10 @@ export default function Home() {
                 <ServicesV2 />
 
                 {/* SECTION 7 — HOW WE WORK (timeline layout) */}
-                <section className="w-full bg-surface px-6 md:px-12 pt-20 pb-24 md:pt-28 md:pb-32 border-t border-accent-border">
+                <section className="w-full bg-surface px-6 md:px-12 pt-20 pb-24 md:pt-28 md:pb-32 border-t border-hairline">
                     <div className="max-w-4xl mx-auto">
                         <div className="mb-10 md:mb-14 max-w-3xl">
-                            <p className="hr-reveal opacity-0 mb-4 font-sans text-sm uppercase tracking-[0.2em] text-accent">
-                                How we work
-                            </p>
-                            <h2 className="hr-reveal opacity-0 font-sans font-extrabold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
+                            <h2 className="hr-reveal opacity-0 font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
                                 From first call to launch.
                             </h2>
                         </div>
@@ -240,7 +237,7 @@ export default function Home() {
                                 >
                                     {/* Sticky left column (desktop only) */}
                                     <div className="sticky top-24 flex w-36 flex-col items-end gap-2 self-start pb-4 max-md:hidden">
-                                        <span className="inline-flex h-6 items-center px-2.5 rounded-md bg-accent text-white font-sans font-semibold text-sm">
+                                        <span className="inline-flex h-6 items-center px-2.5 rounded-md bg-accent text-white font-sans font-medium text-sm">
                                             {step.num}
                                         </span>
                                     </div>
@@ -252,21 +249,21 @@ export default function Home() {
                                             </span>
                                         </div>
                                         {idx !== processSteps.length - 1 && (
-                                            <span className="w-0.5 flex-1 bg-gradient-to-b from-accent/40 via-accent/20 to-accent/40" />
+                                            <span className="w-0.5 flex-1 bg-hairline" />
                                         )}
                                     </div>
                                     {/* Content column */}
                                     <div className="flex flex-1 flex-col gap-4 pb-14 pl-4 md:pl-6 lg:pl-9">
                                         {/* Mobile-only step label */}
                                         <div className="flex items-center gap-3 md:hidden">
-                                            <span className="inline-flex h-6 items-center px-2.5 rounded-md bg-accent text-white font-sans font-semibold text-sm">
+                                            <span className="inline-flex h-6 items-center px-2.5 rounded-md bg-accent text-white font-sans font-medium text-sm">
                                                 {step.num}
                                             </span>
                                         </div>
-                                        <h3 className="font-sans font-semibold text-xl md:text-2xl text-text tracking-tight">
+                                        <h3 className="font-sans font-bold text-xl md:text-2xl text-text tracking-tight">
                                             {step.title}
                                         </h3>
-                                        <p className="font-sans font-normal text-lg text-textMuted leading-relaxed max-w-xl">
+                                        <p className="font-sans font-medium text-lg text-text leading-relaxed max-w-xl">
                                             {step.body}
                                         </p>
                                     </div>
@@ -281,7 +278,7 @@ export default function Home() {
                                     <Link
                                         to="/contact"
                                         onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'how_it_works' })}
-                                        className="inline-flex items-center gap-2 font-sans font-semibold text-lg text-accent hover:text-accent/80 transition-colors group"
+                                        className="inline-flex items-center gap-2 font-sans font-medium text-lg text-accent hover:text-accentDeep transition-colors group"
                                     >
                                         Start with a free audit
                                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />

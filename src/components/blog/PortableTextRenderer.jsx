@@ -46,29 +46,27 @@ function GatedResourceBlock({ title, description, downloadUrl, buttonText }) {
 
     if (status === 'unlocked') {
         return (
-            <div className="my-12 p-8 rounded-[1.5rem] border-2 border-accent/30 bg-accent/5 text-center">
-                <p className="font-sans text-sm text-accent uppercase tracking-widest mb-4">Download Ready</p>
+            <div className="my-12 p-8 rounded-callout border border-hairline bg-frost">
                 <h4 className="text-xl font-bold font-sans text-text mb-2">{title}</h4>
-                <p className="font-sans text-sm text-textMuted mb-6">Your download should start automatically.</p>
+                <p className="font-sans text-sm text-text mb-6">Your download should start automatically.</p>
                 <a
                     href={downloadUrl}
                     download
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-sans font-bold rounded-xl hover:scale-[1.02] active:scale-[0.97] transition-transform duration-150 shadow-[0_0_20px_rgba(0,112,243,0.25)]"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-sans font-medium rounded-button hover:bg-accentDeep active:scale-[0.97] transition-[background-color,transform] duration-150 shadow-sm"
                 >
-                    Download Again
+                    Download again
                 </a>
             </div>
         );
     }
 
     return (
-        <div className="my-12 p-8 rounded-[1.5rem] border-2 border-dashed border-accent/30 bg-accent/5 text-center">
-            <p className="font-sans text-sm text-accent uppercase tracking-widest mb-4">Free Resource</p>
+        <div className="my-12 p-8 rounded-callout border border-hairline bg-frost">
             <h4 className="text-xl font-bold font-sans text-text mb-2">{title}</h4>
             {description && (
-                <p className="font-sans text-sm text-textMuted mb-6 max-w-md mx-auto">{description}</p>
+                <p className="font-sans text-sm text-text mb-6 max-w-md">{description}</p>
             )}
-            <form onSubmit={handleSubmit} className="flex gap-2 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex gap-2 max-w-md">
                 <input
                     type="email"
                     placeholder="you@company.com"
@@ -76,18 +74,18 @@ function GatedResourceBlock({ title, description, downloadUrl, buttonText }) {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === 'submitting'}
                     required
-                    className="flex-1 px-4 min-h-[44px] rounded-xl bg-surface border border-accent-border text-text font-sans text-sm placeholder:text-textMuted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
+                    className="flex-1 px-4 min-h-[44px] rounded-button bg-surface border border-hairline text-text font-sans text-base placeholder:text-text focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition-[border-color,box-shadow] duration-sm ease-out-smooth"
                 />
                 <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="px-5 min-h-[44px] rounded-xl bg-accent text-white font-sans font-bold text-sm hover:bg-accent/90 active:scale-[0.97] transition-[background-color,transform] duration-sm ease-out-smooth disabled:opacity-50 cursor-pointer"
+                    className="px-5 min-h-[44px] rounded-button bg-accent text-white font-sans font-medium text-base hover:bg-accentDeep active:scale-[0.97] transition-[background-color,transform] duration-sm ease-out-smooth disabled:opacity-50 cursor-pointer"
                 >
                     {status === 'submitting' ? '...' : (buttonText || 'Download')}
                 </button>
             </form>
             {status === 'error' && (
-                <p className="font-sans text-sm text-coral mt-3">Something went wrong. Try again.</p>
+                <p className="font-sans text-sm text-error mt-3">Something went wrong. Try again.</p>
             )}
         </div>
     );
@@ -117,7 +115,7 @@ export const PortableTextComponents = {
 
             return (
                 <figure className="my-12">
-                    <div className={`relative w-full overflow-hidden bg-surfaceAlt rounded-[1.5rem] border border-accent-border ${hasRatio ? ratioClass : ''}`}>
+                    <div className={`relative w-full overflow-hidden bg-surfaceAlt rounded-[1.5rem] border border-hairline ${hasRatio ? ratioClass : ''}`}>
                         <img
                             src={imageUrl}
                             alt={value.alt || 'Blog illustration'}
@@ -127,7 +125,7 @@ export const PortableTextComponents = {
                         />
                     </div>
                     {value.caption && (
-                        <figcaption className="text-center text-sm font-sans text-textMuted mt-4 italic">
+                        <figcaption className="text-[13px] font-sans text-text mt-4">
                             {value.caption}
                         </figcaption>
                     )}
@@ -145,7 +143,7 @@ export const PortableTextComponents = {
 
             return (
                 <figure className={`my-12 ${sizeClass}`}>
-                    <div className="relative w-full overflow-hidden bg-surfaceAlt rounded-[1.5rem] border border-accent-border">
+                    <div className="relative w-full overflow-hidden bg-surfaceAlt rounded-[1.5rem] border border-hairline">
                         <img
                             src={imageUrl}
                             alt={value.alt || 'Case study image'}
@@ -155,8 +153,8 @@ export const PortableTextComponents = {
                         />
                     </div>
                     {(value.caption || value.credit) && (
-                        <figcaption className="text-center text-sm font-sans text-textMuted mt-4 italic">
-                            {value.caption}{value.credit ? ` — ${value.credit}` : ''}
+                        <figcaption className="text-[13px] font-sans text-text mt-4">
+                            {value.caption}{value.credit ? `, ${value.credit}` : ''}
                         </figcaption>
                     )}
                 </figure>
@@ -200,7 +198,7 @@ export const PortableTextComponents = {
 
             return (
                 <figure className="my-10 flex flex-col items-center">
-                    <div className={`relative rounded-xl overflow-hidden bg-surfaceAlt border border-accent-border shadow-lg ${isVertical ? 'w-full max-w-sm aspect-[9/16]' : 'w-full aspect-video'}`}>
+                    <div className={`relative rounded-xl overflow-hidden bg-surfaceAlt border border-hairline shadow-lg ${isVertical ? 'w-full max-w-sm aspect-[9/16]' : 'w-full aspect-video'}`}>
                         <iframe
                             src={embedUrl}
                             title={caption || 'Embedded video'}
@@ -211,7 +209,7 @@ export const PortableTextComponents = {
                         />
                     </div>
                     {caption && (
-                        <figcaption className="text-center text-sm font-sans text-textMuted mt-4 italic">
+                        <figcaption className="text-[13px] font-sans text-text mt-4">
                             {caption}
                         </figcaption>
                     )}
@@ -221,12 +219,12 @@ export const PortableTextComponents = {
         callout: ({ value }) => {
             const { title, content } = value;
             return (
-                <div className="my-10 p-8 rounded-[1.5rem] border bg-accent/5 border-accent/20">
+                <div className="my-10 p-8 rounded-callout border bg-frost border-hairline">
                     <div className="flex items-start gap-4">
                         <span className="w-1 self-stretch bg-accent/40 rounded-full shrink-0"></span>
                         <div className="flex-1">
                             {title && <h4 className="text-xl font-bold font-sans text-text mb-3">{title}</h4>}
-                            <p className="font-sans text-textMuted leading-relaxed text-lg">{content}</p>
+                            <p className="font-sans text-text leading-relaxed text-lg">{content}</p>
                         </div>
                     </div>
                 </div>
@@ -239,9 +237,9 @@ export const PortableTextComponents = {
             return (
                 <div className="my-12 grid grid-cols-2 md:grid-cols-4 gap-4">
                     {stats.map((stat, idx) => (
-                        <div key={idx} className="bg-surfaceAlt border border-accent-border rounded-2xl p-6 text-center shadow-sm">
+                        <div key={idx} className="bg-surfaceAlt border border-hairline rounded-2xl p-6 text-center shadow-sm">
                             <div className="text-4xl font-bold font-sans text-accent mb-2">{stat.value}</div>
-                            <div className="text-[14px] font-sans text-textMuted uppercase tracking-wider">{stat.label}</div>
+                            <div className="text-[15px] font-sans text-text">{stat.label}</div>
                         </div>
                     ))}
                 </div>
@@ -258,7 +256,7 @@ export const PortableTextComponents = {
                     </div>
                 );
             }
-            return <hr className="my-16 border-t border-accent-border" />;
+            return <hr className="my-16 border-t border-hairline" />;
         },
         ctaButton: ({ value }) => {
             const { text, url, style } = value;
@@ -276,13 +274,13 @@ export const PortableTextComponents = {
                 <div className="my-10 flex justify-center">
                     <Tag
                         {...linkProps}
-                        className={`inline-flex items-center gap-2 px-8 py-4 rounded-xl font-sans font-bold text-base transition-[transform,background-color,border-color,box-shadow] duration-md ease-out-smooth hover:scale-[1.02] active:scale-[0.97] ${
+                        className={`inline-flex items-center gap-2 px-8 py-4 rounded-button font-sans font-medium text-base transition-[transform,background-color,border-color,box-shadow] duration-md ease-out-smooth active:scale-[0.97] ${
                             isPrimary
-                                ? 'bg-accent text-white shadow-[0_0_20px_rgba(0,112,243,0.25)]'
-                                : 'bg-transparent text-text border-2 border-accent-border hover:border-accent/40'
+                                ? 'bg-accent text-white shadow-sm hover:bg-accentDeep'
+                                : 'bg-transparent text-text border-2 border-hairline hover:border-accent/40'
                         }`}
                     >
-                        {text} <span className={isPrimary ? 'text-white/70' : 'text-accent'}>→</span>
+                        {text} <span className={isPrimary ? 'text-white' : 'text-accent'}>→</span>
                     </Tag>
                 </div>
             );
@@ -298,15 +296,15 @@ export const PortableTextComponents = {
             if (!quote) return null;
 
             return (
-                <div className="my-12 p-8 rounded-[1.5rem] bg-surfaceAlt border border-accent-border relative">
-                    <span className="text-6xl text-accent/20 font-sans absolute top-4 left-6 leading-none">"</span>
-                    <blockquote className="text-xl md:text-2xl text-textMuted font-sans italic leading-relaxed pl-8 pt-4">
+                <div className="my-12 p-8 rounded-[1.5rem] bg-surfaceAlt border border-hairline relative">
+                    <span className="text-6xl text-hairline font-sans absolute top-4 left-6 leading-none">"</span>
+                    <blockquote className="text-xl md:text-2xl text-text font-sans leading-relaxed pl-8 pt-4">
                         {quote}
                     </blockquote>
                     {(author || role) && (
                         <div className="mt-6 pl-8 flex items-center gap-3">
                             <div className="w-8 h-[2px] bg-accent/40" />
-                            <div className="font-sans text-[15px] text-textMuted">
+                            <div className="font-sans text-[15px] text-text">
                                 {author && <span className="font-medium text-text">{author}</span>}
                                 {author && role && <span className="mx-1">·</span>}
                                 {role && <span>{role}</span>}
@@ -321,22 +319,22 @@ export const PortableTextComponents = {
             if (!tools || tools.length === 0) return null;
 
             return (
-                <div className="my-10 p-8 rounded-[1.5rem] border bg-slate-900 text-white border-slate-900">
+                <div className="my-10 p-8 rounded-callout border bg-frost text-text border-hairline">
                     <div className="flex items-start gap-4">
                         <span className="w-1 self-stretch bg-accent rounded-full shrink-0"></span>
                         <div className="flex-1">
-                            <h4 className="text-xl font-bold font-sans mb-4">Tech Specs</h4>
+                            <h4 className="text-xl font-bold font-sans mb-4">Tech specs</h4>
                             <ul className="space-y-3 font-sans text-lg">
                                 {tools.map((tool, idx) => (
                                     <li key={idx} className="flex items-baseline gap-3">
                                         <span className="text-accent">◆</span>
                                         <div>
                                             {tool.url && !isUnsafeUrl(tool.url) ? (
-                                                <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors underline decoration-white/30 underline-offset-4">
+                                                <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accentDeep transition-colors underline underline-offset-4">
                                                     {tool.name}
                                                 </a>
                                             ) : (
-                                                <span className="text-white/80">{tool.name}</span>
+                                                <span className="text-text">{tool.name}</span>
                                             )}
                                         </div>
                                     </li>
@@ -353,7 +351,7 @@ export const PortableTextComponents = {
             const text = (value?.children || []).map(c => c.text || '').join('');
             const id = slugify(text);
             return (
-                <h2 id={id} className="text-[28px] font-sans font-extrabold text-text mt-14 mb-5 scroll-mt-32 tracking-tight leading-[34px]">
+                <h2 id={id} className="text-[28px] font-sans font-bold text-text mt-14 mb-5 scroll-mt-32 tracking-tight leading-[34px]">
                     {children}
                 </h2>
             );
@@ -363,10 +361,10 @@ export const PortableTextComponents = {
             const id = slugify(text);
             return <h3 id={id} className="text-[22px] text-text mt-10 mb-4 font-sans font-bold scroll-mt-32 tracking-tight leading-[28px]">{children}</h3>;
         },
-        h4: ({ children }) => <h4 className="text-xl text-text mt-8 mb-3 font-sans font-semibold">{children}</h4>,
+        h4: ({ children }) => <h4 className="text-xl text-text mt-8 mb-3 font-sans font-bold">{children}</h4>,
         normal: ({ children }) => <p className="text-lg leading-[30px] text-text mb-6 font-sans">{children}</p>,
         blockquote: ({ children }) => (
-            <blockquote className="border-l-[3px] border-accent pl-6 my-10 font-cormorant italic text-2xl lg:text-[28px] text-text leading-[1.4]">
+            <blockquote className="border-l-[3px] border-accent pl-6 my-10 font-sans text-[19px] lg:text-[21px] text-text leading-[1.55]">
                 {children}
             </blockquote>
         ),
@@ -377,13 +375,13 @@ export const PortableTextComponents = {
     },
     listItem: {
         bullet: ({ children }) => <li>{children}</li>,
-        number: ({ children }) => <li className="font-sans text-textMuted">{children}</li>,
+        number: ({ children }) => <li className="font-sans text-text">{children}</li>,
     },
     marks: {
         strong: ({ children }) => <strong className="font-bold text-text">{children}</strong>,
-        em: ({ children }) => <em className="italic">{children}</em>,
-        code: ({ children }) => <code className="bg-surfaceAlt text-accent px-2 py-1 rounded text-[0.85em] font-mono border border-accent-border">{children}</code>,
-        s: ({ children }) => <del className="text-textMuted line-through">{children}</del>,
+        em: ({ children }) => <em className="not-italic font-bold">{children}</em>,
+        code: ({ children }) => <code className="bg-surfaceAlt text-accent px-2 py-1 rounded text-[0.85em] font-mono border border-hairline">{children}</code>,
+        s: ({ children }) => <del className="text-text line-through">{children}</del>,
         link: ({ value, children }) => {
             const href = value?.href || '#';
             const isUnsafe = /^(javascript|data|vbscript):/i.test(href);
@@ -393,10 +391,10 @@ export const PortableTextComponents = {
             const rel = value?.blank ? 'noopener noreferrer' : undefined;
 
             if (href.startsWith('/')) {
-                return <Link to={href} className="text-accent underline decoration-accent/30 hover:decoration-accent underline-offset-4 transition-[text-decoration-color] duration-sm ease-out-smooth">{children}</Link>;
+                return <Link to={href} className="text-accent underline hover:text-accentDeep underline-offset-4 transition-colors duration-sm ease-out-smooth">{children}</Link>;
             }
             return (
-                <a href={href} target={target} rel={rel} className="text-accent underline decoration-accent/30 hover:decoration-accent underline-offset-4 transition-[text-decoration-color] duration-sm ease-out-smooth">
+                <a href={href} target={target} rel={rel} className="text-accent underline hover:text-accentDeep underline-offset-4 transition-colors duration-sm ease-out-smooth">
                     {children}
                 </a>
             );
