@@ -25,7 +25,7 @@
     "motion": "^12.38.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.13.0",
+    "react-router-dom": "^7.18.2",
     "tailwind-merge": "^3.5.0",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -43,17 +43,18 @@
     "globals": "^16.5.0",
     "marked": "^17.0.3",
     "png-to-ico": "^3.0.1",
-    "postcss": "^8.5.14",
-    "sanitize-html": "^2.17.4",
+    "postcss": "^8.5.23",
+    "sanitize-html": "^2.17.5",
     "sharp": "^0.35.0",
     "tailwindcss": "^3.4.17",
     "vite": "^7.3.5"
   },
   "overrides": {
     "esbuild": "^0.28.1",
-    "js-yaml": "^4.3.0",
+    "js-yaml": "^4.3.1",
     "@babel/core": "^7.29.6",
-    "brace-expansion@1": "^1.1.16",
-    "brace-expansion@5": "^5.0.7"
+    "brace-expansion@1": "^1.1.18",
+    "brace-expansion@5": "^5.0.9",
+    "nanoid@3": "^3.3.18"
   }
 }
