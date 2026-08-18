@@ -100,6 +100,9 @@ export default function Privacy() {
                             </tbody>
                         </table>
                     </div>
+                    <p className="mb-4">
+                        Where "Consent" is listed for cookie-based categories, it applies in jurisdictions that require opt-in consent (the EEA, UK, and Switzerland). Elsewhere, we process those categories on the basis of legitimate interests, with the ability to opt out at any time through our cookie banner.
+                    </p>
                     <p className="mb-4">These legal bases mean:</p>
                     <ul className="list-disc pl-8 mb-6 space-y-3">
                         <li><strong className="text-text">Consent:</strong> You have given clear, affirmative agreement — for example, through our cookie banner. You can withdraw consent at any time.</li>
@@ -294,17 +297,17 @@ export default function Privacy() {
                     <p className="mb-4">We use the following categories of cookies:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Strictly Necessary Cookies:</strong> Required for the Site to function and to remember the choice you make in our cookie banner. These cannot be disabled. They include cookies for security, session management, and consent storage.</li>
-                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors use our Site — page views and usage patterns (Google Analytics) and anonymized heatmaps and session recordings (Microsoft Clarity). These are set only after you consent.</li>
+                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors use our Site — page views and usage patterns (Google Analytics) and anonymized heatmaps and session recordings (Microsoft Clarity). In the EEA, UK, and Switzerland these are set only after you consent; elsewhere they are active by default and you can opt out at any time.</li>
                         <li><strong className="text-text">Functional Cookies:</strong> Remember your preferences and settings, such as language or region.</li>
-                        <li><strong className="text-text">Targeting and Advertising Cookies:</strong> Measure marketing campaign performance across platforms (e.g., Meta Pixel). These are set only after you consent.</li>
+                        <li><strong className="text-text">Targeting and Advertising Cookies:</strong> Measure marketing campaign performance across platforms (e.g., Meta Pixel). In the EEA, UK, and Switzerland these are set only after you consent; elsewhere they may be active by default and you can opt out at any time.</li>
                     </ul>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Consent</h3>
                     <p className="mb-6">
-                        When you first visit our Site, a consent banner (powered by CookieScript) lets you accept all cookies, decline all non-essential cookies, or expand the details to choose by category. Until you make a choice, analytics and advertising tags are disabled by default through Google Consent Mode v2 — they set no cookies and store no identifiers. Your choice is saved so it is remembered on return visits.
+                        When you first visit our Site, a consent banner (powered by CookieScript) lets you accept all cookies, decline all non-essential cookies, or expand the details to choose by category. What happens before you choose depends on where you are visiting from. In the European Economic Area, the United Kingdom, and Switzerland, analytics and advertising tags are disabled by default through Google Consent Mode v2 until you consent — they set no cookies and store no identifiers. Elsewhere, including the United States and Canada, these tags are active by default as permitted by applicable law, and you can decline or opt out at any time. Your choice is saved so it is remembered on return visits.
                     </p>
                     <p className="mb-6">
-                        Although U.S. law does not generally require opt-in consent for these technologies, we apply an opt-in model as a best practice. You can change or withdraw your consent at any time by clicking "Cookie settings" in the website footer, which reopens the consent panel. Withdrawing consent does not affect the lawfulness of any processing carried out before the withdrawal.
+                        You can change or withdraw your consent at any time by clicking "Cookie settings" in the website footer, which reopens the consent panel. If your browser sends the Global Privacy Control (GPC) signal, non-essential cookies are declined automatically regardless of region. Withdrawing consent does not affect the lawfulness of any processing carried out before the withdrawal.
                     </p>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
