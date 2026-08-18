@@ -75,6 +75,10 @@ docs/
 
 **Chromeless pages** (no navbar/footer): controlled by `chromelessRoutes` array in App.jsx.
 
+## Consent / CMP
+
+Full architecture, per-region legality, invariants, and change runbook: `docs/2026-08-17-consent-compliance-posture.md`. Quick facts: GTM `GTM-MVJQSMF8` container v11 (geo-split: Granted globally, Denied for EEA+UK+CH+CA-QC); CookieScript banner `440ed9df232ca19a993a46bb94f4cdbe` (dashboard item 472814); API creds `my-business/mcp/cookiescript.env`; public cookie report `cookie-script.com/cookie-report?identifier=1c8f75659d02503bc3bfb26f8742aefe`; consent records exportable (dashboard Consents or API `POST /consents`).
+
 ## Sanity CMS
 
 - **Project ID:** `yz25oyux`, **Dataset:** `production`, **API Version:** `2025-03-01`
