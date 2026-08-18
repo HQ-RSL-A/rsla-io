@@ -191,8 +191,8 @@ export default function WorkInner() {
                 <div className="flex flex-col lg:flex-row lg:gap-0 lg:border-t lg:border-dashed lg:border-hairline lg:pt-10">
 
                     {/* ===== STICKY SIDEBAR ===== */}
-                    <aside className="hidden lg:block lg:w-[260px] xl:w-[280px] shrink-0 border-r border-dashed border-hairline pr-10 xl:pr-12">
-                        <div className="sticky top-24">
+                    <aside className="hidden lg:block lg:w-[280px] xl:w-[300px] shrink-0 pr-8 xl:pr-10">
+                        <div className="sticky top-24 card-lifted p-6">
                             {/* Metrics */}
                             {caseStudy.metrics?.length > 0 && (
                                 <div className="space-y-5 mb-8">
