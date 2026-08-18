@@ -20,19 +20,19 @@ export default function Privacy() {
 
                 <div className="prose-container max-w-none font-sans text-lg leading-relaxed text-textMuted">
                     <p className="mb-8">
-                        <strong className="text-text">Effective Date:</strong> February 2026
+                        <strong className="text-text">Effective Date:</strong> August 17, 2026
                     </p>
 
                     <p className="mb-6">
-                        This Privacy Policy ("Policy") describes how <strong className="text-accent">RSL/A</strong> ("Company," "we," "us," or "our") collects, uses, shares, and protects your personal information when you visit our website at rsla.io (the "Site"), engage our services, or interact with us through any channel, including email, SMS, social media, or third-party platforms.
+                        This Privacy Policy ("Policy") describes how <strong className="text-accent">RSL/A</strong>, the trade name of RSLA LLC ("Company," "we," "us," or "our"), collects, uses, shares, and protects your personal information when you visit our website at rsla.io (the "Site"), engage our services, or interact with us through any channel, including email, SMS, social media, or third-party platforms.
                     </p>
 
                     <p className="mb-6">
-                        We operate primarily in the United States and Canada and serve clients internationally. This Policy is designed to comply with applicable privacy laws including the California Consumer Privacy Act (CCPA/CPRA), the Canadian Personal Information Protection and Electronic Documents Act (PIPEDA), and other applicable data protection regulations worldwide.
+                        We operate primarily in the United States and Canada and serve clients internationally. This Policy is designed to comply with applicable privacy laws including the California Consumer Privacy Act (CCPA/CPRA), the Canadian Personal Information Protection and Electronic Documents Act (PIPEDA), the EU and UK General Data Protection Regulation (GDPR) where it applies to our visitors, and other applicable data protection regulations worldwide.
                     </p>
 
                     <p className="mb-12">
-                        By using our Site, engaging our services, or providing us with your personal information, you acknowledge that you have read and understood this Policy and consent to the collection, use, and disclosure of your information as described herein.
+                        This Policy explains what we collect, why we collect it, and the choices you have. Where the law requires consent — such as for analytics and advertising cookies — we ask for it through our cookie banner rather than assuming it, and you can withdraw that consent at any time.
                     </p>
 
                     {/* ── 1. INFORMATION WE COLLECT ── */}
@@ -73,6 +73,43 @@ export default function Privacy() {
                         <li>Publicly available sources (business directories, social media profiles, public records)</li>
                         <li>Referral partners or other clients who provide your contact information with your knowledge</li>
                     </ul>
+
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">1.4 Legal Bases and Retention Periods</h3>
+                    <p className="mb-4">
+                        For each category of personal data we collect, the table below sets out how long we keep it and the legal basis we rely on to process it:
+                    </p>
+                    <div className="mb-6 overflow-x-auto">
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="border-b border-accent-border">
+                                    <th className="py-3 pr-4 font-sans font-semibold text-text text-sm">Data category</th>
+                                    <th className="py-3 pr-4 font-sans font-semibold text-text text-sm">Retention</th>
+                                    <th className="py-3 font-sans font-semibold text-text text-sm">Legal basis</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-accent-border">
+                                <tr><td className="py-3 pr-4 text-text">Usage data (pages visited, clicks, session behavior)</td><td className="py-3 pr-4">13 months</td><td className="py-3">Consent</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Identity details (name, email, phone, social profiles)</td><td className="py-3 pr-4">3 years after last interaction</td><td className="py-3">Contractual necessity</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Business address</td><td className="py-3 pr-4">3 years after last interaction</td><td className="py-3">Contractual necessity</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Payment and financial information (processed by Stripe; billing details, transaction history)</td><td className="py-3 pr-4">7 years</td><td className="py-3">Contractual necessity</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Online identifiers and device information (IP address, browser, operating system)</td><td className="py-3 pr-4">13 months</td><td className="py-3">Consent</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Approximate location (derived from IP address)</td><td className="py-3 pr-4">13 months</td><td className="py-3">Consent</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Communications (inquiries, email correspondence, chat)</td><td className="py-3 pr-4">3 years</td><td className="py-3">Legitimate interests</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Professional information (job title, company name, work email)</td><td className="py-3 pr-4">3 years</td><td className="py-3">Legitimate interests</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Consent records and signed agreements</td><td className="py-3 pr-4">7 years</td><td className="py-3">Legal obligation</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p className="mb-4">These legal bases mean:</p>
+                    <ul className="list-disc pl-8 mb-6 space-y-3">
+                        <li><strong className="text-text">Consent:</strong> You have given clear, affirmative agreement — for example, through our cookie banner. You can withdraw consent at any time.</li>
+                        <li><strong className="text-text">Contractual necessity:</strong> Processing is needed to perform a contract with you, or to take pre-contractual steps you request (such as preparing a proposal after an inquiry).</li>
+                        <li><strong className="text-text">Legitimate interests:</strong> Processing serves our legitimate business interests — such as responding to inquiries and maintaining client relationships — balanced against your rights and freedoms.</li>
+                        <li><strong className="text-text">Legal obligation:</strong> Processing is required to comply with laws that apply to us, such as tax, accounting, and consent record-keeping requirements.</li>
+                    </ul>
+                    <p className="mb-8">
+                        Some data is a contractual requirement: name, company name, work email, phone number, business address, and billing information are required to prepare and sign service agreements, deliver the contracted services, and process invoices and payments. Without this information, we are unable to enter into a service agreement, deliver our services, or process billing. Nothing beyond that is mandatory — you can browse the Site without providing any of it.
+                    </p>
 
                     {/* ── 2. HOW WE USE YOUR INFORMATION ── */}
                     <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">2. How We Use Your Information</h2>
@@ -142,6 +179,8 @@ export default function Privacy() {
                                 <tr><td className="py-3 pr-4 text-text">Google Analytics</td><td className="py-3">Website analytics and usage tracking</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Google Ads</td><td className="py-3">Advertising and conversion tracking</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Meta (Facebook/Instagram)</td><td className="py-3">Advertising and conversion tracking</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Microsoft Clarity</td><td className="py-3">Behavioral analytics: heatmaps and session recordings (loads only after cookie consent)</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">CookieScript</td><td className="py-3">Cookie consent management (banner, consent storage, consent records)</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Vercel</td><td className="py-3">Website hosting and deployment</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Sanity</td><td className="py-3">Content management system (blogs, case studies)</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Anthropic (Claude)</td><td className="py-3">AI content generation, data analysis, and automation</td></tr>
@@ -212,8 +251,9 @@ export default function Privacy() {
                         <li><strong className="text-text">Client Data:</strong> Retained for the duration of the business relationship and for up to 3 years after the relationship ends, unless a longer period is required for legal or tax purposes.</li>
                         <li><strong className="text-text">Billing Records:</strong> Retained for up to 7 years as required by tax and accounting regulations.</li>
                         <li><strong className="text-text">Marketing Data:</strong> Retained until you opt out or request deletion.</li>
-                        <li><strong className="text-text">Website Analytics:</strong> Retained according to the data retention settings of the analytics provider (typically 14 to 26 months for Google Analytics).</li>
-                        <li><strong className="text-text">SMS Consent Records:</strong> Retained for as long as you remain opted in, plus a reasonable period afterward for compliance documentation.</li>
+                        <li><strong className="text-text">Website Analytics:</strong> Retained for up to 13 months, per the retention settings of our analytics providers (Google Analytics, Microsoft Clarity).</li>
+                        <li><strong className="text-text">SMS Consent Records:</strong> Retained while you remain opted in and for up to 7 years afterward for compliance documentation.</li>
+                        <li><strong className="text-text">Consent Records and Signed Agreements:</strong> Retained for up to 7 years to document consent and defend legal claims.</li>
                     </ul>
                     <p className="mb-8">
                         When data is no longer needed, we will securely delete or anonymize it.
@@ -253,23 +293,30 @@ export default function Privacy() {
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.2 How We Use Cookies</h3>
                     <p className="mb-4">We use the following categories of cookies:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
-                        <li><strong className="text-text">Strictly Necessary Cookies:</strong> Required for the Site to function properly. These cannot be disabled. They include cookies for security, load balancing, and session management.</li>
-                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors interact with our Site by collecting anonymous usage data (e.g., Google Analytics). These cookies are loaded when you visit our Site to help us understand usage patterns and improve your experience.</li>
-                        <li><strong className="text-text">Functional Cookies:</strong> Remember your preferences and settings (e.g., language, region, cookie banner preference).</li>
-                        <li><strong className="text-text">Marketing and Advertising Cookies:</strong> Used to measure campaign performance across platforms (e.g., Meta Pixel). These cookies are loaded when you visit our Site to help us understand which marketing channels are effective.</li>
+                        <li><strong className="text-text">Strictly Necessary Cookies:</strong> Required for the Site to function and to remember the choice you make in our cookie banner. These cannot be disabled. They include cookies for security, session management, and consent storage.</li>
+                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors use our Site — page views and usage patterns (Google Analytics) and anonymized heatmaps and session recordings (Microsoft Clarity). These are set only after you consent.</li>
+                        <li><strong className="text-text">Functional Cookies:</strong> Remember your preferences and settings, such as language or region.</li>
+                        <li><strong className="text-text">Targeting and Advertising Cookies:</strong> Measure marketing campaign performance across platforms (e.g., Meta Pixel). These are set only after you consent.</li>
                     </ul>
 
-                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Notice</h3>
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Consent</h3>
                     <p className="mb-6">
-                        When you first visit our Site, a cookie notice informs you about the cookies we use. As a US-based business serving primarily US and Canadian clients, we do not require opt-in consent for analytics and marketing cookies under applicable law. We provide this notice for transparency so you understand what data is collected during your visit.
+                        When you first visit our Site, a consent banner (powered by CookieScript) lets you accept all cookies, decline all non-essential cookies, or expand the details to choose by category. Until you make a choice, analytics and advertising tags are disabled by default through Google Consent Mode v2 — they set no cookies and store no identifiers. Your choice is saved so it is remembered on return visits.
                     </p>
                     <p className="mb-6">
-                        You may adjust cookie behavior at any time through your browser settings or by clicking the "Cookie Settings" link in our website footer. Disabling cookies in your browser may affect your experience on our Site but will not prevent you from accessing our content.
+                        Although U.S. law does not generally require opt-in consent for these technologies, we apply an opt-in model as a best practice. You can change or withdraw your consent at any time by clicking "Cookie settings" in the website footer, which reopens the consent panel. Withdrawing consent does not affect the lawfulness of any processing carried out before the withdrawal.
                     </p>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
                     <p className="mb-8">
-                        You can also manage cookies through your browser settings. Most browsers allow you to block or delete cookies. Please note that disabling cookies may affect the functionality of our Site.
+                        The fastest way to manage cookies on our Site is the "Cookie settings" link in the footer. You can also block or delete cookies through your browser settings, though disabling strictly necessary cookies may affect how the Site functions. A live, automatically updated list of every cookie in use on this Site — with provider, purpose, and duration — is available in our{' '}
+                        <a href="https://cookie-script.com/cookie-report?identifier=1c8f75659d02503bc3bfb26f8742aefe" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline decoration-accent/50 underline-offset-4">cookie report</a>.
+                    </p>
+
+                    <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.5 Session Recordings (Microsoft Clarity)</h3>
+                    <p className="mb-8">
+                        We partner with Microsoft Clarity to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay, in order to improve our website and services. Website usage data is captured using first- and third-party cookies and other tracking technologies — only after you consent through our cookie banner — and is used for site optimization and fraud and security purposes. For more information about how Microsoft collects and uses your data, visit the{' '}
+                        <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline decoration-accent/50 underline-offset-4">Microsoft Privacy Statement</a>.
                     </p>
 
                     {/* ── 11. YOUR PRIVACY RIGHTS ── */}
@@ -323,14 +370,20 @@ export default function Privacy() {
                         <li><strong className="text-text">Right to Object:</strong> Object to processing of your personal data for direct marketing or based on legitimate interests.</li>
                         <li><strong className="text-text">Lodge a Complaint:</strong> File a complaint with your local data protection authority.</li>
                     </ul>
+                    <p className="mb-6">
+                        <strong className="text-text">International transfers:</strong> Your personal data is processed in the United States. Where data originates from the EEA, UK, or other jurisdictions with transfer restrictions, such transfers are governed by the Standard Contractual Clauses (SCCs) approved by the European Commission, and our major providers (Google, Meta, Microsoft, Stripe) are additionally certified under the EU-U.S. Data Privacy Framework.
+                    </p>
                     <p className="mb-8">
-                        For international data transfers, we rely on standard contractual clauses and other lawful transfer mechanisms to ensure your data is protected.
+                        <strong className="text-text">Response times for GDPR requests:</strong> We respond to requests within one month of receipt. That period may be extended by two further months for complex or numerous requests; if so, we will tell you within the first month, with the reasons for the delay. If we refuse a request, we will explain why in writing. We may first verify your identity before acting on a request.
                     </p>
 
                     {/* ── 12. DO NOT TRACK ── */}
-                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">12. Do Not Track Signals</h2>
+                    <h2 className="text-2xl md:text-4xl mt-16 mb-6 font-sans font-extrabold text-text">12. Do Not Track and Global Privacy Control</h2>
+                    <p className="mb-6">
+                        Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want your online activity tracked. There is currently no uniform standard for interpreting DNT signals, and our Site does not respond to DNT.
+                    </p>
                     <p className="mb-8">
-                        Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want your online activity tracked. There is currently no uniform standard for interpreting DNT signals. Our Site does not currently respond to DNT browser signals, but we respect your cookie preferences as set through our cookie consent banner.
+                        We do, however, honor the <strong className="text-text">Global Privacy Control (GPC)</strong> signal. If your browser sends GPC, all non-essential cookies (analytics, functionality, and advertising) are automatically declined for your visit — no action needed on your part. You can also set or change your cookie preferences at any time through our cookie consent banner or the "Cookie settings" link in the footer.
                     </p>
 
                     {/* ── 13. THIRD-PARTY LINKS ── */}
@@ -350,16 +403,20 @@ export default function Privacy() {
                     <p className="mb-4">
                         If you have any questions about this Privacy Policy, want to exercise your privacy rights, or have concerns about how we handle your data, contact us:
                     </p>
+                    <ul className="list-disc pl-8 mb-8 space-y-3">
+                        <li><strong className="text-text">Legal entity:</strong> RSLA LLC (doing business as RSL/A)</li>
+                        <li><strong className="text-text">Mailing address:</strong> 418 Broadway, Albany, NY 12207, United States</li>
+                        <li><strong className="text-text">Privacy inquiries:</strong>{' '}
+                            <a href="mailto:team@rsla.io" className="text-accent hover:underline decoration-accent/50 underline-offset-4">team@rsla.io</a></li>
+                        <li><strong className="text-text">Privacy Officer:</strong> Rahul Lalia,{' '}
+                            <a href="mailto:lalia@rsla.io" className="text-accent hover:underline decoration-accent/50 underline-offset-4">lalia@rsla.io</a></li>
+                    </ul>
                     <p className="mb-8">
-                        <strong className="text-text">RSL/A</strong> - Privacy Inquiries:{' '}
-                        <a href="mailto:team@rsla.io" className="text-accent hover:underline">team@rsla.io</a>
-                    </p>
-                    <p className="mb-8">
-                        We will respond to all privacy-related requests within 30 days (or sooner if required by applicable law). If you are not satisfied with our response, you have the right to lodge a complaint with the applicable data protection authority in your jurisdiction.
+                        We will respond to all privacy-related requests within 30 days (or sooner if required by applicable law — see Section 11 for jurisdiction-specific timelines). If you are not satisfied with our response, you have the right to lodge a complaint with the supervisory authority in your jurisdiction: your state Attorney General or the Federal Trade Commission in the United States, the Office of the Privacy Commissioner in Canada, or your national Data Protection Authority in the EEA or UK.
                     </p>
 
                     <p className="mt-16 pt-6 text-sm text-textMuted">
-                        Last updated: February 2026
+                        Last updated: August 17, 2026
                     </p>
                 </div>
             </div>
