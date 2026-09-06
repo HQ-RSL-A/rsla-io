@@ -1,0 +1,102 @@
+# Service pages copy set (2026-09-06)
+
+Thirteen pages of copy for rsla.io's services, written overnight on 2026-09-06 from Rahul's brief, DataForSEO research, live SERP reads, and the seo-intel playbooks. One file per page. Counts come from `check-copy.py`, never from a person's typing; run it after any edit.
+
+```bash
+python3 docs/seo/service-pages/check-copy.py          # manifest + problems + shared sentences
+python3 docs/seo/service-pages/check-copy.py --json   # also writes manifest.json
+```
+
+Task tracking lives in Linear (project RSL/A, parent issue in `tracker.md`) with `tracker.md` as the local mirror.
+
+## Architecture
+
+Rahul's rule (2026-09-06): the primary service pages speak to every visitor, from any state. Bakersfield gets a sub-listing per service, keyword optimized, to rank locally. That matches the URL convention he approved on 2026-07-20 (`/{city}/{service}` money pages, `/{city}` hub, plain noun service slugs) and the HeyTony home base rule (the flagship city may carry one page per service; satellite towns get one page each).
+
+| File | URL | Keyword (US volume/mo, KD) | Words target | Notes |
+|---|---|---|---|---|
+| services-websites.md | /services/websites | small business website design (2,400, KD 42) | 1200 to 1400 | Parent. Family adds web design for small business 2,400, website design services 6,600 |
+| services-websites-redesign.md | /services/websites/redesign | website redesign services (6,600, KD 10) | 1500 to 1800 | Best national keyword found: 6 of 9 results are agency service pages |
+| services-seo.md | /services/seo | seo services for small business (4,400, KD 31) | 1300 to 1500 | Parent. Title uses the sibling phrasing "small business SEO services" (4,400) |
+| services-seo-local.md | /services/seo/local | local seo services (8,100, KD 34) | 1400 to 1600 | Family adds local seo for small business 1,300 (KD 21), local seo company 3,600 |
+| services-seo-programmatic.md | /services/seo/programmatic | programmatic seo services (50, KD 0) | 900 to 1100 | Tiny volume, zero difficulty, service pages rank |
+| services-automations.md | /services/automations | ai automation agency (4,400, KD 19) | 1300 to 1500 | Family adds ai automation services 590 (KD 1), consultant 480 (KD 0), company 390 |
+| services-crm.md | /services/crm | gohighlevel expert (210, KD 0) | 1800 to 2000 | Family adds gohighlevel agency 260, ghl expert 170, gohighlevel setup 50 |
+| services-custom-builds.md | /services/custom-builds | custom software development for small business (70, KD 0) | 800 to 1000 | Family adds custom business software 110 (KD 7), custom business app development 90 |
+| bakersfield.md | /bakersfield | marketing agency bakersfield (40, KD 14) | 800 to 1000 | Hub. Replaces /services/bakersfield with a one hop 301 |
+| bakersfield-websites.md | /bakersfield/websites | web design bakersfield (390, KD 55 by tool, page one says lower) | 1100 to 1300 | Same cluster: website design bakersfield, bakersfield web design |
+| bakersfield-seo.md | /bakersfield/seo | bakersfield seo company (40, KD 0) | 1600 to 1750 | Cluster: seo bakersfield 50, seo company bakersfield 40, seo services bakersfield 20 |
+| bakersfield-automations.md | /bakersfield/automations | ai automation agency bakersfield (0 measured) | 950 to 1150 | Least contested map pack term (LeadSnap 2026-06-09); "near me" and AI answers land here |
+| bakersfield-crm.md | /bakersfield/crm | crm bakersfield (0 measured) | 800 to 950 | Built because CRM is one of the four services to rank locally |
+
+All volumes: Google Ads data through DataForSEO, `location_name: United States`, pulled 2026-09-06. Bakersfield volumes are US scope with the city in the query, not city scoped. KD is DataForSEO Labs.
+
+## Why these keywords and not the obvious ones
+
+Every candidate was checked against the live top ten, per the standing rule that volume and intent labels are a shortlist, never a decision.
+
+- "crm consultant" (590/mo) looked ideal for the CRM page. The page one is Indeed and ZipRecruiter job listings, "what is a CRM consultant" explainers, and Salesforce consultancies. Rejected. "custom crm" (1,000) is no code builders and dev shops. "gohighlevel expert" has a clean hire intent SERP, zero difficulty, and RSL/A already ranks for GoHighLevel content (the blog's largest organic source), so the CRM page targets it and keeps "custom CRM" as a phrase, not a target.
+- "ai automation agency" (4,400) is polluted with "how to start an agency" results, and the Google AI Overview literally asks the searcher whether they want to hire or start one. The hire intent share is real and growing (yearly trend +83 percent), the family of cleaner phrasings ("ai automation services", "consultant", "company") all sit at KD 0 to 10, and one page covers all of them. Kept.
+- "small business website design" (2,400) has a DIY heavy SERP (Forbes, Wix, Canva). It stays as the parent's keyword because it is the audience's phrasing, but the real national win is "website redesign services" (6,600, KD 10) where six of nine results are agency service pages. That is why the redesign child page exists.
+- "local seo services" (8,100, KD 34) is dominated by large agencies. The page targets it anyway because the small business phrasings in the same family (KD 14 to 21) are winnable and one page ranks for all phrasings of one intent.
+- "custom software development" (2,400, KD 32) is agency listicles and dev shops. The small business phrasing has a zero difficulty SERP with a 684 word page at number one. Rahul's positioning (internal tools for the client's own use, never SaaS) fits the small business phrasing exactly.
+- Bakersfield: "web design bakersfield" is the only local term with real volume (390, spiking to 1,000 to 1,300 in Oct and Nov 2025). Every automation and CRM phrasing with Bakersfield in it has zero measured volume. Those two pages exist for the map pack, "near me" queries, AI assistants, and the GBP services list, and the README says so on each file.
+
+## What the live Bakersfield SERPs showed (2026-09-06)
+
+- Web design: map pack Acme (9 reviews), Chavez (37), Fluxar (18). Organic: Liset Alanis homepage (1,777 words), Mantera city page (1,011), Yelp, ThrillX of Toronto (3,317), Cybernautic, Thervo, Donut, TechX, Thumbtack.
+- SEO company: map pack Marketing1on1 (5), Acme (9), Citryn (48). Organic: Thrive of Dallas (2,415), Mantera (1,519), Acme homepage (2,008), then SERPninja, Elit-Web (Kyiv), Expertise, 1Digital (Philadelphia), Divinate, seo.co. Almost all templated city pages from elsewhere.
+- Marketing agency: Citryn homepage (655 words) leads, then Yelp, Mantera, Instagram, the Chamber directory, ICS Creative, eMedia, Barton, DesignRush. Real locals with offices; the hub earns this over quarters.
+- AI automation agency: a page one of remote agencies with Bakersfield pages (theautomators.ai 1,992 words, Torq MSP 316, creativegenius.ai 2,098, CodeWCG, Iva Tech, SynergenIQ, Epic AI) plus a local pack with two reviews between three listings.
+
+Word targets came from the lowest of the top three commercial pages plus roughly 100 words, measured by script from the fetched HTML with header, footer, nav, and scripts stripped.
+
+## Ground truth from Search Console (pulled 2026-09-06)
+
+- Queries containing "bakersfield", 2026-06-08 to 2026-09-05: 2 impressions, 0 clicks.
+- Last 28 days by page: /services/bakersfield 125 impressions at position 17.1; /services 49; the five service shells 4 to 32 impressions each; homepage 530 impressions, 9 clicks, position 12.3.
+- The site's traffic is Claude product and GoHighLevel blog content. The GoHighLevel authority is why the CRM page targets a GoHighLevel keyword.
+
+## Rules every page follows
+
+- One keyword per page, keyword in the title and H1, answer in the first screen, one primary CTA repeated three times with a page specific lead-in line and the site's existing label "Book a call".
+- Word count matched to the lowest ranking commercial page in the top three plus 100 to 200 words, measured.
+- FAQ capped at four questions, sourced from People Also Ask on the live SERP, rendered as plain text, never an accordion.
+- Proof is real and published only: the five published case studies and the five testimonials already on the site. Draft case studies in Sanity (Spice on a Slice, AdReviveAI, the cleaning company, the nonprofit CRM) are not cited until published.
+- Brand: no em or en dashes, no "digital marketing", no "founders", no "leverage" or "optimize" as a verb, sentence case, no eyebrow text, category label "marketing agency", automation never claims to bring in customers, "recommended by AI" is the outcome sentence before any acronym.
+- National pages never lead with Bakersfield. Each carries one "In Kern County?" line linking its Bakersfield sibling. Each Bakersfield page links its national sibling for the full scope.
+- Sibling pages share no sentence above 0.55 Jaccard (testimonials and CTA labels excepted); `check-copy.py` enforces it.
+
+## Open questions for Rahul
+
+1. Pricing on the page. The $2,500 to $6,000 website range is already public on the live Bakersfield hub FAQ and is reused on the websites, redesign, Bakersfield websites, and hub pages. Confirm it is current, or give the new range. The SEO, automation, CRM, and custom pages describe the pricing model only (fixed project price, monthly retainer) and quote no numbers. Add ranges?
+2. Naming clients. "A Bakersfield landscaping company" (Select Landscape, active) appears on the Bakersfield websites and CRM pages; "a local video production business" (Teji Videos, former) on the Bakersfield CRM page. Name them, keep them anonymous, or remove?
+3. The free 49 point scan offer on the SEO pages costs LeadSnap credits per run. Keep it?
+4. "GoHighLevel expert" is the CRM page's H1 phrase, backed by two testimonials that call Rahul an expert. "Certified" is never claimed. Is there a certification, and what is the real count of GoHighLevel accounts built (the page says "dozens" nowhere now, but a real number would help)?
+5. The custom builds page links the Claude Code post and names Supabase and Vercel. Keep the Claude Code link?
+6. The hub says "the coffee place on Ming". Replace with a spot you actually use, or cut.
+7. The programmatic SEO page cites the 12 industry pages and the indexation gate. The indexation check from March was never recorded; if most of those pages are unindexed, that example turns into a lesson rather than a win before the page ships.
+8. The nav label "Search visibility" versus the page H1 "SEO services for small businesses". Keep the nav label?
+9. The brand pitch ladder says automation first, recommended by AI second, websites third. The services index and nav currently lead with websites. Reorder?
+
+## Follow-up page candidates
+
+- AI receptionist: 12,100/mo (90,500 in July 2026), KD 25, product intent. A page would have to compare tools honestly as well as sell the setup.
+- AI SEO services / answer engine optimization services / generative engine optimization services: about 2,600/mo across the family, KD 2 to 19. A child under /services/seo.
+- Kern towns (Delano, Tehachapi, Shafter, Wasco, Taft, Arvin): zero measured volume, and the July recon found no real local provider ranking. Gate on the Bakersfield pages showing impressions.
+- Web design for contractors (1,000, KD 19) and web design for landscapers (170): industry pages, later.
+
+## Build notes that apply to every page
+
+- The FAQ component (`src/components/services/ServiceFaq.jsx`) renders `<details>` accordions. The copy requires plain visible text. Replace the component before building.
+- `ServiceLayout` currently emits `areaServed: Country US`; the Bakersfield pages need `areaServed` set to Bakersfield plus the Kern towns from `rsla/local-seo/nap-canonical.md`.
+- Testimonials repeat across pages by design (five quotes, thirteen pages). Swap in Bakersfield reviews on the local pages as they arrive; the review drip is its own Linear issue.
+- Photos: real ones of Rahul working, never stock. The Bakersfield pages want one recognizably local shot each.
+- After publishing, leave each page alone for a month, judge title and H1 changes after two weeks to a month, content changes after two to three months.
+
+## Sources
+
+- Brief: Rahul, 2026-09-06 (voice, two messages).
+- Method: heyTony skill and `seo-intel/sources/creators/hey-tony/insiders/service-page-master.md`; `seo-intel/playbook/new-site.md`, `existing-site-audit.md`, `playbook/local/`.
+- Prior research on disk: `docs/seo/local-seo-playbook-2026.md` (2026-07-20), `docs/seo/competitive-analysis-web-design-page.md` (2026-05-06), `rsla/local-seo/gbp-ranking-strategy.md` (2026-06-09).
+- Data: DataForSEO (search_volume, keyword_suggestions, bulk_keyword_difficulty, serp/google/organic/live/advanced), Search Console `sc-domain:rsla.io`, Sanity `caseStudyV2` and `blogPostV2` for published slugs.

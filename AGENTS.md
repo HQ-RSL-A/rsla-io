@@ -64,6 +64,7 @@ npm run build      # Production build (includes sitemap + RSS + llms.txt + Index
 - **Git auto-deploy + reconnect.** Pushes to `main` on `HQ-RSL-A/rsla-io` auto-deploy via Vercel. If auto-deploy silently stops (e.g. after a repo/org transfer, even while the Vercel link, GitHub App, and `createDeployments` all read healthy), reconnect: `vercel git disconnect --yes` then `vercel git connect https://github.com/HQ-RSL-A/rsla-io.git` (plain `disconnect` is a no-op non-interactively; `--yes` is required). Manual deploy any time: `vercel --prod`.
 - **Vercel bot challenge.** Rapid automated/`curl` hits on rsla.io return `403 x-vercel-mitigated: challenge` (real browsers solve it transparently). To read live HTML programmatically, use the Vercel MCP `web_fetch_vercel_url` (authenticated, bypasses it); don't hammer the domain.
 - **Brand reference:** All brand docs live in `../../brand-guidelines/`.
+- **Service page copy** lives in `docs/seo/service-pages/` (one file per page, `README.md` for the keyword map and open questions, `tracker.md` mirrors Linear RSL-363). Edit the copy files, never the manifest; every count comes from `python3 docs/seo/service-pages/check-copy.py`, which must exit 0 before a page is built or changed.
 
 ## Documentation Convention
 
