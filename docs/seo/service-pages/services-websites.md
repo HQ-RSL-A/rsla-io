@@ -92,7 +92,7 @@ In Kern County? We build these in person; see [web design in Bakersfield](/baker
 
 ### How much does a small business website cost?
 
-Most of our small business websites fall between $2,500 and $6,000, depending on the number of pages and what the site has to do. Online stores, booking systems, and custom functionality push it above that. You get a fixed number after one call, and the number does not move once you sign.
+One fixed price for the whole project, quoted after one call, and it does not move once you sign. What moves the number is the page count, whether the site needs booking, online ordering, or custom functionality, and how much existing content has to be migrated. A five page site for a plumber and a forty page site with a store are different projects, and we tell you which one you need before we quote.
 
 ### How long does it take to build a website?
 
@@ -119,6 +119,6 @@ Not sure whether you need a new site or a repair on the old one? Tell us what yo
 - Replaces the 12 FAQ entries in `serviceData.js` with these 4. The retired questions (hosting, maintenance, updates, upgrades, AEO after build, guaranteed rankings, "site that is not working") are blog post material and the last two move to the redesign and SEO pages.
 - FAQ renders as plain text, never inside `<details>`. Question as an h3 under the h2, answer as a paragraph.
 - Proof row numbers must stay in sync with the two case studies; if either case study changes, this row changes.
-- The $2,500 to $6,000 range is already live on the Bakersfield hub FAQ. Rahul to confirm it is still current before this page ships.
+- No prices on the page (Rahul, 2026-09-06). The cost FAQ describes the pricing model and drivers only.
 - Testimonials are the site's existing five, pasted as text. Rotate in Bakersfield reviews on the local pages as they arrive.
 - One external link (web.dev) can sit in the "What is included" paragraph on "load fast".

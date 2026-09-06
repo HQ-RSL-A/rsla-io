@@ -20,6 +20,12 @@ const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 const SITEMAP_PATH = resolve(__dirname, '../dist/sitemap.xml');
 
 async function pingIndexNow() {
+  // Only a Vercel production build may ping. A local build would submit URLs
+  // that are not live yet (or not live at all), and Bing crawls them as 404s.
+  if (process.env.VERCEL_ENV !== 'production' && !process.argv.includes('--force')) {
+    console.log('IndexNow skipped: not a Vercel production build (pass --force to ping anyway)');
+    return;
+  }
   // Read sitemap and extract URLs
   let sitemap;
   try {

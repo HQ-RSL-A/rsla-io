@@ -5,29 +5,34 @@ import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button
 
 const serviceSubLinks = [
     {
-        title: 'Websites',
-        url: '/services/web-design',
-        description: 'Fast, SEO-ready builds that ship in weeks.',
+        title: 'AI automations',
+        url: '/services/automations',
+        description: 'The missed call that texts itself back. Nothing slips, you get your time back.',
+    },
+    {
+        title: 'CRM systems',
+        url: '/services/crm',
+        description: 'Every lead, quote, and customer in one place, with follow up that runs itself.',
     },
     {
         title: 'Search visibility',
         url: '/services/seo',
-        description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.',
+        description: 'When customers ask Google or ChatGPT who to call, your business is the answer.',
     },
     {
-        title: 'AI automations',
-        url: '/services/ai-automations',
-        description: 'n8n, Make, and custom scripts that replace manual work.',
+        title: 'Websites',
+        url: '/services/websites',
+        description: 'New sites and rebuilds that say what you do in one screen and get found.',
     },
     {
-        title: 'CRM systems',
-        url: '/services/crm-systems',
-        description: 'GoHighLevel pipelines, workflows, and integrations.',
+        title: 'Custom builds',
+        url: '/services/custom-builds',
+        description: 'Internal tools built around how you work, when nothing off the shelf fits.',
     },
     {
-        title: 'Custom development',
-        url: '/services/custom-development',
-        description: 'SaaS products, MVPs, internal tools, APIs.',
+        title: 'Bakersfield, CA',
+        url: '/bakersfield',
+        description: 'Local pages for Kern County: websites, SEO, automation, and CRM, in person.',
     },
 ];
 

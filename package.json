@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.mjs && node scripts/generateSitemap.mjs && node scripts/validateBuild.mjs && node scripts/generateRssFeed.mjs && node scripts/generateLlmsTxt.mjs && node scripts/pingIndexNow.mjs",
+    "build": "node scripts/build-service-copy.mjs && vite build && node scripts/prerender.mjs && node scripts/generateSitemap.mjs && node scripts/validateBuild.mjs && node scripts/generateRssFeed.mjs && node scripts/generateLlmsTxt.mjs && node scripts/pingIndexNow.mjs",
     "lint": "eslint .",
+    "copy": "node scripts/build-service-copy.mjs && python3 docs/seo/service-pages/check-copy.py",
     "preview": "vite preview"
   },
   "dependencies": {

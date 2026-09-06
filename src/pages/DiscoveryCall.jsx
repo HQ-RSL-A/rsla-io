@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import Seo from '../components/Seo';
+import InquiryForm from '@/components/InquiryForm';
+import { PHONE_DISPLAY, PHONE_TEL } from '@/data/serviceConstants.mjs';
 
 export default function DiscoveryCall() {
     const pageRef = useRef(null);
@@ -72,6 +74,14 @@ export default function DiscoveryCall() {
                         className="rounded-xl h-[650px] md:h-[800px]"
                     />
                 </div>
+
+                <section className="mt-16 md:mt-20 max-w-2xl mx-auto" aria-labelledby="inquiry-heading">
+                    <h2 id="inquiry-heading" className="font-sans font-bold text-2xl md:text-3xl tracking-tight text-text mb-3">Prefer to write?</h2>
+                    <p className="font-sans text-lg text-text leading-relaxed mb-8">
+                        Tell us what you need and we reply within one business day. In a hurry? Call <a href={PHONE_TEL} className="text-accent hover:underline underline-offset-4">{PHONE_DISPLAY}</a>.
+                    </p>
+                    <InquiryForm page="/contact" />
+                </section>
 
                 <div className="contact-reveal opacity-0 mt-8 text-center">
                     <p className="font-sans text-sm text-text">

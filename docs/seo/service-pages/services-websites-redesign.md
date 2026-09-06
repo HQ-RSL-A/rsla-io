@@ -98,7 +98,7 @@ Need the rest of the picture, including new builds? See [website design for smal
 
 ### How much does a website redesign cost?
 
-A redesign is priced like a new build, because it usually is one: most land between $2,500 and $6,000, with online stores and custom functionality above that. Migration work, redirect mapping, and the Search Console checks are included in that number, not billed on top. You get a fixed price after one call.
+A redesign is priced like a new build, because it usually is one: a single fixed price after one call. What changes it is how many pages rank and have to be preserved, how much content has to migrate, and whether the new site needs booking, a store, or custom functionality. Redirect mapping and the Search Console checks are part of the number, never billed on top.
 
 ### Will I lose my Google rankings?
 
@@ -124,6 +124,6 @@ Send us the link you are embarrassed by. We will tell you what to keep, what to 
 
 - New child route under Websites. Breadcrumb: Home > Services > Websites > Redesign.
 - The "16 months" figure is Search Console's backfill window; keep it unless Google changes it.
-- "$2,500 to $6,000" is the same range as the parent page. Rahul to confirm.
+- No prices on the page (Rahul, 2026-09-06). Pricing model and price drivers only.
 - Sid S. testimonial appears here and on the parent; replace one with a newer review when available.
 - Do not link to any competitor redesign page.

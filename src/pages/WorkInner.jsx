@@ -7,6 +7,8 @@ import { client } from '@/sanity/lib/client';
 import { caseStudyBySlugV2Query, relatedCaseStudiesQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
 import { PortableTextComponents } from '@/components/blog/PortableTextRenderer';
+import RelatedServices from '@/components/blog/RelatedServices';
+import { caseStudyServiceLinks } from '@/data/blogServiceLinks.mjs';
 import Seo from '@/components/Seo';
 import { TextAnimate } from '@/components/ui/text-animate';
 import ShareBar from '@/components/ShareBar';
@@ -316,6 +318,8 @@ export default function WorkInner() {
                                 })}
                             </div>
                         )}
+
+                        <RelatedServices links={caseStudyServiceLinks[slug]} intro="The services behind this result:" />
 
                         {/* Related blog posts */}
                         {caseStudy.relatedBlogPosts?.length > 0 && (

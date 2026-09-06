@@ -7,6 +7,8 @@ import { urlForImage } from '../sanity/lib/image';
 import { PortableTextComponents, slugify } from '../components/blog/PortableTextRenderer';
 import Seo from '../components/Seo';
 import InlineNewsletterCta from '../components/blog/InlineNewsletterCta';
+import RelatedServices from '@/components/blog/RelatedServices';
+import { blogServiceLinks, serviceUrlFromCapability } from '@/data/blogServiceLinks.mjs';
 import ShareBar from '../components/ShareBar';
 
 function useReadingProgress() {
@@ -194,7 +196,7 @@ export default function BlogInner() {
             mentions: {
                 '@type': 'Service',
                 name: post.relatedCapability.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-                url: `https://rsla.io/services/${post.relatedCapability}`,
+                url: `https://rsla.io${serviceUrlFromCapability(post.relatedCapability)}`,
             },
         }),
     };
@@ -500,6 +502,8 @@ export default function BlogInner() {
                     )}
                 </div>
             </div>
+
+            <RelatedServices links={blogServiceLinks[slug]} />
 
             {/* Keep reading */}
             {post.relatedPosts && post.relatedPosts.length > 0 && (

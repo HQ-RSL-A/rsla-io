@@ -9,6 +9,9 @@
     },
     "api/subscribe.mjs": {
       "runtime": "@vercel/node@5.9.0"
+    },
+    "api/inquiry.mjs": {
+      "runtime": "@vercel/node@5.9.0"
     }
   },
   "headers": [
@@ -85,7 +88,11 @@
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.rsla.io" }], "destination": "https://rsla.io/:path", "statusCode": 301 },
     { "source": "/geo-quiz", "destination": "/", "statusCode": 301 },
     { "source": "/blog/go-high-level-new-features-2025", "destination": "/blog/gohighlevel-updates-2026", "statusCode": 301 },
-    { "source": "/services/websites", "destination": "/services/web-design", "statusCode": 301 },
+    { "source": "/services/web-design", "destination": "/services/websites", "statusCode": 301 },
+    { "source": "/services/ai-automations", "destination": "/services/automations", "statusCode": 301 },
+    { "source": "/services/crm-systems", "destination": "/services/crm", "statusCode": 301 },
+    { "source": "/services/custom-development", "destination": "/services/custom-builds", "statusCode": 301 },
+    { "source": "/services/bakersfield", "destination": "/bakersfield", "statusCode": 301 },
     { "source": "/services/search-visibility", "destination": "/services/seo", "statusCode": 301 },
     { "source": "/blog/gohighlevel-pricing-2026-cost-breakdown", "destination": "/blog/go-high-level-pricing", "statusCode": 301 },
     { "source": "/blog/gohighlevel-for-real-estate", "destination": "/blog/what-is-go-high-level", "statusCode": 301 },
@@ -180,11 +187,11 @@
     { "source": "/product/:slug*", "destination": "/", "statusCode": 301 },
     { "source": "/product-category/:slug*", "destination": "/", "statusCode": 301 },
     { "source": "/blog/top-no-code-tools-for-marketers-2026", "destination": "/blog/ai-marketing-stack-what-we-use", "statusCode": 301 },
-    { "source": "/ai-automation-in-smbs-enhancing-business-productivity", "destination": "/services/ai-automations", "statusCode": 301 },
-    { "source": "/unfolding-marketing-automation-benefits", "destination": "/services/ai-automations", "statusCode": 301 },
+    { "source": "/ai-automation-in-smbs-enhancing-business-productivity", "destination": "/services/automations", "statusCode": 301 },
+    { "source": "/unfolding-marketing-automation-benefits", "destination": "/services/automations", "statusCode": 301 },
     { "source": "/categories/case-studies", "destination": "/work", "statusCode": 301 },
     { "source": "/categories/:slug*", "destination": "/blog", "statusCode": 301 },
-    { "source": "/launch-small-business-website-checklist", "destination": "/services/web-design", "statusCode": 301 },
+    { "source": "/launch-small-business-website-checklist", "destination": "/services/websites", "statusCode": 301 },
     { "source": "/grid-masonry", "destination": "/", "statusCode": 301 }
   ]
 }

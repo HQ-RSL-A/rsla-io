@@ -67,17 +67,41 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 - National pages never lead with Bakersfield. Each carries one "In Kern County?" line linking its Bakersfield sibling. Each Bakersfield page links its national sibling for the full scope.
 - Sibling pages share no sentence above 0.55 Jaccard (testimonials and CTA labels excepted); `check-copy.py` enforces it.
 
-## Open questions for Rahul
+## Decisions taken on 2026-09-06 (Rahul: "make the right decision for now")
 
-1. Pricing on the page. The $2,500 to $6,000 website range is already public on the live Bakersfield hub FAQ and is reused on the websites, redesign, Bakersfield websites, and hub pages. Confirm it is current, or give the new range. The SEO, automation, CRM, and custom pages describe the pricing model only (fixed project price, monthly retainer) and quote no numbers. Add ranges?
-2. Naming clients. "A Bakersfield landscaping company" (Select Landscape, active) appears on the Bakersfield websites and CRM pages; "a local video production business" (Teji Videos, former) on the Bakersfield CRM page. Name them, keep them anonymous, or remove?
-3. The free 49 point scan offer on the SEO pages costs LeadSnap credits per run. Keep it?
-4. "GoHighLevel expert" is the CRM page's H1 phrase, backed by two testimonials that call Rahul an expert. "Certified" is never claimed. Is there a certification, and what is the real count of GoHighLevel accounts built (the page says "dozens" nowhere now, but a real number would help)?
-5. The custom builds page links the Claude Code post and names Supabase and Vercel. Keep the Claude Code link?
-6. The hub says "the coffee place on Ming". Replace with a spot you actually use, or cut.
-7. The programmatic SEO page cites the 12 industry pages and the indexation gate. The indexation check from March was never recorded; if most of those pages are unindexed, that example turns into a lesson rather than a win before the page ships.
-8. The nav label "Search visibility" versus the page H1 "SEO services for small businesses". Keep the nav label?
-9. The brand pitch ladder says automation first, recommended by AI second, websites third. The services index and nav currently lead with websites. Reorder?
+1. Pricing: no number on any page. Each page names the model (fixed project price or monthly retainer) and what moves it. Pricing models are for the review call.
+2. Client naming: kept anonymous ("a Bakersfield landscaping company", "a local video production business") until consent is confirmed.
+3. The free 49 point scan stays. One run per inquiry, fulfilled by hand in LeadSnap.
+4. "GoHighLevel expert" stays, backed by the two published testimonials. "Certified" never appears and no account count is claimed.
+5. The Claude Code link on the custom builds page stays.
+6. "The coffee place on Ming" is cut.
+7. The programmatic SEO page tells the lesson: 12 pages published March 2026, 2 earned impressions in five months, the second batch was never built.
+8. Nav label "Search visibility" stays; the page H1 stays "SEO services for small businesses".
+9. The pitch ladder order is applied everywhere: nav, footer, home bento, and the services index run automation, CRM, search visibility, websites, custom builds.
+10. Added during the gap pass: a written inquiry form on /contact (`/api/inquiry` files the contact, tags, and note in the RSL/A GoHighLevel location), a crawlable footer NAP with tap to call, a mobile call bar on the Bakersfield pages, and the IndexNow ping now runs only on Vercel production builds.
+
+## Still open for Rahul
+
+- Consent to name Select Landscape and Teji Videos on the Bakersfield pages.
+- GTM: add GA4 event tags and key events for `phone_click` and `inquiry_submit`. `cta_click` already exists sitewide. Until then neither event reaches GA4.
+- GoHighLevel: add a workflow "tag added: website-inquiry, then text and email Rahul". The form files the contact and the note today; nobody is told until the workflow exists.
+- The reply promise on /contact reads "within one business day". Keep or change.
+- The home page title still says "The trusted AI growth partner for B2B companies" while every service page says small service businesses.
+- LeadSnap schedule 10278 has produced no grid scans since 2026-06-10. The copy only promises rescans "as the profile climbs", which is honest, but the scan has to run before the Bakersfield SEO page has anything to publish.
+- The CookieScript banner covers the hero CTA on the first mobile visit. That is the CMP layout, not the pages, and it was a deliberate 2026-08-17 decision.
+
+## The 10 to 20 inquiries a week question
+
+Search Console, 28 days to 2026-09-06, whole site: 144 clicks, 59,756 impressions, nearly all of it Claude product and GoHighLevel posts. Queries containing "bakersfield": 2 impressions in 90 days. The Bakersfield cluster in the keyword map above adds up to about 580 searches a month across every phrasing that has measured volume (web design 390, the SEO phrasings 150, marketing agency 40, automation and CRM 0). Ranking first for all of it with a 25 percent click share is about 145 visits a month. At a 5 percent inquiry rate that is 7 inquiries a month, not 10 to 20 a week. These pages cannot hit that goal by themselves inside a month, and the copy is written so nobody has to pretend otherwise.
+
+What can move that number in month one, in order:
+
+1. The Google Business Profile. Map pack traffic is not in the numbers above. Reviews from 3 to 10 (RSL-371), the services list mirrored to the pages (RSL-370), and a weekly post do more than any page edit.
+2. The blog traffic that already exists. Every indexed post and case study now links into the money pages with keyword anchors, and the money pages carry the inquiry path.
+3. Search ads on "web design bakersfield" and the SEO phrasings, landing on the Bakersfield pages. The pages were built as landing pages: one keyword, one CTA, tap to call, plain text FAQ.
+4. Direct outreach that points at the pages instead of a PDF.
+
+The organic side compounds from month three. Judge the pages on Search Console impressions at 28 days and on rank at 90 days, not on inquiries at 30.
 
 ## Follow-up page candidates
 

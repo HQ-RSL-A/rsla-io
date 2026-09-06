@@ -1,44 +1,24 @@
-export function generateFaqSchema(faqs) {
-    if (!faqs || faqs.length === 0) return null;
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqs.map(faq => ({
-            '@type': 'Question',
-            name: faq.q,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.a,
-            },
-        })),
-    };
-}
+import InlineText from '@/components/services/InlineText';
 
-export default function ServiceFaq({ faqs, serviceName }) {
+/**
+ * Plain text FAQ. Never an accordion: the answers are the part of the page
+ * Google and the AI assistants lift, so they stay visible.
+ */
+export default function ServiceFaq({ faqs, heading = 'Questions people ask' }) {
     if (!faqs || faqs.length === 0) return null;
 
     return (
-        <section className="bg-background border-t border-hairline py-20 md:py-28 px-6 md:px-12">
-            <div className="max-w-3xl mx-auto">
-                <h2 className="font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-10">
-                    Frequently asked questions
+        <section className="bg-surface border-t border-hairline py-16 md:py-24 px-6 md:px-12" aria-labelledby="faq-heading">
+            <div className="max-w-6xl mx-auto">
+                <h2 id="faq-heading" className="font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1] mb-10 max-w-3xl [text-wrap:balance]">
+                    {heading}
                 </h2>
-                <div className="flex flex-col gap-3">
-                    {faqs.map((faq, i) => (
-                        <details
-                            key={i}
-                            className="group rounded-xl border border-hairline bg-surface p-5 open:border-accent/30"
-                        >
-                            <summary className="flex items-center justify-between gap-4 font-sans font-bold text-base text-text cursor-pointer list-none">
-                                {faq.q}
-                                <span className="flex-shrink-0 text-accent text-xl leading-none transition-transform duration-md group-open:rotate-45">
-                                    +
-                                </span>
-                            </summary>
-                            <p className="mt-4 font-sans text-base text-text leading-relaxed">
-                                {faq.a}
-                            </p>
-                        </details>
+                <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
+                    {faqs.map((faq) => (
+                        <div key={faq.q} className="mp-reveal max-w-[62ch]">
+                            <h3 className="font-sans font-bold text-xl text-text leading-snug mb-3 [text-wrap:balance]">{faq.q}</h3>
+                            <p className="font-sans text-lg text-text leading-relaxed"><InlineText text={faq.a} /></p>
+                        </div>
                     ))}
                 </div>
             </div>

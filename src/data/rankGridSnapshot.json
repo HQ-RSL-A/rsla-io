@@ -1,0 +1,11 @@
+{
+  "source": "LeadSnap heatmap 1144527, RSL/A location 41934",
+  "keyword": "ai automation agency",
+  "business": "RSL/A",
+  "scannedAt": "2026-06-10",
+  "grid": 7,
+  "spacingMiles": 1.5,
+  "center": { "lat": 35.3733, "lng": -119.0187 },
+  "note": "Every point returned rank 20, LeadSnap's value for outside the top 20. The starting line for a profile verified four days earlier with 3 reviews.",
+  "ranks": [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+}

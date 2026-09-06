@@ -11,6 +11,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Work from './pages/Work';
 import Blog from './pages/Blog';
+import MoneyPage from './components/services/MoneyPage';
 
 // Lazy wrapper for rarely-visited pages (not reachable from hamburger menu)
 function lazyRetry(importFn) {
@@ -66,12 +67,6 @@ function PageLoader() {
 }
 
 // Rarely-visited pages stay lazy (not reachable from hamburger menu)
-const WebDesign = lazyRetry(() => import('./pages/services/WebDesign'));
-const SeoService = lazyRetry(() => import('./pages/services/SeoService'));
-const AiAutomations = lazyRetry(() => import('./pages/services/AiAutomations'));
-const CrmSystems = lazyRetry(() => import('./pages/services/CrmSystems'));
-const CustomDevelopment = lazyRetry(() => import('./pages/services/CustomDevelopment'));
-const CityHub = lazyRetry(() => import('./pages/CityHub'));
 const WorkInner = lazyRetry(() => import('./pages/WorkInner'));
 const BlogInner = lazyRetry(() => import('./pages/BlogInner'));
 const Privacy = lazyRetry(() => import('./pages/Privacy'));
@@ -118,12 +113,19 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/web-design" element={<WebDesign />} />
-            <Route path="/services/seo" element={<SeoService />} />
-            <Route path="/services/ai-automations" element={<AiAutomations />} />
-            <Route path="/services/crm-systems" element={<CrmSystems />} />
-            <Route path="/services/custom-development" element={<CustomDevelopment />} />
-            <Route path="/services/:citySlug" element={<CityHub />} />
+            <Route path="/services/websites" element={<MoneyPage route="/services/websites" />} />
+            <Route path="/services/websites/redesign" element={<MoneyPage route="/services/websites/redesign" />} />
+            <Route path="/services/seo" element={<MoneyPage route="/services/seo" />} />
+            <Route path="/services/seo/local" element={<MoneyPage route="/services/seo/local" />} />
+            <Route path="/services/seo/programmatic" element={<MoneyPage route="/services/seo/programmatic" />} />
+            <Route path="/services/automations" element={<MoneyPage route="/services/automations" />} />
+            <Route path="/services/crm" element={<MoneyPage route="/services/crm" />} />
+            <Route path="/services/custom-builds" element={<MoneyPage route="/services/custom-builds" />} />
+            <Route path="/bakersfield" element={<MoneyPage route="/bakersfield" />} />
+            <Route path="/bakersfield/websites" element={<MoneyPage route="/bakersfield/websites" />} />
+            <Route path="/bakersfield/seo" element={<MoneyPage route="/bakersfield/seo" />} />
+            <Route path="/bakersfield/automations" element={<MoneyPage route="/bakersfield/automations" />} />
+            <Route path="/bakersfield/crm" element={<MoneyPage route="/bakersfield/crm" />} />
 
             {/* Ported Routes */}
             <Route path="/blog" element={<Blog />} />

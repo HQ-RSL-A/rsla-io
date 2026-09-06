@@ -20,6 +20,11 @@ import { marked } from 'marked';
 import sanitizeHtml from 'sanitize-html';
 import { portableTextToMarkdown } from '../api/lib/portableTextToMarkdown.mjs';
 import { globalSchemas, businessRef, websiteRef, founderRef } from '../src/lib/structuredData.mjs';
+import { blogServiceLinks, caseStudyServiceLinks, serviceUrlFromCapability } from '../src/data/blogServiceLinks.mjs';
+import { PHONE_TEL, PHONE_DISPLAY, KERN_TOWNS } from '../src/data/serviceConstants.mjs';
+import { generateFaqSchema } from '../src/lib/faqSchema.mjs';
+
+const servicePages = JSON.parse(readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), '../src/data/servicePages.generated.json'), 'utf-8'));
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(__dirname, '../dist');
@@ -53,11 +58,15 @@ const siteNav = `<nav aria-label="Main navigation"><ul>
 <li><a href="/about">About</a></li>
 <li><a href="/services">Services</a>
 <ul>
-<li><a href="/services/web-design">Web Design</a></li>
-<li><a href="/services/seo">SEO</a></li>
-<li><a href="/services/ai-automations">AI Automations</a></li>
-<li><a href="/services/crm-systems">CRM Systems</a></li>
-<li><a href="/services/custom-development">Custom Development</a></li>
+<li><a href="/services/automations">AI automations</a></li>
+<li><a href="/services/crm">CRM systems</a></li>
+<li><a href="/services/seo">Search visibility</a>
+<ul><li><a href="/services/seo/local">Local SEO</a></li><li><a href="/services/seo/programmatic">Programmatic SEO</a></li></ul></li>
+<li><a href="/services/websites">Websites</a>
+<ul><li><a href="/services/websites/redesign">Website redesign</a></li></ul></li>
+<li><a href="/services/custom-builds">Custom builds</a></li>
+<li><a href="/bakersfield">Bakersfield, CA</a>
+<ul><li><a href="/bakersfield/websites">Web design in Bakersfield</a></li><li><a href="/bakersfield/seo">SEO in Bakersfield</a></li><li><a href="/bakersfield/automations">AI automation in Bakersfield</a></li><li><a href="/bakersfield/crm">CRM setup in Bakersfield</a></li></ul></li>
 </ul>
 </li>
 <li><a href="/work">Case Studies</a></li>
@@ -293,82 +302,37 @@ function aboutContent() {
 }
 
 function servicesContent() {
+  const offers = [
+    ['AI automations', '/services/automations', 'The missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM. Nothing slips.'],
+    ['CRM systems', '/services/crm', 'Every lead, quote, and customer in one place you can run from your phone. Built on GoHighLevel.'],
+    ['Search visibility', '/services/seo', 'When customers ask Google or ChatGPT who to call, your business is the answer. SEO, local SEO, and AI answers.'],
+    ['Websites', '/services/websites', 'New sites and rebuilds that say what you do in one screen, load fast on a phone, and get found.'],
+    ['Custom builds', '/services/custom-builds', 'Internal tools built around how you work: trackers, dashboards, quote builders. When nothing off the shelf fits.'],
+  ];
   return {
-    title: 'Local SEO Services & AI Marketing for Small Business | RSL/A',
-    description: 'Local SEO services, custom web design, AI automation, and CRM systems for small businesses. End-to-end systems that get you found and keep you growing.',
+    title: 'What we build for small service businesses | RSL/A',
+    description: 'AI automation, CRM systems, search visibility, websites, and custom builds for solopreneurs and small service businesses. Fixed price, real numbers, one call to start.',
     canonical: `${SITE}/services`,
-    keywords: 'local seo services, local seo for small business, web design agency, AI automation, CRM setup, marketing agency, local seo packages',
     jsonLd: {
       '@context': 'https://schema.org',
       '@id': `${SITE}/#business`,
       hasOfferCatalog: {
-        '@type': 'OfferCatalog', name: 'AI Services',
-        itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Websites', description: 'New builds and full rebuilds. Fast, custom-designed, SEO-ready.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Search visibility', description: 'Rankings on Google, ChatGPT, Perplexity, and Claude.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI automations', description: 'n8n, Make, and custom scripts that replace manual work.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM systems', description: 'GoHighLevel pipelines, workflows, and integrations.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom development', description: 'SaaS products, MVPs, internal tools, APIs.' } },
-        ],
+        '@type': 'OfferCatalog', name: 'Services',
+        itemListElement: offers.map(([name, path, description]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, url: `${SITE}${path}`, description } })),
       },
     },
     html: `<main>
-<h1>What we build for B2B companies.</h1>
-<p>We do not do "marketing." We build AI infrastructure for founders. Here is what that actually means.</p>
-
-<section id="lead-generation"><h2>Lead gen: Stop paying for clicks. Start paying for customers.</h2>
-<h3>The problem</h3>
-<p>Most founders either boost posts and hope for the best, or they hire an agency that shows them impressions and reach numbers. Neither gets you customers.</p>
-<h3>What we build</h3>
+<h1>What we build for small service businesses.</h1>
+<p>Automation first, because that is where the hours go. Then getting found, a website that says what you do, a CRM that catches every lead, and the tools nobody sells. Fixed price, real numbers, one call to start.</p>
 <ul>
-<li><strong>Targeting that learns:</strong> Your campaigns learn which audiences convert and shift budget toward them automatically. No manual bid adjustments.</li>
-<li><strong>Creative testing at scale:</strong> We test dozens of ad variations simultaneously. AI identifies the winners and kills the losers before they waste your money.</li>
-<li><strong>Pipeline integration:</strong> Every qualified lead flows directly into your CRM. Tagged, scored, and ready for follow-up. No spreadsheets, no manual entry.</li>
-<li><strong>Real-time dashboards:</strong> You see exactly what your ad spend is producing. Not vanity metrics. Revenue metrics.</li>
+${offers.map(([name, path, description]) => `<li><a href="${path}"><strong>${esc(name)}</strong></a>: ${esc(description)}</li>`).join('\n')}
 </ul>
-<p><em>$600 in ad spend turned into $36,000 in closed revenue in 45 days. That is a 60x return. Not because of magic creative. Because the AI system optimized faster than any human could.</em></p>
+<section><h2>Based in Bakersfield, CA</h2>
+<p><a href="/bakersfield">Websites, SEO, automation, and CRM for Kern County businesses</a></p>
 </section>
-
-<section id="automations"><h2>Zero manual work: Your business should not stop working when you do.</h2>
-<h3>The problem</h3>
-<p>A lead messages you at 11 PM. You see it at 8 AM. By then they have already talked to two of your competitors. You lost the deal because you were sleeping. That is not a business problem. That is an infrastructure problem.</p>
-<h3>What we build</h3>
-<ul>
-<li><strong>Conversational bots:</strong> Not the robotic "please select an option" kind. Actual AI that understands context, qualifies leads, answers questions, and books meetings. At 2 AM. At 2 PM. Whenever.</li>
-<li><strong>Workflow automations:</strong> Lead comes in, gets tagged, gets the right follow-up sequence, gets routed to the right person. Automatically. You do not touch it.</li>
-<li><strong>Customer service AI:</strong> Handle the 80% of customer questions that are the same thing asked slightly differently. Your team focuses on the 20% that actually need a human.</li>
-<li><strong>Database reactivation:</strong> Got a list of cold contacts collecting dust? AI wakes them up. Personalized outreach at scale, not mass blasts.</li>
-</ul>
-<p><em>We built an AI chat system for an e-commerce brand that cut manual customer service hours by 80%. And the customers rated the experience higher than when humans were handling it.</em></p>
-</section>
-
-<section id="operations"><h2>Operations: Stop managing tools. Let AI manage your business.</h2>
-<h3>The problem</h3>
-<p>You are paying for Calendly. And Mailchimp. And some CRM you barely use. And a website builder. And a texting platform. And maybe two more things you forgot about. None of them talk to each other. You are the integration layer. That is expensive. Not just the subscriptions. Your time.</p>
-<h3>What we build</h3>
-<ul>
-<li><strong>Unified pipeline:</strong> Every lead, every deal, every customer in one place. AI tells you what needs attention today, not a spreadsheet you forgot to update.</li>
-<li><strong>Intelligent follow ups:</strong> The system knows when someone has not responded and sends the right nudge at the right time. Not a generic "just checking in" email. Something contextual.</li>
-<li><strong>Automated reporting:</strong> Stop building reports manually. Your dashboard updates in real time. Revenue, pipeline, conversion rates. All of it.</li>
-<li><strong>Calendar and booking integration:</strong> One link, one system, no double bookings, no "let me check my availability" back and forth.</li>
-</ul>
-<p><em>We reactivated a dead database of 13,000 cold contacts and booked 42 qualified appointments in one week. Not by emailing everyone the same thing. By using AI to personalize outreach based on what we knew about each contact.</em></p>
-</section>
-
-<section id="digital-presence"><h2>Digital presence: Your website should work as hard as you do.</h2>
-<h3>The problem</h3>
-<p>You have a website. It looks okay. But it is basically a digital business card that does not do anything. No one finds it on Google. The few people who do visit do not convert. And you have no idea why because there is no data.</p>
-<h3>What we build</h3>
-<ul>
-<li><strong>Conversion-focused design:</strong> Every page built around one goal: getting the visitor to take the next step. Tested layouts and copy that improve over time.</li>
-<li><strong>SEO infrastructure:</strong> Content strategy informed by AI research. We target the searches your ideal clients are actually making, not vanity keywords.</li>
-<li><strong>Performance tracking:</strong> You know exactly where visitors come from, what they do, and why they leave. No guessing.</li>
-<li><strong>Content engine:</strong> AI-assisted content creation for blogs, case studies, and landing pages that drive organic traffic consistently.</li>
-</ul>
-</section>
-
-<section><h2>Local services</h2>
-<ul><li><a href="/services/bakersfield">Bakersfield, CA</a></li></ul>
+<section><h2>Not sure where to start?</h2>
+<p>Book a free 30-minute call and we will map out exactly what your business needs.</p>
+<p><a href="/contact">Book a free call</a></p>
 </section>
 </main>`,
   };
@@ -751,257 +715,108 @@ function contactContent() {
 }
 
 // Service detail pages (5 service categories matching src/data/serviceData.js)
-const SERVICE_DETAILS = {
-  'web-design': {
-    title: 'Web Design',
-    headline: 'Websites That Win Business',
-    description: 'Custom B2B web design and website redesign services. React and Next.js builds that convert visitors into leads. Get a website that works as hard as you do.',
-    metaTitle: 'Custom Web Design Agency | RSL/A',
-    metaDescription: 'Custom B2B web design and website redesign services. React and Next.js builds that convert visitors into leads. Get a website that works as hard as you do.',
-    keywords: 'custom web design, B2B website design, website redesign, React website, Next.js website, conversion-focused design',
-    features: [
-      'Custom React and Next.js builds from scratch',
-      'Conversion copy and Figma design included',
-      'Mobile-first, performance-optimized, SEO-ready',
-      'Headless CMS integration (Sanity, Contentful)',
-      'Full redesigns that identify and fix conversion blockers',
-    ],
-    caseStudies: [
-      { href: '/work/fieldshare-seo-website-rebrand', title: 'Fieldshare: Cited by ChatGPT, Gemini and Google AI', metric: '146 referring domains, 29K impressions' },
-      { href: '/work/rsla-organic-growth', title: 'Blank Domain to 265K Impressions in 6 Months', metric: '204 keywords ranked, $0 ad spend' },
-    ],
-    faqs: [
-      { q: 'What platforms do you build on?', a: 'We build primarily in React and Next.js. Most client sites ship on Vercel with a Sanity or headless CMS backend. If you have an existing stack we can work within it.' },
-      { q: 'How long does a website project take?', a: 'A standard marketing site takes 4 to 6 weeks from kickoff to launch. Larger builds with custom functionality run 8 to 12 weeks. We give you a firm timeline before we start.' },
-      { q: 'Do you handle copywriting and design too?', a: 'Yes. We write conversion copy, design in Figma, and hand off a production-ready site. You don\'t need a separate designer or copywriter.' },
-      { q: 'What if I already have a site and just want a redesign?', a: 'Redesigns are a big part of what we do. We audit your current site, identify what\'s hurting conversions, and rebuild from there. Sometimes that\'s a full rebuild; sometimes it\'s targeted changes to key pages.' },
-    ],
-  },
-  'seo': {
-    title: 'SEO',
-    headline: 'Get Found. Get Chosen.',
-    description: 'Local SEO services and answer engine optimization for small businesses. We rank you in search and AI answers so the right customers find you first.',
-    metaTitle: 'Local SEO Services for Small Business | RSL/A',
-    metaDescription: 'Local SEO services and answer engine optimization for small businesses. We rank you in search and AI answers so the right customers find you first.',
-    keywords: 'local seo services, local seo for small business, answer engine optimization, technical seo, google business profile, AEO',
-    features: [
-      'Local SEO and Google Business Profile optimization',
-      'Answer engine optimization (AEO) for ChatGPT, Perplexity, and Google AI Overviews',
-      'Technical SEO audit: Core Web Vitals, crawlability, schema markup',
-      'Content strategy targeting searches your buyers actually make',
-      'Citation building and review strategy',
-    ],
-    caseStudies: [
-      { href: '/work/rsla-organic-growth', title: '0 to 204 Keywords in 6 Months', metric: '265K+ impressions, 39 AI citations' },
-      { href: '/work/fieldshare-seo-website-rebrand', title: 'Fieldshare: Cited by ChatGPT, Gemini and Google AI', metric: '146 referring domains, 29K impressions' },
-    ],
-    faqs: [
-      { q: 'What is answer engine optimization and why does it matter?', a: 'AEO is the practice of structuring your content so AI tools like ChatGPT, Perplexity, and Google\'s AI Overviews cite you as a source. As more searches end without a click, showing up in AI answers is how you stay visible. We optimize both traditional search and AI-generated answers.' },
-      { q: 'How quickly will I see results from local SEO?', a: 'Most clients see measurable movement in Google Business Profile rankings within 30 to 60 days. Organic keyword rankings typically move at 90 to 180 days depending on how competitive your market is.' },
-      { q: 'Do you handle Google Business Profile?', a: 'Yes. GBP optimization is a core part of local SEO. We handle the full setup or audit, category selection, citation building, review strategy, and ongoing posting.' },
-      { q: 'What does technical SEO cover?', a: 'Core Web Vitals, crawlability, indexing, schema markup, site speed, internal linking, and fixing anything that\'s telling Google to look elsewhere. We run a full audit at the start of every engagement.' },
-    ],
-  },
-  'ai-automations': {
-    title: 'AI Automations',
-    headline: 'Automate the Work. Keep the Margin.',
-    description: 'AI automation agency specializing in n8n, Make, and custom AI agents. Automate lead response, onboarding, ops, and marketing workflows without adding staff.',
-    metaTitle: 'AI Automation Agency | n8n and Make Workflows | RSL/A',
-    metaDescription: 'AI automation agency specializing in n8n, Make, and custom AI agents. Automate lead response, onboarding, ops, and marketing workflows without adding staff.',
-    keywords: 'AI automation agency, workflow automation, n8n automation, Make automation, AI agents, business process automation',
-    features: [
-      'n8n and Make (Integromat) workflow automation',
-      'Custom AI agents for lead qualification and response',
-      'Sales, onboarding, ops, and marketing automation',
-      'CRM integration and data routing',
-      'Full documentation and optional maintenance retainers',
-    ],
-    caseStudies: [
-      { href: '/work/ai-cold-email-personalization', title: '1,200 Personalized Cold Emails a Day', metric: '3-step automation, ~$0 per email' },
-      { href: '/work/notion-productivity-dashboard-anchor-safety', title: 'A Voice-to-Task Bot and 3 Dashboards', metric: '160 daily tasks organized' },
-    ],
-    faqs: [
-      { q: 'What tools do you use to build automations?', a: 'We build primarily in n8n and Make (Integromat) for workflow automation. For AI-native agents we use LangChain, OpenAI function calling, and Anthropic Claude depending on the use case. The right tool depends on what you\'re trying to automate.' },
-      { q: 'How long does a typical automation project take?', a: 'Straightforward workflows (lead routing, notification systems) take 1 to 2 weeks. Multi-step AI agents with custom logic take 3 to 6 weeks. We scope it before we start so there are no surprises.' },
-      { q: 'What kinds of work can you automate?', a: 'Lead response, appointment booking, CRM data entry, invoice follow-up, content repurposing, customer onboarding, reporting, and internal ops workflows are the most common. If you\'re doing it manually and it\'s repetitive, it\'s probably automatable.' },
-      { q: 'Do I need to know how to maintain these automations after you build them?', a: 'No. We document everything and offer maintenance retainers if you want us to keep them running. If you want to manage them yourself, we\'ll train your team before handoff.' },
-    ],
-  },
-  'crm-systems': {
-    title: 'CRM Systems',
-    headline: 'One System. Every Lead, Every Client.',
-    description: 'GoHighLevel setup, CRM configuration, and ongoing management by a certified GHL consultant. Stop losing leads to slow follow-up and disconnected systems.',
-    metaTitle: 'GoHighLevel Setup and CRM Service | RSL/A',
-    metaDescription: 'GoHighLevel setup, CRM configuration, and ongoing management by a certified GHL consultant. Stop losing leads to slow follow-up and disconnected systems.',
-    keywords: 'GoHighLevel setup, CRM setup service, GoHighLevel consultant, GHL implementation, CRM management, marketing automation',
-    features: [
-      'Full GoHighLevel account configuration and pipeline setup',
-      'Automated follow-up sequences via email and SMS',
-      'Calendar integration and lead capture forms',
-      'Data migration from HubSpot, Salesforce, Keap, and spreadsheets',
-      'Team training and optional ongoing management retainer',
-    ],
-    caseStudies: [
-      { href: '/work/salon-marketing-automation-roi', title: '$600 in Ads to $36K in Rental Income', metric: '60X return on ad spend' },
-      { href: '/work/ai-cold-email-personalization', title: '1,200 Personalized Cold Emails a Day', metric: '3-step automation, ~$0 per email' },
-    ],
-    faqs: [
-      { q: 'Why GoHighLevel and not HubSpot or Salesforce?', a: 'GoHighLevel is purpose-built for service businesses and agencies. It combines CRM, email, SMS, pipelines, booking, websites, and reporting in one platform at a fraction of the cost of enterprise tools. For most of our clients it replaces 4 or 5 separate subscriptions.' },
-      { q: 'What does a GoHighLevel setup project include?', a: 'Full account configuration, pipeline setup, automated follow-up sequences, calendar integration, lead capture forms, and a training session for your team. We build it around your actual sales process, not a generic template.' },
-      { q: 'Can you migrate us from another CRM?', a: 'Yes. We\'ve migrated clients from HubSpot, Salesforce, Keap, and spreadsheets. Data migration depends on how clean your existing records are but we handle the full process.' },
-      { q: 'Do you offer ongoing management after setup?', a: 'Yes. Monthly management retainers cover system maintenance, new automation builds, reporting, and optimization. Most clients stay on retainer because the system keeps growing as the business does.' },
-    ],
-  },
-  'custom-development': {
-    title: 'Custom Development',
-    headline: 'Build What Doesn\'t Exist Yet.',
-    description: 'Custom software development for SaaS, MVPs, and internal tools. Ship your first version in weeks, not months. Full-stack React, Node.js, and API builds.',
-    metaTitle: 'Custom Software and SaaS Development | RSL/A',
-    metaDescription: 'Custom software development for SaaS, MVPs, and internal tools. Ship your first version in weeks, not months. Full-stack React, Node.js, and API builds.',
-    keywords: 'custom software development, SaaS development, MVP development, internal tools, API development, full-stack development',
-    features: [
-      'SaaS MVPs and client-facing portals',
-      'Internal ops tools and data dashboards',
-      'API integrations and workflow applications',
-      'React, Next.js, Node.js, Python, PostgreSQL, Supabase',
-      'Post-launch support retainers and feature additions',
-    ],
-    caseStudies: [
-      { href: '/work/notion-productivity-dashboard-anchor-safety', title: '300 Files Replaced With 3 Notion Dashboards', metric: '160 daily tasks organized' },
-      { href: '/work/ai-cold-email-personalization', title: '1,200 Personalized Cold Emails a Day', metric: '3-step automation, ~$0 per email' },
-    ],
-    faqs: [
-      { q: 'What kind of projects do you take on?', a: 'SaaS MVPs, client-facing portals, internal ops tools, API integrations, data dashboards, and workflow applications. We\'re best suited for projects where you need to move fast and ship something production-ready, not a prototype.' },
-      { q: 'What\'s your tech stack?', a: 'React and Next.js on the frontend, Node.js and Python on the backend, PostgreSQL and Supabase for databases, and Vercel for hosting. We pick the right tool for the project rather than forcing everything into one stack.' },
-      { q: 'How fast can you ship an MVP?', a: 'Well-scoped MVPs with clear requirements typically ship in 4 to 8 weeks. The biggest variable is scope clarity at the start. We run a discovery session before any build to make sure we both know exactly what\'s being built.' },
-      { q: 'What happens after launch?', a: 'We offer post-launch support retainers for bug fixes, feature additions, and infrastructure management. Most clients move to a retainer because there\'s always a next phase once users start giving feedback.' },
-    ],
-  },
+// ── Service and Bakersfield money pages (from src/data/servicePages.generated.json) ──
+
+
+// Real images the React visuals render, so the static HTML carries them too. Alt text matches the components.
+const PAGE_IMAGES = {
+  '/services/websites': [
+    { src: '/images/portfolio/fieldshare-after.jpg', alt: 'Fieldshare website homepage, a field management platform for oil and gas' },
+    { src: '/images/portfolio/caplanCommunications.jpg', alt: 'Caplan Communications website homepage, a public relations agency' },
+    { src: '/images/process/design.jpg', alt: 'Design: website layouts being sketched and reviewed on screen' },
+    { src: '/images/process/launch.jpg', alt: 'Launch: the finished website open on a phone and a laptop' },
+  ],
+  '/services/websites/redesign': [
+    { src: '/images/portfolio/fieldshare-before.jpg', alt: "Fieldshare's homepage before the redesign" },
+    { src: '/images/portfolio/fieldshare-after.jpg', alt: "Fieldshare's homepage after the redesign" },
+    { src: '/images/process/build.jpg', alt: 'Build: code for a client website open in an editor' },
+  ],
+  '/bakersfield': [
+    { src: '/images/rahul.webp', alt: 'Rahul Lalia, founder of RSL/A' },
+    { src: '/images/process/onboarding.jpg', alt: 'First call: a notebook and laptop on a desk during a client kickoff' },
+  ],
+  '/bakersfield/websites': [
+    { src: '/images/portfolio/fieldshare-after.jpg', alt: 'Fieldshare website homepage, a field management platform for oil and gas' },
+    { src: '/images/rahul.webp', alt: 'Rahul Lalia, founder of RSL/A' },
+    { src: '/images/process/launch.jpg', alt: 'Launch: the finished website open on a phone and a laptop' },
+  ],
+  '/bakersfield/seo': [{ src: '/images/rahul.webp', alt: 'Rahul Lalia, founder of RSL/A' }],
+  '/bakersfield/automations': [{ src: '/images/rahul.webp', alt: 'Rahul Lalia, founder of RSL/A' }],
+  '/bakersfield/crm': [{ src: '/images/rahul.webp', alt: 'Rahul Lalia, founder of RSL/A' }],
 };
 
-function serviceDetailContent(slug) {
-  const s = SERVICE_DETAILS[slug];
-  if (!s) return null;
-
-  // Page intentionally blank (content cleared 2026-07-22). Route + SEO meta preserved; rebuild content here.
-  return {
-    route: `/services/${slug}`,
-    title: s.metaTitle,
-    description: s.metaDescription,
-    canonical: `${SITE}/services/${slug}`,
-    keywords: s.keywords,
-    jsonLd: [],
-    html: `<main>
-<h1>${esc(s.title)}</h1>
-</main>`,
-  };
+function inlineToHtml(text) {
+  const parts = [];
+  let last = 0;
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    parts.push(esc(text.slice(last, m.index)));
+    const [, label, href] = m;
+    const external = /^https?:/.test(href);
+    parts.push(`<a href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${esc(label)}</a>`);
+    last = m.index + m[0].length;
+  }
+  parts.push(esc(text.slice(last)));
+  return parts.join('');
 }
 
-// City hub pages
-const CITY_DATA = {
-  bakersfield: {
-    metaTitle: 'Marketing Agency Bakersfield CA | RSL/A',
-    metaDescription: 'RSL/A is a digital marketing agency based in Bakersfield, CA. Web design, SEO, and online growth for Kern County businesses.',
-    keywords: 'marketing agency bakersfield, web design bakersfield, bakersfield seo, digital marketing bakersfield ca, seo bakersfield, bakersfield web design, website design bakersfield, search engine optimization bakersfield ca',
-    canonical: 'https://rsla.io/services/bakersfield',
-    headline: 'Digital marketing that works for Bakersfield businesses.',
-    subheadline: 'Based right here in Bakersfield - we build websites and run SEO for local businesses ready to grow online.',
-    intro: 'Bakersfield is one of the fastest-growing metros in California, and the competition for online visibility is real. Whether you\'re in the 661, near the Westside, or out in Kern County, your customers are searching Google before they call anyone. A strong web presence is no longer optional - it\'s the difference between being found and being invisible.',
-    whyLocal: 'RSL/A is built in Bakersfield. Not a remote agency that lists the city on a page to rank - we\'re actually here. That means we understand the market, the pace, and what Bakersfield businesses are up against. We don\'t need a discovery call to understand your geography.',
-    industries: [
-      'Agriculture and farming',
-      'Oil and energy',
-      'Healthcare and medical',
-      'Professional services and law firms',
-      'Restaurants and hospitality',
-      'Construction and home services',
-      'Auto dealerships and repair shops',
-    ],
-    serviceHighlights: [
-      { slug: 'web-design', name: 'Web Design', desc: 'Custom React and Next.js websites built for conversion, speed, and brand credibility.' },
-      { slug: 'seo', name: 'SEO', desc: 'Local SEO, Google Business Profile, and answer engine optimization for Kern County businesses.' },
-    ],
-    faqs: [
-      { q: 'Do you only work with Bakersfield businesses?', a: 'No. Our clients are primarily national, but we\'re based in Bakersfield and actively working to help local businesses get online visibility. If you\'re in Kern County, we know your market and can hit the ground running.' },
-      { q: 'What does a website cost for a local Bakersfield business?', a: 'Most small business websites fall in the $2,500 to $6,000 range depending on scope. If you need e-commerce, booking systems, or custom functionality, it goes up from there. We\'ll give you a straight number after one conversation.' },
-      { q: 'Can you help with Google Business Profile and local search?', a: 'Yes. Local SEO - including Google Business Profile optimization - is part of our SEO service. For Bakersfield businesses, showing up in the local pack is often more valuable than ranking on page one organically.' },
-      { q: 'How do we get started?', a: 'Fill out the contact form or book a call directly. We\'ll talk through where you are, what you need, and whether it\'s a fit. No hard pitch, no long sales process - just a direct conversation.' },
-    ],
-  },
-};
+function relatedServicesHtml(links, intro) {
+  if (!links || !links.length) return '';
+  return `<aside aria-label="Related services"><p><strong>${esc(intro)}</strong></p><ul>${links.map(l => `<li><a href="${esc(l.to)}">${esc(l.label)}</a></li>`).join('')}</ul></aside>`;
+}
 
-function cityHubContent(slug) {
-  const c = CITY_DATA[slug];
-  if (!c) return null;
+function moneyPageContent(page) {
+  const isLocal = Boolean(page.city);
+  const serviceSchema = {
+    '@context': 'https://schema.org', '@type': 'Service',
+    name: page.h1, description: page.meta, url: page.canonical, provider: businessRef,
+    areaServed: isLocal
+      ? [{ '@type': 'City', name: 'Bakersfield', containedInPlace: { '@type': 'AdministrativeArea', name: 'Kern County, California' } }, ...KERN_TOWNS.slice(1).map(name => ({ '@type': 'City', name }))]
+      : { '@type': 'Country', name: 'US' },
+  };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: page.breadcrumb.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.item })),
+  };
+  const faqSchema = generateFaqSchema(page.faqs);
 
-  const industriesHtml = c.industries.map(i => `<li>${esc(i)}</li>`).join('\n');
-  const servicesHtml = c.serviceHighlights.map(s =>
-    `<li><a href="/services/${esc(s.slug)}">${esc(s.name)}</a> — ${esc(s.desc)}</li>`
-  ).join('\n');
-  const faqHtml = c.faqs.map(f =>
-    `<dt>${esc(f.q)}</dt><dd>${esc(f.a)}</dd>`
-  ).join('\n');
+  const crumbs = page.breadcrumb.map((c, i) => i === page.breadcrumb.length - 1
+    ? `<span aria-current="page">${esc(c.name)}</span>`
+    : `<a href="${esc(c.item.replace(SITE, '') || '/')}">${esc(c.name)}</a>`).join(' / ');
+  const lead = page.lead ? esc(page.lead.text) : '';
+  const ctaHtml = (label, lead) => `${lead ? `<p>${inlineToHtml(lead)}</p>` : ''}<p><a href="/contact">${esc(label)}</a> · <a href="${PHONE_TEL}">Call ${PHONE_DISPLAY}</a></p>`;
+  const images = (PAGE_IMAGES[page.route] || []).map(i => `<figure><img src="${i.src}" alt="${esc(i.alt)}" loading="lazy" /></figure>`).join('');
+
+  const sections = page.sections.map(sec => {
+    const blocks = sec.blocks.map(b => {
+      if (b.type === 'p') return `<p>${inlineToHtml(b.text)}</p>`;
+      if (b.type === 'ol') return `<ol>${b.items.map(it => `<li>${inlineToHtml(it)}</li>`).join('')}</ol>`;
+      if (b.type === 'quote') return `<blockquote><p>${esc(b.text)}</p>${b.cite ? `<cite>${esc(b.cite)}</cite>` : ''}</blockquote>`;
+      if (b.type === 'cta') return `<p><strong>${inlineToHtml(b.lead)}</strong> <a href="/contact">${esc(b.label)}</a></p>`;
+      return '';
+    }).join('\n');
+    return `<section>${sec.heading ? `<h2>${esc(sec.heading)}</h2>` : ''}\n${blocks}</section>`;
+  }).join('\n');
+
+  const faqs = `<section><h2>${esc(page.faqHeading || 'Questions people ask')}</h2>${page.faqs.map(f => `<h3>${esc(f.q)}</h3><p>${inlineToHtml(f.a)}</p>`).join('')}</section>`;
 
   return {
-    route: `/services/${slug}`,
-    title: c.metaTitle,
-    description: c.metaDescription,
-    canonical: c.canonical,
-    keywords: c.keywords,
-    jsonLd: [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Digital Marketing, Web Design & SEO in Bakersfield, CA',
-        serviceType: 'Digital marketing agency',
-        url: c.canonical,
-        description: c.metaDescription,
-        provider: businessRef,
-        areaServed: {
-          '@type': 'City',
-          name: 'Bakersfield',
-          containedInPlace: { '@type': 'AdministrativeArea', name: 'Kern County, California' },
-        },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: c.faqs.map(f => ({
-          '@type': 'Question',
-          name: f.q,
-          acceptedAnswer: { '@type': 'Answer', text: f.a },
-        })),
-      },
-    ],
+    route: page.route,
+    title: page.title,
+    description: page.meta,
+    canonical: page.canonical,
+    jsonLd: [serviceSchema, breadcrumbSchema, faqSchema],
     html: `<main>
-<nav aria-label="Breadcrumb"><a href="/services">Services</a> / Bakersfield</nav>
-<h1>${esc(c.headline)}</h1>
-<p>${esc(c.subheadline)}</p>
-<p>${esc(c.intro)}</p>
-
-<section>
-<h2>Services for Bakersfield businesses</h2>
-<ul>
-${servicesHtml}
-</ul>
-</section>
-
-<section>
-<h2>Industries we serve in Kern County</h2>
-<ul>
-${industriesHtml}
-</ul>
-</section>
-
-<section>
-<h2>Frequently asked questions</h2>
-<dl>
-${faqHtml}
-</dl>
-</section>
-
-<p>${esc(c.whyLocal)}</p>
-<p><a href="/contact">Book a free call</a> | <a href="/services">All Services</a></p>
+<nav aria-label="Breadcrumb">${crumbs}</nav>
+<h1>${esc(page.h1)}</h1>
+<p class="lead">${lead}</p>
+${ctaHtml(page.heroCta.label, page.heroCta.lead)}
+${images}
+<ul class="proof">${page.proof.map(p => `<li>${esc(p)}</li>`).join('')}</ul>
+${sections}
+${faqs}
+<section><h2>${esc(page.finalCta.text)}</h2>${ctaHtml(page.finalCta.label, '')}</section>
 </main>`,
   };
 }
@@ -1225,7 +1040,7 @@ function blogPostContent(post) {
         mentions: {
           '@type': 'Service',
           name: post.relatedCapability.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-          url: `${SITE}/services/${post.relatedCapability}`,
+          url: `${SITE}${serviceUrlFromCapability(post.relatedCapability)}`,
         },
       }),
     },
@@ -1288,6 +1103,7 @@ ${post.pullQuote ? `<p class="tldr"><strong>TL;DR:</strong> ${esc(post.pullQuote
 ${keyTakeawaysHtml}
 ${bodyHtml}
 ${bottomLineHtml}
+${relatedServicesHtml(blogServiceLinks[post.slug], 'If this is the problem you are solving, we do the work:')}
 </article></main>`,
   };
 }
@@ -1346,6 +1162,7 @@ ${cs.solutionApproach ? `<section><h2>The Solution</h2><p>${esc(cs.solutionAppro
 ${cs.resultsOutcome ? `<section><h2>The Results</h2><p>${esc(cs.resultsOutcome)}</p></section>` : ''}
 ${bodyHtml}
 ${takeawaysHtml ? `<section><h2>Key Takeaways</h2><ol>${takeawaysHtml}</ol></section>` : ''}
+${relatedServicesHtml(caseStudyServiceLinks[cs.slug], 'The services behind this result:')}
 </article></main>`,
   };
 }
@@ -1467,22 +1284,10 @@ async function main() {
   // 404.html at dist root for Vercel's catch-all rewrite and native 404 handling
   writeFileSync(resolve(DIST, '404.html'), inject(template, notFoundContent()), 'utf-8');
 
-  // Service detail pages (one per service slug)
-  for (const slug of ['web-design', 'seo', 'ai-automations', 'crm-systems', 'custom-development']) {
-    const page = serviceDetailContent(slug);
-    if (page) {
-      writePage(page.route, inject(template, page));
-      count++;
-    }
-  }
-
-  // City hub pages
-  for (const slug of ['bakersfield']) {
-    const page = cityHubContent(slug);
-    if (page) {
-      writePage(page.route, inject(template, page));
-      count++;
-    }
+  // Service pages and Bakersfield pages, rendered from the copy set
+  for (const page of servicePages) {
+    writePage(page.route, inject(template, moneyPageContent(page)));
+    count++;
   }
 
   // Blog listing
@@ -1514,7 +1319,7 @@ async function main() {
     count++;
   }
 
-  console.log(`Pre-rendered ${count} pages (${staticPages.length} static, 5 service detail, 1 city hub, 2 listings, ${blogPosts.length} blog posts, ${caseStudies.length} case studies, ${leadMagnets.length} lead magnets)`);
+  console.log(`Pre-rendered ${count} pages (${staticPages.length} static, ${servicePages.length} service and Bakersfield pages, 2 listings, ${blogPosts.length} blog posts, ${caseStudies.length} case studies, ${leadMagnets.length} lead magnets)`);
 }
 
 main().catch((err) => {

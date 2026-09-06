@@ -24,7 +24,7 @@ When someone in your city searches for what you do, three businesses show up on 
 [CTA] Find out where your business shows up right now. → Book a call
 
 <!-- proof row -->
-Weekly 49 point rank grids, so you see the map, not a guess · Reviews, categories, and services worked in the order that moves rankings · Our own Bakersfield profile tracked in public
+Weekly 49 point rank grids, so you see the map, not a guess · Reviews, categories, and services worked in the order that moves rankings · Our own Bakersfield profile scanned in public, from zero
 
 ## Two search results, two different games
 

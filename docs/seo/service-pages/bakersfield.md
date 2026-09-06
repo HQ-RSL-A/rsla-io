@@ -45,7 +45,7 @@ If what you need is a tool nobody sells, we build [custom software](/services/cu
 
 Most of what you find when you search for marketing help in Bakersfield is one of two things: an established shop that does a bit of everything, or an out of town agency with a "Bakersfield" page and no one in the 661.
 
-We are here. Home based in the southwest of the city, which means we will meet you at your shop, your yard, or the coffee place on Ming. We work with the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up most of Kern County's businesses, and we work with clients in other states on the same terms.
+We are here. Home based in the southwest of the city, which means we will meet you at your shop, your yard, or wherever the work actually happens. We work with the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up most of Kern County's businesses, and we work with clients in other states on the same terms.
 
 What we do differently is the numbers. Rahul, who founded RSL/A, came from analytics. You get a dashboard with your real leads, calls, rankings, and costs, not a monthly PDF of impressions. We also do not guess at what you need. As Rahul puts it, we cannot tell you which offer fits your situation until we know your situation. It is like going to a doctor and not explaining why you came in.
 
@@ -68,7 +68,7 @@ You can read more about how we work on the [about page](/about), see the full [s
 
 ### How much does a marketing agency cost in Bakersfield?
 
-It depends on what you need built. A website is a fixed project price, most between $2,500 and $6,000. SEO and CRM management are monthly retainers scoped to your market. Automations are priced per build. One number after the first call, and it stays that number.
+It depends on what you need built. A website, a CRM setup, or an automation is a fixed project price. SEO and ongoing management are monthly retainers scoped to your market and how far you are from ranking. One number after the first call, and it stays that number.
 
 ### Do you only work with Bakersfield businesses?
 
@@ -94,6 +94,5 @@ Based in Bakersfield, built for the businesses that keep Kern County running. Te
 
 - Rename the route from `/services/bakersfield` to `/bakersfield` with a one hop 301; the GBP website link then points at `/bakersfield`.
 - Remove "Digital marketing" from the CityHub heading and the schema `serviceType`. The category label is "marketing agency", never "digital marketing agency".
-- The "coffee place on Ming" line is local color; swap for a real spot Rahul actually uses.
 - The town list matches the GBP service areas exactly (nap-canonical.md). Keep them in sync.
 - Bakersfield reviews go here as they arrive, above the Casagrande quote.

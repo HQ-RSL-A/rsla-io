@@ -24,7 +24,7 @@ When someone in Bakersfield searches for what you do, three businesses show on t
 [CTA] Find out where you rank across Bakersfield right now. → Book a call
 
 <!-- proof row -->
-Weekly 49 point rank grid across the city, shared with you · Our own Bakersfield profile tracked in public since June 2026 · Blank domain to 204 keywords in 6 months, no ads
+Weekly 49 point rank grid across the city, shared with you · Our own Bakersfield profile scanned in public, starting from zero in June 2026 · Blank domain to 204 keywords in 6 months, no ads
 
 ## What search looks like in Bakersfield
 
@@ -50,7 +50,7 @@ Proximity is the part no agency can sell you around. You will rank strongest nea
 
 ## We ran this on ourselves first
 
-When we set up RSL/A's own profile in June 2026, we ran the same 49 point scan we run for clients. We were nowhere: not in the top twenty at a single point across the city, for any of the eight terms we track. We have been publishing the climb since, one scan a week, and the [numbers behind our own site](/work/rsla-organic-growth) are public. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to judge for yourself.
+When we set up RSL/A's own profile in June 2026, we ran the same 49 point scan we run for clients. We were nowhere: not in the top twenty at a single point across the city, for any of the eight terms we track. That scan is the baseline we measure ourselves against, we publish the rescans as the profile climbs, and the [numbers behind our own site](/work/rsla-organic-growth) are public. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to judge for yourself.
 
 That is the point of hiring us over a firm you will never meet. We are in the same market, working the same physics, and we show you the same map we look at.
 
@@ -81,7 +81,7 @@ Sid S., Account Executive, SBC
 
 1. A free 30 minute call. Before it, we run the 49 point scan on your business and read the top three in your pack, so we arrive with the map.
 2. A proposal: what needs fixing on the profile, which pages the site is missing, and a fixed monthly number.
-3. Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid.
+3. Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid, with the scan date on it.
 4. Checkpoints at day 30, 60, and 90 where you hear what moved, what did not, and what changes next.
 
 The full method behind this, for any city, is on our [local SEO services](/services/seo/local) page, the site wide work on [SEO services](/services/seo), and the rest of what we do here on the [Bakersfield](/bakersfield) page.

@@ -24,7 +24,7 @@ A website that tells someone in Bakersfield what you do, where you do it, and ho
 [CTA] Show us the site you have, or the one you do not. → Book a call
 
 <!-- proof row -->
-Fixed price between $2,500 and $6,000 for most local business sites · Every site built with the search structure in place · Based in southwest Bakersfield, we meet in person
+One fixed price, quoted before you sign · Every site built with the search structure in place · Based in southwest Bakersfield, we meet in person
 
 ## Who we build websites for in Bakersfield
 
@@ -54,7 +54,7 @@ Forms and calls route to your inbox, or straight into your [CRM](/bakersfield/cr
 
 Search for web design here and you get three kinds of results. Solo designers with template sites and no results to show. Established local agencies that do a bit of everything. And agencies in Toronto, Dallas, and Chicago with a "Bakersfield" page that could say any city.
 
-We are local and we publish the numbers. We rebuilt Fieldshare's website and their pages went on to be cited by ChatGPT, Gemini, and Google AI; the [case study](/work/fieldshare-seo-website-rebrand) has the detail. Our own site went from a blank domain to 204 ranked keywords in 6 months using the same structure we put into every client build. And our pricing is on this page, which two of the eleven agencies we studied were willing to do.
+We are local and we publish the numbers. We rebuilt Fieldshare's website and their pages went on to be cited by ChatGPT, Gemini, and Google AI; the [case study](/work/fieldshare-seo-website-rebrand) has the detail. Our own site went from a blank domain to 204 ranked keywords in 6 months using the same structure we put into every client build. And we tell you what drives the price before you sign, which most of the agencies we studied never do.
 
 "Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule. Highly recommend."
 Chris K., CEO and Co-Founder, Fieldshare
@@ -63,7 +63,7 @@ Chris K., CEO and Co-Founder, Fieldshare
 
 ## What it costs and how long it takes
 
-Most Bakersfield business websites we build land between $2,500 and $6,000, fixed, quoted after one call. Online ordering, booking systems, and custom functionality push it higher and we tell you that before you sign, not after. Four to six weeks from kickoff to launch for a typical service business site; a single page site can be faster.
+One fixed price for the whole build, quoted after the first call and written into the proposal. The number depends on how many pages the business needs, whether it needs online booking, ordering, or custom functionality, and how much of an existing site has to be carried over. We tell you what drives your number before you sign, not after. Four to six weeks from kickoff to launch for a typical service business site; a single page site can be faster.
 
 If you already have a site, we look at what it is ranking for before quoting, because the wrong rebuild loses the traffic you have. Our [website redesign](/services/websites/redesign) page explains how we keep it.
 
@@ -80,7 +80,7 @@ This page is part of what we do for [Bakersfield businesses](/bakersfield); the 
 
 ### How much does a website cost in Bakersfield?
 
-Between $2,500 and $6,000 for most small business sites, with online stores and booking systems above that. That is a fixed price, not an estimate, and it includes the copy, the design, the build, and the search structure. Maintenance is optional and separate.
+A fixed price, not an estimate, quoted after one call and covering the copy, the design, the build, and the search structure. Page count, booking or ordering features, and content migration are what move it. Maintenance is optional and separate, and we will tell you on the call whether your site needs it.
 
 ### How long does it take?
 
@@ -106,6 +106,6 @@ Send us your address and the site you have, if you have one. We will tell you wh
 
 - Route `/bakersfield/websites`. Breadcrumb: Home > Bakersfield > Websites. The national sibling is `/services/websites`; no paragraph is shared between them (see check-copy.py).
 - "Currently rebuilding the website for a Bakersfield landscaping company" refers to Select Landscape. Rahul to confirm the client may be named; if yes, name it and link the case study when published.
-- "Two of the eleven agencies" comes from docs/seo/competitive-analysis-web-design-page.md (2026-05-06). Re-verify if the page ships after 2026-12.
+- No prices on the page (Rahul, 2026-09-06). The pricing sentence now describes drivers only.
 - The business types named (Rosedale landscaper, downtown tattoo studio, Oildale HVAC, Shafter ag supplier, the plumber example) are illustrative, not client claims; keep them generic or replace with real named clients once permission exists.
 - Replace the Fieldshare quote with a Bakersfield client review as soon as one exists.

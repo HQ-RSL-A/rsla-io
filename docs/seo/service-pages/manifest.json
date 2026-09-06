@@ -111,7 +111,7 @@
     "meta_len": 150,
     "h1": "SEO company in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1604,
+    "words": 1619,
     "target": "1600 to 1750",
     "h2": 11,
     "h2_list": [
@@ -168,7 +168,7 @@
     "meta_len": 152,
     "h1": "Web design in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1158,
+    "words": 1189,
     "target": "1100 to 1300",
     "h2": 9,
     "h2_list": [
@@ -210,7 +210,8 @@
       "optimiz": 1,
       "actually": 2,
       "just": 1,
-      "not just": 1
+      "not just": 1,
+      "whether you": 1
     },
     "missing_title": [],
     "missing_h1": []
@@ -225,7 +226,7 @@
     "meta_len": 155,
     "h1": "Marketing agency in Bakersfield, CA",
     "h1_count": 1,
-    "words": 842,
+    "words": 845,
     "target": "800 to 1000",
     "h2": 6,
     "h2_list": [
@@ -262,6 +263,7 @@
     "dashes": [],
     "banned": [],
     "watch": {
+      "actually": 1,
       "just": 1
     },
     "missing_title": [],
@@ -450,7 +452,7 @@
     "meta_len": 145,
     "h1": "Local SEO services for small businesses",
     "h1_count": 1,
-    "words": 1469,
+    "words": 1471,
     "target": "1400 to 1600",
     "h2": 11,
     "h2_list": [
@@ -505,7 +507,7 @@
     "meta_len": 142,
     "h1": "Programmatic SEO services",
     "h1_count": 1,
-    "words": 895,
+    "words": 959,
     "target": "900 to 1100",
     "h2": 7,
     "h2_list": [
@@ -615,7 +617,7 @@
     "meta_len": 150,
     "h1": "Website redesign services",
     "h1_count": 1,
-    "words": 1390,
+    "words": 1404,
     "target": "1500 to 1800",
     "h2": 12,
     "h2_list": [
@@ -670,7 +672,7 @@
     "meta_len": 150,
     "h1": "Website design for small businesses",
     "h1_count": 1,
-    "words": 1187,
+    "words": 1210,
     "target": "1200 to 1400 (no clean commercial set in the top 3; Straight North blocked fetch)",
     "h2": 10,
     "h2_list": [

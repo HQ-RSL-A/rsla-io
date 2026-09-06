@@ -24,7 +24,7 @@ Programmatic SEO is publishing hundreds of pages from one template and one datas
 [CTA] Not sure if your data qualifies? Ask. → Book a call
 
 <!-- proof row -->
-12 industry pages on our own site, second batch gated on indexation · Every page carries data no other page has · Built on the same site that went to 204 keywords in 6 months
+12 industry pages tested on our own site, 2 earned impressions, the second batch was never built · Every page carries data no other page has · Built on the same site that went to 204 keywords in 6 months
 
 ## What programmatic SEO is
 
@@ -44,7 +44,7 @@ Research first. We pull real search volume for the combinations you think people
 
 Then the data. The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline.
 
-Then a small first batch. On our own site we published 12 industry pages, one per keyword cluster, linked from the industries grid on our [services page](/services), and paused the second batch until Google had indexed the first. Indexation is the gate. "Crawled, currently not indexed" is Google telling you the pages are thin, and building more of them makes it worse.
+Then a small first batch, because the first batch is a test, not a launch. We ran that test on ourselves. In March 2026 we published 12 industry pages on our own site, one per keyword cluster, linked from the industries grid on our [services page](/services), and gated the second batch on Google indexing the first. Five months later only 2 of the 12 had earned a single impression in Search Console. So the second batch never got built, and those pages are being rewritten one at a time with data each page can call its own. That is the gate working. "Crawled, currently not indexed" is Google telling you the pages are thin, and publishing more of them makes it worse.
 
 Then internal links from the pages that already get traffic, because an orphaned page set dies quietly no matter how good the template is. Then the next batch.
 
@@ -90,5 +90,5 @@ Tell us what data you have and what your customers search for. We will tell you 
 
 - Child of /services/seo. Breadcrumb: Home > Services > SEO > Programmatic SEO.
 - Both Google quotes are verbatim from the spam policies page (seo-intel, sources/google/programmatic.md, 2026-08-28). Keep them in quotation marks.
-- The "12 industry pages" fact refers to the live /ai-for/* pages. Verify the indexation check before publishing this page; if the batch is mostly unindexed, rewrite the example as a lesson rather than a win.
+- The "12 industry pages" example is written as a lesson: Search Console 2026-03-20 to 2026-09-05 shows impressions on only /ai-for/dental (31, position 64.6) and /ai-for/real-estate (33, position 7.3). The other 10 earned none. Re-pull before republishing.
 - "June 2026 spam update" verified in website/log.md (2026-07-21 freshness pass).
