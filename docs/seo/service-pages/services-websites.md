@@ -124,5 +124,5 @@ Not sure whether you need a new site or a repair on the old one? Tell us what yo
 - FAQ renders as plain text, never inside `<details>`. Question as an h3 under the h2, answer as a paragraph.
 - Proof row numbers must stay in sync with the two case studies; if either case study changes, this row changes.
 - No prices on the page (Rahul, 2026-09-06). The cost FAQ describes the pricing model and drivers only.
-- Testimonials are the site's existing five, pasted as text. Rotate in Bakersfield reviews on the local pages as they arrive.
+- Testimonials are the site's existing five, pasted as text. Any new review can go on any page (Rahul, 2026-09-06: reviews are reviews, region does not matter).
 - One external link (web.dev) can sit in the "What is included" paragraph on "load fast".

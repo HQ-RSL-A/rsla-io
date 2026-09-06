@@ -126,4 +126,4 @@ Send us your address and the site you have, if you have one. We will tell you wh
 - "Currently rebuilding the website for a Bakersfield landscaping company" refers to Select Landscape. Rahul to confirm the client may be named; if yes, name it and link the case study when published.
 - No prices on the page (Rahul, 2026-09-06). The pricing sentence now describes drivers only.
 - The business types named (Rosedale landscaper, downtown tattoo studio, Oildale HVAC, Shafter ag supplier, the plumber example) are illustrative, not client claims; keep them generic or replace with real named clients once permission exists.
-- Replace the Fieldshare quote with a Bakersfield client review as soon as one exists.
+- Fieldshare quote: swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).

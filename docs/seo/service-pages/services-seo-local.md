@@ -111,4 +111,4 @@ Send us your business name and city. We will run the 49 point scan and show you 
 - Factor ranks and policy facts come from `my-business/seo-intel/playbook/local/` (verified 2026-08-31). Re-verify before republishing after 2027-02.
 - The FTC figure ($53,088 per violation, 16 CFR 465) and the "nearly half will not use a business under 20 reviews" line (BrightLocal 2026) are both in seo-intel; keep them dated in the source, not on the page.
 - The free grid scan offer costs LeadSnap credits; Rahul to confirm he wants it on the page.
-- Sid S. testimonial repeats from the websites pages; swap for a local client review when one exists.
+- Sid S. testimonial repeats from the websites pages; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).

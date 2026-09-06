@@ -99,4 +99,4 @@ Show us the notebook, the texts, and the spreadsheet. We will show you the one p
 - Route `/bakersfield/crm`. Breadcrumb: Home > Bakersfield > CRM. No shared paragraphs with `/services/crm` (check-copy.py).
 - Zero measured volume; judge this page by GBP service clicks and calls, not impressions.
 - "Local video production business" is Teji Videos (former client) and "landscaping company" is Select Landscape (active). Rahul to confirm both may be referenced, and whether by name.
-- Parminder S. quote also appears on `/services/crm`; replace here with a Kern County client review when one exists.
+- Parminder S. quote also appears on `/services/crm`; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).

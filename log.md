@@ -1,5 +1,9 @@
 # log.md - RSL/A website
 
+## 2026-09-06 09:20 PT - Copy audited against seo-intel; one to do filed
+
+Rahul asked whether the copy is on par with seo-intel. Graded against the scorecard rows and the HeyTony money page and location page rules: structure, schema, CTA, NAP, FAQ shape, internal links, and reading level (grade 6.1 to 8.1) all pass. Three measurable gaps filed as RSL-374: the exact target phrase is absent from the body on six pages (word order variants only), four national pages sit 16 to 80 words under their competitor band, and the city is missing from most H2s on the two zero volume local pages. Rahul's call on the location rule about local only testimonials: reviews are reviews, region does not matter; the build notes that said "swap for a local review" now say "swap when a newer review arrives". Full audit in the README.
+
 ## 2026-09-06 08:35 PT - Service pages redesigned after the dd.nyc read: cards, steps, service cards, numbered FAQ
 
 Rahul's review of the first build: too plain and informational, the cards were weak, more visuals needed, dd.nyc (preferred) and bigdropinc.com as the bar, plus a screenshot of the card pattern he wants (media with a chip and an arrow, icon tile, title, one sentence, hairline, "Explore this service"). Both reference sites were read section by section at 1440 wide before anything changed.

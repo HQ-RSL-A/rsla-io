@@ -90,6 +90,12 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 - LeadSnap schedule 10278 has produced no grid scans since 2026-06-10. The copy only promises rescans "as the profile climbs", which is honest, but the scan has to run before the Bakersfield SEO page has anything to publish.
 - The CookieScript banner covers the hero CTA on the first mobile visit. That is the CMP layout, not the pages, and it was a deliberate 2026-08-17 decision.
 
+## Audit against seo-intel (2026-09-06 09:20 PT)
+
+Measured with the checker plus a reading level pass. Passes: one keyword per page, answer first, single H1 with the keyword, title front loaded on all 13, plain text FAQ capped at four, Service + FAQ + Breadcrumb schema in static HTML, tap to call, one primary CTA, crawlable footer NAP, reviews as text with no star markup, no "near me", no city by service matrix, home base exception, hub in nav and footer, 3 or more inbound links each, Flesch Kincaid grade 6.1 to 8.1 on every page.
+
+Open (RSL-374): the exact target phrase never appears in the body on the five Bakersfield pages or the websites page (word order variants only); automations, crm, custom builds, and redesign sit 16 to 80 words under the low end of their competitor band; the city is in 4 of 9 H2s on Bakersfield SEO, 3 of 7 on websites, none on automations and CRM. The "local reviews only" location rule is void: Rahul, 2026-09-06, reviews are reviews and region does not matter. The "Book a call" label stays generic by the two button rule; the page specific lead in line above it carries the descriptive part.
+
 ## The 10 to 20 inquiries a week question
 
 Search Console, 28 days to 2026-09-06, whole site: 144 clicks, 59,756 impressions, nearly all of it Claude product and GoHighLevel posts. Queries containing "bakersfield": 2 impressions in 90 days. The Bakersfield cluster in the keyword map above adds up to about 580 searches a month across every phrasing that has measured volume (web design 390, the SEO phrasings 150, marketing agency 40, automation and CRM 0). Ranking first for all of it with a 25 percent click share is about 145 visits a month. At a 5 percent inquiry rate that is 7 inquiries a month, not 10 to 20 a week. These pages cannot hit that goal by themselves inside a month, and the copy is written so nobody has to pretend otherwise.

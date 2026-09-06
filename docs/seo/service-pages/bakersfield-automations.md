@@ -99,4 +99,4 @@ Bring the three tasks you would hand off tomorrow if you could. We will tell you
 - Route `/bakersfield/automations`. Breadcrumb: Home > Bakersfield > Automations. No shared paragraphs with `/services/automations` (check-copy.py).
 - Zero measured search volume: this page exists for the map pack wedge, "near me" queries, and AI assistant answers. Do not expect Search Console impressions early; judge it by GBP calls and AI referrals.
 - The business types named are illustrative. Replace with real Bakersfield clients as permission allows.
-- Chris K. quote repeats from the websites pages; replace with a Kern County automation client review when one exists.
+- Chris K. quote repeats from the websites pages; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).
