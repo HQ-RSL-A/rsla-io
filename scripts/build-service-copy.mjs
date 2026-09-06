@@ -110,7 +110,7 @@ function parseBody(body) {
     if (/^\d+\. /.test(t)) {
       const sec = section || ensureSection(null);
       const last = sec.blocks[sec.blocks.length - 1];
-      const item = t.replace(/^\d+\. /, '');
+      const item = titled(t.replace(/^\d+\. /, ''));
       if (last && last.type === 'ol') last.items.push(item);
       else sec.blocks.push({ type: 'ol', items: [item] });
       continue;
@@ -122,9 +122,23 @@ function parseBody(body) {
       (section || ensureSection(null)).blocks.push({ type: 'quote', text: t, cite });
       continue;
     }
-    (section || ensureSection(null)).blocks.push({ type: 'p', text: t });
+    (section || ensureSection(null)).blocks.push({ type: 'p', ...titled(t) });
   }
   return page;
+}
+
+/**
+ * Copy conventions inside a paragraph or list item:
+ *   **Title.** Body text          -> { title: 'Title.', text: 'Body text' }  (renders as a card or a step)
+ *   [Label](/route): Body text    -> { link: { label, to }, text }          (renders as a service card)
+ * Anything else is a plain paragraph.
+ */
+function titled(t) {
+  const tm = t.match(/^\*\*([^*]+?)\*\*\s*(.*)$/);
+  if (tm) return { title: tm[1].trim().replace(/\.$/, ''), text: tm[2].trim() };
+  const lm = t.match(/^\[([^\]]+)\]\((\/[^)\s]+)\):\s*(.*)$/);
+  if (lm) return { link: { label: lm[1], to: lm[2] }, text: lm[3].trim() };
+  return { text: t };
 }
 
 function breadcrumbFor(url) {

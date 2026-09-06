@@ -4,9 +4,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
 import { TextAnimate } from '@/components/ui/text-animate';
-import Seo from '../components/Seo';
-import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
-import { features } from '../components/ServicesV2';
+import Seo from '@/components/Seo';
+import { ServiceCardGrid } from '@/components/services/ui/ServiceCard';
+import { cardFor, NATIONAL } from '@/data/serviceCatalog';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,36 +16,20 @@ export default function Services() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReducedMotion) {
-                gsap.set('.services-hero-content', { opacity: 1, y: 0 });
-                gsap.set('.services-bento > *', { opacity: 1, y: 0 });
-                return;
-            }
-
-            gsap.fromTo('.services-hero-content',
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.1 }
-            );
-
-            gsap.fromTo('.services-bento > *',
-                { y: 30, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.7,
-                    stagger: 0.1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: '.services-bento',
-                        start: 'top 80%',
-                        once: true,
-                    },
-                }
-            );
+            if (prefersReducedMotion) return;
+            // Transform only, so the page reads correctly before the animation runs.
+            gsap.from('.services-cards > *', {
+                y: 24,
+                duration: 0.6,
+                stagger: 0.08,
+                ease: 'power3.out',
+                scrollTrigger: { trigger: '.services-cards', start: 'top 85%', once: true },
+            });
         }, pageRef);
-
         return () => ctx.revert();
     }, []);
+
+    const cards = [...NATIONAL.map((r) => cardFor(r)), cardFor('/bakersfield')];
 
     return (
         <div ref={pageRef}>
@@ -72,41 +56,28 @@ export default function Services() {
 
             {/* Hero */}
             <section className="bg-surface pt-36 pb-12 md:pb-16 px-6 md:px-12">
-                <div className="services-hero-content opacity-0 max-w-4xl mx-auto text-center">
-                    <h1 className="font-sans font-bold text-3xl md:text-5xl text-text tracking-tight mb-6 leading-[1.1]">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h1 className="font-sans font-bold text-4xl md:text-6xl text-text tracking-tight mb-6 leading-[1.05] [text-wrap:balance]">
                         <TextAnimate animation="blurInUp" by="word" delay={0.08} startOnView={false} as="span">
                             What we build for small service businesses.
                         </TextAnimate>
                     </h1>
-                    <p className="font-sans text-lg text-text leading-relaxed max-w-2xl mx-auto">
+                    <p className="font-sans text-lg md:text-xl text-text leading-relaxed max-w-2xl mx-auto">
                         Automation first, because that is where the hours go. Then getting found, a website that says what you do, a CRM that catches every lead, and the tools nobody sells. Fixed price, real numbers, one call to start.
                     </p>
                 </div>
             </section>
 
-            {/* Bento grid */}
-            <section className="bg-frost pb-20 md:pb-28 pt-6 md:pt-10 px-6 md:px-12">
-                <div className="max-w-6xl mx-auto">
-                    <BentoGrid className="services-bento">
-                        {features.map((feature) => (
-                            <BentoCard key={feature.name} {...feature} />
-                        ))}
-                    </BentoGrid>
-                </div>
-            </section>
-
-            <section className="bg-surface py-12 px-6 md:px-12">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="font-sans font-bold text-lg text-text mb-4">Based in Bakersfield, CA</h2>
-                    <Link to="/bakersfield" className="font-sans text-accent hover:underline">
-                        Websites, SEO, automation, and CRM for Kern County businesses
-                    </Link>
+            {/* Service cards */}
+            <section className="bg-surfaceAlt border-t border-hairline py-14 md:py-20 px-6 md:px-12">
+                <div className="max-w-6xl mx-auto services-cards">
+                    <ServiceCardGrid items={cards} onClick={(to) => window.dataLayer?.push({ event: 'cta_click', cta_location: `services_index_${to}` })} />
                 </div>
             </section>
 
             <section className="bg-surface py-16 md:py-24 px-6 md:px-12 border-t border-hairline">
                 <div className="max-w-2xl mx-auto">
-                    <h2 className="font-sans font-bold text-2xl md:text-3xl tracking-tight text-text mb-4">
+                    <h2 className="font-sans font-bold text-3xl md:text-4xl tracking-tight text-text mb-4 [text-wrap:balance]">
                         Not sure where to start?
                     </h2>
                     <p className="font-sans text-lg text-text leading-relaxed mb-8">
@@ -114,6 +85,7 @@ export default function Services() {
                     </p>
                     <Link
                         to="/contact"
+                        onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'services_index_final' })}
                         className="inline-flex items-center gap-2 rounded-button bg-accent px-8 py-3 font-sans font-medium text-base text-white shadow-sm transition-colors hover:bg-accentDeep"
                     >
                         Book a free call

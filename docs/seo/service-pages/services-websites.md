@@ -29,9 +29,9 @@ Your website is your business card, your first sales conversation, and the page 
 
 ## Two kinds of website projects
 
-Some owners come to us with no website at all. A Facebook page, a Google listing, maybe a logo a cousin made. Customers find them anyway, then go quiet because there is nowhere to check what the business actually does.
+**No website yet.** Some owners come to us with no website at all. A Facebook page, a Google listing, maybe a logo a cousin made. Customers find them anyway, then go quiet because there is nowhere to check what the business actually does.
 
-Others have a site that has not been touched since 2019. It loads slowly on a phone, the person who built it is gone, and nobody knows the login. That project is a rebuild, and it has its own rules about keeping the rankings you already have. We cover those on the [website redesign](/services/websites/redesign) page.
+**A site from 2019.** Others have a site that has not been touched since 2019. It loads slowly on a phone, the person who built it is gone, and nobody knows the login. That project is a rebuild, and it has its own rules about keeping the rankings you already have. We cover those on the [website redesign](/services/websites/redesign) page.
 
 Both projects get the same foundation. The difference is where we start.
 
@@ -39,17 +39,21 @@ Both projects get the same foundation. The difference is where we start.
 
 A website is your business's digital business card. If it does not communicate what your business does, in one screen, to a stranger, it will not work no matter how good it looks.
 
-So the first job is communication. What you do, who you do it for, where, and what happens next. The second job is design, because communicating is one thing and designing that communication is another. The third job is being readable by machines: Google, and now the AI assistants people ask for recommendations.
+**Communicate.** What you do, who you do it for, where, and what happens next. That is the first job.
+
+**Design it.** Communicating is one thing and designing that communication is another. That is the second.
+
+**Be readable by machines.** Google, and now the AI assistants people ask for recommendations. That is the third.
 
 Most small business websites fail the first job. They open with a slogan, bury the phone number, and never say the city.
 
 ## What is included in a website project
 
-Copy comes first. We write it from a call with you, because the words decide the layout, not the other way round. What makes a website yours is you: the story, the branding, the personality. A template cannot supply that.
+**Copy first.** We write it from a call with you, because the words decide the layout, not the other way round. What makes a website yours is you: the story, the branding, the personality. A template cannot supply that.
 
-Then the design, then the build. We hand code every site on a modern stack instead of a drag and drop builder, which is why our pages pass Google's [Core Web Vitals](https://web.dev/articles/vitals) on a phone and why you get full control of structure and speed later.
+**Design, then a hand coded build.** We hand code every site on a modern stack instead of a drag and drop builder, which is why our pages pass Google's [Core Web Vitals](https://web.dev/articles/vitals) on a phone and why you get full control of structure and speed later.
 
-Every site ships with the search structure already in place: one page per service, one keyword per page, proper titles and headings, schema markup, and plain question and answer sections that AI assistants can lift. For a local business, that last part is what gets you named when a customer asks ChatGPT instead of Google; we wrote up the details in [AEO for local businesses](/blog/aeo-for-local-businesses). Forms connect to your inbox or your [CRM](/services/crm) so a lead never sits unread. We hand over the domain, the code, and the CMS access, and we train you on the CMS before we leave.
+**Search structure built in.** Every site ships with one page per service, one keyword per page, proper titles and headings, schema markup, and plain question and answer sections that AI assistants can lift. For a local business, that last part is what gets you named when a customer asks ChatGPT instead of Google; we wrote up the details in [AEO for local businesses](/blog/aeo-for-local-businesses). Forms connect to your inbox or your [CRM](/services/crm) so a lead never sits unread. We hand over the domain, the code, and the CMS access, and we train you on the CMS before we leave.
 
 ## Built for the purpose, not the template
 
@@ -77,10 +81,10 @@ Sid S., Account Executive, SBC
 
 ## How a project runs
 
-1. A free 30 minute call. You tell us what the business does, who it is for, and what the site has to make happen. We tell you whether you need a full build or a smaller fix.
-2. A proposal with a clear scope, a timeline, and a fixed price. No hourly billing.
-3. Copy, then design, then build. You review at each step, so nothing gets coded that you have not read.
-4. Launch, handover, and CMS training. Ongoing maintenance is available if you would rather not think about updates.
+1. **A free 30 minute call.** You tell us what the business does, who it is for, and what the site has to make happen. We tell you whether you need a full build or a smaller fix.
+2. **A fixed price proposal.** Clear scope, a timeline, one number. No hourly billing.
+3. **Copy, then design, then build.** You review at each step, so nothing gets coded that you have not read.
+4. **Launch and handover.** CMS training included. Ongoing maintenance is available if you would rather not think about updates.
 
 ## What you own
 

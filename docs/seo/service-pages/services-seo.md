@@ -35,17 +35,21 @@ The AI assistants changed less than people think. ChatGPT, Perplexity, and Googl
 
 ## What our SEO services include
 
-We start with the money pages. One page per service you actually sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one.
+**Money pages first.** One page per service you actually sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one.
 
-Then on page SEO: titles, headings, internal links with real anchor text, image names, and an answer at the top of every page in plain language, because that is what both Google and the AI assistants extract.
+**On page SEO.** Titles, headings, internal links with real anchor text, image names, and an answer at the top of every page in plain language, because that is what both Google and the AI assistants extract.
 
-Then the ongoing work. One genuinely useful article a week, built from questions your customers already ask, wired into the pages that make money. Consistency is what wins. Almost nobody keeps it up, which is exactly why it works.
+**One article a week.** Genuinely useful, built from questions your customers already ask, wired into the pages that make money. Consistency is what wins. Almost nobody keeps it up, which is exactly why it works.
 
-Technical SEO runs underneath all of it: crawlability, indexing, speed, schema, redirects. We fix the things that tell Google to look elsewhere, and we stop at 90 percent site health instead of chasing every flag a tool throws.
+**Technical SEO underneath.** Crawlability, indexing, speed, schema, redirects. We fix the things that tell Google to look elsewhere, and we stop at 90 percent site health instead of chasing every flag a tool throws.
 
 ## How a keyword gets chosen
 
-Search Console first. It shows which queries already land on your site and which of them land on the wrong page, and that gap is usually the next money page. Then real search volume, from Google's own advertising data rather than a third party estimate, when a choice is close. Then the live top ten, read by a person, because the volume tools are wrong about intent more often than they are right. A term that looks commercial can turn out to be job listings and university guides when you look.
+**Search Console first.** It shows which queries already land on your site and which of them land on the wrong page, and that gap is usually the next money page.
+
+**Real search volume.** From Google's own advertising data rather than a third party estimate, when a choice is close.
+
+**The live top ten, read by a person.** The volume tools are wrong about intent more often than they are right. A term that looks commercial can turn out to be job listings and university guides when you look.
 
 Only then does a keyword get a page. One keyword, one page, and never two pages chasing the same intent, because Google will rank neither.
 
@@ -55,9 +59,9 @@ Each article answers one question a real customer asked, in your words, from you
 
 ## Local and programmatic
 
-If your customers are in one city, the work shifts toward Google Maps, your Business Profile, reviews, and a page per service in that city. That is [local SEO](/services/seo/local), and it has its own page because it has its own rules. If you are in Kern County, we do it in person; see [SEO in Bakersfield](/bakersfield/seo).
+**Local SEO.** If your customers are in one city, the work shifts toward Google Maps, your Business Profile, reviews, and a page per service in that city. That is [local SEO](/services/seo/local), and it has its own page because it has its own rules. If you are in Kern County, we do it in person; see [SEO in Bakersfield](/bakersfield/seo).
 
-If you have data that could fill hundreds of useful pages, one per product, region, or comparison, that is [programmatic SEO](/services/seo/programmatic). We build those page sets with a hard rule: every page has to carry something no other page does, or it does not get built.
+**Programmatic SEO.** If you have data that could fill hundreds of useful pages, one per product, region, or comparison, that is [programmatic SEO](/services/seo/programmatic). We build those page sets with a hard rule: every page has to carry something no other page does, or it does not get built.
 
 ## How we think about it
 
@@ -80,7 +84,11 @@ Chris K., CEO and Co-Founder, Fieldshare
 
 ## What you will hear from us, month by month
 
-Month one, we report indexed pages and impressions, not rankings, because there are no meaningful rankings yet and we would rather not teach you to watch the wrong number. Month three, impressions trend, the growing set of queries, and the first position movement. Month six onward, clicks and leads. Every report comes with the Search Console and analytics screenshots, so you can see exactly what we see.
+**Month one.** We report indexed pages and impressions, not rankings, because there are no meaningful rankings yet and we would rather not teach you to watch the wrong number.
+
+**Month three.** Impressions trend, the growing set of queries, and the first position movement.
+
+**Month six onward.** Clicks and leads. Every report comes with the Search Console and analytics screenshots, so you can see exactly what we see.
 
 If something is not working, we say so and change it. If your market is one where SEO will not pay back for a year, we say that on the first call.
 

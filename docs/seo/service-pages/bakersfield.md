@@ -31,13 +31,13 @@ Based in Bakersfield, serving all of Kern County · 204 keywords ranked on our o
 
 Four things. The first call is where we work out which one applies to you.
 
-[Web design in Bakersfield](/bakersfield/websites): a new site if you have none, a rebuild if yours is from 2018, either way built to be found and to say what you do in one screen.
+[Web design in Bakersfield](/bakersfield/websites): A new site if you have none, a rebuild if yours is from 2018, either way built to be found and to say what you do in one screen.
 
-[SEO in Bakersfield](/bakersfield/seo): showing up on Google Maps and in search when someone in Kern County looks for what you sell, and showing up in ChatGPT when they ask it instead.
+[SEO in Bakersfield](/bakersfield/seo): Showing up on Google Maps and in search when someone in Kern County looks for what you sell, and showing up in ChatGPT when they ask it instead.
 
-[AI automation in Bakersfield](/bakersfield/automations): the missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM while you are on a job.
+[AI automation in Bakersfield](/bakersfield/automations): The missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM while you are on a job.
 
-[CRM setup in Bakersfield](/bakersfield/crm): one place for every lead, quote, and customer, on your phone, with follow up that does not depend on your memory.
+[CRM setup in Bakersfield](/bakersfield/crm): One place for every lead, quote, and customer, on your phone, with follow up that does not depend on your memory.
 
 If what you need is a tool nobody sells, we build [custom software](/services/custom-builds) too.
 

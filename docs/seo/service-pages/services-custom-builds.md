@@ -31,7 +31,15 @@ You have looked for the tool. It is either five subscriptions that each do a ten
 
 Internal tools. The things your business needs to run that no product sells the way you need it.
 
-An invoice tracker that knows which of your customers pays late. A place to drop every bill and receipt, with one export at the end of the year that your accountant can file from. A dashboard that watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last six months, so you know what is working before you post. A quote builder that prices your jobs the way you price them in your head. A report that pulls from the three systems you already pay for and lands in your inbox Monday morning.
+**Invoice tracker.** One that knows which of your customers pays late.
+
+**Bills and receipts vault.** A place to drop every bill and receipt, with one export at the end of the year that your accountant can file from.
+
+**Competitor video dashboard.** It watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last six months, so you know what is working before you post.
+
+**Quote builder.** One that prices your jobs the way you price them in your head.
+
+**Monday morning report.** It pulls from the three systems you already pay for and lands in your inbox before the week starts.
 
 If you can describe it, it can be built. The sky is the limit on what; the question is whether it is worth building, and we answer that first.
 
@@ -49,9 +57,9 @@ We build on a modern stack: React and Next.js on the front, Node or Python behin
 
 ## Proof
 
-Anchor Safety came to us with 300 files spread across a shared drive and a daily list of 160 tasks. The replacement, built in 2 weeks, was [three dashboards plus a bot](/work/notion-productivity-dashboard-anchor-safety) that listens to a spoken note and files each item with an owner and a date.
+**Anchor Safety.** They came to us with 300 files spread across a shared drive and a daily list of 160 tasks. The replacement, built in 2 weeks, was [three dashboards plus a bot](/work/notion-productivity-dashboard-anchor-safety) that listens to a spoken note and files each item with an owner and a date.
 
-We run RSL/A on tools we built for ourselves. A proposal platform that generates the document, collects the signature, and takes the deposit. An expense vault that reads receipts and files them for tax time. We would not sell software we do not use.
+**Our own tools.** We run RSL/A on tools we built for ourselves. A proposal platform that generates the document, collects the signature, and takes the deposit. An expense vault that reads receipts and files them for tax time. We would not sell software we do not use.
 
 [CTA] Have a spreadsheet that has become a monster? → Book a call
 

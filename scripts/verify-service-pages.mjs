@@ -58,8 +58,8 @@ for (const page of pages) {
   for (const s of page.sections) {
     if (s.heading) lines.push(s.heading);
     for (const b of s.blocks) {
-      if (b.type === 'p') lines.push(b.text);
-      if (b.type === 'ol') lines.push(...b.items);
+      if (b.type === 'p') { if (b.title) lines.push(b.title); if (b.link) lines.push(b.link.label); lines.push(b.text); }
+      if (b.type === 'ol') for (const it of b.items) { if (it.title) lines.push(it.title); lines.push(it.text); }
       if (b.type === 'quote') { lines.push(b.text); if (b.cite) lines.push(b.cite); }
       if (b.type === 'cta') lines.push(b.lead);
     }

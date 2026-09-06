@@ -39,11 +39,13 @@ A CRM is that system. Ours is built on [GoHighLevel](https://www.gohighlevel.com
 
 Most people buy GoHighLevel and use a tenth of it, because the setup is the hard part. Here is what a full setup includes when we do it.
 
-A pipeline that mirrors how you sell: new lead, contacted, quote sent, booked, done, and whatever sits between. You drag a card, the next action fires. Forms and a phone number that capture every enquiry into the same place, whether it came from the website, a text, a Facebook ad, or a missed call.
+**A pipeline shaped like your sales.** New lead, contacted, quote sent, booked, done, and whatever sits between. You drag a card, the next action fires.
 
-Follow up sequences that run on their own. A new lead gets a reply within a minute, then a text the next morning, then an email, then a call reminder for you, until they book or opt out. Our guide to [automated lead follow up in GoHighLevel](/blog/gohighlevel-lead-follow-up-automation) shows the exact sequence we start from.
+**Every enquiry in one place.** Forms and a phone number that capture every enquiry into the same list, whether it came from the website, a text, a Facebook ad, or a missed call.
 
-A calendar with online booking, so "when can you come out" becomes a link. Estimate and appointment reminders so people show up. Review requests after the job. And the dashboard that shows how many leads came in this month, from where, and how many became customers.
+**Follow up that runs itself.** A new lead gets a reply within a minute, then a text the next morning, then an email, then a call reminder for you, until they book or opt out. Our guide to [automated lead follow up in GoHighLevel](/blog/gohighlevel-lead-follow-up-automation) shows the exact sequence we start from.
+
+**Booking, reminders, reviews, and the dashboard.** A calendar with online booking, so "when can you come out" becomes a link. Estimate and appointment reminders so people show up. Review requests after the job. And the dashboard that shows how many leads came in this month, from where, and how many became customers.
 
 ## What you get access to on day one
 
@@ -59,17 +61,23 @@ Where it gets interesting is combining the CRM with our [automations](/services/
 
 ## A week with the system running
 
-Monday, a lead comes in from the website at 7:40am while you are driving. The reply goes out at 7:41 with your name on it. Your phone shows the card. You call at lunch, quote on the spot, and the quote goes out from the app with a follow up already queued for Thursday.
+**Monday.** A lead comes in from the website at 7:40am while you are driving. The reply goes out at 7:41 with your name on it. Your phone shows the card. You call at lunch, quote on the spot, and the quote goes out from the app with a follow up already queued for Thursday.
 
-Wednesday, a customer from last spring gets the rebooking text you never had to remember to send, and books online. Thursday, the Monday lead has not replied, so the second message goes out on its own. Friday, the job you finished yesterday triggers a review request, and the review lands on your Google listing over the weekend.
+**Wednesday to Friday.** A customer from last spring gets the rebooking text you never had to remember to send, and books online. Thursday, the Monday lead has not replied, so the second message goes out on its own. Friday, the job you finished yesterday triggers a review request, and the review lands on your Google listing over the weekend.
 
-Sunday night you open the dashboard once. Eleven leads this month, six from Google, four booked, two still in follow up. That is the whole week of admin, and you typed almost none of it.
+**Sunday night.** You open the dashboard once. Eleven leads this month, six from Google, four booked, two still in follow up. That is the whole week of admin, and you typed almost none of it.
 
 ## What we build for different kinds of businesses
 
-A contractor gets an estimate pipeline, missed call text back, and a reminder the day before the site visit, because the job goes to whoever answers first and shows up. We compared the options for that world in [GoHighLevel vs Jobber](/blog/gohighlevel-vs-jobber-home-service-crm).
+**Contractors.** An estimate pipeline, missed call text back, and a reminder the day before the site visit, because the job goes to whoever answers first and shows up. We compared the options for that world in [GoHighLevel vs Jobber](/blog/gohighlevel-vs-jobber-home-service-crm).
 
-A salon or clinic gets online booking, no show reminders, and a rebooking message six weeks after the last visit. A coach or consultant gets a discovery call funnel with the qualifying questions built in, so the calendar only fills with people who fit. A restaurant gets a customer list that grows from the Google listing and a monthly offer that goes out by text; our [restaurant playbook](/blog/gohighlevel-for-restaurants-fill-tables) walks through it. An agency gets the client onboarding sequence, the proposal follow up, and the reporting emails.
+**Salons and clinics.** Online booking, no show reminders, and a rebooking message six weeks after the last visit.
+
+**Coaches and consultants.** A discovery call funnel with the qualifying questions built in, so the calendar only fills with people who fit.
+
+**Restaurants.** A customer list that grows from the Google listing and a monthly offer that goes out by text; our [restaurant playbook](/blog/gohighlevel-for-restaurants-fill-tables) walks through it.
+
+**Agencies.** The client onboarding sequence, the proposal follow up, and the reporting emails.
 
 Same platform, different pipeline. The build starts from how you actually sell, not from a template.
 
@@ -101,10 +109,10 @@ Access to whatever holds your contacts today. Your business phone number, or the
 
 ## How a CRM setup runs
 
-1. A free 30 minute call. You walk us through how a lead reaches you today and what happens after. We map the leaks.
-2. A proposal with the pipeline design, the automations we will build, and a fixed price.
-3. We build the account, import your contacts, connect your number and forms, and run test leads through every sequence with you watching.
-4. A training session for you and anyone who touches leads, then handover. Monthly management is available if you would rather not maintain it.
+1. **A free 30 minute call.** You walk us through how a lead reaches you today and what happens after. We map the leaks.
+2. **A proposal with the pipeline drawn out.** The automations we will build, and a fixed price.
+3. **Build, import, connect, test.** We build the account, import your contacts, connect your number and forms, and run test leads through every sequence with you watching.
+4. **Training and handover.** A session for you and anyone who touches leads. Monthly management is available if you would rather not maintain it.
 
 ## What ongoing management covers
 

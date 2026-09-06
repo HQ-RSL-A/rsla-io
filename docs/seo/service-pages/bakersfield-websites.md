@@ -34,21 +34,39 @@ We are currently rebuilding the website for a Bakersfield landscaping company, a
 
 ## What a Bakersfield business website needs
 
-Your city in the words, not just the footer. A page for each service you sell, because "sprinkler repair Bakersfield" and "landscape design Bakersfield" are two different searches and one page cannot win both. A phone number that taps to call on mobile. Hours. The towns you serve. And a plain answer, near the top, to the question the visitor arrived with.
+**Your city in the words.** Not just in the footer. Bakersfield, in the headline and the copy, on every page that should rank here.
+
+**A page for each service.** "Sprinkler repair Bakersfield" and "landscape design Bakersfield" are two different searches and one page cannot win both.
+
+**Tap to call, hours, towns.** A phone number that taps to call on mobile. Hours. The towns you serve.
+
+**A plain answer near the top.** The question the visitor arrived with, answered before they scroll.
 
 Then it has to load fast on a phone on a Kern County cell tower, and it has to link to and from your Google Business Profile, because in this market the map pack is where most of the first clicks happen. Our [Bakersfield SEO](/bakersfield/seo) page covers that side of it.
 
 ## The pages a local service business site needs
 
-Take a plumber. A homepage that says plumber, Bakersfield, and the phone number in the first screen. Then one page each for water heaters, drain cleaning, repiping, and emergency calls, because each is its own search with its own customer. An about page with a real face on it, since people hire the person. A reviews page that quotes the Google reviews as text. A service area page naming Oildale, Shafter, Arvin, and wherever else the truck goes. And a contact page that is a phone number and a short form, not a puzzle.
+Take a plumber.
+
+**Homepage.** Plumber, Bakersfield, and the phone number in the first screen.
+
+**One page per service.** Water heaters, drain cleaning, repiping, and emergency calls, because each is its own search with its own customer.
+
+**About, with a real face.** People hire the person.
+
+**Reviews as text.** A page that quotes the Google reviews so search engines can read them.
+
+**Service area.** Oildale, Shafter, Arvin, and wherever else the truck goes.
+
+**Contact.** A phone number and a short form, not a puzzle.
 
 That is eight to ten pages for most trades. We tell you which ones you actually need on the first call, and which ones can wait until the business grows into them.
 
 ## What we include
 
-We write the copy first, from a conversation with you, because most local sites fail by saying "quality service you can trust" instead of what the business actually does. Then design, then a hand coded build on a modern stack. Every page carries what Google and the AI assistants need to read it: one topic, a proper title, schema, and a plain question with a plain answer.
+**Copy, design, build.** We write the copy first, from a conversation with you, because most local sites fail by saying "quality service you can trust" instead of what the business actually does. Then the design, then the build, hand coded so it stays fast on a phone. Every page carries what Google and the AI assistants need to read it: one topic, a proper title, schema, and a plain question with a plain answer.
 
-Forms and calls route to your inbox, or straight into your [CRM](/bakersfield/crm) if you want follow up to run itself. At handover you get the domain, the code, the content, and a training session on the CMS. The full scope, for any city, is on our [website design service](/services/websites) page.
+**Forms, handover, training.** Forms and calls route to your inbox, or straight into your [CRM](/bakersfield/crm) if you want follow up to run itself. At handover you get the domain, the code, the content, and a training session on the CMS. The full scope, for any city, is on our [website design service](/services/websites) page.
 
 ## How we are different from the other Bakersfield options
 
@@ -69,10 +87,10 @@ If you already have a site, we look at what it is ranking for before quoting, be
 
 ## How it runs
 
-1. A free 30 minute call, at your shop or on a job site if that is easier than an office. We look at what you have and tell you whether it needs a new site or a repair.
-2. A written quote with one fixed number and a launch date.
-3. Copy, design, build, with you reviewing each step.
-4. Launch, handover, training. Then, if you want, the [search work](/bakersfield/seo) that turns the site into a lead source.
+1. **A free 30 minute call.** At your shop or on a job site if that is easier than an office. We look at what you have and tell you whether it needs a new site or a repair.
+2. **A written quote.** One fixed number and a launch date.
+3. **Copy, design, build.** With you reviewing each step.
+4. **Launch, handover, training.** Then, if you want, the [search work](/bakersfield/seo) that turns the site into a lead source.
 
 This page is part of what we do for [Bakersfield businesses](/bakersfield); the other three services are there too.
 

@@ -63,15 +63,18 @@
         "blocks": [
           {
             "type": "p",
+            "title": "Lead response and follow up",
             "text": "Lead response first, because in Bakersfield the job goes to whoever answers. Then follow up that runs until the customer books or says no. Then the admin: intake straight into the [CRM](/bakersfield/crm), appointment reminders, review requests after every job, and the weekly numbers in one place instead of five apps."
           },
           {
             "type": "p",
-            "text": "Then the AI pieces. A phone assistant that takes the call and books the estimate when you cannot pick up. A bot that turns your voice note into a new lead with the right tags. A month of social posts cut from a single job site video."
+            "title": "The AI pieces",
+            "text": "A phone assistant that takes the call and books the estimate when you cannot pick up. A bot that turns your voice note into a new lead with the right tags. A month of social posts cut from a single job site video."
           },
           {
             "type": "p",
-            "text": "We build on the tools you already pay for: your calendar, your inbox, QuickBooks, your CRM. The automation runs in n8n or Make, with GoHighLevel where leads are involved and an AI agent where a step needs judgment. The full list of what we automate, and the three builds with numbers, is on our [AI automation services](/services/automations) page."
+            "title": "On the tools you already pay for",
+            "text": "QuickBooks, the calendar on your phone, your inbox, your CRM. The automation runs in n8n or Make, with GoHighLevel where leads are involved and an AI agent where a step needs judgment. The full list of what we automate, and the three builds with numbers, is on our [AI automation services](/services/automations) page."
           }
         ]
       },
@@ -102,10 +105,12 @@
         "blocks": [
           {
             "type": "p",
+            "title": "300 files to 3 dashboards",
             "text": "For Anchor Safety, a professional services firm, the starting point was 300 files spread across a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot that turns his voice notes into sorted tasks](/work/notion-productivity-dashboard-anchor-safety). He talks into his phone; the list builds itself."
           },
           {
             "type": "p",
+            "title": "1,200 emails a day",
             "text": "Our own outreach needed 1,200 personalized emails a day. One [3 step Make automation](/work/ai-cold-email-personalization) reads each lead and writes a first line specific to them, at a cost per email close to zero."
           },
           {
@@ -126,10 +131,22 @@
           {
             "type": "ol",
             "items": [
-              "Thirty free minutes, at your shop if you like, on where the week goes.",
-              "One page back from us: the two or three builds worth doing first, the hours each saves, and one fixed number.",
-              "We build it, put your real leads through it while you watch, and fix what does not fit your day.",
-              "You get the documentation and an hour of training on your own phone. Prefer that we watch it and keep building? That is a monthly arrangement."
+              {
+                "title": "Thirty free minutes",
+                "text": "At your shop if you like, on where the week goes."
+              },
+              {
+                "title": "One page back from us",
+                "text": "Which builds come first, the hours each one hands back, and one fixed number."
+              },
+              {
+                "title": "Your real leads, while you watch",
+                "text": "We put them through the system in front of you and fix what does not fit your day."
+              },
+              {
+                "title": "Documentation and training",
+                "text": "An hour on your own phone. Prefer that we watch it and keep building? That is a monthly arrangement."
+              }
             ]
           }
         ]
@@ -224,7 +241,28 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A pipeline with your stages on it: new, called back, estimate out, booked, paid. Forms on your [website](/bakersfield/websites) and a tracked phone number feeding the same inbox, so a Google enquiry, a text, and a missed call all land in one list. Follow up sequences that reply within a minute and keep going until the customer books or opts out; the exact starting sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation). Online booking for estimates. Reminders so people are home when you arrive. Review requests after the job. A dashboard that answers, on a Sunday night, how many leads came in, where from, and how many turned into jobs."
+            "title": "A pipeline with your stages",
+            "text": "New, called back, estimate out, booked, paid."
+          },
+          {
+            "type": "p",
+            "title": "One inbox for every enquiry",
+            "text": "Forms on your [website](/bakersfield/websites) and a tracked phone number feeding the same inbox, so a Google enquiry, a text, and a missed call all land in one list."
+          },
+          {
+            "type": "p",
+            "title": "Follow up that keeps going",
+            "text": "Sequences that reply within a minute and keep going until the customer books or opts out; the exact starting sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation)."
+          },
+          {
+            "type": "p",
+            "title": "Booking, reminders, reviews",
+            "text": "Online booking for estimates. Reminders so people are home when you arrive. Review requests after the job."
+          },
+          {
+            "type": "p",
+            "title": "The Sunday night dashboard",
+            "text": "It answers how many leads came in, where from, and how many turned into jobs."
           },
           {
             "type": "p",
@@ -270,10 +308,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call, at your yard or your shop if that beats a video call. You show us how a lead reaches you today.",
-              "A written quote with the pipeline drawn out, the automations listed, and one fixed number.",
-              "We build the account, bring your contacts in, connect your number and forms, and test it with you in the room.",
-              "An hour of training on your own phone, then it is yours. If you want us to keep maintaining it, that is a monthly arrangement."
+              {
+                "title": "A free 30 minute call",
+                "text": "At your yard or your shop if that beats a video call. You show us how a lead reaches you today."
+              },
+              {
+                "title": "A written quote",
+                "text": "The pipeline drawn out, the automations listed, and one fixed number."
+              },
+              {
+                "title": "Build and test in the room",
+                "text": "Account set up, contacts brought in, number and forms connected, then a test lead with you watching."
+              },
+              {
+                "title": "An hour of training",
+                "text": "On your own phone, then it is yours. If you want us to keep maintaining it, that is a monthly arrangement."
+              }
             ]
           }
         ]
@@ -373,7 +423,28 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Plumbers, electricians, HVAC, roofers, landscapers: the trades are the clearest case, because the search happens in the moment of need and the caller takes the first of the three that picks up. Med spas, dentists, and chiropractors, where the reviews decide. Restaurants and taco spots, where the photos do. Auto repair and tire shops along Rosedale and Union. Ag services and equipment, where the buyers are increasingly searching before they call the guy they always called."
+            "title": "The trades",
+            "text": "Plumbers, electricians, HVAC, roofers, landscapers: the clearest case, because the search happens in the moment of need and the caller takes the first of the three that picks up."
+          },
+          {
+            "type": "p",
+            "title": "Med spas, dentists, chiropractors",
+            "text": "Where the reviews decide."
+          },
+          {
+            "type": "p",
+            "title": "Restaurants and taco spots",
+            "text": "Where the photos do."
+          },
+          {
+            "type": "p",
+            "title": "Auto repair and tire shops",
+            "text": "Along Rosedale and Union, where the map is the phone book."
+          },
+          {
+            "type": "p",
+            "title": "Ag services and equipment",
+            "text": "Where the buyers are increasingly searching before they call the guy they always called."
           },
           {
             "type": "p",
@@ -386,15 +457,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The map half is your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load real photos of your work, and start the review process. Reviews are the entry ticket: a profile with three does not enter a pack whose floor is twenty, and nearly half of consumers will not use a business with fewer than twenty. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does."
+            "title": "The map half",
+            "text": "Your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load real photos of your work, and start the review process. Reviews are the entry ticket: a profile with three does not enter a pack whose floor is twenty, and nearly half of consumers will not use a business with fewer than twenty. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does."
           },
           {
             "type": "p",
-            "text": "The website half is a page per service, written for Bakersfield. Not a homepage that lists nine things and mentions the city once. A page for sprinkler repair in Bakersfield that shows the systems you have installed, quotes the customers who left you reviews, and answers the visitor's first question in the first paragraph. If the site itself is the problem, that is our [Bakersfield web design](/bakersfield/websites) page."
+            "title": "The website half",
+            "text": "A page per service, written for Bakersfield. Not a homepage that lists nine things and mentions the city once. A page for sprinkler repair in Bakersfield that shows the systems you have installed, quotes the customers who left you reviews, and answers the visitor's first question in the first paragraph. If the site itself is the problem, that is our [Bakersfield web design](/bakersfield/websites) page."
           },
           {
             "type": "p",
-            "text": "Proximity is the part no agency can sell you around. You will rank strongest near your address and weaker across town, which is why our weekly grid has 49 points instead of one number. The pages, links, and reviews are what reach past your own neighborhood."
+            "title": "Proximity",
+            "text": "The part no agency can sell you around. You will rank strongest near your address and weaker across town, which is why our weekly grid has 49 points instead of one number. The pages, links, and reviews are what reach past your own neighborhood."
           }
         ]
       },
@@ -416,7 +490,23 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Week one we read your top three competitors' profiles, set or confirm your primary category, and load every service Google offers under the names people search. Week two we fix hours, attributes, and the description, load 8 to 12 real photos, and send the first review asks to customers from the last three months. Week three the first service page goes live on your site, linked from your profile and from the pages that already get traffic. Week four the citations go out from one canonical record, and you get the second grid scan next to the first."
+            "title": "Week one",
+            "text": "We read your top three competitors' profiles, set or confirm your primary category, and load every service Google offers under the names people search."
+          },
+          {
+            "type": "p",
+            "title": "Week two",
+            "text": "We fix hours, attributes, and the description, load 8 to 12 real photos, and send the first review asks to customers from the last three months."
+          },
+          {
+            "type": "p",
+            "title": "Week three",
+            "text": "The first service page goes live on your site, linked from your profile and from the pages that already get traffic."
+          },
+          {
+            "type": "p",
+            "title": "Week four",
+            "text": "The citations go out from one canonical record, and you get the second grid scan next to the first."
           },
           {
             "type": "p",
@@ -467,10 +557,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call. Before it, we run the 49 point scan on your business and read the top three in your pack, so we arrive with the map.",
-              "A proposal: what needs fixing on the profile, which pages the site is missing, and a fixed monthly number.",
-              "Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid, with the scan date on it.",
-              "Checkpoints at day 30, 60, and 90 where you hear what moved, what did not, and what changes next."
+              {
+                "title": "A free 30 minute call",
+                "text": "Before it, we run the 49 point scan on your business and read the top three in your pack, so we arrive with the map."
+              },
+              {
+                "title": "A proposal",
+                "text": "What needs fixing on the profile, which pages the site is missing, and a fixed monthly number."
+              },
+              {
+                "title": "Months one to three",
+                "text": "Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid, with the scan date on it."
+              },
+              {
+                "title": "Checkpoints at 30, 60, and 90 days",
+                "text": "You hear what moved, what did not, and what changes next."
+              }
             ]
           },
           {
@@ -569,7 +671,23 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Your city in the words, not just the footer. A page for each service you sell, because \"sprinkler repair Bakersfield\" and \"landscape design Bakersfield\" are two different searches and one page cannot win both. A phone number that taps to call on mobile. Hours. The towns you serve. And a plain answer, near the top, to the question the visitor arrived with."
+            "title": "Your city in the words",
+            "text": "Not just in the footer. Bakersfield, in the headline and the copy, on every page that should rank here."
+          },
+          {
+            "type": "p",
+            "title": "A page for each service",
+            "text": "\"Sprinkler repair Bakersfield\" and \"landscape design Bakersfield\" are two different searches and one page cannot win both."
+          },
+          {
+            "type": "p",
+            "title": "Tap to call, hours, towns",
+            "text": "A phone number that taps to call on mobile. Hours. The towns you serve."
+          },
+          {
+            "type": "p",
+            "title": "A plain answer near the top",
+            "text": "The question the visitor arrived with, answered before they scroll."
           },
           {
             "type": "p",
@@ -582,7 +700,37 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Take a plumber. A homepage that says plumber, Bakersfield, and the phone number in the first screen. Then one page each for water heaters, drain cleaning, repiping, and emergency calls, because each is its own search with its own customer. An about page with a real face on it, since people hire the person. A reviews page that quotes the Google reviews as text. A service area page naming Oildale, Shafter, Arvin, and wherever else the truck goes. And a contact page that is a phone number and a short form, not a puzzle."
+            "text": "Take a plumber."
+          },
+          {
+            "type": "p",
+            "title": "Homepage",
+            "text": "Plumber, Bakersfield, and the phone number in the first screen."
+          },
+          {
+            "type": "p",
+            "title": "One page per service",
+            "text": "Water heaters, drain cleaning, repiping, and emergency calls, because each is its own search with its own customer."
+          },
+          {
+            "type": "p",
+            "title": "About, with a real face",
+            "text": "People hire the person."
+          },
+          {
+            "type": "p",
+            "title": "Reviews as text",
+            "text": "A page that quotes the Google reviews so search engines can read them."
+          },
+          {
+            "type": "p",
+            "title": "Service area",
+            "text": "Oildale, Shafter, Arvin, and wherever else the truck goes."
+          },
+          {
+            "type": "p",
+            "title": "Contact",
+            "text": "A phone number and a short form, not a puzzle."
           },
           {
             "type": "p",
@@ -595,10 +743,12 @@
         "blocks": [
           {
             "type": "p",
-            "text": "We write the copy first, from a conversation with you, because most local sites fail by saying \"quality service you can trust\" instead of what the business actually does. Then design, then a hand coded build on a modern stack. Every page carries what Google and the AI assistants need to read it: one topic, a proper title, schema, and a plain question with a plain answer."
+            "title": "Copy, design, build",
+            "text": "We write the copy first, from a conversation with you, because most local sites fail by saying \"quality service you can trust\" instead of what the business actually does. Then the design, then the build, hand coded so it stays fast on a phone. Every page carries what Google and the AI assistants need to read it: one topic, a proper title, schema, and a plain question with a plain answer."
           },
           {
             "type": "p",
+            "title": "Forms, handover, training",
             "text": "Forms and calls route to your inbox, or straight into your [CRM](/bakersfield/crm) if you want follow up to run itself. At handover you get the domain, the code, the content, and a training session on the CMS. The full scope, for any city, is on our [website design service](/services/websites) page."
           }
         ]
@@ -645,10 +795,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call, at your shop or on a job site if that is easier than an office. We look at what you have and tell you whether it needs a new site or a repair.",
-              "A written quote with one fixed number and a launch date.",
-              "Copy, design, build, with you reviewing each step.",
-              "Launch, handover, training. Then, if you want, the [search work](/bakersfield/seo) that turns the site into a lead source."
+              {
+                "title": "A free 30 minute call",
+                "text": "At your shop or on a job site if that is easier than an office. We look at what you have and tell you whether it needs a new site or a repair."
+              },
+              {
+                "title": "A written quote",
+                "text": "One fixed number and a launch date."
+              },
+              {
+                "title": "Copy, design, build",
+                "text": "With you reviewing each step."
+              },
+              {
+                "title": "Launch, handover, training",
+                "text": "Then, if you want, the [search work](/bakersfield/seo) that turns the site into a lead source."
+              }
             ]
           },
           {
@@ -735,19 +897,35 @@
           },
           {
             "type": "p",
-            "text": "[Web design in Bakersfield](/bakersfield/websites): a new site if you have none, a rebuild if yours is from 2018, either way built to be found and to say what you do in one screen."
+            "link": {
+              "label": "Web design in Bakersfield",
+              "to": "/bakersfield/websites"
+            },
+            "text": "A new site if you have none, a rebuild if yours is from 2018, either way built to be found and to say what you do in one screen."
           },
           {
             "type": "p",
-            "text": "[SEO in Bakersfield](/bakersfield/seo): showing up on Google Maps and in search when someone in Kern County looks for what you sell, and showing up in ChatGPT when they ask it instead."
+            "link": {
+              "label": "SEO in Bakersfield",
+              "to": "/bakersfield/seo"
+            },
+            "text": "Showing up on Google Maps and in search when someone in Kern County looks for what you sell, and showing up in ChatGPT when they ask it instead."
           },
           {
             "type": "p",
-            "text": "[AI automation in Bakersfield](/bakersfield/automations): the missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM while you are on a job."
+            "link": {
+              "label": "AI automation in Bakersfield",
+              "to": "/bakersfield/automations"
+            },
+            "text": "The missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM while you are on a job."
           },
           {
             "type": "p",
-            "text": "[CRM setup in Bakersfield](/bakersfield/crm): one place for every lead, quote, and customer, on your phone, with follow up that does not depend on your memory."
+            "link": {
+              "label": "CRM setup in Bakersfield",
+              "to": "/bakersfield/crm"
+            },
+            "text": "One place for every lead, quote, and customer, on your phone, with follow up that does not depend on your memory."
           },
           {
             "type": "p",
@@ -895,15 +1073,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Lead response is first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person actually asked, not \"we got your message.\" Follow up runs on a schedule until they book or say no."
+            "title": "Lead response",
+            "text": "It comes first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person actually asked, not \"we got your message.\" Follow up runs on a schedule until they book or say no."
           },
           {
             "type": "p",
-            "text": "Then the admin around the work: appointment reminders and rescheduling, intake that fills your CRM without you typing, invoices and payment nudges, review requests after every job, the weekly numbers pulled into one dashboard instead of five tabs."
+            "title": "The admin around the work",
+            "text": "Appointment reminders and rescheduling, intake that fills your CRM without you typing, invoices and payment nudges, review requests after every job, the weekly numbers pulled into one dashboard instead of five tabs."
           },
           {
             "type": "p",
-            "text": "Then the AI agents. An assistant that answers the phone when you cannot. A bot that turns a voice note into a task list or a new lead. A pipeline that turns one recording into a month of content. Our [client intake guide](/blog/automate-client-intake-ai) walks through one of these end to end."
+            "title": "AI agents",
+            "text": "An assistant that answers the phone when you cannot. A bot that turns a voice note into a task list or a new lead. A pipeline that turns one recording into a month of content. Our [client intake guide](/blog/automate-client-intake-ai) walks through one of these end to end."
           }
         ]
       },
@@ -912,7 +1093,28 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A dental office gets recall reminders that rebook the six month cleaning without the front desk calling. An HVAC company gets missed call text back and a maintenance plan reminder that goes out before summer. A property manager gets maintenance requests logged, assigned, and confirmed to the tenant without a phone call. A coaching business gets a discovery call funnel that qualifies before it books. A nonprofit gets volunteer signups onboarded, tagged, and messaged without a coordinator."
+            "title": "Dental office",
+            "text": "Recall reminders that rebook the six month cleaning without the front desk calling."
+          },
+          {
+            "type": "p",
+            "title": "HVAC company",
+            "text": "Missed call text back and a maintenance plan reminder that goes out before summer."
+          },
+          {
+            "type": "p",
+            "title": "Property manager",
+            "text": "Maintenance requests logged, assigned, and confirmed to the tenant without a phone call."
+          },
+          {
+            "type": "p",
+            "title": "Coaching business",
+            "text": "A discovery call funnel that qualifies before it books."
+          },
+          {
+            "type": "p",
+            "title": "Nonprofit",
+            "text": "Volunteer signups onboarded, tagged, and messaged without a coordinator."
           },
           {
             "type": "p",
@@ -934,15 +1136,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Diagnosis first. We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes."
+            "title": "Diagnosis first",
+            "text": "We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes."
           },
           {
             "type": "p",
-            "text": "Then we build around the tools you already use. Your calendar, your inbox, your CRM, your accounting software. The work runs in [n8n](https://n8n.io) or [Make](https://www.make.com) for workflows, GoHighLevel for anything that touches leads and follow up, and AI agents where a task needs judgment instead of rules. If the CRM is the missing piece, we set that up too; see [CRM systems](/services/crm). If nothing off the shelf fits, we write the software; see [custom builds](/services/custom-builds)."
+            "title": "Built around your tools",
+            "text": "Your calendar, your inbox, your CRM, your accounting software. The work runs in [n8n](https://n8n.io) or [Make](https://www.make.com) for workflows, GoHighLevel for anything that touches leads and follow up, and AI agents where a task needs judgment instead of rules. If the CRM is the missing piece, we set that up too; see [CRM systems](/services/crm). If nothing off the shelf fits, we write the software; see [custom builds](/services/custom-builds)."
           },
           {
             "type": "p",
-            "text": "Then we document it, train you on it, and either hand it over or keep it running for you. Automations need maintenance because the apps they connect to change. A retainer covers that. Managing it yourself is fine too."
+            "title": "Documented and handed over",
+            "text": "We document it, train you on it, and either hand it over or keep it running for you. Automations need maintenance because the apps they connect to change. A retainer covers that. Managing it yourself is fine too."
           }
         ]
       },
@@ -960,14 +1165,17 @@
         "blocks": [
           {
             "type": "p",
+            "title": "1,200 emails a day",
             "text": "We needed 1,200 personalized cold emails a day for our own outreach, so we built a [3 step Make automation](/work/ai-cold-email-personalization) that reads each lead, writes a specific opening line, and puts it back in the sheet. Cost per email is close to zero."
           },
           {
             "type": "p",
+            "title": "300 files to 3 dashboards",
             "text": "Anchor Safety, a professional services company, was running on 300 scattered files and 160 daily tasks. In 2 weeks we replaced that with [3 Notion dashboards and a voice to task bot](/work/notion-productivity-dashboard-anchor-safety): the owner talks, the tasks appear."
           },
           {
             "type": "p",
+            "title": "Two suites filled",
             "text": "Two suites at Casagrande Salon in Manhattan had sat empty for close to two years. We ran $600 in ads and let a GoHighLevel sequence do every bit of the chasing. Both filled within a few months, and the rent they bring in is worth [$36K a year](/work/salon-marketing-automation-roi)."
           },
           {
@@ -988,10 +1196,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call about where your week goes. Bring the annoying tasks, not a wishlist.",
-              "A short written plan: the two or three automations worth building first, what each one saves, and a fixed price.",
-              "We build, test with your real data, and show you it running on a screen share.",
-              "Handover with documentation, or a monthly retainer if you would rather we keep it running and add the next one."
+              {
+                "title": "A free 30 minute call",
+                "text": "About where your week goes. Bring the annoying tasks, not a wishlist."
+              },
+              {
+                "title": "A short written plan",
+                "text": "The two or three automations worth building first, what each one saves, and a fixed price."
+              },
+              {
+                "title": "Build and test with real data",
+                "text": "Then we show you it running on a screen share."
+              },
+              {
+                "title": "Handover or retainer",
+                "text": "Documentation and training, or a monthly retainer if you would rather we keep it running and add the next one."
+              }
             ]
           },
           {
@@ -1101,14 +1321,22 @@
           },
           {
             "type": "p",
-            "text": "A pipeline that mirrors how you sell: new lead, contacted, quote sent, booked, done, and whatever sits between. You drag a card, the next action fires. Forms and a phone number that capture every enquiry into the same place, whether it came from the website, a text, a Facebook ad, or a missed call."
+            "title": "A pipeline shaped like your sales",
+            "text": "New lead, contacted, quote sent, booked, done, and whatever sits between. You drag a card, the next action fires."
           },
           {
             "type": "p",
-            "text": "Follow up sequences that run on their own. A new lead gets a reply within a minute, then a text the next morning, then an email, then a call reminder for you, until they book or opt out. Our guide to [automated lead follow up in GoHighLevel](/blog/gohighlevel-lead-follow-up-automation) shows the exact sequence we start from."
+            "title": "Every enquiry in one place",
+            "text": "Forms and a phone number that capture every enquiry into the same list, whether it came from the website, a text, a Facebook ad, or a missed call."
           },
           {
             "type": "p",
+            "title": "Follow up that runs itself",
+            "text": "A new lead gets a reply within a minute, then a text the next morning, then an email, then a call reminder for you, until they book or opt out. Our guide to [automated lead follow up in GoHighLevel](/blog/gohighlevel-lead-follow-up-automation) shows the exact sequence we start from."
+          },
+          {
+            "type": "p",
+            "title": "Booking, reminders, reviews, and the dashboard",
             "text": "A calendar with online booking, so \"when can you come out\" becomes a link. Estimate and appointment reminders so people show up. Review requests after the job. And the dashboard that shows how many leads came in this month, from where, and how many became customers."
           }
         ]
@@ -1144,15 +1372,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Monday, a lead comes in from the website at 7:40am while you are driving. The reply goes out at 7:41 with your name on it. Your phone shows the card. You call at lunch, quote on the spot, and the quote goes out from the app with a follow up already queued for Thursday."
+            "title": "Monday",
+            "text": "A lead comes in from the website at 7:40am while you are driving. The reply goes out at 7:41 with your name on it. Your phone shows the card. You call at lunch, quote on the spot, and the quote goes out from the app with a follow up already queued for Thursday."
           },
           {
             "type": "p",
-            "text": "Wednesday, a customer from last spring gets the rebooking text you never had to remember to send, and books online. Thursday, the Monday lead has not replied, so the second message goes out on its own. Friday, the job you finished yesterday triggers a review request, and the review lands on your Google listing over the weekend."
+            "title": "Wednesday to Friday",
+            "text": "A customer from last spring gets the rebooking text you never had to remember to send, and books online. Thursday, the Monday lead has not replied, so the second message goes out on its own. Friday, the job you finished yesterday triggers a review request, and the review lands on your Google listing over the weekend."
           },
           {
             "type": "p",
-            "text": "Sunday night you open the dashboard once. Eleven leads this month, six from Google, four booked, two still in follow up. That is the whole week of admin, and you typed almost none of it."
+            "title": "Sunday night",
+            "text": "You open the dashboard once. Eleven leads this month, six from Google, four booked, two still in follow up. That is the whole week of admin, and you typed almost none of it."
           }
         ]
       },
@@ -1161,11 +1392,28 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A contractor gets an estimate pipeline, missed call text back, and a reminder the day before the site visit, because the job goes to whoever answers first and shows up. We compared the options for that world in [GoHighLevel vs Jobber](/blog/gohighlevel-vs-jobber-home-service-crm)."
+            "title": "Contractors",
+            "text": "An estimate pipeline, missed call text back, and a reminder the day before the site visit, because the job goes to whoever answers first and shows up. We compared the options for that world in [GoHighLevel vs Jobber](/blog/gohighlevel-vs-jobber-home-service-crm)."
           },
           {
             "type": "p",
-            "text": "A salon or clinic gets online booking, no show reminders, and a rebooking message six weeks after the last visit. A coach or consultant gets a discovery call funnel with the qualifying questions built in, so the calendar only fills with people who fit. A restaurant gets a customer list that grows from the Google listing and a monthly offer that goes out by text; our [restaurant playbook](/blog/gohighlevel-for-restaurants-fill-tables) walks through it. An agency gets the client onboarding sequence, the proposal follow up, and the reporting emails."
+            "title": "Salons and clinics",
+            "text": "Online booking, no show reminders, and a rebooking message six weeks after the last visit."
+          },
+          {
+            "type": "p",
+            "title": "Coaches and consultants",
+            "text": "A discovery call funnel with the qualifying questions built in, so the calendar only fills with people who fit."
+          },
+          {
+            "type": "p",
+            "title": "Restaurants",
+            "text": "A customer list that grows from the Google listing and a monthly offer that goes out by text; our [restaurant playbook](/blog/gohighlevel-for-restaurants-fill-tables) walks through it."
+          },
+          {
+            "type": "p",
+            "title": "Agencies",
+            "text": "The client onboarding sequence, the proposal follow up, and the reporting emails."
           },
           {
             "type": "p",
@@ -1234,10 +1482,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call. You walk us through how a lead reaches you today and what happens after. We map the leaks.",
-              "A proposal with the pipeline design, the automations we will build, and a fixed price.",
-              "We build the account, import your contacts, connect your number and forms, and run test leads through every sequence with you watching.",
-              "A training session for you and anyone who touches leads, then handover. Monthly management is available if you would rather not maintain it."
+              {
+                "title": "A free 30 minute call",
+                "text": "You walk us through how a lead reaches you today and what happens after. We map the leaks."
+              },
+              {
+                "title": "A proposal with the pipeline drawn out",
+                "text": "The automations we will build, and a fixed price."
+              },
+              {
+                "title": "Build, import, connect, test",
+                "text": "We build the account, import your contacts, connect your number and forms, and run test leads through every sequence with you watching."
+              },
+              {
+                "title": "Training and handover",
+                "text": "A session for you and anyone who touches leads. Monthly management is available if you would rather not maintain it."
+              }
             ]
           }
         ]
@@ -1334,7 +1594,28 @@
           },
           {
             "type": "p",
-            "text": "An invoice tracker that knows which of your customers pays late. A place to drop every bill and receipt, with one export at the end of the year that your accountant can file from. A dashboard that watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last six months, so you know what is working before you post. A quote builder that prices your jobs the way you price them in your head. A report that pulls from the three systems you already pay for and lands in your inbox Monday morning."
+            "title": "Invoice tracker",
+            "text": "One that knows which of your customers pays late."
+          },
+          {
+            "type": "p",
+            "title": "Bills and receipts vault",
+            "text": "A place to drop every bill and receipt, with one export at the end of the year that your accountant can file from."
+          },
+          {
+            "type": "p",
+            "title": "Competitor video dashboard",
+            "text": "It watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last six months, so you know what is working before you post."
+          },
+          {
+            "type": "p",
+            "title": "Quote builder",
+            "text": "One that prices your jobs the way you price them in your head."
+          },
+          {
+            "type": "p",
+            "title": "Monday morning report",
+            "text": "It pulls from the three systems you already pay for and lands in your inbox before the week starts."
           },
           {
             "type": "p",
@@ -1373,10 +1654,12 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Anchor Safety came to us with 300 files spread across a shared drive and a daily list of 160 tasks. The replacement, built in 2 weeks, was [three dashboards plus a bot](/work/notion-productivity-dashboard-anchor-safety) that listens to a spoken note and files each item with an owner and a date."
+            "title": "Anchor Safety",
+            "text": "They came to us with 300 files spread across a shared drive and a daily list of 160 tasks. The replacement, built in 2 weeks, was [three dashboards plus a bot](/work/notion-productivity-dashboard-anchor-safety) that listens to a spoken note and files each item with an owner and a date."
           },
           {
             "type": "p",
+            "title": "Our own tools",
             "text": "We run RSL/A on tools we built for ourselves. A proposal platform that generates the document, collects the signature, and takes the deposit. An expense vault that reads receipts and files them for tax time. We would not sell software we do not use."
           },
           {
@@ -1471,11 +1754,17 @@
           },
           {
             "type": "p",
-            "text": "The map pack is your Google Business Profile: its category, its reviews, its distance from the searcher. The regular results are your website: a page for that service in that city, and the links pointing at it. Winning one does not win the other, which is why so many \"local SEO packages\" post to your profile every week and never move anything."
+            "title": "The map pack",
+            "text": "Your Google Business Profile: its category, its reviews, its distance from the searcher."
           },
           {
             "type": "p",
-            "text": "We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first."
+            "title": "The regular results",
+            "text": "Your website: a page for that service in that city, and the links pointing at it."
+          },
+          {
+            "type": "p",
+            "text": "Winning one does not win the other, which is why so many \"local SEO packages\" post to your profile every week and never move anything. We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first."
           }
         ]
       },
@@ -1514,37 +1803,32 @@
         "blocks": [
           {
             "type": "p",
+            "title": "Storefront or service area",
             "text": "A storefront shows its address and ranks around it. A service area business, the plumber or landscaper who works from home, hides the address and lists the towns it serves, and it ranks strongest near home. Both are legitimate; pretending to be the other one is the second most common reason a profile gets suspended."
           },
           {
             "type": "p",
+            "title": "Several towns",
             "text": "If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something real about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain."
           }
         ]
       },
       {
-        "heading": "Citations, done once",
+        "heading": "Citations, reviews, and AI answers",
         "blocks": [
           {
             "type": "p",
+            "title": "Citations, done once",
             "text": "Citations are your name, phone, and address on the directories that matter: Google, Apple, Bing, Facebook, Yelp, then the industry ones for your trade. We build 25 to 40 of them, by hand, from one canonical record, and then stop. Diminishing returns start there. We never rent citations on a monthly sync, because when the subscription ends, most of the listings decay with it."
-          }
-        ]
-      },
-      {
-        "heading": "Reviews without the risk",
-        "blocks": [
+          },
           {
             "type": "p",
+            "title": "Reviews without the risk",
             "text": "Reviews gate entry to the map pack, and nearly half of consumers will not use a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation. Doing it properly is not optional anymore."
-          }
-        ]
-      },
-      {
-        "heading": "Showing up when they ask an AI instead",
-        "blocks": [
+          },
           {
             "type": "p",
+            "title": "When they ask an AI instead",
             "text": "More people ask ChatGPT or Google's AI for \"a good electrician near me\" than a year ago. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and real mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses)."
           }
         ]
@@ -1674,11 +1958,13 @@
         "blocks": [
           {
             "type": "p",
+            "title": "Google's own definition",
             "text": "Google's [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) name the failure mode directly. Scaled content abuse is \"many pages generated for the primary purpose of manipulating search rankings and not helping users.\" Doorway abuse is pages \"created to rank for specific, similar search queries\" that lead to a weaker destination. A city page with the name swapped and nothing else changed is both."
           },
           {
             "type": "p",
-            "text": "So the test for every page set we build is simple. Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, we will not build it, and we will say why on the call."
+            "title": "Our test for every page",
+            "text": "Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, we will not build it, and we will say why on the call."
           }
         ]
       },
@@ -1687,19 +1973,23 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Research first. We pull real search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says."
+            "title": "Research first",
+            "text": "We pull real search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says."
           },
           {
             "type": "p",
-            "text": "Then the data. The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline."
+            "title": "The data model",
+            "text": "The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline."
           },
           {
             "type": "p",
-            "text": "Then a small first batch, because the first batch is a test, not a launch. We ran that test on ourselves. In March 2026 we published 12 industry pages on our own site, one per keyword cluster, linked from the industries grid on our [services page](/services), and gated the second batch on Google indexing the first. Five months later only 2 of the 12 had earned a single impression in Search Console. So the second batch never got built, and those pages are being rewritten one at a time with data each page can call its own. That is the gate working. \"Crawled, currently not indexed\" is Google telling you the pages are thin, and publishing more of them makes it worse."
+            "title": "A small first batch",
+            "text": "The first batch is a test, not a launch. We ran that test on ourselves. In March 2026 we published 12 industry pages on our own site, one per keyword cluster, linked from the industries grid on our [services page](/services), and gated the second batch on Google indexing the first. Five months later only 2 of the 12 had earned a single impression in Search Console. So the second batch never got built, and those pages are being rewritten one at a time with data each page can call its own. That is the gate working. \"Crawled, currently not indexed\" is Google telling you the pages are thin, and publishing more of them makes it worse."
           },
           {
             "type": "p",
-            "text": "Then internal links from the pages that already get traffic, because an orphaned page set dies quietly no matter how good the template is. Then the next batch."
+            "title": "Internal links, then the next batch",
+            "text": "Links from the pages that already get traffic, because an orphaned page set dies quietly no matter how good the template is. Only then does the next batch go out."
           }
         ]
       },
@@ -1821,19 +2111,23 @@
         "blocks": [
           {
             "type": "p",
-            "text": "We start with the money pages. One page per service you actually sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one."
+            "title": "Money pages first",
+            "text": "One page per service you actually sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one."
           },
           {
             "type": "p",
-            "text": "Then on page SEO: titles, headings, internal links with real anchor text, image names, and an answer at the top of every page in plain language, because that is what both Google and the AI assistants extract."
+            "title": "On page SEO",
+            "text": "Titles, headings, internal links with real anchor text, image names, and an answer at the top of every page in plain language, because that is what both Google and the AI assistants extract."
           },
           {
             "type": "p",
-            "text": "Then the ongoing work. One genuinely useful article a week, built from questions your customers already ask, wired into the pages that make money. Consistency is what wins. Almost nobody keeps it up, which is exactly why it works."
+            "title": "One article a week",
+            "text": "Genuinely useful, built from questions your customers already ask, wired into the pages that make money. Consistency is what wins. Almost nobody keeps it up, which is exactly why it works."
           },
           {
             "type": "p",
-            "text": "Technical SEO runs underneath all of it: crawlability, indexing, speed, schema, redirects. We fix the things that tell Google to look elsewhere, and we stop at 90 percent site health instead of chasing every flag a tool throws."
+            "title": "Technical SEO underneath",
+            "text": "Crawlability, indexing, speed, schema, redirects. We fix the things that tell Google to look elsewhere, and we stop at 90 percent site health instead of chasing every flag a tool throws."
           }
         ]
       },
@@ -1842,7 +2136,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Search Console first. It shows which queries already land on your site and which of them land on the wrong page, and that gap is usually the next money page. Then real search volume, from Google's own advertising data rather than a third party estimate, when a choice is close. Then the live top ten, read by a person, because the volume tools are wrong about intent more often than they are right. A term that looks commercial can turn out to be job listings and university guides when you look."
+            "title": "Search Console first",
+            "text": "It shows which queries already land on your site and which of them land on the wrong page, and that gap is usually the next money page."
+          },
+          {
+            "type": "p",
+            "title": "Real search volume",
+            "text": "From Google's own advertising data rather than a third party estimate, when a choice is close."
+          },
+          {
+            "type": "p",
+            "title": "The live top ten, read by a person",
+            "text": "The volume tools are wrong about intent more often than they are right. A term that looks commercial can turn out to be job listings and university guides when you look."
           },
           {
             "type": "p",
@@ -1864,10 +2169,12 @@
         "blocks": [
           {
             "type": "p",
+            "title": "Local SEO",
             "text": "If your customers are in one city, the work shifts toward Google Maps, your Business Profile, reviews, and a page per service in that city. That is [local SEO](/services/seo/local), and it has its own page because it has its own rules. If you are in Kern County, we do it in person; see [SEO in Bakersfield](/bakersfield/seo)."
           },
           {
             "type": "p",
+            "title": "Programmatic SEO",
             "text": "If you have data that could fill hundreds of useful pages, one per product, region, or comparison, that is [programmatic SEO](/services/seo/programmatic). We build those page sets with a hard rule: every page has to carry something no other page does, or it does not get built."
           }
         ]
@@ -1918,7 +2225,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Month one, we report indexed pages and impressions, not rankings, because there are no meaningful rankings yet and we would rather not teach you to watch the wrong number. Month three, impressions trend, the growing set of queries, and the first position movement. Month six onward, clicks and leads. Every report comes with the Search Console and analytics screenshots, so you can see exactly what we see."
+            "title": "Month one",
+            "text": "We report indexed pages and impressions, not rankings, because there are no meaningful rankings yet and we would rather not teach you to watch the wrong number."
+          },
+          {
+            "type": "p",
+            "title": "Month three",
+            "text": "Impressions trend, the growing set of queries, and the first position movement."
+          },
+          {
+            "type": "p",
+            "title": "Month six onward",
+            "text": "Clicks and leads. Every report comes with the Search Console and analytics screenshots, so you can see exactly what we see."
           },
           {
             "type": "p",
@@ -2006,15 +2324,28 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The site does not work on a phone, or it does, but you have to pinch and zoom. It takes four seconds to load on 5G. The design was modern in 2018. The person who built it has moved on and the plugins have not been updated since."
+            "title": "It fails on a phone",
+            "text": "The site does not work on a phone, or it does, but you have to pinch and zoom."
           },
           {
             "type": "p",
-            "text": "Or the business changed and the site did not. You dropped a service, added two, moved cities, and the homepage still describes the company you ran three years ago."
+            "title": "It loads slowly",
+            "text": "It takes four seconds to load on 5G, and most of your visitors are on a phone."
           },
           {
             "type": "p",
-            "text": "The most common reason we hear is simpler: the owner is embarrassed to send the link."
+            "title": "It looks like 2018",
+            "text": "The design was modern then. The person who built it has moved on and the plugins have not been updated since."
+          },
+          {
+            "type": "p",
+            "title": "The business changed",
+            "text": "You dropped a service, added two, moved cities, and the homepage still describes the company you ran three years ago."
+          },
+          {
+            "type": "p",
+            "title": "You hide the link",
+            "text": "The most common reason we hear is simpler: the owner is embarrassed to send it."
           }
         ]
       },
@@ -2023,11 +2354,13 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Everything the visitor sees and most of what Google reads. New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone, because most of your visitors are on one. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox."
+            "title": "Everything the visitor sees",
+            "text": "New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone, because most of your visitors are on one. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox."
           },
           {
             "type": "p",
-            "text": "And the structure underneath: clean titles, one heading hierarchy, schema markup, and plain question and answer sections that AI assistants can quote."
+            "title": "Most of what Google reads",
+            "text": "The structure underneath: clean titles, one heading hierarchy, schema markup, and plain question and answer sections that AI assistants can quote."
           }
         ]
       },
@@ -2112,10 +2445,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call where you show us the current site and tell us what it is failing at.",
-              "We audit what ranks, what is linked, and what is broken, and send a proposal with a fixed price and a timeline.",
-              "Copy first, then design, then build. Every URL that matters gets mapped to its new home before launch day.",
-              "Launch with the redirects in place, Search Console checked the same day, and CMS training so you can update pages yourself."
+              {
+                "title": "A free 30 minute call",
+                "text": "You show us the current site and tell us what it is failing at."
+              },
+              {
+                "title": "Audit, then a fixed price",
+                "text": "We audit what ranks, what is linked, and what is broken, and send a proposal with a fixed price and a timeline."
+              },
+              {
+                "title": "Copy, design, build",
+                "text": "Every URL that matters gets mapped to its new home before launch day."
+              },
+              {
+                "title": "Launch with the redirects in place",
+                "text": "Search Console checked the same day, and CMS training so you can update pages yourself."
+              }
             ]
           }
         ]
@@ -2224,10 +2569,12 @@
         "blocks": [
           {
             "type": "p",
+            "title": "No website yet",
             "text": "Some owners come to us with no website at all. A Facebook page, a Google listing, maybe a logo a cousin made. Customers find them anyway, then go quiet because there is nowhere to check what the business actually does."
           },
           {
             "type": "p",
+            "title": "A site from 2019",
             "text": "Others have a site that has not been touched since 2019. It loads slowly on a phone, the person who built it is gone, and nobody knows the login. That project is a rebuild, and it has its own rules about keeping the rankings you already have. We cover those on the [website redesign](/services/websites/redesign) page."
           },
           {
@@ -2245,7 +2592,18 @@
           },
           {
             "type": "p",
-            "text": "So the first job is communication. What you do, who you do it for, where, and what happens next. The second job is design, because communicating is one thing and designing that communication is another. The third job is being readable by machines: Google, and now the AI assistants people ask for recommendations."
+            "title": "Communicate",
+            "text": "What you do, who you do it for, where, and what happens next. That is the first job."
+          },
+          {
+            "type": "p",
+            "title": "Design it",
+            "text": "Communicating is one thing and designing that communication is another. That is the second."
+          },
+          {
+            "type": "p",
+            "title": "Be readable by machines",
+            "text": "Google, and now the AI assistants people ask for recommendations. That is the third."
           },
           {
             "type": "p",
@@ -2258,15 +2616,18 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Copy comes first. We write it from a call with you, because the words decide the layout, not the other way round. What makes a website yours is you: the story, the branding, the personality. A template cannot supply that."
+            "title": "Copy first",
+            "text": "We write it from a call with you, because the words decide the layout, not the other way round. What makes a website yours is you: the story, the branding, the personality. A template cannot supply that."
           },
           {
             "type": "p",
-            "text": "Then the design, then the build. We hand code every site on a modern stack instead of a drag and drop builder, which is why our pages pass Google's [Core Web Vitals](https://web.dev/articles/vitals) on a phone and why you get full control of structure and speed later."
+            "title": "Design, then a hand coded build",
+            "text": "We hand code every site on a modern stack instead of a drag and drop builder, which is why our pages pass Google's [Core Web Vitals](https://web.dev/articles/vitals) on a phone and why you get full control of structure and speed later."
           },
           {
             "type": "p",
-            "text": "Every site ships with the search structure already in place: one page per service, one keyword per page, proper titles and headings, schema markup, and plain question and answer sections that AI assistants can lift. For a local business, that last part is what gets you named when a customer asks ChatGPT instead of Google; we wrote up the details in [AEO for local businesses](/blog/aeo-for-local-businesses). Forms connect to your inbox or your [CRM](/services/crm) so a lead never sits unread. We hand over the domain, the code, and the CMS access, and we train you on the CMS before we leave."
+            "title": "Search structure built in",
+            "text": "Every site ships with one page per service, one keyword per page, proper titles and headings, schema markup, and plain question and answer sections that AI assistants can lift. For a local business, that last part is what gets you named when a customer asks ChatGPT instead of Google; we wrote up the details in [AEO for local businesses](/blog/aeo-for-local-businesses). Forms connect to your inbox or your [CRM](/services/crm) so a lead never sits unread. We hand over the domain, the code, and the CMS access, and we train you on the CMS before we leave."
           }
         ]
       },
@@ -2326,10 +2687,22 @@
           {
             "type": "ol",
             "items": [
-              "A free 30 minute call. You tell us what the business does, who it is for, and what the site has to make happen. We tell you whether you need a full build or a smaller fix.",
-              "A proposal with a clear scope, a timeline, and a fixed price. No hourly billing.",
-              "Copy, then design, then build. You review at each step, so nothing gets coded that you have not read.",
-              "Launch, handover, and CMS training. Ongoing maintenance is available if you would rather not think about updates."
+              {
+                "title": "A free 30 minute call",
+                "text": "You tell us what the business does, who it is for, and what the site has to make happen. We tell you whether you need a full build or a smaller fix."
+              },
+              {
+                "title": "A fixed price proposal",
+                "text": "Clear scope, a timeline, one number. No hourly billing."
+              },
+              {
+                "title": "Copy, then design, then build",
+                "text": "You review at each step, so nothing gets coded that you have not read."
+              },
+              {
+                "title": "Launch and handover",
+                "text": "CMS training included. Ongoing maintenance is available if you would rather not think about updates."
+              }
             ]
           }
         ]

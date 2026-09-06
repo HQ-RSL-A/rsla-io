@@ -30,9 +30,11 @@ Weekly 49 point rank grids, so you see the map, not a guess · Reviews, categori
 
 Type "plumber" into Google from your phone and you get two things: the map pack with three businesses, and the regular results underneath. They are ranked by different systems.
 
-The map pack is your Google Business Profile: its category, its reviews, its distance from the searcher. The regular results are your website: a page for that service in that city, and the links pointing at it. Winning one does not win the other, which is why so many "local SEO packages" post to your profile every week and never move anything.
+**The map pack.** Your Google Business Profile: its category, its reviews, its distance from the searcher.
 
-We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first.
+**The regular results.** Your website: a page for that service in that city, and the links pointing at it.
+
+Winning one does not win the other, which is why so many "local SEO packages" post to your profile every week and never move anything. We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first.
 
 ## What actually ranks a Google Business Profile
 
@@ -50,21 +52,17 @@ We build those pages, wire them into your profile, and link them from the pages 
 
 ## Storefronts, service areas, and several towns
 
-A storefront shows its address and ranks around it. A service area business, the plumber or landscaper who works from home, hides the address and lists the towns it serves, and it ranks strongest near home. Both are legitimate; pretending to be the other one is the second most common reason a profile gets suspended.
+**Storefront or service area.** A storefront shows its address and ranks around it. A service area business, the plumber or landscaper who works from home, hides the address and lists the towns it serves, and it ranks strongest near home. Both are legitimate; pretending to be the other one is the second most common reason a profile gets suspended.
 
-If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something real about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain.
+**Several towns.** If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something real about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain.
 
-## Citations, done once
+## Citations, reviews, and AI answers
 
-Citations are your name, phone, and address on the directories that matter: Google, Apple, Bing, Facebook, Yelp, then the industry ones for your trade. We build 25 to 40 of them, by hand, from one canonical record, and then stop. Diminishing returns start there. We never rent citations on a monthly sync, because when the subscription ends, most of the listings decay with it.
+**Citations, done once.** Citations are your name, phone, and address on the directories that matter: Google, Apple, Bing, Facebook, Yelp, then the industry ones for your trade. We build 25 to 40 of them, by hand, from one canonical record, and then stop. Diminishing returns start there. We never rent citations on a monthly sync, because when the subscription ends, most of the listings decay with it.
 
-## Reviews without the risk
+**Reviews without the risk.** Reviews gate entry to the map pack, and nearly half of consumers will not use a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation. Doing it properly is not optional anymore.
 
-Reviews gate entry to the map pack, and nearly half of consumers will not use a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation. Doing it properly is not optional anymore.
-
-## Showing up when they ask an AI instead
-
-More people ask ChatGPT or Google's AI for "a good electrician near me" than a year ago. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and real mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses).
+**When they ask an AI instead.** More people ask ChatGPT or Google's AI for "a good electrician near me" than a year ago. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and real mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses).
 
 ## How you will see progress
 

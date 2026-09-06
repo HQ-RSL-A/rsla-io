@@ -790,8 +790,10 @@ function moneyPageContent(page) {
 
   const sections = page.sections.map(sec => {
     const blocks = sec.blocks.map(b => {
+      if (b.type === 'p' && b.title) return `<h3>${esc(b.title)}</h3><p>${inlineToHtml(b.text)}</p>`;
+      if (b.type === 'p' && b.link) return `<p><a href="${esc(b.link.to)}">${esc(b.link.label)}</a>: ${inlineToHtml(b.text)}</p>`;
       if (b.type === 'p') return `<p>${inlineToHtml(b.text)}</p>`;
-      if (b.type === 'ol') return `<ol>${b.items.map(it => `<li>${inlineToHtml(it)}</li>`).join('')}</ol>`;
+      if (b.type === 'ol') return `<ol>${b.items.map(it => `<li>${it.title ? `<strong>${esc(it.title)}</strong> ` : ''}${inlineToHtml(it.text)}</li>`).join('')}</ol>`;
       if (b.type === 'quote') return `<blockquote><p>${esc(b.text)}</p>${b.cite ? `<cite>${esc(b.cite)}</cite>` : ''}</blockquote>`;
       if (b.type === 'cta') return `<p><strong>${inlineToHtml(b.lead)}</strong> <a href="/contact">${esc(b.label)}</a></p>`;
       return '';

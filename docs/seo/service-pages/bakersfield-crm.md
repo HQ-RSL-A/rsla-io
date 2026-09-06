@@ -34,7 +34,15 @@ A CRM is the place all of that goes instead. We set ours up on GoHighLevel becau
 
 ## What the setup includes
 
-A pipeline with your stages on it: new, called back, estimate out, booked, paid. Forms on your [website](/bakersfield/websites) and a tracked phone number feeding the same inbox, so a Google enquiry, a text, and a missed call all land in one list. Follow up sequences that reply within a minute and keep going until the customer books or opts out; the exact starting sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation). Online booking for estimates. Reminders so people are home when you arrive. Review requests after the job. A dashboard that answers, on a Sunday night, how many leads came in, where from, and how many turned into jobs.
+**A pipeline with your stages.** New, called back, estimate out, booked, paid.
+
+**One inbox for every enquiry.** Forms on your [website](/bakersfield/websites) and a tracked phone number feeding the same inbox, so a Google enquiry, a text, and a missed call all land in one list.
+
+**Follow up that keeps going.** Sequences that reply within a minute and keep going until the customer books or opts out; the exact starting sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation).
+
+**Booking, reminders, reviews.** Online booking for estimates. Reminders so people are home when you arrive. Review requests after the job.
+
+**The Sunday night dashboard.** It answers how many leads came in, where from, and how many turned into jobs.
 
 And the part that makes it local: we do the setup with you, in person, with your real leads going through it while you watch on your own phone.
 
@@ -55,10 +63,10 @@ The full breakdown of what a GoHighLevel setup includes, why we chose it over Hu
 
 ## How it runs
 
-1. A free 30 minute call, at your yard or your shop if that beats a video call. You show us how a lead reaches you today.
-2. A written quote with the pipeline drawn out, the automations listed, and one fixed number.
-3. We build the account, bring your contacts in, connect your number and forms, and test it with you in the room.
-4. An hour of training on your own phone, then it is yours. If you want us to keep maintaining it, that is a monthly arrangement.
+1. **A free 30 minute call.** At your yard or your shop if that beats a video call. You show us how a lead reaches you today.
+2. **A written quote.** The pipeline drawn out, the automations listed, and one fixed number.
+3. **Build and test in the room.** Account set up, contacts brought in, number and forms connected, then a test lead with you watching.
+4. **An hour of training.** On your own phone, then it is yours. If you want us to keep maintaining it, that is a monthly arrangement.
 
 ## Questions Bakersfield owners ask about CRMs
 

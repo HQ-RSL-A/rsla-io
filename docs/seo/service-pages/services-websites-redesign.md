@@ -28,17 +28,21 @@ Fieldshare rebuilt and repositioned, then cited by ChatGPT, Gemini, and Google A
 
 ## Signs it is time to redesign
 
-The site does not work on a phone, or it does, but you have to pinch and zoom. It takes four seconds to load on 5G. The design was modern in 2018. The person who built it has moved on and the plugins have not been updated since.
+**It fails on a phone.** The site does not work on a phone, or it does, but you have to pinch and zoom.
 
-Or the business changed and the site did not. You dropped a service, added two, moved cities, and the homepage still describes the company you ran three years ago.
+**It loads slowly.** It takes four seconds to load on 5G, and most of your visitors are on a phone.
 
-The most common reason we hear is simpler: the owner is embarrassed to send the link.
+**It looks like 2018.** The design was modern then. The person who built it has moved on and the plugins have not been updated since.
+
+**The business changed.** You dropped a service, added two, moved cities, and the homepage still describes the company you ran three years ago.
+
+**You hide the link.** The most common reason we hear is simpler: the owner is embarrassed to send it.
 
 ## What a website redesign changes
 
-Everything the visitor sees and most of what Google reads. New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone, because most of your visitors are on one. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox.
+**Everything the visitor sees.** New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone, because most of your visitors are on one. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox.
 
-And the structure underneath: clean titles, one heading hierarchy, schema markup, and plain question and answer sections that AI assistants can quote.
+**Most of what Google reads.** The structure underneath: clean titles, one heading hierarchy, schema markup, and plain question and answer sections that AI assistants can quote.
 
 ## What we check before we quote
 
@@ -77,10 +81,10 @@ Sid S., Account Executive, SBC
 
 ## How a redesign runs
 
-1. A free 30 minute call where you show us the current site and tell us what it is failing at.
-2. We audit what ranks, what is linked, and what is broken, and send a proposal with a fixed price and a timeline.
-3. Copy first, then design, then build. Every URL that matters gets mapped to its new home before launch day.
-4. Launch with the redirects in place, Search Console checked the same day, and CMS training so you can update pages yourself.
+1. **A free 30 minute call.** You show us the current site and tell us what it is failing at.
+2. **Audit, then a fixed price.** We audit what ranks, what is linked, and what is broken, and send a proposal with a fixed price and a timeline.
+3. **Copy, design, build.** Every URL that matters gets mapped to its new home before launch day.
+4. **Launch with the redirects in place.** Search Console checked the same day, and CMS training so you can update pages yourself.
 
 ## Launch day and the month after
 

@@ -34,11 +34,11 @@ Every one of those is a repeatable task with a screen in it, which means it can 
 
 ## What we build for local businesses
 
-Lead response first, because in Bakersfield the job goes to whoever answers. Then follow up that runs until the customer books or says no. Then the admin: intake straight into the [CRM](/bakersfield/crm), appointment reminders, review requests after every job, and the weekly numbers in one place instead of five apps.
+**Lead response and follow up.** Lead response first, because in Bakersfield the job goes to whoever answers. Then follow up that runs until the customer books or says no. Then the admin: intake straight into the [CRM](/bakersfield/crm), appointment reminders, review requests after every job, and the weekly numbers in one place instead of five apps.
 
-Then the AI pieces. A phone assistant that takes the call and books the estimate when you cannot pick up. A bot that turns your voice note into a new lead with the right tags. A month of social posts cut from a single job site video.
+**The AI pieces.** A phone assistant that takes the call and books the estimate when you cannot pick up. A bot that turns your voice note into a new lead with the right tags. A month of social posts cut from a single job site video.
 
-We build on the tools you already pay for: your calendar, your inbox, QuickBooks, your CRM. The automation runs in n8n or Make, with GoHighLevel where leads are involved and an AI agent where a step needs judgment. The full list of what we automate, and the three builds with numbers, is on our [AI automation services](/services/automations) page.
+**On the tools you already pay for.** QuickBooks, the calendar on your phone, your inbox, your CRM. The automation runs in n8n or Make, with GoHighLevel where leads are involved and an AI agent where a step needs judgment. The full list of what we automate, and the three builds with numbers, is on our [AI automation services](/services/automations) page.
 
 ## What automation does and does not do
 
@@ -52,9 +52,9 @@ We are home based in the southwest of the city and we do the first setup with yo
 
 ## Two builds, with numbers
 
-For Anchor Safety, a professional services firm, the starting point was 300 files spread across a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot that turns his voice notes into sorted tasks](/work/notion-productivity-dashboard-anchor-safety). He talks into his phone; the list builds itself.
+**300 files to 3 dashboards.** For Anchor Safety, a professional services firm, the starting point was 300 files spread across a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot that turns his voice notes into sorted tasks](/work/notion-productivity-dashboard-anchor-safety). He talks into his phone; the list builds itself.
 
-Our own outreach needed 1,200 personalized emails a day. One [3 step Make automation](/work/ai-cold-email-personalization) reads each lead and writes a first line specific to them, at a cost per email close to zero.
+**1,200 emails a day.** Our own outreach needed 1,200 personalized emails a day. One [3 step Make automation](/work/ai-cold-email-personalization) reads each lead and writes a first line specific to them, at a cost per email close to zero.
 
 "Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule."
 Chris K., CEO and Co-Founder, Fieldshare
@@ -63,10 +63,10 @@ Chris K., CEO and Co-Founder, Fieldshare
 
 ## How it runs
 
-1. Thirty free minutes, at your shop if you like, on where the week goes.
-2. One page back from us: the two or three builds worth doing first, the hours each saves, and one fixed number.
-3. We build it, put your real leads through it while you watch, and fix what does not fit your day.
-4. You get the documentation and an hour of training on your own phone. Prefer that we watch it and keep building? That is a monthly arrangement.
+1. **Thirty free minutes.** At your shop if you like, on where the week goes.
+2. **One page back from us.** Which builds come first, the hours each one hands back, and one fixed number.
+3. **Your real leads, while you watch.** We put them through the system in front of you and fix what does not fit your day.
+4. **Documentation and training.** An hour on your own phone. Prefer that we watch it and keep building? That is a monthly arrangement.
 
 ## Questions Bakersfield owners ask about automation
 

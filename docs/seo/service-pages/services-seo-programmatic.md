@@ -34,19 +34,19 @@ The pages rank because each one answers a search nobody has bothered to answer o
 
 ## When it works, and when it is spam
 
-Google's [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) name the failure mode directly. Scaled content abuse is "many pages generated for the primary purpose of manipulating search rankings and not helping users." Doorway abuse is pages "created to rank for specific, similar search queries" that lead to a weaker destination. A city page with the name swapped and nothing else changed is both.
+**Google's own definition.** Google's [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) name the failure mode directly. Scaled content abuse is "many pages generated for the primary purpose of manipulating search rankings and not helping users." Doorway abuse is pages "created to rank for specific, similar search queries" that lead to a weaker destination. A city page with the name swapped and nothing else changed is both.
 
-So the test for every page set we build is simple. Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, we will not build it, and we will say why on the call.
+**Our test for every page.** Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, we will not build it, and we will say why on the call.
 
 ## How we build a page set
 
-Research first. We pull real search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says.
+**Research first.** We pull real search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says.
 
-Then the data. The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline.
+**The data model.** The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline.
 
-Then a small first batch, because the first batch is a test, not a launch. We ran that test on ourselves. In March 2026 we published 12 industry pages on our own site, one per keyword cluster, linked from the industries grid on our [services page](/services), and gated the second batch on Google indexing the first. Five months later only 2 of the 12 had earned a single impression in Search Console. So the second batch never got built, and those pages are being rewritten one at a time with data each page can call its own. That is the gate working. "Crawled, currently not indexed" is Google telling you the pages are thin, and publishing more of them makes it worse.
+**A small first batch.** The first batch is a test, not a launch. We ran that test on ourselves. In March 2026 we published 12 industry pages on our own site, one per keyword cluster, linked from the industries grid on our [services page](/services), and gated the second batch on Google indexing the first. Five months later only 2 of the 12 had earned a single impression in Search Console. So the second batch never got built, and those pages are being rewritten one at a time with data each page can call its own. That is the gate working. "Crawled, currently not indexed" is Google telling you the pages are thin, and publishing more of them makes it worse.
 
-Then internal links from the pages that already get traffic, because an orphaned page set dies quietly no matter how good the template is. Then the next batch.
+**Internal links, then the next batch.** Links from the pages that already get traffic, because an orphaned page set dies quietly no matter how good the template is. Only then does the next batch go out.
 
 ## What we refuse to build
 

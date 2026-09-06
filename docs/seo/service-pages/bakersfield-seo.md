@@ -36,17 +36,25 @@ That is the opportunity. Real pages about real Kern County businesses beat templ
 
 ## Where the map pack decides the job in Bakersfield
 
-Plumbers, electricians, HVAC, roofers, landscapers: the trades are the clearest case, because the search happens in the moment of need and the caller takes the first of the three that picks up. Med spas, dentists, and chiropractors, where the reviews decide. Restaurants and taco spots, where the photos do. Auto repair and tire shops along Rosedale and Union. Ag services and equipment, where the buyers are increasingly searching before they call the guy they always called.
+**The trades.** Plumbers, electricians, HVAC, roofers, landscapers: the clearest case, because the search happens in the moment of need and the caller takes the first of the three that picks up.
+
+**Med spas, dentists, chiropractors.** Where the reviews decide.
+
+**Restaurants and taco spots.** Where the photos do.
+
+**Auto repair and tire shops.** Along Rosedale and Union, where the map is the phone book.
+
+**Ag services and equipment.** Where the buyers are increasingly searching before they call the guy they always called.
 
 If your customers pick you off a map, the map is where the work starts.
 
 ## The two halves of Bakersfield SEO
 
-The map half is your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load real photos of your work, and start the review process. Reviews are the entry ticket: a profile with three does not enter a pack whose floor is twenty, and nearly half of consumers will not use a business with fewer than twenty. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does.
+**The map half.** Your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load real photos of your work, and start the review process. Reviews are the entry ticket: a profile with three does not enter a pack whose floor is twenty, and nearly half of consumers will not use a business with fewer than twenty. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does.
 
-The website half is a page per service, written for Bakersfield. Not a homepage that lists nine things and mentions the city once. A page for sprinkler repair in Bakersfield that shows the systems you have installed, quotes the customers who left you reviews, and answers the visitor's first question in the first paragraph. If the site itself is the problem, that is our [Bakersfield web design](/bakersfield/websites) page.
+**The website half.** A page per service, written for Bakersfield. Not a homepage that lists nine things and mentions the city once. A page for sprinkler repair in Bakersfield that shows the systems you have installed, quotes the customers who left you reviews, and answers the visitor's first question in the first paragraph. If the site itself is the problem, that is our [Bakersfield web design](/bakersfield/websites) page.
 
-Proximity is the part no agency can sell you around. You will rank strongest near your address and weaker across town, which is why our weekly grid has 49 points instead of one number. The pages, links, and reviews are what reach past your own neighborhood.
+**Proximity.** The part no agency can sell you around. You will rank strongest near your address and weaker across town, which is why our weekly grid has 49 points instead of one number. The pages, links, and reviews are what reach past your own neighborhood.
 
 ## We ran this on ourselves first
 
@@ -56,7 +64,13 @@ That is the point of hiring us over a firm you will never meet. We are in the sa
 
 ## The first 30 days
 
-Week one we read your top three competitors' profiles, set or confirm your primary category, and load every service Google offers under the names people search. Week two we fix hours, attributes, and the description, load 8 to 12 real photos, and send the first review asks to customers from the last three months. Week three the first service page goes live on your site, linked from your profile and from the pages that already get traffic. Week four the citations go out from one canonical record, and you get the second grid scan next to the first.
+**Week one.** We read your top three competitors' profiles, set or confirm your primary category, and load every service Google offers under the names people search.
+
+**Week two.** We fix hours, attributes, and the description, load 8 to 12 real photos, and send the first review asks to customers from the last three months.
+
+**Week three.** The first service page goes live on your site, linked from your profile and from the pages that already get traffic.
+
+**Week four.** The citations go out from one canonical record, and you get the second grid scan next to the first.
 
 By day 30 the profile is complete, the review count is moving, and the first page is indexed. That is the point where the map usually starts to show something on your easiest term, near your address.
 
@@ -79,10 +93,10 @@ Sid S., Account Executive, SBC
 
 ## How an engagement runs
 
-1. A free 30 minute call. Before it, we run the 49 point scan on your business and read the top three in your pack, so we arrive with the map.
-2. A proposal: what needs fixing on the profile, which pages the site is missing, and a fixed monthly number.
-3. Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid, with the scan date on it.
-4. Checkpoints at day 30, 60, and 90 where you hear what moved, what did not, and what changes next.
+1. **A free 30 minute call.** Before it, we run the 49 point scan on your business and read the top three in your pack, so we arrive with the map.
+2. **A proposal.** What needs fixing on the profile, which pages the site is missing, and a fixed monthly number.
+3. **Months one to three.** Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid, with the scan date on it.
+4. **Checkpoints at 30, 60, and 90 days.** You hear what moved, what did not, and what changes next.
 
 The full method behind this, for any city, is on our [local SEO services](/services/seo/local) page, the site wide work on [SEO services](/services/seo), and the rest of what we do here on the [Bakersfield](/bakersfield) page.
 

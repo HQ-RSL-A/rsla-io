@@ -35,15 +35,23 @@ Each of those is an automation waiting to be built. Most of them take a week or 
 
 ## What we automate most often
 
-Lead response is first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person actually asked, not "we got your message." Follow up runs on a schedule until they book or say no.
+**Lead response.** It comes first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person actually asked, not "we got your message." Follow up runs on a schedule until they book or say no.
 
-Then the admin around the work: appointment reminders and rescheduling, intake that fills your CRM without you typing, invoices and payment nudges, review requests after every job, the weekly numbers pulled into one dashboard instead of five tabs.
+**The admin around the work.** Appointment reminders and rescheduling, intake that fills your CRM without you typing, invoices and payment nudges, review requests after every job, the weekly numbers pulled into one dashboard instead of five tabs.
 
-Then the AI agents. An assistant that answers the phone when you cannot. A bot that turns a voice note into a task list or a new lead. A pipeline that turns one recording into a month of content. Our [client intake guide](/blog/automate-client-intake-ai) walks through one of these end to end.
+**AI agents.** An assistant that answers the phone when you cannot. A bot that turns a voice note into a task list or a new lead. A pipeline that turns one recording into a month of content. Our [client intake guide](/blog/automate-client-intake-ai) walks through one of these end to end.
 
 ## What it looks like by business type
 
-A dental office gets recall reminders that rebook the six month cleaning without the front desk calling. An HVAC company gets missed call text back and a maintenance plan reminder that goes out before summer. A property manager gets maintenance requests logged, assigned, and confirmed to the tenant without a phone call. A coaching business gets a discovery call funnel that qualifies before it books. A nonprofit gets volunteer signups onboarded, tagged, and messaged without a coordinator.
+**Dental office.** Recall reminders that rebook the six month cleaning without the front desk calling.
+
+**HVAC company.** Missed call text back and a maintenance plan reminder that goes out before summer.
+
+**Property manager.** Maintenance requests logged, assigned, and confirmed to the tenant without a phone call.
+
+**Coaching business.** A discovery call funnel that qualifies before it books.
+
+**Nonprofit.** Volunteer signups onboarded, tagged, and messaged without a coordinator.
 
 Same idea every time: find the task you repeat, decide the rule, hand it to software, keep the judgment calls for yourself.
 
@@ -53,11 +61,11 @@ Automation does not bring in customers. It protects the ones you already have an
 
 ## How we build it
 
-Diagnosis first. We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes.
+**Diagnosis first.** We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes.
 
-Then we build around the tools you already use. Your calendar, your inbox, your CRM, your accounting software. The work runs in [n8n](https://n8n.io) or [Make](https://www.make.com) for workflows, GoHighLevel for anything that touches leads and follow up, and AI agents where a task needs judgment instead of rules. If the CRM is the missing piece, we set that up too; see [CRM systems](/services/crm). If nothing off the shelf fits, we write the software; see [custom builds](/services/custom-builds).
+**Built around your tools.** Your calendar, your inbox, your CRM, your accounting software. The work runs in [n8n](https://n8n.io) or [Make](https://www.make.com) for workflows, GoHighLevel for anything that touches leads and follow up, and AI agents where a task needs judgment instead of rules. If the CRM is the missing piece, we set that up too; see [CRM systems](/services/crm). If nothing off the shelf fits, we write the software; see [custom builds](/services/custom-builds).
 
-Then we document it, train you on it, and either hand it over or keep it running for you. Automations need maintenance because the apps they connect to change. A retainer covers that. Managing it yourself is fine too.
+**Documented and handed over.** We document it, train you on it, and either hand it over or keep it running for you. Automations need maintenance because the apps they connect to change. A retainer covers that. Managing it yourself is fine too.
 
 ## What we need from you
 
@@ -65,11 +73,11 @@ Logins for the tools the automation touches, or a shared screen while we connect
 
 ## Three builds, with the numbers
 
-We needed 1,200 personalized cold emails a day for our own outreach, so we built a [3 step Make automation](/work/ai-cold-email-personalization) that reads each lead, writes a specific opening line, and puts it back in the sheet. Cost per email is close to zero.
+**1,200 emails a day.** We needed 1,200 personalized cold emails a day for our own outreach, so we built a [3 step Make automation](/work/ai-cold-email-personalization) that reads each lead, writes a specific opening line, and puts it back in the sheet. Cost per email is close to zero.
 
-Anchor Safety, a professional services company, was running on 300 scattered files and 160 daily tasks. In 2 weeks we replaced that with [3 Notion dashboards and a voice to task bot](/work/notion-productivity-dashboard-anchor-safety): the owner talks, the tasks appear.
+**300 files to 3 dashboards.** Anchor Safety, a professional services company, was running on 300 scattered files and 160 daily tasks. In 2 weeks we replaced that with [3 Notion dashboards and a voice to task bot](/work/notion-productivity-dashboard-anchor-safety): the owner talks, the tasks appear.
 
-Two suites at Casagrande Salon in Manhattan had sat empty for close to two years. We ran $600 in ads and let a GoHighLevel sequence do every bit of the chasing. Both filled within a few months, and the rent they bring in is worth [$36K a year](/work/salon-marketing-automation-roi).
+**Two suites filled.** Two suites at Casagrande Salon in Manhattan had sat empty for close to two years. We ran $600 in ads and let a GoHighLevel sequence do every bit of the chasing. Both filled within a few months, and the rent they bring in is worth [$36K a year](/work/salon-marketing-automation-roi).
 
 "I tried for months to rent my salon space and nothing worked. After Rahul and RSL/A, in just a few months both my rooms were filled. Now I don't stress about rent anymore."
 Laiz C., CEO, Casagrande Salon
@@ -78,10 +86,10 @@ Laiz C., CEO, Casagrande Salon
 
 ## How it works
 
-1. A free 30 minute call about where your week goes. Bring the annoying tasks, not a wishlist.
-2. A short written plan: the two or three automations worth building first, what each one saves, and a fixed price.
-3. We build, test with your real data, and show you it running on a screen share.
-4. Handover with documentation, or a monthly retainer if you would rather we keep it running and add the next one.
+1. **A free 30 minute call.** About where your week goes. Bring the annoying tasks, not a wishlist.
+2. **A short written plan.** The two or three automations worth building first, what each one saves, and a fixed price.
+3. **Build and test with real data.** Then we show you it running on a screen share.
+4. **Handover or retainer.** Documentation and training, or a monthly retainer if you would rather we keep it running and add the next one.
 
 In Kern County? We do the first setup in person; see [AI automation in Bakersfield](/bakersfield/automations).
 

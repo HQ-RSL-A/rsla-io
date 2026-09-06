@@ -9,7 +9,7 @@
     "meta_len": 147,
     "h1": "AI automation agency in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1016,
+    "words": 1028,
     "target": "950 to 1150",
     "h2": 8,
     "h2_list": [
@@ -60,7 +60,7 @@
     "meta_len": 143,
     "h1": "CRM setup in Bakersfield, CA",
     "h1_count": 1,
-    "words": 925,
+    "words": 933,
     "target": "800 to 950",
     "h2": 7,
     "h2_list": [
@@ -111,7 +111,7 @@
     "meta_len": 150,
     "h1": "SEO company in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1619,
+    "words": 1624,
     "target": "1600 to 1750",
     "h2": 11,
     "h2_list": [
@@ -168,7 +168,7 @@
     "meta_len": 152,
     "h1": "Web design in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1189,
+    "words": 1206,
     "target": "1100 to 1300",
     "h2": 9,
     "h2_list": [
@@ -279,7 +279,7 @@
     "meta_len": 141,
     "h1": "AI automation agency for service businesses",
     "h1_count": 1,
-    "words": 1219,
+    "words": 1220,
     "target": "1300 to 1500",
     "h2": 10,
     "h2_list": [
@@ -338,7 +338,7 @@
     "meta_len": 155,
     "h1": "CRM systems set up by a GoHighLevel expert",
     "h1_count": 1,
-    "words": 1768,
+    "words": 1772,
     "target": "1800 to 2000",
     "h2": 14,
     "h2_list": [
@@ -406,7 +406,7 @@
     "meta_len": 152,
     "h1": "Custom software development for small businesses",
     "h1_count": 1,
-    "words": 772,
+    "words": 784,
     "target": "800 to 1000",
     "h2": 6,
     "h2_list": [
@@ -452,17 +452,15 @@
     "meta_len": 145,
     "h1": "Local SEO services for small businesses",
     "h1_count": 1,
-    "words": 1471,
+    "words": 1478,
     "target": "1400 to 1600",
-    "h2": 11,
+    "h2": 9,
     "h2_list": [
       "Two search results, two different games",
       "What actually ranks a Google Business Profile",
       "What ranks your website locally",
       "Storefronts, service areas, and several towns",
-      "Citations, done once",
-      "Reviews without the risk",
-      "Showing up when they ask an AI instead",
+      "Citations, reviews, and AI answers",
       "How you will see progress",
       "What the first week needs from you",
       "Questions people ask about local SEO",
@@ -507,7 +505,7 @@
     "meta_len": 142,
     "h1": "Programmatic SEO services",
     "h1_count": 1,
-    "words": 959,
+    "words": 962,
     "target": "900 to 1100",
     "h2": 7,
     "h2_list": [
@@ -542,7 +540,6 @@
     "banned": [],
     "watch": {
       "just": 1,
-      "simple": 1,
       "not just": 1
     },
     "missing_title": [],
@@ -558,7 +555,7 @@
     "meta_len": 147,
     "h1": "SEO services for small businesses",
     "h1_count": 1,
-    "words": 1327,
+    "words": 1316,
     "target": "1300 to 1500",
     "h2": 11,
     "h2_list": [
@@ -617,7 +614,7 @@
     "meta_len": 150,
     "h1": "Website redesign services",
     "h1_count": 1,
-    "words": 1404,
+    "words": 1420,
     "target": "1500 to 1800",
     "h2": 12,
     "h2_list": [
@@ -672,7 +669,7 @@
     "meta_len": 150,
     "h1": "Website design for small businesses",
     "h1_count": 1,
-    "words": 1210,
+    "words": 1213,
     "target": "1200 to 1400 (no clean commercial set in the top 3; Straight North blocked fetch)",
     "h2": 10,
     "h2_list": [
