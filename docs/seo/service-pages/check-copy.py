@@ -5,12 +5,19 @@ Run from anywhere:  python3 docs/seo/service-pages/check-copy.py
 Never type a count into a copy file; this script is the source of every number.
 
 Checks (per page): title <= 60 chars, meta 120 to 156 chars, one H1, keyword words in
-title and H1, body word count vs target, H2 and FAQ counts, keyword phrase count,
-CTA count >= 3, at least one external link, every front matter internal link used in
-the body, every internal link pointing at a known route.
+title and H1, body word count at or above the low end of the competitor band and no
+more than 10 percent over the high end, the exact keyword phrase at least twice on the
+page (H1 included, so at least once in the body), Bakersfield in at least half the H2s
+on the /bakersfield pages, H2 and FAQ counts, CTA count >= 3, at least one external
+link, every front matter internal link used in the body, every internal link pointing
+at a known route.
 Checks (cross page): unique titles and metas (Jaccard < 0.6), no H2 reused verbatim,
 no sentence shared verbatim and no sentence pair above 0.55 Jaccard (testimonial
-quotes and CTA lines excluded), no em or en dashes, no banned words.
+quotes and CTA lines excluded), no em or en dashes, no banned words or cliches
+(Rahul, 2026-09-06: no "elevate your business" hero lines, no "seamless" and
+"cutting edge" filler, no "passionate team" about copy, no Strategy / Design /
+Delivery card triads, no "ready to get started" CTAs; say what we do, for whom,
+with a number where an adjective would go).
 """
 import re, sys, glob, os, itertools, json
 
@@ -49,6 +56,12 @@ BANNED = [
     "founders", "stands as", "serves as", "i'll be honest", "to be honest", "we pride ourselves",
     "we understand", "we believe", "tailored", "bespoke", "world-class", "world class", "top-notch",
     "stunning", "incredible", "amazing", "revolutionary", "groundbreaking", "sound familiar",
+    # cliches Rahul flagged 2026-09-06: hero lines, value prop filler, about page filler, CTAs
+    "next level", "transforming ideas", "ideas into reality", "innovation meets", "digital journey",
+    "fast paced", "fast-paced", "unique needs", "scalable", "solutions", "passionate", "dedicated to",
+    "exceptional results", "our mission", "mission is to", "thrive", "ready to get started",
+    "let's build", "your potential", "get started today", "take your business", "one stop",
+    "one-stop", "results driven", "results-driven", "customer centric", "customer-centric",
 ]
 WATCH = ["optimiz", "honest", "actually", "really", "very", "just", "simple", "simply", "not just", "more than just", "is not about", "at the end of the day", "whether you", "it is not a", "not a .{3,30}, it is"]
 
@@ -134,11 +147,14 @@ for path in FILES:
     missing_title = [w for w in kw_words if w[:5] not in tw]
     missing_h1 = [w for w in kw_words if w[:5] not in hw]
     target = fm.get("word_target", "")
+    content_h2s = [h for h in h2s if h.lower() != "final cta"]
+    city_h2s = [h for h in content_h2s if "bakersfield" in h.lower()]
     page = dict(name=name, url=fm.get("url"), keyword=kw, title=title, title_len=len(title), meta=meta,
                 meta_len=len(meta), h1=h1_text, h1_count=len(h1s), words=wc, target=target, h2=len(h2s),
                 h2_list=h2s, faq=len(faqs), kw_exact=kw_exact, kw_loose=loose, ctas=ctas, ext=len(ext),
                 internal=internal, fm_internal=fm_internal, dashes=dashes, banned=banned_hits,
-                watch=watch_hits, missing_title=missing_title, missing_h1=missing_h1, lines=lines)
+                watch=watch_hits, missing_title=missing_title, missing_h1=missing_h1,
+                city_h2=f"{len(city_h2s)}/{len(content_h2s)}", lines=lines)
     pages.append(page)
     # per page problems
     if len(title) > 60: problems.append(f"{name}: title {len(title)} chars (>60)")
@@ -158,7 +174,10 @@ for path in FILES:
     m = re.findall(r"(\d+)\s*(?:to|-)\s*(\d+)", target)
     if m:
         lo, hi = int(m[0][0]), int(m[0][1])
-        if not (lo * 0.9 <= wc <= hi * 1.1): problems.append(f"{name}: {wc} words vs target {target}")
+        if not (lo <= wc <= hi * 1.1): problems.append(f"{name}: {wc} words vs target {target} (must reach the low end)")
+    if kw_exact < 2: problems.append(f"{name}: exact phrase '{kw}' appears {kw_exact} time(s) (need 2 or more, H1 included)")
+    if (fm.get("url") or "").startswith("/bakersfield") and len(city_h2s) * 2 < len(content_h2s):
+        problems.append(f"{name}: Bakersfield in {len(city_h2s)} of {len(content_h2s)} H2s (need at least half)")
 
 # cross page
 for a, b in itertools.combinations(pages, 2):

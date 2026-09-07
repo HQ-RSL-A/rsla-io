@@ -41,15 +41,15 @@ Four things. The first call is where we work out which one applies to you.
 
 If what you need is a tool nobody sells, we build [custom software](/services/custom-builds) too.
 
-## Why a local agency, and why this one
+## Why a Bakersfield agency, and why this one
 
-Most of what you find when you search for marketing help in Bakersfield is one of two things: an established shop that does a bit of everything, or an out of town agency with a "Bakersfield" page and no one in the 661.
+Search "marketing agency Bakersfield" and most of what you find is one of two things: an established shop that does a bit of everything, or an out of town agency with a "Bakersfield" page and no one in the 661.
 
 We are here. Home based in the southwest of the city, which means we will meet you at your shop, your yard, or wherever the work actually happens. We work with the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up most of Kern County's businesses, and we work with clients in other states on the same terms.
 
 What we do differently is the numbers. Rahul, who founded RSL/A, came from analytics. You get a dashboard with your real leads, calls, rankings, and costs, not a monthly PDF of impressions. We also do not guess at what you need. As Rahul puts it, we cannot tell you which offer fits your situation until we know your situation. It is like going to a doctor and not explaining why you came in.
 
-## Where we work
+## Where we work in and around Bakersfield
 
 Bakersfield first, then the rest of Kern County: Oildale, Shafter, Wasco, Delano, McFarland, Arvin, Lamont, Taft, Tehachapi, and Lake Isabella. If you are in one of the smaller towns, you have an advantage: almost nobody local is competing for your customers' searches yet.
 
@@ -72,7 +72,7 @@ It depends on what you need built. A website, a CRM setup, or an automation is a
 
 ### Do you only work with Bakersfield businesses?
 
-No. We are based here and we want to be the agency Kern County businesses call first, and we also work with clients in New York, Canada, and across the US. Same process, same fixed pricing, one more time zone.
+No. We are based here and we want to be the marketing agency Bakersfield businesses call first, and we also work with clients in New York, Canada, and across the US. Same process, same fixed pricing, one more time zone.
 
 ### Is it worth hiring a marketing agency for a small business?
 

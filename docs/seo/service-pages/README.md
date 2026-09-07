@@ -66,6 +66,8 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 - Brand: no em or en dashes, no "digital marketing", no "founders", no "leverage" or "optimize" as a verb, sentence case, no eyebrow text, category label "marketing agency", automation never claims to bring in customers, "recommended by AI" is the outcome sentence before any acronym.
 - National pages never lead with Bakersfield. Each carries one "In Kern County?" line linking its Bakersfield sibling. Each Bakersfield page links its national sibling for the full scope.
 - Sibling pages share no sentence above 0.55 Jaccard (testimonials and CTA labels excepted); `check-copy.py` enforces it.
+- Exact target phrase at least twice on the page, H1 included; word count at or above the low end of the competitor band; Bakersfield in at least half the H2s on every `/bakersfield` page. Added 2026-09-06 (RSL-374), each guarded by a checker rule.
+- No stock cliches (Rahul, 2026-09-06): no "elevate" or "next level" hero lines, no "seamless" or "cutting edge" filler, no "passionate team" about copy, no Strategy / Design / Delivery card triads, no "ready to get started" CTAs. Say what we do and for whom; where an adjective would go, put a number. The phrases are banned in `check-copy.py`; the triads need a human read.
 
 ## Decisions taken on 2026-09-06 (Rahul: "make the right decision for now")
 
@@ -95,6 +97,8 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 Measured with the checker plus a reading level pass. Passes: one keyword per page, answer first, single H1 with the keyword, title front loaded on all 13, plain text FAQ capped at four, Service + FAQ + Breadcrumb schema in static HTML, tap to call, one primary CTA, crawlable footer NAP, reviews as text with no star markup, no "near me", no city by service matrix, home base exception, hub in nav and footer, 3 or more inbound links each, Flesch Kincaid grade 6.1 to 8.1 on every page.
 
 Open (RSL-374): the exact target phrase never appears in the body on the five Bakersfield pages or the websites page (word order variants only); automations, crm, custom builds, and redesign sit 16 to 80 words under the low end of their competitor band; the city is in 4 of 9 H2s on Bakersfield SEO, 3 of 7 on websites, none on automations and CRM. The "local reviews only" location rule is void: Rahul, 2026-09-06, reviews are reviews and region does not matter. The "Book a call" label stays generic by the two button rule; the page specific lead in line above it carries the descriptive part.
+
+Closed 2026-09-06 17:07 PT (RSL-374). The exact phrase now appears at least twice on all 13 pages, H1 included, so at least once in the body. The four short pages are inside their band (automations 1,336, redesign 1,530, CRM 1,826, custom builds 862 words; every addition is real content, no padding). Bakersfield is in at least half the H2s on every local page (hub 4 of 5, websites 5 of 8, SEO 6 of 10, automations 4 of 7, CRM 3 of 6). `check-copy.py` guards each of the three with its own rule, mutation tested. The stock cliches Rahul flagged the same day (hero lines, value prop filler, about page filler, service card triads, "ready to get started" CTAs) are in the banned list; the triad rule and "say what we do, for whom" need a human read.
 
 ## The 10 to 20 inquiries a week question
 

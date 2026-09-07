@@ -34,7 +34,7 @@ Type "plumber" into Google from your phone and you get two things: the map pack 
 
 **The regular results.** Your website: a page for that service in that city, and the links pointing at it.
 
-Winning one does not win the other, which is why so many "local SEO packages" post to your profile every week and never move anything. We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first.
+Winning one does not win the other, which is why so many local SEO services post to your profile every week and never move anything. We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first.
 
 ## What actually ranks a Google Business Profile
 

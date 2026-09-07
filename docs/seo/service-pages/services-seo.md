@@ -33,7 +33,7 @@ Search engine optimization used to mean pleasing an algorithm. It now means answ
 
 The AI assistants changed less than people think. ChatGPT, Perplexity, and Google's AI Overviews build their answers from the pages that already rank. Rank on Google and the citations follow. So the ranking work is the AI work. We do not sell them as two separate things. If your customers are local, our guide to [showing up in ChatGPT as a local business](/blog/aeo-for-local-businesses) covers the specifics.
 
-## What our SEO services include
+## What our SEO services for small business owners include
 
 **Money pages first.** One page per service you actually sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one.
 

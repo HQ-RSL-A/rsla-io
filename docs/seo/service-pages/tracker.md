@@ -2,7 +2,7 @@
 
 Local mirror of the Linear issues in project **RSL/A** (team RSL). Linear owns status; this file is the fallback if Linear stops taking updates. Update both in the same change. Parent issue: [RSL-363](https://linear.app/rsla/issue/RSL-363/ship-the-service-pages-and-the-bakersfield-pages).
 
-Last synced: 2026-09-06 09:20 PT (redesign built, audit filed).
+Last synced: 2026-09-06 17:07 PT (RSL-374 copy pass done, In Review).
 
 | ID | Task | Owner | State | Notes |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@ Last synced: 2026-09-06 09:20 PT (redesign built, audit filed).
 | RSL-371 | Run the review ask drip to 10 Google reviews | Rahul | Backlog | Names from Rahul, asks drafted by Claude, 1 to 2 a week |
 | RSL-372 | Decide the follow up pages: AI receptionist, AI SEO, Kern towns | Rahul | Backlog | Candidates and volumes in `README.md` |
 | RSL-373 | Wire the inquiry path: GTM events, GoHighLevel notify workflow | Rahul | Todo | GA4 tags for `phone_click` and `inquiry_submit`; workflow on tag `website-inquiry`; `GHL_API_KEY` and `GHL_LOCATION_ID` already on Vercel production |
-| RSL-374 | Copy pass: exact phrase in body, word band, city in local H2s | Claude | Todo | From the seo-intel audit; add a checker rule for each so it never regresses |
+| RSL-374 | Copy pass: exact phrase in body, word band, city in local H2s | Claude | In Review | Done 2026-09-06: exact phrase at least twice on every page (H1 included), the four short pages inside their band, Bakersfield in at least half the local H2s; three checker rules added and mutation tested; cliche phrases banned. Ships with RSL-369 |
 
 ## Order
 

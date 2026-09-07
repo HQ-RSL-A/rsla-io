@@ -47,7 +47,7 @@ A website is your business's digital business card. If it does not communicate w
 
 Most small business websites fail the first job. They open with a slogan, bury the phone number, and never say the city.
 
-## What is included in a website project
+## What small business website design includes
 
 **Copy first.** We write it from a call with you, because the words decide the layout, not the other way round. What makes a website yours is you: the story, the branding, the personality. A template cannot supply that.
 
@@ -94,7 +94,7 @@ In Kern County? We build these in person; see [web design in Bakersfield](/baker
 
 ## Questions people ask before hiring us
 
-### How much does a small business website cost?
+### How much does small business website design cost?
 
 One fixed price for the whole project, quoted after one call, and it does not move once you sign. What moves the number is the page count, whether the site needs booking, online ordering, or custom functionality, and how much existing content has to be migrated. A five page site for a plumber and a forty page site with a store are different projects, and we tell you which one you need before we quote.
 

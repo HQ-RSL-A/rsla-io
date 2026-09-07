@@ -9,22 +9,22 @@
     "meta_len": 147,
     "h1": "AI automation agency in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1028,
+    "words": 1037,
     "target": "950 to 1150",
     "h2": 8,
     "h2_list": [
-      "Automation for the businesses that run Kern County",
-      "What we build for local businesses",
+      "Automation for the businesses that run Bakersfield and Kern County",
+      "What we build for Bakersfield businesses",
       "What automation does and does not do",
-      "Why hire a local automation agency",
+      "Why hire an automation agency in Bakersfield",
       "Two builds, with numbers",
       "How it runs",
       "Questions Bakersfield owners ask about automation",
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 0,
-    "kw_loose": 2,
+    "kw_exact": 2,
+    "kw_loose": 3,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -48,7 +48,8 @@
       "just": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "4/7"
   },
   {
     "name": "bakersfield-crm.md",
@@ -60,12 +61,12 @@
     "meta_len": 143,
     "h1": "CRM setup in Bakersfield, CA",
     "h1_count": 1,
-    "words": 933,
+    "words": 965,
     "target": "800 to 950",
     "h2": 7,
     "h2_list": [
-      "Built for the owner who is also the sales team",
-      "What the setup includes",
+      "Built for the Bakersfield owner who is also the sales team",
+      "What a Bakersfield CRM setup includes",
       "From a voice note to a new lead",
       "Proof",
       "How it runs",
@@ -73,8 +74,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 0,
-    "kw_loose": 3,
+    "kw_exact": 2,
+    "kw_loose": 7,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -99,7 +100,8 @@
       "just": 2
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "3/6"
   },
   {
     "name": "bakersfield-seo.md",
@@ -111,14 +113,14 @@
     "meta_len": 150,
     "h1": "SEO company in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1624,
+    "words": 1634,
     "target": "1600 to 1750",
     "h2": 11,
     "h2_list": [
       "What search looks like in Bakersfield",
       "Where the map pack decides the job in Bakersfield",
-      "The two halves of Bakersfield SEO",
-      "We ran this on ourselves first",
+      "The two halves of what a Bakersfield SEO company does",
+      "We ran this on our own Bakersfield profile first",
       "The first 30 days",
       "Showing up in AI answers",
       "Things we will not do to rank you",
@@ -128,8 +130,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 0,
-    "kw_loose": 3,
+    "kw_exact": 3,
+    "kw_loose": 5,
     "ctas": 3,
     "ext": 2,
     "internal": [
@@ -156,7 +158,8 @@
       "actually": 2
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "6/10"
   },
   {
     "name": "bakersfield-websites.md",
@@ -168,7 +171,7 @@
     "meta_len": 152,
     "h1": "Web design in Bakersfield, CA",
     "h1_count": 1,
-    "words": 1206,
+    "words": 1210,
     "target": "1100 to 1300",
     "h2": 9,
     "h2_list": [
@@ -177,14 +180,14 @@
       "The pages a local service business site needs",
       "What we include",
       "How we are different from the other Bakersfield options",
-      "What it costs and how long it takes",
+      "What a Bakersfield website costs and how long it takes",
       "How it runs",
       "Questions Bakersfield owners ask about web design",
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 0,
-    "kw_loose": 3,
+    "kw_exact": 2,
+    "kw_loose": 4,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -214,7 +217,8 @@
       "whether you": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "5/8"
   },
   {
     "name": "bakersfield.md",
@@ -226,20 +230,20 @@
     "meta_len": 155,
     "h1": "Marketing agency in Bakersfield, CA",
     "h1_count": 1,
-    "words": 845,
+    "words": 846,
     "target": "800 to 1000",
     "h2": 6,
     "h2_list": [
       "What we do for Bakersfield businesses",
-      "Why a local agency, and why this one",
-      "Where we work",
+      "Why a Bakersfield agency, and why this one",
+      "Where we work in and around Bakersfield",
       "What working with us looks like",
       "Questions Bakersfield owners ask us",
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 0,
-    "kw_loose": 3,
+    "kw_exact": 2,
+    "kw_loose": 4,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -267,7 +271,8 @@
       "just": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "4/5"
   },
   {
     "name": "services-automations.md",
@@ -279,7 +284,7 @@
     "meta_len": 141,
     "h1": "AI automation agency for service businesses",
     "h1_count": 1,
-    "words": 1220,
+    "words": 1336,
     "target": "1300 to 1500",
     "h2": 10,
     "h2_list": [
@@ -326,7 +331,8 @@
       "simple": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/9"
   },
   {
     "name": "services-crm.md",
@@ -338,7 +344,7 @@
     "meta_len": 155,
     "h1": "CRM systems set up by a GoHighLevel expert",
     "h1_count": 1,
-    "words": 1772,
+    "words": 1826,
     "target": "1800 to 2000",
     "h2": 14,
     "h2_list": [
@@ -394,7 +400,8 @@
       "at the end of the day": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/13"
   },
   {
     "name": "services-custom-builds.md",
@@ -406,7 +413,7 @@
     "meta_len": 152,
     "h1": "Custom software development for small businesses",
     "h1_count": 1,
-    "words": 784,
+    "words": 862,
     "target": "800 to 1000",
     "h2": 6,
     "h2_list": [
@@ -418,8 +425,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 1,
-    "kw_loose": 0,
+    "kw_exact": 2,
+    "kw_loose": 1,
     "ctas": 3,
     "ext": 2,
     "internal": [
@@ -440,7 +447,8 @@
       "simple": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/5"
   },
   {
     "name": "services-seo-local.md",
@@ -467,8 +475,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 1,
-    "kw_loose": 1,
+    "kw_exact": 2,
+    "kw_loose": 2,
     "ctas": 3,
     "ext": 2,
     "internal": [
@@ -493,7 +501,8 @@
       "actually": 2
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/8"
   },
   {
     "name": "services-seo-programmatic.md",
@@ -505,7 +514,7 @@
     "meta_len": 142,
     "h1": "Programmatic SEO services",
     "h1_count": 1,
-    "words": 962,
+    "words": 963,
     "target": "900 to 1100",
     "h2": 7,
     "h2_list": [
@@ -518,7 +527,7 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 1,
+    "kw_exact": 2,
     "kw_loose": 2,
     "ctas": 3,
     "ext": 1,
@@ -543,7 +552,8 @@
       "not just": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/6"
   },
   {
     "name": "services-seo.md",
@@ -555,12 +565,12 @@
     "meta_len": 147,
     "h1": "SEO services for small businesses",
     "h1_count": 1,
-    "words": 1316,
+    "words": 1320,
     "target": "1300 to 1500",
     "h2": 11,
     "h2_list": [
       "What SEO is in 2026",
-      "What our SEO services include",
+      "What our SEO services for small business owners include",
       "How a keyword gets chosen",
       "Where the weekly article goes",
       "Local and programmatic",
@@ -572,8 +582,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 1,
-    "kw_loose": 1,
+    "kw_exact": 2,
+    "kw_loose": 2,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -602,7 +612,8 @@
       "just": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/10"
   },
   {
     "name": "services-websites-redesign.md",
@@ -614,7 +625,7 @@
     "meta_len": 150,
     "h1": "Website redesign services",
     "h1_count": 1,
-    "words": 1420,
+    "words": 1530,
     "target": "1500 to 1800",
     "h2": 12,
     "h2_list": [
@@ -632,8 +643,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 1,
-    "kw_loose": 1,
+    "kw_exact": 2,
+    "kw_loose": 2,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -657,7 +668,8 @@
       "simple": 1
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/11"
   },
   {
     "name": "services-websites.md",
@@ -669,13 +681,13 @@
     "meta_len": 150,
     "h1": "Website design for small businesses",
     "h1_count": 1,
-    "words": 1213,
+    "words": 1212,
     "target": "1200 to 1400 (no clean commercial set in the top 3; Straight North blocked fetch)",
     "h2": 10,
     "h2_list": [
       "Two kinds of website projects",
       "What a website has to do",
-      "What is included in a website project",
+      "What small business website design includes",
       "Built for the purpose, not the template",
       "Websites that get found",
       "What clients say",
@@ -685,8 +697,8 @@
       "Final CTA"
     ],
     "faq": 4,
-    "kw_exact": 0,
-    "kw_loose": 1,
+    "kw_exact": 2,
+    "kw_loose": 3,
     "ctas": 3,
     "ext": 1,
     "internal": [
@@ -716,6 +728,7 @@
       "whether you": 2
     },
     "missing_title": [],
-    "missing_h1": []
+    "missing_h1": [],
+    "city_h2": "0/9"
   }
 ]

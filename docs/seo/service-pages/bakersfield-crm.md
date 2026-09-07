@@ -26,13 +26,13 @@ Every lead, quote, and customer in one app you can run from the truck. Follow up
 <!-- proof row -->
 Set up on your phone first, laptop second · Two salon suites filled by automated follow up after $600 in ads · Import from spreadsheets, a phone full of contacts, or another CRM included
 
-## Built for the owner who is also the sales team
+## Built for the Bakersfield owner who is also the sales team
 
 Most Kern County businesses we meet are one person, or one person and a helper. You quote the job, do the job, invoice the job, and somewhere between Shafter and Arvin you forget the customer who said to call back in March. The leads are in your texts, your voicemail, a notebook on the dash, and your memory.
 
-A CRM is the place all of that goes instead. We set ours up on GoHighLevel because it puts the contacts, the texting, the calendar, the phone number, and the automations in one login at a price a one person business can justify, and because we have built enough of them to know where a contractor's pipeline differs from a salon's.
+A CRM is the place all of that goes instead. We set ours up on GoHighLevel because it puts the contacts, the texting, the calendar, the phone number, and the automations in one login at a price a one person business can justify, and because we have built enough of them to know where a contractor's pipeline differs from a salon's. Search "CRM Bakersfield" and you get software lists. What you need is a person who will set one up with you in the room.
 
-## What the setup includes
+## What a Bakersfield CRM setup includes
 
 **A pipeline with your stages.** New, called back, estimate out, booked, paid.
 
@@ -44,7 +44,7 @@ A CRM is the place all of that goes instead. We set ours up on GoHighLevel becau
 
 **The Sunday night dashboard.** It answers how many leads came in, where from, and how many turned into jobs.
 
-And the part that makes it local: we do the setup with you, in person, with your real leads going through it while you watch on your own phone.
+And the part that makes it a CRM Bakersfield owners keep using: we do the setup with you, in person, with your real leads going through it while you watch on your own phone.
 
 ## From a voice note to a new lead
 

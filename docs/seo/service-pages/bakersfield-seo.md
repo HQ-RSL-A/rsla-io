@@ -30,7 +30,7 @@ Weekly 49 point rank grid across the city, shared with you · Our own Bakersfiel
 
 Search for almost any service here and the map pack comes first. Three businesses, their stars, their hours, a call button. That is the local pack and it is ranked by your Google Business Profile: its category, its reviews, and how close it is to the person searching.
 
-Below the map are the regular results, ranked by your website. For most Bakersfield services those results are a mix of real local businesses and agencies from other states with a "Bakersfield" page in their menu. Type "SEO company Bakersfield" and you will see it yourself: the page one you are reading was, on the day we wrote this, mostly firms in Dallas, Kyiv, and Philadelphia with a city name swapped in.
+Below the map are the regular results, ranked by your website. For most Bakersfield services those results are a mix of real local businesses and agencies from other states with a "Bakersfield" page in their menu. Type "Bakersfield SEO company" and you will see it yourself: the page one you are reading was, on the day we wrote this, mostly firms in Dallas, Kyiv, and Philadelphia with a city name swapped in.
 
 That is the opportunity. Real pages about real Kern County businesses beat templates, and almost nobody local is building them.
 
@@ -48,7 +48,7 @@ That is the opportunity. Real pages about real Kern County businesses beat templ
 
 If your customers pick you off a map, the map is where the work starts.
 
-## The two halves of Bakersfield SEO
+## The two halves of what a Bakersfield SEO company does
 
 **The map half.** Your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load real photos of your work, and start the review process. Reviews are the entry ticket: a profile with three does not enter a pack whose floor is twenty, and nearly half of consumers will not use a business with fewer than twenty. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does.
 
@@ -56,11 +56,11 @@ If your customers pick you off a map, the map is where the work starts.
 
 **Proximity.** The part no agency can sell you around. You will rank strongest near your address and weaker across town, which is why our weekly grid has 49 points instead of one number. The pages, links, and reviews are what reach past your own neighborhood.
 
-## We ran this on ourselves first
+## We ran this on our own Bakersfield profile first
 
 When we set up RSL/A's own profile in June 2026, we ran the same 49 point scan we run for clients. We were nowhere: not in the top twenty at a single point across the city, for any of the eight terms we track. That scan is the baseline we measure ourselves against, we publish the rescans as the profile climbs, and the [numbers behind our own site](/work/rsla-organic-growth) are public. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to judge for yourself.
 
-That is the point of hiring us over a firm you will never meet. We are in the same market, working the same physics, and we show you the same map we look at.
+That is the point of hiring a Bakersfield SEO company over a firm you will never meet. We are in the same market, working the same physics, and we show you the same map we look at.
 
 ## The first 30 days
 

@@ -57,11 +57,13 @@ Same idea every time: find the task you repeat, decide the rule, hand it to soft
 
 ## The honest result
 
-Automation does not bring in customers. It protects the ones you already have and the hours you are already losing. When the follow up runs itself, nothing slips. When the intake fills itself, you are not doing data entry at 11pm. That is the promise, and it is the only one we make for this service.
+Automation does not bring in customers. It protects the ones you already have and the hours you are already losing. When the follow up runs itself, nothing slips. When the intake fills itself, you are not doing data entry at 11pm. That is the promise, and it is the only one we make for this service. What you do with the hours is up to you. Most owners spend them on the calls that were going unanswered.
 
 ## How we build it
 
 **Diagnosis first.** We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes.
+
+**Where we start.** We rank every task on the list by three things: hours a week, how often it goes wrong, and what it costs when it does. The top of that list is the first build, and it is usually lead response, because a lead that waits a day is a lead somebody else answered. The second build is whichever admin task you are still doing after dinner.
 
 **Built around your tools.** Your calendar, your inbox, your CRM, your accounting software. The work runs in [n8n](https://n8n.io) or [Make](https://www.make.com) for workflows, GoHighLevel for anything that touches leads and follow up, and AI agents where a task needs judgment instead of rules. If the CRM is the missing piece, we set that up too; see [CRM systems](/services/crm). If nothing off the shelf fits, we write the software; see [custom builds](/services/custom-builds).
 
@@ -69,7 +71,7 @@ Automation does not bring in customers. It protects the ones you already have an
 
 ## What we need from you
 
-Logins for the tools the automation touches, or a shared screen while we connect them. One walk through of the task as you do it today, out loud, mistakes included, because the mistakes are where the rules hide. A few real examples: three recent leads, three recent invoices, whatever the automation will handle. And an hour for testing with your real data before it goes live.
+Logins for the tools the automation touches, or a shared screen while we connect them. One walk through of the task as you do it today, out loud, mistakes included, because the mistakes are where the rules hide. A few real examples: three recent leads, three recent invoices, whatever the automation will handle. And an hour for testing with your real data before it goes live. If a login has to be shared, we set up a separate user for us, and you remove it the day the build is handed over.
 
 ## Three builds, with the numbers
 

@@ -26,13 +26,13 @@ The call you missed on a job site in Lamont at 2pm. The quote you meant to follo
 <!-- proof row -->
 A voice to task bot and 3 dashboards built in 2 weeks for a professional services firm · 1,200 personalized emails a day from one 3 step automation · In person setup anywhere in Kern County
 
-## Automation for the businesses that run Kern County
+## Automation for the businesses that run Bakersfield and Kern County
 
 A contractor cannot answer the phone from a roof in July. A clinic front desk cannot text every no show. A farm supply counter cannot chase every invoice. An ag consultant driving between Wasco and Arvin cannot type up the customer they just met.
 
 Every one of those is a repeatable task with a screen in it, which means it can be handed to software. Missed calls get a text back within seconds. New leads get a reply that answers what they asked. Reminders go out the day before. Invoices nudge themselves. A voice note becomes a task list. That is what an AI automation agency does, and it is most of what we do here.
 
-## What we build for local businesses
+## What we build for Bakersfield businesses
 
 **Lead response and follow up.** Lead response first, because in Bakersfield the job goes to whoever answers. Then follow up that runs until the customer books or says no. Then the admin: intake straight into the [CRM](/bakersfield/crm), appointment reminders, review requests after every job, and the weekly numbers in one place instead of five apps.
 
@@ -44,11 +44,11 @@ Every one of those is a repeatable task with a screen in it, which means it can 
 
 It does not bring you customers. It stops you losing the ones who already called, and it gives you back the hours you are spending on admin after dinner. Nothing slips, and your evenings come back. Anyone who promises more than that for an automation is selling you something else.
 
-## Why hire a local automation agency
+## Why hire an automation agency in Bakersfield
 
-Search for AI automation in Bakersfield and the results are agencies in other states with a Bakersfield page in the menu. They have never stood in a Kern County shop. The setup that works for a Rosedale landscaper's truck, spotty reception and all, is not the one that works for a downtown law office, and you find that out by being in the room.
+Search "AI automation agency Bakersfield" and the results are agencies in other states with a Bakersfield page in the menu. They have never stood in a Kern County shop. The setup that works for a Rosedale landscaper's truck, spotty reception and all, is not the one that works for a downtown law office, and you find that out by being in the room.
 
-We are home based in the southwest of the city and we do the first setup with you in person: your phone, your number, your calendar, your real leads running through the system while you watch. You can check us on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) first, and see what else we build for [Bakersfield businesses](/bakersfield).
+We are the AI automation agency Bakersfield owners can meet in person. Home based in the southwest of the city, we do the first setup with you: your phone, your number, your calendar, your real leads running through the system while you watch. You can check us on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) first, and see what else we build for [Bakersfield businesses](/bakersfield).
 
 ## Two builds, with numbers
 

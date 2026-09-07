@@ -30,7 +30,7 @@ One fixed price, quoted before you sign · Every site built with the search stru
 
 The landscaper in Rosedale whose only web presence is a Facebook page. The tattoo studio downtown with a site that still says "under construction." The HVAC company in Oildale whose site loads in six seconds on a phone, which is where every customer is looking at it. The ag supplier in Shafter who has never needed a website until the buyers started searching first.
 
-We are currently rebuilding the website for a Bakersfield landscaping company, alongside its CRM and Google listing. That is the typical shape of the work here: a service business, a site that has fallen behind, and an owner who would rather be on the job than in a web editor.
+We are currently rebuilding the website for a Bakersfield landscaping company, alongside its CRM and Google listing. That is the typical shape of the web design Bakersfield service businesses ask us for: a site that has fallen behind, and an owner who would rather be on the job than in a web editor.
 
 ## What a Bakersfield business website needs
 
@@ -70,7 +70,7 @@ That is eight to ten pages for most trades. We tell you which ones you actually 
 
 ## How we are different from the other Bakersfield options
 
-Search for web design here and you get three kinds of results. Solo designers with template sites and no results to show. Established local agencies that do a bit of everything. And agencies in Toronto, Dallas, and Chicago with a "Bakersfield" page that could say any city.
+Search "web design Bakersfield" and you get three kinds of results. Solo designers with template sites and no results to show. Established local agencies that do a bit of everything. And agencies in Toronto, Dallas, and Chicago with a "Bakersfield" page that could say any city.
 
 We are local and we publish the numbers. We rebuilt Fieldshare's website and their pages went on to be cited by ChatGPT, Gemini, and Google AI; the [case study](/work/fieldshare-seo-website-rebrand) has the detail. Our own site went from a blank domain to 204 ranked keywords in 6 months using the same structure we put into every client build. And we tell you what drives the price before you sign, which most of the agencies we studied never do.
 
@@ -79,7 +79,7 @@ Chris K., CEO and Co-Founder, Fieldshare
 
 [CTA] Want to know what your site should cost before you talk to anyone? → Book a call
 
-## What it costs and how long it takes
+## What a Bakersfield website costs and how long it takes
 
 One fixed price for the whole build, quoted after the first call and written into the proposal. The number depends on how many pages the business needs, whether it needs online booking, ordering, or custom functionality, and how much of an existing site has to be carried over. We tell you what drives your number before you sign, not after. Four to six weeks from kickoff to launch for a typical service business site; a single page site can be faster.
 

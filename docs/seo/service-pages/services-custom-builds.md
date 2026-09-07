@@ -47,11 +47,13 @@ If you can describe it, it can be built. The sky is the limit on what; the quest
 
 Off the shelf wins when a product does 90 percent of what you need. Custom wins when you are paying for four tools to cover one workflow, when the workflow is specific enough that no product will ever add it, or when the data you need lives in places nothing connects.
 
+Custom software development for small business owners works when it is small: one tool, one job, a first version in weeks. The test we use on the call: if you can name a product that does the job and it costs less than a day of your time a month, buy it.
+
 A CRM is almost never a custom build; that is what [GoHighLevel](/services/crm) is for. A simple workflow between two apps is an [automation](/services/automations), not software. We route you to the cheaper answer when it fits.
 
 ## How we build
 
-One call to understand the job the tool has to do. A written scope with a fixed price. Then a working first version in weeks, not months, that you use with real data while we finish the rest. The scope names what the first version does and does not do, so there is no argument later about what "done" meant.
+One call to understand the job the tool has to do. A written scope with a fixed price. Then a working first version in weeks, not months, that you use with real data while we finish the rest. The scope names what the first version does and does not do, so there is no argument later about what "done" meant. Every tool ships with a one page runbook: what it does, where it runs, which accounts it depends on, and what to do when it breaks.
 
 We build on a modern stack: React and Next.js on the front, Node or Python behind it, [Supabase](https://supabase.com) for the database, and [Vercel](https://vercel.com) for hosting. It runs on accounts in your name, so nothing is held hostage. We write our own tools the same way and build with the same AI assisted workflow we described in [how we run the agency without a dev team](/blog/claude-code-marketing-agency-workflow).
 

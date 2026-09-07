@@ -55,7 +55,7 @@ And the mobile app, which is the version you will use most.
 
 ## Built for the phone, not just the laptop
 
-You are not at a desk. So the setup assumes the phone comes first. New lead comes in, your phone buzzes, you tap once to call. Add a note by talking. Move the card with a thumb. The laptop view is there for the deep work at the end of the day, and both show the same thing.
+You are not at a desk. So the setup assumes the phone comes first. New lead comes in, your phone buzzes, you tap once to call. Add a note by talking. Move the card with a thumb. The laptop view is there for the deep work at the end of the day, and both show the same thing. Notifications are set so you hear about a new lead and nothing else. The reminders and the review requests run silently.
 
 Where it gets interesting is combining the CRM with our [automations](/services/automations). Send a voice note describing the customer you just met, and an AI agent asks the two questions it needs, then creates the lead, tags it, and starts the follow up. You never open a form.
 
@@ -101,7 +101,7 @@ If your business genuinely needs Salesforce, we will tell you, and we will not b
 
 ## Moving from spreadsheets or another CRM
 
-Most of our setups start with a spreadsheet, a phone full of contacts, or a HubSpot account nobody logs into. We import what is clean, fix what is not, tag everything so you can find it, and rebuild the automations rather than copying the ones that never worked. Clients have come to us from HubSpot, Keap, Jobber, and plain Google Sheets. Migration is part of the setup price, not an extra.
+Most of our setups start with a spreadsheet, a phone full of contacts, or a HubSpot account nobody logs into. We import what is clean, fix what is not, tag everything so you can find it, and rebuild the automations rather than copying the ones that never worked. Clients have come to us from HubSpot, Keap, Jobber, and plain Google Sheets. Migration is part of the setup price, not an extra. Contacts you have not spoken to in a year get tagged as dormant rather than deleted, because a reactivation text to that list is often the first automation that pays for the setup.
 
 ## What we need from you to start
 

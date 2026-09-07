@@ -56,7 +56,7 @@ If your customers are in one or two cities, you do not need programmatic SEO. Yo
 
 ## Where it fits
 
-Programmatic pages sit on top of the ordinary work: the money pages, the weekly content, the technical foundation covered on our [SEO services](/services/seo) page. They are a multiplier, not a substitute. The same domain that grew to 204 ranked keywords in 6 months carries our own industry pages, and you can see how the two fit together in the [organic growth case study](/work/rsla-organic-growth).
+Programmatic SEO services sit on top of the ordinary work: the money pages, the weekly content, the technical foundation covered on our [SEO services](/services/seo) page. They are a multiplier, not a substitute. The same domain that grew to 204 ranked keywords in 6 months carries our own industry pages, and you can see how the two fit together in the [organic growth case study](/work/rsla-organic-growth).
 
 [CTA] Have a dataset and a hunch? Bring both. → Book a call
 

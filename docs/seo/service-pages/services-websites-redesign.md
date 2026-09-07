@@ -38,15 +38,19 @@ Fieldshare rebuilt and repositioned, then cited by ChatGPT, Gemini, and Google A
 
 **You hide the link.** The most common reason we hear is simpler: the owner is embarrassed to send it.
 
+**Traffic without calls.** Search Console shows visits and the phone stays quiet. The site is being found and failing to convince.
+
 ## What a website redesign changes
 
 **Everything the visitor sees.** New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone, because most of your visitors are on one. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox.
 
 **Most of what Google reads.** The structure underneath: clean titles, one heading hierarchy, schema markup, and plain question and answer sections that AI assistants can quote.
 
+**What stays.** The URLs that rank, the sentences that rank, and the reviews and photos that are genuinely yours. A redesign replaces what fails and keeps what works, which is why the audit comes before the design.
+
 ## What we check before we quote
 
-Before the proposal we run the current site through Search Console and pull three lists. Every URL that has earned impressions in the last 16 months. Every URL with links from other sites pointing at it. Every page that is broken, duplicated, or thin. Then the mechanical checks: mobile rendering, load speed on a throttled connection, missing titles, headings that skip levels, forms that go nowhere.
+Most website redesign services start with a mood board. We start with Search Console. Before the proposal we run the current site through it and pull three lists. Every URL that has earned impressions in the last 16 months. Every URL with links from other sites pointing at it. Every page that is broken, duplicated, or thin. Then the mechanical checks: mobile rendering, load speed on a throttled connection, missing titles, headings that skip levels, forms that go nowhere. The third source is analytics: which pages get visited, where visitors leave, and which forms ever get filled in. A contact page nobody reaches is a navigation problem, not a copy problem, and the audit tells the two apart.
 
 Those lists decide the shape of the project. A site with forty pages and six that matter is a different job from a site with forty pages that all rank for something. You see the lists on the call, so the quote makes sense to you.
 
