@@ -2,7 +2,7 @@
 
 Local mirror of the Linear issues in project **RSL/A** (team RSL). Linear owns status; this file is the fallback if Linear stops taking updates. Update both in the same change. Parent issue: [RSL-363](https://linear.app/rsla/issue/RSL-363/ship-the-service-pages-and-the-bakersfield-pages).
 
-Last synced: 2026-09-06 17:07 PT (RSL-374 copy pass done, In Review).
+Last synced: 2026-09-07 01:23 PT (inquiry form pulled; RSL-375 filed, RSL-373 on hold under it).
 
 | ID | Task | Owner | State | Notes |
 |---|---|---|---|---|
@@ -16,8 +16,9 @@ Last synced: 2026-09-06 17:07 PT (RSL-374 copy pass done, In Review).
 | RSL-370 | Point the Google Business Profile at /bakersfield and mirror the services list | Rahul | Backlog | One core field at a time; update `nap-canonical.md` |
 | RSL-371 | Run the review ask drip to 10 Google reviews | Rahul | Backlog | Names from Rahul, asks drafted by Claude, 1 to 2 a week |
 | RSL-372 | Decide the follow up pages: AI receptionist, AI SEO, Kern towns | Rahul | Backlog | Candidates and volumes in `README.md` |
-| RSL-373 | Wire the inquiry path: GTM events, GoHighLevel notify workflow | Rahul | Todo | GA4 tags for `phone_click` and `inquiry_submit`; workflow on tag `website-inquiry`; `GHL_API_KEY` and `GHL_LOCATION_ID` already on Vercel production |
+| RSL-373 | Wire the inquiry path: GTM events, GoHighLevel notify workflow | Rahul | Backlog | On hold with the form since 2026-09-07; now a sub-issue of RSL-375, no longer under RSL-363 |
 | RSL-374 | Copy pass: exact phrase in body, word band, city in local H2s | Claude | In Review | Done 2026-09-06: exact phrase at least twice on every page (H1 included), the four short pages inside their band, Bakersfield in at least half the local H2s; three checker rules added and mutation tested; cliche phrases banned. Ships with RSL-369 |
+| RSL-375 | Add a written inquiry form to the contact page | Rahul | Backlog | Later (Rahul, 2026-09-07). Built 2026-09-06 in `03d5b87`, pulled 2026-09-07, restore from git when wanted; `GHL_API_KEY` and `GHL_LOCATION_ID` stay on Vercel. Standalone in project RSL/A, not under RSL-363 |
 
 ## Order
 

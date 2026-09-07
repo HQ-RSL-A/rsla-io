@@ -80,14 +80,12 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 7. The programmatic SEO page tells the lesson: 12 pages published March 2026, 2 earned impressions in five months, the second batch was never built.
 8. Nav label "Search visibility" stays; the page H1 stays "SEO services for small businesses".
 9. The pitch ladder order is applied everywhere: nav, footer, home bento, and the services index run automation, CRM, search visibility, websites, custom builds.
-10. Added during the gap pass: a written inquiry form on /contact (`/api/inquiry` files the contact, tags, and note in the RSL/A GoHighLevel location), a crawlable footer NAP with tap to call, a mobile call bar on the Bakersfield pages, and the IndexNow ping now runs only on Vercel production builds.
+10. Added during the gap pass: a crawlable footer NAP with tap to call, a mobile call bar on the Bakersfield pages, and the IndexNow ping now runs only on Vercel production builds. A written inquiry form on /contact was built the same day (`03d5b87`) and pulled on 2026-09-07 (Rahul: hold off on a contact form). It is RSL-375 for later, with its GA4 events and GoHighLevel workflow (RSL-373) on hold under it.
 
 ## Still open for Rahul
 
 - Consent to name Select Landscape and Teji Videos on the Bakersfield pages.
-- GTM: add GA4 event tags and key events for `phone_click` and `inquiry_submit`. `cta_click` already exists sitewide. Until then neither event reaches GA4.
-- GoHighLevel: add a workflow "tag added: website-inquiry, then text and email Rahul". The form files the contact and the note today; nobody is told until the workflow exists.
-- The reply promise on /contact reads "within one business day". Keep or change.
+- On hold with the form (RSL-375, RSL-373): the GA4 events for `phone_click` and `inquiry_submit` and the GoHighLevel notify workflow. /contact is the calendar embed and the phone number. Five CTA lead ins still say "Send us"; they are listed in `qa-pass.md` section 9 and need rewording before deploy.
 - Done 2026-09-06 (cliche pass): the home title is now "RSL/A | We put AI to work for small service businesses", the hero is the brand line with a lead naming the four services and the audience, and the B2B FAQ answers, "growth mapping call" CTAs, and stale prerender home copy are gone. Reword the hero if you want a different line; it is one string in `HeroV2.jsx` mirrored in `prerender.mjs` and `index.html`.
 - LeadSnap schedule 10278 has produced no grid scans since 2026-06-10. The copy only promises rescans "as the profile climbs", which is honest, but the scan has to run before the Bakersfield SEO page has anything to publish.
 - The CookieScript banner covers the hero CTA on the first mobile visit. That is the CMP layout, not the pages, and it was a deliberate 2026-08-17 decision.
@@ -99,6 +97,10 @@ Measured with the checker plus a reading level pass. Passes: one keyword per pag
 Open (RSL-374): the exact target phrase never appears in the body on the five Bakersfield pages or the websites page (word order variants only); automations, crm, custom builds, and redesign sit 16 to 80 words under the low end of their competitor band; the city is in 4 of 9 H2s on Bakersfield SEO, 3 of 7 on websites, none on automations and CRM. The "local reviews only" location rule is void: Rahul, 2026-09-06, reviews are reviews and region does not matter. The "Book a call" label stays generic by the two button rule; the page specific lead in line above it carries the descriptive part.
 
 Closed 2026-09-06 17:07 PT (RSL-374). The exact phrase now appears at least twice on all 13 pages, H1 included, so at least once in the body. The four short pages are inside their band (automations 1,336, redesign 1,530, CRM 1,826, custom builds 862 words; every addition is real content, no padding). Bakersfield is in at least half the H2s on every local page (hub 4 of 5, websites 5 of 8, SEO 6 of 10, automations 4 of 7, CRM 3 of 6). `check-copy.py` guards each of the three with its own rule, mutation tested. The stock cliches Rahul flagged the same day (hero lines, value prop filler, about page filler, service card triads, "ready to get started" CTAs) are in the banned list; the triad rule and "say what we do, for whom" need a human read.
+
+## QA pass (2026-09-07)
+
+Full read of the 13 pages against Rahul's brief: no cliches, sentence level, every piece of text intentional. Findings with line numbers are in `qa-pass.md`: five keyword jams and the "Search [keyword]" device left by the seo-intel pass, the automations and CRM siblings written as paraphrases of each other, one CTA and process template across 13 pages, about 20 claims of candor, nine cliches past the banned list, a dozen sentence fixes, and five "Send us" lead ins pointing at a form that is no longer there. About 80 line edits plus two decisions (how different the siblings should be, whether the CTA formula stays). Not fixed yet.
 
 ## The 10 to 20 inquiries a week question
 
