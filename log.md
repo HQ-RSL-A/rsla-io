@@ -1,5 +1,9 @@
 # log.md - RSL/A website
 
+## 2026-09-06 17:46 PT - Branch pushed to GitHub; Vercel node runtime pin bumped to 12.0.1
+
+Rahul's go to push, with production untouched. `brand-visual-system` pushed to `HQ-RSL-A/rsla-io` (eight commits since `dfc238c`). The push triggered a Vercel preview build that failed in 7 seconds on the known stale pin: `@vercel/node@5.9.0` against Vercel's installed builder `12.0.1` ("Failed to load Builders ... version-mismatch"). Pin bumped to `12.0.1` in `vercel.json`, CLAUDE.md note and AGENTS.md mirror updated (`ab8cc6a`), pushed; the rebuilt preview is Ready at https://rsla-lbetqtz5r-rahul-lalia.vercel.app (target preview, noindexed by Vercel). Production is the 2026-08-17 deployment and has not moved. `main` still carries the 5.9.0 pin, so the production deploy (RSL-369) needs this commit, which arrives with the branch merge.
+
 ## 2026-09-06 17:25 PT - Site-wide cliche pass: home hero and title, FAQ, CTAs, listing pages, prerender mirrors
 
 Rahul's ask after the RSL-374 pass: audit and fix every existing cliche, not only the 13 copy files. Scan of every React page, the card catalog, `scripts/prerender.mjs`, `index.html`, `structuredData.mjs`, `generateLlmsTxt.mjs`, and the vCard, then a human read against the five families (hero lines, value prop filler, about page filler, card triads, generic CTAs). 96 replacements across 21 files, build green, 13 service pages verified, no "growth partner", "growth mapping", "Let's talk", "founders", or "measurable results" left in the built HTML.
