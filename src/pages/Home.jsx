@@ -40,22 +40,22 @@ const processSteps = [
     {
         num: '01',
         title: 'Audit',
-        body: "A free 30-minute session where we audit your business, surface the real bottlenecks, and map out exactly what's stopping you from growing.",
+        body: "A free 30 minute call. You tell us what is not working and we tell you what we would build first, whether that is a CRM, an automation, a page, or nothing yet.",
     },
     {
         num: '02',
         title: 'Proposal',
-        body: "Our team sends over a proposal with a clear scope, a timeline, and a fixed price. There are no surprises and no hourly billing, so you always know exactly what you're paying for.",
+        body: "A written proposal with the scope, a timeline, and one fixed number. No hourly billing, so the price you sign is the price you pay.",
     },
     {
         num: '03',
         title: 'Project',
-        body: 'We build, test, and deploy systems for you. You get weekly updates and a working product, not a slide deck of promises.',
+        body: 'We build and test it with your real data, and you review at each step. You get a working system and weekly updates, not a slide deck.',
     },
     {
         num: '04',
         title: 'Ongoing management',
-        body: 'For an optional retainer, we keep things running and make them better as you go. Most clients see compounding returns over time.',
+        body: 'Optional. On a monthly retainer we keep it running, fix what the apps break when they update, and build the next thing when the business is ready for it.',
     },
 ];
 
@@ -105,9 +105,9 @@ export default function Home() {
     return (
         <>
             <Seo
-                title="RSL/A | The trusted AI growth partner for B2B companies"
-                description="We build your website, get it found on Google and ChatGPT, and automate what's slowing you down. Custom websites and AI systems for fast-moving B2B companies."
-                keywords="AI growth partner, custom B2B website, AI website agency, SEO for B2B, AI automation, ChatGPT visibility"
+                title="RSL/A | We put AI to work for small service businesses"
+                description="Automation, CRM, SEO, and websites for small service businesses. Fixed price, real numbers on a dashboard, in person in Bakersfield and remote across the US."
+                keywords="AI automation agency, GoHighLevel expert, small business SEO, small business website design, marketing agency Bakersfield"
                 canonical="https://rsla.io"
                 jsonLd={[
                     /* Organization + WebSite are injected globally via Seo.jsx (src/lib/structuredData.mjs) */
@@ -115,11 +115,11 @@ export default function Home() {
                         '@context': 'https://schema.org',
                         '@type': 'FAQPage',
                         mainEntity: [
-                            { '@type': 'Question', name: 'What types of businesses do you work with?', acceptedAnswer: { '@type': 'Answer', text: 'We work with B2B companies and service businesses doing $500K+ in revenue who want to systematize their marketing and operations with AI. If you rely on leads, appointments, or repeat customers to grow, we can help.' } },
-                            { '@type': 'Question', name: 'How long does it take to see results?', acceptedAnswer: { '@type': 'Answer', text: 'Most clients see measurable results within 30 to 60 days. Websites launch in 2 to 4 weeks. Search visibility campaigns start generating impressions within the first month. AI automation systems go live in 2 to 3 weeks.' } },
-                            { '@type': 'Question', name: 'Do you lock clients into long-term contracts?', acceptedAnswer: { '@type': 'Answer', text: 'No. We work on a month-to-month basis after the initial build. We believe in earning your business every month. If we are not delivering, you should not be stuck.' } },
-                            { '@type': 'Question', name: 'What platforms and tools do you use?', acceptedAnswer: { '@type': 'Answer', text: 'We build custom websites on React and Next.js, use GoHighLevel for CRM and automation, n8n and Make for workflow automation, and Claude and GPT for AI systems. We pick the right tool for each job.' } },
-                            { '@type': 'Question', name: 'How is RSL/A different from other agencies?', acceptedAnswer: { '@type': 'Answer', text: 'We build the entire system, not just one piece. Website, search visibility, AI automations, CRM, and reporting, all connected. Most agencies hand you leads and call it a day. We make sure those leads turn into revenue.' } },
+                            { '@type': 'Question', name: 'What types of businesses do you work with?', acceptedAnswer: { '@type': 'Answer', text: 'One person and small service businesses: the trades, clinics, salons, restaurants, agencies, and the professional services firms that run on referrals. Most are in Kern County or work with us remotely from anywhere in the US and Canada. Nonprofits and B2B companies are welcome too, on the same process.' } },
+                            { '@type': 'Question', name: 'How long does it take to see results?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on what we build. A website launches in four to six weeks. A CRM or a single automation goes live in one to three weeks. SEO takes three to six months for the first real movement and closer to a year to compound. We say which on the first call and report what moved each month.' } },
+                            { '@type': 'Question', name: 'Do you lock clients into long-term contracts?', acceptedAnswer: { '@type': 'Answer', text: 'No. Builds are a fixed project price. Ongoing work, such as SEO, automation upkeep, or CRM management, is month to month after the build and you can stop any time. If it is not paying for itself, you should not be paying for it.' } },
+                            { '@type': 'Question', name: 'What platforms and tools do you use?', acceptedAnswer: { '@type': 'Answer', text: 'Websites are hand coded on React and Next.js. CRM and follow up run on GoHighLevel. Workflows run in n8n or Make, with an AI agent where a step needs judgment. We pick the tool that fits the job and your existing stack, and we do not make you switch software to get there.' } },
+                            { '@type': 'Question', name: 'How is RSL/A different from other agencies?', acceptedAnswer: { '@type': 'Answer', text: 'Two things. Rahul came from analytics, so you get a dashboard with your real leads, calls, rankings, and costs instead of a monthly report of impressions. And we diagnose before we sell: a business with no follow up system needs a CRM more than it needs ads, and we say so even when it is the smaller job.' } },
                         ],
                     },
                 ]}
@@ -138,10 +138,10 @@ export default function Home() {
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
                         <div className="max-w-4xl">
                             <h2 className="hr-reveal opacity-0 font-sans font-bold text-text text-2xl md:text-4xl tracking-tight leading-[1.1]">
-                                Hundreds of thousands generated (and honestly, even more saved).
+                                Two salon suites filled from $600 in ads. A blank domain to 204 keywords in 6 months.
                             </h2>
                             <p className="hr-reveal opacity-0 mt-6 md:mt-8 font-sans font-medium text-lg text-text leading-relaxed">
-                                Rahul and his team build intelligent marketing systems for both SMB and enterprise. We use a proprietary AI-driven consulting stack and a framework that digs into how your business actually runs so we can fix real, practical problems. Not the theoretical ones that look good on paper, but the actual things that are stopping you from scaling your business.
+                                That is the kind of number you get from us, on a dashboard, as it happens. We work with one person and small service businesses: the trades, clinics, salons, agencies, and the owner who is also the sales team. Rahul came from analytics, so every engagement starts with a diagnosis and ends with your real leads, calls, rankings, and costs in one place, not a monthly PDF of impressions.
                             </p>
                         </div>
                     </div>

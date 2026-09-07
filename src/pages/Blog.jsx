@@ -170,13 +170,13 @@ export default function Blog() {
     return (
         <div className="min-h-screen bg-surface text-text pt-28 pb-20">
             <Seo
-                title="Blog: AI Marketing, Automation & Growth Insights | RSL/A"
-                description="Practical guides on GoHighLevel, Claude AI, marketing automation, local SEO, and AI-powered growth strategies."
+                title="GoHighLevel, AI automation, and local SEO guides | RSL/A"
+                description="Guides on GoHighLevel, Claude, automation, and local SEO, written from the work we do for clients: what we set up, what it cost, and what moved."
                 keywords="AI automation blog, marketing automation insights, business AI strategies"
                 canonical="https://rsla.io/blog"
                 jsonLd={{
                     '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Blog', url: 'https://rsla.io/blog',
-                    description: 'Insights on marketing automation, AI systems, local SEO, and business growth strategies from RSL/A.',
+                    description: 'Guides on GoHighLevel, Claude, automation, and local SEO from RSL/A.',
                     isPartOf: { '@id': 'https://rsla.io/#website' },
                     mainEntity: { '@type': 'ItemList', itemListElement: posts.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://rsla.io/blog/${p.slug?.current || p.slug}`, name: p.title })) },
                 }}
@@ -298,7 +298,7 @@ export default function Blog() {
                         <header className="mb-8 text-center pt-6">
                             <h1 className="text-3xl md:text-5xl font-sans font-bold text-text mb-3 tracking-tight leading-[1.1]">Blog</h1>
                             <p className="font-sans text-lg text-text max-w-2xl mx-auto leading-relaxed">
-                                Insights on marketing automation, AI systems, local SEO, and strategies to scale your operations.
+                                Guides on GoHighLevel, Claude, automation, and local SEO, from the work we do for clients.
                             </p>
                         </header>
                     )}

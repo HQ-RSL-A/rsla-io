@@ -46,13 +46,13 @@ export default function FounderSection() {
                     </h2>
                     <div className="space-y-5 font-sans text-text text-lg leading-relaxed">
                         <p className="founder-text opacity-0">
-                            I have spent the better part of five years in the trenches of marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched founders with real talent suffocate under work that never should have touched their hands.
+                            Five years in marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched owners with real talent suffocate under admin that never should have touched their hands.
                         </p>
                         <p className="founder-text opacity-0">
                             That became the only question worth answering: how do you build systems that actually run a business, not just look good in a demo?
                         </p>
                         <p className="founder-text opacity-0">
-                            I put everything out there. The strategies, the tools, the exact workflows. You can learn all of it from my content. But knowing how it works and actually building it so it holds under pressure and scales without breaking? That demands precision. That is what RSL/A exists to do.
+                            I put everything out there. The tools, the exact workflows, the numbers. You can learn all of it from my content. But knowing how it works and building it so it still runs at 500 leads instead of 10? That is the part you hire us for.
                         </p>
                     </div>
 

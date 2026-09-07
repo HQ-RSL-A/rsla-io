@@ -293,14 +293,14 @@ function WebsitesBackground() {
                         </div>
                         <div className="live-el absolute inset-0">
                             <p className="font-sans text-[12px] font-bold leading-[1.15] tracking-tight text-text">
-                                Launches that{' '}
-                                <span className="font-sans font-bold text-accent">ship</span> in weeks.
+                                Drain cleaning in{' '}
+                                <span className="font-sans font-bold text-accent">Bakersfield</span>, today.
                             </p>
                             <p className="mt-1 font-sans text-[8px] leading-snug text-text">
-                                Custom-designed, SEO-ready, built to convert.
+                                Licensed plumber. Same day visits. Tap to call.
                             </p>
                             <div className="mt-1.5 inline-flex h-[18px] items-center gap-1 rounded-md bg-accent px-2 font-sans text-[8px] font-medium text-white shadow-sm">
-                                Get started
+                                Call now
                                 <span className="text-[10px] leading-none">→</span>
                             </div>
                         </div>
@@ -1187,10 +1187,10 @@ export default function ServicesV2() {
             <div className="max-w-6xl mx-auto">
                 <div className="mb-12 max-w-3xl">
                     <h2 className="font-sans font-bold text-2xl md:text-4xl tracking-tight leading-[1.1] text-text">
-                        What we can help you with.
+                        Five things we build.
                     </h2>
                     <p className="mt-6 font-sans font-medium text-lg text-text leading-relaxed">
-                        End-to-end AI systems that generate leads, close deals, and scale operations. Built and managed by a team that's done it across SMBs and enterprise.
+                        Automation first, because that is where the hours go. Then a CRM so nothing slips, search so customers find you, a website that says what you do in one screen, and the internal tool nobody sells. Each is a fixed price with its own page.
                     </p>
                 </div>
 

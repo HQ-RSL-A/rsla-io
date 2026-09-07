@@ -81,7 +81,7 @@ export default function Services() {
                         Not sure where to start?
                     </h2>
                     <p className="font-sans text-lg text-text leading-relaxed mb-8">
-                        Book a free 30-minute call and we will map out exactly what your business needs.
+                        Book a free 30 minute call. We will tell you what to build first and what it would cost.
                     </p>
                     <Link
                         to="/contact"

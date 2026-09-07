@@ -66,8 +66,8 @@ export default function Work() {
     return (
         <main ref={pageRef} className="min-h-screen bg-surface text-text pt-28 md:pt-36 pb-20 px-5 md:px-12 relative overflow-hidden">
             <Seo
-                title="AI Automation Case Studies: Real Client Results | RSL/A"
-                description="Real results from real clients. See how RSL/A uses AI automation, custom websites, and CRM systems to drive measurable growth for B2B companies."
+                title="Case studies: websites, SEO, automation, and CRM | RSL/A"
+                description="Five case studies with the numbers: two salon suites filled from $600 in ads, a blank domain to 204 keywords in 6 months, a rebuild now cited by ChatGPT."
                 keywords="AI automation case studies, marketing automation results, AI lead generation results, business automation ROI"
                 canonical="https://rsla.io/work"
                 jsonLd={{
@@ -75,7 +75,7 @@ export default function Work() {
                     '@type': 'CollectionPage',
                     name: 'Case Studies',
                     url: 'https://rsla.io/work',
-                    description: 'Real results from real clients. See how RSL/A uses AI automation, paid ads, and CRM systems to drive measurable growth.',
+                    description: 'Five case studies with the numbers: two salon suites filled from $600 in ads, a blank domain to 204 keywords in 6 months, a rebuild now cited by ChatGPT.',
                     isPartOf: { '@id': 'https://rsla.io/#website' },
                     mainEntity: {
                         '@type': 'ItemList',
@@ -96,7 +96,7 @@ export default function Work() {
                     </TextAnimate>
                 </h1>
                 <p className="font-sans text-text max-w-2xl mx-auto text-lg leading-relaxed">
-                    We help customers achieve measurable results
+                    Each one has the numbers in it, including what did not work.
                 </p>
             </section>
 

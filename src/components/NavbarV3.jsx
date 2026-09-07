@@ -311,7 +311,7 @@ export default function NavbarV3() {
                                 <InteractiveHoverButton
                                     className="font-sans text-sm px-5 py-2.5"
                                 >
-                                    Let&apos;s talk
+                                    Book a call
                                 </InteractiveHoverButton>
                             </Link>
                         </div>
@@ -416,7 +416,7 @@ export default function NavbarV3() {
                             <InteractiveHoverButton
                                 className="w-full font-sans text-base px-6 py-4"
                             >
-                                Let&apos;s talk
+                                Book a call
                             </InteractiveHoverButton>
                         </Link>
                     </div>

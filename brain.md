@@ -4,7 +4,7 @@ Reference material for the RSL/A website. Rules and behavior live in CLAUDE.md.
 
 ## Positioning
 
-"I show founders how to put AI to work, then I build it for them."
+"Only you know what your time is worth. We put AI to work to get it back." (home hero since 2026-09-06; audience is small service businesses, the word "founders" is retired)
 
 **Status:** Live at rsla.io. All TODO items complete (P0 through P4). Only careers page remains (when ready).
 

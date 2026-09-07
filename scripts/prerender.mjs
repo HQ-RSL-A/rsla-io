@@ -184,41 +184,43 @@ function ptToHtml(blocks) {
 
 function homeContent() {
   return {
-    title: 'RSL/A | The trusted AI growth partner for B2B companies',
-    description: "We build your website, get it found on Google and ChatGPT, and automate what's slowing you down. Custom websites and AI systems for fast-moving B2B companies.",
+    title: 'RSL/A | We put AI to work for small service businesses',
+    description: "Automation, CRM, SEO, and websites for small service businesses. Fixed price, real numbers on a dashboard, in person in Bakersfield and remote across the US.",
     canonical: SITE,
-    keywords: 'AI growth partner, custom B2B website, AI website agency, SEO for B2B, AI automation, ChatGPT visibility',
+    keywords: 'AI automation agency, GoHighLevel expert, small business SEO, small business website design, marketing agency Bakersfield',
     jsonLd: [
       {
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'What types of businesses do you work with?', acceptedAnswer: { '@type': 'Answer', text: 'We work with B2B companies and service businesses doing $500K+ in revenue who want to systematize their marketing and operations with AI. If you rely on leads, appointments, or repeat customers to grow, we can help.' } },
-          { '@type': 'Question', name: 'How long does it take to see results?', acceptedAnswer: { '@type': 'Answer', text: 'Most clients see measurable results within 30 to 60 days. Websites launch in 2 to 4 weeks. Search visibility campaigns start generating impressions within the first month. AI automation systems go live in 2 to 3 weeks.' } },
-          { '@type': 'Question', name: 'Do you lock clients into long-term contracts?', acceptedAnswer: { '@type': 'Answer', text: 'No. We work on a month-to-month basis after the initial build. We believe in earning your business every month. If we are not delivering, you should not be stuck.' } },
-          { '@type': 'Question', name: 'What platforms and tools do you use?', acceptedAnswer: { '@type': 'Answer', text: 'We build custom websites on React and Next.js, use GoHighLevel for CRM and automation, n8n and Make for workflow automation, and Claude and GPT for AI systems. We pick the right tool for each job.' } },
-          { '@type': 'Question', name: 'How is RSL/A different from other agencies?', acceptedAnswer: { '@type': 'Answer', text: 'We build the entire system, not just one piece. Website, search visibility, AI automations, CRM, and reporting, all connected. Most agencies hand you leads and call it a day. We make sure those leads turn into revenue.' } },
+          { '@type': 'Question', name: 'What types of businesses do you work with?', acceptedAnswer: { '@type': 'Answer', text: 'One person and small service businesses: the trades, clinics, salons, restaurants, agencies, and the professional services firms that run on referrals. Most are in Kern County or work with us remotely from anywhere in the US and Canada. Nonprofits and B2B companies are welcome too, on the same process.' } },
+          { '@type': 'Question', name: 'How long does it take to see results?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on what we build. A website launches in four to six weeks. A CRM or a single automation goes live in one to three weeks. SEO takes three to six months for the first real movement and closer to a year to compound. We say which on the first call and report what moved each month.' } },
+          { '@type': 'Question', name: 'Do you lock clients into long-term contracts?', acceptedAnswer: { '@type': 'Answer', text: 'No. Builds are a fixed project price. Ongoing work, such as SEO, automation upkeep, or CRM management, is month to month after the build and you can stop any time. If it is not paying for itself, you should not be paying for it.' } },
+          { '@type': 'Question', name: 'What platforms and tools do you use?', acceptedAnswer: { '@type': 'Answer', text: 'Websites are hand coded on React and Next.js. CRM and follow up run on GoHighLevel. Workflows run in n8n or Make, with an AI agent where a step needs judgment. We pick the tool that fits the job and your existing stack, and we do not make you switch software to get there.' } },
+          { '@type': 'Question', name: 'How is RSL/A different from other agencies?', acceptedAnswer: { '@type': 'Answer', text: 'Two things. Rahul came from analytics, so you get a dashboard with your real leads, calls, rankings, and costs instead of a monthly report of impressions. And we diagnose before we sell: a business with no follow up system needs a CRM more than it needs ads, and we say so even when it is the smaller job.' } },
         ],
       },
     ],
     html: `<main>
-<h1>The trusted AI growth partner for fast-moving B2B companies.</h1>
-<p><a href="/contact">Book a Free Call</a> | <a href="/work">See Our Work</a></p>
+<h1>Only you know what your time is worth. We put AI to work to get it back.</h1>
+<p>Automation, CRM, search, and websites for small service businesses. Fixed price, and the numbers on a dashboard.</p>
+<p><a href="/contact">Book a call</a> | <a href="/work">See the work</a></p>
 
-<section><h2>What we build</h2>
-<article><h3>Websites</h3>
-<p>New builds and full rebuilds. Fast, custom-designed, SEO-ready websites built on React and Next.js.</p></article>
-<article><h3>Search visibility</h3>
-<p>Rankings on Google, ChatGPT, Perplexity, and Claude. SEO, AEO, and content systems that compound over time.</p></article>
-<article><h3>AI automations</h3>
-<p>n8n, Make, and custom AI agents that replace manual work. Lead follow-up, proposals, content, and reporting on autopilot.</p></article>
-<article><h3>CRM systems</h3>
-<p>GoHighLevel pipelines, workflows, and integrations. One system managing leads, bookings, and communication.</p></article>
-<article><h3>Custom development</h3>
-<p>SaaS products, MVPs, internal tools, and APIs. Full-stack builds from prototype to production.</p></article>
+<section><h2>Five things we build</h2>
+<p>Automation first, because that is where the hours go. Then a CRM so nothing slips, search so customers find you, a website that says what you do in one screen, and the internal tool nobody sells. Each is a fixed price with its own page.</p>
+<article><h3><a href="/services/automations">AI automations</a></h3>
+<p>The missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM. Nothing slips.</p></article>
+<article><h3><a href="/services/crm">CRM systems</a></h3>
+<p>Every lead, quote, and customer in one place you can run from your phone. Built on GoHighLevel.</p></article>
+<article><h3><a href="/services/seo">Search visibility</a></h3>
+<p>When customers ask Google or ChatGPT who to call, your business is the answer. SEO, local SEO, and AI answers.</p></article>
+<article><h3><a href="/services/websites">Websites</a></h3>
+<p>New sites and rebuilds that say what you do in one screen, load fast on a phone, and get found.</p></article>
+<article><h3><a href="/services/custom-builds">Custom builds</a></h3>
+<p>Internal tools built around how you work: trackers, dashboards, quote builders. When nothing off the shelf fits.</p></article>
 </section>
 
-<section><h2>By the numbers</h2>
-<ul><li>40+ clients served</li><li>$2.1M+ revenue generated</li><li>11 case studies</li><li>98% client retention</li></ul>
+<section><h2>Three numbers from the work</h2>
+<ul><li>204 keywords ranked on our own domain in 6 months, with no ad spend</li><li>Two salon suites filled from $600 in ads, worth $36K a year in rent</li><li>1,200 personalized emails a day from one 3 step automation</li></ul>
 </section>
 
 <section><h2>What clients say</h2>
@@ -230,26 +232,25 @@ function homeContent() {
 </section>
 
 <section><h2>About the founder</h2>
-<p>I have spent the better part of five years in the trenches of marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched founders with real talent suffocate under work that never should have touched their hands.</p>
+<p>Five years in marketing, automation, and business infrastructure. Started in analytics. Got laid off. Built an agency from nothing. And along the way, I watched owners with real talent suffocate under admin that never should have touched their hands.</p>
 <p>That became the only question worth answering: how do you build systems that actually run a business, not just look good in a demo?</p>
-<p>I put everything out there. The strategies, the tools, the exact workflows. You can learn all of it from my content. But knowing how it works and actually building it so it holds under pressure and scales without breaking? That demands precision. That is what RSL/A exists to do.</p>
-<p>— Rahul Lalia, Founder, RSL/A</p>
+<p>I put everything out there. The tools, the exact workflows, the numbers. You can learn all of it from my content. But knowing how it works and building it so it still runs at 500 leads instead of 10? That is the part you hire us for.</p>
+<p>Rahul Lalia, Founder, RSL/A</p>
 </section>
 
 <section><h2>Frequently asked questions</h2>
 <dl>
-<dt>What types of businesses do you work with?</dt><dd>We work with B2B companies and service businesses doing $500K+ in revenue who want to systematize their marketing and operations with AI. If you rely on leads, appointments, or repeat customers to grow, we can help.</dd>
-<dt>How long does it take to see results?</dt><dd>Most clients see measurable results within 30 to 60 days. Websites launch in 2 to 4 weeks. Search visibility campaigns start generating impressions within the first month. AI automation systems go live in 2 to 3 weeks.</dd>
-<dt>Do you lock clients into long-term contracts?</dt><dd>No. We work on a month-to-month basis after the initial build. We believe in earning your business every month. If we are not delivering, you should not be stuck.</dd>
-<dt>What platforms and tools do you use?</dt><dd>We build custom websites on React and Next.js, use GoHighLevel for CRM and automation, n8n and Make for workflow automation, and Claude and GPT for AI systems. We pick the right tool for each job.</dd>
-<dt>How is RSL/A different from other agencies?</dt><dd>We build the entire system, not just one piece. Website, search visibility, AI automations, CRM, and reporting, all connected. Most agencies hand you leads and call it a day. We make sure those leads turn into revenue.</dd>
-<dt>Do you offer white-label services for other agencies?</dt><dd>Yes. We partner with agencies who need AI automation, CRM buildouts, or technical infrastructure they cannot build in-house. Reach out and we can discuss your setup.</dd>
-<dt>What does the onboarding process look like?</dt><dd>It starts with a strategy call where we audit your current setup. Then we deliver a custom roadmap within 48 hours. Once approved, we start building. Most clients are fully live within 2 to 4 weeks.</dd>
+<dt>What types of businesses do you work with?</dt><dd>One person and small service businesses: the trades, clinics, salons, restaurants, agencies, and the professional services firms that run on referrals. Most are in Kern County or work with us remotely from anywhere in the US and Canada. Nonprofits and B2B companies are welcome too, on the same process.</dd>
+<dt>How long does it take to see results?</dt><dd>It depends on what we build. A website launches in four to six weeks. A CRM or a single automation goes live in one to three weeks. SEO takes three to six months for the first real movement and closer to a year to compound. We say which on the first call and report what moved each month.</dd>
+<dt>Do you lock clients into long-term contracts?</dt><dd>No. Builds are a fixed project price. Ongoing work, such as SEO, automation upkeep, or CRM management, is month to month after the build and you can stop any time. If it is not paying for itself, you should not be paying for it.</dd>
+<dt>What platforms and tools do you use?</dt><dd>Websites are hand coded on React and Next.js. CRM and follow up run on GoHighLevel. Workflows run in n8n or Make, with an AI agent where a step needs judgment. We pick the tool that fits the job and your existing stack, and we do not make you switch software to get there.</dd>
+<dt>How is RSL/A different from other agencies?</dt><dd>Two things. Rahul came from analytics, so you get a dashboard with your real leads, calls, rankings, and costs instead of a monthly report of impressions. And we diagnose before we sell: a business with no follow up system needs a CRM more than it needs ads, and we say so even when it is the smaller job.</dd>
 </dl>
 </section>
 
-<section><h2>Ready to put AI to work?</h2>
-<p><a href="/#contact">Let's Talk</a></p>
+<section><h2>Book a free 30 minute call.</h2>
+<p>Tell us what is not working. We will tell you what we would build first, what it would cost, and whether it is worth it.</p>
+<p><a href="/contact">Book a call</a></p>
 </section>
 </main>`,
   };
@@ -257,7 +258,7 @@ function homeContent() {
 
 function aboutContent() {
   return {
-    title: 'About Rahul Lalia & RSL/A | AI Growth Agency',
+    title: 'About Rahul Lalia, founder of RSL/A',
     description: 'Meet Rahul Lalia, founder of RSL/A. Five years in marketing, automation, and business infrastructure, building systems that actually run businesses.',
     canonical: `${SITE}/about`,
     keywords: 'Rahul Lalia, RSL/A founder, AI automation expert, marketing automation consultant, business systems builder',
@@ -278,18 +279,18 @@ function aboutContent() {
 <p>They were not struggling because they lacked talent. They were drowning in manual work.</p>
 <p>Following up with leads at midnight. Copy-pasting between three different tools. Losing deals because they forgot to reply. Running ads with zero tracking. Paying for five different software subscriptions that did not talk to each other.</p>
 <p>And you know what? Most of the "solutions" out there made it worse. More tools, more complexity, more things to manage.</p>
-<p>So I started asking a different question. What if AI could handle all the stuff that founders should not be doing manually? Not theoretical AI. Not "we will build you a chatbot" AI. Practical, measured, actually-useful-for-your-business AI. That became the whole thing.</p>
+<p>So I started asking a different question. What if AI could handle all the stuff that owners should not be doing manually? Not theoretical AI. Not "we will build you a chatbot" AI. Practical, measured, actually-useful-for-your-business AI. That became the whole thing.</p>
 </section>
 
 <section><h2>What I actually do</h2>
-<p>I show founders how to put AI to work in their business. Then I build it for them.</p>
+<p>I show owners how to put AI to work in their business. Then I build it for them.</p>
 <p>The teaching part is free. I post the workflows, the tools, the exact systems. No gatekeeping. If you can build it yourself after watching my content, I genuinely want that for you.</p>
-<p>But here is the thing. There is a difference between knowing what to build and building it right. A system that works for 10 leads breaks at 500. An AI bot that sounds great in a demo falls apart with real customers. The gap between a prototype and a production system is where most founders get stuck. That is where RSL/A comes in. My team and I are the ones who build the production version. The one that actually scales, actually handles edge cases, and actually shows you the numbers so you know it is working.</p>
+<p>But here is the thing. There is a difference between knowing what to build and building it right. A system that works for 10 leads breaks at 500. An AI bot that sounds great in a demo falls apart with real customers. The gap between a prototype and a production system is where most owners get stuck. That is where RSL/A comes in. My team and I are the ones who build the production version. The one that actually scales, actually handles edge cases, and actually shows you the numbers so you know it is working.</p>
 </section>
 
 <section><h2>Why I am different</h2>
 <p>I came from analytics. That matters.</p>
-<p>Most people in this space show you a demo and call it done. I show you a dashboard. Real numbers. What the AI system did this week, how many leads it handled, how many meetings it booked, what the conversion rate was. Because if you cannot measure it, it is just a toy. And founders do not need toys. They need infrastructure.</p>
+<p>Most people in this space show you a demo and call it done. I show you a dashboard. Real numbers. What the AI system did this week, how many leads it handled, how many meetings it booked, what the conversion rate was. Because if you cannot measure it, it is just a toy. And owners do not need toys. They need infrastructure.</p>
 </section>
 
 <p><a href="/work">See what we have built</a></p>
@@ -331,7 +332,7 @@ ${offers.map(([name, path, description]) => `<li><a href="${path}"><strong>${esc
 <p><a href="/bakersfield">Websites, SEO, automation, and CRM for Kern County businesses</a></p>
 </section>
 <section><h2>Not sure where to start?</h2>
-<p>Book a free 30-minute call and we will map out exactly what your business needs.</p>
+<p>Book a free 30 minute call. We will tell you what to build first and what it would cost.</p>
 <p><a href="/contact">Book a free call</a></p>
 </section>
 </main>`,
@@ -684,7 +685,7 @@ function bookCallContent() {
     noIndex: true,
     html: `<main>
 <h1>Book your session.</h1>
-<p>Pick a time that works for you. Whether it is onboarding, a strategy check-in, or a support call, we will make sure you are covered.</p>
+<p>Pick a time. Onboarding, strategy check ins, and support calls all book here.</p>
 <p>To schedule a call, please visit this page in a browser with JavaScript enabled, or contact us directly at <a href="mailto:hello@rsla.io">hello@rsla.io</a>.</p>
 </main>`,
   };
@@ -692,23 +693,23 @@ function bookCallContent() {
 
 function contactContent() {
   return {
-    title: 'Book a free growth mapping call | RSL/A',
-    description: "Book a free 30-minute growth mapping call. We'll audit your funnel, find the bottlenecks, and show you exactly where AI moves the needle. No pitch, just answers.",
+    title: 'Book a free 30 minute call | RSL/A',
+    description: "Book a free 30 minute call with RSL/A. Tell us what is not working and we will tell you what we would build first and what it would cost. No pitch.",
     canonical: `${SITE}/contact`,
-    keywords: 'AI strategy call, growth mapping call, AI consultation, marketing audit, automation consultation, free strategy session',
+    keywords: 'free consultation, marketing agency call, Bakersfield, automation, CRM, SEO, websites',
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
       '@id': `${SITE}/contact`,
       name: 'Contact RSL/A',
       url: `${SITE}/contact`,
-      description: 'Book a free 30-minute growth mapping call with RSL/A.',
+      description: 'Book a free 30 minute call with RSL/A.',
       isPartOf: { '@id': `${SITE}/#website` },
       about: { '@id': `${SITE}/#business` },
     },
     html: `<main>
-<h1>Book a free growth mapping call.</h1>
-<p>30 minutes. We audit your funnel, find the bottlenecks, and show you exactly where AI moves the needle. No pitch, just answers.</p>
+<h1>Book a free 30 minute call.</h1>
+<p>30 minutes. Tell us what is not working. We will tell you what we would build first, what it would cost, and whether it is worth it. No pitch.</p>
 <p>To book, please visit this page in a browser with JavaScript enabled, or email us at <a href="mailto:hello@rsla.io">hello@rsla.io</a>.</p>
 </main>`,
   };
@@ -840,18 +841,13 @@ function bookingConfirmedContent() {
 
 function insiderContent() {
   return {
-    title: 'Insider Newsletter | RSL/A',
-    description: 'Get weekly automation insights delivered to your inbox.',
+    title: 'The Insider: one thing every Tuesday | RSL/A',
+    description: 'One thing a week, short enough to set up the same day: an automation, a Google Business Profile fix, a follow up sequence, a tool worth paying for.',
     canonical: `${SITE}/insider`,
     noIndex: true,
     html: `<main>
-<h1>Automate smarter every week.</h1>
-<p>Real automation strategies, case studies, and AI tools delivered straight to your inbox every week.</p>
-<ul>
-<li>Case studies saving clients $20K to $136K annually</li>
-<li>Actionable automation tips you can use today</li>
-<li>Tool recommendations from real implementations</li>
-</ul>
+<h1>Every Tuesday, I send one thing you can use that day to make your business more money.</h1>
+<p>One thing a week, short enough to set up the same day: an automation, a Google Business Profile fix, a follow up sequence, a tool worth paying for.</p>
 <p>No spam, unsubscribe anytime. <a href="/privacy-policy">Privacy Policy</a></p>
 <p>To subscribe, please visit this page in a browser or contact us at <a href="mailto:team@rsla.io">team@rsla.io</a>.</p>
 </main>`,
@@ -867,7 +863,7 @@ function rahulContent() {
     html: `<main>
 <h1>Rahul Lalia</h1>
 <p>Founder &amp; CEO, RSL/A</p>
-<p>Marketing &amp; AI Automation Expert</p>
+<p>Puts AI to work for service businesses</p>
 <ul>
 <li><a href="/rahul.vcf">Save My Info (vCard)</a></li>
 <li><a href="tel:+16466413173">Call: +1 (646) 641-3173</a></li>
@@ -937,12 +933,12 @@ function blogListingContent(posts) {
     const date = formatDate(p.publishedAt);
     const cats = (p.categories || []).map(c => c.name).join(', ');
     const excerpt = p.excerpt ? `<p>${esc(p.excerpt)}</p>` : '';
-    return `<li><article><h2><a href="/blog/${esc(p.slug)}">${esc(p.title)}</a></h2>${excerpt}<p>${date}${cats ? ` — ${esc(cats)}` : ''}</p></article></li>`;
+    return `<li><article><h2><a href="/blog/${esc(p.slug)}">${esc(p.title)}</a></h2>${excerpt}<p>${date}${cats ? `, ${esc(cats)}` : ''}</p></article></li>`;
   }).join('\n');
 
   return {
-    title: 'Blog: AI Marketing, Automation & Growth Insights | RSL/A',
-    description: 'Practical guides on GoHighLevel, Claude AI, marketing automation, local SEO, and AI-powered growth strategies. Written by practitioners, not theorists.',
+    title: 'GoHighLevel, AI automation, and local SEO guides | RSL/A',
+    description: 'Guides on GoHighLevel, Claude, automation, and local SEO, written from the work we do for clients: what we set up, what it cost, and what moved.',
     canonical: `${SITE}/blog`,
     jsonLd: {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -960,7 +956,7 @@ function blogListingContent(posts) {
     },
     html: `<main>
 <h1>Our blog.</h1>
-<p>Insights on marketing automation, AI systems, local SEO, and strategies to scale your operations without overhead.</p>
+<p>Guides on GoHighLevel, Claude, automation, and local SEO, from the work we do for clients.</p>
 <ul>${postItems}</ul>
 </main>`,
   };
@@ -978,8 +974,8 @@ function workListingContent(caseStudies) {
   }
 
   return {
-    title: 'AI Automation Case Studies: Real Client Results | RSL/A',
-    description: 'Real results from real clients. See how RSL/A uses AI automation, custom websites, and CRM systems to drive measurable growth for B2B companies.',
+    title: 'Case studies: websites, SEO, automation, and CRM | RSL/A',
+    description: 'Five case studies with the numbers: two salon suites filled from $600 in ads, a blank domain to 204 keywords in 6 months, a rebuild now cited by ChatGPT.',
     canonical: `${SITE}/work`,
     jsonLd: {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -997,7 +993,7 @@ function workListingContent(caseStudies) {
     },
     html: `<main>
 <h1>Our work.</h1>
-<p>We don't sell promises. We sell engineered outcomes. Here is the proof.</p>
+<p>Each one has the numbers in it, including what did not work.</p>
 ${featured.length ? `<section><h2>Featured Case Studies</h2><ul>${renderCsList(featured)}</ul></section>` : ''}
 ${rest.length ? `<section><h2>All Case Studies</h2><ul>${renderCsList(rest)}</ul></section>` : ''}
 </main>`,

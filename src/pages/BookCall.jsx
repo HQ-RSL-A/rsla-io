@@ -32,7 +32,7 @@ export default function BookCall() {
                     </TextAnimate>
                 </h1>
                 <p className="font-sans text-text mb-10 max-w-lg mx-auto text-lg leading-relaxed">
-                    Pick a time that works for you. Whether it's onboarding, a strategy check-in, or a support call, we'll make sure you're covered.
+                    Pick a time. Onboarding, strategy check ins, and support calls all book here.
                 </p>
 
                 <div className="rounded-2xl">

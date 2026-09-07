@@ -15,9 +15,9 @@ import { cn } from '@/lib/utils';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CtaWithGlow({
-    title = 'Book a free 30-minute growth mapping call.',
-    subtitle = "We'll audit your funnel, find the bottlenecks, and show you exactly where AI moves the needle.",
-    buttonText = "Let's talk",
+    title = 'Book a free 30 minute call.',
+    subtitle = "Tell us what is not working. We will tell you what we would build first, what it would cost, and whether it is worth it.",
+    buttonText = "Book a call",
     buttonTo = '/contact',
     className,
 }) {

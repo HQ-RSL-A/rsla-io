@@ -40,17 +40,17 @@ export default function DiscoveryCall() {
     return (
         <main ref={pageRef} className="min-h-screen bg-surface pt-36 pb-20 px-6 md:px-12">
             <Seo
-                title="Book a Free AI Growth Mapping Call | RSL/A"
-                description="Book a free 30-minute growth mapping call. We'll audit your funnel, find the bottlenecks, and show you exactly where AI moves the needle. No pitch, just answers."
+                title="Book a free 30 minute call | RSL/A"
+                description="Book a free 30 minute call with RSL/A. Tell us what is not working and we will tell you what we would build first and what it would cost. No pitch."
                 canonical="https://rsla.io/contact"
-                keywords="free consultation, AI growth call, marketing audit, business growth mapping"
+                keywords="free consultation, marketing agency call, Bakersfield, automation, CRM, SEO, websites"
                 jsonLd={{
                     '@context': 'https://schema.org',
                     '@type': 'ContactPage',
                     '@id': 'https://rsla.io/contact',
                     name: 'Contact RSL/A',
                     url: 'https://rsla.io/contact',
-                    description: 'Book a free 30-minute growth mapping call with RSL/A.',
+                    description: 'Book a free 30 minute call with RSL/A.',
                     isPartOf: { '@id': 'https://rsla.io/#website' },
                     about: { '@id': 'https://rsla.io/#business' },
                 }}
@@ -58,8 +58,11 @@ export default function DiscoveryCall() {
             <div className="max-w-4xl mx-auto">
                 <div className="contact-reveal opacity-0 text-center mb-10">
                     <h1 className="font-sans font-bold text-3xl md:text-5xl tracking-tight leading-[1.1] text-text mb-4">
-                        Book a free growth mapping call.
+                        Book a free 30 minute call.
                     </h1>
+                    <p className="font-sans text-lg text-text leading-relaxed max-w-2xl mb-8">
+                        Tell us what is not working. We will tell you what we would build first, what it would cost, and whether it is worth it.
+                    </p>
                 </div>
 
                 <div className="contact-reveal opacity-0 bg-surfaceAlt border border-hairline rounded-2xl p-3 md:p-6">

@@ -114,7 +114,7 @@ export default function Testimonials() {
             <div className="max-w-6xl mx-auto space-y-12">
                 <div className="max-w-xl">
                     <h2 className="font-sans font-bold text-2xl md:text-4xl tracking-tight text-text">
-                        Don&apos;t take our word for it.
+                        What clients say.
                     </h2>
                 </div>
 

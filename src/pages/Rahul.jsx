@@ -9,7 +9,7 @@ const contactActions = [
         highlight: true,
     },
     {
-        label: "Let's talk",
+        label: 'Call me',
         icon: Phone,
         href: 'tel:+16466413173',
     },
@@ -84,7 +84,7 @@ export default function Rahul() {
             photo={{ src: '/images/rahul.webp', alt: 'Rahul Lalia' }}
             name="Rahul Lalia"
             title="Founder & CEO, RSL/A"
-            subtitle="Marketing & AI Automation Expert"
+            subtitle="Puts AI to work for service businesses"
             email="lalia@rsla.io"
             contactActions={contactActions}
             socials={socials}

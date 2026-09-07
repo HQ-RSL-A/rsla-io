@@ -88,7 +88,7 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 - GTM: add GA4 event tags and key events for `phone_click` and `inquiry_submit`. `cta_click` already exists sitewide. Until then neither event reaches GA4.
 - GoHighLevel: add a workflow "tag added: website-inquiry, then text and email Rahul". The form files the contact and the note today; nobody is told until the workflow exists.
 - The reply promise on /contact reads "within one business day". Keep or change.
-- The home page title still says "The trusted AI growth partner for B2B companies" while every service page says small service businesses.
+- Done 2026-09-06 (cliche pass): the home title is now "RSL/A | We put AI to work for small service businesses", the hero is the brand line with a lead naming the four services and the audience, and the B2B FAQ answers, "growth mapping call" CTAs, and stale prerender home copy are gone. Reword the hero if you want a different line; it is one string in `HeroV2.jsx` mirrored in `prerender.mjs` and `index.html`.
 - LeadSnap schedule 10278 has produced no grid scans since 2026-06-10. The copy only promises rescans "as the profile climbs", which is honest, but the scan has to run before the Bakersfield SEO page has anything to publish.
 - The CookieScript banner covers the hero CTA on the first mobile visit. That is the CMP layout, not the pages, and it was a deliberate 2026-08-17 decision.
 

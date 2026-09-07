@@ -73,14 +73,14 @@ export default function FooterV2() {
                     {/* Left: CTA plus the crawlable NAP */}
                     <div className="max-w-lg">
                         <h2 className="font-sans font-bold text-2xl md:text-3xl text-mist leading-snug mb-8">
-                            Start with a free, 30-minute growth mapping call.
+                            Start with a free 30 minute call. We will tell you what to build first and what it would cost.
                         </h2>
                         <Link
                             to="/contact"
                             onClick={() => window.dataLayer?.push({ event: 'cta_click', cta_location: 'footer' })}
                             className="inline-flex items-center gap-2 rounded-button bg-white text-text px-6 py-3 font-sans font-medium text-sm hover:bg-mist transition-colors"
                         >
-                            Let's talk
+                            Book a call
                             <ArrowRight size={16} strokeWidth={2} />
                         </Link>
                         <address className="not-italic mt-10 font-sans text-sm text-mist leading-relaxed">

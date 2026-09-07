@@ -41,8 +41,8 @@ export default function Insider() {
     return (
         <main className="min-h-screen bg-surface flex flex-col items-center justify-center px-4 py-20 md:py-24">
             <Seo
-                title="The Insider - Weekly Growth Systems | RSL/A"
-                description="The Insider delivers one tested growth system every week you can apply to your business and see results."
+                title="The Insider: one thing every Tuesday | RSL/A"
+                description="One thing a week, short enough to set up the same day: an automation, a Google Business Profile fix, a follow up sequence, a tool worth paying for."
                 canonical="https://rsla.io/insider"
                 noIndex
             />
@@ -54,7 +54,7 @@ export default function Insider() {
 
             {/* Descriptor */}
             <p className="font-sans text-base md:text-lg text-text text-center max-w-lg mb-10 md:mb-12 leading-relaxed">
-                The Insider delivers one tested growth system every week you can apply to your business and see results.
+                One thing a week, short enough to set up the same day: an automation, a Google Business Profile fix, a follow up sequence, a tool worth paying for.
             </p>
 
             {/* Card */}
@@ -75,7 +75,7 @@ export default function Insider() {
 
                 {/* Body */}
                 <p className="font-sans text-[15px] leading-relaxed text-text mb-5" style={{ textWrap: 'pretty' }}>
-                    One thing you can apply to your <span className="font-bold">business</span> that day and see results.
+                    One thing a week you can set up in your <span className="font-bold">business</span> the same day.
                 </p>
 
                 {submitted ? (

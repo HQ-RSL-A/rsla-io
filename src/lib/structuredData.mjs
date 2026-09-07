@@ -32,7 +32,7 @@ export const organizationNode = {
   url: SITE,
   logo: { '@type': 'ImageObject', url: `${SITE}/images/logo/lockup-nobg.webp`, width: 400, height: 100 },
   image: `${SITE}/images/logo/lockup-nobg.webp`,
-  description: "The trusted AI growth partner for fast-moving B2B companies. We build your website, get it found on Google and ChatGPT, and automate what's slowing you down.",
+  description: "We put AI to work for small service businesses: automation, CRM, SEO, and websites, at a fixed price, with the numbers on a dashboard.",
   email: 'hello@rsla.io',
   telephone: '+1-661-466-5919',
   priceRange: '$$$',
@@ -79,7 +79,7 @@ export const personNode = {
   jobTitle: 'Founder & CEO',
   url: `${SITE}/about`,
   image: `${SITE}/images/rahul.webp`,
-  description: 'Founder of RSL/A. Builds AI growth systems for B2B companies. Five years in marketing, automation, and business infrastructure.',
+  description: 'Founder of RSL/A. Puts AI to work for small service businesses: automation, CRM, SEO, and websites. Five years in marketing, automation, and business infrastructure.',
   worksFor: { '@id': `${SITE}/#business` },
   knowsAbout: ['AI Automation', 'Marketing Automation', 'GoHighLevel CRM', 'Search Engine Optimization', 'Answer Engine Optimization', 'Web Development'],
   sameAs: [
