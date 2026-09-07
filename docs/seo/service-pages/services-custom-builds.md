@@ -35,27 +35,27 @@ Internal tools. The things your business needs to run that no product sells the 
 
 **Bills and receipts vault.** A place to drop every bill and receipt, with one export at the end of the year that your accountant can file from.
 
-**Competitor video dashboard.** It watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last six months, so you know what is working before you post.
+**Competitor video dashboard.** It watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last 6 months, so you know what is working before you post.
 
 **Quote builder.** One that prices your jobs the way you price them in your head.
 
 **Monday morning report.** It pulls from the three systems you already pay for and lands in your inbox before the week starts.
 
-If you can describe it, it can be built. The sky is the limit on what; the question is whether it is worth building, and we answer that first.
+Anything you can describe can be built. Whether it is worth building is the question, and that gets answered first.
 
 ## When custom beats off the shelf
 
 Off the shelf wins when a product does 90 percent of what you need. Custom wins when you are paying for four tools to cover one workflow, when the workflow is specific enough that no product will ever add it, or when the data you need lives in places nothing connects.
 
-Custom software development for small business owners works when it is small: one tool, one job, a first version in weeks. The test we use on the call: if you can name a product that does the job and it costs less than a day of your time a month, buy it.
+It works for a small business when it stays small: one tool, one job, a first version in weeks. The test we use on the call: if you can name a product that does the job and it costs less than a day of your time a month, buy it.
 
 A CRM is almost never a custom build; that is what [GoHighLevel](/services/crm) is for. A simple workflow between two apps is an [automation](/services/automations), not software. We route you to the cheaper answer when it fits.
 
 ## How we build
 
-One call to understand the job the tool has to do. A written scope with a fixed price. Then a working first version in weeks, not months, that you use with real data while we finish the rest. The scope names what the first version does and does not do, so there is no argument later about what "done" meant. Every tool ships with a one page runbook: what it does, where it runs, which accounts it depends on, and what to do when it breaks.
+One call to understand the job the tool has to do. A written scope with a fixed price. Then a working first version inside a month that you use with real data while we finish the rest. The scope names what the first version does and does not do, so there is no argument later about what "done" meant. Every tool ships with a one page runbook: what it does, where it runs, which accounts it depends on, and what to do when it breaks.
 
-We build on a modern stack: React and Next.js on the front, Node or Python behind it, [Supabase](https://supabase.com) for the database, and [Vercel](https://vercel.com) for hosting. It runs on accounts in your name, so nothing is held hostage. We write our own tools the same way and build with the same AI assisted workflow we described in [how we run the agency without a dev team](/blog/claude-code-marketing-agency-workflow).
+We build on React and Next.js on the front, Node or Python behind it, [Supabase](https://supabase.com) for the database, and [Vercel](https://vercel.com) for hosting. It runs on accounts in your name, so nothing is held hostage. We write our own tools the same way, with the AI assisted workflow described in [how we run the agency without a dev team](/blog/claude-code-marketing-agency-workflow).
 
 ## Proof
 
@@ -67,13 +67,13 @@ We build on a modern stack: React and Next.js on the front, Node or Python behin
 
 ## Questions people ask about custom software
 
-### How much does custom software cost?
+### What does custom software development for small business cost?
 
-A single purpose internal tool is a fixed project price, quoted after one call, and it is a fraction of what a software agency charges because we scope tightly and build fast. Larger systems with several users and integrations cost more. Every quote comes with the alternative: the off the shelf product we would use instead if one exists.
+A single purpose internal tool is a fixed project price, quoted after one call. The scope is one tool and one job, which is what keeps the number small. Larger systems with several users and integrations cost more. Every quote comes with the alternative: the off the shelf product we would use instead, if one exists.
 
 ### How long does it take to build?
 
-A focused tool ships a working first version in two to four weeks. Bigger builds run four to eight. The biggest variable is how clear the scope is at the start, which is why the first call is mostly questions.
+A focused tool ships a working first version in 2 to 4 weeks. Bigger builds run 4 to 8. The biggest variable is how clear the scope is at the start, which is why the first call is mostly questions.
 
 ### Who owns the software?
 

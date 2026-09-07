@@ -24,7 +24,7 @@ When someone in your city searches for what you do, three businesses show up on 
 [CTA] Find out where your business shows up right now. → Book a call
 
 <!-- proof row -->
-Weekly 49 point rank grids, so you see the map, not a guess · Reviews, categories, and services worked in the order that moves rankings · Our own Bakersfield profile scanned in public, from zero
+Weekly 49 point rank grids, the map point by point · Reviews, categories, and services worked in the order that moves rankings · Our own Bakersfield profile scanned in public, from zero
 
 ## Two search results, two different games
 
@@ -36,17 +36,17 @@ Type "plumber" into Google from your phone and you get two things: the map pack 
 
 Winning one does not win the other, which is why so many local SEO services post to your profile every week and never move anything. We work both, in the order that matters. Our guide to [ranking higher on Google Maps](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains the map side in full if you want the long version first.
 
-## What actually ranks a Google Business Profile
+## What ranks a Google Business Profile
 
 The factors are measured every year by [Whitespark's Local Search Ranking Factors](https://whitespark.ca/local-search-ranking-factors/) survey, and the 2026 edition is blunt. The primary category is factor one of 187. Reviews, their recency, and a steady flow of them are the fastest rising signals. Keywords in the services field jumped from factor 110 to 35 in a single year. Google posts sit at 148.
 
-So that is our order. Primary category read off the top three competitors in your market, not guessed. Every predefined service Google offers for your category, plus custom ones under the names customers actually search. Then a review process that runs every week: a direct link sent after the job, no gating, no incentives, and a reply from you within 48 hours. Then hours, attributes, description, and 8 to 12 real photos, because Google's Ask Maps answers questions straight from those fields now that Q&A is gone. The field by field detail is in our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026).
+So that is our order. Primary category read off the top three competitors in your market, not guessed. Every predefined service Google offers for your category, plus custom ones under the names customers search. Then a review process that runs every week: a direct link sent after the job, no gating, no incentives, and a reply from you within 48 hours. Then hours, attributes, description, and 8 to 12 photos of your work, because Google's Ask Maps answers questions straight from those fields now that Q&A is gone. The field by field detail is in our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026).
 
-We do not geotag photos. Google strips the location data on upload and the published tests show no effect. We do not stuff the business name with keywords, because that is the top cause of suspensions. And we do not post for the sake of posting.
+We do not geotag photos, because Google strips the location data on upload and there is nothing left for it to affect. We do not stuff the business name with keywords, because that is the top cause of suspensions. And we do not post for the sake of posting.
 
 ## What ranks your website locally
 
-A dedicated page for each service you sell, written for your city, is the number one local organic factor. Not a homepage that lists nine services, not a city page with the name swapped in. A real page, with your work, your reviews from that city, and an answer to the question at the top.
+A dedicated page for each service you sell, written for your city, is the number one local organic factor. One page, about that service in that city, with your work on it, the reviews from there, and the answer to the searcher's question at the top.
 
 We build those pages, wire them into your profile, and link them from the pages on your site that already get traffic. If the site itself is too old or too slow to carry them, we rebuild it; see [website design for small businesses](/services/websites). The site wide work that sits under all of this is on our [SEO services](/services/seo) page.
 
@@ -54,15 +54,15 @@ We build those pages, wire them into your profile, and link them from the pages 
 
 **Storefront or service area.** A storefront shows its address and ranks around it. A service area business, the plumber or landscaper who works from home, hides the address and lists the towns it serves, and it ranks strongest near home. Both are legitimate; pretending to be the other one is the second most common reason a profile gets suspended.
 
-**Several towns.** If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something real about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain.
+**Several towns.** If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something specific about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain.
 
 ## Citations, reviews, and AI answers
 
 **Citations, done once.** Citations are your name, phone, and address on the directories that matter: Google, Apple, Bing, Facebook, Yelp, then the industry ones for your trade. We build 25 to 40 of them, by hand, from one canonical record, and then stop. Diminishing returns start there. We never rent citations on a monthly sync, because when the subscription ends, most of the listings decay with it.
 
-**Reviews without the risk.** Reviews gate entry to the map pack, and nearly half of consumers will not use a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation. Doing it properly is not optional anymore.
+**Reviews without the risk.** Reviews gate entry to the map pack, and nearly half of consumers skip a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation.
 
-**When they ask an AI instead.** More people ask ChatGPT or Google's AI for "a good electrician near me" than a year ago. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and real mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses).
+**When they ask an AI instead.** Some customers now ask ChatGPT or Google's AI for "a good electrician near me" instead of searching. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses).
 
 ## How you will see progress
 
@@ -72,12 +72,12 @@ Month one we report the profile completeness, review count, and the first grid. 
 
 ## What the first week needs from you
 
-Owner access to the Google Business Profile, or the go ahead to claim it. Ten to twelve real photos, or an hour of your time so we can take them. Your list of customers from the last three months, so the first review asks go to people who remember you. And one exact spelling of your business name, phone, and address, which every listing will then copy.
+Owner access to the Google Business Profile, or the go ahead to claim it. 10 to 12 photos, or an hour of your time so we can take them. Your list of customers from the last 3 months, so the first review asks go to people who remember you. And one exact spelling of your business name, phone, and address, which every listing will then copy.
 
-"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results. Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation."
+"Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation."
 Sid S., Account Executive, SBC
 
-[CTA] Want your first rank grid? We will run one for free on the call. → Book a call
+[CTA] Your first 49 point grid is on us. Bring the business name and the city. → Book a call
 
 ## Questions people ask about local SEO
 
@@ -87,7 +87,7 @@ It depends on how far you are from the pack today. A business with a verified pr
 
 ### How long does local SEO take?
 
-Profile changes can move rankings within days; adding keyword named services has shown movement inside 72 hours in published tests. Reviews compound over 60 to 90 days. Website pages take three to six months. We set gates at day 30, 60, and 90 and tell you at each one what moved and what did not.
+Profile changes can move rankings within days, and adding keyword named services is the fastest of them. Reviews compound over 60 to 90 days. Website pages take 3 to 6 months. We set gates at day 30, 60, and 90 and report at each one what moved and what did not.
 
 ### I work from home. Can I still rank without showing my address?
 
@@ -99,7 +99,7 @@ Barely. Posting frequency is factor 148 of 187 and posting quantity is 168. Post
 
 ## Final CTA
 
-Send us your business name and city. We will run the 49 point scan and show you exactly where you stand before you decide anything.
+Bring your business name and city. The 49 point scan runs before the call, so you see where you stand before you decide anything.
 
 [CTA] → Book a call
 
@@ -109,6 +109,6 @@ Send us your business name and city. We will run the 49 point scan and show you 
 
 - Child of /services/seo. Breadcrumb: Home > Services > SEO > Local SEO.
 - Factor ranks and policy facts come from `my-business/seo-intel/playbook/local/` (verified 2026-08-31). Re-verify before republishing after 2027-02.
-- The FTC figure ($53,088 per violation, 16 CFR 465) and the "nearly half will not use a business under 20 reviews" line (BrightLocal 2026) are both in seo-intel; keep them dated in the source, not on the page.
+- The FTC figure ($53,088 per violation, 16 CFR 465) and the "nearly half skip a business under 20 reviews" line (BrightLocal 2026) are both in seo-intel; keep them dated in the source, not on the page. The 72 hour services test claim was dropped on 2026-09-07 because the page could not name its source; restore it with the source if wanted.
 - The free grid scan offer costs LeadSnap credits; Rahul to confirm he wants it on the page.
-- Sid S. testimonial repeats from the websites pages; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).
+- Sid S. quote is the third sentence of the canonical review, cut at a sentence boundary (QA pass, 2026-09-07); swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).

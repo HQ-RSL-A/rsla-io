@@ -82,10 +82,23 @@ Word targets came from the lowest of the top three commercial pages plus roughly
 9. The pitch ladder order is applied everywhere: nav, footer, home bento, and the services index run automation, CRM, search visibility, websites, custom builds.
 10. Added during the gap pass: a crawlable footer NAP with tap to call, a mobile call bar on the Bakersfield pages, and the IndexNow ping now runs only on Vercel production builds. A written inquiry form on /contact was built the same day (`03d5b87`) and pulled on 2026-09-07 (Rahul: hold off on a contact form). It is RSL-375 for later, with its GA4 events and GoHighLevel workflow (RSL-373) on hold under it.
 
+## Decisions taken on 2026-09-07 (QA fix pass, RSL-377)
+
+1. Sibling pages: the Bakersfield automations and CRM pages say what is only true there (the in person setup, Kern County distances and reception, the yard, the local clients, a local FAQ) and share no paragraph, hero, proof title, or CTA with their national page. The other three local pages keep their structure with the seams removed.
+2. Exact phrase on the five local pages: at most one quoted search per page in the body ("Type "web design Bakersfield" into Google"), the second placement in an FAQ question or a natural sentence, never a noun jammed after the keyword. Each page argues something different about what the search returns.
+3. CTAs: the final CTA keeps the "bring X, leave with Y" shape because it follows the CTA rule; the mid page CTAs no longer open with "Want"; no CTA line is shared between siblings; "Send us" is gone until a written channel exists.
+4. Candor: claims of honesty ("straight answer", "we will tell you", "the truth", "The honest result") replaced with the policy or the demonstration they were standing in for. The programmatic page's 12 page lesson and "Who this is not for" are the model.
+5. Testimonials: canonical text is `src/components/Testimonials.jsx` (Sid S. ends "results!"). A quote is used in full or cut at a sentence boundary from the end, never with a middle sentence dropped. Sid S. full on the redesign page, first two sentences on the websites page, third sentence alone on the two SEO pages.
+6. Numbers: numerals for any measurement with a unit, any deliverable count, and anything 10 or over (4 to 6 weeks, 8 to 12 photos, 20 reviews, 49 points); words for small rhetorical counts (three businesses on the map, one page per service, four things).
+7. US spelling: inquiry, never enquiry. The old site is "from 2018" everywhere it is dated.
+8. Claims dropped for lack of a source: "we publish the rescans" (none since 2026-06-10), "more Kern County customers ask ChatGPT", "most clients stay on the retainer", the 72 hour services test, "a fraction of what a software agency charges". The Bakersfield vignettes are written as types, not as businesses we met.
+9. The home page owns the brand line "Only you know what your time is worth"; the automations hero no longer repeats it.
+10. `qa-pass.md` lives in this folder and is excluded from `check-copy.py` and `build-service-copy.mjs`.
+
 ## Still open for Rahul
 
 - Consent to name Select Landscape and Teji Videos on the Bakersfield pages.
-- On hold with the form (RSL-375, RSL-373): the GA4 events for `phone_click` and `inquiry_submit` and the GoHighLevel notify workflow. /contact is the calendar embed and the phone number. Five CTA lead ins still say "Send us"; they are listed in `qa-pass.md` section 9 and need rewording before deploy.
+- On hold with the form (RSL-375, RSL-373): the GA4 events for `phone_click` and `inquiry_submit` and the GoHighLevel notify workflow. /contact is the calendar embed and the phone number. The "Send us" lead ins were reworded in the QA fix pass.
 - Done 2026-09-06 (cliche pass): the home title is now "RSL/A | We put AI to work for small service businesses", the hero is the brand line with a lead naming the four services and the audience, and the B2B FAQ answers, "growth mapping call" CTAs, and stale prerender home copy are gone. Reword the hero if you want a different line; it is one string in `HeroV2.jsx` mirrored in `prerender.mjs` and `index.html`.
 - LeadSnap schedule 10278 has produced no grid scans since 2026-06-10. The copy only promises rescans "as the profile climbs", which is honest, but the scan has to run before the Bakersfield SEO page has anything to publish.
 - The CookieScript banner covers the hero CTA on the first mobile visit. That is the CMP layout, not the pages, and it was a deliberate 2026-08-17 decision.
@@ -100,7 +113,7 @@ Closed 2026-09-06 17:07 PT (RSL-374). The exact phrase now appears at least twic
 
 ## QA pass (2026-09-07)
 
-Full read of the 13 pages against Rahul's brief: no cliches, sentence level, every piece of text intentional. Findings with line numbers are in `qa-pass.md`: five keyword jams and the "Search [keyword]" device left by the seo-intel pass, the automations and CRM siblings written as paraphrases of each other, one CTA and process template across 13 pages, about 20 claims of candor, nine cliches past the banned list, a dozen sentence fixes, and five "Send us" lead ins pointing at a form that is no longer there. About 80 line edits plus two decisions (how different the siblings should be, whether the CTA formula stays). Not fixed yet.
+Full read of the 13 pages against Rahul's brief: no cliches, sentence level, every piece of text intentional. Findings with line numbers are in `qa-pass.md`. Fixed the same day under RSL-377: every finding applied, the automations and CRM local pages rewritten, checker 0 problems and 0 shared sentences, build and verify green. The decisions taken during the fix are in the section above.
 
 ## The 10 to 20 inquiries a week question
 

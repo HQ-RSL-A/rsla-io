@@ -19,76 +19,80 @@ schema: Service (provider #business, areaServed Bakersfield), BreadcrumbList, FA
 # AI automation agency in Bakersfield, CA
 
 <!-- hero subhead, highlight "while you are on the job" -->
-The call you missed on a job site in Lamont at 2pm. The quote you meant to follow up on. The intake form you retype into three places. We build the automation that handles it while you are on the job, from a studio in southwest Bakersfield.
+The missed call, the quote waiting on a follow up, and the same details typed into three apps are the jobs we hand to software, so they get done while you are on the job. We set it up with you, in person, from a studio in southwest Bakersfield.
 
 [CTA] Tell us which task you would give up first. → Book a call
 
 <!-- proof row -->
-A voice to task bot and 3 dashboards built in 2 weeks for a professional services firm · 1,200 personalized emails a day from one 3 step automation · In person setup anywhere in Kern County
+First setup done at your shop, anywhere in Kern County · A voice to task bot and 3 dashboards built in 2 weeks for a professional services firm · One fixed price per automation, quoted after the call
 
-## Automation for the businesses that run Bakersfield and Kern County
+## Where a Bakersfield owner's week goes
 
-A contractor cannot answer the phone from a roof in July. A clinic front desk cannot text every no show. A farm supply counter cannot chase every invoice. An ag consultant driving between Wasco and Arvin cannot type up the customer they just met.
+The trades, the clinics, the ag suppliers, and the one person operations that make up most of Kern County share one problem: the person who does the work is also the person who answers the phone. A roofer in July cannot pick up. A front desk cannot text every no show. A consultant driving from Wasco to Arvin cannot type up the customer they just met. So the call goes to voicemail, the quote sits, and the admin waits until after dinner.
 
-Every one of those is a repeatable task with a screen in it, which means it can be handed to software. Missed calls get a text back within seconds. New leads get a reply that answers what they asked. Reminders go out the day before. Invoices nudge themselves. A voice note becomes a task list. That is what an AI automation agency does, and it is most of what we do here.
+Every one of those is a repeatable task with a screen in it, which means software can do it. That is what an AI automation agency does, and it is most of what we do here.
 
-## What we build for Bakersfield businesses
+## What we automate first for Bakersfield businesses
 
-**Lead response and follow up.** Lead response first, because in Bakersfield the job goes to whoever answers. Then follow up that runs until the customer books or says no. Then the admin: intake straight into the [CRM](/bakersfield/crm), appointment reminders, review requests after every job, and the weekly numbers in one place instead of five apps.
+**The missed call.** Whoever answers first gets the job in this town, so the first build is nearly always a text back within seconds of a missed call, with a link to book or a question that keeps the conversation going. It can go out in Spanish as well as English.
 
-**The AI pieces.** A phone assistant that takes the call and books the estimate when you cannot pick up. A bot that turns your voice note into a new lead with the right tags. A month of social posts cut from a single job site video.
+**The follow up.** A quote nobody answered gets a text on day 2 and a call reminder for you on day 5, and it keeps going until the customer books or says no. You never have to remember who is waiting.
 
-**On the tools you already pay for.** QuickBooks, the calendar on your phone, your inbox, your CRM. The automation runs in n8n or Make, with GoHighLevel where leads are involved and an AI agent where a step needs judgment. The full list of what we automate, and the three builds with numbers, is on our [AI automation services](/services/automations) page.
+**The admin around the job.** Intake that lands in the [CRM](/bakersfield/crm) without retyping, reminders the day before, a review request after every job, and one set of numbers on Sunday night instead of five apps.
 
-## What automation does and does not do
+**The AI pieces.** A phone assistant that books the estimate when you cannot pick up, a bot that turns a voice note into a tagged lead, and a month of social posts cut from one job site video.
 
-It does not bring you customers. It stops you losing the ones who already called, and it gives you back the hours you are spending on admin after dinner. Nothing slips, and your evenings come back. Anyone who promises more than that for an automation is selling you something else.
+It all runs on the tools you already pay for, QuickBooks, the calendar on your phone, your inbox, with n8n or Make underneath and GoHighLevel wherever leads are involved. The full list, with the three builds and their numbers, is on the [AI automation services](/services/automations) page.
 
-## Why hire an automation agency in Bakersfield
+## Why the first setup happens at your shop
 
-Search "AI automation agency Bakersfield" and the results are agencies in other states with a Bakersfield page in the menu. They have never stood in a Kern County shop. The setup that works for a Rosedale landscaper's truck, spotty reception and all, is not the one that works for a downtown law office, and you find that out by being in the room.
+What "AI automation agency Bakersfield" gets you on Google is a page of agencies in other states, and none of them has stood in a Kern County shop. The setup that works for a landscaper's truck, with reception dropping out past Rosedale, is not the one that works for a downtown law office, and the only way to know which one you need is to be in the room.
 
-We are the AI automation agency Bakersfield owners can meet in person. Home based in the southwest of the city, we do the first setup with you: your phone, your number, your calendar, your real leads running through the system while you watch. You can check us on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) first, and see what else we build for [Bakersfield businesses](/bakersfield).
+So the first setup happens with you, anywhere in Kern County. Half of it is watching how you work: where the phone lives, which app the crew uses, what a customer text looks like at 6am. Then your number and your calendar go on the system, one live lead goes through it while you watch, and you get an hour of training with your own phone in your hand. The studio is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ), and the [Bakersfield](/bakersfield) page has the other three things we do here.
 
-## Two builds, with numbers
+## What automation does not do
 
-**300 files to 3 dashboards.** For Anchor Safety, a professional services firm, the starting point was 300 files spread across a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot that turns his voice notes into sorted tasks](/work/notion-productivity-dashboard-anchor-safety). He talks into his phone; the list builds itself.
+It does not bring you customers. It keeps the ones who already called from going to whoever picked up, and it hands back the hours you spend on admin after dinner. Anyone promising more than that from an automation is selling something else.
 
-**1,200 emails a day.** Our own outreach needed 1,200 personalized emails a day. One [3 step Make automation](/work/ai-cold-email-personalization) reads each lead and writes a first line specific to them, at a cost per email close to zero.
+## Two builds we can show you
 
-"Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule."
+**300 files to 3 dashboards, in 2 weeks.** Anchor Safety, a professional services firm, ran on 300 files in a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot](/work/notion-productivity-dashboard-anchor-safety) that turns his voice notes into sorted tasks.
+
+**1,200 personalized emails a day.** Our own outreach needed a first line written for each lead, so one [3 step Make automation](/work/ai-cold-email-personalization) reads the lead and writes it, at a cost per email close to zero.
+
+"Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time."
 Chris K., CEO and Co-Founder, Fieldshare
 
-[CTA] Want a list of what we would automate in your business first? → Book a call
+[CTA] Bring the phone and the last call you missed. We will map what should have happened next. → Book a call
 
-## How it runs
+## How it runs in Bakersfield
 
-1. **Thirty free minutes.** At your shop if you like, on where the week goes.
-2. **One page back from us.** Which builds come first, the hours each one hands back, and one fixed number.
-3. **Your real leads, while you watch.** We put them through the system in front of you and fix what does not fit your day.
-4. **Documentation and training.** An hour on your own phone. Prefer that we watch it and keep building? That is a monthly arrangement.
+1. **30 free minutes, at your shop if you like.** A conversation about where the week goes.
+2. **One page back from us.** Which builds come first, the hours each one hands back, and one fixed price.
+3. **Your live leads, on your system.** We put them through it with you and fix what does not fit your day.
+4. **An hour of training on your own phone.** Then it is yours, or we keep watching it and building the next one on a monthly arrangement.
 
 ## Questions Bakersfield owners ask about automation
 
-### How much do AI automation agencies charge?
+### Why does "AI automation agency Bakersfield" bring up companies in other states?
 
-One automation, like missed call text back, is a fixed price you get after the first call. A system that connects several tools with AI in the middle costs more and usually comes with a small monthly retainer to keep it running as the apps change. We compare the price against the hours it hands back, and that math goes in the plan.
+Because automation agencies are new, most of them sell remotely, and Bakersfield is one city name in a menu of 50. Nobody local had built the page. The work itself is the same anywhere; the setup is not, and that is the part that happens at your shop.
 
-### What can you automate for a small local business?
+### What does an automation cost in Bakersfield?
 
-Missed call text back, lead reply and follow up, booking and reminders, intake, invoice and payment nudges, review requests, reporting, and content from job site photos and video. If it happens on a screen more than once a week, it is probably on the list.
+One automation, like missed call text back, is a fixed price you get after the first call. A system that connects several tools with AI in the middle costs more and usually comes with a small monthly retainer, because the apps it connects keep changing. The price sits next to the hours it hands back in the plan, so you can see the payback before you say yes.
 
-### Do you set it up on site?
+### Do you come out to Taft or Tehachapi?
 
-Yes, anywhere in Kern County. The first setup is better in person because half of it is watching how you work, and the training takes an hour with your own phone in your hand.
+Yes, anywhere in Kern County, at no extra cost. The first setup goes better at your shop than over a screen, so we drive.
 
 ### Will I have to maintain it?
 
-Not unless you want to. The retainer covers monitoring, the fixes when an app updates, and the next build. Owners who prefer to run it themselves get the training and the documentation, and can call us when something changes.
+Not unless you want to. The retainer covers monitoring, the fixes when an app updates, and the next build. Owners who prefer to run it themselves get the documentation and the training, and can call when something changes.
 
 ## Final CTA
 
-Bring the three tasks you would hand off tomorrow if you could. We will tell you which of them belongs to software, with a price and a payback on each.
+Name the one job you would pay to never do again. We will tell you whether software can take it, what that costs, and how many hours it gives back.
 
 [CTA] → Book a call
 
@@ -96,7 +100,8 @@ Bring the three tasks you would hand off tomorrow if you could. We will tell you
 
 ## Build notes
 
-- Route `/bakersfield/automations`. Breadcrumb: Home > Bakersfield > Automations. No shared paragraphs with `/services/automations` (check-copy.py).
+- Route `/bakersfield/automations`. Breadcrumb: Home > Bakersfield > Automations. No shared paragraphs with `/services/automations` (check-copy.py); rewritten 2026-09-07 so the page says what is only true here (in person setup, Kern County distances and reception, the local FAQ) rather than the national page with the city added.
 - Zero measured search volume: this page exists for the map pack wedge, "near me" queries, and AI assistant answers. Do not expect Search Console impressions early; judge it by GBP calls and AI referrals.
 - The business types named are illustrative. Replace with real Bakersfield clients as permission allows.
-- Chris K. quote repeats from the websites pages; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).
+- "It can go out in Spanish as well as English": a GoHighLevel template in a second language, nothing more. Keep the claim that small.
+- Chris K. quote is the first two sentences of the canonical review, cut at a sentence boundary; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).

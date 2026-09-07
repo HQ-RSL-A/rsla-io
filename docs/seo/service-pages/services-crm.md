@@ -31,7 +31,7 @@ Two empty salon suites filled from $600 in ads and automated follow up · Pipeli
 
 You started the business. You also answer the phone, send the quotes, chase the deposits, and remember who said "call me in March." Leads live in your text messages, your email, a notebook in the truck, and your head.
 
-It works until it does not. A lead texts while you are on a job, you mean to reply, and by the time you do they have hired someone else. Nobody dropped the ball on purpose. There was no system to catch it.
+It works until it does not. A lead texts while you are on a job, you mean to reply, and by the time you do they have hired someone else. Nobody forgot on purpose. There was no system to remember for you.
 
 A CRM is that system. Ours is built on [GoHighLevel](https://www.gohighlevel.com), because for a one person or small team service business it replaces four or five separate subscriptions with one, and because we know it well enough to set it up in days instead of months.
 
@@ -41,7 +41,7 @@ Most people buy GoHighLevel and use a tenth of it, because the setup is the hard
 
 **A pipeline shaped like your sales.** New lead, contacted, quote sent, booked, done, and whatever sits between. You drag a card, the next action fires.
 
-**Every enquiry in one place.** Forms and a phone number that capture every enquiry into the same list, whether it came from the website, a text, a Facebook ad, or a missed call.
+**Every inquiry in one place.** Forms and a phone number that capture every inquiry into the same list, whether it came from the website, a text, a Facebook ad, or a missed call.
 
 **Follow up that runs itself.** A new lead gets a reply within a minute, then a text the next morning, then an email, then a call reminder for you, until they book or opt out. Our guide to [automated lead follow up in GoHighLevel](/blog/gohighlevel-lead-follow-up-automation) shows the exact sequence we start from.
 
@@ -53,9 +53,9 @@ One login with everything in it. Contacts, with every text, email, and call reco
 
 And the mobile app, which is the version you will use most.
 
-## Built for the phone, not just the laptop
+## Built for the phone first
 
-You are not at a desk. So the setup assumes the phone comes first. New lead comes in, your phone buzzes, you tap once to call. Add a note by talking. Move the card with a thumb. The laptop view is there for the deep work at the end of the day, and both show the same thing. Notifications are set so you hear about a new lead and nothing else. The reminders and the review requests run silently.
+You are not at a desk. So the setup assumes the phone comes first. New lead comes in, your phone buzzes, you tap once to call. Add a note by talking. Move the card with a thumb. The laptop view is there for the longer work at the end of the day, and both show the same thing. Notifications are set so you hear about a new lead and nothing else. The reminders and the review requests run silently.
 
 Where it gets interesting is combining the CRM with our [automations](/services/automations). Send a voice note describing the customer you just met, and an AI agent asks the two questions it needs, then creates the lead, tags it, and starts the follow up. You never open a form.
 
@@ -79,11 +79,11 @@ Where it gets interesting is combining the CRM with our [automations](/services/
 
 **Agencies.** The client onboarding sequence, the proposal follow up, and the reporting emails.
 
-Same platform, different pipeline. The build starts from how you actually sell, not from a template.
+Same platform, different pipeline. The build starts from how you sell.
 
 ## What it looks like when it runs
 
-Casagrande Salon in Manhattan had two private suites that nobody had rented in almost two years. $600 of Meta ads brought the enquiries; the GoHighLevel sequence did the chasing, and the owner did not have to remember a single follow up. Both suites are rented now, which comes to [$36K a year](/work/salon-marketing-automation-roi) she was not collecting before.
+Casagrande Salon in Manhattan had two private suites that nobody had rented in almost two years. $600 of Meta ads brought the inquiries; the GoHighLevel sequence did the chasing, and the owner did not have to remember a single follow up. Both suites are rented now, which comes to [$36K a year](/work/salon-marketing-automation-roi) she was not collecting before.
 
 "Working with Rahul on my GoHighLevel setup was an excellent experience. He was extremely knowledgeable, responsive, and efficient from start to finish. Rahul quickly understood what I needed and structured my GHL account properly. Pipelines, automations, workflows, integrations, and overall system flow."
 Curtis H., CEO and Founder, AdReviveAI
@@ -91,13 +91,13 @@ Curtis H., CEO and Founder, AdReviveAI
 "Rahul does a stellar job on setting up GHL accounts. He is an expert and gave me immense knowledge about the platform. Would love to work with him again."
 Parminder S., CEO and Founder, Chauffeur on Demand
 
-[CTA] Want to see a pipeline built for your kind of business? → Book a call
+[CTA] Bring the spreadsheet, or the phone the contacts live on. → Book a call
 
 ## Why GoHighLevel and not HubSpot or Salesforce
 
 HubSpot and Salesforce are built for sales teams with managers. GoHighLevel is built for the business where the owner is the sales team. It has the CRM, the texting, the email, the calendar, the forms, the phone number, and the automation builder in one login, at a monthly price that a one person business can justify. We wrote a full [GoHighLevel vs HubSpot comparison](/blog/gohighlevel-vs-hubspot-comparison) and a plain breakdown of [what GoHighLevel costs](/blog/go-high-level-pricing), including the parts the pricing page leaves out.
 
-If your business genuinely needs Salesforce, we will tell you, and we will not be the ones to build it.
+If your business needs Salesforce, it is not a build we take on, and the first call is where that comes out.
 
 ## Moving from spreadsheets or another CRM
 
@@ -116,9 +116,9 @@ Access to whatever holds your contacts today. Your business phone number, or the
 
 ## What ongoing management covers
 
-A CRM is never finished, because the business keeps changing. On a monthly retainer we keep the automations running, build the next one when you add a service, fix what GoHighLevel's updates break, and send you the monthly numbers with a note on what to change. Most clients stay on it because the system keeps growing with them. If you would rather run it yourself after training, that is fine too. The account is yours either way.
+A CRM is never finished, because the business keeps changing. On a monthly retainer we keep the automations running, build the next one when you add a service, fix what GoHighLevel's updates break, and send you the monthly numbers with a note on what to change. If you would rather run it yourself after training, that is fine too. The account is yours either way.
 
-You can read what GoHighLevel is and who it is for in our [complete guide](/blog/what-is-go-high-level) before the call. In Kern County? We set these up in person; see [CRM setup in Bakersfield](/bakersfield/crm).
+You can read what GoHighLevel is and who it is for in our [complete guide](/blog/what-is-go-high-level) before the call. Kern County owners get the setup at their yard: [CRM setup in Bakersfield](/bakersfield/crm).
 
 ## Questions people ask before hiring a GoHighLevel expert
 
@@ -151,5 +151,6 @@ Show us where leads go today. We will show you the pipeline they should be landi
 - "Certified" is not claimed anywhere; the site has no evidence of a GoHighLevel certification. Rahul to confirm before anyone adds it.
 - Never mention pricing markup or white labeling as something RSL/A does.
 - The business types in the FAQ answer (salons, chauffeur companies, agencies, contractors, nonprofits) match published testimonials and the Sanity case studies; nonprofits refers to the volunteer CRM build, which is still a draft case study.
-- Two testimonials here plus the Casagrande case study. The AdReviveAI and cleaning company case studies are drafts in Sanity; publish them before linking.
+- Two testimonials here plus the Casagrande case study. Curtis H. in full, Parminder S. cut to the first three sentences at a sentence boundary (QA pass, 2026-09-07). The AdReviveAI and cleaning company case studies are drafts in Sanity; publish them before linking.
 - H1 keeps the searched phrase; the outcome sits in the subhead per the brand rule of outcomes before tools.
+- US spelling throughout: inquiry, never enquiry (QA pass, 2026-09-07).

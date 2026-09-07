@@ -28,7 +28,7 @@ Programmatic SEO is publishing hundreds of pages from one template and one datas
 
 ## What programmatic SEO is
 
-A template, a dataset, and a rule that turns each row into a page. A lender publishes a page per city with real rate data. A software company publishes a page per integration. A directory publishes a page per product and location.
+A template, a dataset, and a rule that turns each row into a page. A lender publishes a page per city with live rate data. A software company publishes a page per integration. A directory publishes a page per product and location.
 
 The pages rank because each one answers a search nobody has bothered to answer on its own, and there are hundreds of those searches. That is the promise, and it is real. Zillow, TripAdvisor, and NerdWallet are programmatic sites at heart.
 
@@ -36,13 +36,13 @@ The pages rank because each one answers a search nobody has bothered to answer o
 
 **Google's own definition.** Google's [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) name the failure mode directly. Scaled content abuse is "many pages generated for the primary purpose of manipulating search rankings and not helping users." Doorway abuse is pages "created to rank for specific, similar search queries" that lead to a weaker destination. A city page with the name swapped and nothing else changed is both.
 
-**Our test for every page.** Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, we will not build it, and we will say why on the call.
+**Our test for every page.** Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, the set does not get built, and the call is where that gets decided, with your data on the screen.
 
 ## How we build a page set
 
-**Research first.** We pull real search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says.
+**Research first.** We pull search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says.
 
-**The data model.** The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline.
+**The data model.** The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, that is a [custom build](/services/custom-builds), and the pipeline gets written first.
 
 **A small first batch.** The first batch is a test, not a launch. We ran that test on ourselves. In March 2026 we published 12 industry pages on our own site, one per keyword cluster, linked from the industries grid on our [services page](/services), and gated the second batch on Google indexing the first. Five months later only 2 of the 12 had earned a single impression in Search Console. So the second batch never got built, and those pages are being rewritten one at a time with data each page can call its own. That is the gate working. "Crawled, currently not indexed" is Google telling you the pages are thin, and publishing more of them makes it worse.
 
@@ -50,13 +50,13 @@ The pages rank because each one answers a search nobody has bothered to answer o
 
 ## What we refuse to build
 
-A services times cities matrix. Pages for towns you do not serve. A template that ships with a city name and nothing local underneath it. Three hundred pages in a week on a domain that has never published thirty. Each of these has cost someone their rankings, and the June 2026 spam update was unusually fast about it.
+A services times cities matrix. Pages for towns you do not serve. A template that ships with a city name and nothing local underneath it. 300 pages in a week on a domain that has never published 30. Each of these has cost someone their rankings, and the June 2026 spam update was unusually fast about it.
 
-If your customers are in one or two cities, you do not need programmatic SEO. You need a real page per service, and that is [local SEO](/services/seo/local).
+If your customers are in one or two cities, you do not need programmatic SEO. You need a page per service, and that is [local SEO](/services/seo/local).
 
 ## Where it fits
 
-Programmatic SEO services sit on top of the ordinary work: the money pages, the weekly content, the technical foundation covered on our [SEO services](/services/seo) page. They are a multiplier, not a substitute. The same domain that grew to 204 ranked keywords in 6 months carries our own industry pages, and you can see how the two fit together in the [organic growth case study](/work/rsla-organic-growth).
+Programmatic SEO services sit on top of the ordinary work: the money pages, the weekly content, the technical foundation covered on our [SEO services](/services/seo) page. They multiply what is already there. The same domain that grew to 204 ranked keywords in 6 months carries our own industry pages, and you can see how the two fit together in the [organic growth case study](/work/rsla-organic-growth).
 
 [CTA] Have a dataset and a hunch? Bring both. → Book a call
 
@@ -64,15 +64,15 @@ Programmatic SEO services sit on top of the ordinary work: the money pages, the 
 
 ### What is programmatic SEO?
 
-Publishing a set of pages from one template and one dataset, so that each search variation gets its own page without writing each one by hand. It works when every page contains data that is genuinely different and genuinely useful. It fails when the pages are the same text with one word swapped.
+Publishing a set of pages from one template and one dataset, so that each search variation gets its own page without writing each one by hand. It works when every page holds data that differs from the others and is useful on its own. It fails when the pages are the same text with one word swapped.
 
 ### Is programmatic SEO against Google's guidelines?
 
-The technique is not. Thin, near identical pages built to catch searches are, under Google's scaled content abuse and doorway policies, and the penalty is applied to the domain, not just the pages. The line is whether each page helps the person who lands on it.
+The technique is not. Thin, near identical pages built to catch searches are, under Google's scaled content abuse and doorway policies, and the penalty is applied to the whole domain. The line is whether each page helps the person who lands on it.
 
 ### How many pages should we start with?
 
-Fewer than you think. A first batch small enough to watch, usually 10 to 20, published on a site that already has some authority, then the rest in batches as each one gets indexed. A brand new domain cannot absorb 200 pages at once and we will not pretend otherwise.
+Fewer than you think. A first batch small enough to watch, usually 10 to 20, published on a site that already has some authority, then the rest in batches as each one gets indexed. A brand new domain cannot absorb 200 pages at once.
 
 ### Does programmatic SEO work for a small business?
 

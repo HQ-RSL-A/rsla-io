@@ -19,76 +19,74 @@ schema: Service (provider #business, areaServed Bakersfield), BreadcrumbList, FA
 # CRM setup in Bakersfield, CA
 
 <!-- hero subhead, highlight "from the truck" -->
-Every lead, quote, and customer in one app you can run from the truck. Follow up that fires on its own until they book. Set up in person by a Bakersfield GoHighLevel expert, at a fixed price.
+One app with every lead, quote, and customer in it, built to be run from the truck, with follow up that keeps going while you are on a job. Set up with you, in person, by a Bakersfield GoHighLevel expert, at a fixed price.
 
-[CTA] Tell us where your leads live today. → Book a call
+[CTA] Tell us what happens after someone calls and you cannot pick up. → Book a call
 
 <!-- proof row -->
-Set up on your phone first, laptop second · Two salon suites filled by automated follow up after $600 in ads · Import from spreadsheets, a phone full of contacts, or another CRM included
+Set up on your phone first, laptop second · Contacts imported from a phone, a spreadsheet, or another CRM · One fixed price after the first call
 
-## Built for the Bakersfield owner who is also the sales team
+## Who asks for a CRM in Bakersfield
 
-Most Kern County businesses we meet are one person, or one person and a helper. You quote the job, do the job, invoice the job, and somewhere between Shafter and Arvin you forget the customer who said to call back in March. The leads are in your texts, your voicemail, a notebook on the dash, and your memory.
+Most Kern County businesses we meet are one person, or one person and a helper. Leads arrive as texts, voicemails, and a notebook on the dash, and the follow up depends on whether you remember at the end of a 10 hour day. The owners who ask for a CRM here are the ones who lost a job that way last month. A landscaper in Rosedale, a mobile mechanic working Oildale to Arvin, a med spa off Stockdale: the pipeline differs, the problem does not.
 
-A CRM is the place all of that goes instead. We set ours up on GoHighLevel because it puts the contacts, the texting, the calendar, the phone number, and the automations in one login at a price a one person business can justify, and because we have built enough of them to know where a contractor's pipeline differs from a salon's. Search "CRM Bakersfield" and you get software lists. What you need is a person who will set one up with you in the room.
+A CRM is where all of it goes instead. We set ours up on GoHighLevel because it puts the contacts, the texting, the calendar, a local phone number, and the automations in one login, at a price a one person business can justify. Why we chose it over HubSpot, and what the software itself costs, is on the [CRM systems](/services/crm) page. Search "CRM Bakersfield" and you get software lists. What a trade needs is a person who sets one up in the yard and stays until the first lead has gone through it.
 
 ## What a Bakersfield CRM setup includes
 
-**A pipeline with your stages.** New, called back, estimate out, booked, paid.
+**A pipeline with your stages.** For a trade: new, called back, estimate out, booked, paid. For a clinic or a salon: inquiry, booked, seen, rebooked.
 
-**One inbox for every enquiry.** Forms on your [website](/bakersfield/websites) and a tracked phone number feeding the same inbox, so a Google enquiry, a text, and a missed call all land in one list.
+**One inbox.** Website forms, a tracked 661 number, Google messages, and missed calls all land in the same list, so nothing sits in a second app.
 
-**Follow up that keeps going.** Sequences that reply within a minute and keep going until the customer books or opts out; the exact starting sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation).
+**Follow up that keeps going.** A reply within a minute, then texts and a call reminder until the customer books or opts out. The exact sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation).
 
-**Booking, reminders, reviews.** Online booking for estimates. Reminders so people are home when you arrive. Review requests after the job.
+**Booking, reminders, reviews.** Online booking for estimates, reminders so people are home when the truck arrives, and a review request after the job.
 
-**The Sunday night dashboard.** It answers how many leads came in, where from, and how many turned into jobs.
+**The Sunday night numbers.** How many leads came in, where from, and how many turned into jobs.
 
-And the part that makes it a CRM Bakersfield owners keep using: we do the setup with you, in person, with your real leads going through it while you watch on your own phone.
+## Built in the yard, on your phone
 
-## From a voice note to a new lead
+The setup happens where you work, with your number and your contacts going in while you watch. That is not a courtesy. It is how the pipeline ends up matching the way you sell, and it is the difference between a CRM you use and one you abandon by week three. Our own studio is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to see it first, and everything else we do in the county starts from the [Bakersfield](/bakersfield) page.
 
-The CRM earns its keep once we pair it with our [automations](/bakersfield/automations). Picture leaving a job in Oildale and talking into your phone for 20 seconds about the customer you just met. An AI agent asks the two things it still needs, and the lead is in the pipeline, tagged, with the first follow up already scheduled. No form. For an owner who is on the road all day, that is the difference between a CRM that gets used and one that gets abandoned by week three.
+Pair it with our [automations](/bakersfield/automations) and the intake stops being typed at all: the missed call texts back, the form fills the pipeline, and the voice note from the truck becomes a lead with the right tags.
 
-## Proof
+## Two Bakersfield businesses running on it
 
-The follow up sequence we build here is the same one that filled two salon suites in Manhattan after almost two years empty, off $600 in ads, and it is worth [$36K a year in rent](/work/salon-marketing-automation-roi) to that owner. Here in Bakersfield we have set up the CRM for a local video production business and are building one now for a landscaping company alongside its new website.
+We set up the CRM for a local video production business, and we are building one now for a landscaping company alongside its new [website](/bakersfield/websites) and Google listing. The follow up sequence we start from is the one that filled two salon suites in Manhattan from $600 in ads, worth [$36K a year in rent](/work/salon-marketing-automation-roi) to that owner.
 
 "Rahul does a stellar job on setting up GHL accounts. He is an expert and gave me immense knowledge about the platform. Would love to work with him again. Highly recommend anyone who wants an expert on Go High Level."
 Parminder S., CEO and Founder, Chauffeur on Demand
 
-The full breakdown of what a GoHighLevel setup includes, why we chose it over HubSpot, and what the software itself costs is on our [CRM systems](/services/crm) page. Our [Google Maps listing](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) is public, and the [Bakersfield](/bakersfield) page lists the other three things we do here.
+[CTA] Show us the notebook and the texts. We will draw the pipeline they should land in, on the call. → Book a call
 
-[CTA] Want to see a pipeline built for your trade? → Book a call
+## How it runs at your yard
 
-## How it runs
-
-1. **A free 30 minute call.** At your yard or your shop if that beats a video call. You show us how a lead reaches you today.
-2. **A written quote.** The pipeline drawn out, the automations listed, and one fixed number.
-3. **Build and test in the room.** Account set up, contacts brought in, number and forms connected, then a test lead with you watching.
-4. **An hour of training.** On your own phone, then it is yours. If you want us to keep maintaining it, that is a monthly arrangement.
+1. **30 minutes at your yard, free.** You show us where a lead lands today: the texts, the voicemail, the notebook.
+2. **A written quote.** The pipeline drawn out, the automations listed, one fixed price.
+3. **Build and test at the yard.** Account set up, contacts brought in, number and forms connected, then a test lead sent from your own phone.
+4. **Training, then it is yours.** An hour on your phone, then we leave, or we keep running it for a monthly fee you can stop any time.
 
 ## Questions Bakersfield owners ask about CRMs
 
-### Which CRM do you set up?
+### Why does searching "CRM Bakersfield" only bring up software?
 
-GoHighLevel, for almost every local service business. It replaces four or five subscriptions with one and it works properly from a phone. If your business genuinely needs something else, we will say so on the call rather than sell you the wrong tool.
+Because the companies that sell the software rank for it, and nobody local has written a page about setting one up. The software is the easy part. The setup is where a one person business gets stuck, and it is the part we do in person.
 
 ### Can I run it from my phone?
 
-Yes, and that is how we set it up first. New lead buzzes your phone, one tap to call, talk to add a note, thumb to move the card. The laptop view is there for the end of the day.
+Yes, and the phone is where we set it up first. A new lead buzzes, one tap calls them, a spoken note goes on the record, and the card moves with a thumb. The laptop view is for the end of the day.
 
 ### What does a CRM setup cost?
 
-A fixed project price after the first call, which includes the pipeline, the automations, the contact import, and the training. GoHighLevel's own subscription is separate and paid by you. If you want us to keep running it after handover, that is a monthly fee you can stop any time.
+A fixed project price after the first call, covering the pipeline, the automations, the contact import, and the training. GoHighLevel's own subscription is separate and paid by you. Keeping us on afterwards is a monthly fee you can stop any time.
 
 ### Can you move my contacts from a spreadsheet or another CRM?
 
-Yes. Spreadsheets, a phone's contact list, HubSpot, Jobber, and Keap are the usual sources. We clean the records as we import them, and it is part of the setup price.
+Yes. Spreadsheets, a phone's contact list, HubSpot, Jobber, and Keap are the usual sources. The records get cleaned on the way in, and it is part of the setup price.
 
 ## Final CTA
 
-Show us the notebook, the texts, and the spreadsheet. We will show you the one place they should all be going, and set it up with you in the room.
+Bring the phone with the contacts on it. By the end of the call you will have seen the pipeline drawn for your trade and the number it costs to build.
 
 [CTA] → Book a call
 
@@ -96,7 +94,7 @@ Show us the notebook, the texts, and the spreadsheet. We will show you the one p
 
 ## Build notes
 
-- Route `/bakersfield/crm`. Breadcrumb: Home > Bakersfield > CRM. No shared paragraphs with `/services/crm` (check-copy.py).
+- Route `/bakersfield/crm`. Breadcrumb: Home > Bakersfield > CRM. No shared paragraphs with `/services/crm` (check-copy.py); rewritten 2026-09-07 so the page says what is only true here (the yard setup, the local clients, the local FAQ) rather than the national page with the city added.
 - Zero measured volume; judge this page by GBP service clicks and calls, not impressions.
-- "Local video production business" is Teji Videos (former client) and "landscaping company" is Select Landscape (active). Rahul to confirm both may be referenced, and whether by name.
-- Parminder S. quote also appears on `/services/crm`; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).
+- "Local video production business" is Teji Videos (former client) and "landscaping company" is Select Landscape (active). Rahul to confirm both may be referenced, and whether by name. The business types in the first section are types, not client anecdotes.
+- Parminder S. quote is the full canonical review; swap for a newer review when one arrives (Rahul, 2026-09-06: reviews are reviews, region does not matter).

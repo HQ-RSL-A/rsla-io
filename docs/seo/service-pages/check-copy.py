@@ -23,7 +23,7 @@ import re, sys, glob, os, itertools, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FILES = sorted(glob.glob(os.path.join(HERE, "*.md")))
-FILES = [f for f in FILES if os.path.basename(f) not in ("README.md", "tracker.md")]
+FILES = [f for f in FILES if os.path.basename(f) not in ("README.md", "tracker.md", "qa-pass.md")]
 
 KNOWN_ROUTES = {
     "/", "/about", "/services", "/work", "/blog", "/contact",

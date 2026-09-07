@@ -1,8 +1,12 @@
 # QA pass: the 13 service and Bakersfield pages
 
-Rahul's brief (2026-09-07): no cliche words, sentence level quality, every piece of text has to feel intentional. This is the audit, not the fix. Copy edits happen in the md files, then `python3 check-copy.py`, `npm run build`, `node scripts/verify-service-pages.mjs`.
+Rahul's brief (2026-09-07): no cliche words, sentence level quality, every piece of text has to feel intentional. This was the audit; the fix followed the same day (see the next heading). Copy edits happen in the md files, then `python3 check-copy.py`, `npm run build`, `node scripts/verify-service-pages.mjs`.
 
 Scope: the prose of the 13 copy files. Testimonials are verbatim reviews, so they are exempt from the cliche rules but checked for consistency. Site wide copy (home, about, contact) is not in this pass. Line numbers are the md files as of `f3a4542`.
+
+## 2026-09-07 02:38 PT: fixed
+
+Every finding below was applied on 2026-09-07 (RSL-377, commit on `brand-visual-system`). Checker 0 problems, 0 shared sentences, every page inside its band; build green; `verify-service-pages.mjs` 13 of 13. After the pass: "X, not Y" 15 (was 28), "real" 9 (was 33), fixed price or one number 31 (was 32, once the count stopped matching "phone number"), in person or in the room or while you watch 11 (was 21), "actually" 0 (was 11), "genuinely" 0 (was 6), "Want ...?" mid page CTAs 0 (was 11), "Send us" 0 (was 5), "enquiry" 0 (was 5), "straight answer" 0 (was 3), "we will tell you / say so" 0 (was 11). The Bakersfield automations and CRM pages were rewritten rather than edited. Decisions taken without Rahul are in the README under "Decisions taken on 2026-09-07". The findings are kept below as the record of what was wrong.
 
 ## 2026-09-07: where we stand
 

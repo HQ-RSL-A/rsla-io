@@ -6,7 +6,7 @@ family: ai automation agency (4,400/mo), ai automation services (590), ai automa
 volumes: US scope, Google Ads, pulled 2026-09-06. KD 19 on the head term, 0 to 10 on the rest.
 serp_read: Polluted by "how to start an agency" content (Reddit, YouTube, Voiceflow). Hire intent pages that rank: theaiautomationagency.ai 1,279 words, Automaly 996 words, Unlocking Tech. Lowest commercial page in the top 3 is 996.
 title: AI automation agency for service businesses | RSL/A
-meta: RSL/A is an AI automation agency for small service businesses. We find the repetitive admin eating your week and put AI on it. Nothing slips.
+meta: RSL/A is an AI automation agency for small service businesses. We find the repetitive admin eating your week and put AI on it, at a fixed price.
 h1: AI automation agency for service businesses
 word_target: 1300 to 1500
 cta_label: Book a call
@@ -19,8 +19,8 @@ replaces: src/data/serviceData.js["ai-automations"] and the blank AiAutomations.
 
 # AI automation agency for service businesses
 
-<!-- hero subhead, highlight "get it back" -->
-Only you know what your time is worth. We put AI to work to get it back. Anything digital and repetitive that eats your admin time, there is a good chance we can automate it.
+<!-- hero subhead, highlight "done while you work" -->
+If a task is digital and repeats, we can probably put AI on it. Lead replies, reminders, intake, invoices, the weekly numbers: the admin that eats an owner's evenings, done while you work.
 
 [CTA] Tell us what eats your week. → Book a call
 
@@ -29,13 +29,13 @@ Only you know what your time is worth. We put AI to work to get it back. Anythin
 
 ## What an AI automation agency does
 
-We find the work you do every day that a machine should be doing, and we build the machine. Not a chatbot bolted onto your homepage. The unglamorous stuff: the lead that texted at 9pm and got no reply until Tuesday, the invoice reminder you forgot, the review request you meant to send, the same intake questions typed into three systems.
+We find the work you do every day that a machine should be doing, and we build the machine. Not a chatbot bolted onto your homepage. The small stuff: the lead that texted at 9pm and got no reply until Tuesday, the invoice reminder you forgot, the review request you meant to send, the same intake questions typed into three systems.
 
 Each of those is an automation waiting to be built. Most of them take a week or two. Some take an afternoon.
 
 ## What we automate most often
 
-**Lead response.** It comes first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person actually asked, not "we got your message." Follow up runs on a schedule until they book or say no.
+**Lead response.** It comes first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person asked, not "we got your message." Follow up runs on a schedule until they book or say no.
 
 **The admin around the work.** Appointment reminders and rescheduling, intake that fills your CRM without you typing, invoices and payment nudges, review requests after every job, the weekly numbers pulled into one dashboard instead of five tabs.
 
@@ -55,13 +55,13 @@ Each of those is an automation waiting to be built. Most of them take a week or 
 
 Same idea every time: find the task you repeat, decide the rule, hand it to software, keep the judgment calls for yourself.
 
-## The honest result
+## What you get, and what you do not
 
-Automation does not bring in customers. It protects the ones you already have and the hours you are already losing. When the follow up runs itself, nothing slips. When the intake fills itself, you are not doing data entry at 11pm. That is the promise, and it is the only one we make for this service. What you do with the hours is up to you. Most owners spend them on the calls that were going unanswered.
+Automation does not bring in customers. It keeps the ones who already called and gives back the hours the admin was taking. Follow up that runs itself means no lead waits until Tuesday; intake that fills itself means no data entry at 11pm. That is the whole promise for this service. What you do with the hours is yours to decide.
 
 ## How we build it
 
-**Diagnosis first.** We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes.
+**Diagnosis first.** Which automation is worth building depends on where your hours go, so the first call is us asking and you talking.
 
 **Where we start.** We rank every task on the list by three things: hours a week, how often it goes wrong, and what it costs when it does. The top of that list is the first build, and it is usually lead response, because a lead that waits a day is a lead somebody else answered. The second build is whichever admin task you are still doing after dinner.
 
@@ -75,16 +75,16 @@ Logins for the tools the automation touches, or a shared screen while we connect
 
 ## Three builds, with the numbers
 
-**1,200 emails a day.** We needed 1,200 personalized cold emails a day for our own outreach, so we built a [3 step Make automation](/work/ai-cold-email-personalization) that reads each lead, writes a specific opening line, and puts it back in the sheet. Cost per email is close to zero.
+**The cold email line writer.** We needed 1,200 personalized cold emails a day for our own outreach, so we built a [3 step Make automation](/work/ai-cold-email-personalization) that reads each lead, writes a specific opening line, and puts it back in the sheet. Cost per email is close to zero.
 
-**300 files to 3 dashboards.** Anchor Safety, a professional services company, was running on 300 scattered files and 160 daily tasks. In 2 weeks we replaced that with [3 Notion dashboards and a voice to task bot](/work/notion-productivity-dashboard-anchor-safety): the owner talks, the tasks appear.
+**Anchor Safety's dashboards.** Anchor Safety, a professional services company, was running on 300 scattered files and 160 daily tasks. In 2 weeks we replaced that with [3 Notion dashboards and a voice to task bot](/work/notion-productivity-dashboard-anchor-safety): the owner talks, the tasks appear.
 
-**Two suites filled.** Two suites at Casagrande Salon in Manhattan had sat empty for close to two years. We ran $600 in ads and let a GoHighLevel sequence do every bit of the chasing. Both filled within a few months, and the rent they bring in is worth [$36K a year](/work/salon-marketing-automation-roi).
+**The two salon suites.** Two suites at Casagrande Salon in Manhattan had sat empty for close to two years. We ran $600 in ads and let a GoHighLevel sequence do every bit of the chasing. Both filled within a few months, and the rent they bring in is worth [$36K a year](/work/salon-marketing-automation-roi).
 
 "I tried for months to rent my salon space and nothing worked. After Rahul and RSL/A, in just a few months both my rooms were filled. Now I don't stress about rent anymore."
 Laiz C., CEO, Casagrande Salon
 
-[CTA] Want a list of what we would automate first? → Book a call
+[CTA] Bring the task you did at 11pm last night. → Book a call
 
 ## How it works
 
@@ -93,7 +93,7 @@ Laiz C., CEO, Casagrande Salon
 3. **Build and test with real data.** Then we show you it running on a screen share.
 4. **Handover or retainer.** Documentation and training, or a monthly retainer if you would rather we keep it running and add the next one.
 
-In Kern County? We do the first setup in person; see [AI automation in Bakersfield](/bakersfield/automations).
+In Kern County the first setup happens at your shop: [AI automation in Bakersfield](/bakersfield/automations).
 
 ## Questions people ask about AI automation
 
@@ -103,7 +103,7 @@ A single automation, like missed call text back or an intake flow, is a fixed pr
 
 ### What kinds of work can you automate?
 
-Lead response, follow up, booking and reminders, intake, invoicing and payment nudges, review requests, reporting, content repurposing, and internal handoffs between tools. The test is simple: if you do it more than once a week and it involves a screen, it is probably automatable.
+Lead response, follow up, booking and reminders, intake, invoicing and payment nudges, review requests, reporting, content repurposing, and internal handoffs between tools. If it needs a judgment call every time, it stays with you. If it needs the same decision every time, it goes on the list.
 
 ### Which tools do you use?
 
@@ -127,4 +127,5 @@ Bring the three tasks you hate most. We will tell you which ones a machine shoul
 - The "AI receptionist" family (12,100/mo, KD 25) deserves its own child page later. This page mentions the phone assistant once and stops.
 - The nonprofit example refers to the volunteer onboarding build, still a draft case study in Sanity; the sentence makes no numeric claim.
 - Proof row numbers sync with the three linked case studies.
+- The hero no longer repeats the home page brand line (QA pass, 2026-09-07); the home hero owns "Only you know what your time is worth."
 - Do not add a hero video or an animated demo that delays the H1.

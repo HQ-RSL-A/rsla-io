@@ -32,7 +32,7 @@
     ],
     "h1": "AI automation agency in Bakersfield, CA",
     "lead": {
-      "text": "The call you missed on a job site in Lamont at 2pm. The quote you meant to follow up on. The intake form you retype into three places. We build the automation that handles it while you are on the job, from a studio in southwest Bakersfield.",
+      "text": "The missed call, the quote waiting on a follow up, and the same details typed into three apps are the jobs we hand to software, so they get done while you are on the job. We set it up with you, in person, from a studio in southwest Bakersfield.",
       "highlight": "while you are on the job"
     },
     "heroCta": {
@@ -40,112 +40,121 @@
       "label": "Book a call"
     },
     "proof": [
+      "First setup done at your shop, anywhere in Kern County",
       "A voice to task bot and 3 dashboards built in 2 weeks for a professional services firm",
-      "1,200 personalized emails a day from one 3 step automation",
-      "In person setup anywhere in Kern County"
+      "One fixed price per automation, quoted after the call"
     ],
     "sections": [
       {
-        "heading": "Automation for the businesses that run Bakersfield and Kern County",
+        "heading": "Where a Bakersfield owner's week goes",
         "blocks": [
           {
             "type": "p",
-            "text": "A contractor cannot answer the phone from a roof in July. A clinic front desk cannot text every no show. A farm supply counter cannot chase every invoice. An ag consultant driving between Wasco and Arvin cannot type up the customer they just met."
+            "text": "The trades, the clinics, the ag suppliers, and the one person operations that make up most of Kern County share one problem: the person who does the work is also the person who answers the phone. A roofer in July cannot pick up. A front desk cannot text every no show. A consultant driving from Wasco to Arvin cannot type up the customer they just met. So the call goes to voicemail, the quote sits, and the admin waits until after dinner."
           },
           {
             "type": "p",
-            "text": "Every one of those is a repeatable task with a screen in it, which means it can be handed to software. Missed calls get a text back within seconds. New leads get a reply that answers what they asked. Reminders go out the day before. Invoices nudge themselves. A voice note becomes a task list. That is what an AI automation agency does, and it is most of what we do here."
+            "text": "Every one of those is a repeatable task with a screen in it, which means software can do it. That is what an AI automation agency does, and it is most of what we do here."
           }
         ]
       },
       {
-        "heading": "What we build for Bakersfield businesses",
+        "heading": "What we automate first for Bakersfield businesses",
         "blocks": [
           {
             "type": "p",
-            "title": "Lead response and follow up",
-            "text": "Lead response first, because in Bakersfield the job goes to whoever answers. Then follow up that runs until the customer books or says no. Then the admin: intake straight into the [CRM](/bakersfield/crm), appointment reminders, review requests after every job, and the weekly numbers in one place instead of five apps."
+            "title": "The missed call",
+            "text": "Whoever answers first gets the job in this town, so the first build is nearly always a text back within seconds of a missed call, with a link to book or a question that keeps the conversation going. It can go out in Spanish as well as English."
+          },
+          {
+            "type": "p",
+            "title": "The follow up",
+            "text": "A quote nobody answered gets a text on day 2 and a call reminder for you on day 5, and it keeps going until the customer books or says no. You never have to remember who is waiting."
+          },
+          {
+            "type": "p",
+            "title": "The admin around the job",
+            "text": "Intake that lands in the [CRM](/bakersfield/crm) without retyping, reminders the day before, a review request after every job, and one set of numbers on Sunday night instead of five apps."
           },
           {
             "type": "p",
             "title": "The AI pieces",
-            "text": "A phone assistant that takes the call and books the estimate when you cannot pick up. A bot that turns your voice note into a new lead with the right tags. A month of social posts cut from a single job site video."
+            "text": "A phone assistant that books the estimate when you cannot pick up, a bot that turns a voice note into a tagged lead, and a month of social posts cut from one job site video."
           },
           {
             "type": "p",
-            "title": "On the tools you already pay for",
-            "text": "QuickBooks, the calendar on your phone, your inbox, your CRM. The automation runs in n8n or Make, with GoHighLevel where leads are involved and an AI agent where a step needs judgment. The full list of what we automate, and the three builds with numbers, is on our [AI automation services](/services/automations) page."
+            "text": "It all runs on the tools you already pay for, QuickBooks, the calendar on your phone, your inbox, with n8n or Make underneath and GoHighLevel wherever leads are involved. The full list, with the three builds and their numbers, is on the [AI automation services](/services/automations) page."
           }
         ]
       },
       {
-        "heading": "What automation does and does not do",
+        "heading": "Why the first setup happens at your shop",
         "blocks": [
           {
             "type": "p",
-            "text": "It does not bring you customers. It stops you losing the ones who already called, and it gives you back the hours you are spending on admin after dinner. Nothing slips, and your evenings come back. Anyone who promises more than that for an automation is selling you something else."
+            "text": "What \"AI automation agency Bakersfield\" gets you on Google is a page of agencies in other states, and none of them has stood in a Kern County shop. The setup that works for a landscaper's truck, with reception dropping out past Rosedale, is not the one that works for a downtown law office, and the only way to know which one you need is to be in the room."
+          },
+          {
+            "type": "p",
+            "text": "So the first setup happens with you, anywhere in Kern County. Half of it is watching how you work: where the phone lives, which app the crew uses, what a customer text looks like at 6am. Then your number and your calendar go on the system, one live lead goes through it while you watch, and you get an hour of training with your own phone in your hand. The studio is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ), and the [Bakersfield](/bakersfield) page has the other three things we do here."
           }
         ]
       },
       {
-        "heading": "Why hire an automation agency in Bakersfield",
+        "heading": "What automation does not do",
         "blocks": [
           {
             "type": "p",
-            "text": "Search \"AI automation agency Bakersfield\" and the results are agencies in other states with a Bakersfield page in the menu. They have never stood in a Kern County shop. The setup that works for a Rosedale landscaper's truck, spotty reception and all, is not the one that works for a downtown law office, and you find that out by being in the room."
-          },
-          {
-            "type": "p",
-            "text": "We are the AI automation agency Bakersfield owners can meet in person. Home based in the southwest of the city, we do the first setup with you: your phone, your number, your calendar, your real leads running through the system while you watch. You can check us on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) first, and see what else we build for [Bakersfield businesses](/bakersfield)."
+            "text": "It does not bring you customers. It keeps the ones who already called from going to whoever picked up, and it hands back the hours you spend on admin after dinner. Anyone promising more than that from an automation is selling something else."
           }
         ]
       },
       {
-        "heading": "Two builds, with numbers",
+        "heading": "Two builds we can show you",
         "blocks": [
           {
             "type": "p",
-            "title": "300 files to 3 dashboards",
-            "text": "For Anchor Safety, a professional services firm, the starting point was 300 files spread across a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot that turns his voice notes into sorted tasks](/work/notion-productivity-dashboard-anchor-safety). He talks into his phone; the list builds itself."
+            "title": "300 files to 3 dashboards, in 2 weeks",
+            "text": "Anchor Safety, a professional services firm, ran on 300 files in a shared drive and a task list 160 items long. Two weeks later the owner had [3 dashboards and a bot](/work/notion-productivity-dashboard-anchor-safety) that turns his voice notes into sorted tasks."
           },
           {
             "type": "p",
-            "title": "1,200 emails a day",
-            "text": "Our own outreach needed 1,200 personalized emails a day. One [3 step Make automation](/work/ai-cold-email-personalization) reads each lead and writes a first line specific to them, at a cost per email close to zero."
+            "title": "1,200 personalized emails a day",
+            "text": "Our own outreach needed a first line written for each lead, so one [3 step Make automation](/work/ai-cold-email-personalization) reads the lead and writes it, at a cost per email close to zero."
           },
           {
             "type": "quote",
-            "text": "\"Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule.\"",
+            "text": "\"Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time.\"",
             "cite": "Chris K., CEO and Co-Founder, Fieldshare"
           },
           {
             "type": "cta",
-            "lead": "Want a list of what we would automate in your business first?",
+            "lead": "Bring the phone and the last call you missed. We will map what should have happened next.",
             "label": "Book a call"
           }
         ]
       },
       {
-        "heading": "How it runs",
+        "heading": "How it runs in Bakersfield",
         "blocks": [
           {
             "type": "ol",
             "items": [
               {
-                "title": "Thirty free minutes",
-                "text": "At your shop if you like, on where the week goes."
+                "title": "30 free minutes, at your shop if you like",
+                "text": "A conversation about where the week goes."
               },
               {
                 "title": "One page back from us",
-                "text": "Which builds come first, the hours each one hands back, and one fixed number."
+                "text": "Which builds come first, the hours each one hands back, and one fixed price."
               },
               {
-                "title": "Your real leads, while you watch",
-                "text": "We put them through the system in front of you and fix what does not fit your day."
+                "title": "Your live leads, on your system",
+                "text": "We put them through it with you and fix what does not fit your day."
               },
               {
-                "title": "Documentation and training",
-                "text": "An hour on your own phone. Prefer that we watch it and keep building? That is a monthly arrangement."
+                "title": "An hour of training on your own phone",
+                "text": "Then it is yours, or we keep watching it and building the next one on a monthly arrangement."
               }
             ]
           }
@@ -155,24 +164,24 @@
     "faqHeading": "Questions Bakersfield owners ask about automation",
     "faqs": [
       {
-        "q": "How much do AI automation agencies charge?",
-        "a": "One automation, like missed call text back, is a fixed price you get after the first call. A system that connects several tools with AI in the middle costs more and usually comes with a small monthly retainer to keep it running as the apps change. We compare the price against the hours it hands back, and that math goes in the plan."
+        "q": "Why does \"AI automation agency Bakersfield\" bring up companies in other states?",
+        "a": "Because automation agencies are new, most of them sell remotely, and Bakersfield is one city name in a menu of 50. Nobody local had built the page. The work itself is the same anywhere; the setup is not, and that is the part that happens at your shop."
       },
       {
-        "q": "What can you automate for a small local business?",
-        "a": "Missed call text back, lead reply and follow up, booking and reminders, intake, invoice and payment nudges, review requests, reporting, and content from job site photos and video. If it happens on a screen more than once a week, it is probably on the list."
+        "q": "What does an automation cost in Bakersfield?",
+        "a": "One automation, like missed call text back, is a fixed price you get after the first call. A system that connects several tools with AI in the middle costs more and usually comes with a small monthly retainer, because the apps it connects keep changing. The price sits next to the hours it hands back in the plan, so you can see the payback before you say yes."
       },
       {
-        "q": "Do you set it up on site?",
-        "a": "Yes, anywhere in Kern County. The first setup is better in person because half of it is watching how you work, and the training takes an hour with your own phone in your hand."
+        "q": "Do you come out to Taft or Tehachapi?",
+        "a": "Yes, anywhere in Kern County, at no extra cost. The first setup goes better at your shop than over a screen, so we drive."
       },
       {
         "q": "Will I have to maintain it?",
-        "a": "Not unless you want to. The retainer covers monitoring, the fixes when an app updates, and the next build. Owners who prefer to run it themselves get the training and the documentation, and can call us when something changes."
+        "a": "Not unless you want to. The retainer covers monitoring, the fixes when an app updates, and the next build. Owners who prefer to run it themselves get the documentation and the training, and can call when something changes."
       }
     ],
     "finalCta": {
-      "text": "Bring the three tasks you would hand off tomorrow if you could. We will tell you which of them belongs to software, with a price and a payback on each.",
+      "text": "Name the one job you would pay to never do again. We will tell you whether software can take it, what that costs, and how many hours it gives back.",
       "label": "Book a call"
     }
   },
@@ -210,29 +219,29 @@
     ],
     "h1": "CRM setup in Bakersfield, CA",
     "lead": {
-      "text": "Every lead, quote, and customer in one app you can run from the truck. Follow up that fires on its own until they book. Set up in person by a Bakersfield GoHighLevel expert, at a fixed price.",
+      "text": "One app with every lead, quote, and customer in it, built to be run from the truck, with follow up that keeps going while you are on a job. Set up with you, in person, by a Bakersfield GoHighLevel expert, at a fixed price.",
       "highlight": "from the truck"
     },
     "heroCta": {
-      "lead": "Tell us where your leads live today.",
+      "lead": "Tell us what happens after someone calls and you cannot pick up.",
       "label": "Book a call"
     },
     "proof": [
       "Set up on your phone first, laptop second",
-      "Two salon suites filled by automated follow up after $600 in ads",
-      "Import from spreadsheets, a phone full of contacts, or another CRM included"
+      "Contacts imported from a phone, a spreadsheet, or another CRM",
+      "One fixed price after the first call"
     ],
     "sections": [
       {
-        "heading": "Built for the Bakersfield owner who is also the sales team",
+        "heading": "Who asks for a CRM in Bakersfield",
         "blocks": [
           {
             "type": "p",
-            "text": "Most Kern County businesses we meet are one person, or one person and a helper. You quote the job, do the job, invoice the job, and somewhere between Shafter and Arvin you forget the customer who said to call back in March. The leads are in your texts, your voicemail, a notebook on the dash, and your memory."
+            "text": "Most Kern County businesses we meet are one person, or one person and a helper. Leads arrive as texts, voicemails, and a notebook on the dash, and the follow up depends on whether you remember at the end of a 10 hour day. The owners who ask for a CRM here are the ones who lost a job that way last month. A landscaper in Rosedale, a mobile mechanic working Oildale to Arvin, a med spa off Stockdale: the pipeline differs, the problem does not."
           },
           {
             "type": "p",
-            "text": "A CRM is the place all of that goes instead. We set ours up on GoHighLevel because it puts the contacts, the texting, the calendar, the phone number, and the automations in one login at a price a one person business can justify, and because we have built enough of them to know where a contractor's pipeline differs from a salon's. Search \"CRM Bakersfield\" and you get software lists. What you need is a person who will set one up with you in the room."
+            "text": "A CRM is where all of it goes instead. We set ours up on GoHighLevel because it puts the contacts, the texting, the calendar, a local phone number, and the automations in one login, at a price a one person business can justify. Why we chose it over HubSpot, and what the software itself costs, is on the [CRM systems](/services/crm) page. Search \"CRM Bakersfield\" and you get software lists. What a trade needs is a person who sets one up in the yard and stays until the first lead has gone through it."
           }
         ]
       },
@@ -242,49 +251,49 @@
           {
             "type": "p",
             "title": "A pipeline with your stages",
-            "text": "New, called back, estimate out, booked, paid."
+            "text": "For a trade: new, called back, estimate out, booked, paid. For a clinic or a salon: inquiry, booked, seen, rebooked."
           },
           {
             "type": "p",
-            "title": "One inbox for every enquiry",
-            "text": "Forms on your [website](/bakersfield/websites) and a tracked phone number feeding the same inbox, so a Google enquiry, a text, and a missed call all land in one list."
+            "title": "One inbox",
+            "text": "Website forms, a tracked 661 number, Google messages, and missed calls all land in the same list, so nothing sits in a second app."
           },
           {
             "type": "p",
             "title": "Follow up that keeps going",
-            "text": "Sequences that reply within a minute and keep going until the customer books or opts out; the exact starting sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation)."
+            "text": "A reply within a minute, then texts and a call reminder until the customer books or opts out. The exact sequence is in our [lead follow up guide](/blog/gohighlevel-lead-follow-up-automation)."
           },
           {
             "type": "p",
             "title": "Booking, reminders, reviews",
-            "text": "Online booking for estimates. Reminders so people are home when you arrive. Review requests after the job."
+            "text": "Online booking for estimates, reminders so people are home when the truck arrives, and a review request after the job."
           },
           {
             "type": "p",
-            "title": "The Sunday night dashboard",
-            "text": "It answers how many leads came in, where from, and how many turned into jobs."
-          },
-          {
-            "type": "p",
-            "text": "And the part that makes it a CRM Bakersfield owners keep using: we do the setup with you, in person, with your real leads going through it while you watch on your own phone."
+            "title": "The Sunday night numbers",
+            "text": "How many leads came in, where from, and how many turned into jobs."
           }
         ]
       },
       {
-        "heading": "From a voice note to a new lead",
+        "heading": "Built in the yard, on your phone",
         "blocks": [
           {
             "type": "p",
-            "text": "The CRM earns its keep once we pair it with our [automations](/bakersfield/automations). Picture leaving a job in Oildale and talking into your phone for 20 seconds about the customer you just met. An AI agent asks the two things it still needs, and the lead is in the pipeline, tagged, with the first follow up already scheduled. No form. For an owner who is on the road all day, that is the difference between a CRM that gets used and one that gets abandoned by week three."
+            "text": "The setup happens where you work, with your number and your contacts going in while you watch. That is not a courtesy. It is how the pipeline ends up matching the way you sell, and it is the difference between a CRM you use and one you abandon by week three. Our own studio is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to see it first, and everything else we do in the county starts from the [Bakersfield](/bakersfield) page."
+          },
+          {
+            "type": "p",
+            "text": "Pair it with our [automations](/bakersfield/automations) and the intake stops being typed at all: the missed call texts back, the form fills the pipeline, and the voice note from the truck becomes a lead with the right tags."
           }
         ]
       },
       {
-        "heading": "Proof",
+        "heading": "Two Bakersfield businesses running on it",
         "blocks": [
           {
             "type": "p",
-            "text": "The follow up sequence we build here is the same one that filled two salon suites in Manhattan after almost two years empty, off $600 in ads, and it is worth [$36K a year in rent](/work/salon-marketing-automation-roi) to that owner. Here in Bakersfield we have set up the CRM for a local video production business and are building one now for a landscaping company alongside its new website."
+            "text": "We set up the CRM for a local video production business, and we are building one now for a landscaping company alongside its new [website](/bakersfield/websites) and Google listing. The follow up sequence we start from is the one that filled two salon suites in Manhattan from $600 in ads, worth [$36K a year in rent](/work/salon-marketing-automation-roi) to that owner."
           },
           {
             "type": "quote",
@@ -292,37 +301,33 @@
             "cite": "Parminder S., CEO and Founder, Chauffeur on Demand"
           },
           {
-            "type": "p",
-            "text": "The full breakdown of what a GoHighLevel setup includes, why we chose it over HubSpot, and what the software itself costs is on our [CRM systems](/services/crm) page. Our [Google Maps listing](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) is public, and the [Bakersfield](/bakersfield) page lists the other three things we do here."
-          },
-          {
             "type": "cta",
-            "lead": "Want to see a pipeline built for your trade?",
+            "lead": "Show us the notebook and the texts. We will draw the pipeline they should land in, on the call.",
             "label": "Book a call"
           }
         ]
       },
       {
-        "heading": "How it runs",
+        "heading": "How it runs at your yard",
         "blocks": [
           {
             "type": "ol",
             "items": [
               {
-                "title": "A free 30 minute call",
-                "text": "At your yard or your shop if that beats a video call. You show us how a lead reaches you today."
+                "title": "30 minutes at your yard, free",
+                "text": "You show us where a lead lands today: the texts, the voicemail, the notebook."
               },
               {
                 "title": "A written quote",
-                "text": "The pipeline drawn out, the automations listed, and one fixed number."
+                "text": "The pipeline drawn out, the automations listed, one fixed price."
               },
               {
-                "title": "Build and test in the room",
-                "text": "Account set up, contacts brought in, number and forms connected, then a test lead with you watching."
+                "title": "Build and test at the yard",
+                "text": "Account set up, contacts brought in, number and forms connected, then a test lead sent from your own phone."
               },
               {
-                "title": "An hour of training",
-                "text": "On your own phone, then it is yours. If you want us to keep maintaining it, that is a monthly arrangement."
+                "title": "Training, then it is yours",
+                "text": "An hour on your phone, then we leave, or we keep running it for a monthly fee you can stop any time."
               }
             ]
           }
@@ -332,24 +337,24 @@
     "faqHeading": "Questions Bakersfield owners ask about CRMs",
     "faqs": [
       {
-        "q": "Which CRM do you set up?",
-        "a": "GoHighLevel, for almost every local service business. It replaces four or five subscriptions with one and it works properly from a phone. If your business genuinely needs something else, we will say so on the call rather than sell you the wrong tool."
+        "q": "Why does searching \"CRM Bakersfield\" only bring up software?",
+        "a": "Because the companies that sell the software rank for it, and nobody local has written a page about setting one up. The software is the easy part. The setup is where a one person business gets stuck, and it is the part we do in person."
       },
       {
         "q": "Can I run it from my phone?",
-        "a": "Yes, and that is how we set it up first. New lead buzzes your phone, one tap to call, talk to add a note, thumb to move the card. The laptop view is there for the end of the day."
+        "a": "Yes, and the phone is where we set it up first. A new lead buzzes, one tap calls them, a spoken note goes on the record, and the card moves with a thumb. The laptop view is for the end of the day."
       },
       {
         "q": "What does a CRM setup cost?",
-        "a": "A fixed project price after the first call, which includes the pipeline, the automations, the contact import, and the training. GoHighLevel's own subscription is separate and paid by you. If you want us to keep running it after handover, that is a monthly fee you can stop any time."
+        "a": "A fixed project price after the first call, covering the pipeline, the automations, the contact import, and the training. GoHighLevel's own subscription is separate and paid by you. Keeping us on afterwards is a monthly fee you can stop any time."
       },
       {
         "q": "Can you move my contacts from a spreadsheet or another CRM?",
-        "a": "Yes. Spreadsheets, a phone's contact list, HubSpot, Jobber, and Keap are the usual sources. We clean the records as we import them, and it is part of the setup price."
+        "a": "Yes. Spreadsheets, a phone's contact list, HubSpot, Jobber, and Keap are the usual sources. The records get cleaned on the way in, and it is part of the setup price."
       }
     ],
     "finalCta": {
-      "text": "Show us the notebook, the texts, and the spreadsheet. We will show you the one place they should all be going, and set it up with you in the room.",
+      "text": "Bring the phone with the contacts on it. By the end of the call you will have seen the pipeline drawn for your trade and the number it costs to build.",
       "label": "Book a call"
     }
   },
@@ -388,8 +393,8 @@
     ],
     "h1": "SEO company in Bakersfield, CA",
     "lead": {
-      "text": "When someone in Bakersfield searches for what you do, three businesses show on the map and ten more under it. We get you into both, and into the answer when they ask ChatGPT instead. Then we show you the map every week, so you know exactly who they call.",
-      "highlight": "who they call"
+      "text": "When someone in Bakersfield searches for what you do, three businesses show on the map and ten more under it. We get you into both, and into the answer when they ask ChatGPT instead. Then we show you the map every week, so you can see where you stand and who is above you.",
+      "highlight": "who is above you"
     },
     "heroCta": {
       "lead": "Find out where you rank across Bakersfield right now.",
@@ -410,11 +415,11 @@
           },
           {
             "type": "p",
-            "text": "Below the map are the regular results, ranked by your website. For most Bakersfield services those results are a mix of real local businesses and agencies from other states with a \"Bakersfield\" page in their menu. Type \"Bakersfield SEO company\" and you will see it yourself: the page one you are reading was, on the day we wrote this, mostly firms in Dallas, Kyiv, and Philadelphia with a city name swapped in."
+            "text": "Below the map are the regular results, ranked by your website. For most Bakersfield services those results are a mix of local businesses and agencies from other states with a \"Bakersfield\" page in their menu. Type \"Bakersfield SEO company\" and you will see it yourself. On the day we wrote this, page one was mostly firms in Dallas, Kyiv, and Philadelphia with the city name swapped in."
           },
           {
             "type": "p",
-            "text": "That is the opportunity. Real pages about real Kern County businesses beat templates, and almost nobody local is building them."
+            "text": "That is the opportunity. A page written about one Kern County business beats a template written about none, and almost nobody local is building them."
           }
         ]
       },
@@ -458,12 +463,12 @@
           {
             "type": "p",
             "title": "The map half",
-            "text": "Your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load real photos of your work, and start the review process. Reviews are the entry ticket: a profile with three does not enter a pack whose floor is twenty, and nearly half of consumers will not use a business with fewer than twenty. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does."
+            "text": "Your Google Business Profile. We set the primary category by reading what the top three in your pack use, add every service Google offers for it under the names people search, fix hours and attributes, load photos of your work, and start the review process. Reviews are the entry ticket: a profile with 3 does not enter a pack whose floor is 20, and nearly half of consumers will not use a business with fewer than 20. Our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026) covers the field by field detail, and our [Google Maps ranking guide](/blog/how-to-rank-higher-on-google-maps-a-comprehensive-guide) explains why the pack moves the way it does."
           },
           {
             "type": "p",
             "title": "The website half",
-            "text": "A page per service, written for Bakersfield. Not a homepage that lists nine things and mentions the city once. A page for sprinkler repair in Bakersfield that shows the systems you have installed, quotes the customers who left you reviews, and answers the visitor's first question in the first paragraph. If the site itself is the problem, that is our [Bakersfield web design](/bakersfield/websites) page."
+            "text": "A page per service, written for Bakersfield. Not a homepage that lists nine things and mentions the city once. A page for sprinkler repair in Bakersfield that shows the systems you have installed, quotes the customers who left you reviews, and answers the visitor's first question in the first paragraph. If the site itself is the problem, that is our [Bakersfield web design](/bakersfield/websites) page. The method for any city is on the [local SEO services](/services/seo/local) page, and the site wide work underneath it is on [SEO services](/services/seo)."
           },
           {
             "type": "p",
@@ -477,7 +482,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "When we set up RSL/A's own profile in June 2026, we ran the same 49 point scan we run for clients. We were nowhere: not in the top twenty at a single point across the city, for any of the eight terms we track. That scan is the baseline we measure ourselves against, we publish the rescans as the profile climbs, and the [numbers behind our own site](/work/rsla-organic-growth) are public. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to judge for yourself."
+            "text": "When we set up RSL/A's own profile in June 2026, we ran the same 49 point scan we run for clients. We were nowhere: not in the top 20 at a single point across the city, for any of the 8 terms we track. That scan is the baseline we measure ourselves against, in public, and the [numbers behind our own site](/work/rsla-organic-growth) are already there. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) if you want to judge for yourself. The [Bakersfield](/bakersfield) hub covers the websites, automation, and CRM work we do alongside it."
           },
           {
             "type": "p",
@@ -496,7 +501,7 @@
           {
             "type": "p",
             "title": "Week two",
-            "text": "We fix hours, attributes, and the description, load 8 to 12 real photos, and send the first review asks to customers from the last three months."
+            "text": "We fix hours, attributes, and the description, load 8 to 12 photos of your work, and send the first review asks to customers from the last 3 months."
           },
           {
             "type": "p",
@@ -519,7 +524,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "More Kern County customers ask ChatGPT and Google's AI for a recommendation than a year ago. The assistants pull from pages that already rank, so the map and website work above does double duty. What is left is shape: the answer in the first paragraph, question and answer sections lower down, and your name on the directories and lists the models read. Every page we write follows that shape, and AI referrals get their own line in your dashboard."
+            "text": "Part of the searching now happens inside ChatGPT and Google's AI rather than on the results page. The assistants pull from pages that already rank, so the map and website work above does double duty. What is left is shape: the answer in the first paragraph, question and answer sections lower down, and your name on the directories and lists the models read. Every page we write follows that shape, and AI referrals get their own line in your dashboard, next to the map and the organic clicks."
           }
         ]
       },
@@ -528,7 +533,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Cram keywords into your business name, which is the fastest route to a suspension. Fake a storefront address for a home based business. Buy reviews or filter out unhappy customers before asking; Google rewrote its review policy in 2026 and the FTC now fines that. Build twenty near identical town pages; Google's [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) call that a doorway and the penalty lands on the whole domain. Promise a ranking. Nobody can, and the ones who do are guessing or lying."
+            "text": "Cram keywords into your business name, which is the fastest route to a suspension. Fake a storefront address for a home based business. Buy reviews or filter out unhappy customers before asking; Google rewrote its review policy in 2026 and the FTC now fines that. Build 20 near identical town pages; Google's [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) call that a doorway and the penalty lands on the whole domain. Promise a ranking. Nobody can, and the ones who do are guessing or lying."
           }
         ]
       },
@@ -537,16 +542,16 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Delano, Tehachapi, Shafter, Wasco, Taft, Arvin: when we checked the search results for these towns, not one real local provider ranked for the services we looked at. The results were remote agencies with thin town pages. A genuine local page for a Delano business would stand out immediately. That is the cheapest ranking opportunity in Kern County and we would rather build it for you than watch someone from out of state take it."
+            "text": "Delano, Tehachapi, Shafter, Wasco, Taft, Arvin: when we checked the search results for these towns, not one local provider ranked for the services we looked at. The results were remote agencies with thin town pages. A page for a Delano business, written by someone who has been to Delano, would stand out immediately. That is the cheapest ranking opportunity in Kern County and we would rather build it for you than watch someone from out of state take it."
           },
           {
             "type": "quote",
-            "text": "\"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results. Their expertise and dedication transformed my site by restructuring it, fixing critical errors, and significantly boosting its performance. Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.\"",
+            "text": "\"Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.\"",
             "cite": "Sid S., Account Executive, SBC"
           },
           {
             "type": "cta",
-            "lead": "Want the grid for your business? We run the first scan free.",
+            "lead": "The first 49 point scan is free, and it runs before the call.",
             "label": "Book a call"
           }
         ]
@@ -567,17 +572,13 @@
               },
               {
                 "title": "Months one to three",
-                "text": "Month one is the profile, the review process, and the first service page. Month two and three add pages and citations. Every week you get the grid, with the scan date on it."
+                "text": "Month one is the profile, the review process, and the first service page. Months two and three add pages and citations. Every week you get the grid, with the scan date on it."
               },
               {
                 "title": "Checkpoints at 30, 60, and 90 days",
                 "text": "You hear what moved, what did not, and what changes next."
               }
             ]
-          },
-          {
-            "type": "p",
-            "text": "The full method behind this, for any city, is on our [local SEO services](/services/seo/local) page, the site wide work on [SEO services](/services/seo), and the rest of what we do here on the [Bakersfield](/bakersfield) page."
           }
         ]
       }
@@ -585,8 +586,8 @@
     "faqHeading": "Questions Bakersfield owners ask about SEO",
     "faqs": [
       {
-        "q": "What does an SEO company actually do?",
-        "a": "Two jobs. It gets your Google Business Profile ranking on the map by fixing categories, services, reviews, photos, and hours. And it gets your website ranking in the regular results by building a page for each service, in your city, that answers the searcher's question better than the pages currently there. Then it measures both and tells you the truth about what moved."
+        "q": "What does an SEO company do?",
+        "a": "Two jobs. It gets your Google Business Profile ranking on the map by fixing categories, services, reviews, photos, and hours. And it gets your website ranking in the regular results by building a page for each service, in your city, that answers the searcher's question better than the pages currently there. Then it measures both and reports what moved."
       },
       {
         "q": "How much does SEO cost in Bakersfield?",
@@ -594,15 +595,15 @@
       },
       {
         "q": "How long until I see results?",
-        "a": "The profile can move within days of the category and services being fixed. Reviews need two to three months to add up. A new service page on the site needs three to six months. So the order of what you will see is: the map first, the calls second, the website rankings third, and we report each one when it actually happens rather than when it is convenient."
+        "a": "The profile can move within days of the category and services being fixed. Reviews need 2 to 3 months to add up. A new service page on the site needs 3 to 6 months. So the order of what you will see is the map first, the calls second, the website rankings third, and each one gets reported the week it happens."
       },
       {
-        "q": "Is SEO dead now that people use AI?",
-        "a": "No. The assistants take their recommendations from whatever already ranks on Google, so the Bakersfield businesses ChatGPT names are the ones already on page one. What is new is where the answer gets lifted from: the top of the page, in plain words, or not at all. That is how we write, and the AI referrals show up as their own line in your report."
+        "q": "Do the AI assistants change what a Bakersfield business needs?",
+        "a": "Less than the headlines say. The assistants take their recommendations from whatever already ranks on Google, so the Bakersfield businesses ChatGPT names are the ones already on page one. What is new is where the answer gets lifted from: the top of the page, in plain words, or not at all. That is how we write, and the AI referrals show up as their own line in your report."
       }
     ],
     "finalCta": {
-      "text": "Send us your business name. The scan, the read on your competitors' profiles, and the map come first. The decision comes after.",
+      "text": "Bring your business name. The scan, the read on your competitors' profiles, and the map come first, and the decision comes after.",
       "label": "Book a call"
     }
   },
@@ -641,16 +642,16 @@
     "h1": "Web design in Bakersfield, CA",
     "lead": {
       "text": "A website that tells someone in Bakersfield what you do, where you do it, and how to reach you, before they scroll. Built here, priced up front, and yours when it is done.",
-      "highlight": "someone in Bakersfield"
+      "highlight": "before they scroll"
     },
     "heroCta": {
-      "lead": "Show us the site you have, or the one you do not.",
+      "lead": "Show us the site you have, or tell us you have none.",
       "label": "Book a call"
     },
     "proof": [
       "One fixed price, quoted before you sign",
       "Every site built with the search structure in place",
-      "Based in southwest Bakersfield, we meet in person"
+      "Based in southwest Bakersfield, first call at your shop if you like"
     ],
     "sections": [
       {
@@ -658,11 +659,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The landscaper in Rosedale whose only web presence is a Facebook page. The tattoo studio downtown with a site that still says \"under construction.\" The HVAC company in Oildale whose site loads in six seconds on a phone, which is where every customer is looking at it. The ag supplier in Shafter who has never needed a website until the buyers started searching first."
+            "text": "The owners who search \"web design Bakersfield\" and end up calling us fall into three groups. The one whose whole web presence is a Facebook page and a Google listing. The one with a site from 2018 that the cousin who built it no longer answers texts about. And the one whose site works on a laptop and falls apart on a phone, which is where every customer in Kern County is looking at it."
           },
           {
             "type": "p",
-            "text": "We are currently rebuilding the website for a Bakersfield landscaping company, alongside its CRM and Google listing. That is the typical shape of the web design Bakersfield service businesses ask us for: a site that has fallen behind, and an owner who would rather be on the job than in a web editor."
+            "text": "Right now we are rebuilding the website for a Bakersfield landscaping company alongside its CRM and Google listing, and that is the usual shape of the job we do for [Bakersfield businesses](/bakersfield): a site that has fallen behind, and an owner who would rather be on the job than in a web editor."
           }
         ]
       },
@@ -672,17 +673,17 @@
           {
             "type": "p",
             "title": "Your city in the words",
-            "text": "Not just in the footer. Bakersfield, in the headline and the copy, on every page that should rank here."
+            "text": "Bakersfield in the headline and the copy of every page that should rank here, and the towns you serve on a page of their own, because a footer mention ranks nothing."
           },
           {
             "type": "p",
             "title": "A page for each service",
-            "text": "\"Sprinkler repair Bakersfield\" and \"landscape design Bakersfield\" are two different searches and one page cannot win both."
+            "text": "\"Sprinkler repair Bakersfield\" and \"landscape design Bakersfield\" are two different searches, and one page cannot win both."
           },
           {
             "type": "p",
             "title": "Tap to call, hours, towns",
-            "text": "A phone number that taps to call on mobile. Hours. The towns you serve."
+            "text": "A phone number that dials on a tap, the hours, and the towns the truck goes to."
           },
           {
             "type": "p",
@@ -691,12 +692,12 @@
           },
           {
             "type": "p",
-            "text": "Then it has to load fast on a phone on a Kern County cell tower, and it has to link to and from your Google Business Profile, because in this market the map pack is where most of the first clicks happen. Our [Bakersfield SEO](/bakersfield/seo) page covers that side of it."
+            "text": "Then it has to load fast on a phone at the edge of a Kern County cell tower, and it has to link to and from your Google Business Profile, because in this market the map pack takes most of the first clicks. That side of it is our [Bakersfield SEO](/bakersfield/seo) page."
           }
         ]
       },
       {
-        "heading": "The pages a local service business site needs",
+        "heading": "The pages a Bakersfield plumber needs",
         "blocks": [
           {
             "type": "p",
@@ -730,11 +731,11 @@
           {
             "type": "p",
             "title": "Contact",
-            "text": "A phone number and a short form, not a puzzle."
+            "text": "A phone number and a short form."
           },
           {
             "type": "p",
-            "text": "That is eight to ten pages for most trades. We tell you which ones you actually need on the first call, and which ones can wait until the business grows into them."
+            "text": "That is 8 to 10 pages for most trades. On the first call we say which ones you need now and which ones can wait until the business grows into them."
           }
         ]
       },
@@ -744,12 +745,12 @@
           {
             "type": "p",
             "title": "Copy, design, build",
-            "text": "We write the copy first, from a conversation with you, because most local sites fail by saying \"quality service you can trust\" instead of what the business actually does. Then the design, then the build, hand coded so it stays fast on a phone. Every page carries what Google and the AI assistants need to read it: one topic, a proper title, schema, and a plain question with a plain answer."
+            "text": "The copy comes first, from a conversation with you, because most local sites fail by saying \"quality service you can trust\" instead of what the business does. Then the design, then a hand coded build that stays fast on a phone. Every page carries what Google and the AI assistants need: one topic, a proper title, schema, and a plain question with a plain answer."
           },
           {
             "type": "p",
             "title": "Forms, handover, training",
-            "text": "Forms and calls route to your inbox, or straight into your [CRM](/bakersfield/crm) if you want follow up to run itself. At handover you get the domain, the code, the content, and a training session on the CMS. The full scope, for any city, is on our [website design service](/services/websites) page."
+            "text": "Forms and calls route to your inbox, or straight into your [CRM](/bakersfield/crm) if you want the follow up to run itself. At handover you get the domain, the code, the content, and a training session on the CMS. The full scope for any city is on the [website design](/services/websites) page."
           }
         ]
       },
@@ -758,11 +759,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Search \"web design Bakersfield\" and you get three kinds of results. Solo designers with template sites and no results to show. Established local agencies that do a bit of everything. And agencies in Toronto, Dallas, and Chicago with a \"Bakersfield\" page that could say any city."
+            "text": "Page one for \"web design Bakersfield\" is three kinds of result: solo designers with template sites and nothing to show, established local agencies, and agencies in Toronto, Dallas, and Chicago with a Bakersfield page that could say any city."
           },
           {
             "type": "p",
-            "text": "We are local and we publish the numbers. We rebuilt Fieldshare's website and their pages went on to be cited by ChatGPT, Gemini, and Google AI; the [case study](/work/fieldshare-seo-website-rebrand) has the detail. Our own site went from a blank domain to 204 ranked keywords in 6 months using the same structure we put into every client build. And we tell you what drives the price before you sign, which most of the agencies we studied never do."
+            "text": "We are local and we publish numbers. We rebuilt Fieldshare's website and their pages went on to be cited by ChatGPT, Gemini, and Google AI; the [case study](/work/fieldshare-seo-website-rebrand) has the detail. Our own site went from a blank domain to 204 ranked keywords in 6 months on the same structure we put into every client build."
           },
           {
             "type": "quote",
@@ -771,7 +772,7 @@
           },
           {
             "type": "cta",
-            "lead": "Want to know what your site should cost before you talk to anyone?",
+            "lead": "Bring the site, or the Facebook page standing in for one.",
             "label": "Book a call"
           }
         ]
@@ -781,11 +782,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "One fixed price for the whole build, quoted after the first call and written into the proposal. The number depends on how many pages the business needs, whether it needs online booking, ordering, or custom functionality, and how much of an existing site has to be carried over. We tell you what drives your number before you sign, not after. Four to six weeks from kickoff to launch for a typical service business site; a single page site can be faster."
+            "text": "One fixed price for the whole build, quoted after the first call and written into the proposal. The number moves with three things: how many pages the business needs, whether it needs booking, ordering, or something custom, and how much of an old site comes along. You see those drivers before you sign. Launch is 4 to 6 weeks from kickoff for a typical service business site, faster for a single page."
           },
           {
             "type": "p",
-            "text": "If you already have a site, we look at what it is ranking for before quoting, because the wrong rebuild loses the traffic you have. Our [website redesign](/services/websites/redesign) page explains how we keep it."
+            "text": "If you already have a site, we check what it ranks for before quoting, because the wrong rebuild loses the traffic you have. How we keep it is on the [website redesign](/services/websites/redesign) page."
           }
         ]
       },
@@ -796,12 +797,12 @@
             "type": "ol",
             "items": [
               {
-                "title": "A free 30 minute call",
-                "text": "At your shop or on a job site if that is easier than an office. We look at what you have and tell you whether it needs a new site or a repair."
+                "title": "A free 30 minute call, at your shop or on a job site",
+                "text": "We look at what you have and say whether it needs a new site or a repair."
               },
               {
                 "title": "A written quote",
-                "text": "One fixed number and a launch date."
+                "text": "One fixed price and a launch date."
               },
               {
                 "title": "Copy, design, build",
@@ -812,10 +813,6 @@
                 "text": "Then, if you want, the [search work](/bakersfield/seo) that turns the site into a lead source."
               }
             ]
-          },
-          {
-            "type": "p",
-            "text": "This page is part of what we do for [Bakersfield businesses](/bakersfield); the other three services are there too."
           }
         ]
       }
@@ -824,23 +821,23 @@
     "faqs": [
       {
         "q": "How much does a website cost in Bakersfield?",
-        "a": "A fixed price, not an estimate, quoted after one call and covering the copy, the design, the build, and the search structure. Page count, booking or ordering features, and content migration are what move it. Maintenance is optional and separate, and we will tell you on the call whether your site needs it."
+        "a": "A fixed price, not an estimate, quoted after one call and covering the copy, the design, the build, and the search structure. Page count, booking or ordering features, and content migration are what move it. Maintenance is optional and separate."
       },
       {
-        "q": "How long does it take?",
-        "a": "Four to six weeks for a typical service business website. Larger sites with custom features can run to eight. The launch date is written into the quote."
+        "q": "How long does a website take to build?",
+        "a": "4 to 6 weeks for a typical service business website. Larger sites with custom features can run to 8. The launch date is written into the quote."
       },
       {
         "q": "Do you meet in person?",
-        "a": "Yes. We are based in southwest Bakersfield and work with owners across Kern County, from Delano to Tehachapi. First call can be at your shop, on site, or over video, whichever is easier for you. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ)."
+        "a": "Yes. We are based in southwest Bakersfield and work with owners across Kern County, from Delano to Tehachapi. The first call can be at your shop, on site, or over video. Our listing is on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ)."
       },
       {
         "q": "Can you fix my existing site instead of rebuilding it?",
-        "a": "Often, yes. If the structure is sound and the copy or speed is the problem, a repair is cheaper and we will recommend it. If it needs a rebuild, we show you why with your own Search Console data. Either way you get a straight answer on the first call."
+        "a": "Often, yes. If the structure is sound and the copy or the speed is the problem, a repair is cheaper and that is the quote you get. If it needs a rebuild, the reason is in your own Search Console data, which we walk through on the call."
       }
     ],
     "finalCta": {
-      "text": "Send us your address and the site you have, if you have one. We will tell you what it needs and what it costs, before you commit to anything.",
+      "text": "Bring the site you have, if you have one, and the list of services you want the phone to ring for. You leave the call knowing what the site needs and what it costs, before you commit to anything.",
       "label": "Book a call"
     }
   },
@@ -860,7 +857,7 @@
       }
     ],
     "title": "Marketing agency in Bakersfield, CA | RSL/A",
-    "meta": "RSL/A is a marketing agency in Bakersfield, CA. Websites, SEO, AI automation, and CRM systems for Kern County businesses, with real numbers on a dashboard.",
+    "meta": "RSL/A is a marketing agency in Bakersfield, CA. Websites, SEO, AI automation, and CRM systems for Kern County businesses, with the numbers on a dashboard.",
     "keyword": "marketing agency bakersfield",
     "canonical": "https://rsla.io/bakersfield",
     "city": "Bakersfield",
@@ -875,17 +872,17 @@
     ],
     "h1": "Marketing agency in Bakersfield, CA",
     "lead": {
-      "text": "We build the systems that run your marketing so you can get back to running the business. Websites, search, automation, and CRM, from a studio in southwest Bakersfield, with real numbers on a dashboard instead of promises.",
-      "highlight": "real numbers"
+      "text": "Websites, search, automation, and CRM for Kern County businesses, built from a studio in southwest Bakersfield, with your leads, calls, and rankings on a dashboard you can open any day of the month.",
+      "highlight": "on a dashboard"
     },
     "heroCta": {
-      "lead": "Tell us what is not working.",
+      "lead": "Tell us what you sell and who is not finding it.",
       "label": "Book a call"
     },
     "proof": [
       "Based in Bakersfield, serving all of Kern County",
       "204 keywords ranked on our own site in 6 months",
-      "Fixed price proposals, no hourly billing"
+      "One fixed price in the proposal, no hourly billing"
     ],
     "sections": [
       {
@@ -893,7 +890,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Four things. The first call is where we work out which one applies to you."
+            "text": "Four things, each with a national [services](/services) page behind it. The first call is where we work out which one applies to you."
           },
           {
             "type": "p",
@@ -901,7 +898,7 @@
               "label": "Web design in Bakersfield",
               "to": "/bakersfield/websites"
             },
-            "text": "A new site if you have none, a rebuild if yours is from 2018, either way built to be found and to say what you do in one screen."
+            "text": "A new site if you have none, a rebuild if yours is from 2018, built to be found and to say what you do before anyone scrolls."
           },
           {
             "type": "p",
@@ -909,7 +906,7 @@
               "label": "SEO in Bakersfield",
               "to": "/bakersfield/seo"
             },
-            "text": "Showing up on Google Maps and in search when someone in Kern County looks for what you sell, and showing up in ChatGPT when they ask it instead."
+            "text": "Showing up on Google Maps and in search when someone in Kern County looks for what you sell, and in ChatGPT when they ask it instead."
           },
           {
             "type": "p",
@@ -938,15 +935,15 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Search \"marketing agency Bakersfield\" and most of what you find is one of two things: an established shop that does a bit of everything, or an out of town agency with a \"Bakersfield\" page and no one in the 661."
+            "text": "Type \"marketing agency Bakersfield\" into Google and the results are two kinds of business: local shops that have done a bit of everything for 20 years, and agencies in other states with a Bakersfield page and no one in the 661."
           },
           {
             "type": "p",
-            "text": "We are here. Home based in the southwest of the city, which means we will meet you at your shop, your yard, or wherever the work actually happens. We work with the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up most of Kern County's businesses, and we work with clients in other states on the same terms."
+            "text": "We are a third kind. One studio, home based in the southwest of the city, that does four specific things and meets you at your shop or your yard. Most of our clients are the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up Kern County, and we work with clients in New York and Canada on the same terms. Our studio shows on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) with the address and the reviews."
           },
           {
             "type": "p",
-            "text": "What we do differently is the numbers. Rahul, who founded RSL/A, came from analytics. You get a dashboard with your real leads, calls, rankings, and costs, not a monthly PDF of impressions. We also do not guess at what you need. As Rahul puts it, we cannot tell you which offer fits your situation until we know your situation. It is like going to a doctor and not explaining why you came in."
+            "text": "The difference is what you see afterwards. Rahul's background is analytics, which is most of the [story of RSL/A](/about) and the reason the reporting is a dashboard with your leads, calls, rankings, and costs, updated as they happen, rather than a PDF of impressions at the end of the month. The other difference is the first call. It is a diagnosis rather than a pitch, which is why the proposal is sometimes for a smaller job than the one you asked about."
           }
         ]
       },
@@ -955,7 +952,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Bakersfield first, then the rest of Kern County: Oildale, Shafter, Wasco, Delano, McFarland, Arvin, Lamont, Taft, Tehachapi, and Lake Isabella. If you are in one of the smaller towns, you have an advantage: almost nobody local is competing for your customers' searches yet."
+            "text": "Bakersfield first, then the rest of Kern County: Oildale, Shafter, Wasco, Delano, McFarland, Arvin, Lamont, Taft, Tehachapi, and Lake Isabella. If you are in one of the smaller towns, you have an advantage. When we read the search results for them in July, almost nobody local was competing for your customers' searches."
           }
         ]
       },
@@ -964,7 +961,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A free 30 minute call, in person if you like. A written proposal that names the scope, the timeline, and one fixed number. Then the build, with you reviewing at each step, and a dashboard you can check any time after. If the smaller job is the right one, that is the one we will recommend. If it needs more, the recommendation comes with the data that says so."
+            "text": "A free 30 minute call, in person if you like. A written proposal that names the scope, the timeline, and one fixed price. Then the build, with you reviewing at each step, and a dashboard you can check any time after."
           },
           {
             "type": "quote",
@@ -972,12 +969,8 @@
             "cite": "Laiz C., CEO, Casagrande Salon"
           },
           {
-            "type": "p",
-            "text": "You can read more about how we work on the [about page](/about), see the full [services list](/services), or find us on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ)."
-          },
-          {
             "type": "cta",
-            "lead": "Want a straight answer about what your business needs?",
+            "lead": "Not sure which of the four you need? That is what the call is for.",
             "label": "Book a call"
           }
         ]
@@ -987,23 +980,23 @@
     "faqs": [
       {
         "q": "How much does a marketing agency cost in Bakersfield?",
-        "a": "It depends on what you need built. A website, a CRM setup, or an automation is a fixed project price. SEO and ongoing management are monthly retainers scoped to your market and how far you are from ranking. One number after the first call, and it stays that number."
+        "a": "It depends on what gets built. A website, a CRM setup, or an automation is a fixed project price. SEO and ongoing management are monthly retainers sized to your market and how far you are from ranking. The number comes after the first call and stays put once you sign."
       },
       {
         "q": "Do you only work with Bakersfield businesses?",
-        "a": "No. We are based here and we want to be the marketing agency Bakersfield businesses call first, and we also work with clients in New York, Canada, and across the US. Same process, same fixed pricing, one more time zone."
+        "a": "No. We are based here, and \"marketing agency Bakersfield\" is a search we intend to own, but the same process runs for clients in New York, Canada, and the rest of the US. Same fixed pricing, one more time zone."
       },
       {
         "q": "Is it worth hiring a marketing agency for a small business?",
-        "a": "Only if the work pays for itself, which is why we start with a diagnosis rather than a package. A business with no website and no Google listing has an obvious first step. A business with a decent site and no follow up system needs a CRM more than it needs ads. We will tell you which one you are, even when the answer is \"not yet.\""
+        "a": "Only if the work pays for itself, which is why the first call is a diagnosis rather than a package. A business with no website and no Google listing has an obvious first step. A business with a decent site and no follow up needs a CRM more than it needs ads. Sometimes the answer is \"not yet\", and the call still costs nothing."
       },
       {
         "q": "How do we get started?",
-        "a": "Book the call or send us a message. We will look at what you have before we talk, so the 30 minutes goes on your business instead of ours."
+        "a": "Book the call. We look at what you have before it starts, so the 30 minutes goes on your business instead of ours."
       }
     ],
     "finalCta": {
-      "text": "Based in Bakersfield, built for the businesses that keep Kern County running. Tell us what is not working and we will tell you what we would do about it.",
+      "text": "Based in Bakersfield, working for the trades, the clinics, and the ag businesses of Kern County. Bring what you have. The call ends with the first thing we would fix, and what it costs.",
       "label": "Book a call"
     }
   },
@@ -1027,7 +1020,7 @@
       }
     ],
     "title": "AI automation agency for service businesses | RSL/A",
-    "meta": "RSL/A is an AI automation agency for small service businesses. We find the repetitive admin eating your week and put AI on it. Nothing slips.",
+    "meta": "RSL/A is an AI automation agency for small service businesses. We find the repetitive admin eating your week and put AI on it, at a fixed price.",
     "keyword": "ai automation agency",
     "canonical": "https://rsla.io/services/automations",
     "city": null,
@@ -1042,8 +1035,8 @@
     ],
     "h1": "AI automation agency for service businesses",
     "lead": {
-      "text": "Only you know what your time is worth. We put AI to work to get it back. Anything digital and repetitive that eats your admin time, there is a good chance we can automate it.",
-      "highlight": "get it back"
+      "text": "If a task is digital and repeats, we can probably put AI on it. Lead replies, reminders, intake, invoices, the weekly numbers: the admin that eats an owner's evenings, done while you work.",
+      "highlight": "done while you work"
     },
     "heroCta": {
       "lead": "Tell us what eats your week.",
@@ -1060,7 +1053,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "We find the work you do every day that a machine should be doing, and we build the machine. Not a chatbot bolted onto your homepage. The unglamorous stuff: the lead that texted at 9pm and got no reply until Tuesday, the invoice reminder you forgot, the review request you meant to send, the same intake questions typed into three systems."
+            "text": "We find the work you do every day that a machine should be doing, and we build the machine. Not a chatbot bolted onto your homepage. The small stuff: the lead that texted at 9pm and got no reply until Tuesday, the invoice reminder you forgot, the review request you meant to send, the same intake questions typed into three systems."
           },
           {
             "type": "p",
@@ -1074,7 +1067,7 @@
           {
             "type": "p",
             "title": "Lead response",
-            "text": "It comes first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person actually asked, not \"we got your message.\" Follow up runs on a schedule until they book or say no."
+            "text": "It comes first, because speed decides who gets the job. A missed call gets a text back in seconds. A form submission gets a reply that references what the person asked, not \"we got your message.\" Follow up runs on a schedule until they book or say no."
           },
           {
             "type": "p",
@@ -1123,11 +1116,11 @@
         ]
       },
       {
-        "heading": "The honest result",
+        "heading": "What you get, and what you do not",
         "blocks": [
           {
             "type": "p",
-            "text": "Automation does not bring in customers. It protects the ones you already have and the hours you are already losing. When the follow up runs itself, nothing slips. When the intake fills itself, you are not doing data entry at 11pm. That is the promise, and it is the only one we make for this service. What you do with the hours is up to you. Most owners spend them on the calls that were going unanswered."
+            "text": "Automation does not bring in customers. It keeps the ones who already called and gives back the hours the admin was taking. Follow up that runs itself means no lead waits until Tuesday; intake that fills itself means no data entry at 11pm. That is the whole promise for this service. What you do with the hours is yours to decide."
           }
         ]
       },
@@ -1137,7 +1130,7 @@
           {
             "type": "p",
             "title": "Diagnosis first",
-            "text": "We cannot tell you which automation is worth building until we know your situation, the same way a doctor cannot prescribe without hearing why you came in. The first call is us asking where your time goes."
+            "text": "Which automation is worth building depends on where your hours go, so the first call is us asking and you talking."
           },
           {
             "type": "p",
@@ -1170,17 +1163,17 @@
         "blocks": [
           {
             "type": "p",
-            "title": "1,200 emails a day",
+            "title": "The cold email line writer",
             "text": "We needed 1,200 personalized cold emails a day for our own outreach, so we built a [3 step Make automation](/work/ai-cold-email-personalization) that reads each lead, writes a specific opening line, and puts it back in the sheet. Cost per email is close to zero."
           },
           {
             "type": "p",
-            "title": "300 files to 3 dashboards",
+            "title": "Anchor Safety's dashboards",
             "text": "Anchor Safety, a professional services company, was running on 300 scattered files and 160 daily tasks. In 2 weeks we replaced that with [3 Notion dashboards and a voice to task bot](/work/notion-productivity-dashboard-anchor-safety): the owner talks, the tasks appear."
           },
           {
             "type": "p",
-            "title": "Two suites filled",
+            "title": "The two salon suites",
             "text": "Two suites at Casagrande Salon in Manhattan had sat empty for close to two years. We ran $600 in ads and let a GoHighLevel sequence do every bit of the chasing. Both filled within a few months, and the rent they bring in is worth [$36K a year](/work/salon-marketing-automation-roi)."
           },
           {
@@ -1190,7 +1183,7 @@
           },
           {
             "type": "cta",
-            "lead": "Want a list of what we would automate first?",
+            "lead": "Bring the task you did at 11pm last night.",
             "label": "Book a call"
           }
         ]
@@ -1221,7 +1214,7 @@
           },
           {
             "type": "p",
-            "text": "In Kern County? We do the first setup in person; see [AI automation in Bakersfield](/bakersfield/automations)."
+            "text": "In Kern County the first setup happens at your shop: [AI automation in Bakersfield](/bakersfield/automations)."
           }
         ]
       }
@@ -1234,7 +1227,7 @@
       },
       {
         "q": "What kinds of work can you automate?",
-        "a": "Lead response, follow up, booking and reminders, intake, invoicing and payment nudges, review requests, reporting, content repurposing, and internal handoffs between tools. The test is simple: if you do it more than once a week and it involves a screen, it is probably automatable."
+        "a": "Lead response, follow up, booking and reminders, intake, invoicing and payment nudges, review requests, reporting, content repurposing, and internal handoffs between tools. If it needs a judgment call every time, it stays with you. If it needs the same decision every time, it goes on the list."
       },
       {
         "q": "Which tools do you use?",
@@ -1309,7 +1302,7 @@
           },
           {
             "type": "p",
-            "text": "It works until it does not. A lead texts while you are on a job, you mean to reply, and by the time you do they have hired someone else. Nobody dropped the ball on purpose. There was no system to catch it."
+            "text": "It works until it does not. A lead texts while you are on a job, you mean to reply, and by the time you do they have hired someone else. Nobody forgot on purpose. There was no system to remember for you."
           },
           {
             "type": "p",
@@ -1331,8 +1324,8 @@
           },
           {
             "type": "p",
-            "title": "Every enquiry in one place",
-            "text": "Forms and a phone number that capture every enquiry into the same list, whether it came from the website, a text, a Facebook ad, or a missed call."
+            "title": "Every inquiry in one place",
+            "text": "Forms and a phone number that capture every inquiry into the same list, whether it came from the website, a text, a Facebook ad, or a missed call."
           },
           {
             "type": "p",
@@ -1360,11 +1353,11 @@
         ]
       },
       {
-        "heading": "Built for the phone, not just the laptop",
+        "heading": "Built for the phone first",
         "blocks": [
           {
             "type": "p",
-            "text": "You are not at a desk. So the setup assumes the phone comes first. New lead comes in, your phone buzzes, you tap once to call. Add a note by talking. Move the card with a thumb. The laptop view is there for the deep work at the end of the day, and both show the same thing. Notifications are set so you hear about a new lead and nothing else. The reminders and the review requests run silently."
+            "text": "You are not at a desk. So the setup assumes the phone comes first. New lead comes in, your phone buzzes, you tap once to call. Add a note by talking. Move the card with a thumb. The laptop view is there for the longer work at the end of the day, and both show the same thing. Notifications are set so you hear about a new lead and nothing else. The reminders and the review requests run silently."
           },
           {
             "type": "p",
@@ -1422,7 +1415,7 @@
           },
           {
             "type": "p",
-            "text": "Same platform, different pipeline. The build starts from how you actually sell, not from a template."
+            "text": "Same platform, different pipeline. The build starts from how you sell."
           }
         ]
       },
@@ -1431,7 +1424,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Casagrande Salon in Manhattan had two private suites that nobody had rented in almost two years. $600 of Meta ads brought the enquiries; the GoHighLevel sequence did the chasing, and the owner did not have to remember a single follow up. Both suites are rented now, which comes to [$36K a year](/work/salon-marketing-automation-roi) she was not collecting before."
+            "text": "Casagrande Salon in Manhattan had two private suites that nobody had rented in almost two years. $600 of Meta ads brought the inquiries; the GoHighLevel sequence did the chasing, and the owner did not have to remember a single follow up. Both suites are rented now, which comes to [$36K a year](/work/salon-marketing-automation-roi) she was not collecting before."
           },
           {
             "type": "quote",
@@ -1445,7 +1438,7 @@
           },
           {
             "type": "cta",
-            "lead": "Want to see a pipeline built for your kind of business?",
+            "lead": "Bring the spreadsheet, or the phone the contacts live on.",
             "label": "Book a call"
           }
         ]
@@ -1459,7 +1452,7 @@
           },
           {
             "type": "p",
-            "text": "If your business genuinely needs Salesforce, we will tell you, and we will not be the ones to build it."
+            "text": "If your business needs Salesforce, it is not a build we take on, and the first call is where that comes out."
           }
         ]
       },
@@ -1512,11 +1505,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A CRM is never finished, because the business keeps changing. On a monthly retainer we keep the automations running, build the next one when you add a service, fix what GoHighLevel's updates break, and send you the monthly numbers with a note on what to change. Most clients stay on it because the system keeps growing with them. If you would rather run it yourself after training, that is fine too. The account is yours either way."
+            "text": "A CRM is never finished, because the business keeps changing. On a monthly retainer we keep the automations running, build the next one when you add a service, fix what GoHighLevel's updates break, and send you the monthly numbers with a note on what to change. If you would rather run it yourself after training, that is fine too. The account is yours either way."
           },
           {
             "type": "p",
-            "text": "You can read what GoHighLevel is and who it is for in our [complete guide](/blog/what-is-go-high-level) before the call. In Kern County? We set these up in person; see [CRM setup in Bakersfield](/bakersfield/crm)."
+            "text": "You can read what GoHighLevel is and who it is for in our [complete guide](/blog/what-is-go-high-level) before the call. Kern County owners get the setup at their yard: [CRM setup in Bakersfield](/bakersfield/crm)."
           }
         ]
       }
@@ -1610,7 +1603,7 @@
           {
             "type": "p",
             "title": "Competitor video dashboard",
-            "text": "It watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last six months, so you know what is working before you post."
+            "text": "It watches your competitors' social accounts and shows you their top 10 videos of all time, or of the last 6 months, so you know what is working before you post."
           },
           {
             "type": "p",
@@ -1624,7 +1617,7 @@
           },
           {
             "type": "p",
-            "text": "If you can describe it, it can be built. The sky is the limit on what; the question is whether it is worth building, and we answer that first."
+            "text": "Anything you can describe can be built. Whether it is worth building is the question, and that gets answered first."
           }
         ]
       },
@@ -1637,7 +1630,7 @@
           },
           {
             "type": "p",
-            "text": "Custom software development for small business owners works when it is small: one tool, one job, a first version in weeks. The test we use on the call: if you can name a product that does the job and it costs less than a day of your time a month, buy it."
+            "text": "It works for a small business when it stays small: one tool, one job, a first version in weeks. The test we use on the call: if you can name a product that does the job and it costs less than a day of your time a month, buy it."
           },
           {
             "type": "p",
@@ -1650,11 +1643,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "One call to understand the job the tool has to do. A written scope with a fixed price. Then a working first version in weeks, not months, that you use with real data while we finish the rest. The scope names what the first version does and does not do, so there is no argument later about what \"done\" meant. Every tool ships with a one page runbook: what it does, where it runs, which accounts it depends on, and what to do when it breaks."
+            "text": "One call to understand the job the tool has to do. A written scope with a fixed price. Then a working first version inside a month that you use with real data while we finish the rest. The scope names what the first version does and does not do, so there is no argument later about what \"done\" meant. Every tool ships with a one page runbook: what it does, where it runs, which accounts it depends on, and what to do when it breaks."
           },
           {
             "type": "p",
-            "text": "We build on a modern stack: React and Next.js on the front, Node or Python behind it, [Supabase](https://supabase.com) for the database, and [Vercel](https://vercel.com) for hosting. It runs on accounts in your name, so nothing is held hostage. We write our own tools the same way and build with the same AI assisted workflow we described in [how we run the agency without a dev team](/blog/claude-code-marketing-agency-workflow)."
+            "text": "We build on React and Next.js on the front, Node or Python behind it, [Supabase](https://supabase.com) for the database, and [Vercel](https://vercel.com) for hosting. It runs on accounts in your name, so nothing is held hostage. We write our own tools the same way, with the AI assisted workflow described in [how we run the agency without a dev team](/blog/claude-code-marketing-agency-workflow)."
           }
         ]
       },
@@ -1682,12 +1675,12 @@
     "faqHeading": "Questions people ask about custom software",
     "faqs": [
       {
-        "q": "How much does custom software cost?",
-        "a": "A single purpose internal tool is a fixed project price, quoted after one call, and it is a fraction of what a software agency charges because we scope tightly and build fast. Larger systems with several users and integrations cost more. Every quote comes with the alternative: the off the shelf product we would use instead if one exists."
+        "q": "What does custom software development for small business cost?",
+        "a": "A single purpose internal tool is a fixed project price, quoted after one call. The scope is one tool and one job, which is what keeps the number small. Larger systems with several users and integrations cost more. Every quote comes with the alternative: the off the shelf product we would use instead, if one exists."
       },
       {
         "q": "How long does it take to build?",
-        "a": "A focused tool ships a working first version in two to four weeks. Bigger builds run four to eight. The biggest variable is how clear the scope is at the start, which is why the first call is mostly questions."
+        "a": "A focused tool ships a working first version in 2 to 4 weeks. Bigger builds run 4 to 8. The biggest variable is how clear the scope is at the start, which is why the first call is mostly questions."
       },
       {
         "q": "Who owns the software?",
@@ -1749,7 +1742,7 @@
       "label": "Book a call"
     },
     "proof": [
-      "Weekly 49 point rank grids, so you see the map, not a guess",
+      "Weekly 49 point rank grids, the map point by point",
       "Reviews, categories, and services worked in the order that moves rankings",
       "Our own Bakersfield profile scanned in public, from zero"
     ],
@@ -1778,7 +1771,7 @@
         ]
       },
       {
-        "heading": "What actually ranks a Google Business Profile",
+        "heading": "What ranks a Google Business Profile",
         "blocks": [
           {
             "type": "p",
@@ -1786,11 +1779,11 @@
           },
           {
             "type": "p",
-            "text": "So that is our order. Primary category read off the top three competitors in your market, not guessed. Every predefined service Google offers for your category, plus custom ones under the names customers actually search. Then a review process that runs every week: a direct link sent after the job, no gating, no incentives, and a reply from you within 48 hours. Then hours, attributes, description, and 8 to 12 real photos, because Google's Ask Maps answers questions straight from those fields now that Q&A is gone. The field by field detail is in our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026)."
+            "text": "So that is our order. Primary category read off the top three competitors in your market, not guessed. Every predefined service Google offers for your category, plus custom ones under the names customers search. Then a review process that runs every week: a direct link sent after the job, no gating, no incentives, and a reply from you within 48 hours. Then hours, attributes, description, and 8 to 12 photos of your work, because Google's Ask Maps answers questions straight from those fields now that Q&A is gone. The field by field detail is in our [Google Business Profile guide](/blog/google-business-profile-optimization-guide-2026)."
           },
           {
             "type": "p",
-            "text": "We do not geotag photos. Google strips the location data on upload and the published tests show no effect. We do not stuff the business name with keywords, because that is the top cause of suspensions. And we do not post for the sake of posting."
+            "text": "We do not geotag photos, because Google strips the location data on upload and there is nothing left for it to affect. We do not stuff the business name with keywords, because that is the top cause of suspensions. And we do not post for the sake of posting."
           }
         ]
       },
@@ -1799,7 +1792,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A dedicated page for each service you sell, written for your city, is the number one local organic factor. Not a homepage that lists nine services, not a city page with the name swapped in. A real page, with your work, your reviews from that city, and an answer to the question at the top."
+            "text": "A dedicated page for each service you sell, written for your city, is the number one local organic factor. One page, about that service in that city, with your work on it, the reviews from there, and the answer to the searcher's question at the top."
           },
           {
             "type": "p",
@@ -1818,7 +1811,7 @@
           {
             "type": "p",
             "title": "Several towns",
-            "text": "If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something real about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain."
+            "text": "If you serve several towns, we do not build a page for every town times every service. We start with the smaller towns nobody else is targeting, one page per town, each with something specific about that place and your work there. A landscaper serving five towns gets five pages over five weeks, not fifty in a weekend, because Google reads a batch of near identical pages as a doorway scheme and buries the whole domain."
           }
         ]
       },
@@ -1833,12 +1826,12 @@
           {
             "type": "p",
             "title": "Reviews without the risk",
-            "text": "Reviews gate entry to the map pack, and nearly half of consumers will not use a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation. Doing it properly is not optional anymore."
+            "text": "Reviews gate entry to the map pack, and nearly half of consumers skip a business with fewer than 20. So the review ask has to become a habit, not a campaign. We set up the automation: one message after each job, a direct unfiltered link to your profile, a reply template for you, and nothing that pre screens the customer's mood first. Google rewrote its review policy in 2026, and the FTC fines for fake or gated reviews run to $53,088 per violation."
           },
           {
             "type": "p",
             "title": "When they ask an AI instead",
-            "text": "More people ask ChatGPT or Google's AI for \"a good electrician near me\" than a year ago. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and real mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses)."
+            "text": "Some customers now ask ChatGPT or Google's AI for \"a good electrician near me\" instead of searching. Those answers are built from the pages that already rank and from the directories and lists the models read, so most of the work above counts twice. The rest is format: an answer at the top of each page in plain text, and mentions on the review sites. We wrote up the specifics in [AEO for local businesses](/blog/aeo-for-local-businesses)."
           }
         ]
       },
@@ -1860,16 +1853,16 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Owner access to the Google Business Profile, or the go ahead to claim it. Ten to twelve real photos, or an hour of your time so we can take them. Your list of customers from the last three months, so the first review asks go to people who remember you. And one exact spelling of your business name, phone, and address, which every listing will then copy."
+            "text": "Owner access to the Google Business Profile, or the go ahead to claim it. 10 to 12 photos, or an hour of your time so we can take them. Your list of customers from the last 3 months, so the first review asks go to people who remember you. And one exact spelling of your business name, phone, and address, which every listing will then copy."
           },
           {
             "type": "quote",
-            "text": "\"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results. Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.\"",
+            "text": "\"Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.\"",
             "cite": "Sid S., Account Executive, SBC"
           },
           {
             "type": "cta",
-            "lead": "Want your first rank grid? We will run one for free on the call.",
+            "lead": "Your first 49 point grid is on us. Bring the business name and the city.",
             "label": "Book a call"
           }
         ]
@@ -1883,7 +1876,7 @@
       },
       {
         "q": "How long does local SEO take?",
-        "a": "Profile changes can move rankings within days; adding keyword named services has shown movement inside 72 hours in published tests. Reviews compound over 60 to 90 days. Website pages take three to six months. We set gates at day 30, 60, and 90 and tell you at each one what moved and what did not."
+        "a": "Profile changes can move rankings within days, and adding keyword named services is the fastest of them. Reviews compound over 60 to 90 days. Website pages take 3 to 6 months. We set gates at day 30, 60, and 90 and report at each one what moved and what did not."
       },
       {
         "q": "I work from home. Can I still rank without showing my address?",
@@ -1895,7 +1888,7 @@
       }
     ],
     "finalCta": {
-      "text": "Send us your business name and city. We will run the 49 point scan and show you exactly where you stand before you decide anything.",
+      "text": "Bring your business name and city. The 49 point scan runs before the call, so you see where you stand before you decide anything.",
       "label": "Book a call"
     }
   },
@@ -1954,7 +1947,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A template, a dataset, and a rule that turns each row into a page. A lender publishes a page per city with real rate data. A software company publishes a page per integration. A directory publishes a page per product and location."
+            "text": "A template, a dataset, and a rule that turns each row into a page. A lender publishes a page per city with live rate data. A software company publishes a page per integration. A directory publishes a page per product and location."
           },
           {
             "type": "p",
@@ -1973,7 +1966,7 @@
           {
             "type": "p",
             "title": "Our test for every page",
-            "text": "Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, we will not build it, and we will say why on the call."
+            "text": "Does this page carry something no other page on the internet has? Your own numbers, your own inventory, your own measurements, a calculator, a comparison built from live data. If the answer is yes, the set can be large. If the answer is a paragraph of generic text and a different city in the H1, the set does not get built, and the call is where that gets decided, with your data on the screen."
           }
         ]
       },
@@ -1983,12 +1976,12 @@
           {
             "type": "p",
             "title": "Research first",
-            "text": "We pull real search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says."
+            "text": "We pull search volume for the combinations you think people search, and we read the live results for a sample of them, because half the time the intent is not what the keyword tool says."
           },
           {
             "type": "p",
             "title": "The data model",
-            "text": "The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, our [custom builds](/services/custom-builds) team writes the pipeline."
+            "text": "The page set is a product fed by a database, not a batch of articles, so we design the data model before the template. Where the data has to be pulled from somewhere, that is a [custom build](/services/custom-builds), and the pipeline gets written first."
           },
           {
             "type": "p",
@@ -2007,11 +2000,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A services times cities matrix. Pages for towns you do not serve. A template that ships with a city name and nothing local underneath it. Three hundred pages in a week on a domain that has never published thirty. Each of these has cost someone their rankings, and the June 2026 spam update was unusually fast about it."
+            "text": "A services times cities matrix. Pages for towns you do not serve. A template that ships with a city name and nothing local underneath it. 300 pages in a week on a domain that has never published 30. Each of these has cost someone their rankings, and the June 2026 spam update was unusually fast about it."
           },
           {
             "type": "p",
-            "text": "If your customers are in one or two cities, you do not need programmatic SEO. You need a real page per service, and that is [local SEO](/services/seo/local)."
+            "text": "If your customers are in one or two cities, you do not need programmatic SEO. You need a page per service, and that is [local SEO](/services/seo/local)."
           }
         ]
       },
@@ -2020,7 +2013,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Programmatic SEO services sit on top of the ordinary work: the money pages, the weekly content, the technical foundation covered on our [SEO services](/services/seo) page. They are a multiplier, not a substitute. The same domain that grew to 204 ranked keywords in 6 months carries our own industry pages, and you can see how the two fit together in the [organic growth case study](/work/rsla-organic-growth)."
+            "text": "Programmatic SEO services sit on top of the ordinary work: the money pages, the weekly content, the technical foundation covered on our [SEO services](/services/seo) page. They multiply what is already there. The same domain that grew to 204 ranked keywords in 6 months carries our own industry pages, and you can see how the two fit together in the [organic growth case study](/work/rsla-organic-growth)."
           },
           {
             "type": "cta",
@@ -2034,15 +2027,15 @@
     "faqs": [
       {
         "q": "What is programmatic SEO?",
-        "a": "Publishing a set of pages from one template and one dataset, so that each search variation gets its own page without writing each one by hand. It works when every page contains data that is genuinely different and genuinely useful. It fails when the pages are the same text with one word swapped."
+        "a": "Publishing a set of pages from one template and one dataset, so that each search variation gets its own page without writing each one by hand. It works when every page holds data that differs from the others and is useful on its own. It fails when the pages are the same text with one word swapped."
       },
       {
         "q": "Is programmatic SEO against Google's guidelines?",
-        "a": "The technique is not. Thin, near identical pages built to catch searches are, under Google's scaled content abuse and doorway policies, and the penalty is applied to the domain, not just the pages. The line is whether each page helps the person who lands on it."
+        "a": "The technique is not. Thin, near identical pages built to catch searches are, under Google's scaled content abuse and doorway policies, and the penalty is applied to the whole domain. The line is whether each page helps the person who lands on it."
       },
       {
         "q": "How many pages should we start with?",
-        "a": "Fewer than you think. A first batch small enough to watch, usually 10 to 20, published on a site that already has some authority, then the rest in batches as each one gets indexed. A brand new domain cannot absorb 200 pages at once and we will not pretend otherwise."
+        "a": "Fewer than you think. A first batch small enough to watch, usually 10 to 20, published on a site that already has some authority, then the rest in batches as each one gets indexed. A brand new domain cannot absorb 200 pages at once."
       },
       {
         "q": "Does programmatic SEO work for a small business?",
@@ -2089,7 +2082,7 @@
     ],
     "h1": "SEO services for small businesses",
     "lead": {
-      "text": "When a customer asks Google, or asks ChatGPT, who to call, your business is the answer. That is the whole job. SEO, AEO, and GEO are just the names for the work that gets you there.",
+      "text": "When a customer asks Google or ChatGPT who to call, your business is the answer. That is the whole job, whatever the acronym on the invoice.",
       "highlight": "your business is the answer"
     },
     "heroCta": {
@@ -2107,11 +2100,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Search engine optimization used to mean pleasing an algorithm. It now means answering real customer questions with real expertise, one page at a time. Google's own guidance says the same thing in more words: publish [helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) written for people."
+            "text": "Search engine optimization in 2026 is answering the questions your customers ask, with what you know, one page at a time. Google's own guidance says the same thing in more words: publish [helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) written for people."
           },
           {
             "type": "p",
-            "text": "The AI assistants changed less than people think. ChatGPT, Perplexity, and Google's AI Overviews build their answers from the pages that already rank. Rank on Google and the citations follow. So the ranking work is the AI work. We do not sell them as two separate things. If your customers are local, our guide to [showing up in ChatGPT as a local business](/blog/aeo-for-local-businesses) covers the specifics."
+            "text": "The AI assistants changed less than people think. ChatGPT, Perplexity, and Google's AI Overviews build their answers from the pages that already rank. Rank on Google and the citations follow. So the ranking work is the AI work, and we do not sell them as two separate things. If your customers are local, our guide to [showing up in ChatGPT as a local business](/blog/aeo-for-local-businesses) covers the specifics."
           }
         ]
       },
@@ -2121,22 +2114,22 @@
           {
             "type": "p",
             "title": "Money pages first",
-            "text": "One page per service you actually sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one."
+            "text": "One page per service you sell, each targeting one keyword, each written to match or beat the three pages currently ranking for it. If a page for the thing you sell does not exist, nothing else matters yet. Our [websites](/services/websites) are built with this structure from day one."
           },
           {
             "type": "p",
             "title": "On page SEO",
-            "text": "Titles, headings, internal links with real anchor text, image names, and an answer at the top of every page in plain language, because that is what both Google and the AI assistants extract."
+            "text": "Titles, headings, internal links with descriptive anchor text, image names, and an answer at the top of every page in plain language, because that is what both Google and the AI assistants extract."
           },
           {
             "type": "p",
             "title": "One article a week",
-            "text": "Genuinely useful, built from questions your customers already ask, wired into the pages that make money. Consistency is what wins. Almost nobody keeps it up, which is exactly why it works."
+            "text": "Built from questions your customers already ask, and linked into the pages that make money. Almost nobody keeps a weekly article up for a year, which is why the ones who do win."
           },
           {
             "type": "p",
             "title": "Technical SEO underneath",
-            "text": "Crawlability, indexing, speed, schema, redirects. We fix the things that tell Google to look elsewhere, and we stop at 90 percent site health instead of chasing every flag a tool throws."
+            "text": "Crawlability, indexing, speed, schema, redirects. We fix the things that tell Google to look elsewhere, and we stop at 90 percent site health instead of chasing every flag a tool throws. A 40 page site does not need a 200 item audit; it needs the 6 problems that stop indexing fixed this month."
           }
         ]
       },
@@ -2150,8 +2143,8 @@
           },
           {
             "type": "p",
-            "title": "Real search volume",
-            "text": "From Google's own advertising data rather than a third party estimate, when a choice is close."
+            "title": "Volume from Google's own data",
+            "text": "From its advertising numbers rather than a third party estimate, when a choice is close, because the third party tools guess and Google counts."
           },
           {
             "type": "p",
@@ -2169,7 +2162,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Each article answers one question a real customer asked, in your words, from your experience. It links to the service page it supports, and three older articles get a link back to it, because that is how a new page gets noticed without waiting months. Over a year that is roughly fifty pages of answers, all pointing at the pages that sell. That is the snowball, and it is the whole method."
+            "text": "Each article answers one question a customer asked, in your words, from your experience. The questions come from your inbox and your call notes before they come from a keyword tool. It links to the service page it supports, and three older articles get a link back to it, because that is how a new page gets noticed without waiting months. Over a year that is roughly 50 pages of answers, all pointing at the pages that sell, and that is the whole method."
           }
         ]
       },
@@ -2179,7 +2172,7 @@
           {
             "type": "p",
             "title": "Local SEO",
-            "text": "If your customers are in one city, the work shifts toward Google Maps, your Business Profile, reviews, and a page per service in that city. That is [local SEO](/services/seo/local), and it has its own page because it has its own rules. If you are in Kern County, we do it in person; see [SEO in Bakersfield](/bakersfield/seo)."
+            "text": "If your customers are in one city, the work shifts toward Google Maps, your Business Profile, reviews, and a page per service in that city. That is [local SEO](/services/seo/local), and it has its own page because it has its own rules. Kern County businesses get the local version in person: [SEO in Bakersfield](/bakersfield/seo)."
           },
           {
             "type": "p",
@@ -2202,7 +2195,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A business that needs leads this month should run ads and come back to SEO once the cash flow allows both; SEO takes months, and a client who runs out of money in month five never sees month twelve. A national online store with ten thousand products needs an ecommerce specialist. A company that wants a report every week instead of a page every week is going to be disappointed. We say this on the first call so nobody wastes a quarter."
+            "text": "A business that needs leads this month should run ads and come back to SEO once the cash flow allows both; SEO takes months, and a client who runs out of money in month five never sees month twelve. A national online store with ten thousand products needs an ecommerce specialist. A company that wants a report every week instead of a page every week is going to be disappointed."
           }
         ]
       },
@@ -2224,7 +2217,7 @@
           },
           {
             "type": "cta",
-            "lead": "Want to see what your site is already ranking for?",
+            "lead": "Bring your domain and we will pull what it already ranks for.",
             "label": "Book a call"
           }
         ]
@@ -2249,7 +2242,7 @@
           },
           {
             "type": "p",
-            "text": "If something is not working, we say so and change it. If your market is one where SEO will not pay back for a year, we say that on the first call."
+            "text": "If your market is one where SEO will not pay back inside a year, that is the first line of the proposal."
           }
         ]
       }
@@ -2258,15 +2251,15 @@
     "faqs": [
       {
         "q": "How much should SEO cost for a small business?",
-        "a": "Ongoing SEO is a monthly retainer, scoped to how competitive your market is and how much content it takes to match the sites already ranking. A one off fix, such as rebuilding the money pages on an existing site, is a fixed project price. We give you a number after one call and it does not change mid engagement."
+        "a": "Ongoing SEO is a monthly retainer, scoped to how competitive your market is and how much content it takes to match the sites already ranking. A one off fix, such as rebuilding the money pages on an existing site, is a fixed project price. You get a number after one call and it does not change mid engagement."
       },
       {
         "q": "How long does SEO take to work?",
-        "a": "Three to six months for the first real movement, and closer to twelve for the compounding to show. A page we change today takes two to three months to judge. Anyone who promises page one in two weeks either does not know what they are talking about or is lying."
+        "a": "3 to 6 months for the first movement, and closer to 12 for the compounding to show. A page changed today takes 2 to 3 months to judge, which is why \"page one in two weeks\" is not a promise anyone can keep."
       },
       {
         "q": "Do you guarantee first page rankings?",
-        "a": "No, and nobody can. What we guarantee is the work: the right pages, built the right way, in the right order, with the data to show what moved. We have taken sites to page one and into the top three. It takes months of consistent work, not a trick."
+        "a": "No, and nobody can. What is guaranteed is the work: the right pages, in the right order, with the Search Console data attached to every report. Our own site and Fieldshare's got to page one that way, over months."
       },
       {
         "q": "Is SEO dead now that people ask AI?",
@@ -2319,7 +2312,7 @@
       "highlight": "without losing the rankings"
     },
     "heroCta": {
-      "lead": "Send us the site that needs replacing.",
+      "lead": "Show us the site you are embarrassed to send.",
       "label": "Book a call"
     },
     "proof": [
@@ -2339,7 +2332,7 @@
           {
             "type": "p",
             "title": "It loads slowly",
-            "text": "It takes four seconds to load on 5G, and most of your visitors are on a phone."
+            "text": "It takes 4 seconds to load on 5G, and most of your visitors are on a phone."
           },
           {
             "type": "p",
@@ -2369,7 +2362,7 @@
           {
             "type": "p",
             "title": "Everything the visitor sees",
-            "text": "New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone, because most of your visitors are on one. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox."
+            "text": "New copy that says what you do now. A layout built around one clear next step. Pages that load fast on a phone. A page for every service you sell, so each one can rank on its own. Forms that go to your inbox or your [CRM](/services/crm) instead of a dead mailbox."
           },
           {
             "type": "p",
@@ -2379,7 +2372,7 @@
           {
             "type": "p",
             "title": "What stays",
-            "text": "The URLs that rank, the sentences that rank, and the reviews and photos that are genuinely yours. A redesign replaces what fails and keeps what works, which is why the audit comes before the design."
+            "text": "The URLs that rank, the sentences that rank, and the reviews and photos that are yours. A redesign replaces what fails and keeps what works, which is why the audit comes before the design."
           }
         ]
       },
@@ -2392,7 +2385,7 @@
           },
           {
             "type": "p",
-            "text": "Those lists decide the shape of the project. A site with forty pages and six that matter is a different job from a site with forty pages that all rank for something. You see the lists on the call, so the quote makes sense to you."
+            "text": "Those lists decide the shape of the project. A site with 40 pages and 6 that matter is a different job from a site with 40 pages that all rank for something. You see the lists on the call, so the quote makes sense to you."
           }
         ]
       },
@@ -2422,7 +2415,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The words are usually why the old site failed, so they get rewritten first, from a call with you and from the questions your customers ask before they buy. What you do, for whom, where, and what happens next, on the first screen. Every service on its own page with a plain answer at the top. Only then does the design start, because the layout has to carry the message and not the other way round."
+            "text": "The words are usually why the old site failed, so they get rewritten first, from a call with you and from the questions your customers ask before they buy. The first screen answers the four questions a visitor arrives with: what, for whom, where, and what happens next. Every service on its own page with a plain answer at the top. Only then does the design start, because the layout has to carry the message."
           },
           {
             "type": "p",
@@ -2435,7 +2428,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Not every old site needs a rebuild. Sometimes the structure is fine and the copy is the problem. Sometimes the site is fine and the Google Business Profile is what needs work. We look at what you have before quoting, and if a cleanup is all it needs, that is what we will recommend. If it needs more than that, we will show you exactly why, with the numbers from your own Search Console."
+            "text": "Not every old site needs a rebuild. Sometimes the structure is fine and the copy is the problem. Sometimes the site is fine and the Google Business Profile is what needs work. We look at what you have before quoting, and if a cleanup is all it needs, the proposal is for a cleanup. If it needs more than that, the proposal says why, with the pages and the numbers pulled from your own Search Console."
           }
         ]
       },
@@ -2448,12 +2441,12 @@
           },
           {
             "type": "quote",
-            "text": "\"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results. Their expertise and dedication transformed my site by restructuring it, fixing critical errors, and significantly boosting its performance. Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.\"",
+            "text": "\"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results! Their expertise and dedication transformed my site by restructuring it, fixing critical errors, and significantly boosting its performance. Thanks to their outstanding work on on-page SEO and ongoing SEO efforts, my website has seen a remarkable increase in organic traffic and a substantial improvement in qualified inbound lead generation.\"",
             "cite": "Sid S., Account Executive, SBC"
           },
           {
             "type": "cta",
-            "lead": "Want to know what your current site is worth keeping?",
+            "lead": "Bring the Search Console login, or the URL if you have never opened it.",
             "label": "Book a call"
           }
         ]
@@ -2493,7 +2486,7 @@
           },
           {
             "type": "p",
-            "text": "After that, the site is yours to run. If you want the rankings to keep climbing rather than just hold, that is our [SEO service](/services/seo), and the rebuilt site is ready for it."
+            "text": "After that, the site is yours to run. If you want the rankings to keep climbing rather than hold, that is our [SEO service](/services/seo), and the rebuilt site is ready for it."
           }
         ]
       },
@@ -2502,11 +2495,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "You keep your domain, your rankings, and your inbound links. You own the new site outright: code, content, and hosting account. A site needs feeding, and in a few years it will need rebuilding again; owning it outright is what keeps that next round cheap."
+            "text": "You keep your domain, your rankings, and your inbound links. You own the new site outright: code, content, and hosting account. In a few years the business will have changed enough to need another one, and owning this one outright is what keeps that round cheap."
           },
           {
             "type": "p",
-            "text": "Need the rest of the picture, including new builds? See [website design for small businesses](/services/websites). Kern County owners can do this face to face: [web design in Bakersfield](/bakersfield/websites)."
+            "text": "New builds have their own page, [website design for small businesses](/services/websites). Kern County owners get the redesign in person through [web design in Bakersfield](/bakersfield/websites)."
           }
         ]
       }
@@ -2523,15 +2516,15 @@
       },
       {
         "q": "How long does a website redesign take?",
-        "a": "Four to six weeks for most sites, up to eight for larger sites with custom functionality. Content migration is the usual variable: fifty blog posts take longer to move than five."
+        "a": "4 to 6 weeks for most sites, up to 8 for larger sites with custom functionality. Content migration is the usual variable: 50 blog posts take longer to move than 5."
       },
       {
         "q": "Can we keep our current CMS?",
-        "a": "Usually, if it is not the reason the site is slow. We work with the platform you have when it makes sense and move you when it does not. We will tell you which on the call, and why."
+        "a": "Usually, if it is not the reason the site is slow. We work with the platform you have when it makes sense and move you when it does not. Which one it is comes out of the audit, with the reason."
       }
     ],
     "finalCta": {
-      "text": "Send us the link you are embarrassed by. We will tell you what to keep, what to replace, and what it will cost.",
+      "text": "Bring the site and the year it was built. By the end of the call you will know what to keep, what to replace, and what it costs.",
       "label": "Book a call"
     }
   },
@@ -2570,8 +2563,8 @@
     ],
     "h1": "Website design for small businesses",
     "lead": {
-      "text": "Your website is your business card, your first sales conversation, and the page Google and ChatGPT read before they mention you. We build it to do all three jobs.",
-      "highlight": "all three jobs"
+      "text": "A website has three jobs: tell a stranger what you do, make the first sales conversation easier, and give Google and ChatGPT something to read before they mention you. We build it to do all three.",
+      "highlight": "all three"
     },
     "heroCta": {
       "lead": "Tell us what the site needs to do.",
@@ -2589,12 +2582,12 @@
           {
             "type": "p",
             "title": "No website yet",
-            "text": "Some owners come to us with no website at all. A Facebook page, a Google listing, maybe a logo a cousin made. Customers find them anyway, then go quiet because there is nowhere to check what the business actually does."
+            "text": "Some owners come to us with no website at all. A Facebook page, a Google listing, maybe a logo a cousin made. Customers find them anyway, then go quiet because there is nowhere to check what the business does."
           },
           {
             "type": "p",
-            "title": "A site from 2019",
-            "text": "Others have a site that has not been touched since 2019. It loads slowly on a phone, the person who built it is gone, and nobody knows the login. That project is a rebuild, and it has its own rules about keeping the rankings you already have. We cover those on the [website redesign](/services/websites/redesign) page."
+            "title": "A site from 2018",
+            "text": "Others have a site that has not been touched since 2018. It loads slowly on a phone, the person who built it is gone, and nobody knows the login. That project is a rebuild, and it has its own rules about keeping the rankings you already have. We cover those on the [website redesign](/services/websites/redesign) page."
           },
           {
             "type": "p",
@@ -2607,22 +2600,22 @@
         "blocks": [
           {
             "type": "p",
-            "text": "A website is your business's digital business card. If it does not communicate what your business does, in one screen, to a stranger, it will not work no matter how good it looks."
+            "text": "If a site does not tell a stranger what the business does in one screen, it does not work, however good it looks. So the three jobs come in order."
           },
           {
             "type": "p",
-            "title": "Communicate",
-            "text": "What you do, who you do it for, where, and what happens next. That is the first job."
+            "title": "Say what you do",
+            "text": "What you do, who you do it for, where, and what happens next, on the first screen."
           },
           {
             "type": "p",
-            "title": "Design it",
-            "text": "Communicating is one thing and designing that communication is another. That is the second."
+            "title": "Design that says it",
+            "text": "The layout has to carry that message, which is a different job from writing it."
           },
           {
             "type": "p",
-            "title": "Be readable by machines",
-            "text": "Google, and now the AI assistants people ask for recommendations. That is the third."
+            "title": "Read well to machines",
+            "text": "Google, and now the AI assistants people ask for recommendations, read the same page a customer does."
           },
           {
             "type": "p",
@@ -2636,22 +2629,22 @@
           {
             "type": "p",
             "title": "Copy first",
-            "text": "We write it from a call with you, because the words decide the layout, not the other way round. What makes a website yours is you: the story, the branding, the personality. A template cannot supply that."
+            "text": "We write it from a call with you, because the words decide the layout and not the other way round. The words are also what make the site yours; a template supplies everything except them."
           },
           {
             "type": "p",
             "title": "Design, then a hand coded build",
-            "text": "We hand code every site on a modern stack instead of a drag and drop builder, which is why our pages pass Google's [Core Web Vitals](https://web.dev/articles/vitals) on a phone and why you get full control of structure and speed later."
+            "text": "We hand code every site instead of using a drag and drop builder, which is why our pages pass Google's [Core Web Vitals](https://web.dev/articles/vitals) on a phone and why you keep full control of structure and speed later."
           },
           {
             "type": "p",
             "title": "Search structure built in",
-            "text": "Every site ships with one page per service, one keyword per page, proper titles and headings, schema markup, and plain question and answer sections that AI assistants can lift. For a local business, that last part is what gets you named when a customer asks ChatGPT instead of Google; we wrote up the details in [AEO for local businesses](/blog/aeo-for-local-businesses). Forms connect to your inbox or your [CRM](/services/crm) so a lead never sits unread. We hand over the domain, the code, and the CMS access, and we train you on the CMS before we leave."
+            "text": "Every site ships with one page per service, one keyword per page, proper titles and headings, schema markup, and plain question and answer sections that AI assistants can lift. For a local business, that last part is what gets you named when a customer asks ChatGPT instead of Google; the details are in [AEO for local businesses](/blog/aeo-for-local-businesses). Forms connect to your inbox or your [CRM](/services/crm) so a lead never sits unread. We hand over the domain, the code, and the CMS access, and we train you on the CMS before we leave."
           }
         ]
       },
       {
-        "heading": "Built for the purpose, not the template",
+        "heading": "Built for what the site has to do",
         "blocks": [
           {
             "type": "p",
@@ -2659,7 +2652,7 @@
           },
           {
             "type": "p",
-            "text": "We ask what the site is for before we open a design tool. Sometimes the answer is a three page site and a strong Google Business Profile, and we will say so."
+            "text": "We ask what the site is for before we open a design tool. Sometimes the answer is a three page site and a strong Google Business Profile, and that is the proposal you get."
           }
         ]
       },
@@ -2668,15 +2661,15 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Design gets you the visitor. Structure gets you the visitor in the first place."
+            "text": "Structure is what brings the visitor. Design is what keeps them."
           },
           {
             "type": "p",
-            "text": "We proved this on our own domain: a blank site went to 204 ranked keywords, 265K impressions, and 39 AI citations in 6 months with no ad spend. You can read the whole thing in the [organic growth case study](/work/rsla-organic-growth). When we rebuilt [Fieldshare](/work/fieldshare-seo-website-rebrand), a field management platform for oil and gas operators, the new site went on to be cited by ChatGPT, Gemini, and Google AI for their core topics."
+            "text": "We proved the first half on our own domain: a blank site went to 204 ranked keywords, 265K impressions, and 39 AI citations in 6 months with no ad spend. The whole thing is in the [organic growth case study](/work/rsla-organic-growth). When we rebuilt [Fieldshare](/work/fieldshare-seo-website-rebrand), a field management platform for oil and gas operators, the new site went on to be cited by ChatGPT, Gemini, and Google AI for their core topics."
           },
           {
             "type": "p",
-            "text": "If you want us to keep working on rankings after launch, that is a separate service. See [SEO services](/services/seo). The site is built to support it either way."
+            "text": "If you want us to keep working on rankings after launch, that is a separate service, [SEO services](/services/seo), and the site is built to support it either way."
           }
         ]
       },
@@ -2685,17 +2678,17 @@
         "blocks": [
           {
             "type": "quote",
-            "text": "\"Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule.\"",
+            "text": "\"Rahul redesigned our website, handled SEO optimization, and set up blogging automation. Site looks great, ranks better, and the automation saves us tons of time. Great communication and delivered on schedule. Highly recommend.\"",
             "cite": "Chris K., CEO and Co-Founder, Fieldshare"
           },
           {
             "type": "quote",
-            "text": "\"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results. Their expertise and dedication transformed my site by restructuring it, fixing critical errors, and significantly boosting its performance.\"",
+            "text": "\"I recently hired Rahul to revamp our company website, and I couldn't be more thrilled with the results! Their expertise and dedication transformed my site by restructuring it, fixing critical errors, and significantly boosting its performance.\"",
             "cite": "Sid S., Account Executive, SBC"
           },
           {
             "type": "cta",
-            "lead": "Want a site that explains you in one screen?",
+            "lead": "Bring the two competitor sites you wish were yours.",
             "label": "Book a call"
           }
         ]
@@ -2708,7 +2701,7 @@
             "items": [
               {
                 "title": "A free 30 minute call",
-                "text": "You tell us what the business does, who it is for, and what the site has to make happen. We tell you whether you need a full build or a smaller fix."
+                "text": "You tell us what the business does, who it is for, and what the site has to make happen. We say whether you need a full build or a smaller fix."
               },
               {
                 "title": "A fixed price proposal",
@@ -2731,11 +2724,11 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Everything. The domain, the code, the content, and the hosting account are yours. If you ever want to move to another provider, you take it all with you. Build it once and expect to build it again, because a website is a living thing. Ownership is what makes the second build cheap."
+            "text": "Everything. The domain, the code, the content, and the hosting account are yours. If you ever want to move to another provider, you take it all with you. Expect to rebuild in a few years, because businesses change, and owning the code and the content is what makes the second build cheap."
           },
           {
             "type": "p",
-            "text": "In Kern County? We build these in person; see [web design in Bakersfield](/bakersfield/websites)."
+            "text": "Kern County owners can have this built at their shop; see [web design in Bakersfield](/bakersfield/websites)."
           }
         ]
       }
@@ -2744,11 +2737,11 @@
     "faqs": [
       {
         "q": "How much does small business website design cost?",
-        "a": "One fixed price for the whole project, quoted after one call, and it does not move once you sign. What moves the number is the page count, whether the site needs booking, online ordering, or custom functionality, and how much existing content has to be migrated. A five page site for a plumber and a forty page site with a store are different projects, and we tell you which one you need before we quote."
+        "a": "One fixed price for the whole project, quoted after one call, and it does not move once you sign. What moves the number is the page count, whether the site needs booking, online ordering, or custom functionality, and how much existing content has to be migrated. A 5 page site for a plumber and a 40 page site with a store are different projects, and the proposal says which one you need."
       },
       {
         "q": "How long does it take to build a website?",
-        "a": "Four to six weeks from kickoff to launch for most projects. A focused single page site can ship faster. A larger site with custom functionality can take up to eight weeks. The timeline is in the proposal before we start."
+        "a": "4 to 6 weeks from kickoff to launch for most projects. A focused single page site can ship faster. A larger site with custom functionality can take up to 8 weeks. The timeline is in the proposal before we start."
       },
       {
         "q": "Do I own my website?",
@@ -2756,11 +2749,11 @@
       },
       {
         "q": "Can I just build it myself with Wix or an AI builder?",
-        "a": "You can, and it may look fine. The problem is not the look. Template builders share layouts across hundreds of businesses, limit your control over speed and structure, and the AI builders skip the keyword plan, the page structure, and the content that gets a site found. If a builder is genuinely the right call for your stage, we will tell you that on the call."
+        "a": "You can, and it may look fine. The problem is not the look. Template builders share layouts across hundreds of businesses, limit your control over speed and structure, and the AI builders skip the keyword plan, the page structure, and the content that gets a site found. For some stages a builder is the right call, and then the first call ends there, with no proposal."
       }
     ],
     "finalCta": {
-      "text": "Not sure whether you need a new site or a repair on the old one? Tell us what you have and we will give you a straight answer.",
+      "text": "Not sure whether you need a new site or a repair on the old one? Bring what you have. The call ends with one of the two answers and a number.",
       "label": "Book a call"
     }
   }

@@ -6,7 +6,7 @@ family: marketing agency bakersfield (40/mo), bakersfield marketing agency (10),
 volumes: US scope, Google Ads, pulled 2026-09-06. KD 14.
 serp_read: Local pack (Citryn 48 reviews, Bizy Bee, eMedia), then Citryn homepage 655 words, Yelp, Mantera homepage, Instagram, the Chamber directory, eMedia, Barton, DesignRush. Real local agencies with offices. Hardest of the local terms; the hub earns it over quarters.
 title: Marketing agency in Bakersfield, CA | RSL/A
-meta: RSL/A is a marketing agency in Bakersfield, CA. Websites, SEO, AI automation, and CRM systems for Kern County businesses, with real numbers on a dashboard.
+meta: RSL/A is a marketing agency in Bakersfield, CA. Websites, SEO, AI automation, and CRM systems for Kern County businesses, with the numbers on a dashboard.
 h1: Marketing agency in Bakersfield, CA
 word_target: 800 to 1000
 cta_label: Book a call
@@ -19,21 +19,21 @@ replaces: src/data/cityData.js["bakersfield"] copy and the CityHub.jsx "Digital 
 
 # Marketing agency in Bakersfield, CA
 
-<!-- hero subhead, highlight "real numbers" -->
-We build the systems that run your marketing so you can get back to running the business. Websites, search, automation, and CRM, from a studio in southwest Bakersfield, with real numbers on a dashboard instead of promises.
+<!-- hero subhead, highlight "on a dashboard" -->
+Websites, search, automation, and CRM for Kern County businesses, built from a studio in southwest Bakersfield, with your leads, calls, and rankings on a dashboard you can open any day of the month.
 
-[CTA] Tell us what is not working. → Book a call
+[CTA] Tell us what you sell and who is not finding it. → Book a call
 
 <!-- proof row -->
-Based in Bakersfield, serving all of Kern County · 204 keywords ranked on our own site in 6 months · Fixed price proposals, no hourly billing
+Based in Bakersfield, serving all of Kern County · 204 keywords ranked on our own site in 6 months · One fixed price in the proposal, no hourly billing
 
 ## What we do for Bakersfield businesses
 
-Four things. The first call is where we work out which one applies to you.
+Four things, each with a national [services](/services) page behind it. The first call is where we work out which one applies to you.
 
-[Web design in Bakersfield](/bakersfield/websites): A new site if you have none, a rebuild if yours is from 2018, either way built to be found and to say what you do in one screen.
+[Web design in Bakersfield](/bakersfield/websites): A new site if you have none, a rebuild if yours is from 2018, built to be found and to say what you do before anyone scrolls.
 
-[SEO in Bakersfield](/bakersfield/seo): Showing up on Google Maps and in search when someone in Kern County looks for what you sell, and showing up in ChatGPT when they ask it instead.
+[SEO in Bakersfield](/bakersfield/seo): Showing up on Google Maps and in search when someone in Kern County looks for what you sell, and in ChatGPT when they ask it instead.
 
 [AI automation in Bakersfield](/bakersfield/automations): The missed call that texts itself back, the follow up that runs on its own, the intake that fills your CRM while you are on a job.
 
@@ -43,48 +43,46 @@ If what you need is a tool nobody sells, we build [custom software](/services/cu
 
 ## Why a Bakersfield agency, and why this one
 
-Search "marketing agency Bakersfield" and most of what you find is one of two things: an established shop that does a bit of everything, or an out of town agency with a "Bakersfield" page and no one in the 661.
+Type "marketing agency Bakersfield" into Google and the results are two kinds of business: local shops that have done a bit of everything for 20 years, and agencies in other states with a Bakersfield page and no one in the 661.
 
-We are here. Home based in the southwest of the city, which means we will meet you at your shop, your yard, or wherever the work actually happens. We work with the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up most of Kern County's businesses, and we work with clients in other states on the same terms.
+We are a third kind. One studio, home based in the southwest of the city, that does four specific things and meets you at your shop or your yard. Most of our clients are the trades, the ag suppliers, the clinics, the restaurants, and the one person operations that make up Kern County, and we work with clients in New York and Canada on the same terms. Our studio shows on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ) with the address and the reviews.
 
-What we do differently is the numbers. Rahul, who founded RSL/A, came from analytics. You get a dashboard with your real leads, calls, rankings, and costs, not a monthly PDF of impressions. We also do not guess at what you need. As Rahul puts it, we cannot tell you which offer fits your situation until we know your situation. It is like going to a doctor and not explaining why you came in.
+The difference is what you see afterwards. Rahul's background is analytics, which is most of the [story of RSL/A](/about) and the reason the reporting is a dashboard with your leads, calls, rankings, and costs, updated as they happen, rather than a PDF of impressions at the end of the month. The other difference is the first call. It is a diagnosis rather than a pitch, which is why the proposal is sometimes for a smaller job than the one you asked about.
 
 ## Where we work in and around Bakersfield
 
-Bakersfield first, then the rest of Kern County: Oildale, Shafter, Wasco, Delano, McFarland, Arvin, Lamont, Taft, Tehachapi, and Lake Isabella. If you are in one of the smaller towns, you have an advantage: almost nobody local is competing for your customers' searches yet.
+Bakersfield first, then the rest of Kern County: Oildale, Shafter, Wasco, Delano, McFarland, Arvin, Lamont, Taft, Tehachapi, and Lake Isabella. If you are in one of the smaller towns, you have an advantage. When we read the search results for them in July, almost nobody local was competing for your customers' searches.
 
 ## What working with us looks like
 
-A free 30 minute call, in person if you like. A written proposal that names the scope, the timeline, and one fixed number. Then the build, with you reviewing at each step, and a dashboard you can check any time after. If the smaller job is the right one, that is the one we will recommend. If it needs more, the recommendation comes with the data that says so.
+A free 30 minute call, in person if you like. A written proposal that names the scope, the timeline, and one fixed price. Then the build, with you reviewing at each step, and a dashboard you can check any time after.
 
 "I tried for months to rent my salon space and nothing worked. After Rahul and RSL/A, in just a few months both my rooms were filled. Now I don't stress about rent anymore."
 Laiz C., CEO, Casagrande Salon
 
-You can read more about how we work on the [about page](/about), see the full [services list](/services), or find us on [Google Maps](https://www.google.com/maps/place/?q=place_id:ChIJkyh5elCY4yIRH-OW8tzVXBQ).
-
-[CTA] Want a straight answer about what your business needs? → Book a call
+[CTA] Not sure which of the four you need? That is what the call is for. → Book a call
 
 ## Questions Bakersfield owners ask us
 
 ### How much does a marketing agency cost in Bakersfield?
 
-It depends on what you need built. A website, a CRM setup, or an automation is a fixed project price. SEO and ongoing management are monthly retainers scoped to your market and how far you are from ranking. One number after the first call, and it stays that number.
+It depends on what gets built. A website, a CRM setup, or an automation is a fixed project price. SEO and ongoing management are monthly retainers sized to your market and how far you are from ranking. The number comes after the first call and stays put once you sign.
 
 ### Do you only work with Bakersfield businesses?
 
-No. We are based here and we want to be the marketing agency Bakersfield businesses call first, and we also work with clients in New York, Canada, and across the US. Same process, same fixed pricing, one more time zone.
+No. We are based here, and "marketing agency Bakersfield" is a search we intend to own, but the same process runs for clients in New York, Canada, and the rest of the US. Same fixed pricing, one more time zone.
 
 ### Is it worth hiring a marketing agency for a small business?
 
-Only if the work pays for itself, which is why we start with a diagnosis rather than a package. A business with no website and no Google listing has an obvious first step. A business with a decent site and no follow up system needs a CRM more than it needs ads. We will tell you which one you are, even when the answer is "not yet."
+Only if the work pays for itself, which is why the first call is a diagnosis rather than a package. A business with no website and no Google listing has an obvious first step. A business with a decent site and no follow up needs a CRM more than it needs ads. Sometimes the answer is "not yet", and the call still costs nothing.
 
 ### How do we get started?
 
-Book the call or send us a message. We will look at what you have before we talk, so the 30 minutes goes on your business instead of ours.
+Book the call. We look at what you have before it starts, so the 30 minutes goes on your business instead of ours.
 
 ## Final CTA
 
-Based in Bakersfield, built for the businesses that keep Kern County running. Tell us what is not working and we will tell you what we would do about it.
+Based in Bakersfield, working for the trades, the clinics, and the ag businesses of Kern County. Bring what you have. The call ends with the first thing we would fix, and what it costs.
 
 [CTA] → Book a call
 
@@ -95,4 +93,5 @@ Based in Bakersfield, built for the businesses that keep Kern County running. Te
 - Rename the route from `/services/bakersfield` to `/bakersfield` with a one hop 301; the GBP website link then points at `/bakersfield`.
 - Remove "Digital marketing" from the CityHub heading and the schema `serviceType`. The category label is "marketing agency", never "digital marketing agency".
 - The town list matches the GBP service areas exactly (nap-canonical.md). Keep them in sync.
-- Bakersfield reviews go here as they arrive, above the Casagrande quote.
+- "When we read the search results for them in July": the 2026-07-20 SERP recon in docs/seo/local-seo-playbook-2026.md.
+- Bakersfield reviews go here as they arrive, above the Casagrande quote. Reviews are quoted in full or cut at a sentence boundary from the end, never with a sentence dropped from the middle (QA pass, 2026-09-07).

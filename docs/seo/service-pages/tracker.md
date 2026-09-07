@@ -2,7 +2,7 @@
 
 Local mirror of the Linear issues in project **RSL/A** (team RSL). Linear owns status; this file is the fallback if Linear stops taking updates. Update both in the same change. Parent issue: [RSL-363](https://linear.app/rsla/issue/RSL-363/ship-the-service-pages-and-the-bakersfield-pages).
 
-Last synced: 2026-09-07 01:23 PT (inquiry form pulled; RSL-375 filed, RSL-373 on hold under it).
+Last synced: 2026-09-07 02:38 PT (RSL-377 QA fix pass done, In Review).
 
 | ID | Task | Owner | State | Notes |
 |---|---|---|---|---|
@@ -19,6 +19,7 @@ Last synced: 2026-09-07 01:23 PT (inquiry form pulled; RSL-375 filed, RSL-373 on
 | RSL-373 | Wire the inquiry path: GTM events, GoHighLevel notify workflow | Rahul | Backlog | On hold with the form since 2026-09-07; now a sub-issue of RSL-375, no longer under RSL-363 |
 | RSL-374 | Copy pass: exact phrase in body, word band, city in local H2s | Claude | In Review | Done 2026-09-06: exact phrase at least twice on every page (H1 included), the four short pages inside their band, Bakersfield in at least half the local H2s; three checker rules added and mutation tested; cliche phrases banned. Ships with RSL-369 |
 | RSL-375 | Add a written inquiry form to the contact page | Rahul | Backlog | Later (Rahul, 2026-09-07). Built 2026-09-06 in `03d5b87`, pulled 2026-09-07, restore from git when wanted; `GHL_API_KEY` and `GHL_LOCATION_ID` stay on Vercel. Standalone in project RSL/A, not under RSL-363 |
+| RSL-377 | QA fix pass: the 13 pages read as intentional | Claude | In Review | Done 2026-09-07: every qa-pass.md finding applied, Bakersfield automations and CRM rewritten, testimonials reset to canonical text, checker 0 and 0, build and verify green. Ships with RSL-369 |
 
 ## Order
 

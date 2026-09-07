@@ -152,7 +152,7 @@ function breadcrumbFor(url) {
   return crumbs;
 }
 
-const files = readdirSync(SRC).filter(f => f.endsWith('.md') && !['README.md', 'tracker.md'].includes(f)).sort();
+const files = readdirSync(SRC).filter(f => f.endsWith('.md') && !['README.md', 'tracker.md', 'qa-pass.md'].includes(f)).sort();
 const pages = [];
 for (const f of files) {
   const raw = readFileSync(resolve(SRC, f), 'utf-8');
