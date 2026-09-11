@@ -170,12 +170,18 @@ export default function NavbarV3() {
         return location.pathname.startsWith(url);
     };
 
+    // /blog opens on a charcoal hero (Clay reference), so the bar goes light-on-dark there.
+    const dark = location.pathname === '/blog' && !mobileOpen;
+    const linkClass = (active) => (dark
+        ? (active ? 'text-white' : 'text-white/70 hover:text-white')
+        : (active ? 'text-accent' : 'text-text hover:text-accentDeep'));
+
     return (
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
                     scrolled || mobileOpen
-                        ? 'bg-background/85 backdrop-blur-md border-b border-hairline'
+                        ? (dark ? 'bg-blog-dark/90 backdrop-blur-md border-b border-white/10' : 'bg-background/85 backdrop-blur-md border-b border-hairline')
                         : 'bg-transparent'
                 }`}
             >
@@ -218,9 +224,7 @@ export default function NavbarV3() {
                                                 aria-haspopup="menu"
                                                 aria-expanded={desktopServicesOpen}
                                                 onKeyDown={handleServicesTriggerKeyDown}
-                                                className={`inline-flex h-11 items-center gap-1 px-5 font-sans font-medium text-[15px] transition-colors ${
-                                                    active ? 'text-accent' : 'text-text hover:text-accentDeep'
-                                                }`}
+                                                className={`inline-flex h-11 items-center gap-1 px-5 font-sans font-medium text-[15px] transition-colors ${linkClass(active)}`}
                                             >
                                                 {item.title}
                                                 <ChevronDown
@@ -296,9 +300,7 @@ export default function NavbarV3() {
                                     <li key={item.url}>
                                         <Link
                                             to={item.url}
-                                            className={`inline-flex h-11 items-center px-5 font-sans font-medium text-[15px] transition-colors ${
-                                                active ? 'text-accent' : 'text-text hover:text-accentDeep'
-                                            }`}
+                                            className={`inline-flex h-11 items-center px-5 font-sans font-medium text-[15px] transition-colors ${linkClass(active)}`}
                                         >
                                             {item.title}
                                         </Link>
@@ -332,10 +334,12 @@ export default function NavbarV3() {
                             type="button"
                             onClick={() => setMobileOpen(!mobileOpen)}
                             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl text-text transition-colors ${
-                                scrolled || mobileOpen
-                                    ? 'bg-surface border border-hairline'
-                                    : 'bg-white/60 backdrop-blur-sm'
+                            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition-colors ${
+                                dark
+                                    ? 'text-white bg-white/10 border border-white/15'
+                                    : scrolled || mobileOpen
+                                        ? 'text-text bg-surface border border-hairline'
+                                        : 'text-text bg-white/60 backdrop-blur-sm'
                             }`}
                         >
                             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

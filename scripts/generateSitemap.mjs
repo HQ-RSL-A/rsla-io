@@ -33,6 +33,7 @@ const staticRoutes = [
   { path: '/bakersfield/crm', priority: '0.8' },
   { path: '/work', priority: '0.8' },
   { path: '/blog', priority: '0.8' },
+  { path: '/blog/archive', priority: '0.5' },
   { path: '/contact', priority: '0.9' },
 ];
 
@@ -64,7 +65,7 @@ async function generateSitemap() {
       loc: `${SITE_URL}${path}`,
       lastmod: today,
       priority,
-      changefreq: ['/', '/blog', '/work'].includes(path) ? 'weekly' : 'monthly',
+      changefreq: ['/', '/blog', '/blog/archive', '/work'].includes(path) ? 'weekly' : 'monthly',
     })),
     // Blog posts
     ...blogSlugs.map(({ slug, publishedAt, updatedAt }) => ({

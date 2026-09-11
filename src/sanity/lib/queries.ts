@@ -51,6 +51,8 @@ export const relatedBlogPostsByCategoryQuery = groq`
     title,
     slug,
     publishedAt,
+    updatedAt,
+    readingTime,
     featuredImage {
       asset->,
       alt
@@ -468,3 +470,49 @@ export const leadMagnetBySlugQuery = groq`
   }
 `;
 
+
+// ── Blog overview (Clay layout, 2026-09-11) ──────────────────────────────────
+// One request feeds /blog: featured posts for the hero carousel, the newest
+// five for "Latest", the category strip, and one section per category that
+// has at least three published posts.
+
+const publishedPost = `_type == "blogPostV2" && status == "published" && defined(publishedAt) && publishedAt <= now()`;
+
+export const blogCardFields = `
+  _id,
+  title,
+  "slug": slug.current,
+  excerpt,
+  readingTime,
+  publishedAt,
+  updatedAt,
+  featured,
+  featuredImage { asset->, alt },
+  "category": categories[0]->{ name, "slug": slug.current }
+`;
+
+export const blogOverviewQuery = groq`{
+  "featured": *[${publishedPost} && featured == true] | order(publishedAt desc) [0...5] { ${blogCardFields} },
+  "latest": *[${publishedPost}] | order(publishedAt desc) [0...5] { ${blogCardFields} },
+  "nav": *[_type == "category" && count(*[${publishedPost} && references(^._id)]) >= 2] {
+    name,
+    "slug": slug.current,
+    "count": count(*[${publishedPost} && references(^._id)])
+  } | order(count desc, name asc),
+  "sections": *[_type == "category" && count(*[${publishedPost} && references(^._id)]) >= 3] {
+    name,
+    "slug": slug.current,
+    description,
+    "count": count(*[${publishedPost} && references(^._id)]),
+    "posts": *[${publishedPost} && references(^._id)] | order(publishedAt desc) [0...5] { ${blogCardFields} }
+  } | order(count desc, name asc)
+}`;
+
+// Category strip for the archive and article pages (same rule as the overview nav)
+export const blogCategoryNavQuery = groq`
+  *[_type == "category" && count(*[${publishedPost} && references(^._id)]) >= 2] {
+    name,
+    "slug": slug.current,
+    "count": count(*[${publishedPost} && references(^._id)])
+  } | order(count desc, name asc)
+`;

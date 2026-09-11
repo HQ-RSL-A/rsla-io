@@ -928,13 +928,41 @@ function notFoundContent() {
 
 // ── Dynamic Page Builders ─────────────────────────────────────────────────────
 
+function blogPostItem(p, { withCategory = true } = {}) {
+  const date = formatDate(p.publishedAt);
+  const cats = withCategory ? (p.categories || []).map(c => c.name).join(', ') : '';
+  const excerpt = p.excerpt ? `<p>${esc(p.excerpt)}</p>` : '';
+  const reading = p.readingTime ? `, ${p.readingTime} min read` : '';
+  return `<li><article><h3><a href="/blog/${esc(p.slug)}">${esc(p.title)}</a></h3>${excerpt}<p>${date}${cats ? `, ${esc(cats)}` : ''}${reading}</p></article></li>`;
+}
+
+// Mirrors the /blog overview: the newest five, then one section per category
+// with three or more posts (same rule as blogOverviewQuery in the app).
+function blogSections(posts) {
+  const byCategory = new Map();
+  for (const p of posts) {
+    for (const c of p.categories || []) {
+      if (!c?.slug) continue;
+      if (!byCategory.has(c.slug)) byCategory.set(c.slug, { name: c.name, slug: c.slug, posts: [] });
+      byCategory.get(c.slug).posts.push(p);
+    }
+  }
+  return [...byCategory.values()]
+    .filter(c => c.posts.length >= 3)
+    .sort((a, b) => b.posts.length - a.posts.length || a.name.localeCompare(b.name))
+    .map(c => ({ ...c, posts: c.posts.slice(0, 5) }));
+}
+
 function blogListingContent(posts) {
-  const postItems = posts.map(p => {
-    const date = formatDate(p.publishedAt);
-    const cats = (p.categories || []).map(c => c.name).join(', ');
-    const excerpt = p.excerpt ? `<p>${esc(p.excerpt)}</p>` : '';
-    return `<li><article><h2><a href="/blog/${esc(p.slug)}">${esc(p.title)}</a></h2>${excerpt}<p>${date}${cats ? `, ${esc(cats)}` : ''}</p></article></li>`;
-  }).join('\n');
+  const latest = posts.slice(0, 5);
+  const sections = blogSections(posts);
+  const listed = [];
+  const seen = new Set();
+  for (const p of [...latest, ...sections.flatMap(s => s.posts)]) {
+    if (seen.has(p.slug)) continue;
+    seen.add(p.slug);
+    listed.push(p);
+  }
 
   return {
     title: 'GoHighLevel, AI automation, and local SEO guides | RSL/A',
@@ -943,6 +971,34 @@ function blogListingContent(posts) {
     jsonLd: {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
       name: 'Blog', url: `${SITE}/blog`,
+      isPartOf: websiteRef,
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: listed.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          url: `${SITE}/blog/${p.slug}`,
+          name: p.title,
+        })),
+      },
+    },
+    html: `<main>
+<h1>Blog</h1>
+<p>Guides on GoHighLevel, Claude, automation, and local SEO, from the work we do for clients.</p>
+<section><h2>Latest</h2><ul>${latest.map(p => blogPostItem(p)).join('\n')}</ul><p><a href="/blog/archive">View archive</a></p></section>
+${sections.map(s => `<section><h2>${esc(s.name)}</h2><ul>${s.posts.map(p => blogPostItem(p, { withCategory: false })).join('\n')}</ul><p><a href="/blog/archive?category=${esc(s.slug)}">View all ${esc(s.name)} articles</a></p></section>`).join('\n')}
+</main>`,
+  };
+}
+
+function blogArchiveContent(posts) {
+  return {
+    title: 'Blog archive | RSL/A',
+    description: 'Every RSL/A post on GoHighLevel, Claude, automation, and local SEO, newest first.',
+    canonical: `${SITE}/blog/archive`,
+    jsonLd: {
+      '@context': 'https://schema.org', '@type': 'CollectionPage',
+      name: 'Blog archive', url: `${SITE}/blog/archive`,
       isPartOf: websiteRef,
       mainEntity: {
         '@type': 'ItemList',
@@ -955,9 +1011,9 @@ function blogListingContent(posts) {
       },
     },
     html: `<main>
-<h1>Our blog.</h1>
-<p>Guides on GoHighLevel, Claude, automation, and local SEO, from the work we do for clients.</p>
-<ul>${postItems}</ul>
+<h1>Archive</h1>
+<p>Every post we have published, newest first.</p>
+<ul>${posts.map(p => blogPostItem(p)).join('\n')}</ul>
 </main>`,
   };
 }
@@ -1208,6 +1264,7 @@ async function main() {
         "updatedAtFallback": _updatedAt,
         body,
         featuredImage { asset-> },
+        readingTime,
         author->{ name, role, linkedin },
         categories[]->{ name, "slug": slug.current },
         seo { metaTitle, metaDescription, keywords, targetKeyphrase, socialImage { asset-> } },
@@ -1288,8 +1345,10 @@ async function main() {
     count++;
   }
 
-  // Blog listing
+  // Blog listing + archive
   writePage('/blog', inject(template, blogListingContent(blogPosts)));
+  count++;
+  writePage('/blog/archive', inject(template, blogArchiveContent(blogPosts)));
   count++;
 
   // Work listing
@@ -1317,7 +1376,7 @@ async function main() {
     count++;
   }
 
-  console.log(`Pre-rendered ${count} pages (${staticPages.length} static, ${servicePages.length} service and Bakersfield pages, 2 listings, ${blogPosts.length} blog posts, ${caseStudies.length} case studies, ${leadMagnets.length} lead magnets)`);
+  console.log(`Pre-rendered ${count} pages (${staticPages.length} static, ${servicePages.length} service and Bakersfield pages, 3 listings, ${blogPosts.length} blog posts, ${caseStudies.length} case studies, ${leadMagnets.length} lead magnets)`);
 }
 
 main().catch((err) => {

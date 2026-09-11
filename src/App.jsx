@@ -69,6 +69,7 @@ function PageLoader() {
 // Rarely-visited pages stay lazy (not reachable from hamburger menu)
 const WorkInner = lazyRetry(() => import('./pages/WorkInner'));
 const BlogInner = lazyRetry(() => import('./pages/BlogInner'));
+const BlogArchive = lazyRetry(() => import('./pages/BlogArchive'));
 const Privacy = lazyRetry(() => import('./pages/Privacy'));
 const Terms = lazyRetry(() => import('./pages/Terms'));
 const DiscoveryCall = lazyRetry(() => import('./pages/DiscoveryCall'));
@@ -129,6 +130,7 @@ function App() {
 
             {/* Ported Routes */}
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/archive" element={<BlogArchive />} />
             <Route path="/blog/:slug" element={<BlogInner />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:slug" element={<WorkInner />} />

@@ -29,11 +29,13 @@ export default {
         lg: "320ms",
         "image-zoom": "350ms",
         "photo-hover": "400ms",
+        "zoom-slow": "750ms",   // blog cards: Clay's 0.75s image zoom
       },
       transitionTimingFunction: {
         "out-smooth": "cubic-bezier(0.23, 1, 0.32, 1)",
         "in-out-smooth": "cubic-bezier(0.77, 0, 0.175, 1)",
         drawer: "cubic-bezier(0.32, 0.72, 0, 1)",
+        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",  // blog: Clay's easeOutExpo
       },
       keyframes: {
         grid: {
@@ -73,6 +75,18 @@ export default {
         error: "#DC2626",             // semantic: states only, never decoration
         success: "#047857",
         warning: "#B45309",
+
+        // Blog palette, taken from the clay.global/blog reference (Rahul,
+        // 2026-09-11: the blog follows Clay for everything but font and logo).
+        blog: {
+          ink: "#06070A",     // titles, body
+          muted: "#666C7A",   // dates, tags, inactive ToC
+          dark: "#171921",    // hero + newsletter band
+          pill: "#E6E8EB",    // round share buttons
+          pillHover: "#D9DCE1",
+          card: "#F3F4F6",    // about card, inline boxes
+          arrow: "#B2B8C2",   // link arrows
+        },
 
         // Accent opacity variants (surfaces only: hover tints, washes)
         "accent-light": "rgba(0,112,243,0.05)",

@@ -1,13 +1,10 @@
-export default function BlogCardSkeleton() {
+export default function BlogCardSkeleton({ size = 'narrow' }) {
     return (
-        <div className="flex flex-row md:flex-col gap-3 md:gap-0 bg-white rounded-xl border border-hairline shadow-sm shadow-gray-900/5 p-3 md:p-0 overflow-hidden animate-pulse">
-            <div className="w-[110px] h-[74px] md:w-auto md:h-auto md:aspect-[374/237] rounded-lg md:rounded-none bg-surfaceAlt shrink-0" />
-            <div className="flex-1 min-w-0 md:px-5 md:pt-4 md:pb-5 flex flex-col justify-center md:block">
-                <div className="h-5 md:h-6 w-3/4 bg-surfaceAlt rounded mb-2" />
-                <div className="h-5 md:h-6 w-1/2 bg-surfaceAlt rounded mb-2 hidden md:block" />
-                <div className="h-4 w-20 bg-surfaceAlt rounded mb-1.5" />
-                <div className="h-4 w-28 bg-surfaceAlt rounded" />
-            </div>
+        <div className="animate-pulse" aria-hidden="true">
+            <div className="aspect-[327/182] md:aspect-[2/1] bg-blog-card" />
+            <div className="mt-3 h-4 w-20 bg-blog-card" />
+            <div className={`mt-3 bg-blog-card ${size === 'wide' ? 'h-8 w-4/5' : 'h-6 w-3/4'}`} />
+            <div className="mt-3 h-4 w-40 bg-blog-card" />
         </div>
     );
 }

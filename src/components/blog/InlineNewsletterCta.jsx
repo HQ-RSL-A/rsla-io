@@ -2,10 +2,13 @@ import { useState } from 'react';
 
 const KIT_FORM_ID = import.meta.env.VITE_KIT_FORM_ID || '9130465';
 
+/*
+ * The Insider sign-up at the end of an article. Clay-style box: flat gray,
+ * square corners, underline input, dark pill button.
+ */
 export default function InlineNewsletterCta() {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState('idle');
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,50 +38,45 @@ export default function InlineNewsletterCta() {
 
     if (status === 'success') {
         return (
-            <div className="my-16 p-8 rounded-callout bg-frost border border-hairline">
-                <p className="font-sans font-bold text-lg text-text mb-1">Talk Tuesday.</p>
-                <p className="font-sans text-sm text-text">Check your inbox for a confirmation.</p>
+            <div className="my-16 bg-blog-card p-6 md:p-8 text-blog-ink">
+                <p className="font-bold text-[18px] leading-[1.4] mb-1">Talk Tuesday.</p>
+                <p className="text-[15px] leading-[1.5]">Check your inbox for a confirmation.</p>
             </div>
         );
     }
 
     return (
-        <div className="my-16 p-6 md:p-8 rounded-callout bg-frost border border-hairline">
-            {/* Branding */}
-            <h4 className="font-sans font-bold text-xl text-text leading-tight mb-3">The Insider</h4>
-
-            {/* Copy */}
-            <p className="font-sans text-[15px] text-text leading-relaxed mb-4">
+        <div className="my-16 bg-blog-card p-6 md:p-8 text-blog-ink">
+            <h4 className="font-bold text-[22px] leading-[1.3] tracking-[-0.01em] mb-3">The Insider</h4>
+            <p className="text-[16px] leading-[1.5] mb-6">
                 Liked this? Every Tuesday I send one{' '}
                 <span className="font-bold">growth system</span>{' '}
                 you can apply to your business that day and see results.
             </p>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="flex gap-2">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 sm:gap-3">
+                <label htmlFor="inline-insider-email" className="sr-only">Email address</label>
                 <input
+                    id="inline-insider-email"
                     type="email"
                     placeholder="you@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === 'submitting'}
                     required
-                    className="flex-1 h-[44px] px-3.5 rounded-button border border-hairline bg-surface text-base font-sans text-text outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-[border-color,box-shadow] duration-150 ease-out"
+                    className="flex-1 h-11 bg-transparent border-0 border-b border-blog-ink/30 px-0 text-[16px] text-blog-ink placeholder:text-blog-muted outline-none focus:border-blog-ink transition-[border-color] duration-sm ease-out-smooth rounded-none"
                 />
                 <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="h-[44px] px-5 rounded-button bg-accent text-white font-sans font-medium text-base hover:bg-accentDeep active:scale-[0.97] transition-[background-color,transform] duration-150 ease-out disabled:opacity-50 cursor-pointer whitespace-nowrap"
+                    className="h-11 shrink-0 rounded-full bg-blog-ink px-6 text-[15px] font-medium text-white transition-[background-color,transform] duration-md ease-out-smooth hover:bg-blog-dark active:scale-[0.97] disabled:opacity-60 cursor-pointer whitespace-nowrap"
                 >
-                    {status === 'submitting' ? '...' : 'Get The Insider'}
+                    {status === 'submitting' ? 'Sending' : 'Get The Insider'}
                 </button>
             </form>
             {status === 'error' && (
-                <p className="font-sans text-sm text-error mt-2">Something went wrong. Try again.</p>
+                <p className="text-[14px] text-error mt-3">Something went wrong. Try again.</p>
             )}
-            <p className="mt-2.5 text-[13px] font-sans text-text">
-                No spam, unsubscribe anytime.
-            </p>
+            <p className="mt-3 text-[13px] leading-[1.4] text-blog-muted">No spam, unsubscribe anytime.</p>
         </div>
     );
 }

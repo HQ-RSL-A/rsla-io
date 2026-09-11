@@ -18,10 +18,14 @@ src/
     FooterV2.jsx           # Black footer (the site's ONE dark surface; solid Mist text)
     CaseStudyCard.jsx      # Shared card component used by Work.jsx and WorkInner.jsx
     PersonCard.jsx         # Shared digital business card used by Rahul.jsx and Sid.jsx
-    blog/PortableTextRenderer.jsx  # Sanity rich text renderer
+    blog/PortableTextRenderer.jsx  # Sanity rich text renderer (shared with case studies)
+    blog/blogPortableText.jsx      # article typography overrides (Clay scale)
+    blog/PostCard.jsx, ArticlesGrid.jsx, HeroCarousel.jsx, BlogCategoryStrip.jsx, NewsletterBand.jsx, ArticleToc.jsx, AboutCard.jsx, ArticleShare.jsx, blogShared.js  # blog building blocks
   pages/
     Home.jsx               # / (13 lazy-loaded sections, 3 Suspense groups, FAQ schema)
-    BlogInner.jsx          # /blog/:slug (editorial layout, sticky ToC, share bar)
+    Blog.jsx               # /blog overview (clay.global/blog layout; blogOverviewQuery)
+    BlogArchive.jsx        # /blog/archive (search + topic filter + pagination)
+    BlogInner.jsx          # /blog/:slug (Clay article layout: sticky ToC, About card, round share)
     WorkInner.jsx          # /work/:slug (service page cross-links via servicesUsed)
     ServiceDetail.jsx      # /services/:slug (noIndexed, links to related case studies)
     IndustryPage.jsx       # /ai-for/:slug (Hormozi-inspired pSEO template)
@@ -59,8 +63,9 @@ docs/
 | /services/:slug | 5 service pages (blank shells) + CityHub catch-all | **No** (thin content) | Full |
 | /work | Work | Yes | Full |
 | /work/:slug | WorkInner | Yes | Full |
-| /blog | Blog | Yes | Full |
-| /blog/:slug | BlogInner | Yes | Full |
+| /blog | Blog (Clay-style overview: hero carousel, Latest, Insider band, category sections) | Yes | Full |
+| /blog/archive | BlogArchive (search, topic filter, 12 a page; `?category=`/`?q=`/`?page=`) | Yes | Full |
+| /blog/:slug | BlogInner (Clay article layout: ToC, body, About + share) | Yes | Full |
 | /contact | DiscoveryCall | Yes | Full |
 | /book-a-call | BookCall | No | Full |
 | /booking-confirmed | BookingConfirmed | No | Full |
@@ -84,7 +89,7 @@ Full architecture, per-region legality, invariants, and change runbook: `docs/20
 - **Project ID:** `yz25oyux`, **Dataset:** `production`, **API Version:** `2025-03-01`
 - **Active schemas:** blogPostV2, caseStudyV2, leadMagnet, industryPage, author, category, blogGenerationJob
 - **Legacy schemas:** blogPost, caseStudy (V1, fully migrated to V2, no longer queried)
-- **Content:** 60+ blog posts, 11 case studies, 12 industry pages, 19 categories, 1 author
+- **Content (2026-09-11):** 18 published blog posts (no drafts), 5 published case studies, 2 lead magnets, 26 categories of which 9 have posts, 1 author
 
 ## SEO / AEO / GEO
 
