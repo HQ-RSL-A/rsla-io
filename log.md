@@ -1,5 +1,21 @@
 # log.md - RSL/A website
 
+## 2026-09-18 12:55 PT - Five spare domains 301 to rsla.io (Vercel domains on this project + Cloudflare DNS)
+
+Rahul: redirect myrsla.com, rslmediahub.com, rslmediahub.net, rslmediahub.xyz, connectrsl.com to https://rsla.io/. No code change; nothing deployed.
+
+Vercel, project `rsla-io`: `myrsla.com`, `connectrsl.com` and their `www` hosts added as domain redirects to `rsla.io`, status 301 (same shape as the `rslmediahub.net` / `.xyz` rows Rahul had already added). `connectrsl.com`, `rslmediahub.net`, `rslmediahub.xyz` (apex + www each) sat at `pending_domain_verification`; the six `_vercel` TXT values went into Cloudflare and `POST /v9/projects/rsla-io/domains/{domain}/verify` passed for all six about three minutes later (the TXT lookups were negatively cached before that). `myrsla.com` was already a verified team domain. `rslmediahub.com` + `www` stay on the separate `rslmediahub-redirect` project (308 to `https://rsla.io/`), untouched.
+
+Cloudflare, all DNS-only, mirroring rsla.io's own shape (apex `A 216.150.1.1`, www `CNAME 98e42dc2ac9c0fd0.vercel-dns-016.com`):
+- `myrsla.com`: apex and www each had 2 A (`104.21.32.70`, `172.67.184.68`) + 2 AAAA (`2606:4700:3032::6815:2046`, `2606:4700:3033::ac43:b844`), proxied, another Cloudflare account's edge, serving 403. Replaced. Mail records (Microsoft 365 MX, SPF, DKIM, autodiscover) untouched.
+- `connectrsl.com`: apex `A 2.57.91.91` + `AAAA 2a02:4780:84::32` (Hostinger, which was doing the old 301) and `www CNAME connectrsl.com`, proxied. Replaced, AAAA deleted, 2 `_vercel` TXT added.
+- `rslmediahub.net`: had no usable records at all (NXDOMAIN). Apex A, www CNAME, 2 `_vercel` TXT added.
+- `rslmediahub.xyz`: apex A flipped to DNS-only, `www CNAME rslmediahub.xyz` repointed to the Vercel target, 2 `_vercel` TXT added. It was serving Vercel's 404 before.
+
+Checked: all 10 hostnames hit directly at `216.150.1.1` with certificate validation on return `http` 308 to `https`, then 301 (308 on rslmediahub.com) to `https://rsla.io/`, path and query preserved; Google and Cloudflare public resolvers return the Vercel addresses for every host. Pre-change zone dumps were taken to the session scratchpad only; the replaced values are the ones listed above.
+
+Left alone, not part of the ask: four of the five zones (all but myrsla.com) carry the double-origin import junk (`name.zone.zone` rows, e.g. `bookings.rslmediahub.com.rslmediahub.com`), so on rslmediahub.com the real `bookings`, `checkout`, `offer`, `resources`, `training`, `inst`, `replies` and the Mailgun DKIM names do not resolve; many rows are still proxied (GHL `app.` CNAMEs, the myrsla.com DKIM CNAMEs, rslmediahub.com apex + www in front of Vercel); stale `_vercel` TXT values from an older claim remain on rslmediahub.com / .net / .xyz. The Cloudflare token does not see selectlandscapeinc.com (that zone answers from `macy` / `sterling`, a different account pair).
+
 ## 2026-09-11 12:49 PT - Blog rebuilt after clay.global/blog (branch blog-clay-layout, awaiting review)
 
 Rahul: "I want to design the blog page. Use this as reference. The inner page can be replicated exactly." References: clay.global/blog and clay.global/blog/tipalti-digest. Then: "You don't have to follow everything in the brand guidelines except the font and logo. Rest can be picked from the reference pages." So the three blog routes use Clay's palette and scale (ink `#06070A`, muted `#666C7A`, charcoal `#171921`, square corners, gray meta text), Satoshi and the logomark stay. Tokens under `colors.blog.*` in `tailwind.config.js`, `ease-out-expo` + `duration-zoom-slow` for the 750ms image zoom, `.link-draw` underline in `index.css`.
