@@ -1,5 +1,17 @@
 # log.md - RSL/A website
 
+## 2026-09-18 13:08 PT - rsla.io zone audited and trimmed from 44 records to 28
+
+Rahul asked whether the rsla.io zone was clean. It was: 44 live records matched `../rsla-io-dns-zone.txt` exactly, no doubled names, nothing proxied, all 11 web hosts answered over HTTPS with valid certificates. Four leftovers found; on his word ("only noreplies on GHL is being used", "progen not used any more") 16 rows were deleted through the API:
+- `noreply.rsla.io` (7): 2 MX, SPF, Google verification TXT, `_dmarc.noreply`, `email.noreply` CNAME, `smtp._domainkey.noreply`.
+- `notify.rsla.io` (7): 2 MX, SPF, Google verification TXT, `_dmarc.notify`, `email.notify` CNAME, `pic._domainkey.notify`.
+- `resend._domainkey.progen` (1): an abandoned Resend domain with no `send.progen` records; proposals send from `proposals@rsla.io` on the root domain.
+- `mailo._domainkey.noreplies` duplicate (1): the unquoted TTL 3600 copy of an identical key; the TTL 600 row stays and resolves.
+
+No code in the workspace referenced any of the three subdomains. `../rsla-io-dns-zone.txt` had the same 16 lines removed and diffs clean against the live zone (28 and 28); `../CLAUDE.md` and its `AGENTS.md` mirror now say 28. The zone file is not under git, so the pre-delete snapshot exists only in the session scratchpad; the deleted rows belong to dead sending domains and are not needed again.
+
+Still open: Kit has a `ckespa` return-path CNAME but no DKIM CNAME (none existed at Hostinger either), so newsletters pass DMARC on SPF alone and a forwarded copy fails under `p=quarantine`. The record comes from Kit's verified sending domain page.
+
 ## 2026-09-18 12:55 PT - Five spare domains 301 to rsla.io (Vercel domains on this project + Cloudflare DNS)
 
 Rahul: redirect myrsla.com, rslmediahub.com, rslmediahub.net, rslmediahub.xyz, connectrsl.com to https://rsla.io/. No code change; nothing deployed.
