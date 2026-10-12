@@ -6,7 +6,7 @@ Reference material for the RSL/A website. Rules and behavior live in CLAUDE.md.
 
 "Only you know what your time is worth. We put AI to work to get it back." (home hero since 2026-09-06; audience is small service businesses, the word "founders" is retired)
 
-**Status:** Live at rsla.io. All TODO items complete (P0 through P4). Only careers page remains (when ready).
+**Status:** Live at rsla.io. Open tasks are Linear issues in the team `HQ`, titles starting `rsla.io:` (listed in `my-business/TODO.md`, written from Linear). The lists kept in this folder until October 2026, as they stood: `archive/TODO-hand-kept-until-2026-10-11.md` and `archive/brain-todo-next-session-until-2026-10-12.md`.
 
 ## Key Files
 
@@ -188,21 +188,3 @@ API endpoints use Upstash Redis for rate limiting (`api/lib/rateLimit.mjs`).
 | `KIT_API_KEY` | Vercel + .env.local | Kit API key (server-side only, NO `VITE_` prefix) |
 | `UPSTASH_REDIS_REST_URL` | Vercel | Upstash Redis URL for rate limiting |
 | `UPSTASH_REDIS_REST_TOKEN` | Vercel | Upstash Redis auth token |
-
-## TODO (Next Session)
-
-### Rahul (manual, 5-10 min each)
-- [x] **GTM conversion tags**: Created 3 GA4 Event tags + triggers + 2 DLVs (source, cta_location) in GTM. Published as Version 5. CTA click required code-side dataLayer push (React SPA doesn't produce Click URLs). Deployed 2026-04-30.
-- [ ] **GA4 Key Events**: Mark `booking_confirmed`, `newsletter_subscribe`, `cta_click` as key events in GA4 once they appear in Admin > Events (can take 24-48 hours).
-- [ ] **Sentry**: Create React project at sentry.io, copy DSN, add `VITE_SENTRY_DSN` to Vercel env vars
-- [ ] **Sanity token**: Current token's robot user not in project yz25oyux. Create new token inside project settings (API > Tokens > Add API token > Editor permissions). Update `.env.local` and Vercel env var `SANITY_API_TOKEN`. Also update `../../mcp/sanity.env`.
-- [ ] **Upstash**: Create free Redis DB at upstash.com. Add `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` to Vercel env vars.
-- [ ] **Backlink disavow**: In SEMRush > Backlink Audit, review Singapore/Moldova spam domains. Export disavow list. Upload to GSC Disavow Tool.
-
-### Claude (next session)
-- [ ] **Write GHL pillar page** (highest priority): Strategy at `docs/superpowers/plans/2026-04-27-pillar-page-strategy.md`. Use `/blogEngine`. Targets 88K+ monthly impressions.
-- [ ] **Write AI Automation pillar page**: Targets ICP (B2B companies). Links to 6 case studies.
-- [ ] **Write Local SEO pillar page**: Consolidates position 4-7 GBP rankings.
-- [ ] **Expand service detail pages**: Currently noIndexed (thin content). Expand each to 800-1200 words with process, deliverables, case studies, FAQ. Re-index after.
-- [ ] **Add internal links in Sanity blog posts**: Blog-to-blog and blog-to-service cross-links within post bodies. Priority: top 8 posts by impressions.
-- [x] **GitHub Dependabot alert**: Updated postcss 8.5.6 -> 8.5.14 (fixes CVE XSS in CSS stringify). Alert #17 resolved.
