@@ -5,10 +5,10 @@
   "framework": "vite",
   "functions": {
     "api/llm/[slug].mjs": {
-      "runtime": "@vercel/node@5.9.0"
+      "runtime": "@vercel/node@22.0.0"
     },
     "api/subscribe.mjs": {
-      "runtime": "@vercel/node@5.9.0"
+      "runtime": "@vercel/node@22.0.0"
     }
   },
   "headers": [
