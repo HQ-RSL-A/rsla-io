@@ -20,7 +20,7 @@ export default function Privacy() {
 
                 <div className="prose-container max-w-none font-sans text-lg leading-relaxed text-textMuted">
                     <p className="mb-8">
-                        <strong className="text-text">Effective Date:</strong> August 17, 2026
+                        <strong className="text-text">Effective Date:</strong> October 13, 2026
                     </p>
 
                     <p className="mb-6">
@@ -185,6 +185,8 @@ export default function Privacy() {
                                 <tr><td className="py-3 pr-4 text-text">Microsoft Clarity</td><td className="py-3">Behavioral analytics: heatmaps and session recordings (loads only after cookie consent)</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">CookieScript</td><td className="py-3">Cookie consent management (banner, consent storage, consent records)</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Vercel</td><td className="py-3">Website hosting and deployment</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">Sentry</td><td className="py-3">Error monitoring: technical details (browser, page address, error message) when part of the Site fails to work. Sets no cookies.</td></tr>
+                                <tr><td className="py-3 pr-4 text-text">YouTube, Vimeo, Loom, Wistia</td><td className="py-3">Embedded videos, loaded only when you press play</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Sanity</td><td className="py-3">Content management system (blogs, case studies)</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">Anthropic (Claude)</td><td className="py-3">AI content generation, data analysis, and automation</td></tr>
                                 <tr><td className="py-3 pr-4 text-text">OpenAI (ChatGPT)</td><td className="py-3">AI content generation, data analysis, and automation</td></tr>
@@ -297,17 +299,20 @@ export default function Privacy() {
                     <p className="mb-4">We use the following categories of cookies:</p>
                     <ul className="list-disc pl-8 mb-8 space-y-3">
                         <li><strong className="text-text">Strictly Necessary Cookies:</strong> Required for the Site to function and to remember the choice you make in our cookie banner. These cannot be disabled. They include cookies for security, session management, and consent storage.</li>
-                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors use our Site — page views and usage patterns (Google Analytics) and anonymized heatmaps and session recordings (Microsoft Clarity). In the EEA, UK, Switzerland, and Quebec these are set only after you consent; elsewhere they are active by default and you can opt out at any time.</li>
+                        <li><strong className="text-text">Performance and Analytics Cookies:</strong> Help us understand how visitors use our Site: page views and usage patterns (Google Analytics) and anonymized heatmaps and session recordings (Microsoft Clarity). Session recordings start only after you consent, wherever you are visiting from. Google Analytics starts only after you consent in the EEA, UK, Switzerland, and Quebec; elsewhere it is active by default and you can opt out at any time.</li>
                         <li><strong className="text-text">Functional Cookies:</strong> Remember your preferences and settings, such as language or region.</li>
                         <li><strong className="text-text">Targeting and Advertising Cookies:</strong> Measure marketing campaign performance across platforms (e.g., Meta Pixel). In the EEA, UK, Switzerland, and Quebec these are set only after you consent; elsewhere they may be active by default and you can opt out at any time.</li>
                     </ul>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.3 Cookie Consent</h3>
                     <p className="mb-6">
-                        When you first visit our Site, a consent banner (powered by CookieScript) lets you accept all cookies, decline all non-essential cookies, or expand the details to choose by category. What happens before you choose depends on where you are visiting from. In the European Economic Area, the United Kingdom, Switzerland, and the Canadian province of Quebec, analytics and advertising tags are disabled by default through Google Consent Mode v2 until you consent — they set no cookies and store no identifiers. Elsewhere, including the United States and the rest of Canada, these tags are active by default as permitted by applicable law, and you can decline or opt out at any time. Your choice is saved so it is remembered on return visits.
+                        When you first visit our Site, a consent banner (powered by CookieScript) lets you accept all cookies, decline all non-essential cookies, or expand the details to choose by category. What happens before you choose depends on where you are visiting from. In the European Economic Area, the United Kingdom, Switzerland, and the Canadian province of Quebec, analytics and advertising tags do not run until you consent, so no analytics or advertising data is collected before then. Elsewhere, including the United States and the rest of Canada, Google Analytics and the Meta Pixel are active by default as permitted by applicable law, and you can decline or opt out at any time. In every region, Microsoft Clarity session recordings start only after you consent. Your choice is saved so it is remembered on return visits.
                     </p>
                     <p className="mb-6">
-                        You can change or withdraw your consent at any time by clicking "Cookie settings" in the website footer, which reopens the consent panel. If your browser sends the Global Privacy Control (GPC) signal, non-essential cookies are declined automatically regardless of region. Withdrawing consent does not affect the lawfulness of any processing carried out before the withdrawal.
+                        You can change or withdraw your consent at any time by clicking "Cookie settings" in the website footer, which reopens the consent panel. When you decline, analytics, session recording, and advertising tags stop for the rest of your visit and stay off on later visits. If your browser sends the Global Privacy Control (GPC) signal, non-essential cookies are declined automatically regardless of region. Withdrawing consent does not affect the lawfulness of any processing carried out before the withdrawal.
+                    </p>
+                    <p className="mb-6">
+                        Videos embedded from YouTube, Vimeo, Loom, or Wistia load only when you press play. Until then, those providers receive nothing from your visit. Once a video loads, its provider may set its own cookies under its own privacy policy.
                     </p>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
@@ -318,7 +323,7 @@ export default function Privacy() {
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.5 Session Recordings (Microsoft Clarity)</h3>
                     <p className="mb-8">
-                        We partner with Microsoft Clarity to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay, in order to improve our website and services. Website usage data is captured using first- and third-party cookies and other tracking technologies — only after you consent through our cookie banner — and is used for site optimization and fraud and security purposes. For more information about how Microsoft collects and uses your data, visit the{' '}
+                        We partner with Microsoft Clarity to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay, in order to improve our website and services. Website usage data is captured using first- and third-party cookies and other tracking technologies, only after you consent through our cookie banner, and is used for site optimization and fraud and security purposes. For more information about how Microsoft collects and uses your data, visit the{' '}
                         <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline decoration-accent/50 underline-offset-4">Microsoft Privacy Statement</a>.
                     </p>
 
@@ -419,7 +424,7 @@ export default function Privacy() {
                     </p>
 
                     <p className="mt-16 pt-6 text-sm text-textMuted">
-                        Last updated: August 17, 2026
+                        Last updated: October 13, 2026
                     </p>
                 </div>
             </div>

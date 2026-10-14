@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { urlForImage } from '../../sanity/lib/image';
+import ClickToPlayVideo from '@/components/ClickToPlayVideo';
+import { videoPlayer } from '@/lib/videoPlayer';
 
 const KIT_FORM_ID = import.meta.env.VITE_KIT_FORM_ID || '9130465';
 
@@ -176,40 +178,17 @@ export const PortableTextComponents = {
         },
         videoEmbed: ({ value }) => {
             const { url, caption, orientation } = value;
-            let embedUrl = '';
-
-            if (url.includes('youtube.com') || url.includes('youtu.be')) {
-                const videoId = url.includes('youtu.be')
-                    ? url.split('youtu.be/')[1]?.split('?')[0]
-                    : url.split('v=')[1]?.split('&')[0];
-                embedUrl = `https://www.youtube.com/embed/${videoId}`;
-            } else if (url.includes('vimeo.com')) {
-                const videoId = url.split('vimeo.com/')[1]?.split('?')[0];
-                embedUrl = `https://player.vimeo.com/video/${videoId}`;
-            } else if (url.includes('loom.com')) {
-                const videoId = url.split('/share/')[1]?.split('?')[0];
-                embedUrl = `https://www.loom.com/embed/${videoId}`;
-            } else if (url.includes('wistia.com/medias/')) {
-                const videoId = url.split('/medias/')[1]?.split('?')[0];
-                embedUrl = `https://fast.wistia.net/embed/iframe/${videoId}`;
-            }
-
-            if (!embedUrl) return null;
+            if (!videoPlayer(url)) return null;
 
             const isVertical = orientation === 'vertical';
 
             return (
                 <figure className="my-10 flex flex-col items-center">
-                    <div className={`relative rounded-xl overflow-hidden bg-surfaceAlt border border-accent-border shadow-lg ${isVertical ? 'w-full max-w-sm aspect-[9/16]' : 'w-full aspect-video'}`}>
-                        <iframe
-                            src={embedUrl}
-                            title={caption || 'Embedded video'}
-                            className="absolute inset-0 w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            loading="lazy"
-                        />
-                    </div>
+                    <ClickToPlayVideo
+                        url={url}
+                        title={caption || 'Embedded video'}
+                        className={`rounded-xl bg-surfaceAlt border border-accent-border shadow-lg ${isVertical ? 'w-full max-w-sm aspect-[9/16]' : 'w-full aspect-video'}`}
+                    />
                     {caption && (
                         <figcaption className="text-center text-sm font-sans text-textMuted mt-4 italic">
                             {caption}

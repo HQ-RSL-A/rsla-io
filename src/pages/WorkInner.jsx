@@ -11,17 +11,10 @@ import Seo from '@/components/Seo';
 import { TextAnimate } from '@/components/ui/text-animate';
 import ShareBar from '@/components/ShareBar';
 import CaseStudyCard from '@/components/CaseStudyCard';
+import ClickToPlayVideo from '@/components/ClickToPlayVideo';
+import { videoPlayer } from '@/lib/videoPlayer';
 
 gsap.registerPlugin(ScrollTrigger);
-
-function getVideoEmbedUrl(url) {
-    if (!url) return null;
-    const yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?/]+)/);
-    if (yt) return `https://www.youtube.com/embed/${yt[1]}`;
-    const wistia = url.match(/wistia\.com\/medias\/([^&?/]+)/);
-    if (wistia) return `https://fast.wistia.net/embed/iframe/${wistia[1]}`;
-    return null;
-}
 
 export default function WorkInner() {
     const { slug } = useParams();
@@ -275,20 +268,14 @@ export default function WorkInner() {
                             <div className="cs-section opacity-0 mb-14 space-y-6">
                                 {caseStudy.testimonialMedia.map((item) => {
                                     if (item._type === 'testimonialVideo') {
-                                        const embedUrl = getVideoEmbedUrl(item.url);
-                                        if (!embedUrl) return null;
+                                        if (!videoPlayer(item.url)) return null;
                                         return (
                                             <div key={item._key}>
-                                                <div className={`relative overflow-hidden rounded-2xl border border-gray-200 shadow-sm ${item.orientation === 'vertical' ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'}`}>
-                                                    <iframe
-                                                        src={embedUrl}
-                                                        title={item.caption || 'Video'}
-                                                        className="absolute inset-0 w-full h-full"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowFullScreen
-                                                        loading="lazy"
-                                                    />
-                                                </div>
+                                                <ClickToPlayVideo
+                                                    url={item.url}
+                                                    title={item.caption || 'Video'}
+                                                    className={`rounded-2xl border border-gray-200 shadow-sm ${item.orientation === 'vertical' ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'}`}
+                                                />
                                                 {item.caption && (
                                                     <p className="font-sans text-[14px] font-normal text-[#727F96] text-center mt-3">{item.caption}</p>
                                                 )}
