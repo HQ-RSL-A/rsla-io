@@ -317,8 +317,8 @@ export default function Privacy() {
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
                     <p className="mb-8">
-                        The fastest way to manage cookies on our Site is the "Cookie settings" link in the footer. You can also block or delete cookies through your browser settings, though disabling strictly necessary cookies may affect how the Site functions. A live, automatically updated list of every cookie in use on this Site — with provider, purpose, and duration — is available in our{' '}
-                        <a href="https://cookie-script.com/cookie-report?identifier=1c8f75659d02503bc3bfb26f8742aefe" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline decoration-accent/50 underline-offset-4">cookie report</a>.
+                        The fastest way to manage cookies on our Site is the "Cookie settings" link in the footer. You can also block or delete cookies through your browser settings, though disabling strictly necessary cookies may affect how the Site functions. A list of every cookie in use on this Site, with provider, purpose, and duration, is available in our{' '}
+                        <a href="https://cookie-script.com/cookie-report?identifier=bdcdfbc07f4d5c96b82f91fb7f93e63d" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline decoration-accent/50 underline-offset-4">cookie report</a>.
                     </p>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.5 Session Recordings (Microsoft Clarity)</h3>
@@ -424,7 +424,7 @@ export default function Privacy() {
                     </p>
 
                     <p className="mt-16 pt-6 text-sm text-textMuted">
-                        Last updated: October 13, 2026
+                        Last updated: October 14, 2026
                     </p>
                 </div>
             </div>
