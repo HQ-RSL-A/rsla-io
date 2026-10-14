@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import CookieDeclaration from '@/components/CookieDeclaration';
 
 export default function Privacy() {
     return (
@@ -316,10 +317,10 @@ export default function Privacy() {
                     </p>
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.4 Managing Cookies</h3>
-                    <p className="mb-8">
-                        The fastest way to manage cookies on our Site is the "Cookie settings" link in the footer. You can also block or delete cookies through your browser settings, though disabling strictly necessary cookies may affect how the Site functions. A list of every cookie in use on this Site, with provider, purpose, and duration, is available in our{' '}
-                        <a href="https://cookie-script.com/cookie-report?identifier=bdcdfbc07f4d5c96b82f91fb7f93e63d" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline decoration-accent/50 underline-offset-4">cookie report</a>.
+                    <p className="mb-4">
+                        The fastest way to manage cookies on our Site is the "Cookie settings" link in the footer. You can also block or delete cookies through your browser settings, though disabling strictly necessary cookies may affect how the Site functions. Every cookie in use on this Site is listed below, with its provider, purpose, and duration. Our consent provider, CookieScript, keeps the list current.
                     </p>
+                    <CookieDeclaration />
 
                     <h3 className="text-xl md:text-2xl mt-8 mb-4 font-sans font-semibold text-text">10.5 Session Recordings (Microsoft Clarity)</h3>
                     <p className="mb-8">
