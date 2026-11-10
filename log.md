@@ -1,5 +1,11 @@
 # log.md - RSL/A website
 
+## 2026-11-10 00:40 PT - Builds unstuck: stale function runtime pin removed; autoresponder download removed
+
+- Every build had been failing since the last deploy (2026-10-13): vercel.json pinned `@vercel/node@22.0.0`, which no longer installs against Vercel's builder (`@vercel/build-utils` 15.2.1, ERESOLVE). The `functions` block is gone, so `api/llm/[slug].mjs` and `api/subscribe.mjs` run on the default Node.js runtime, as `api/inquiry.mjs` always has. CLAUDE.md's pin note now says not to pin.
+- The deploy also rebuilds the prerendered pages, so crawlers, link previews and the RSS feed get the 2026-11-09 Sanity fact pass of every blog post (browsers already had it).
+- `public/downloads/case-studies/email-autoresponder/blueprint.json` is removed (Rahul, 2026-11-10): its case study was dropped, and the file was a third party's tutorial scenario.
+
 ## 2026-08-11 14:03 PT - Email signature assets self-hosted + deploy pipeline unstuck
 
 - `public/signature/`: seven assets (profile GIF, logo, verified badge, three social icons, Talk to Rahul CTA button) now served from rsla.io/signature/ (`38eb176`). They back the new email signature, whose source of truth lives at `my-business/brand-guidelines/email-signature/email-signature.html`; this removes every customesignature.com trial-CDN dependency before that trial dies.
