@@ -1,5 +1,9 @@
 # log.md - RSL/A website
 
+## 2026-11-11 18:51 PT - package security fixes, npm audit clean
+
+- `npm audit` found 8 high, 9 moderate and 1 low; now none. `npm audit fix` (never --force) moved what it could inside the declared ranges, and a scoped override moves the Sentry Vite plugin's glob to 14.0.4 (13.x has no fixed release). Commit `4eac543`; the build passed locally (run without the IndexNow ping), Vercel's deploy succeeded and https://rsla.io answered 200. Part of HQ-39.
+
 ## 2026-11-10 00:40 PT - Builds unstuck: stale function runtime pin removed; autoresponder download removed
 
 - Every build had been failing since the last deploy (2026-10-13): vercel.json pinned `@vercel/node@22.0.0`, which no longer installs against Vercel's builder (`@vercel/build-utils` 15.2.1, ERESOLVE). The `functions` block is gone, so `api/llm/[slug].mjs` and `api/subscribe.mjs` run on the default Node.js runtime, as `api/inquiry.mjs` always has. CLAUDE.md's pin note now says not to pin.
